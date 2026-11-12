@@ -9,6 +9,7 @@
 <style>
 @font-face{font-family:"Ruqaa";src:url("fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
 @font-face{font-family:"Vibes";src:url("fonts/great-vibes-latin-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Cinzel";src:url("fonts/cinzel-latin-700.woff2") format("woff2");font-weight:700;font-display:swap}
 
 :root{
@@ -96,6 +97,40 @@ main{
 .start:active{transform:translateY(1px)}
 .start:focus-visible{outline:3px solid #fff;outline-offset:4px}
 
+/* ---- شاشة الملف الشخصي ---- */
+[hidden]{display:none!important}
+.profile{gap:1rem;justify-content:flex-start;padding-top:calc(1.6rem + env(safe-area-inset-top,0px))}
+.profile h2{font-family:"Ruqaa",serif;font-weight:700;font-size:clamp(1.6rem,6vw,2.1rem);color:var(--gold2);animation:rise .6s ease-out both}
+.preview{
+  width:110px;height:110px;border-radius:28px;overflow:hidden;
+  background:rgba(255,255,255,.08);border:2px dashed rgba(255,255,255,.35);
+  display:grid;place-items:center;color:var(--muted);font-family:"Plex Arabic",sans-serif;font-size:.85rem;
+  animation:rise .6s .1s ease-out both;
+}
+.preview.on{border:3px solid var(--gold);box-shadow:0 0 28px rgba(243,201,105,.45)}
+.preview img{width:100%;height:100%;object-fit:cover;display:block}
+.name{
+  width:min(100%,360px);font-family:"Plex Arabic",sans-serif;font-size:1.1rem;text-align:center;
+  padding:.75rem 1rem;border-radius:14px;color:#fff;
+  background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.3);outline:none;
+  animation:rise .6s .2s ease-out both;
+}
+.name::placeholder{color:rgba(228,216,255,.65)}
+.name:focus{border-color:var(--gold);background:rgba(255,255,255,.14)}
+.grid{
+  width:min(100%,560px);display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:10px;
+  padding:12px;border-radius:20px;background:rgba(10,4,30,.35);border:1px solid rgba(255,255,255,.12);
+  animation:rise .6s .3s ease-out both;
+}
+.av{aspect-ratio:1;border-radius:16px;overflow:hidden;padding:0;cursor:pointer;background:none;
+  border:2px solid transparent;transition:transform .15s,border-color .15s,box-shadow .15s}
+.av img{width:100%;height:100%;object-fit:cover;display:block}
+.av:hover{transform:scale(1.04)}
+.av[aria-pressed="true"]{border-color:var(--gold);box-shadow:0 0 0 3px rgba(243,201,105,.35);transform:scale(1.04)}
+.av:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#go{position:sticky;bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:2;animation:rise .6s .4s ease-out both}
+.start:disabled{opacity:.45;cursor:not-allowed;animation:none;box-shadow:none}
+
 @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 @keyframes glow{50%{box-shadow:0 8px 34px rgba(243,201,105,.65),inset 0 -3px 0 rgba(0,0,0,.12)}}
 @media (max-width:600px){
@@ -120,7 +155,7 @@ main{
   <span style="top:2%;left:38%;--s:1.2rem;--r:2deg;--o:.12;--d:15s;--dl:-4s">Achievement</span>
 </div>
 
-<main>
+<main id="intro">
   <div class="logo"><img src="images/logo.jpg" alt="شعار مدرسة التابعين الشرعية لتحفيظ القرآن الكريم"></div>
   <h1 class="brand">LEXORA</h1>
   <div class="divider"></div>
@@ -128,6 +163,52 @@ main{
   <p class="quote-ar">اللغة الإنجليزية ليست مجرد لغة تتعلّمها، بل مهارة تصنع بها التميّز.</p>
   <button class="start" type="button" id="start">ابدأ رحلتك الآن</button>
 </main>
+
+<main id="profile" class="profile" hidden>
+  <h2>اختر صورتك واكتب اسمك</h2>
+  <div class="preview" id="preview">صورتك</div>
+  <input class="name" id="name" type="text" maxlength="30" placeholder="اسمك" autocomplete="name" aria-label="اسمك">
+  <div class="grid" id="grid" role="group" aria-label="الصور الشخصية"></div>
+  <button class="start" type="button" id="go" disabled>متابعة</button>
+</main>
+
+<script>
+(function(){
+  var KEY='lexora-profile';
+  var labels=['English','Big Ben','Learn English','Headphones','Dream Big','Books','You Can Do It','London Bus','I Love English','Quill',
+    'Union Jack','Global Language','ABC','Success','Better Tomorrow','Listen & Learn','Knowledge','Be Excellent','Phone Box','Speak English',
+    'Study Hard','Set Goals','Tower Bridge','Think in English','English Book','Achieve More','Expand Your Mind','Keep Learning','Improve Yourself','English Forever'];
+  var intro=document.getElementById('intro'),prof=document.getElementById('profile'),
+      grid=document.getElementById('grid'),nameIn=document.getElementById('name'),
+      go=document.getElementById('go'),preview=document.getElementById('preview'),chosen=null;
+
+  function src(i){return 'images/avatars/'+(i<10?'0':'')+i+'.webp'}
+  function update(){go.disabled=!(chosen&&nameIn.value.trim())}
+  function pick(i){
+    chosen=i;
+    grid.querySelectorAll('.av').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.i==i)});
+    preview.innerHTML='<img src="'+src(i)+'" alt="">';preview.classList.add('on');update();
+  }
+  labels.forEach(function(l,k){
+    var i=k+1,b=document.createElement('button');
+    b.type='button';b.className='av';b.dataset.i=i;b.setAttribute('aria-pressed','false');
+    b.innerHTML='<img src="'+src(i)+'" alt="'+l+'" loading="lazy">';
+    b.addEventListener('click',function(){pick(i)});grid.appendChild(b);
+  });
+
+  try{var saved=JSON.parse(localStorage.getItem(KEY)||'null');
+    if(saved){nameIn.value=saved.name||'';if(saved.avatar)pick(saved.avatar)}}catch(e){}
+
+  nameIn.addEventListener('input',update);
+  document.getElementById('start').addEventListener('click',function(){
+    intro.hidden=true;prof.hidden=false;window.scrollTo(0,0);
+  });
+  go.addEventListener('click',function(){
+    try{localStorage.setItem(KEY,JSON.stringify({name:nameIn.value.trim(),avatar:chosen}))}catch(e){}
+    // الانتقال للصفحة التالية يُضاف حين تصل صورتها
+  });
+})();
+</script>
 
 </body>
 </html>
