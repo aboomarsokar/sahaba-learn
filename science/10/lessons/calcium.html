@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>الكالسيوم</title><base href="../"><script src="lib/bg.js"></script><script src="lib/icons.js"></script></head>
+<body><main>
+<h1>🦴 الكالسيوم</h1>
+<div class="tabs" id="tabs"></div>
+<section id="bone" class="pane">
+  <p class="hint">أملاح الكالسيوم تشكل 2% من كتلة جسمك، و99% منها في العظام والأسنان. اضغط على الأجزاء.</p>
+  <div class="stage3" id="bst" style="height:340px"></div>
+  <div class="card info" id="binfo"></div>
+</section>
+<section id="lab" class="pane hidden"><div class="card"><h2>🧪 مختبر الجير</h2><p class="hint">اختر تجربة وانفّذ خطواتها بيدك: تحلل الحجر الجيري، وإطفاء الجير الحيّ، والكشف عن CO₂.</p></div><div id="labroot"></div></section>
+<section id="ore" class="pane hidden">
+  <p class="hint">اضغط على كل بطاقة لتقلبها وتعرف الخامة أو المركب واستخداماته.</p>
+  <div class="stage3" id="ost" style="height:330px"></div>
+  <div class="card info" id="oinfo"></div>
+</section>
+<section id="qz" class="pane hidden">
+  <div class="card"><h2>✍️ اختبر نفسك</h2><p class="hint" style="margin:0">لكل سؤال محاولة واحدة فقط، ولا يمكن إعادته.</p><div id="qbox"></div><div class="score" id="qscore"></div></div>
+</section>
+</main>
+<script src="lib/three.min.js"></script>
+<script type="application/json" id="cmapdata">{"center": {"ar": "الكالسيوم", "en": "Calcium"}, "branches": [{"t": {"ar": "الكالسيوم في الجسم", "en": "Calcium in the Body"}, "icon": "cell", "pts": [{"ar": "أملاح الكالسيوم تشكّل 2% من كتلة الجسم", "en": "Calcium salts make up 2% of body mass"}, {"ar": "99% منه في العظام والأسنان", "en": "99% of it is in bones and teeth"}, {"ar": "نحتاج مصادر غذائية لتقوية العظام والأسنان", "en": "We need dietary sources to keep bones and teeth strong"}]}, {"t": {"ar": "دورة الجير", "en": "The Lime Cycle"}, "icon": "flask", "pts": [{"ar": "كربونات الكالسيوم (الحجر الجيري) صلبة بيضاء", "en": "Calcium carbonate (limestone) is a hard white solid"}, {"ar": "تتفكك بالتسخين عند 900°م إلى CaO وغاز CO₂", "en": "Heated at 900 °C it gives CaO and CO₂ gas"}, {"ar": "أكسيد الكالسيوم مع الماء يعطي هيدروكسيد الكالسيوم", "en": "Calcium oxide with water gives calcium hydroxide"}]}, {"t": {"ar": "خامات ومركّبات", "en": "Ores and Compounds"}, "icon": "globe", "pts": [{"ar": "كربونات الكالسيوم في الحجر الجيري والرخام", "en": "Calcium carbonate is in limestone and marble"}, {"ar": "كبريتات الكالسيوم المائية والدولوميت من خامات القشرة", "en": "Hydrated calcium sulfate and dolomite are crustal ores"}, {"ar": "كلوريد الكالسيوم موجود في البحار والمحيطات", "en": "Calcium chloride is found in seas and oceans"}]}, {"t": {"ar": "استخدامات المركّبات", "en": "Uses of Compounds"}, "icon": "bulb", "pts": [{"ar": "كربونات الكالسيوم تعالج آثار المطر الحمضي", "en": "Calcium carbonate treats acid rain effects"}, {"ar": "كلوريد الكالسيوم مادة مجفّفة ويسرّع تصلّب الخرسانة", "en": "Calcium chloride dries and speeds concrete hardening"}, {"ar": "الجير الحي يُستخدم مع الحيوانات المصابة بالجمرة الخبيثة", "en": "Quicklime is used with animals infected with anthrax"}, {"ar": "يُطلى جذع الشجر بالجير المطفأ لحمايته", "en": "Slaked lime is painted on tree trunks to protect them"}]}], "formula": {"ar": "CaCO₃ ⟶ CaO + CO₂ (بالتسخين)", "en": "CaCO₃ → CaO + CO₂ (heat)"}}</script>
+<script src="lib/cmap.js"></script>
+<script src="lib/lab.js"></script>
+<script src="lib/c3d.js"></script>
+<script>
+C3D.init({ns:'ca',accent:'#D32F2F',accentDark:'#EF5350'});
+const T=C3D.T,$=C3D.$,mk=C3D.mk,fm=C3D.fm;
+/* ---------- 1) هيكل عظمي مجسّم ---------- */
+const BI={
+ skull:{n:'الجمجمة والأسنان',t:'تحتوي الأسنان على أملاح الكالسيوم، وهي مع العظام تضم 99% من كالسيوم الجسم.'},
+ spine:{n:'العمود الفقري',t:'عظام الجسم مخزن أملاح الكالسيوم، وتشكل أملاح الكالسيوم 2% من كتلة الجسم.'},
+ ribs:{n:'القفص الصدري',t:'عظام تتركز فيها أملاح الكالسيوم (من العناصر المعدنية الرئيسية في جسم الإنسان).'},
+ arm:{n:'عظام الذراع',t:'يتركز 99% من كتلة الكالسيوم في الجسم في العظام والأسنان.'},
+ leg:{n:'عظام الساق',t:'عظام الأطراف تُخزّن الكالسيوم أيضاً؛ ويحميها تناول مصادره الغذائية.'}
+};
+const bv=C3D.viewer($('bst'),{yaw:0,pitch:6,r:46,ty:7.5,maxYaw:70,rmin:18,rmax:80,auto:0});
+const bones={};
+if(bv){
+  const bm=C3D.phys(0xf2ead3,.55,0),gl=new T.Group();bv.scene.add(gl);gl.position.y=0;
+  const add=(part,geo,x,y,z,rx,ry,rz,sc)=>{const m=C3D.mesh(geo,bm.clone(),x,y,z);m.rotation.set(rx||0,ry||0,rz||0);if(sc)m.scale.set(sc[0],sc[1],sc[2]);m.userData.part=part;gl.add(m);bv.pick.push(m);(bones[part]=bones[part]||[]).push(m);return m};
+  // جمجمة وفك وأسنان
+  add('skull',new T.SphereGeometry(2.1,36,28),0,16.6,0,0,0,0,[1,1.08,1.1]);
+  add('skull',new T.BoxGeometry(2.3,.9,1.8),0,14.7,.45);
+  for(let i=-3;i<=3;i++)add('skull',new T.BoxGeometry(.26,.45,.28),i*.32,14.55,1.35);
+  [-.8,.8].forEach(x=>{const e=C3D.mesh(new T.SphereGeometry(.55,16,12),C3D.std(0x2b2b2b,.9),x,16.5,1.75);e.userData.noPick=1;e.scale.z=.45;gl.add(e)});
+  // العمود الفقري
+  for(let i=0;i<14;i++)add('spine',new T.CylinderGeometry(.55,.62,.55,20),0,13.2-i*.62,-.5-Math.sin(i/13*Math.PI)*.0,0,0,0);
+  // القفص الصدري
+  const rib=(y,s,w)=>{const c=new T.TorusGeometry(w,.13,10,40,Math.PI*1.45);const m=add('ribs',c,0,y,.15,Math.PI/2,0,Math.PI*.78);m.scale.y=.75;if(s<0)m.rotation.z=Math.PI*.78;};
+  for(let i=0;i<7;i++)rib(12.2-i*.62,1,2.6-Math.abs(i-2.4)*.18);
+  add('ribs',new T.BoxGeometry(.7,3.8,.35),0,10.4,1.6);
+  // حوض
+  add('spine',new T.TorusGeometry(1.7,.45,12,32,Math.PI),0,5.1,0,Math.PI/2,0,0,[1.3,1,1]);
+  // الذراعان
+  [-1,1].forEach(s=>{add('arm',new T.CylinderGeometry(.34,.3,4.1,16),s*3.9,10.8,0,0,0,s*.1);add('arm',new T.SphereGeometry(.46,16,12),s*3.7,12.9,0,0,0,0);add('arm',new T.SphereGeometry(.4,16,12),s*4.35,8.7,0,0,0,0);add('arm',new T.CylinderGeometry(.27,.22,3.5,16),s*4.75,6.9,.05,0,0,s*.05);add('arm',new T.BoxGeometry(.8,.9,.35),s*5.05,4.7,.05)});
+  // الساقان
+  [-1,1].forEach(s=>{add('leg',new T.CylinderGeometry(.5,.42,4.6,18),s*1.4,2.7,0,0,0,s*-.02);add('leg',new T.SphereGeometry(.58,16,12),s*1.4,.3,.05,0,0,0);add('leg',new T.CylinderGeometry(.38,.3,4.1,18),s*1.45,-1.9,0,0,0,0);add('leg',new T.BoxGeometry(.95,.4,1.7),s*1.45,-4.1,.55)});
+  const sel=new Set();
+  bv.onpick=p=>{if(!p)return;Object.keys(bones).forEach(k=>bones[k].forEach(m=>{m.material.emissive.setHex(k===p?0xff9100:0);m.material.emissiveIntensity=k===p?.45:0}));$('binfo').innerHTML='<h2>'+BI[p].n+'</h2><p><span class="tag">الكالسيوم</span>'+BI[p].t+'</p>';bv.dirty=true};
+  bv.scene.children.forEach(o=>{if(o.isMesh&&o.material&&o.material.type==='ShadowMaterial')o.position.y=-4.6});
+  bv.ty=5.5;
+}
+$('binfo').innerHTML='<h2>اضغط على جزء من الهيكل</h2><p class="hint">ستعرف هنا أين يوجد الكالسيوم في جسمك.</p>';
+/* ---------- 3) بطاقات الخامات ---------- */
+const OR=[
+ ['CaCO₃','كربونات الكالسيوم',0xe6e2d6,'المكون الرئيس للحجر الجيري وصخر الرخام. صلبة بيضاء، لا تذوب في الماء، وتتفاعل مع الأحماض وتتحلل بالحرارة. وتعالج بها آثار المطر الحمضي في البحيرات لأنها مركب قاعدي.'],
+ ['CaSO₄·2H₂O','كبريتات الكالسيوم المائية',0xd9d3c0,'من خامات الكالسيوم في صخور القشرة الأرضية الكلسية.'],
+ ['CaCO₃·MgCO₃','خام الدولوميت',0xcfc6b4,'من خامات الكالسيوم في صخور القشرة الأرضية الكلسية.'],
+ ['CaCl₂','كلوريد الكالسيوم',0x9fd3f0,'يتواجد في مياه البحار والمحيطات. يُستخدم مجففاً لقدرته العالية على امتصاص الرطوبة، ويسرّع تصلب الخرسانة في صناعة الإسمنت والبلاط.'],
+ ['CaO','أكسيد الكالسيوم (الجير الحي / الشيد)',0xfaf7ee,'يحضّر بتحليل كربونات الكالسيوم عند 900°س، ويتفاعل مع الماء مكوناً الجير المطفأ. يُستخدم مع الحيوانات المصابة بالجمرة الخبيثة.'],
+ ['Ca(OH)₂','هيدروكسيد الكالسيوم (الجير المطفأ)',0xffffff,'يطلي به بعض المزارعين جذوع الأشجار لحمايتها من الآفات والحشرات وأشعة الشمس.']
+];
+const ov=C3D.viewer($('ost'),{yaw:0,pitch:8,r:44,ty:2.4,floor:false,maxYaw:40,rmin:20,rmax:70});
+const cards=[];
+if(ov){
+  OR.forEach((o,i)=>{const g=new T.Group(),col=i%3,row=Math.floor(i/3);g.position.set((col-1)*7.6,(1-row)*7.2+1.2,0);g.userData.part=i;
+    const front=C3D.mesh(new T.BoxGeometry(6.4,6.4,.5),C3D.phys(o[2],.45,0),0,0,0);g.add(front);
+    const f=C3D.plane(o[0].replace(/[₂₃₄]/g,c=>'₂₃₄'.indexOf(c)+2),5.6,2.6,{pw:320,ph:160,size:62,color:'#263238'});f.position.set(0,.9,.27);g.add(f);
+    const n=C3D.plane(o[1],5.7,2.4,{pw:340,ph:150,size:34,color:'#37474f'});n.position.set(0,-1.5,.27);g.add(n);
+    const top=C3D.mesh(new T.BoxGeometry(6.4,.5,.52),C3D.std(0xD32F2F,.4,.2),0,3.1,0);g.add(top);
+    g.userData.y0=0;ov.scene.add(g);ov.pick.push(front);front.userData.part=i;cards.push({g,t:0,r:0});});
+  ov.onframe=()=>{let ch=false;cards.forEach(c=>{const d=c.t-c.r;if(Math.abs(d)>.002){c.r+=d*.15;c.g.rotation.y=c.r;ch=true}});return ch};
+  ov.onpick=(p)=>{if(p==null)return;cards.forEach((c,i)=>c.t=i===p?Math.PI*2:0);$('oinfo').innerHTML='<h2>'+OR[p][1]+'</h2><p class="ltr" style="text-align:center;font-size:1.3rem;font-weight:800">'+OR[p][0]+'</p><p>'+OR[p][3]+'</p>';ov.dirty=true}
+}
+$('oinfo').innerHTML='<h2>اضغط على بطاقة</h2><p class="hint">ستظهر هنا تفاصيل الخامة أو المركب واستخداماته.</p>';
+C3D.quiz('qbox','qscore','q',[
+ {q:'أين يتركز 99% من كتلة الكالسيوم في جسم الإنسان؟',o:['الدم','العضلات','العظام والأسنان','الكبد'],a:2,e:'يتركز 99% من كتلة الكالسيوم في العظام والأسنان، وتشكل أملاحه 2% من كتلة الجسم.'},
+ {q:'ما الصيغة الكيميائية للجير الحي؟',o:['CaCO₃','Ca(OH)₂','CaCl₂','CaO'],a:3,e:'الجير الحي (الشيد) هو أكسيد الكالسيوم CaO.'},
+ {q:'يُحضّر الجير الحي بتحليل كربونات الكالسيوم بالحرارة. ما المعادلة الصحيحة؟',o:['CaCO₃ → CaO + CO₂','CaO + H₂O → Ca(OH)₂','Ca + 2H₂O → Ca(OH)₂ + H₂','CaCO₃ → Ca + CO₂'],a:0,e:'يتحلل عند 900°س: CaCO₃ → CaO + CO₂.'},
+ {q:'ماذا ينتج عن تفاعل أكسيد الكالسيوم مع الماء؟',o:['كربونات الكالسيوم','كلوريد الكالسيوم','غاز الهيدروجين فقط','هيدروكسيد الكالسيوم (الجير المطفأ)'],a:3,e:'CaO + H₂O → Ca(OH)₂.'},
+ {q:'لماذا يُستخدم كلوريد الكالسيوم مجففاً؟',o:['لأنه يذوب في الزيت','لقدرته العالية على امتصاص الرطوبة','لأنه يحرق الماء','لأنه عازل للكهرباء'],a:1,e:'يُستخدم كمجفف لقدرته العالية على امتصاص الرطوبة، ويسرّع تصلب الخرسانة في الإسمنت.'},
+ {q:'لماذا تُعالج آثار المطر الحمضي في البحيرات بكربونات الكالسيوم؟',o:['لأنها مركب قاعدي يتفاعل مع الحمض ويقلل تركيزه','لأنها تزيد حموضة الماء','لأنها تبخّر الماء','لأنها تحلل الأحماض إلى معادن'],a:0,e:'كربونات الكالسيوم مركب قاعدي يتفاعل مع الحمض فيقلل تركيزه.'}
+]);
+var labDone=0;
+C3D.tabs([{id:'bone',l:'🦴 جسمك'},{id:'lab',l:'🧪 مختبر الجير'},{id:'ore',l:'🪨 الخامات'},{id:'qz',l:'✍️ أسئلة'}],function(id){if(id==='lab'&&!labDone){labDone=1;Lab.mount($('labroot'),{exps:['decomp','slake','carbacid']})}});
+</script></body></html>

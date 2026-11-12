@@ -1,0 +1,25 @@
+{
+  "name": "رياضيات الصف العاشر — مدرسة التابعين الشرعية (أ)",
+  "short_name": "رياضيات العاشر",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f2f8fb",
+  "theme_color": "#1f8a9e",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

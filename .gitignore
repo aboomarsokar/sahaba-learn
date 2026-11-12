@@ -1,0 +1,6 @@
+_site/
+dist/
+.DS_Store
+__pycache__/
+*.zip
+.vercel

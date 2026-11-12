@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مدارس الصحابة — المنصّة التعليمية</title>
+<meta name="description" content="دروس تفاعلية وأنشطة واختبارات لطلاب مدارس الصحابة من الصف الأول إلى العاشر.">
+<meta name="theme-color" content="#0f5c4a">
+<style>
+@font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+:root{
+  --bg:#f6f3ec;--surface:#fffdf8;--ink:#1d2622;--muted:#66706b;--line:#e4ddcf;
+  --brand:#0f5c4a;--brand-soft:#e3efe9;--gold:#b8892b;--soon:#9aa09c;
+  --shadow:0 1px 2px rgba(29,38,34,.06),0 6px 20px rgba(29,38,34,.06);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#121715;--surface:#1a211e;--ink:#eef1ec;--muted:#9ba49f;--line:#2b3430;
+  --brand:#5cc3a3;--brand-soft:#1d2f28;--gold:#d9b25c;--soon:#6d7571;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
+}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Plex Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header{padding:36px 0 20px}
+.brand{display:flex;align-items:center;gap:14px}
+.mark{width:52px;height:52px;flex:none;border-radius:14px;background:var(--brand);display:grid;place-items:center;box-shadow:var(--shadow)}
+.mark svg{width:30px;height:30px}
+h1{margin:0;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;letter-spacing:0}
+.sub{margin:0;color:var(--muted);font-size:1rem}
+.lead{margin:22px 0 0;color:var(--muted);max-width:36em}
+h2{font-size:1.05rem;margin:28px 0 12px;font-weight:700}
+.grades{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+@media (min-width:720px){.grades{flex-wrap:wrap;overflow:visible}}
+.grade{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:999px;cursor:pointer;position:relative;transition:background .15s,border-color .15s}
+.grade:hover{border-color:var(--brand)}
+.grade[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
+@media (prefers-color-scheme:dark){.grade[aria-pressed="true"]{color:#0d1513}}
+.grade .dot{position:absolute;top:6px;left:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:40px}
+.card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:inherit;box-shadow:var(--shadow);min-height:168px;position:relative;transition:transform .15s,border-color .15s}
+a.card:hover{transform:translateY(-2px);border-color:var(--c)}
+a.card:focus-visible,.grade:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
+.card .ic svg{width:26px;height:26px}
+.card h3{margin:0;font-size:1.15rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.card .go{margin-top:auto;font-weight:700;color:var(--c);font-size:.95rem}
+.card.soon{box-shadow:none;background:transparent;border-style:dashed;--c:var(--soon)}
+.card.soon h3{color:var(--muted)}
+.badge{position:absolute;top:16px;left:16px;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--brand-soft);color:var(--brand)}
+.card.soon .badge{background:transparent;border:1px solid var(--line);color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:.85rem}
+.err{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c4-1.5 8-1.5 12 1 4-2.5 8-2.5 12-1v18c-4-1.5-8-1.5-12 1-4-2.5-8-2.5-12-1z"/><path d="M16 8v18"/></svg>
+      </div>
+      <div>
+        <h1 id="title">مدارس الصحابة</h1>
+        <p class="sub" id="subtitle">المنصّة التعليمية</p>
+      </div>
+    </div>
+    <p class="lead">دروسٌ تفاعلية وأنشطة واختبارات تعمل على الجوال والحاسوب، وتبقى متاحةً بلا إنترنت بعد أوّل فتح.</p>
+  </header>
+
+  <main>
+    <h2 id="gradeLabel">اختر صفّك</h2>
+    <div class="grades" id="grades" role="group" aria-labelledby="gradeLabel"></div>
+    <h2 id="subjectsLabel">المواد</h2>
+    <div class="grid" id="subjects" aria-live="polite"></div>
+  </main>
+
+  <footer>© مدارس الصحابة — المواد المعلَّمة «قريباً» قيد الإعداد.</footer>
+</div>
+
+<script>
+var ICONS = {
+  math: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 6h6M8 3v6M14 6h5M5 16l5 5M10 16l-5 5M14 16h5M14 20h5"/></svg>',
+  science: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.5L14 9V3"/><path d="M7.5 15h9"/></svg>',
+  english: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19 8.5 6h1L14 19M5.7 14.5h6.6"/><path d="M16 10h4M18 8v9a2 2 0 0 0 2 2"/></svg>',
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C7 4.5 9.5 4.5 12 6c2.5-1.5 5-1.5 8-.5v13c-3-1-5.5-1-8 .5-2.5-1.5-5-1.5-8-.5z"/><path d="M12 6v13"/></svg>'
+};
+var KEY = "sahaba-learn-grade";
+var data, current;
+
+function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function hasReady(g){ return data.subjects.some(function(s){ return s.grades && s.grades[g]; }); }
+function remember(g){ try{ localStorage.setItem(KEY, g); }catch(e){} }
+function recall(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+
+function drawGrades(){
+  var box = document.getElementById("grades");
+  box.innerHTML = data.grades.map(function(g){
+    return '<button type="button" class="grade" data-g="'+esc(g.id)+'" aria-pressed="'+(g.id===current)+'">'
+      + esc(g.name) + (hasReady(g.id) ? '<span class="dot" title="فيه موادّ جاهزة"></span>' : '') + '</button>';
+  }).join("");
+  box.querySelectorAll(".grade").forEach(function(b){
+    b.addEventListener("click", function(){ current = b.dataset.g; remember(current); drawGrades(); drawSubjects(); });
+  });
+  var on = box.querySelector('[aria-pressed="true"]');
+  if (on && on.scrollIntoView) on.scrollIntoView({block:"nearest", inline:"center"});
+}
+
+function drawSubjects(){
+  var g = data.grades.filter(function(x){ return x.id===current; })[0];
+  document.getElementById("subjectsLabel").textContent = "موادّ " + (g ? g.name : "");
+  document.getElementById("subjects").innerHTML = data.subjects.map(function(s){
+    var e = s.grades && s.grades[current];
+    var icon = ICONS[s.icon] || ICONS.book;
+    if (e) {
+      return '<a class="card" style="--c:'+esc(s.color||"#0f5c4a")+'" href="'+esc(e.dir)+'/">'
+        + '<span class="badge">جاهز</span><span class="ic">'+icon+'</span>'
+        + '<h3>'+esc(s.name)+'</h3>' + (e.note ? '<p>'+esc(e.note)+'</p>' : '')
+        + '<span class="go">ادخل ‹</span></a>';
+    }
+    return '<div class="card soon" aria-disabled="true"><span class="badge">قريباً</span>'
+      + '<span class="ic">'+icon+'</span><h3>'+esc(s.name)+'</h3><p>قيد الإعداد</p></div>';
+  }).join("");
+}
+
+fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(d){
+  data = d;
+  if (d.title) document.getElementById("title").textContent = d.title;
+  if (d.subtitle) document.getElementById("subtitle").textContent = d.subtitle;
+  var saved = recall();
+  var ids = d.grades.map(function(g){ return g.id; });
+  current = ids.indexOf(saved) >= 0 ? saved : (ids.filter(hasReady)[0] || ids[0]);
+  drawGrades(); drawSubjects();
+}).catch(function(){
+  document.getElementById("subjects").innerHTML = '<div class="err">تعذّر تحميل قائمة المواد. تأكّد من الاتصال وأعد المحاولة.</div>';
+});
+</script>
+</body>
+</html>
