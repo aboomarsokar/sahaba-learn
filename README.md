@@ -19,6 +19,6 @@ python3 -m http.server 8000 --directory _site
 
 ## النشر
 
-كلّ دفعٍ إلى `main` يشغّل `.github/workflows/pages.yml`، فيبني الموقع وينشره على GitHub Pages.
+GitHub Pages تنشر فرع `main` كما هو (Deploy from a branch)، فكلّ دفعٍ يظهر على الموقع خلال دقيقة أو دقيقتين. ما يحتاج بناءً (الرياضيات) يُبنى ويُودَع ناتجه قبل الدفع.
 
 طريقة إضافة مادةٍ أو صفّ في [CLAUDE.md](CLAUDE.md).
