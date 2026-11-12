@@ -49,7 +49,12 @@
       "name": "اللغة الإنجليزية",
       "color": "#c2185b",
       "icon": "english",
-      "grades": {}
+      "grades": {
+        "10": {
+          "dir": "english/10",
+          "note": "LEXORA"
+        }
+      }
     }
   ]
 }
