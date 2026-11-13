@@ -164,13 +164,14 @@ main{
 .icon-btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .dot{position:absolute;top:8px;inset-inline-end:8px;width:10px;height:10px;border-radius:50%;background:#ff4d6d;box-shadow:0 0 0 2px var(--bg1)}
 
-.hello{display:flex;flex-direction:column;align-items:center;gap:.4rem;animation:rise .6s ease-out both}
-.me{width:96px;height:96px;border-radius:26px;overflow:hidden;border:3px solid var(--gold);
-  box-shadow:0 0 26px rgba(243,201,105,.4);cursor:pointer;padding:0;background:none}
+.hello{display:flex;align-items:center;gap:.75rem;min-width:0;animation:rise .6s ease-out both}
+.hello>div{min-width:0;text-align:start}
+.me{flex:none;width:62px;height:62px;border-radius:18px;overflow:hidden;border:3px solid var(--gold);
+  box-shadow:0 0 18px rgba(243,201,105,.35);cursor:pointer;padding:0;background:none}
 .me img{width:100%;height:100%;object-fit:cover;display:block}
-.hello-t{font-family:"Vibes",cursive;font-size:clamp(2.2rem,9vw,3rem);line-height:1.1;direction:ltr;color:var(--text)}
+.hello-t{font-family:"Vibes",cursive;font-size:clamp(1.7rem,7vw,2.2rem);line-height:1.15;direction:ltr;text-align:end;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .hello-t b{font-family:"Ruqaa",serif;font-weight:700;font-size:.8em;color:var(--gold);unicode-bidi:isolate}
-.ask{font-family:"Ruqaa",serif;font-size:clamp(1.3rem,5vw,1.6rem);color:var(--muted)}
+.ask{font-family:"Ruqaa",serif;font-size:1.05rem;color:var(--muted)}
 
 .sec-t{font-family:"Ruqaa",serif;font-size:1.25rem;color:var(--text);text-align:start;display:flex;align-items:center;gap:.5rem}
 .sec-t::after{content:"";flex:1;height:1px;background:linear-gradient(to left,var(--cardBd),transparent)}
@@ -184,14 +185,29 @@ main{
 .card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .card:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
-.units{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-@media (min-width:640px){.units{grid-template-columns:repeat(4,1fr)}}
-.unit{position:relative;aspect-ratio:1.15;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;padding:.4rem}
-.unit .u{font-family:"Cinzel",serif;font-weight:700;font-size:.8rem;letter-spacing:.12em;color:var(--muted);direction:ltr}
-.unit .n{font-family:"Cinzel",serif;font-weight:700;font-size:clamp(1.9rem,8vw,2.4rem);line-height:1;
-  background:linear-gradient(180deg,var(--gold2),var(--gold) 60%,var(--g3));-webkit-background-clip:text;background-clip:text;color:transparent}
-.unit .soon,.tile .soon{font-family:"Plex Arabic",sans-serif;font-size:.7rem;color:var(--muted);opacity:.85}
-.lock{position:absolute;top:8px;inset-inline-start:8px;width:14px;height:14px;opacity:.55}
+/* بطاقة «تابع من حيث توقفت» */
+.cont{display:flex;align-items:center;gap:.9rem;padding:1rem 1.1rem;text-align:start;border-color:var(--gold);
+  background:linear-gradient(135deg,rgba(243,201,105,.22),var(--card) 60%)}
+.cont .ic{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);box-shadow:0 6px 18px rgba(243,201,105,.35)}
+.cont .ic svg{width:24px;height:24px}
+.cont .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:.15rem}
+.cont small{font-family:"Plex Arabic",sans-serif;font-size:.78rem;color:var(--muted)}
+.cont b{font-family:"Ruqaa",serif;font-size:1.35rem}
+.cont .pct{flex:none;font:700 1rem "Cinzel",serif;color:var(--gold)}
+.bar{display:block;height:6px;border-radius:99px;background:var(--panel);overflow:hidden;margin-top:.3rem}
+.bar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+/* قائمة الوحدات */
+.urow{display:flex;align-items:center;gap:.9rem;padding:.85rem 1rem;text-align:start}
+.urow .num{flex:none;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--cardBd);
+  font:700 1.5rem "Cinzel",serif;background-clip:padding-box}
+.urow .num span{background:linear-gradient(180deg,var(--gold2),var(--gold) 60%,var(--g3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.urow .t{flex:1;min-width:0}
+.urow .u{display:block;font:700 .8rem "Cinzel",serif;letter-spacing:.1em;color:var(--muted);direction:ltr;text-align:end}
+.urow b{display:block;font-family:"Ruqaa",serif;font-size:1.15rem}
+.urow svg{flex:none;width:18px;height:18px;opacity:.5}
+.tabs{width:100%}
+.tile .soon{font-family:"Plex Arabic",sans-serif;font-size:.7rem;color:var(--muted);opacity:.85}
 
 .books{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .book{display:flex;align-items:center;gap:.6rem;padding:.9rem .8rem;text-align:start;min-height:84px}
@@ -230,11 +246,11 @@ main{
 .scrim{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s}
 .scrim.on{opacity:1;pointer-events:auto}
 .drawer{
-  position:fixed;z-index:21;top:0;bottom:0;inset-inline-start:0;width:min(88vw,360px);
-  background:var(--bg1);color:var(--text);border-inline-end:1px solid var(--cardBd);
+  position:fixed;z-index:21;top:0;bottom:0;inset-inline-end:0;width:min(88vw,360px);
+  background:var(--bg1);color:var(--text);border-inline-start:1px solid var(--cardBd);
   box-shadow:0 0 40px rgba(0,0,0,.4);overflow-y:auto;
   padding:calc(1rem + env(safe-area-inset-top,0px)) 16px calc(1.5rem + env(safe-area-inset-bottom,0px));
-  transform:translateX(105%);transition:transform .28s ease;display:flex;flex-direction:column;gap:1.1rem;
+  transform:translateX(-105%);transition:transform .28s ease;display:flex;flex-direction:column;gap:1.1rem;
 }
 .drawer.on{transform:none}
 .drawer h3{font-family:"Ruqaa",serif;font-size:1.15rem;margin-bottom:.5rem}
@@ -278,6 +294,8 @@ main{
   <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
   <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-back" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></symbol>
+  <symbol id="i-units" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
   <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
   <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
   <symbol id="i-pack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
@@ -323,29 +341,47 @@ main{
 
 <main id="home" class="page" data-screen="home" hidden>
   <div class="topbar">
+    <div class="hello">
+      <button class="me" type="button" id="me" aria-label="تعديل الصورة والاسم"><img id="meImg" alt=""></button>
+      <div>
+        <p class="hello-t" lang="en">Hello, <b id="meName" dir="auto"></b></p>
+        <p class="ask">ماذا تحب أن تبدأ؟</p>
+      </div>
+    </div>
     <button class="icon-btn" type="button" data-open-menu aria-label="القائمة"><svg><use href="#i-menu"/></svg><i class="dot" data-dot hidden></i></button>
   </div>
   <div class="wrap">
-    <div class="hello">
-      <button class="me" type="button" id="me" aria-label="تعديل الصورة والاسم"><img id="meImg" alt=""></button>
-      <p class="hello-t" lang="en">Hello, <b id="meName" dir="auto"></b></p>
-      <p class="ask">ماذا تحب أن تبدأ؟</p>
-    </div>
+    <button class="card cont" type="button" data-soon="الوحدة 1">
+      <span class="ic"><svg><use href="#i-play"/></svg></span>
+      <span class="t"><small>ابدأ رحلتك من هنا</small><b>الوحدة 1</b><i class="bar"><i style="width:0%"></i></i></span>
+      <span class="pct">0%</span>
+    </button>
 
-    <h3 class="sec-t">الوحدات</h3>
-    <div class="units" id="units"></div>
+    <div class="tiles">
+      <button class="card tile" type="button" data-go="units"><span class="ic"><svg><use href="#i-units"/></svg></span><b>الوحدات</b><span class="en">Units</span></button>
+      <button class="card tile" type="button" data-soon="التحدّي اليومي"><span class="ic"><svg><use href="#i-cal"/></svg></span><b>التحدّي اليومي</b><span class="en">Daily Challenge</span><span class="soon">قريباً</span></button>
+      <button class="card tile" type="button" data-go="revision"><span class="ic"><svg><use href="#i-review"/></svg></span><b>مراجعة</b><span class="en">Revision</span></button>
+      <button class="card tile" type="button" data-go="distinction"><span class="ic"><svg><use href="#i-medal"/></svg></span><b>تميُّزي</b><span class="en">My Distinction</span></button>
+    </div>
 
     <div class="books">
       <button class="card book" type="button" data-soon="الكتاب المدرسي"><span class="ic"><svg><use href="#i-book"/></svg></span><span><b>الكتاب المدرسي</b><small>قريباً</small></span></button>
       <button class="card book" type="button" data-soon="الرزمة المدرسية"><span class="ic"><svg><use href="#i-pack"/></svg></span><span><b>الرزمة المدرسية</b><small>قريباً</small></span></button>
     </div>
+  </div>
+</main>
 
-    <div class="tiles">
-      <button class="card tile" type="button" data-go="distinction"><span class="ic"><svg><use href="#i-medal"/></svg></span><b>تميُّزي</b><span class="en">My Distinction</span></button>
-      <button class="card tile" type="button" data-go="revision"><span class="ic"><svg><use href="#i-review"/></svg></span><b>مراجعة</b><span class="en">Revision</span></button>
-      <button class="card tile" type="button" id="share"><span class="ic"><svg><use href="#i-share"/></svg></span><b>مشاركة التطبيق</b><span class="en">Share</span></button>
-      <button class="card tile" type="button" data-soon="التحدّي اليومي"><span class="ic"><svg><use href="#i-cal"/></svg></span><b>التحدّي اليومي</b><span class="en">Daily Challenge</span><span class="soon">قريباً</span></button>
+<main id="units" class="page" data-screen="units" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" data-back aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2>الوحدات</h2><span style="width:46px"></span>
+  </div>
+  <div class="wrap">
+    <div class="seg tabs" role="tablist">
+      <button type="button" role="tab" data-term="1">الفصل الأول</button>
+      <button type="button" role="tab" data-term="2">الفصل الثاني</button>
     </div>
+    <div class="list" id="unitList"></div>
   </div>
 </main>
 
@@ -398,6 +434,7 @@ main{
     <div class="swatches" id="swDark"></div>
   </section>
   <button class="menu-item" type="button" id="openUpdates"><svg><use href="#i-bell"/></svg><span>الإشعارات</span><i class="badge" id="updBadge" hidden></i></button>
+  <button class="menu-item" type="button" id="share"><svg><use href="#i-share"/></svg><span>مشاركة التطبيق</span></button>
   <button class="menu-item" type="button" id="install"><svg><use href="#i-down"/></svg><span>تنزيل التطبيق</span></button>
 </aside>
 
@@ -418,8 +455,11 @@ main{
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-13',title:'واجهة رئيسية أوضح',items:['خانة «الوحدات» مقسّمة على الفصلين الأول والثاني','بطاقة «ابدأ رحلتك من هنا» في الأعلى','مشاركة التطبيق انتقلت إلى القائمة']},
     {date:'2026-11-12',title:'إطلاق LEXORA',items:['شاشة البداية','اختيار الصورة الشخصية والاسم','الشاشة الرئيسية: الوحدات والكتاب والرزمة','الوضع الفاتح والمظلم و20 لوناً للخلفية','تنزيل التطبيق على الجهاز']}
   ];
+  /* أسماء الوحدات تُضاف من الرزمة */
+  var UNIT_TITLES=[];
   var K_PROFILE='lexora-profile',K_SET='lexora-settings',K_SEEN='lexora-seen-updates';
 
   function load(k,d){try{var v=JSON.parse(localStorage.getItem(k)||'null');return v==null?d:v}catch(e){return d}}
@@ -495,14 +535,20 @@ main{
 
   /* ===== الشاشة الرئيسية ===== */
   (function(){
-    var u=$('units');
-    for(var i=1;i<=12;i++){
-      var b=document.createElement('button');b.type='button';b.className='card unit';b.dataset.soon='الوحدة '+i;
-      b.innerHTML='<svg class="lock"><use href="#i-lock"/></svg><span class="u">UNIT</span><span class="n">'+i+'</span><span class="soon">قريباً</span>';
-      b.setAttribute('aria-label','الوحدة '+i+' — قريباً');
-      b.addEventListener('click',function(){toast(this.dataset.soon+' — قريباً إن شاء الله')});
-      u.appendChild(b);
+    var list=$('unitList'),tabs=document.querySelectorAll('[data-term]');
+    function term(t){
+      tabs.forEach(function(b){var on=b.dataset.term==t;b.setAttribute('aria-pressed',on);b.setAttribute('aria-selected',on)});
+      var h='';
+      for(var n=t*6-5;n<=t*6;n++)
+        h+='<button class="card urow" type="button" data-unit="'+n+'"><span class="num"><span>'+n+'</span></span>'+
+          '<span class="t"><span class="u">UNIT '+n+'</span><b>'+(UNIT_TITLES[n-1]||'قريباً')+'</b><i class="bar"><i style="width:0%"></i></i></span>'+
+          '<svg><use href="#i-lock"/></svg></button>';
+      list.innerHTML=h;
+      list.querySelectorAll('[data-unit]').forEach(function(b){b.addEventListener('click',function(){toast('الوحدة '+b.dataset.unit+' — قريباً إن شاء الله')})});
+      set.term=t;save(K_SET,set);
     }
+    tabs.forEach(function(b){b.addEventListener('click',function(){term(+b.dataset.term)})});
+    term(set.term||1);
     /* المراجعة: ورقة اختبار لكلّ وحدة، واختبار شامل بعد كلّ 3 وحدات */
     var r=$('revList'),h='';
     for(var j=1;j<=12;j++){
