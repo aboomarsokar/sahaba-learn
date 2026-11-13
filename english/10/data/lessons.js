@@ -10,11 +10,2335 @@
    في الأمثلة: **كلمة** تُبرز الجزء المهمّ. */
 window.LEXORA_DATA = {
   units: {
-    1: { title: 'التواصل مع الآخرين', titleEn: 'Making contact' },
-    2: { title: 'من هنا إلى هناك', titleEn: 'From here to there' },
-    3: { title: 'أنشطة وقت الفراغ', titleEn: 'Free-time activities' },
-    4: { title: 'حالة طوارئ!', titleEn: 'Emergency!' },
-    5: { title: 'طقسٌ خطِر', titleEn: 'Dangerous weather' },
+    /* ================= الوحدة 1 ================= */
+    1: {
+      "title": "التواصل مع الآخرين",
+      "titleEn": "Making contact",
+      "lessons": [
+        {
+          "id": "1-1",
+          "title": "Making contact",
+          "titleAr": "التواصل مع الآخرين",
+          "vocab": [
+            {
+              "en": "apartment",
+              "ar": "شقّة",
+              "em": "🏢",
+              "ex": "There is an apartment for him near our house.",
+              "exAr": "هناك شقّة له قرب بيتنا."
+            },
+            {
+              "en": "attach",
+              "ar": "يُرفِق",
+              "em": "📎",
+              "ex": "I'm attaching a photo to this email.",
+              "exAr": "أُرفق صورةً بهذا البريد."
+            },
+            {
+              "en": "cancel",
+              "ar": "يُلغي",
+              "em": "❌",
+              "ex": "The flight was cancelled.",
+              "exAr": "أُلغيت الرحلة."
+            },
+            {
+              "en": "definite",
+              "ar": "مؤكَّد / نهائي",
+              "em": "✅",
+              "ex": "Now the date is definite.",
+              "exAr": "الموعد الآن مؤكَّد."
+            },
+            {
+              "en": "depart",
+              "ar": "يغادر",
+              "em": "🛫",
+              "ex": "The plane departs at 8:30.",
+              "exAr": "تغادر الطائرة في الثامنة والنصف."
+            },
+            {
+              "en": "district",
+              "ar": "منطقة",
+              "em": "🗺️",
+              "ex": "We visited the Lake District.",
+              "exAr": "زرنا منطقة البحيرات."
+            },
+            {
+              "en": "junior",
+              "ar": "للناشئين / الأصغر",
+              "em": "🧒",
+              "ex": "He plays for the junior team.",
+              "exAr": "يلعب في فريق الناشئين."
+            },
+            {
+              "en": "PS",
+              "ar": "ملاحظة في آخر الرسالة",
+              "em": "✉️",
+              "ex": "PS Say hello to your brother.",
+              "exAr": "ملاحظة: سلّم على أخيك."
+            },
+            {
+              "en": "research",
+              "ar": "بحث (علمي)",
+              "em": "🔬",
+              "ex": "He is joining a farm research project.",
+              "exAr": "سينضمّ إلى مشروع بحث زراعي."
+            },
+            {
+              "en": "reply",
+              "ar": "يردّ",
+              "em": "💬",
+              "ex": "Thanks for replying so quickly!",
+              "exAr": "شكراً لأنك رددت بسرعة!"
+            },
+            {
+              "en": "settle in",
+              "ar": "يستقرّ (في مكانٍ جديد)",
+              "em": "🏡",
+              "ex": "We'll help him settle in.",
+              "exAr": "سنساعده على الاستقرار."
+            },
+            {
+              "en": "show round",
+              "ar": "يُري (شخصاً) المكان",
+              "em": "🧭",
+              "ex": "We'll show him round the city.",
+              "exAr": "سنريه أرجاء المدينة."
+            },
+            {
+              "en": "take out",
+              "ar": "يصطحب (شخصاً) للنزهة",
+              "em": "🍽️",
+              "ex": "Let's take our guests out for dinner.",
+              "exAr": "لنصطحب ضيوفنا إلى العشاء."
+            },
+            {
+              "en": "in contact",
+              "ar": "على تواصل",
+              "em": "📞",
+              "ex": "My dad is in contact with your father.",
+              "exAr": "أبي على تواصل مع أبيك."
+            },
+            {
+              "en": "put away",
+              "ar": "يُعيد الشيء إلى مكانه",
+              "em": "📦",
+              "ex": "Put your toys away, please.",
+              "exAr": "أعِد ألعابك إلى مكانها من فضلك."
+            },
+            {
+              "en": "take off",
+              "ar": "يخلع (ملابس)",
+              "em": "🧥",
+              "ex": "Take off your shoes, please.",
+              "exAr": "اخلع حذاءك من فضلك."
+            }
+          ],
+          "reading": {
+            "title": "New Friends by Email",
+            "paras": [
+              {
+                "en": "Jenny Scott, from Manchester, sent an email to Basim Maqdisi in Jericho. \"You don't know me,\" she wrote, \"but my dad is in contact with your father. He is joining your dad's farm research project next month. I'd love to learn about Palestine.\" She attached a photo of a boat race.",
+                "ar": "أرسلت جيني سكوت من مانشستر بريداً إلى باسم المقدسي في أريحا. كتبت: «أنت لا تعرفني، لكنّ أبي على تواصل مع أبيك. سينضمّ إلى مشروع أبيك للبحث الزراعي الشهر القادم. أحبّ أن أتعرّف على فلسطين». وأرفقت صورة سباق قوارب."
+              },
+              {
+                "en": "Basim replied the same day. \"Thanks for your surprise email! Are you the one in the lead in the boat race? I'm attaching a picture, too. Our junior football team played Nablus, and we won 3–1!\"",
+                "ar": "ردّ باسم في اليوم نفسه: «شكراً على رسالتك المفاجئة! هل أنتِ التي في المقدّمة في سباق القوارب؟ أنا أيضاً أُرفق صورة. لعب فريق الناشئين عندنا ضدّ نابلس، وفزنا 3–1!»"
+              },
+              {
+                "en": "Jenny wrote back: \"I'm the one nearest the camera. We go to the Lake District on a school trip every year. Dad is leaving soon, but his date was cancelled. Have you got any news?\" Basim answered, \"There's a special apartment for him near our house. We'll help him settle in, take him out and show him round.\"",
+                "ar": "ردّت جيني: «أنا الأقرب إلى الكاميرا. نذهب في رحلة مدرسية إلى منطقة البحيرات كلّ عام. أبي سيغادر قريباً، لكنّ موعده أُلغي. هل عندك أخبار؟» فأجاب باسم: «هناك شقّة خاصّة له قرب بيتنا. سنساعده على الاستقرار، ونصطحبه في نزهات ونريه المكان»."
+              },
+              {
+                "en": "Finally, Jenny sent the definite news: \"Dad's flight departs next Saturday at 08:30 our time and arrives at 15:15 Palestine time. We're going to miss him a lot, but he promises he'll call every day.\"",
+                "ar": "وأخيراً أرسلت جيني الخبر المؤكَّد: «تغادر رحلة أبي السبت القادم في 08:30 بتوقيتنا وتصل في 15:15 بتوقيت فلسطين. سنشتاق إليه كثيراً، لكنه يَعِد أن يتّصل كلّ يوم»."
+              }
+            ],
+            "questions": [
+              {
+                "q": "How does Jenny know about Basim?",
+                "o": [
+                  "Her dad is in contact with his father",
+                  "They met at school",
+                  "They met in a boat race"
+                ],
+                "a": 0
+              },
+              {
+                "q": "What was in Basim's picture?",
+                "o": [
+                  "A boat race",
+                  "His football team's match",
+                  "His new house"
+                ],
+                "a": 1
+              },
+              {
+                "q": "What was cancelled?",
+                "o": [
+                  "Jenny's school trip",
+                  "Her dad's travel date",
+                  "The football match"
+                ],
+                "a": 1
+              },
+              {
+                "tf": true,
+                "q": "Basim's family will help Jenny's dad settle in."
+              },
+              {
+                "q": "How will Jenny's family feel when Dad goes?",
+                "o": [
+                  "They will miss him",
+                  "They will be angry",
+                  "They won't care"
+                ],
+                "a": 0
+              }
+            ]
+          },
+          "rules": [
+            {
+              "title": "Present Tenses for the Future",
+              "titleAr": "المضارع للتعبير عن المستقبل",
+              "explain": "نستخدم <b>المضارع المستمر</b> للخطط الشخصية المرتّبة في المستقبل (He is joining…)، و<b>المضارع البسيط</b> للجداول والمواعيد الثابتة للجميع (The flight departs at 8:30). وغالباً تكون معهما كلمة تدلّ على المستقبل مثل <b>next</b> و<b>tomorrow</b> و<b>on Monday</b>.",
+              "form": "خطة شخصية: am / is / are + V-ing    ·    جدول أو موعد ثابت: V1 / V(s)",
+              "examples": [
+                {
+                  "en": "He **is joining** your dad's project next month.",
+                  "ar": "خطة شخصية"
+                },
+                {
+                  "en": "Dad **is flying** next Saturday.",
+                  "ar": "خطة شخصية"
+                },
+                {
+                  "en": "The holidays **start** on 23rd December.",
+                  "ar": "موعد ثابت للجميع"
+                },
+                {
+                  "en": "His flight **departs** at 8:30 am.",
+                  "ar": "جدول ثابت"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "I ___ my grandparents tomorrow. It's all arranged.",
+                  "o": [
+                    "visit",
+                    "am visiting",
+                    "visited"
+                  ],
+                  "a": 1,
+                  "why": "خطة شخصية: am visiting"
+                },
+                {
+                  "q": "According to the timetable, the bus ___ at 7:00 tomorrow.",
+                  "o": [
+                    "leave",
+                    "leaves",
+                    "is leave"
+                  ],
+                  "a": 1,
+                  "why": "جدول ثابت: المضارع البسيط"
+                },
+                {
+                  "q": "School ___ on 1st September.",
+                  "o": [
+                    "start",
+                    "starts",
+                    "is start"
+                  ],
+                  "a": 1
+                },
+                {
+                  "type": "type",
+                  "q": "We ___ sailing next Sunday. It's our plan. (go)",
+                  "a": [
+                    "are going"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «تغادر الطائرة في الثامنة والنصف غداً»",
+                  "words": [
+                    "The",
+                    "plane",
+                    "departs",
+                    "at",
+                    "8:30",
+                    "tomorrow."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "will and going to",
+              "titleAr": "will و going to",
+              "explain": "<b>going to</b> للخطط والنوايا (I'm going to interview him)، ولِما نراه سيحدث من <b>دليلٍ أمامنا</b> (Look at the clouds! It's going to rain). و<b>will</b> للتوقّعات والحقائق في المستقبل (غالباً مع sure / certain / expect)، وللقرار <b>في لحظته</b>، وللعرض والوعد.",
+              "form": "going to + V: خطة أو دليل    ·    will + V: توقّع، قرار فوري، عرض، وعد",
+              "examples": [
+                {
+                  "en": "I **am going to** interview him tomorrow.",
+                  "ar": "خطة"
+                },
+                {
+                  "en": "Look at those clouds! It**'s going to** rain.",
+                  "ar": "دليل أمامنا"
+                },
+                {
+                  "en": "I'm sure you **will** like Jericho.",
+                  "ar": "توقّع"
+                },
+                {
+                  "en": "The phone is ringing. I**'ll** answer it.",
+                  "ar": "قرار في لحظته"
+                },
+                {
+                  "en": "I**'ll** carry your bag if you like.",
+                  "ar": "عرض"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "Look at the sky! It ___ rain.",
+                  "o": [
+                    "will",
+                    "is going to",
+                    "rains"
+                  ],
+                  "a": 1,
+                  "why": "دليل أمامنا: going to"
+                },
+                {
+                  "q": "\"I'm thirsty.\" \"I ___ get you some water.\"",
+                  "o": [
+                    "am going to",
+                    "will",
+                    "going"
+                  ],
+                  "a": 1,
+                  "why": "قرار في لحظته: will"
+                },
+                {
+                  "q": "We ___ visit Jerusalem next week. We've bought the tickets.",
+                  "o": [
+                    "will",
+                    "are going to",
+                    "go to"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "I'm sure you ___ pass the exam.",
+                  "o": [
+                    "will",
+                    "are going",
+                    "going to"
+                  ],
+                  "a": 0
+                },
+                {
+                  "type": "type",
+                  "q": "It's late. I promise I ___ call you tomorrow.",
+                  "a": [
+                    "will",
+                    "'ll"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «سأدرس الطبّ»",
+                  "words": [
+                    "I",
+                    "am",
+                    "going",
+                    "to",
+                    "study",
+                    "medicine."
+                  ]
+                }
+              ]
+            }
+          ],
+          "mastery": [
+            {
+              "q": "\"cancel\" means:",
+              "o": [
+                "يُلغي",
+                "يُرسل",
+                "يُرفق"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "q": "\"depart\" means:",
+              "o": [
+                "يغادر",
+                "يصل",
+                "ينتظر"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "tf": true,
+              "q": "Jenny's dad will live in an apartment near Basim's house.",
+              "lv": "easy"
+            },
+            {
+              "type": "match",
+              "q": "صِل كلّ كلمة بمعناها",
+              "pairs": [
+                [
+                  "attach",
+                  "يُرفِق"
+                ],
+                [
+                  "reply",
+                  "يردّ"
+                ],
+                [
+                  "junior",
+                  "للناشئين"
+                ],
+                [
+                  "definite",
+                  "مؤكَّد"
+                ]
+              ],
+              "lv": "medium"
+            },
+            {
+              "q": "It's cold. Put ___ your coat.",
+              "o": [
+                "on",
+                "off",
+                "away"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "q": "Our English lesson ___ at 9:00 tomorrow. (timetable)",
+              "o": [
+                "starts",
+                "will starting",
+                "is start"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "type": "type",
+              "q": "Wait! That box is heavy. I ___ help you.",
+              "a": [
+                "will",
+                "'ll"
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Choose the correct sentence.",
+              "o": [
+                "I'm meeting Sami at 5 pm tomorrow.",
+                "I meeting Sami at 5 pm tomorrow.",
+                "I am meet Sami at 5 pm tomorrow."
+              ],
+              "a": 0,
+              "lv": "hard"
+            },
+            {
+              "type": "order",
+              "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+              "words": [
+                "It",
+                "is",
+                "going",
+                "to",
+                "be",
+                "a",
+                "busy",
+                "day."
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Why did Jenny write to Basim?",
+              "o": [
+                "To get to know him and learn about Palestine",
+                "To ask him for money",
+                "To cancel a trip"
+              ],
+              "a": 0,
+              "lv": "hard"
+            }
+          ]
+        }
+      ]
+    },
+    /* ================= الوحدة 2 ================= */
+    2: {
+      "title": "من هنا إلى هناك",
+      "titleEn": "From here to there",
+      "lessons": [
+        {
+          "id": "2-1",
+          "title": "From here to there",
+          "titleAr": "من هنا إلى هناك",
+          "vocab": [
+            {
+              "en": "exactly",
+              "ar": "بالضبط (exact: دقيق)",
+              "em": "🎯",
+              "ex": "GPS shows exactly where you are.",
+              "exAr": "يُظهر GPS مكانك بالضبط."
+            },
+            {
+              "en": "GPS",
+              "ar": "نظام تحديد المواقع",
+              "em": "🛰️",
+              "ex": "Their GPS showed they were near land.",
+              "exAr": "أظهر جهاز GPS أنهم قرب اليابسة."
+            },
+            {
+              "en": "kph",
+              "ar": "كيلومتر في الساعة",
+              "em": "🚗",
+              "ex": "The wind reached 100 kph.",
+              "exAr": "بلغت سرعة الريح 100 كم/س."
+            },
+            {
+              "en": "life raft",
+              "ar": "قارب نجاة",
+              "em": "🛟",
+              "ex": "They climbed into the life raft.",
+              "exAr": "صعدوا إلى قارب النجاة."
+            },
+            {
+              "en": "measure",
+              "ar": "يقيس",
+              "em": "📏",
+              "ex": "Please measure the window.",
+              "exAr": "قِس النافذة من فضلك."
+            },
+            {
+              "en": "nearly",
+              "ar": "تقريباً (near: قريب)",
+              "em": "⏳",
+              "ex": "They had nearly finished the journey.",
+              "exAr": "كانوا قد أنهوا الرحلة تقريباً."
+            },
+            {
+              "en": "orbit",
+              "ar": "يدور في مدارٍ حول",
+              "em": "🌍",
+              "ex": "Satellites orbit the Earth.",
+              "exAr": "تدور الأقمار الصناعية حول الأرض."
+            },
+            {
+              "en": "point",
+              "ar": "نقطة",
+              "em": "📍",
+              "ex": "You are at one of two points.",
+              "exAr": "أنت عند إحدى نقطتين."
+            },
+            {
+              "en": "position",
+              "ar": "موقع",
+              "em": "🧭",
+              "ex": "Please give us your exact position.",
+              "exAr": "أعطنا موقعك الدقيق من فضلك."
+            },
+            {
+              "en": "row",
+              "ar": "يجدّف",
+              "em": "🚣",
+              "ex": "They rowed across the Atlantic.",
+              "exAr": "جدّفوا عبر المحيط الأطلسي."
+            },
+            {
+              "en": "satellite",
+              "ar": "قمر صناعي",
+              "em": "📡",
+              "ex": "GPS uses a network of satellites.",
+              "exAr": "يستخدم GPS شبكة من الأقمار الصناعية."
+            },
+            {
+              "en": "satellite phone",
+              "ar": "هاتف يعمل عبر الأقمار الصناعية",
+              "em": "📞",
+              "ex": "They called for help on a satellite phone.",
+              "exAr": "طلبوا النجدة بهاتفٍ يعمل عبر الأقمار الصناعية."
+            },
+            {
+              "en": "satnav",
+              "ar": "جهاز الملاحة في السيارة",
+              "em": "🗺️",
+              "ex": "The satnav showed us the way.",
+              "exAr": "أرانا جهاز الملاحة الطريق."
+            },
+            {
+              "en": "storm",
+              "ar": "عاصفة",
+              "em": "⛈️",
+              "ex": "There was a terrible storm that night.",
+              "exAr": "هبّت عاصفة رهيبة تلك الليلة."
+            },
+            {
+              "en": "wave",
+              "ar": "موجة",
+              "em": "🌊",
+              "ex": "A huge wave destroyed the boat.",
+              "exAr": "حطّمت موجةٌ ضخمة القارب."
+            },
+            {
+              "en": "set off",
+              "ar": "ينطلق (في رحلة)",
+              "em": "🏁",
+              "ex": "The girls have just set off.",
+              "exAr": "انطلقت الفتيات للتوّ."
+            }
+          ],
+          "reading": {
+            "title": "Finding the Way",
+            "paras": [
+              {
+                "en": "In 2004, Mark Stubbs and his team wanted to be the fastest to row across the Atlantic, from Canada to Britain. After 40 days and 3,000 kilometres, they had nearly done it. Their GPS showed that they were only 450 kilometres from land.",
+                "ar": "في عام 2004 أراد مارك ستَبز وفريقه أن يكونوا الأسرع في التجديف عبر الأطلسي من كندا إلى بريطانيا. وبعد 40 يوماً و3000 كيلومتر كادوا يحقّقون ذلك، فقد أظهر جهاز GPS أنهم على بعد 450 كيلومتراً فقط من اليابسة."
+              },
+              {
+                "en": "But that night, there was a terrible storm. At 2:30 am, a huge wave destroyed their boat. Luckily, they saved a small life raft, a satellite phone and their GPS. They found their exact position and called for help. A ship rescued them at 6:30 am.",
+                "ar": "لكن في تلك الليلة هبّت عاصفة رهيبة، وفي الثانية والنصف فجراً حطّمت موجة ضخمة قاربهم. ولحسن الحظّ أنقذوا قارب نجاة صغيراً وهاتفاً يعمل عبر الأقمار الصناعية وجهاز GPS. فحدّدوا موقعهم الدقيق وطلبوا النجدة، وأنقذتهم سفينة في السادسة والنصف صباحاً."
+              },
+              {
+                "en": "How does GPS work? A network of satellites orbits the Earth. GPS equipment on the ground can always 'see' three or more of them. It measures its distance from each satellite, and from this it works out its exact position.",
+                "ar": "كيف يعمل GPS؟ شبكة من الأقمار الصناعية تدور حول الأرض، والجهاز على الأرض «يرى» دائماً ثلاثة منها أو أكثر. فيقيس بعده عن كلّ قمر، ومن ذلك يحسب موقعه الدقيق."
+              },
+              {
+                "en": "Car satnavs have become very popular in recent years. A satnav shows the car's position on a map and answers questions like \"How far have I travelled?\" and \"How long have I been on the road?\" GPS has saved many lives. It is modern technology at its best!",
+                "ar": "صارت أجهزة الملاحة في السيارات شائعةً جداً في السنوات الأخيرة. فهي تُظهر موقع السيارة على الخريطة وتجيب عن أسئلة مثل «كم قطعتُ من مسافة؟» و«منذ متى وأنا على الطريق؟». لقد أنقذ GPS أرواحاً كثيرة، إنه التكنولوجيا الحديثة في أفضل صورها!"
+              }
+            ],
+            "questions": [
+              {
+                "q": "Where were Mark's team rowing?",
+                "o": [
+                  "From Canada to Britain",
+                  "From Britain to Canada",
+                  "Across the Pacific"
+                ],
+                "a": 0
+              },
+              {
+                "q": "What destroyed their boat?",
+                "o": [
+                  "A huge wave",
+                  "A whale",
+                  "Another ship"
+                ],
+                "a": 0
+              },
+              {
+                "q": "Which three things saved their lives?",
+                "o": [
+                  "A life raft, a satellite phone and a GPS",
+                  "A map, a radio and a boat",
+                  "A plane, a car and a phone"
+                ],
+                "a": 0
+              },
+              {
+                "tf": false,
+                "q": "GPS equipment needs to \"see\" only one satellite.",
+                "why": "It can always 'see' three or more."
+              },
+              {
+                "q": "What does a satnav show?",
+                "o": [
+                  "The car's position on a map",
+                  "The weather",
+                  "The price of fuel"
+                ],
+                "a": 0
+              }
+            ]
+          },
+          "rules": [
+            {
+              "title": "Present Perfect and Present Perfect Continuous",
+              "titleAr": "المضارع التام والمضارع التام المستمر",
+              "explain": "<b>المضارع التام</b> (have / has + V3) لحدثٍ في الماضي له <b>أثر في الحاضر</b>، ومعه غالباً <b>just</b> و<b>already</b> و<b>yet</b> و<b>so far</b> و<b>still … not</b>. و<b>المضارع التام المستمر</b> (have / has been + V-ing) لحدثٍ بدأ في الماضي و<b>ما زال مستمرّاً</b>، ويركّز على طول المدّة، ومعه <b>for</b> و<b>since</b>.",
+              "form": "have / has + V3    ·    have / has been + V-ing + for / since",
+              "examples": [
+                {
+                  "en": "The girls **have just set** off.",
+                  "ar": "انطلقن للتوّ: أثره الآن"
+                },
+                {
+                  "en": "We **haven't found** another clue so far.",
+                  "ar": "ما زلنا نبحث"
+                },
+                {
+                  "en": "We **have been running** for ages.",
+                  "ar": "ما زلنا نركض منذ وقتٍ طويل"
+                },
+                {
+                  "en": "Lana **has been playing** the piano since she was five.",
+                  "ar": "since + بداية الحدث"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "They ___ just arrived.",
+                  "o": [
+                    "has",
+                    "have",
+                    "are"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "I haven't finished my homework ___.",
+                  "o": [
+                    "yet",
+                    "already",
+                    "just"
+                  ],
+                  "a": 0,
+                  "why": "yet في النفي والسؤال."
+                },
+                {
+                  "q": "She has been learning English ___ five years.",
+                  "o": [
+                    "since",
+                    "for",
+                    "ago"
+                  ],
+                  "a": 1,
+                  "why": "for + مدّة"
+                },
+                {
+                  "type": "type",
+                  "q": "How long have you ___ waiting? (be)",
+                  "a": [
+                    "been"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «نحن نمشي منذ ساعتين»",
+                  "words": [
+                    "We",
+                    "have",
+                    "been",
+                    "walking",
+                    "for",
+                    "two",
+                    "hours."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Present Perfect or Past Simple?",
+              "titleAr": "المضارع التام أم الماضي البسيط؟",
+              "explain": "<b>الماضي البسيط</b> لحدثٍ انتهى في <b>وقتٍ محدّد</b> في الماضي (at 6:30، yesterday، in 2004، ago). و<b>المضارع التام</b> لحدثٍ <b>يربط الماضي بالحاضر</b> دون وقتٍ محدّد (so far، recently، ever، in recent years).",
+              "form": "Past simple: V2 + yesterday / ago / in 2004    ·    Present perfect: have / has + V3 + so far / recently / ever",
+              "examples": [
+                {
+                  "en": "A ship **found** them at 6:30 am.",
+                  "ar": "وقت محدّد: الماضي البسيط"
+                },
+                {
+                  "en": "GPS **has saved** many lives.",
+                  "ar": "أثره مستمرّ: المضارع التام"
+                },
+                {
+                  "en": "Where **did** you **start**?",
+                  "ar": "سؤال عن وقت أو مكان انتهى"
+                },
+                {
+                  "en": "How far **have** you **travelled** so far?",
+                  "ar": "حتى الآن"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "A ship ___ them at 6:30 am.",
+                  "o": [
+                    "has found",
+                    "found",
+                    "finds"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "Satnavs ___ very popular in recent years.",
+                  "o": [
+                    "became",
+                    "have become",
+                    "become"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "I ___ Hebron last summer.",
+                  "o": [
+                    "have visited",
+                    "visited",
+                    "visit"
+                  ],
+                  "a": 1,
+                  "why": "last summer: وقت محدّد."
+                },
+                {
+                  "type": "type",
+                  "q": "Have you ___ been to Jerusalem?",
+                  "a": [
+                    "ever"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «غادروا كندا قبل 40 يوماً»",
+                  "words": [
+                    "They",
+                    "left",
+                    "Canada",
+                    "40",
+                    "days",
+                    "ago."
+                  ]
+                }
+              ]
+            }
+          ],
+          "mastery": [
+            {
+              "q": "\"wave\" means:",
+              "o": [
+                "موجة",
+                "رياح",
+                "شاطئ"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "q": "\"row\" (a boat) means:",
+              "o": [
+                "يجدّف",
+                "يُبحر بمحرّك",
+                "يغرق"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "tf": true,
+              "q": "A ship rescued Mark's team.",
+              "lv": "easy"
+            },
+            {
+              "type": "match",
+              "q": "صِل كلّ كلمة بمعناها",
+              "pairs": [
+                [
+                  "storm",
+                  "عاصفة"
+                ],
+                [
+                  "position",
+                  "موقع"
+                ],
+                [
+                  "measure",
+                  "يقيس"
+                ],
+                [
+                  "satellite",
+                  "قمر صناعي"
+                ]
+              ],
+              "lv": "medium"
+            },
+            {
+              "q": "I have lived here ___ 2015.",
+              "o": [
+                "for",
+                "since",
+                "ago"
+              ],
+              "a": 1,
+              "lv": "medium"
+            },
+            {
+              "q": "Did you ___ the match yesterday?",
+              "o": [
+                "watch",
+                "watched",
+                "watching"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "type": "type",
+              "q": "GPS has ___ many lives. (save)",
+              "a": [
+                "saved"
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Choose the correct sentence.",
+              "o": [
+                "I have seen him yesterday.",
+                "I saw him yesterday.",
+                "I have see him yesterday."
+              ],
+              "a": 1,
+              "lv": "hard"
+            },
+            {
+              "type": "order",
+              "q": "رتّب الكلمات لتكوّن سؤالاً صحيحاً",
+              "words": [
+                "How",
+                "long",
+                "have",
+                "you",
+                "been",
+                "learning",
+                "English?"
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "How does GPS find your exact position?",
+              "o": [
+                "It measures its distance from three or more satellites",
+                "It asks other people",
+                "It looks at a paper map"
+              ],
+              "a": 0,
+              "lv": "hard"
+            }
+          ]
+        }
+      ]
+    },
+    /* ================= الوحدة 3 ================= */
+    3: {
+      "title": "أنشطة وقت الفراغ",
+      "titleEn": "Free-time activities",
+      "lessons": [
+        {
+          "id": "3-1",
+          "title": "Free-time activities",
+          "titleAr": "أنشطة وقت الفراغ",
+          "vocab": [
+            {
+              "en": "afford",
+              "ar": "يستطيع تحمّل ثمنه",
+              "em": "💰",
+              "ex": "We can't afford a new car.",
+              "exAr": "لا نستطيع تحمّل ثمن سيارة جديدة."
+            },
+            {
+              "en": "business",
+              "ar": "عمل تجاري",
+              "em": "🏪",
+              "ex": "His internet business is doing well.",
+              "exAr": "تجارته على الإنترنت ناجحة."
+            },
+            {
+              "en": "castle",
+              "ar": "قلعة",
+              "em": "🏰",
+              "ex": "She made a cake in the shape of a castle.",
+              "exAr": "صنعت كعكة على شكل قلعة."
+            },
+            {
+              "en": "decorate",
+              "ar": "يزيّن",
+              "em": "🎨",
+              "ex": "Ann decorates biscuits beautifully.",
+              "exAr": "تزيّن آن البسكويت بشكلٍ جميل."
+            },
+            {
+              "en": "frame",
+              "ar": "هيكل / إطار",
+              "em": "🚲",
+              "ex": "The frame of the bike was damaged.",
+              "exAr": "كان هيكل الدرّاجة متضرّراً."
+            },
+            {
+              "en": "for free",
+              "ar": "مجاناً",
+              "em": "🆓",
+              "ex": "He found an old bike for free.",
+              "exAr": "وجد دراجة قديمة مجاناً."
+            },
+            {
+              "en": "on my own",
+              "ar": "وحدي (بلا مساعدة)",
+              "em": "🙋",
+              "ex": "I can't do it on my own.",
+              "exAr": "لا أستطيع فعله وحدي."
+            },
+            {
+              "en": "recycle",
+              "ar": "يعيد التدوير",
+              "em": "♻️",
+              "ex": "We should recycle paper and plastic.",
+              "exAr": "يجب أن نعيد تدوير الورق والبلاستيك."
+            },
+            {
+              "en": "similar",
+              "ar": "مشابه",
+              "em": "👯",
+              "ex": "He found a similar bike online.",
+              "exAr": "وجد دراجةً مشابهة على الإنترنت."
+            },
+            {
+              "en": "supply",
+              "ar": "يزوّد",
+              "em": "📦",
+              "ex": "A cake shop asked her to supply them.",
+              "exAr": "طلب منها محلّ حلويات أن تزوّده."
+            },
+            {
+              "en": "think of",
+              "ar": "يفكّر في / يخطر له",
+              "em": "💭",
+              "ex": "He had to think of something else.",
+              "exAr": "كان عليه أن يفكّر في شيءٍ آخر."
+            },
+            {
+              "en": "turn into",
+              "ar": "يتحوّل إلى",
+              "em": "🔄",
+              "ex": "Your hobby can turn into a business.",
+              "exAr": "قد تتحوّل هوايتك إلى عمل تجاري."
+            },
+            {
+              "en": "accept",
+              "ar": "يقبل (acceptable: مقبول)",
+              "em": "🤝",
+              "ex": "She didn't have to accept every order.",
+              "exAr": "لم يكن عليها قبول كلّ طلب."
+            },
+            {
+              "en": "colourful",
+              "ar": "ملوّن (colour: لون)",
+              "em": "🌈",
+              "ex": "She makes colourful designs.",
+              "exAr": "تصنع تصاميم ملوّنة."
+            },
+            {
+              "en": "missing",
+              "ar": "مفقود / ناقص (miss: يفقد)",
+              "em": "🔍",
+              "ex": "Several parts were missing.",
+              "exAr": "كانت عدّة قطع مفقودة."
+            }
+          ],
+          "reading": {
+            "title": "Turning a Hobby into a Business",
+            "paras": [
+              {
+                "en": "Joe loves bikes. At 14, he needed a bigger bike, but his dad had lost his job, so the family couldn't afford to buy one. Joe had to think of something else.",
+                "ar": "جو يحبّ الدرّاجات. في الرابعة عشرة احتاج دراجةً أكبر، لكنّ أباه كان قد فقد عمله، فلم تستطع العائلة شراء واحدة. فكان على جو أن يفكّر في حلٍّ آخر."
+              },
+              {
+                "en": "One day, a neighbour was throwing away an old bike with a damaged frame. \"Take it,\" he said. \"If you can repair or recycle it, I'll be happy.\" Then Joe found a similar old bike on the internet for free. That weekend, he was able to build a new bike, and he didn't have to pay anything! Since then, he has built cheap bikes for several friends.",
+                "ar": "في يوم من الأيام كان أحد الجيران يرمي دراجة قديمة هيكلها متضرّر، فقال: «خذها، إن استطعت إصلاحها أو إعادة تدويرها فسأكون سعيداً». ثم وجد جو دراجة قديمة مشابهة على الإنترنت مجاناً. وفي نهاية ذلك الأسبوع استطاع أن يبني دراجة جديدة دون أن يدفع شيئاً! ومنذ ذلك الحين بنى دراجات رخيصة لعدد من أصدقائه."
+              },
+              {
+                "en": "Ann started helping her mum make biscuits when she was five. She couldn't do everything on her own, but she was very good at decorating them with colourful designs. Later, she made her brother a birthday cake in the shape of a car, and everyone loved it.",
+                "ar": "بدأت آن تساعد أمّها في صنع البسكويت حين كانت في الخامسة. لم تكن تستطيع فعل كلّ شيء وحدها، لكنها كانت ماهرةً جداً في تزيينه بتصاميم ملوّنة. ثم صنعت لأخيها كعكة عيد ميلاد على شكل سيارة، فأحبّها الجميع."
+              },
+              {
+                "en": "Soon, more orders came, and then a cake shop asked her to supply them. Ann was worried about time, so the shop offered a special arrangement: she didn't have to accept all their orders, only the ones she could manage. This week, she is making a wedding cake for 100 people!",
+                "ar": "وسرعان ما جاءت طلبات أكثر، ثم طلب منها محلّ حلويات أن تزوّده. كانت آن قلقة بشأن الوقت، فعرض عليها المحلّ ترتيباً خاصّاً: لا يجب عليها قبول كلّ الطلبات، بل ما تستطيع إنجازه فقط. وهذا الأسبوع تصنع كعكة زفاف لمئة شخص!"
+              }
+            ],
+            "questions": [
+              {
+                "q": "Why did Joe have to build his own bike?",
+                "o": [
+                  "His family couldn't afford a new one",
+                  "He didn't like shops",
+                  "His bike was stolen"
+                ],
+                "a": 0
+              },
+              {
+                "q": "Who gave Joe the first old bike?",
+                "o": [
+                  "His dad",
+                  "A neighbour",
+                  "A shop"
+                ],
+                "a": 1
+              },
+              {
+                "tf": false,
+                "q": "Joe paid a lot of money for the second bike.",
+                "why": "He found it on the internet for free."
+              },
+              {
+                "q": "What was Ann especially good at as a child?",
+                "o": [
+                  "Decorating biscuits",
+                  "Repairing bikes",
+                  "Playing football"
+                ],
+                "a": 0
+              },
+              {
+                "q": "Why didn't Ann have to accept all the shop's orders?",
+                "o": [
+                  "The shop offered a special arrangement",
+                  "She stopped baking",
+                  "Her mum did them"
+                ],
+                "a": 0
+              }
+            ]
+          },
+          "rules": [
+            {
+              "title": "Modals: Possibility, Ability, Requests and Offers",
+              "titleAr": "الأفعال الناقصة: الاحتمال والقدرة والطلب والعرض",
+              "explain": "<b>may / might</b> للاحتمال. <b>can</b> للقدرة أو الإذن، و<b>can't</b> لعدم القدرة. <b>Could you…?</b> للطلب المهذّب، و<b>I could…</b> للاقتراح. <b>Shall I…?</b> لعرض المساعدة.",
+              "form": "may / might + V: احتمال  ·  can / can't + V: قدرة أو إذن  ·  Could you…?: طلب  ·  I could… / Shall I…?: اقتراح وعرض",
+              "examples": [
+                {
+                  "en": "We **may** hurt ourselves.",
+                  "ar": "احتمال"
+                },
+                {
+                  "en": "You **can** carry the ball in rugby.",
+                  "ar": "مسموح"
+                },
+                {
+                  "en": "**Could** you send me some photos?",
+                  "ar": "طلب مهذّب"
+                },
+                {
+                  "en": "**Shall** I email you some photos?",
+                  "ar": "عرض"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "I've forgotten my key, so I ___ open the door.",
+                  "o": [
+                    "can't",
+                    "could",
+                    "shall"
+                  ],
+                  "a": 0
+                },
+                {
+                  "q": "Take an umbrella. It ___ rain later.",
+                  "o": [
+                    "might",
+                    "shall",
+                    "must"
+                  ],
+                  "a": 0,
+                  "why": "احتمال: might"
+                },
+                {
+                  "q": "___ I carry your bag for you?",
+                  "o": [
+                    "Shall",
+                    "Must",
+                    "Might"
+                  ],
+                  "a": 0,
+                  "why": "عرض: Shall I…?"
+                },
+                {
+                  "type": "type",
+                  "q": "___ you help me, please? (Could / Shall)",
+                  "a": [
+                    "Could"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «هل يمكنك فتح النافذة من فضلك؟»",
+                  "words": [
+                    "Could",
+                    "you",
+                    "open",
+                    "the",
+                    "window,",
+                    "please?"
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Necessity and Advice",
+              "titleAr": "الضرورة والنصيحة",
+              "explain": "<b>should / shouldn't</b> للنصيحة. <b>must</b> لضرورةٍ يشعر بها المتكلّم، و<b>have to</b> لضرورةٍ يفرضها غيره (قانون أو نظام). <b>mustn't</b> معناها ممنوع، أمّا <b>don't have to</b> و<b>don't need to</b> فمعناهما: ليس ضرورياً.",
+              "form": "should + V: نصيحة  ·  must / have to + V: ضرورة  ·  mustn't: ممنوع  ·  don't have to / don't need to: غير ضروري",
+              "examples": [
+                {
+                  "en": "You **should** see this film. It's great!",
+                  "ar": "نصيحة"
+                },
+                {
+                  "en": "We **have to** wear a uniform at school.",
+                  "ar": "نظام المدرسة"
+                },
+                {
+                  "en": "You **mustn't** use that path. It's dangerous.",
+                  "ar": "ممنوع"
+                },
+                {
+                  "en": "Tomorrow is a holiday, so I **don't have to** get up early.",
+                  "ar": "غير ضروري"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "You ___ use that path. It's collapsing!",
+                  "o": [
+                    "mustn't",
+                    "don't have to",
+                    "should"
+                  ],
+                  "a": 0
+                },
+                {
+                  "q": "It's a holiday tomorrow, so we ___ go to school.",
+                  "o": [
+                    "mustn't",
+                    "don't have to",
+                    "must"
+                  ],
+                  "a": 1,
+                  "why": "غير ضروري، وليس ممنوعاً."
+                },
+                {
+                  "q": "You look tired. You ___ go to bed early.",
+                  "o": [
+                    "should",
+                    "mustn't",
+                    "don't need to"
+                  ],
+                  "a": 0
+                },
+                {
+                  "type": "type",
+                  "q": "In our school, students ___ to wear a uniform. (have / has)",
+                  "a": [
+                    "have"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «يجب أن تشرب ماءً أكثر»",
+                  "words": [
+                    "You",
+                    "should",
+                    "drink",
+                    "more",
+                    "water."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Past Ability and Necessity",
+              "titleAr": "القدرة والضرورة في الماضي",
+              "explain": "في الماضي نستخدم <b>could / couldn't</b> و<b>was / were able to</b> للقدرة، و<b>had to</b> للضرورة، و<b>didn't have to</b> لما لم يكن ضرورياً.",
+              "form": "can → could / was able to    ·    have to → had to    ·    don't have to → didn't have to",
+              "examples": [
+                {
+                  "en": "At five, Ann **could** make biscuits.",
+                  "ar": "قدرة في الماضي"
+                },
+                {
+                  "en": "That weekend, Joe **was able to** build his new bike.",
+                  "ar": "قدرة في الماضي"
+                },
+                {
+                  "en": "At 14, Joe **had to** build his own bike.",
+                  "ar": "ضرورة في الماضي"
+                },
+                {
+                  "en": "He **didn't have to** pay anything.",
+                  "ar": "لم يكن ضرورياً"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "When I was six, I ___ swim.",
+                  "o": [
+                    "can",
+                    "could",
+                    "have to"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "I forgot my key, so I ___ climb through the window.",
+                  "o": [
+                    "had to",
+                    "have to",
+                    "must"
+                  ],
+                  "a": 0
+                },
+                {
+                  "q": "It was free, so he ___ pay anything.",
+                  "o": [
+                    "didn't have to",
+                    "mustn't",
+                    "couldn't to"
+                  ],
+                  "a": 0
+                },
+                {
+                  "type": "type",
+                  "q": "Joe ___ able to build a new bike. (was / were)",
+                  "a": [
+                    "was"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «لم تستطع فعل كلّ شيء وحدها»",
+                  "words": [
+                    "She",
+                    "could",
+                    "not",
+                    "do",
+                    "everything",
+                    "on",
+                    "her",
+                    "own."
+                  ]
+                }
+              ]
+            }
+          ],
+          "mastery": [
+            {
+              "q": "\"afford\" means:",
+              "o": [
+                "يستطيع تحمّل ثمنه",
+                "يبيع",
+                "يقترض"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "q": "\"recycle\" means:",
+              "o": [
+                "يعيد التدوير",
+                "يرمي",
+                "يشتري"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "tf": true,
+              "q": "Ann made a cake in the shape of a car.",
+              "lv": "easy"
+            },
+            {
+              "type": "match",
+              "q": "صِل كلّ كلمة بمعناها",
+              "pairs": [
+                [
+                  "castle",
+                  "قلعة"
+                ],
+                [
+                  "decorate",
+                  "يزيّن"
+                ],
+                [
+                  "similar",
+                  "مشابه"
+                ],
+                [
+                  "supply",
+                  "يزوّد"
+                ]
+              ],
+              "lv": "medium"
+            },
+            {
+              "q": "You ___ smoke in the hospital.",
+              "o": [
+                "mustn't",
+                "don't have to",
+                "can"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "q": "Last year, we ___ walk to school because the bus was broken.",
+              "o": [
+                "had to",
+                "have to",
+                "must"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "type": "type",
+              "q": "Yesterday I ___ go out because I was ill. (couldn't / can't)",
+              "a": [
+                "couldn't"
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Choose the correct sentence.",
+              "o": [
+                "He musts study hard.",
+                "He must study hard.",
+                "He must to study hard."
+              ],
+              "a": 1,
+              "lv": "hard"
+            },
+            {
+              "type": "order",
+              "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+              "words": [
+                "We",
+                "do",
+                "not",
+                "have",
+                "to",
+                "pay",
+                "for",
+                "it."
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Who is nearer to having a real business?",
+              "o": [
+                "Ann, because she supplies a shop",
+                "Joe, because he has a shop",
+                "Neither of them"
+              ],
+              "a": 0,
+              "lv": "hard"
+            }
+          ]
+        }
+      ]
+    },
+    /* ================= الوحدة 4 ================= */
+    4: {
+      "title": "حالة طوارئ!",
+      "titleEn": "Emergency!",
+      "lessons": [
+        {
+          "id": "4-1",
+          "title": "Emergency!",
+          "titleAr": "حالة طوارئ!",
+          "vocab": [
+            {
+              "en": "alive",
+              "ar": "حيّ",
+              "em": "💓",
+              "ex": "I'm lucky to be alive.",
+              "exAr": "أنا محظوظة لأنني ما زلت حيّة."
+            },
+            {
+              "en": "ambulance",
+              "ar": "سيارة إسعاف",
+              "em": "🚑",
+              "ex": "An ambulance arrived quickly.",
+              "exAr": "وصلت سيارة إسعاف بسرعة."
+            },
+            {
+              "en": "cheer",
+              "ar": "يهتف فرحاً",
+              "em": "🎉",
+              "ex": "Everyone cheered when she was safe.",
+              "exAr": "هتف الجميع فرحاً حين نجت."
+            },
+            {
+              "en": "desperately",
+              "ar": "بشدّة / بيأس",
+              "em": "😰",
+              "ex": "She desperately needed a way out.",
+              "exAr": "احتاجت بشدّة إلى مخرج."
+            },
+            {
+              "en": "examine",
+              "ar": "يفحص",
+              "em": "🩺",
+              "ex": "The paramedics examined her.",
+              "exAr": "فحصها المسعفون."
+            },
+            {
+              "en": "floor",
+              "ar": "طابق",
+              "em": "🏢",
+              "ex": "She lives on the tenth floor.",
+              "exAr": "تسكن في الطابق العاشر."
+            },
+            {
+              "en": "ladder",
+              "ar": "سُلّم (متنقّل)",
+              "em": "🪜",
+              "ex": "The ladder was too short.",
+              "exAr": "كان السلّم قصيراً جداً."
+            },
+            {
+              "en": "lean",
+              "ar": "يميل / ينحني",
+              "em": "🧍",
+              "ex": "Dave leaned out of the window.",
+              "exAr": "مال ديف خارج النافذة."
+            },
+            {
+              "en": "ledge",
+              "ar": "حافّة ضيّقة",
+              "em": "🧱",
+              "ex": "She stood on a narrow ledge.",
+              "exAr": "وقفت على حافّة ضيّقة."
+            },
+            {
+              "en": "nowhere",
+              "ar": "لا مكان",
+              "em": "🚷",
+              "ex": "There was nowhere else to go.",
+              "exAr": "لم يكن هناك مكان آخر تذهب إليه."
+            },
+            {
+              "en": "rush",
+              "ar": "يُسرع / يندفع",
+              "em": "🏃",
+              "ex": "The firefighters rushed upstairs.",
+              "exAr": "اندفع رجال الإطفاء إلى الأعلى."
+            },
+            {
+              "en": "smash",
+              "ar": "يحطّم",
+              "em": "💥",
+              "ex": "They smashed the door.",
+              "exAr": "حطّموا الباب."
+            },
+            {
+              "en": "explosion",
+              "ar": "انفجار (explode: ينفجر)",
+              "em": "💣",
+              "ex": "An explosion smashed the window.",
+              "exAr": "حطّم انفجارٌ النافذة."
+            },
+            {
+              "en": "unhurt",
+              "ar": "لم يُصَب بأذى",
+              "em": "👍",
+              "ex": "Luckily, she was unhurt.",
+              "exAr": "لحسن الحظّ لم تُصَب بأذى."
+            },
+            {
+              "en": "thanks to",
+              "ar": "بفضل",
+              "em": "🙏",
+              "ex": "She's alive thanks to the firefighters.",
+              "exAr": "هي حيّة بفضل رجال الإطفاء."
+            }
+          ],
+          "reading": {
+            "title": "A Lucky Escape",
+            "paras": [
+              {
+                "en": "Late one night, Helen West, a 19-year-old nurse, smelt fire in her tenth-floor apartment. When she opened the kitchen door, everything was on fire. Thick, black smoke started coming under the door, and the only way out was through the kitchen.",
+                "ar": "في وقتٍ متأخّر من إحدى الليالي شمّت هيلين ويست، الممرّضة ذات التسعة عشر عاماً، رائحة حريق في شقّتها في الطابق العاشر. وحين فتحت باب المطبخ كان كلّ شيء يحترق. وبدأ دخان أسود كثيف يتسرّب من تحت الباب، وكان المخرج الوحيد عبر المطبخ."
+              },
+              {
+                "en": "Helen desperately needed another way out. She climbed out of the bedroom window onto a narrow ledge, 30 metres above the ground. \"I was really scared, but there was nowhere else to go,\" she said. Neighbours heard her shouts and called the fire service.",
+                "ar": "احتاجت هيلين بشدّة إلى مخرجٍ آخر، فخرجت من نافذة غرفة النوم إلى حافّة ضيّقة على ارتفاع 30 متراً. قالت: «كنت خائفة حقاً، لكن لم يكن هناك مكان آخر أذهب إليه». وسمع الجيران صراخها فاتّصلوا بالدفاع المدني."
+              },
+              {
+                "en": "A fire engine, the police and an ambulance arrived, but the ladder was ten metres too short! So two brave firefighters, Dave and Ken, rushed up to the tenth floor, smashed the door of the empty flat next to Helen's and ran to the window. Dave leaned out while Ken held him.",
+                "ar": "وصلت سيارة إطفاء والشرطة وسيارة إسعاف، لكنّ السلّم كان أقصر بعشرة أمتار! فاندفع رجلا إطفاء شجاعان، ديف وكين، إلى الطابق العاشر، وحطّما باب الشقّة الفارغة المجاورة لشقّة هيلين، وركضا إلى النافذة. مال ديف إلى الخارج بينما أمسكه كين."
+              },
+              {
+                "en": "\"Jump!\" Dave shouted, but Helen was too scared. Then an explosion smashed her window, and flames shot out. Finally, she jumped and Dave caught her arms. When they brought her down, everyone cheered. The paramedics examined her, but she was unhurt. \"I'm lucky to be alive,\" she said, \"thanks to Dave and Ken!\"",
+                "ar": "صاح ديف: «اقفزي!» لكنّ هيلين كانت خائفة جداً. ثم حطّم انفجارٌ نافذتها واندفعت ألسنة اللهب. وأخيراً قفزت فأمسك ديف ذراعيها. وحين أنزلاها هتف الجميع فرحاً. فحصها المسعفون فلم تكن مصابة. وقالت: «أنا محظوظة لأنني حيّة، بفضل ديف وكين!»"
+              }
+            ],
+            "questions": [
+              {
+                "q": "Why did Helen climb out of the window?",
+                "o": [
+                  "The only door was in the kitchen, which was on fire",
+                  "She wanted fresh air",
+                  "She saw her friends outside"
+                ],
+                "a": 0
+              },
+              {
+                "q": "Why couldn't the firefighters use their ladder?",
+                "o": [
+                  "It was ten metres too short",
+                  "It was broken",
+                  "It was raining"
+                ],
+                "a": 0
+              },
+              {
+                "q": "What did Dave and Ken do instead?",
+                "o": [
+                  "They went to the flat next to Helen's",
+                  "They waited outside",
+                  "They called a helicopter"
+                ],
+                "a": 0
+              },
+              {
+                "tf": false,
+                "q": "Helen jumped as soon as Dave shouted.",
+                "why": "She was too scared at first."
+              },
+              {
+                "q": "What finally made her jump?",
+                "o": [
+                  "An explosion smashed her window",
+                  "The police told her to",
+                  "Her neighbours cheered"
+                ],
+                "a": 0
+              }
+            ]
+          },
+          "rules": [
+            {
+              "title": "Adjectives",
+              "titleAr": "الصفات",
+              "explain": "الصفة تصف <b>الاسم</b>: تأتي <b>قبله</b> (thick, black smoke)، أو <b>بعد</b> أفعال مثل be و feel و seem و look (We are dirty and exhausted). والصفة المنتهية بـ <b>-ing</b> تصف <b>الشيء</b> نفسه (an amazing job)، والمنتهية بـ <b>-ed</b> تصف <b>شعور الشخص</b> (I'm exhausted).",
+              "form": "adjective + noun    ·    be / feel / seem / look + adjective    ·    -ing: الشيء    ·    -ed: الشعور",
+              "examples": [
+                {
+                  "en": "We move into the **thick, black** smoke.",
+                  "ar": "صفتان قبل الاسم"
+                },
+                {
+                  "en": "We are **dirty and exhausted**.",
+                  "ar": "صفتان بعد be مع and"
+                },
+                {
+                  "en": "It was an **exciting** race.",
+                  "ar": "-ing: السباق مثير"
+                },
+                {
+                  "en": "I was **excited** about the race.",
+                  "ar": "-ed: أنا متحمّس"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "The film was very ___. I nearly fell asleep.",
+                  "o": [
+                    "bored",
+                    "boring",
+                    "bore"
+                  ],
+                  "a": 1,
+                  "why": "الفيلم نفسه مملّ: boring"
+                },
+                {
+                  "q": "I'm ___ about my exam tomorrow.",
+                  "o": [
+                    "worried",
+                    "worrying",
+                    "worry"
+                  ],
+                  "a": 0,
+                  "why": "شعوري: worried"
+                },
+                {
+                  "q": "Choose the correct sentence.",
+                  "o": [
+                    "She has a car red new.",
+                    "She has a new red car.",
+                    "She has red a new car."
+                  ],
+                  "a": 1
+                },
+                {
+                  "type": "type",
+                  "q": "The news was ___. (amaze → -ing)",
+                  "a": [
+                    "amazing"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «تبدو سعيداً جداً اليوم»",
+                  "words": [
+                    "You",
+                    "seem",
+                    "very",
+                    "happy",
+                    "today."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "Adverbs",
+              "titleAr": "الظروف",
+              "explain": "الظرف يصف <b>الفعل</b>، ونصوغه غالباً بإضافة <b>-ly</b> إلى الصفة (quick ← quickly، lucky ← luckily). يأتي بعد الفعل أو بعد المفعول به، أو <b>قبل الفعل</b> للتوكيد، أو في <b>أوّل الجملة</b> مع فاصلة. وبعض الظروف شاذّة لا تأخذ -ly: <b>fast</b> و<b>hard</b> و<b>early</b>، و<b>good</b> يصبح <b>well</b>.",
+              "form": "adjective + ly → adverb    ·    y → ily    ·    شاذّة: fast, hard, early, well",
+              "examples": [
+                {
+                  "en": "She shut the door **quickly**.",
+                  "ar": "بعد المفعول به"
+                },
+                {
+                  "en": "Helen **desperately** needed another way out.",
+                  "ar": "قبل الفعل للتوكيد"
+                },
+                {
+                  "en": "**Luckily**, some neighbours heard her.",
+                  "ar": "أوّل الجملة"
+                },
+                {
+                  "en": "Smoke was coming in **fast**.",
+                  "ar": "ظرف شاذّ"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "He drives very ___.",
+                  "o": [
+                    "careful",
+                    "carefully",
+                    "care"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "She speaks English very ___.",
+                  "o": [
+                    "good",
+                    "well",
+                    "goodly"
+                  ],
+                  "a": 1,
+                  "why": "good يصبح well"
+                },
+                {
+                  "q": "___, nobody was hurt.",
+                  "o": [
+                    "Lucky",
+                    "Luckily",
+                    "Luck"
+                  ],
+                  "a": 1
+                },
+                {
+                  "type": "type",
+                  "q": "The adverb of \"easy\" is ___.",
+                  "a": [
+                    "easily"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «راقب الجيران بصمت»",
+                  "words": [
+                    "The",
+                    "neighbours",
+                    "watched",
+                    "silently."
+                  ]
+                }
+              ]
+            }
+          ],
+          "mastery": [
+            {
+              "q": "\"ladder\" means:",
+              "o": [
+                "سُلّم",
+                "نافذة",
+                "حبل"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "q": "\"ambulance\" means:",
+              "o": [
+                "سيارة إسعاف",
+                "سيارة إطفاء",
+                "سيارة شرطة"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "tf": true,
+              "q": "Helen lived on the tenth floor.",
+              "lv": "easy"
+            },
+            {
+              "type": "match",
+              "q": "صِل كلّ كلمة بمعناها",
+              "pairs": [
+                [
+                  "explosion",
+                  "انفجار"
+                ],
+                [
+                  "unhurt",
+                  "لم يُصَب"
+                ],
+                [
+                  "examine",
+                  "يفحص"
+                ],
+                [
+                  "cheer",
+                  "يهتف"
+                ]
+              ],
+              "lv": "medium"
+            },
+            {
+              "q": "Max is a brilliant singer. He sings ___.",
+              "o": [
+                "good",
+                "well",
+                "goodly"
+              ],
+              "a": 1,
+              "lv": "medium"
+            },
+            {
+              "q": "It was a cold, wet day and the children were ___.",
+              "o": [
+                "bored",
+                "boring",
+                "bore"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "type": "type",
+              "q": "She plays the piano ___. (beautiful)",
+              "a": [
+                "beautifully"
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Choose the correct sentence.",
+              "o": [
+                "He quickly ran out of the building.",
+                "He ran quick out of the building.",
+                "He quickly runned out of the building."
+              ],
+              "a": 0,
+              "lv": "hard"
+            },
+            {
+              "type": "order",
+              "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+              "words": [
+                "Helen",
+                "felt",
+                "scared",
+                "and",
+                "alone."
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Who saved Helen?",
+              "o": [
+                "Two firefighters",
+                "Her neighbours",
+                "The paramedics"
+              ],
+              "a": 0,
+              "lv": "hard"
+            }
+          ]
+        }
+      ]
+    },
+    /* ================= الوحدة 5 ================= */
+    5: {
+      "title": "طقسٌ خطِر",
+      "titleEn": "Dangerous weather",
+      "lessons": [
+        {
+          "id": "5-1",
+          "title": "Dangerous weather",
+          "titleAr": "طقسٌ خطِر",
+          "vocab": [
+            {
+              "en": "hurricane",
+              "ar": "إعصار",
+              "em": "🌪️",
+              "ex": "The hurricane destroyed many houses.",
+              "exAr": "دمّر الإعصار بيوتاً كثيرة."
+            },
+            {
+              "en": "accurate",
+              "ar": "دقيق",
+              "em": "🎯",
+              "ex": "Weather forecasts are very accurate now.",
+              "exAr": "صارت توقّعات الطقس دقيقة جداً."
+            },
+            {
+              "en": "approach",
+              "ar": "يقترب",
+              "em": "🌀",
+              "ex": "The storm approached the coast.",
+              "exAr": "اقتربت العاصفة من الساحل."
+            },
+            {
+              "en": "breathe",
+              "ar": "يتنفّس",
+              "em": "🌬️",
+              "ex": "We need the air that we breathe.",
+              "exAr": "نحتاج إلى الهواء الذي نتنفّسه."
+            },
+            {
+              "en": "combine",
+              "ar": "يجمع / يمتزج",
+              "em": "🔗",
+              "ex": "Wind and water combine to make storms.",
+              "exAr": "تمتزج الريح والماء فتصنع العواصف."
+            },
+            {
+              "en": "escape",
+              "ar": "يهرب / ينجو",
+              "em": "🏃",
+              "ex": "Most people escaped by car.",
+              "exAr": "نجا معظم الناس بالسيارات."
+            },
+            {
+              "en": "force",
+              "ar": "قوّة",
+              "em": "💪",
+              "ex": "Water is a great natural force.",
+              "exAr": "الماء قوّة طبيعية عظيمة."
+            },
+            {
+              "en": "heat",
+              "ar": "حرارة",
+              "em": "🔥",
+              "ex": "We can't live without the sun's heat.",
+              "exAr": "لا نستطيع العيش دون حرارة الشمس."
+            },
+            {
+              "en": "hit",
+              "ar": "يضرب",
+              "em": "👊",
+              "ex": "The hurricane hit Florida in 1992.",
+              "exAr": "ضرب الإعصار فلوريدا عام 1992."
+            },
+            {
+              "en": "moreover",
+              "ar": "علاوةً على ذلك",
+              "em": "➕",
+              "ex": "It is cheap. Moreover, it is useful.",
+              "exAr": "إنه رخيص، وعلاوةً على ذلك مفيد."
+            },
+            {
+              "en": "poor",
+              "ar": "فقير",
+              "em": "🏚️",
+              "ex": "Poor countries need more help.",
+              "exAr": "الدول الفقيرة تحتاج مساعدةً أكبر."
+            },
+            {
+              "en": "properly",
+              "ar": "بشكلٍ صحيح",
+              "em": "✔️",
+              "ex": "They can't protect people properly.",
+              "exAr": "لا يستطيعون حماية الناس بشكل صحيح."
+            },
+            {
+              "en": "as a result",
+              "ar": "نتيجةً لذلك",
+              "em": "➡️",
+              "ex": "There was no warning. As a result, many died.",
+              "exAr": "لم يكن هناك إنذار، ونتيجةً لذلك مات كثيرون."
+            },
+            {
+              "en": "storm surge",
+              "ar": "ارتفاع مياه البحر بسبب العاصفة",
+              "em": "🌊",
+              "ex": "A 10-metre storm surge hit the coast.",
+              "exAr": "ضرب الساحلَ ارتفاعٌ في مياه البحر بعشرة أمتار."
+            },
+            {
+              "en": "destruction",
+              "ar": "دمار (destroy: يدمّر)",
+              "em": "🏚️",
+              "ex": "The storm caused great destruction.",
+              "exAr": "سبّبت العاصفة دماراً كبيراً."
+            },
+            {
+              "en": "helplessly",
+              "ar": "بلا حولٍ ولا قوّة",
+              "em": "😟",
+              "ex": "They could only wait helplessly.",
+              "exAr": "لم يستطيعوا إلا الانتظار بلا حول ولا قوّة."
+            }
+          ],
+          "reading": {
+            "title": "Hurricane Watching",
+            "paras": [
+              {
+                "en": "We cannot live without the sun's heat or the air that we breathe, but these can also become dangerous killers, especially when they are combined with water. The most destructive result is the hurricane. Its winds can be faster than 118 kph, and it can be 800 kilometres across.",
+                "ar": "لا نستطيع العيش دون حرارة الشمس أو الهواء الذي نتنفّسه، لكنّهما قد يصبحان قاتلَين خطيرين، خصوصاً حين يمتزجان بالماء. وأشدّ النتائج دماراً هو الإعصار، فقد تزيد سرعة رياحه على 118 كم/س، وقد يبلغ عرضه 800 كيلومتر."
+              },
+              {
+                "en": "Hurricanes are so dangerous that scientists work hard to find out their speed and direction. Information is collected from satellites, weather balloons and weather stations, so forecasts have become very accurate. Early warnings can save many lives.",
+                "ar": "الأعاصير خطيرة جداً لدرجة أنّ العلماء يعملون بجدّ لمعرفة سرعتها واتّجاهها. وتُجمع المعلومات من الأقمار الصناعية ومناطيد الطقس ومحطّات الأرصاد، فصارت التوقّعات دقيقة جداً. والإنذار المبكر قد ينقذ أرواحاً كثيرة."
+              },
+              {
+                "en": "When Hurricane Andrew hit Florida in 1992, it caused such enormous damage that it became the world's most expensive hurricane. However, only a few people died, because most had escaped by car.",
+                "ar": "حين ضرب إعصار أندرو فلوريدا عام 1992 سبّب أضراراً هائلة لدرجة أنه صار أغلى إعصار في العالم. لكن لم يمت إلا قليلون، لأنّ معظم الناس كانوا قد هربوا بسياراتهم."
+              },
+              {
+                "en": "In 1970, things were far worse in Bangladesh. There was almost no warning, the roads were bad, and people were too poor to escape. As a result, about 500,000 people died. Today we can deal with disasters better than before, but poor countries still need more help.",
+                "ar": "وفي عام 1970 كانت الأمور أسوأ بكثير في بنغلادش: فلم يكن هناك إنذار تقريباً، والطرق سيئة، والناس أفقر من أن يهربوا. ونتيجةً لذلك مات نحو 500 ألف شخص. واليوم نستطيع التعامل مع الكوارث أفضل من قبل، لكنّ الدول الفقيرة ما زالت تحتاج إلى مساعدة أكبر."
+              }
+            ],
+            "questions": [
+              {
+                "q": "When do the sun's heat and the air become more dangerous?",
+                "o": [
+                  "When they are combined with water",
+                  "At night",
+                  "In winter"
+                ],
+                "a": 0
+              },
+              {
+                "q": "Why are forecasts accurate now?",
+                "o": [
+                  "Information comes from satellites, balloons and weather stations",
+                  "People guess well",
+                  "Hurricanes are smaller now"
+                ],
+                "a": 0
+              },
+              {
+                "q": "Why did only a few people die in Hurricane Andrew?",
+                "o": [
+                  "Most had escaped by car",
+                  "It was a small storm",
+                  "It hit at night"
+                ],
+                "a": 0
+              },
+              {
+                "tf": false,
+                "q": "There was a good warning before the 1970 storm in Bangladesh.",
+                "why": "There was almost no warning."
+              },
+              {
+                "q": "What do poor countries still need?",
+                "o": [
+                  "More help from the world",
+                  "More hurricanes",
+                  "Fewer weather stations"
+                ],
+                "a": 0
+              }
+            ]
+          },
+          "rules": [
+            {
+              "title": "Comparatives and Superlatives",
+              "titleAr": "المقارنة والتفضيل",
+              "explain": "الصفات القصيرة نضيف إليها <b>-er</b> و<b>-est</b> (high ← higher ← the highest)، والطويلة نستخدم معها <b>more</b> و<b>most</b> (dangerous ← more dangerous ← the most dangerous). الظروف تقارَن بـ <b>more / most</b> (more quickly)، إلا القصيرة مثل <b>fast</b> و<b>hard</b>. والشاذّة: <b>good / well</b> ← better ← the best، و<b>bad</b> ← worse ← the worst.",
+              "form": "short: -er than / the -est    ·    long: more … than / the most …    ·    good → better → best    ·    bad → worse → worst",
+              "examples": [
+                {
+                  "en": "These are **the highest** mountains.",
+                  "ar": "تفضيل لصفة قصيرة"
+                },
+                {
+                  "en": "It has been **more exciting than** usual.",
+                  "ar": "مقارنة لصفة طويلة"
+                },
+                {
+                  "en": "The ice is melting **faster than** before.",
+                  "ar": "ظرف قصير"
+                },
+                {
+                  "en": "The systems are **better than** in the past.",
+                  "ar": "شاذّة: good ← better"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "Bangladesh suffers some of the ___ disasters in the world.",
+                  "o": [
+                    "more dangerous",
+                    "most dangerous",
+                    "dangerousest"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "The floods are now ___ than they used to be.",
+                  "o": [
+                    "bad",
+                    "worse",
+                    "worst"
+                  ],
+                  "a": 1
+                },
+                {
+                  "q": "Rivers move ___ when they are full of rocks.",
+                  "o": [
+                    "more slowly",
+                    "slowlier",
+                    "most slow"
+                  ],
+                  "a": 0
+                },
+                {
+                  "type": "type",
+                  "q": "This is the ___ storm in history. (bad)",
+                  "a": [
+                    "worst"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «اليوم أحرّ من الأمس»",
+                  "words": [
+                    "Today",
+                    "is",
+                    "hotter",
+                    "than",
+                    "yesterday."
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "as … as  ·  so … that  ·  such … that",
+              "titleAr": "as … as  و  so / such … that",
+              "explain": "<b>as + صفة أو ظرف + as</b> للمساواة، و<b>not as … as</b> لعدمها (not as fast as = أقلّ سرعة). و<b>so + صفة + that</b> و<b>such + (a) + صفة + اسم + that</b> للتعبير عن السبب ونتيجته.",
+              "form": "as + adj + as    ·    not as + adj + as    ·    so + adj + that …    ·    such (a) + adj + noun + that …",
+              "examples": [
+                {
+                  "en": "Wind speeds are **as high as** 120 kph.",
+                  "ar": "مساواة"
+                },
+                {
+                  "en": "This storm is **not as violent as** others.",
+                  "ar": "أقلّ عنفاً"
+                },
+                {
+                  "en": "Hurricanes are **so dangerous that** scientists watch them closely.",
+                  "ar": "so + صفة"
+                },
+                {
+                  "en": "It was **such a disaster that** 500,000 people died.",
+                  "ar": "such a + اسم"
+                }
+              ],
+              "questions": [
+                {
+                  "q": "My brother is not ___ tall as me.",
+                  "o": [
+                    "as",
+                    "so",
+                    "such"
+                  ],
+                  "a": 0
+                },
+                {
+                  "q": "It was ___ a hot day that we stayed inside.",
+                  "o": [
+                    "so",
+                    "such",
+                    "as"
+                  ],
+                  "a": 1,
+                  "why": "such a + صفة + اسم"
+                },
+                {
+                  "q": "The storm was ___ strong that it destroyed the bridge.",
+                  "o": [
+                    "such",
+                    "so",
+                    "as"
+                  ],
+                  "a": 1,
+                  "why": "so + صفة وحدها"
+                },
+                {
+                  "type": "type",
+                  "q": "Ali runs as ___ as Omar. (fast)",
+                  "a": [
+                    "fast"
+                  ]
+                },
+                {
+                  "type": "order",
+                  "q": "رتّب الكلمات: «كان الجوّ بارداً جداً فبقينا في البيت»",
+                  "words": [
+                    "It",
+                    "was",
+                    "so",
+                    "cold",
+                    "that",
+                    "we",
+                    "stayed",
+                    "home."
+                  ]
+                }
+              ]
+            }
+          ],
+          "mastery": [
+            {
+              "q": "\"heat\" means:",
+              "o": [
+                "حرارة",
+                "برد",
+                "ريح"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "q": "\"escape\" means:",
+              "o": [
+                "يهرب / ينجو",
+                "يبني",
+                "ينام"
+              ],
+              "a": 0,
+              "lv": "easy"
+            },
+            {
+              "tf": true,
+              "q": "Hurricane Andrew hit Florida in 1992.",
+              "lv": "easy"
+            },
+            {
+              "type": "match",
+              "q": "صِل كلّ كلمة بمعناها",
+              "pairs": [
+                [
+                  "breathe",
+                  "يتنفّس"
+                ],
+                [
+                  "approach",
+                  "يقترب"
+                ],
+                [
+                  "poor",
+                  "فقير"
+                ],
+                [
+                  "accurate",
+                  "دقيق"
+                ]
+              ],
+              "lv": "medium"
+            },
+            {
+              "q": "The noun of \"destroy\" is:",
+              "o": [
+                "destruction",
+                "destroyer",
+                "destroying"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "q": "She is ___ student in the class.",
+              "o": [
+                "the best",
+                "the better",
+                "best than"
+              ],
+              "a": 0,
+              "lv": "medium"
+            },
+            {
+              "type": "type",
+              "q": "Junk food is ___ healthy than fruit. (less / more)",
+              "a": [
+                "less"
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "\"My brother is taller than me\" means:",
+              "o": [
+                "I am not as tall as my brother.",
+                "My brother is not as tall as me.",
+                "We are the same height."
+              ],
+              "a": 0,
+              "lv": "hard"
+            },
+            {
+              "type": "order",
+              "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+              "words": [
+                "It",
+                "was",
+                "such",
+                "a",
+                "strong",
+                "storm",
+                "that",
+                "trees",
+                "fell."
+              ],
+              "lv": "hard"
+            },
+            {
+              "q": "Why did so many people die in Bangladesh in 1970?",
+              "o": [
+                "No warning, bad roads and poverty",
+                "The storm was very small",
+                "They lived far from the sea"
+              ],
+              "a": 0,
+              "lv": "hard"
+            }
+          ]
+        }
+      ]
+    },
     /* ================= الوحدة 6 ================= */
     6: {
       "title": "العمل من أجل عالمٍ أفضل",
