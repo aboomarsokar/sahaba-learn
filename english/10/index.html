@@ -901,7 +901,13 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     <section class="card set">
       <h3 data-t="sounds">الأصوات</h3>
       <label class="tg"><span data-t="sSpeak">نطق الكلمات</span><input type="checkbox" id="optSpeak"></label>
-      <label class="tg"><span data-t="sSlow">نطق بطيء</span><input type="checkbox" id="optSlow"></label>
+      <p class="sw-label" data-t="sVoice">صوت القارئ</p>
+      <div class="seg">
+        <button type="button" data-voice-btn="m" data-t="vMale">رجل</button>
+        <button type="button" data-voice-btn="f" data-t="vFemale">امرأة</button>
+      </div>
+      <button class="btn" type="button" id="voiceTest" style="align-self:flex-start"><svg><use href="#i-speak"/></svg><span data-t="vTest">جرّب الصوت</span></button>
+      <label class="tg"><span data-t="sSlow">نطق أبطأ</span><input type="checkbox" id="optSlow"></label>
       <label class="tg"><span data-t="sFx">مؤثرات الإجابة الصحيحة والخاطئة</span><input type="checkbox" id="optFx"></label>
     </section>
     <section class="card set">
@@ -994,6 +1000,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-13',title:'صوت جديد',items:['النطق أبطأ وأوضح','صوت رجل يقرأ (ويمكن اختيار صوت امرأة من الإعدادات)','قراءة العربية: معنى الكلمة ومثالها، وترجمة القصّة بزرّ «اقرأ الترجمة»','زرّ «جرّب الصوت» في الإعدادات']},
     {date:'2026-11-13',title:'أوراق المراجعة والاختبارات',items:['ورقة مراجعة لكلّ وحدة من الوحدات العشر: مفردات وقواعد وقراءة','ثلاثة اختبارات شاملة: الوحدات 1–3 و4–6 و7–10','اختبار نهائي للمنهج كلّه يتغيّر كلّ مرة','تُحفظ أفضل علامة لك، وتظهر نتائجك في «سجل التعلّم» و«إنجازاتي»']},
     {date:'2026-11-13',title:'الفصل الأول كاملاً',items:['الوحدة 1: التواصل مع الآخرين (المضارع للمستقبل، will و going to)','الوحدة 2: من هنا إلى هناك (المضارع التام والمستمر، والمضارع التام أم الماضي)','الوحدة 3: أنشطة وقت الفراغ (الأفعال الناقصة: ثلاث قواعد)','الوحدة 4: حالة طوارئ! (الصفات والظروف)','الوحدة 5: طقسٌ خطِر (المقارنة والتفضيل، as…as و so/such…that)','صار المنهج كلّه متاحاً: 10 وحدات بشهاداتها']},
     {date:'2026-11-13',title:'الفصل الثاني كاملاً',items:['الوحدة 6: العمل من أجل عالمٍ أفضل (الماضي المستمر والماضي التام)','الوحدة 8: أيّ طريقٍ في السادسة عشرة؟ (الشرط: النوع الثاني والثالث)','الوحدة 9: غذاء صحي، جسم صحي (أدوات التعريف وجمل الوصل)','الوحدة 10: الحديث عن عالم الغد (المبني للمجهول)']},
@@ -1057,7 +1064,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     pUnit:'Unit you are studying',pPerDay:'Lessons per day',pExam:'Exam date',addTask:'Add a task to the schedule',day:'Day',task:'Task',taskPh:'e.g. Unit 7 vocabulary',
     weekly:'Weekly schedule',resetWeek:'Start a new week (clear checkmarks)',mode:'Mode',light:'Light',dark:'Dark',bgLight:'Background colour (light mode)',
     bgDark:'Background colour (dark mode)',fontSize:'Font size',small:'Small',medium:'Medium',large:'Large',uiLang:'App language',sounds:'Sounds',
-    sSpeak:'Word pronunciation',sSlow:'Slow pronunciation',sFx:'Right / wrong answer sounds',notifs:'Notifications',nUpd:'App update alerts',nPlan:'Study plan reminders',
+    sSpeak:'Word pronunciation',sSlow:'Slower pronunciation',sVoice:'Reader voice',vMale:'Male',vFemale:'Female',vTest:'Test the voice',readAr:'Read the translation',sFx:'Right / wrong answer sounds',notifs:'Notifications',nUpd:'App update alerts',nPlan:'Study plan reminders',
     aboutDesc:'An interactive app for learning English: lessons and grammar explained, word pronunciation, reading passages, worksheets and tests, a personal dictionary and a study planner.',
     kGrade:'Grade & curriculum',vGrade:'Grade 10 — English curriculum',kVer:'Version',kDev:'Developer',vDev:'Al-Tabi\'een School for Quran Memorisation — Gaza',
     kCopy:'Copyright',vCopy:'© 2026 Al-Tabi\'een School. All rights reserved.',share:'Share the app',install:'Install the app',certs:'My Certificates',level:'Level'};
@@ -1107,14 +1114,39 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var c=$(x[0]);c.checked=!!set[x[1]];
     c.addEventListener('change',function(){set[x[1]]=c.checked;save(K.set,set);badges()});
   });
+  function voiceBtns(){document.querySelectorAll('[data-voice-btn]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.voiceBtn===(set.voice||'m'))})}
+  document.querySelectorAll('[data-voice-btn]').forEach(function(b){b.addEventListener('click',function(){set.voice=b.dataset.voiceBtn;save(K.set,set);voiceBtns();$('voiceTest').click()})});
+  voiceBtns();
   mq.addEventListener&&mq.addEventListener('change',function(){if(!set.mode)applyTheme()});
   applyTheme();applyLang();
 
+  $('voiceTest').addEventListener('click',function(){speak([['Hello! Welcome to LEXORA.','en'],['أهلاً بك في ليكسورا','ar']])});
   /* ===== الصوت ===== */
-  function speak(text){
+  /* الصوت من الجهاز نفسه: نختار صوت رجل إن وُجد (الافتراضي)، أو صوت امرأة من الإعدادات */
+  var MALE=/\b(male|man|daniel|david|fred|alex|aaron|arthur|george|guy|james|mark|oliver|ryan|rishi|thomas|tom|lee|gordon|maged|majed|tarik|tariq|hamed|naayf|shakir|bassel|omar|hamza|fahed|ahmed)\b/i;
+  var FEMALE=/\b(female|woman|samantha|karen|victoria|zira|susan|kate|serena|moira|tessa|fiona|hazel|libby|sonia|jenny|aria|laila|mariam|salma|amira|zariyah|hoda|lana|sana|reem|layla)\b/i;
+  function voices(){try{return speechSynthesis.getVoices()||[]}catch(e){return[]}}
+  function pickVoice(lang){
+    var vs=voices().filter(function(v){return (v.lang||'').toLowerCase().indexOf(lang)===0});
+    if(!vs.length)return null;
+    var want=set.voice==='f'?FEMALE:MALE,avoid=set.voice==='f'?MALE:FEMALE;
+    if(lang==='en')vs.sort(function(a,b){return (/en-(gb|us)/i.test(b.lang)?1:0)-(/en-(gb|us)/i.test(a.lang)?1:0)});
+    return vs.filter(function(v){return want.test(v.name)})[0]||vs.filter(function(v){return !avoid.test(v.name)})[0]||vs[0];
+  }
+  if('speechSynthesis' in window&&speechSynthesis.addEventListener)speechSynthesis.addEventListener('voiceschanged',function(){});
+  /* parts: نصّ واحد أو قائمة [نصّ، لغة] تُقرأ بالتتابع */
+  function speak(text,lang){
     if(!set.speak){toast(T('النطق متوقّف من الإعدادات','Pronunciation is off in Settings'));return}
     if(!('speechSynthesis' in window)){toast(T('جهازك لا يدعم النطق','Your device does not support speech'));return}
-    speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(text);u.lang='en-US';u.rate=set.slow?.7:.95;speechSynthesis.speak(u);
+    var parts=Array.isArray(text)?text:[[text,lang||'en']];
+    speechSynthesis.cancel();
+    parts.forEach(function(pt){
+      if(!pt[0])return;var l=pt[1]||'en',u=new SpeechSynthesisUtterance(pt[0]),v=pickVoice(l);
+      if(l==='ar'&&!v&&voices().length){toast(T('لا يوجد صوت عربي على جهازك','No Arabic voice on this device'));return}
+      u.lang=v?v.lang:(l==='ar'?'ar-SA':'en-US');if(v)u.voice=v;
+      u.rate=set.slow?.6:.8;u.pitch=set.voice==='f'?1:.9;
+      speechSynthesis.speak(u);
+    });
   }
   var actx;function beep(ok){
     if(!set.fx)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();
@@ -1345,7 +1377,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   $('dList').addEventListener('click',function(e){
     var b=e.target.closest('button');if(!b)return;
     var id=b.dataset.say||b.dataset.del,w=dict.filter(function(x){return x.id==id})[0];if(!w)return;
-    if(b.dataset.say)speak(w.en+(w.ex?'. '+w.ex:''));
+    if(b.dataset.say)speak([[w.en,'en'],[w.ar,'ar'],[w.ex,'en']]);
     else if(confirm(T('حذف «'+w.en+'» من قاموسك؟','Delete “'+w.en+'”?'))){dict=dict.filter(function(x){return x.id!=id});save(K.dict,dict);renderDict()}
   });
   $('dForm').addEventListener('submit',function(e){
@@ -1572,9 +1604,9 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   }
   function nextBtn(label,fn){var b=document.createElement('button');b.type='button';b.className='btn gold next';b.innerHTML='<span>'+label+'</span>';b.addEventListener('click',fn);return b}
   function hl(s){return esc(s).replace(/\*\*(.+?)\*\*/g,'<mark>$1</mark>')}
-  function sayBtn(text){return '<button class="icon-btn sm" type="button" data-speak="'+esc(text)+'" aria-label="'+T('استمع','Listen')+'"><svg><use href="#i-speak"/></svg></button>'}
+  function sayBtn(text,lang){return '<button class="icon-btn sm" type="button" data-speak="'+esc(text)+'"'+(lang?' data-lang="'+lang+'"':'')+' aria-label="'+T('استمع','Listen')+'"><svg><use href="#i-speak"/></svg></button>'}
   $('stage').addEventListener('click',function(e){
-    var b=e.target.closest('[data-speak]');if(b){e.stopPropagation();speak(b.dataset.speak);return}
+    var b=e.target.closest('[data-speak]');if(b){e.stopPropagation();speak(b.dataset.speak,b.dataset.lang);return}
     var t=e.target.closest('[data-tf]');if(t){var box=t.parentNode,to=box.querySelector('.to');to.hidden=false;box.querySelector('.a').hidden=false;t.remove();beep(true);speak(to.textContent)}
   });
 
@@ -1683,11 +1715,12 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
         '<div class="btns"><button class="btn" type="button" id="vAdd"><svg><use href="#i-dict"/></svg>'+T('أضف إلى قاموسي','Add to my dictionary')+'</button></div>';
       function face(){
         var fc=$('fc');fc.classList.remove('flip');void fc.offsetWidth;fc.classList.add('flip');
-        fc.innerHTML=back?'<span class="em">'+(w.em||'')+'</span><span class="m">'+esc(w.ar)+'</span><span class="x">'+esc(w.ex||'')+' '+(w.ex?sayBtn(w.ex):'')+'</span><span class="xa">'+esc(w.exAr||'')+'</span>'
+        fc.innerHTML=back?'<span class="em">'+(w.em||'')+'</span><span class="m">'+esc(w.ar)+' '+sayBtn(w.ar,'ar')+'</span><span class="x">'+esc(w.ex||'')+' '+(w.ex?sayBtn(w.ex):'')+'</span><span class="xa">'+esc(w.exAr||'')+' '+(w.exAr?sayBtn(w.exAr,'ar'):'')+'</span>'
           :'<span class="em">'+(w.em||'')+'</span><span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+'<span class="hint">'+T('اضغط على البطاقة لترى المعنى','Tap the card to see the meaning')+'</span>';
       }
       face();if(set.speak)speak(w.en);
-      $('fc').addEventListener('click',function(){back=!back;face()});
+      $('fc').addEventListener('click',function(e){if(e.target.closest('[data-speak]'))return;   /* أزرار الصوت لا تقلب البطاقة */
+        back=!back;face();if(back&&set.speak)speak([[w.ar,'ar']])});
       $('vPrev').addEventListener('click',function(){if(i>0){i--;card()}});
       $('vNext').addEventListener('click',function(){if(i<v.length-1){i++;card()}else quiz()});
       $('vAdd').addEventListener('click',function(){
@@ -1725,12 +1758,14 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       d.innerHTML='<div class="en">'+sent.map(function(s){return '<span data-s="'+esc(s.trim())+'">'+markVocab(esc(s))+'</span>'}).join('')+'</div>'+
         '<div class="ar" hidden>'+esc(p.ar||'')+'</div>'+
         '<div class="tools"><button class="btn" type="button" data-tr>'+T('الترجمة','Translation')+'</button>'+
-        '<button class="btn" type="button" data-read="'+esc(p.en)+'"><svg><use href="#i-speak"/></svg>'+T('اقرأ لي','Read to me')+'</button></div>';
+        '<button class="btn" type="button" data-read="'+esc(p.en)+'"><svg><use href="#i-speak"/></svg>'+T('اقرأ لي','Read to me')+'</button>'+
+        (p.ar?'<button class="btn" type="button" data-read-ar><svg><use href="#i-speak"/></svg>'+T('اقرأ الترجمة','Read the translation')+'</button>':'')+'</div>';
       box.appendChild(d);shown++;
       d.querySelector('[data-tr]').addEventListener('click',function(){var a=d.querySelector('.ar');a.hidden=!a.hidden});
       d.querySelector('[data-read]').addEventListener('click',function(){speak(this.dataset.read)});
+      var ra=d.querySelector('[data-read-ar]');if(ra)ra.addEventListener('click',function(){d.querySelector('.ar').hidden=false;speak(p.ar,'ar')});
       d.querySelectorAll('[data-s]').forEach(function(s){s.addEventListener('click',function(e){
-        var m=e.target.closest('mark');if(m){toast(m.textContent+' = '+m.dataset.m);speak(m.textContent);return}
+        var m=e.target.closest('mark');if(m){toast(m.textContent+' = '+m.dataset.m);speak([[m.textContent,'en'],[m.dataset.m,'ar']]);return}
         d.querySelectorAll('.say').forEach(function(x){x.classList.remove('say')});s.classList.add('say');speak(s.dataset.s);
       })});
       var old=st.querySelector('#pNext');if(old)old.remove();
