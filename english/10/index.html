@@ -372,6 +372,106 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .kv{width:100%;display:grid;grid-template-columns:auto 1fr;gap:.45rem 1rem;font-family:var(--fb);font-size:.88rem;text-align:start;padding-top:.6rem;border-top:1px solid var(--cardBd)}
 .kv dt{color:var(--muted)}
 
+/* ---- المستوى و XP ---- */
+.lvl{display:flex;align-items:center;gap:.9rem;padding:1rem 1.1rem;text-align:start}
+.lvl .lv{flex:none;width:64px;height:64px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);box-shadow:0 0 22px rgba(243,201,105,.45)}
+.lvl .lv small{font:700 .55rem "Cinzel",serif;letter-spacing:.1em}
+.lvl .lv b{font:700 1.5rem/1 "Cinzel",serif}
+.lvl .t{flex:1;min-width:0;font-family:var(--fb)}
+.lvl .t b{display:block;font-family:var(--fh);font-size:1.15rem}
+.lvl .t small{display:block;font-size:.78rem;color:var(--muted);margin-top:.2rem}
+.xp-pop{position:fixed;z-index:31;left:50%;top:22%;transform:translate(-50%,0);font:700 2rem "Cinzel",serif;color:var(--gold);
+  text-shadow:0 0 20px rgba(243,201,105,.6);pointer-events:none;animation:xp 1.6s ease-out forwards}
+@keyframes xp{0%{opacity:0;transform:translate(-50%,20px) scale(.7)}20%{opacity:1;transform:translate(-50%,0) scale(1.1)}100%{opacity:0;transform:translate(-50%,-60px) scale(1)}}
+
+/* ---- دروس الوحدة ---- */
+.lrow{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem}
+.lrow .num{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--panel);border:1px solid var(--cardBd);font:700 1.1rem "Cinzel",serif;color:var(--gold)}
+.lrow .num.ok{background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);border:0}
+.lrow .t{flex:1;min-width:0}
+.lrow b{display:block;font-family:var(--fh);font-size:1.1rem}
+.lrow .en{display:block;font:700 .8rem var(--fb);color:var(--muted);direction:ltr;text-align:end}
+.dots{display:flex;gap:4px;margin-top:.4rem}
+.dots i{width:18px;height:5px;border-radius:9px;background:var(--panel)}
+.dots i.on{background:var(--gold)}
+
+/* ---- مشغّل الدرس ---- */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;width:100%}
+.step{display:flex;flex-direction:column;align-items:center;gap:.25rem;padding:0;border:0;background:none;cursor:pointer;color:var(--muted);font-family:var(--fb);font-size:.66rem;line-height:1.2}
+.step .c{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-size:1.1rem;background:var(--panel);border:2px solid var(--cardBd);transition:.2s}
+.step.done .c{background:linear-gradient(180deg,var(--btn1),var(--btn2));border-color:transparent}
+.step.cur{color:var(--text);font-weight:700}
+.step.cur .c{border-color:var(--gold);box-shadow:0 0 0 4px rgba(243,201,105,.25)}
+.step.lock{opacity:.45;cursor:not-allowed}
+.stage{display:flex;flex-direction:column;gap:1rem;animation:rise .4s ease-out both}
+.st-head{text-align:center}
+.st-head small{display:block;font:700 .8rem "Cinzel",serif;letter-spacing:.12em;color:var(--gold);direction:ltr}
+.st-head b{display:block;font-family:var(--fh);font-size:1.7rem}
+.st-head p{font-family:var(--fb);font-size:.88rem;color:var(--muted);margin-top:.2rem}
+.next{align-self:center}
+
+/* بطاقة الكلمة */
+.flash{min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1.4rem 1rem;text-align:center;cursor:pointer;perspective:800px}
+.flash .em{font-size:3rem;line-height:1}
+.flash .w{font:700 2.1rem var(--fb);direction:ltr}
+.flash .m{font-family:var(--fh);font-size:1.6rem;color:var(--gold)}
+.flash .x{font-family:var(--fb);font-size:.95rem;direction:ltr}
+.flash .xa{font-family:var(--fb);font-size:.88rem;color:var(--muted)}
+.flash .hint{font-family:var(--fb);font-size:.75rem;color:var(--muted)}
+.flash.flip{animation:flip .35s ease}
+@keyframes flip{50%{transform:rotateY(90deg)}}
+.navrow{display:flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--fb);font-size:.9rem;color:var(--muted)}
+
+/* القصّة */
+.para{padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.6rem;animation:rise .4s ease-out both}
+.para .en{font:400 1.12rem/1.9 var(--fb);direction:ltr;text-align:left}
+.para .en span{cursor:pointer;border-radius:6px;transition:background .15s}
+.para .en span:hover,.para .en span.say{background:rgba(243,201,105,.22)}
+.para .en mark{background:none;color:var(--gold);font-weight:700;border-bottom:2px dotted var(--gold);cursor:help}
+.para .ar{font-family:var(--fb);font-size:.92rem;line-height:1.9;color:var(--muted);border-top:1px dashed var(--cardBd);padding-top:.5rem}
+.para .tools{justify-content:flex-end}
+.story-t{font:700 1.4rem var(--fb);direction:ltr;text-align:center;color:var(--gold)}
+
+/* القاعدة */
+.rule{padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.7rem}
+.rule h3{font:700 1.3rem var(--fb);direction:ltr;text-align:center;color:var(--gold)}
+.rule h4{font-family:var(--fh);font-size:1.2rem;text-align:center;margin-top:-.4rem}
+.rule p{font-family:var(--fb);font-size:.98rem;line-height:1.9}
+.rule p b{color:var(--gold)}
+.formula{font:700 .95rem var(--fb);direction:ltr;text-align:center;padding:.8rem;border-radius:14px;background:var(--panel);border:1px dashed var(--gold);line-height:1.8}
+.exs{display:flex;flex-direction:column;gap:.5rem}
+.exl{display:flex;align-items:center;gap:.6rem;padding:.6rem .8rem;border-radius:12px;background:var(--panel)}
+.exl .t{flex:1;min-width:0}
+.exl .e{display:block;font:400 1.02rem var(--fb);direction:ltr;text-align:left}
+.exl .e mark{background:rgba(243,201,105,.3);color:inherit;border-radius:4px;padding:0 3px;font-weight:700}
+.exl .a{display:block;font-family:var(--fb);font-size:.8rem;color:var(--muted)}
+
+/* الأسئلة */
+.qbox{padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.8rem}
+.qtop{display:flex;justify-content:space-between;align-items:center;font-family:var(--fb);font-size:.78rem;color:var(--muted)}
+.qtop .lvp{padding:.15rem .6rem;border-radius:99px;font-weight:700}
+.lvp.easy{background:rgba(47,191,113,.2);color:#2fbf71}.lvp.medium{background:rgba(243,201,105,.22);color:var(--gold)}.lvp.hard{background:rgba(255,77,109,.18);color:#ff6b85}
+.qtext{font:700 1.15rem/1.7 var(--fb);direction:ltr;text-align:left}
+.qtext .blank{display:inline-block;min-width:60px;border-bottom:2px solid var(--gold);margin:0 .2rem}
+.qopts{display:flex;flex-direction:column;gap:.5rem}
+.qopts button{padding:.8rem 1rem;border-radius:14px;border:1px solid var(--cardBd);background:var(--panel);cursor:pointer;font:400 1rem var(--fb);text-align:left;direction:ltr;transition:.15s}
+.qopts button.ar{text-align:right;direction:rtl}
+.qopts button:hover:not(:disabled){border-color:var(--gold)}
+.qopts button.ok{border-color:#2fbf71;background:rgba(47,191,113,.2)}
+.qopts button.no{border-color:#ff4d6d;background:rgba(255,77,109,.18);animation:shake .3s}
+.qopts button:disabled{cursor:default}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+.why{font-family:var(--fb);font-size:.88rem;line-height:1.7;padding:.6rem .8rem;border-radius:12px;background:var(--panel);border-inline-start:3px solid var(--gold)}
+.result{padding:1.4rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center}
+.result .big{font:700 2.6rem "Cinzel",serif;color:var(--gold);direction:ltr;unicode-bidi:isolate}
+.result p{font-family:var(--fb);font-size:.95rem}
+
+/* الشهادة */
+.cert-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}
+.cert-wrap canvas{width:100%;max-width:640px;height:auto;border-radius:12px;box-shadow:0 12px 34px var(--shadow)}
+.btns{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+
 /* ---- القائمة الجانبية ---- */
 .scrim{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s}
 .scrim.on{opacity:1;pointer-events:auto}
@@ -523,6 +623,28 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   </div>
 </main>
 
+<!-- ===== دروس الوحدة ===== -->
+<main id="unit" class="page" data-screen="unit" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" data-back="units" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2 id="unitTitle"></h2><span style="width:46px"></span>
+  </div>
+  <div class="wrap"><div class="list" id="lessonList"></div></div>
+</main>
+
+<!-- ===== الدرس: 5 محطات ثم الشهادة ===== -->
+<main id="lesson" class="page" data-screen="lesson" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" id="lsBack" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2 id="lsTitle" style="font-size:1.25rem"></h2>
+    <button class="icon-btn" type="button" id="lsSave" aria-label="حفظ الدرس" aria-pressed="false"><svg><use href="#i-bookmark"/></svg></button>
+  </div>
+  <div class="wrap">
+    <div class="steps" id="steps"></div>
+    <div class="stage" id="stage"></div>
+  </div>
+</main>
+
 <!-- ===== أوراق العمل ===== -->
 <main id="worksheets" class="page" data-screen="worksheets" hidden>
   <div class="topbar">
@@ -553,6 +675,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       <b id="pName" dir="auto"></b>
       <small id="pClass"></small>
       <button class="btn" type="button" data-go="profile"><svg><use href="#i-edit"/></svg><span data-t="editData">تعديل البيانات</span></button>
+    </div>
+    <div class="card lvl">
+      <span class="lv"><small>LEVEL</small><b id="lvN">1</b></span>
+      <span class="t"><b id="lvName"></b><i class="bar"><i id="lvBar" style="width:0%"></i></i><small id="lvTxt"></small></span>
     </div>
     <div class="stats">
       <div class="card stat"><span class="v" id="sLessons">0</span><span class="l" data-t="sLessons">الدروس المكتملة</span></div>
@@ -636,11 +762,15 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       <small data-t="sPct">نسبة إنجاز المنهج</small>
     </div>
     <div class="stats four">
+      <div class="card stat"><span class="v" id="aXp">0</span><span class="l">XP</span></div>
+      <div class="card stat"><span class="v" id="aLv">1</span><span class="l" data-t="level">المستوى</span></div>
       <div class="card stat"><span class="v" id="aWords">0</span><span class="l" data-t="aWords">كلمة تعلّمتها</span></div>
       <div class="card stat"><span class="v" id="aLessons">0</span><span class="l" data-t="sLessons">الدروس المكتملة</span></div>
       <div class="card stat"><span class="v" id="aUnits">0</span><span class="l" data-t="aUnits">الوحدات المنجزة</span></div>
       <div class="card stat"><span class="v" id="aAvg">—</span><span class="l" data-t="aAvg">معدّل الاختبارات</span></div>
     </div>
+    <h3 class="sec-t" data-t="certs">شهاداتي</h3>
+    <div class="list" id="aCerts"></div>
     <h3 class="sec-t" data-t="badges">شارات الإنجاز</h3>
     <div class="badges" id="aBadges"></div>
     <h3 class="sec-t" data-t="results">نتائج الاختبارات</h3>
@@ -770,14 +900,22 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="data/lessons.js"></script>
 <script>
 (function(){
-  var VERSION='1.3.0';
+  var VERSION='1.4.0';
   /* ===== روابط Drive (تُضاف حين تصل) ===== */
   var LINKS={book:'',pack:''};
-  /* أسماء الوحدات وعدد دروس كلّ وحدة تُضاف من الرزمة */
-  var UNIT_TITLES=[];
-  var LESSONS_PER_UNIT=[];   /* مثلاً [6,6,...]؛ يُحسب منها مجموع دروس المنهج */
+  /* محتوى الوحدات والدروس في data/lessons.js */
+  var DATA=window.LEXORA_DATA||{units:{}};
+  function unitData(n){return DATA.units&&DATA.units[n]}
+  var UNIT_TITLES=[],LESSONS_PER_UNIT=[];
+  for(var _n=1;_n<=12;_n++){var _u=unitData(_n);UNIT_TITLES.push(_u&&_u.title||'');LESSONS_PER_UNIT.push(_u&&_u.lessons?_u.lessons.length:0)}
+  function findLesson(id){
+    if(id==='demo')return DATA.demo;
+    for(var n=1;n<=12;n++){var u=unitData(n);if(u&&u.lessons)for(var i=0;i<u.lessons.length;i++){var l=u.lessons[i];if(!l.id)l.id=n+'-'+(i+1);l.unit=n;if(l.id===id)return l}}
+    return null;
+  }
 
   var AVATARS=['English','Big Ben','Learn English','Headphones','Dream Big','Books','You Can Do It','London Bus','I Love English','Quill',
     'Union Jack','Global Language','ABC','Success','Better Tomorrow','Listen & Learn','Knowledge','Be Excellent','Phone Box','Speak English',
@@ -791,6 +929,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-13',title:'نقاط XP ومحطات الدرس',items:['نقاط XP عند إنهاء كلّ محطة وكلّ درس','100 مستوى في ملفّك الشخصي، وكلّ مستوى أصعب من الذي قبله','كلّ درس يمرّ بخمس محطات: اكتشف، تعلّم، تدرّب، تحدَّ نفسك، أتقنتُ الدرس','شهادة لكلّ درس تُنزَّل صورةً، وتظهر في «إنجازاتي»']},
     {date:'2026-11-13',title:'ملفّك الشخصي وواجهة جديدة',items:['واجهة رئيسية جديدة: الفصلان، والكتب المدرسية والرزمة، وأوراق العمل والاختبارات','ملفّك الشخصي: تقدّمك والشعبة وتعديل البيانات','قاموسي الخاص مع النطق والبحث واختبار نفسك','الدروس المحفوظة، وسجل التعلّم، وإنجازاتي وشاراتها','خطة الدراسة بجدولٍ أسبوعي وتذكير بالمهام','الإعدادات: حجم الخط ولغة الواجهة والأصوات والإشعارات','حول التطبيق']},
     {date:'2026-11-13',title:'واجهة رئيسية أوضح',items:['خانة «الوحدات» مقسّمة على الفصلين الأول والثاني','مشاركة التطبيق انتقلت إلى القائمة']},
     {date:'2026-11-12',title:'إطلاق LEXORA',items:['شاشة البداية','اختيار الصورة الشخصية والاسم','الوضع الفاتح والداكن و20 لوناً للخلفية','تنزيل التطبيق على الجهاز']}
@@ -811,7 +950,9 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   var set=load(K.set,{});
   if(set.speak==null)set.speak=true;if(set.fx==null)set.fx=true;if(set.nUpd==null)set.nUpd=true;if(set.nPlan==null)set.nPlan=true;
   /* التقدّم: يملؤه محتوى الدروس والاختبارات حين يُضاف */
-  var prog=load(K.prog,{lessons:{},tests:[],saved:[],history:[]});
+  var prog=load(K.prog,{});
+  ['lessons'].forEach(function(k){prog[k]=prog[k]||{}});['tests','saved','history','certs'].forEach(function(k){prog[k]=prog[k]||[]});prog.xp=prog.xp||0;
+  function saveProg(){save(K.prog,prog)}
   var dict=load(K.dict,[]);
   var plan=load(K.plan,{unit:7,perDay:1,exam:'',tasks:[]});
 
@@ -831,7 +972,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     sSpeak:'Word pronunciation',sSlow:'Slow pronunciation',sFx:'Right / wrong answer sounds',notifs:'Notifications',nUpd:'App update alerts',nPlan:'Study plan reminders',
     aboutDesc:'An interactive app for learning English: lessons and grammar explained, word pronunciation, reading passages, worksheets and tests, a personal dictionary and a study planner.',
     kGrade:'Grade & curriculum',vGrade:'Grade 10 — English curriculum',kVer:'Version',kDev:'Developer',vDev:'Al-Tabi\'een School for Quran Memorisation — Gaza',
-    kCopy:'Copyright',vCopy:'© 2026 Al-Tabi\'een School. All rights reserved.',share:'Share the app',install:'Install the app'};
+    kCopy:'Copyright',vCopy:'© 2026 Al-Tabi\'een School. All rights reserved.',share:'Share the app',install:'Install the app',certs:'My Certificates',level:'Level'};
   function lang(){return set.lang==='en'?'en':'ar'}
   function T(ar,en){return lang()==='en'?en:ar}
   function applyLang(){
@@ -895,13 +1036,14 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   }
 
   /* ===== التنقّل بين الشاشات (يعمل معه زرّ الرجوع) ===== */
-  var renders={};
+  var renders={},param='';
   function show(){
-    var h=location.hash.slice(1);
+    var h=decodeURIComponent(location.hash.slice(1)),eq=h.indexOf('=');
+    param='';if(eq>-1){param=h.slice(eq+1);h=h.slice(0,eq)}
     if(h&&h!=='profile'&&!profile)h='';
     var el=document.querySelector('[data-screen="'+h+'"]')?h:'';
     document.querySelectorAll('[data-screen]').forEach(function(s){s.hidden=s.dataset.screen!==el});
-    if(renders[el])renders[el]();
+    if(renders[el])renders[el](param);
     closeMenu();window.scrollTo(0,0);
   }
   function go(h){if(location.hash==='#'+h)show();else location.hash=h}
@@ -970,9 +1112,11 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     for(var n=t*6-5;n<=t*6;n++)
       h+='<button class="card urow" type="button" data-unit="'+n+'"><span class="num"><span>'+n+'</span></span>'+
         '<span class="t"><span class="u">UNIT '+n+'</span><b>'+esc(UNIT_TITLES[n-1]||T('قريباً','Coming soon'))+'</b><i class="bar"><i style="width:'+unitPct(n)+'%"></i></i></span>'+
-        '<svg><use href="#i-lock"/></svg></button>';
+        '<svg><use href="#'+(LESSONS_PER_UNIT[n-1]?'i-back':'i-lock')+'"/></svg></button>';
     $('unitList').innerHTML=h;
-    $('unitList').querySelectorAll('[data-unit]').forEach(function(b){b.addEventListener('click',soon)});
+    $('unitList').querySelectorAll('[data-unit]').forEach(function(b){b.addEventListener('click',function(){
+      if(LESSONS_PER_UNIT[b.dataset.unit-1])go('unit='+b.dataset.unit);else soon();
+    })});
   };
   document.querySelectorAll('[data-term]').forEach(function(b){b.addEventListener('click',function(){set.term=+b.dataset.term;save(K.set,set);renders.units()})});
 
@@ -1002,6 +1146,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     $('pClass').textContent=T('الصف العاشر','Grade 10')+(profile.section?T(' — شعبة ',' — Section ')+profile.section:'');
     $('sLessons').textContent=doneLessons();$('sTests').textContent=prog.tests.length;
     var p=pct();$('sPct').textContent=p+'%';setRing('sRing',p);
+    var L=levelInfo();$('lvN').textContent=L.level;$('lvBar').style.width=L.frac*100+'%';
+    $('lvName').textContent=T('المستوى ','Level ')+L.level+T(' من 100',' of 100');
+    $('lvTxt').innerHTML=L.level>=100?T('وصلت إلى أعلى مستوى! ','Max level reached! ')+'<bdi dir="ltr">'+prog.xp+' XP</bdi>'
+      :'<bdi dir="ltr">'+L.into+' / '+L.need+' XP</bdi> '+T('للمستوى ','to level ')+(L.level+1)+' · '+T('المجموع ','Total ')+'<bdi dir="ltr">'+prog.xp+' XP</bdi>';
   };
 
   /* ===== قاموسي الخاص ===== */
@@ -1055,7 +1203,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function nextQ(){
     var box=$('dQuiz');box.hidden=false;
     if(quiz.i>=quiz.q.length){
-      box.innerHTML='<div class="q" style="font-size:1.6rem">'+quiz.score+' / '+quiz.q.length+'</div><p class="score">'+T('انتهى الاختبار','Quiz finished')+'</p>'+
+      box.innerHTML='<div class="q" style="font-size:1.6rem" dir="ltr">'+quiz.score+' / '+quiz.q.length+'</div><p class="score">'+T('انتهى الاختبار','Quiz finished')+'</p>'+
         '<button class="btn" type="button" id="qClose">'+T('إغلاق','Close')+'</button>';
       $('qClose').addEventListener('click',function(){box.hidden=true});return;
     }
@@ -1092,7 +1240,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       prog.saved=prog.saved.filter(function(s){return s.id!==b.dataset.unsave});save(K.prog,prog);renders.saved();
     })});
   };
-  function openLesson(id){soon()} /* يفتح الدرس حين يُضاف محتوى الوحدات */
+  function openLesson(id){if(findLesson(id))go('lesson='+id);else soon()}
 
   /* ===== سجل التعلّم ===== */
   function testsHtml(){
@@ -1115,6 +1263,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['🌱','أول كلمة','First word','أضف كلمة إلى قاموسك','Add a word to your dictionary',function(){return dict.length>=1}],
     ['📚','جامع الكلمات','Word collector','25 كلمة في قاموسك','25 words in your dictionary',function(){return dict.length>=25}],
     ['🎯','أول درس','First lesson','أكمل درساً واحداً','Complete one lesson',function(){return doneLessons()>=1}],
+    ['⭐','المستوى 10','Level 10','اجمع XP حتى المستوى 10','Reach level 10',function(){return levelInfo().level>=10}],
+    ['🌟','المستوى 50','Level 50','اجمع XP حتى المستوى 50','Reach level 50',function(){return levelInfo().level>=50}],
     ['📝','أول اختبار','First test','حلّ اختباراً واحداً','Take one test',function(){return prog.tests.length>=1}],
     ['💯','علامة كاملة','Full mark','احصل على العلامة الكاملة في اختبار','Get full marks in a test',function(){return prog.tests.some(function(t){return t.score===t.total})}],
     ['🏅','وحدة كاملة','Unit complete','أنجز وحدةً كاملة','Finish a whole unit',function(){return unitsDone()>=1}],
@@ -1123,6 +1273,11 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   ];
   renders.achieve=function(){
     var p=pct();$('aPct').textContent=p+'%';setRing('aRing',p);
+    $('aXp').textContent=prog.xp;$('aLv').textContent=levelInfo().level;
+    $('aCerts').innerHTML=prog.certs.length?prog.certs.slice().reverse().map(function(c){
+      return '<button class="card row" type="button" data-cert="'+esc(c.id)+'"><span><b>🏆 '+esc(c.title)+'</b><small>'+fmtDate(c.date)+' · '+c.score+'%</small></span><span class="pill ok">'+T('عرض','View')+'</span></button>'}).join('')
+      :'<div class="card empty">'+T('أنهِ محطات أيّ درسٍ الخمس لتحصل على شهادتك الأولى.','Finish the five stations of any lesson to earn your first certificate.')+'</div>';
+    $('aCerts').querySelectorAll('[data-cert]').forEach(function(b){b.addEventListener('click',function(){go('lesson='+b.dataset.cert+'&cert')})});
     $('aWords').textContent=dict.length;$('aLessons').textContent=doneLessons();$('aUnits').textContent=unitsDone();
     $('aAvg').textContent=prog.tests.length?Math.round(prog.tests.reduce(function(s,t){return s+t.score/t.total},0)/prog.tests.length*100)+'%':'—';
     $('aBadges').innerHTML=BADGES.map(function(b){var on=b[5]();
@@ -1161,6 +1316,285 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   $('pPerDay').addEventListener('change',function(){plan.perDay=+this.value;savePlan()});
   $('pExam').addEventListener('change',function(){plan.exam=this.value;savePlan();renderWeek()});
   $('resetWeek').addEventListener('click',function(){plan.tasks.forEach(function(t){t.done=false});savePlan();renderWeek()});
+
+  /* ===== XP والمستويات (1 → 100) =====
+     الانتقال من المستوى L إلى L+1 يحتاج 20 + 3×(L−1) XP، فكلّ مستوى أصعب من الذي قبله */
+  var XP_STATION=20,XP_CERT=50,MAX_LEVEL=100;
+  function needFor(L){return 20+3*(L-1)}
+  function levelInfo(x){
+    x=x==null?prog.xp:x;var L=1;
+    while(L<MAX_LEVEL&&x>=needFor(L)){x-=needFor(L);L++}
+    return {level:L,into:x,need:needFor(L),frac:L>=MAX_LEVEL?1:x/needFor(L)};
+  }
+  function addXP(n){
+    var before=levelInfo().level;prog.xp+=n;saveProg();
+    var pop=document.createElement('div');pop.className='xp-pop';pop.textContent='+'+n+' XP';document.body.appendChild(pop);
+    setTimeout(function(){pop.remove()},1700);
+    var after=levelInfo().level;
+    if(after>before)setTimeout(function(){beep(true);toast(T('🎉 مبروك! وصلت إلى المستوى '+after,'🎉 Level up! You reached level '+after))},900);
+  }
+
+  /* ===== دروس الوحدة ===== */
+  function lp(id){return prog.lessons[id]||(prog.lessons[id]={st:[false,false,false,false,false],done:false})}
+  function stationsDone(id){var r=prog.lessons[id];return r?r.st.filter(Boolean).length:0}
+  renders.unit=function(n){
+    n=+n;var u=unitData(n);if(!u){go('units');return}
+    $('unitTitle').textContent=T('الوحدة ','Unit ')+n;
+    $('lessonList').innerHTML='<div class="card row big"><span><b>'+esc(u.title||'')+'</b><small>'+u.lessons.length+T(' دروس',' lessons')+'</small></span><span class="pill">'+unitPct(n)+'%</span></div>'+
+      u.lessons.map(function(l,i){var id=l.id||n+'-'+(i+1),r=prog.lessons[id],d=stationsDone(id);
+        return '<button class="card lrow" type="button" data-l="'+id+'"><span class="num'+(r&&r.done?' ok':'')+'">'+(r&&r.done?'✓':i+1)+'</span>'+
+          '<span class="t"><b>'+esc(l.titleAr||l.title)+'</b><span class="en">'+esc(l.title)+'</span><span class="dots">'+[0,1,2,3,4].map(function(k){return '<i'+(r&&r.st[k]?' class="on"':'')+'></i>'}).join('')+'</span></span>'+
+          '<svg><use href="#i-back"/></svg></button>'}).join('');
+    $('lessonList').querySelectorAll('[data-l]').forEach(function(b){b.addEventListener('click',function(){go('lesson='+b.dataset.l)})});
+  };
+
+  /* ===== مشغّل الدرس ===== */
+  var STATIONS=[
+    {k:'discover',ar:'اكتشف',en:'Discover',ic:'🔍',subAr:'كلمات الدرس',subEn:'Lesson words'},
+    {k:'learn',ar:'تعلّم',en:'Learn',ic:'📖',subAr:'فقرة الدرس',subEn:'Reading'},
+    {k:'practice',ar:'تدرّب',en:'Practice',ic:'✏️',subAr:'القاعدة الأولى',subEn:'First rule'},
+    {k:'challenge',ar:'تحدَّ نفسك',en:'Challenge',ic:'⚡',subAr:'القاعدة الثانية والثالثة',subEn:'More rules'},
+    {k:'master',ar:'أتقنتُ الدرس',en:'Mastery',ic:'🎯',subAr:'أسئلة من كلّ المستويات',subEn:'Mixed questions'},
+    {k:'cert',ar:'الشهادة',en:'Certificate',ic:'🏆',subAr:'شهادة الدرس',subEn:'Lesson certificate'}
+  ];
+  var L=null,cur=0;
+  function unlocked(i){if(i===0)return true;var r=lp(L.id);for(var k=0;k<i&&k<5;k++)if(!r.st[k])return false;return true}
+  function hasChallenge(){return L.rules&&L.rules.length>1}
+  renders.lesson=function(id){
+    var certOnly=/&cert$/.test(id);id=id.replace(/&cert$/,'');
+    L=findLesson(id);if(!L){go('home');return}
+    var r=lp(L.id);
+    $('lsTitle').textContent=L.titleAr||L.title;
+    var saved=prog.saved.some(function(s){return s.id===L.id});$('lsSave').setAttribute('aria-pressed',saved);$('lsSave').style.color=saved?'var(--gold)':'';
+    /* سجل التعلّم */
+    prog.history=prog.history.filter(function(h){return h.id!==L.id});
+    prog.history.push({id:L.id,unit:L.unit,title:L.titleAr||L.title,date:new Date().toISOString(),point:r.last||''});
+    if(prog.history.length>50)prog.history.shift();saveProg();
+    if(certOnly&&r.done)cur=5;else{cur=0;while(cur<5&&r.st[cur])cur++;}
+    renderStation();
+  };
+  $('lsBack').addEventListener('click',function(){go(L&&L.unit?'unit='+L.unit:'home')});
+  $('lsSave').addEventListener('click',function(){
+    var on=prog.saved.some(function(s){return s.id===L.id});
+    if(on)prog.saved=prog.saved.filter(function(s){return s.id!==L.id});
+    else prog.saved.push({id:L.id,unit:L.unit,title:L.titleAr||L.title});
+    saveProg();this.setAttribute('aria-pressed',!on);this.style.color=!on?'var(--gold)':'';
+    toast(on?T('أُزيل من المحفوظات','Removed from saved'):T('حُفظ الدرس','Lesson saved'));
+  });
+  function renderSteps(){
+    var r=lp(L.id);
+    $('steps').innerHTML=STATIONS.map(function(s,i){
+      var done=i<5?r.st[i]:r.done,lock=!unlocked(i);
+      return '<button class="step'+(done?' done':'')+(i===cur?' cur':'')+(lock?' lock':'')+'" type="button" data-st="'+i+'"'+(lock?' aria-disabled="true"':'')+'>'+
+        '<span class="c">'+(done?'✓':s.ic)+'</span>'+T(s.ar,s.en)+'</button>'}).join('');
+    $('steps').querySelectorAll('[data-st]').forEach(function(b){b.addEventListener('click',function(){
+      var i=+b.dataset.st;if(!unlocked(i)){toast(T('أكمل المحطة السابقة أولاً','Finish the previous station first'));return}cur=i;renderStation();
+    })});
+  }
+  function head(i){var s=STATIONS[i];return '<div class="st-head"><small>'+s.en.toUpperCase()+'</small><b>'+s.ic+' '+T(s.ar,s.en)+'</b><p>'+T(s.subAr,s.subEn)+'</p></div>'}
+  function renderStation(){
+    renderSteps();window.scrollTo(0,0);
+    var r=lp(L.id);r.last=STATIONS[cur].ar;saveProg();
+    var st=$('stage');st.innerHTML='';st.style.animation='none';void st.offsetWidth;st.style.animation='';
+    [discover,learn,practice,challenge,master,certificate][cur](st);
+  }
+  function completeStation(i){
+    var r=lp(L.id);
+    if(!r.st[i]){r.st[i]=true;saveProg();addXP(XP_STATION)}
+    var n=i+1;
+    if(n===3&&!hasChallenge()){r.st[3]=true;saveProg();n=4}   /* لا قاعدة ثانية: تُتخطّى محطة التحدّي */
+    cur=n;setTimeout(renderStation,900);
+  }
+  function nextBtn(label,fn){var b=document.createElement('button');b.type='button';b.className='btn gold next';b.innerHTML='<span>'+label+'</span>';b.addEventListener('click',fn);return b}
+  function hl(s){return esc(s).replace(/\*\*(.+?)\*\*/g,'<mark>$1</mark>')}
+  function sayBtn(text){return '<button class="icon-btn sm" type="button" data-speak="'+esc(text)+'" aria-label="'+T('استمع','Listen')+'"><svg><use href="#i-speak"/></svg></button>'}
+  $('stage').addEventListener('click',function(e){var b=e.target.closest('[data-speak]');if(b){e.stopPropagation();speak(b.dataset.speak)}});
+
+  /* أسئلة: مع retry يعيد الطالب حتى يصيب، وبدونه تُحسب العلامة من أول محاولة */
+  function runQs(box,qs,opt,done){
+    var i=0,score=0;
+    function one(){
+      if(i>=qs.length){done(score,qs.length);return}
+      var q=qs[i],isTf=q.tf!=null,o=isTf?[T('صح','True'),T('خطأ','False')]:q.o,a=isTf?(q.tf?0:1):q.a,first=true;
+      var arOpts=o.some(function(x){return /[\u0600-\u06FF]/.test(x)});
+      box.innerHTML='<div class="card qbox"><div class="qtop"><span>'+T('سؤال ','Question ')+'<bdi dir="ltr">'+(i+1)+' / '+qs.length+'</bdi></span>'+
+        (q.lv?'<span class="lvp '+q.lv+'">'+({easy:T('سهل','Easy'),medium:T('متوسط','Medium'),hard:T('صعب','Hard')})[q.lv]+'</span>':'')+'</div>'+
+        '<div class="qtext">'+esc(q.q).replace(/___/g,'<span class="blank"></span>')+'</div>'+
+        '<div class="qopts">'+o.map(function(x,k){return '<button type="button" data-k="'+k+'"'+(arOpts?' class="ar"':'')+'>'+esc(x)+'</button>'}).join('')+'</div><div class="why" hidden></div></div>';
+      var c=box.querySelector('.qbox');
+      c.querySelectorAll('[data-k]').forEach(function(b){b.addEventListener('click',function(){
+        var k=+b.dataset.k,ok=k===a;beep(ok);
+        if(ok){
+          if(first)score++;b.classList.add('ok');c.querySelectorAll('[data-k]').forEach(function(x){x.disabled=true});
+          if(q.why){var w=c.querySelector('.why');w.hidden=false;w.textContent='💡 '+q.why}
+          c.appendChild(nextBtn(i+1<qs.length?T('التالي','Next'):T('النتيجة','Result'),function(){i++;one()}));
+        }else{
+          first=false;b.classList.add('no');b.disabled=true;
+          if(!opt.retry){c.querySelector('[data-k="'+a+'"]').classList.add('ok');c.querySelectorAll('[data-k]').forEach(function(x){x.disabled=true});
+            if(q.why){var w2=c.querySelector('.why');w2.hidden=false;w2.textContent='💡 '+q.why}
+            c.appendChild(nextBtn(i+1<qs.length?T('التالي','Next'):T('النتيجة','Result'),function(){i++;one()}));}
+        }
+      })});
+    }
+    one();
+  }
+
+  /* 1) اكتشف: بطاقات الكلمات ثم اختبار قصير */
+  function discover(st){
+    var v=L.vocab||[],i=0,seen={};
+    st.innerHTML=head(0)+'<div id="vArea"></div>';
+    var area=st.querySelector('#vArea');
+    function card(){
+      var w=v[i],back=false;seen[i]=1;
+      area.innerHTML='<div class="card flash" id="fc"></div><div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(var(--fx,1))"><use href="#i-back"/></svg></button>'+
+        '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><button class="icon-btn sm" type="button" id="vNext" aria-label="التالي"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button></div>'+
+        '<div class="btns"><button class="btn" type="button" id="vAdd"><svg><use href="#i-dict"/></svg>'+T('أضف إلى قاموسي','Add to my dictionary')+'</button></div>';
+      function face(){
+        var fc=$('fc');fc.classList.remove('flip');void fc.offsetWidth;fc.classList.add('flip');
+        fc.innerHTML=back?'<span class="em">'+(w.em||'')+'</span><span class="m">'+esc(w.ar)+'</span><span class="x">'+esc(w.ex||'')+' '+(w.ex?sayBtn(w.ex):'')+'</span><span class="xa">'+esc(w.exAr||'')+'</span>'
+          :'<span class="em">'+(w.em||'')+'</span><span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+'<span class="hint">'+T('اضغط على البطاقة لترى المعنى','Tap the card to see the meaning')+'</span>';
+      }
+      face();if(set.speak)speak(w.en);
+      $('fc').addEventListener('click',function(){back=!back;face()});
+      $('vPrev').addEventListener('click',function(){if(i>0){i--;card()}});
+      $('vNext').addEventListener('click',function(){if(i<v.length-1){i++;card()}else quiz()});
+      $('vAdd').addEventListener('click',function(){
+        if(dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})){toast(T('موجودة في قاموسك','Already in your dictionary'));return}
+        dict.unshift({id:Date.now(),en:w.en,ar:w.ar,ex:w.ex||'',unit:L.unit||0,date:new Date().toISOString()});save(K.dict,dict);toast(T('أُضيفت إلى قاموسك','Added to your dictionary'));
+      });
+      if(Object.keys(seen).length===v.length&&!area.querySelector('#vQuiz'))area.appendChild(nextBtn(T('اختبر نفسك في الكلمات','Quiz me on the words'),quiz)).id='vQuiz';
+    }
+    function quiz(){
+      var qs=v.map(function(w){var others=shuffle(v.filter(function(x){return x!==w})).slice(0,2).map(function(x){return x.ar});
+        var o=shuffle([w.ar].concat(others));return {q:'"'+w.en+'" means:',o:o,a:o.indexOf(w.ar)}});
+      runQs(area,shuffle(qs),{retry:true},function(sc,tot){
+        area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('أحسنت! تعرّفت على كلمات الدرس.','Well done! You know the lesson words.')+'</p></div>';
+        completeStation(0);
+      });
+    }
+    if(!v.length){area.innerHTML='<div class="card empty">'+T('لا كلمات لهذا الدرس.','No words for this lesson.')+'</div>';area.appendChild(nextBtn(T('متابعة','Continue'),function(){completeStation(0)}));return}
+    card();
+  }
+
+  /* 2) تعلّم: الفقرة كقصّة، فقرة فقرة، ثم أسئلة الفهم */
+  function learn(st){
+    var R=L.reading||{paras:[]},shown=0,vocab=(L.vocab||[]);
+    st.innerHTML=head(1)+(R.title?'<div class="story-t">'+esc(R.title)+'</div>':'')+'<div class="list" id="paras"></div><div id="rq"></div>';
+    var box=st.querySelector('#paras');
+    function markVocab(html){
+      vocab.forEach(function(w){var re=new RegExp('\\b('+w.en.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'[a-z]*)\\b','gi');
+        html=html.replace(re,'<mark data-m="'+esc(w.ar)+'">$1</mark>')});return html;
+    }
+    function para(){
+      var p=R.paras[shown],sent=p.en.match(/[^.!?]+[.!?"]*\s*/g)||[p.en];
+      var d=document.createElement('div');d.className='card para';
+      d.innerHTML='<div class="en">'+sent.map(function(s){return '<span data-s="'+esc(s.trim())+'">'+markVocab(esc(s))+'</span>'}).join('')+'</div>'+
+        '<div class="ar" hidden>'+esc(p.ar||'')+'</div>'+
+        '<div class="tools"><button class="btn" type="button" data-tr>'+T('الترجمة','Translation')+'</button>'+
+        '<button class="btn" type="button" data-read="'+esc(p.en)+'"><svg><use href="#i-speak"/></svg>'+T('اقرأ لي','Read to me')+'</button></div>';
+      box.appendChild(d);shown++;
+      d.querySelector('[data-tr]').addEventListener('click',function(){var a=d.querySelector('.ar');a.hidden=!a.hidden});
+      d.querySelector('[data-read]').addEventListener('click',function(){speak(this.dataset.read)});
+      d.querySelectorAll('[data-s]').forEach(function(s){s.addEventListener('click',function(e){
+        var m=e.target.closest('mark');if(m){toast(m.textContent+' = '+m.dataset.m);speak(m.textContent);return}
+        d.querySelectorAll('.say').forEach(function(x){x.classList.remove('say')});s.classList.add('say');speak(s.dataset.s);
+      })});
+      var old=st.querySelector('#pNext');if(old)old.remove();
+      var b=nextBtn(shown<R.paras.length?T('أكمل القصّة','Continue the story'):T('أسئلة الفهم','Comprehension questions'),function(){if(shown<R.paras.length)para();else questions()});
+      b.id='pNext';box.after(b);d.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+    function questions(){
+      var b=st.querySelector('#pNext');if(b)b.remove();
+      var q=R.questions||[];if(!q.length){completeStation(1);return}
+      runQs(st.querySelector('#rq'),q,{retry:true},function(sc,tot){
+        st.querySelector('#rq').innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('فهمت القصّة! انتقل إلى القاعدة.','You understood the story! On to the grammar.')+'</p></div>';
+        completeStation(1);
+      });
+    }
+    if(!R.paras.length){completeStation(1);return}
+    para();
+  }
+
+  /* 3) تدرّب و 4) تحدَّ نفسك: شرح القاعدة وأمثلتها ثم أسئلتها */
+  function ruleCard(r){
+    return '<div class="card rule"><h3>'+esc(r.title)+'</h3><h4>'+esc(r.titleAr||'')+'</h4><p>'+(r.explain||'')+'</p>'+
+      (r.form?'<div class="formula">'+esc(r.form)+'</div>':'')+
+      '<div class="exs">'+(r.examples||[]).map(function(x){var plain=x.en.replace(/\*\*/g,'');
+        return '<div class="exl"><span class="t"><span class="e">'+hl(x.en)+'</span><span class="a">'+esc(x.ar||'')+'</span></span>'+sayBtn(plain)+'</div>'}).join('')+'</div></div>';
+  }
+  function rulesStation(st,idx,rules){
+    var k=0,area;
+    st.innerHTML=head(idx)+'<div id="ra" class="stage"></div>';area=st.querySelector('#ra');
+    function show1(){
+      var r=rules[k];
+      area.innerHTML=(rules.length>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+rules.length+'</p>':'')+ruleCard(r);
+      area.appendChild(nextBtn(T('فهمت، لنتدرّب','Got it — practise'),function(){
+        runQs(area,r.questions||[],{retry:true},function(sc,tot){
+          area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('من المحاولة الأولى','on the first try')+'</p></div>';
+          k++;if(k<rules.length)area.appendChild(nextBtn(T('القاعدة التالية','Next rule'),show1));else completeStation(idx);
+        });
+      }));
+    }
+    if(!rules.length){completeStation(idx);return}
+    show1();
+  }
+  function practice(st){rulesStation(st,2,(L.rules||[]).slice(0,1))}
+  function challenge(st){rulesStation(st,3,(L.rules||[]).slice(1,3))}
+
+  /* 5) أتقنتُ الدرس: أسئلة من السهل إلى الصعب، والنجاح من 70% */
+  var PASS=70;
+  function master(st){
+    var order={easy:0,medium:1,hard:2},qs=(L.mastery||[]).slice().sort(function(a,b){return (order[a.lv]||0)-(order[b.lv]||0)});
+    st.innerHTML=head(4)+'<div id="ma"></div>';var area=st.querySelector('#ma');
+    area.innerHTML='<div class="card result"><p>'+T('عدد الأسئلة: ','Questions: ')+qs.length+' · '+T('تبدأ سهلة وتنتهي صعبة','from easy to hard')+'</p><p>'+T('تنجح إذا أجبت صحيحاً من المحاولة الأولى عن ','Pass with ')+PASS+'%'+T(' على الأقل','')+'</p></div>';
+    area.appendChild(nextBtn(T('ابدأ','Start'),function(){
+      runQs(area,qs,{retry:false},function(sc,tot){
+        var p=tot?Math.round(sc/tot*100):100,r=lp(L.id);
+        prog.tests.push({id:L.id,title:T('إتقان: ','Mastery: ')+(L.titleAr||L.title),score:sc,total:tot,date:new Date().toISOString()});
+        if(p>=PASS){r.score=Math.max(r.score||0,p);saveProg();
+          area.innerHTML='<div class="card result"><span class="big">'+p+'%</span><p>'+T('رائع! أتقنت الدرس 🎉','Excellent! You mastered the lesson 🎉')+'</p></div>';completeStation(4);}
+        else{saveProg();
+          area.innerHTML='<div class="card result"><span class="big">'+p+'%</span><p>'+T('تحتاج '+PASS+'% لتنجح. راجع القواعد ثم حاول مرّة أخرى.','You need '+PASS+'%. Review the rules and try again.')+'</p></div>';
+          area.appendChild(nextBtn(T('حاول مرّة أخرى','Try again'),function(){master(st)}));}
+      });
+    }));
+  }
+
+  /* 6) الشهادة */
+  function certificate(st){
+    var r=lp(L.id);
+    if(!r.done){r.done=true;r.date=new Date().toISOString();
+      if(!prog.certs.some(function(c){return c.id===L.id}))prog.certs.push({id:L.id,title:L.titleAr||L.title,date:r.date,score:r.score||100});
+      saveProg();addXP(XP_CERT);renderSteps();}
+    st.innerHTML=head(5)+'<div class="cert-wrap"><canvas id="cv" width="1400" height="990"></canvas><div class="btns">'+
+      '<button class="btn gold" type="button" id="cDown"><svg><use href="#i-down"/></svg>'+T('تنزيل الشهادة','Download')+'</button>'+
+      '<button class="btn" type="button" id="cBack">'+T('العودة إلى الدروس','Back to lessons')+'</button></div></div>';
+    drawCert($('cv'),r);
+    $('cDown').addEventListener('click',function(){var a=document.createElement('a');a.download='LEXORA-'+L.id+'.png';a.href=$('cv').toDataURL('image/png');a.click()});
+    $('cBack').addEventListener('click',function(){go(L.unit?'unit='+L.unit:'home')});
+  }
+  function drawCert(cv,r){
+    var c=cv.getContext('2d'),W=cv.width,H=cv.height,img=new Image();
+    function paint(){
+      var g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,'#fffaf0');g.addColorStop(1,'#f6ecd6');c.fillStyle=g;c.fillRect(0,0,W,H);
+      c.strokeStyle='#c9902f';c.lineWidth=14;c.strokeRect(30,30,W-60,H-60);c.strokeStyle='#e9c46a';c.lineWidth=3;c.strokeRect(56,56,W-112,H-112);
+      c.fillStyle='#3b1a78';c.fillRect(56,56,W-112,10);c.fillRect(56,H-66,W-112,10);
+      if(img.complete&&img.naturalWidth){c.save();c.beginPath();c.arc(W/2,190,90,0,7);c.closePath();c.clip();c.drawImage(img,W/2-90,100,180,180);c.restore();
+        c.beginPath();c.arc(W/2,190,92,0,7);c.strokeStyle='#c9902f';c.lineWidth=5;c.stroke();}
+      c.textAlign='center';c.direction='rtl';
+      c.fillStyle='#b8800f';c.font='700 46px Cinzel, serif';c.fillText('L E X O R A',W/2,345);
+      c.fillStyle='#2a1250';c.font='700 66px Ruqaa, serif';c.fillText('شهادة إتمام درس',W/2,440);
+      c.fillStyle='#4b3f66';c.font='400 34px "Plex Arabic", sans-serif';c.fillText('تشهد منصّة LEXORA بأنّ الطالب/ـة',W/2,515);
+      c.fillStyle='#b8800f';c.font='700 72px Ruqaa, serif';c.fillText(profile?profile.name:'',W/2,610);
+      c.fillStyle='#4b3f66';c.font='400 32px "Plex Arabic", sans-serif';c.fillText('قد أتمّ/ت بنجاح محطات الدرس الخمس في',W/2,680);
+      c.fillStyle='#2a1250';c.font='700 46px "Plex Arabic", sans-serif';c.fillText((L.titleAr||'')+(L.title?'  —  '+L.title:''),W/2,750);
+      c.fillStyle='#4b3f66';c.font='400 28px "Plex Arabic", sans-serif';
+      c.fillText('الصف العاشر'+(profile&&profile.section?' — شعبة '+profile.section:'')+'   ·   درجة الإتقان: '+(r.score||100)+'%   ·   '+fmtDate(r.date||new Date()),W/2,820);
+      c.fillStyle='#8a7a9e';c.font='400 24px "Plex Arabic", sans-serif';c.fillText('مدرسة التابعين الشرعية لتحفيظ القرآن الكريم — غزة',W/2,890);
+    }
+    img.onload=paint;img.src='images/logo.jpg';paint();
+    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(paint);
+  }
 
   /* ===== حول التطبيق ===== */
   $('ver').textContent='v'+VERSION;
