@@ -975,6 +975,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-13',title:'شهادة جديدة',items:['شهادة إنجاز وتفوّق بتصميم مدرسة التابعين، فيها اسمك ومعدّلك ومستواك ورقم الشهادة']},
     {date:'2026-11-13',title:'الرزمة التعليمية',items:['أُضيف رابط الرزمة التعليمية للفصلين في خانة «الرزمة التعليمية»']},
     {date:'2026-11-13',title:'شرح تفاعلي وخطوط أوضح',items:['عبارة تحفيزية جديدة كلّ يوم أعلى الواجهة','خطّ غامق وواضح للعناوين والإنجليزية','المنهج: 5 وحدات في كلّ فصل','أنشطة جديدة: ترتيب الكلمات، واكتب الإجابة، وصِل الكلمة بمعناها، وحوّل الجملة خطوة بخطوة']},
     {date:'2026-11-13',title:'الوحدة 7: أخبار سارّة من الأطباء',items:['أول وحدة كاملة: الكلمات، والقطعة، وقاعدتا الكلام المنقول، وأسئلة الإتقان، وشهادة الوحدة']},
@@ -1714,36 +1715,42 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function certificate(st){
     var r=lp(L.id);
     if(!r.done){r.done=true;r.date=new Date().toISOString();
-      if(!prog.certs.some(function(c){return c.id===L.id}))prog.certs.push({id:L.id,title:L.titleAr||L.title,date:r.date,score:r.score||100});
+      if(!prog.certs.some(function(c){return c.id===L.id}))prog.certs.push({id:L.id,title:L.titleAr||L.title,date:r.date,score:r.score||100,no:prog.certs.length+1,level:levelInfo().level});
       saveProg();addXP(XP_CERT);renderSteps();}
-    st.innerHTML=head(5)+'<div class="cert-wrap"><canvas id="cv" width="1400" height="990"></canvas><div class="btns">'+
+    st.innerHTML=head(5)+'<div class="cert-wrap"><canvas id="cv" width="1491" height="1055"></canvas><div class="btns">'+
       '<button class="btn gold" type="button" id="cDown"><svg><use href="#i-down"/></svg>'+T('تنزيل الشهادة','Download')+'</button>'+
       '<button class="btn" type="button" id="cBack">'+T('العودة إلى الدروس','Back to lessons')+'</button></div></div>';
     drawCert($('cv'),r);
     $('cDown').addEventListener('click',function(){var a=document.createElement('a');a.download='LEXORA-'+L.id+'.png';a.href=$('cv').toDataURL('image/png');a.click()});
     $('cBack').addEventListener('click',function(){go(lessonHome())});
   }
+  /* الشهادة: قالب مدرسة التابعين (images/certificate.jpg) تُكتب عليه بيانات الطالب */
+  var ORD=['','الأولى','الثانية','الثالثة','الرابعة','الخامسة','السادسة','السابعة','الثامنة','التاسعة','العاشرة'];
+  function learnerLevel(n){return n<=20?'Beginner Learner':n<=45?'Intermediate Learner':n<=75?'Advanced Learner':'Expert Learner'}
   function drawCert(cv,r){
-    var c=cv.getContext('2d'),W=cv.width,H=cv.height,img=new Image();
+    var c=cv.getContext('2d'),W=1491,H=1055,img=new Image();cv.width=W;cv.height=H;
+    var cert=prog.certs.filter(function(x){return x.id===L.id})[0]||{},no=cert.no||(prog.certs.indexOf(cert)+1)||1;
+    var navy='#13284d',lvl=cert.level||levelInfo().level;
+    function txt(t,x,y,font,color,maxW){c.font=font;c.fillStyle=color;c.fillText(t,x,y,maxW)}
     function paint(){
-      var g=c.createLinearGradient(0,0,W,H);g.addColorStop(0,'#fffaf0');g.addColorStop(1,'#f6ecd6');c.fillStyle=g;c.fillRect(0,0,W,H);
-      c.strokeStyle='#c9902f';c.lineWidth=14;c.strokeRect(30,30,W-60,H-60);c.strokeStyle='#e9c46a';c.lineWidth=3;c.strokeRect(56,56,W-112,H-112);
-      c.fillStyle='#3b1a78';c.fillRect(56,56,W-112,10);c.fillRect(56,H-66,W-112,10);
-      if(img.complete&&img.naturalWidth){c.save();c.beginPath();c.arc(W/2,190,90,0,7);c.closePath();c.clip();c.drawImage(img,W/2-90,100,180,180);c.restore();
-        c.beginPath();c.arc(W/2,190,92,0,7);c.strokeStyle='#c9902f';c.lineWidth=5;c.stroke();}
-      c.textAlign='center';c.direction='rtl';
-      c.fillStyle='#b8800f';c.font='700 46px Cinzel, serif';c.fillText('L E X O R A',W/2,345);
-      c.fillStyle='#2a1250';c.font='700 66px Ruqaa, serif';c.fillText(L.unit?'شهادة إتمام الوحدة '+L.unit:'شهادة إتمام درس',W/2,440);
-      c.fillStyle='#4b3f66';c.font='400 34px "Plex Arabic", sans-serif';c.fillText('تشهد منصّة LEXORA بأنّ الطالب/ـة',W/2,515);
-      c.fillStyle='#b8800f';c.font='700 66px Head, sans-serif';c.fillText(profile?profile.name:'',W/2,610);
-      c.fillStyle='#4b3f66';c.font='400 32px "Plex Arabic", sans-serif';c.fillText(L.unit?'قد أتمّ/ت بنجاح المحطات الخمس للوحدة':'قد أتمّ/ت بنجاح محطات الدرس الخمس في',W/2,680);
-      c.fillStyle='#2a1250';c.font='700 46px "Plex Arabic", sans-serif';c.fillText((L.titleAr||'')+(L.title?'  —  '+L.title:''),W/2,750);
-      c.fillStyle='#4b3f66';c.font='400 28px "Plex Arabic", sans-serif';
-      c.fillText('الصف العاشر'+(profile&&profile.section?' — شعبة '+profile.section:'')+'   ·   درجة الإتقان: '+(r.score||100)+'%   ·   '+fmtDate(r.date||new Date()),W/2,820);
-      c.fillStyle='#8a7a9e';c.font='400 24px "Plex Arabic", sans-serif';c.fillText('مدرسة التابعين الشرعية لتحفيظ القرآن الكريم — غزة',W/2,890);
+      if(!(img.complete&&img.naturalWidth))return;
+      c.drawImage(img,0,0,W,H);c.textAlign='center';c.textBaseline='alphabetic';
+      c.direction='rtl';
+      txt('مدرسة التابعين الشرعية لتحفيظ القرآن الكريم',745,92,'700 46px Head, sans-serif',navy,700);
+      txt(profile?profile.name:'',745,512,'700 70px Head, sans-serif',navy,520);
+      if(L.unit)txt('تقديراً لاجتياز الوحدة '+(ORD[L.unit]||L.unit)+' وإنجازها في اللغة الإنجليزية',745,626,'400 28px "Plex Arabic", sans-serif',navy,700);
+      else txt('تقديراً لإتمام درس «'+(L.titleAr||'')+'» في اللغة الإنجليزية',745,626,'400 28px "Plex Arabic", sans-serif',navy,700);
+      c.direction='ltr';
+      txt(L.unit?'for successfully completing Unit '+L.unit+' in English Language':'for successfully completing the lesson "'+L.title+'"',745,590,'400 30px Georgia, "Times New Roman", serif',navy,700);
+      txt(L.unit?'UNIT '+L.unit:'LESSON',1310,392,'700 '+(L.unit>=10?30:35)+'px Head, sans-serif','#3a2205',96);
+      txt('COMPLETED',1310,418,'700 13px Head, sans-serif','#3a2205',90);
+      txt((cert.score||r.score||100)+'%',481,774,'700 60px Head, sans-serif',navy,130);
+      txt(learnerLevel(lvl),774,769,'700 25px Georgia, "Times New Roman", serif','#1d1d1d',200);
+      txt(String(no),1060,776,'700 50px Head, sans-serif',navy,80);
+      c.direction='rtl';txt(fmtDate(r.date||new Date()),1065,964,'400 22px "Plex Arabic", sans-serif',navy,190);
     }
-    img.onload=paint;img.src='images/logo.jpg';paint();
-    if(document.fonts&&document.fonts.ready)document.fonts.ready.then(paint);
+    img.onload=paint;img.src='images/certificate.jpg';
+    if(document.fonts&&document.fonts.load)Promise.all(['700 40px Head','400 20px "Plex Arabic"'].map(function(f){return document.fonts.load(f)})).then(paint,paint);
   }
 
   /* ===== حول التطبيق ===== */
