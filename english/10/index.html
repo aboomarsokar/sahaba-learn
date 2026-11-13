@@ -495,6 +495,15 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .exl .to::before{content:"↓ ";color:var(--gold)}
 .qhint{font-family:var(--fb);font-size:.85rem;color:var(--muted);text-align:center}
 
+.sec-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.8rem 1rem}
+.sec-head b{font-family:var(--fh);font-size:1.15rem}
+.sec-head small{font:700 .8rem "Cinzel",serif;letter-spacing:.08em;color:var(--gold);direction:ltr}
+.passage{padding:1rem;display:flex;flex-direction:column;gap:.6rem}
+.passage .pt{font:700 1.15rem var(--fh);direction:ltr;text-align:center;color:var(--gold)}
+.passage p{font:400 1.02rem/1.85 var(--fb);direction:ltr;text-align:left}
+.passage .tools{justify-content:flex-end}
+.pill.best{color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));border:0;font-weight:700}
+
 /* الشهادة */
 .cert-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}
 .cert-wrap canvas{width:100%;max-width:640px;height:auto;border-radius:12px;box-shadow:0 12px 34px var(--shadow)}
@@ -681,6 +690,15 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     <div class="steps" id="steps"></div>
     <div class="stage" id="stage"></div>
   </div>
+</main>
+
+<!-- ===== ورقة مراجعة / اختبار ===== -->
+<main id="sheet" class="page" data-screen="sheet" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" id="shBack" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2 id="shTitle" style="font-size:1.2rem"></h2><span style="width:46px"></span>
+  </div>
+  <div class="wrap"><div class="stage" id="shStage"></div></div>
 </main>
 
 <!-- ===== أوراق العمل ===== -->
@@ -939,6 +957,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="data/lessons.js"></script>
+<script src="data/practice.js"></script>
 <script>
 (function(){
   var VERSION='1.4.0';
@@ -975,6 +994,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-13',title:'أوراق المراجعة والاختبارات',items:['ورقة مراجعة لكلّ وحدة من الوحدات العشر: مفردات وقواعد وقراءة','ثلاثة اختبارات شاملة: الوحدات 1–3 و4–6 و7–10','اختبار نهائي للمنهج كلّه يتغيّر كلّ مرة','تُحفظ أفضل علامة لك، وتظهر نتائجك في «سجل التعلّم» و«إنجازاتي»']},
     {date:'2026-11-13',title:'الفصل الأول كاملاً',items:['الوحدة 1: التواصل مع الآخرين (المضارع للمستقبل، will و going to)','الوحدة 2: من هنا إلى هناك (المضارع التام والمستمر، والمضارع التام أم الماضي)','الوحدة 3: أنشطة وقت الفراغ (الأفعال الناقصة: ثلاث قواعد)','الوحدة 4: حالة طوارئ! (الصفات والظروف)','الوحدة 5: طقسٌ خطِر (المقارنة والتفضيل، as…as و so/such…that)','صار المنهج كلّه متاحاً: 10 وحدات بشهاداتها']},
     {date:'2026-11-13',title:'الفصل الثاني كاملاً',items:['الوحدة 6: العمل من أجل عالمٍ أفضل (الماضي المستمر والماضي التام)','الوحدة 8: أيّ طريقٍ في السادسة عشرة؟ (الشرط: النوع الثاني والثالث)','الوحدة 9: غذاء صحي، جسم صحي (أدوات التعريف وجمل الوصل)','الوحدة 10: الحديث عن عالم الغد (المبني للمجهول)']},
     {date:'2026-11-13',title:'شهادة جديدة',items:['شهادة إنجاز وتفوّق بتصميم مدرسة التابعين، فيها اسمك ومعدّلك ومستواك ورقم الشهادة']},
@@ -1203,22 +1223,84 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   document.querySelectorAll('[data-term]').forEach(function(b){b.addEventListener('click',function(){set.term=+b.dataset.term;save(K.set,set);renders.units()})});
 
   /* أوراق العمل والاختبارات */
+  /* ===== أوراق المراجعة والاختبارات (data/practice.js) ===== */
+  var PR=window.LEXORA_PRACTICE||{worksheets:{},tests:[]};
+  prog.best=prog.best||{};
+  function bestPill(id){var b=prog.best[id];return b==null?'<span class="pill">'+T('ابدأ','Start')+'</span>':'<span class="pill best">'+b+'%</span>'}
   renders.worksheets=function(){
     var h='';
     [1,2].forEach(function(t){
       h+='<h3 class="sec-t">'+T(t===1?'الفصل الأول':'الفصل الثاني',t===1?'First Semester':'Second Semester')+'</h3>';
-      termUnits(t).forEach(function(n){h+='<div class="card row"><span><b>'+T('ورقة عمل الوحدة '+n,'Unit '+n+' Worksheet')+'</b><small>'+esc(unitName(n))+'</small></span><span class="pill">'+T('قريباً','Soon')+'</span></div>';});
+      termUnits(t).forEach(function(n){
+        var ok=!!PR.worksheets[n];
+        h+='<button class="card row" type="button" data-ws="'+n+'"'+(ok?'':' disabled')+'><span><b>'+T('ورقة مراجعة الوحدة '+n,'Unit '+n+' Revision Worksheet')+'</b><small>'+esc(unitName(n))+'</small></span>'+(ok?bestPill('ws-'+n):'<span class="pill">'+T('قريباً','Soon')+'</span>')+'</button>';
+      });
     });
     $('wsList').innerHTML=h;
+    $('wsList').querySelectorAll('[data-ws]').forEach(function(b){b.addEventListener('click',function(){go('sheet=ws-'+b.dataset.ws)})});
   };
   renders.tests=function(){
-    var h='';
-    for(var j=1;j<=NU;j++){
-      h+='<div class="card row"><span><b>'+T('اختبار الوحدة '+j,'Unit '+j+' Test')+'</b><small>'+esc(unitName(j))+'</small></span><span class="pill">'+T('قريباً','Soon')+'</span></div>';
-      if(j%3===0)h+='<div class="card row big"><span><b>'+T('اختبار شامل — الوحدات '+(j-2)+'–'+j,'Comprehensive Test — Units '+(j-2)+'–'+j)+'</b><small>'+T('كلّ ثلاث وحدات','Every three units')+'</small></span><span class="pill">'+T('قريباً','Soon')+'</span></div>';
-    }
-    $('testList').innerHTML=h;
+    $('testList').innerHTML=PR.tests.map(function(t){
+      var sub=t.auto?T(t.auto+' سؤالاً متنوّعاً من الوحدات العشر، تتغيّر كلّ مرة',t.auto+' mixed questions from all ten units, different each time'):T('قراءة، ومفردات، وقواعد','Reading, vocabulary and grammar');
+      return '<button class="card row'+(t.auto?' big':'')+'" type="button" data-test="'+t.id+'"><span><b>'+esc(T(t.title,t.titleEn))+'</b><small>'+sub+'</small></span>'+bestPill('test-'+t.id)+'</button>';
+    }).join('');
+    $('testList').querySelectorAll('[data-test]').forEach(function(b){b.addEventListener('click',function(){go('sheet=test-'+b.dataset.test)})});
   };
+
+  var SEC={vocab:['المفردات','Vocabulary','🔤'],grammar:['القواعد','Grammar','✏️'],reading:['القراءة','Reading','📖']};
+  var SH=null;
+  function buildSheet(id){
+    if(/^ws-\d+$/.test(id)){var n=+id.slice(3),w=PR.worksheets[n];if(!w)return null;
+      return {id:id,back:'worksheets',title:T('ورقة مراجعة الوحدة '+n,'Unit '+n+' Worksheet'),log:T('ورقة مراجعة الوحدة ','Worksheet: Unit ')+n,readingFrom:w.readingFrom,sections:w.sections}}
+    if(/^test-/.test(id)){var t=PR.tests.filter(function(x){return 'test-'+x.id===id})[0];if(!t)return null;
+      var secs=t.sections;
+      if(t.auto){ /* الاختبار النهائي: أسئلة عشوائية من الوحدات العشر */
+        var pool=[];for(var u=1;u<=NU;u++){var d=unitData(u);if(!d||!d.lessons)continue;d.lessons.forEach(function(l){
+          (l.mastery||[]).concat.apply(l.mastery||[],(l.rules||[]).map(function(r){return r.questions||[]})).forEach(function(q){pool.push(q)})})}
+        secs=[{k:'mixed',questions:shuffle(pool).slice(0,t.auto)}];
+      }
+      return {id:id,back:'tests',title:T(t.title,t.titleEn),log:T(t.title,t.titleEn),readingFrom:t.readingFrom,sections:secs}}
+    return null;
+  }
+  renders.sheet=function(id){
+    SH=buildSheet(id);if(!SH){go('home');return}
+    $('shTitle').textContent=SH.title;
+    var st=$('shStage'),total=0;SH.sections.forEach(function(x){total+=x.questions.length});
+    st.innerHTML='<div class="card result"><span class="big">📝</span><p><b>'+esc(SH.title)+'</b></p><p>'+
+      T('عدد الأسئلة: ','Questions: ')+total+' · '+T('تُحسب الإجابة من المحاولة الأولى، وتظهر الإجابة الصحيحة بعد كلّ سؤال.','Only your first answer counts; the right answer is shown after each question.')+'</p>'+
+      (prog.best[SH.id]!=null?'<p>'+T('أفضل علامة لك: ','Your best: ')+prog.best[SH.id]+'%</p>':'')+'</div>';
+    st.appendChild(nextBtn(T('ابدأ','Start'),function(){runSheet(0,0,0)}));
+  };
+  $('shBack').addEventListener('click',function(){go(SH?SH.back:'home')});
+  function readingFor(n){var d=unitData(n);return d&&d.lessons&&d.lessons[0].reading}
+  function runSheet(k,score,total){
+    var st=$('shStage');window.scrollTo(0,0);
+    if(k>=SH.sections.length){finishSheet(score,total);return}
+    var sec=SH.sections[k],lab=SEC[sec.k]||['أسئلة متنوّعة','Mixed questions','🎯'];
+    st.innerHTML='<div class="card sec-head"><b>'+lab[2]+' '+T(lab[0],lab[1])+'</b><small>'+(k+1)+' / '+SH.sections.length+'</small></div>';
+    if(sec.k==='reading'&&SH.readingFrom){var R=readingFor(SH.readingFrom);if(R){
+      var text=R.paras.map(function(p){return p.en}).join(' ');
+      var pc=document.createElement('div');pc.className='card passage';
+      pc.innerHTML='<span class="pt">'+esc(R.title||'')+'</span>'+R.paras.map(function(p){return '<p>'+esc(p.en)+'</p>'}).join('')+
+        '<div class="tools"><button class="btn" type="button" data-speak="'+esc(text)+'"><svg><use href="#i-speak"/></svg>'+T('اقرأ لي','Read to me')+'</button></div>';
+      pc.querySelector('[data-speak]').addEventListener('click',function(){speak(this.dataset.speak)});
+      st.appendChild(pc);
+    }}
+    var box=document.createElement('div');st.appendChild(box);
+    runQs(box,sec.questions,{retry:false,shuffle:true},function(sc,tot){runSheet(k+1,score+sc,total+tot)});
+  }
+  function finishSheet(score,total){
+    var p=total?Math.round(score/total*100):0,st=$('shStage');
+    prog.tests.push({id:SH.id,title:SH.log,score:score,total:total,date:new Date().toISOString()});
+    var first=prog.best[SH.id]==null,better=!first&&p>prog.best[SH.id];
+    prog.best[SH.id]=Math.max(prog.best[SH.id]||0,p);saveProg();beep(p>=50);
+    var msg=p>=90?T('ممتاز! أداءٌ رائع 🌟','Excellent! 🌟'):p>=70?T('أحسنت! 👏','Well done! 👏'):p>=50?T('جيّد، ويمكنك أفضل 💪','Good — you can do better 💪'):T('راجع الوحدة ثم حاول مرّة أخرى 📚','Review the unit and try again 📚');
+    st.innerHTML='<div class="card result"><span class="big">'+p+'%</span><p><b dir="ltr">'+score+' / '+total+'</b></p><p>'+msg+'</p>'+
+      (better?'<p>'+T('🎉 هذه أفضل علامة لك!','🎉 Your best score!')+'</p>':'')+'</div>';
+    var b=document.createElement('div');b.className='btns';st.appendChild(b);
+    b.appendChild(nextBtn(T('أعِد المحاولة','Try again'),function(){renders.sheet(SH.id)}));
+    b.appendChild(nextBtn(T('عودة','Back'),function(){go(SH.back)}));
+  }
 
   /* ===== الملف الشخصي ===== */
   function setRing(id,p){$(id).style.setProperty('--p',p)}
@@ -1328,7 +1410,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function testsHtml(){
     if(!prog.tests.length)return '<div class="card empty">'+T('لم تحلّ أيّ اختبارٍ بعد.','No tests taken yet.')+'</div>';
     return prog.tests.slice().reverse().map(function(t){var p=Math.round(t.score/t.total*100);
-      return '<div class="card row"><span><b>'+esc(t.title)+'</b><small>'+fmtDate(t.date)+'</small></span><span class="pill'+(p>=50?' ok':'')+'">'+t.score+' / '+t.total+'</span></div>'}).join('');
+      return '<div class="card row"><span><b>'+esc(t.title)+'</b><small>'+fmtDate(t.date)+'</small></span><span class="pill'+(p>=50?' ok':'')+'" dir="ltr">'+t.score+' / '+t.total+'</span></div>'}).join('');
   }
   renders.history=function(){
     var hs=prog.history.slice().reverse();
@@ -1504,6 +1586,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       var q=qs[i];
       if(q.type==='order'||q.type==='type'||q.type==='match'){special(q);return}
       var isTf=q.tf!=null,o=isTf?[T('صح','True'),T('خطأ','False')]:q.o,a=isTf?(q.tf?0:1):q.a,first=true;
+      if(opt.shuffle&&!isTf){var ix=shuffle(o.map(function(x,k){return k}));o=ix.map(function(k){return q.o[k]});a=ix.indexOf(q.a)}
       var arOpts=o.some(function(x){return /[\u0600-\u06FF]/.test(x)});
       box.innerHTML='<div class="card qbox"><div class="qtop"><span>'+T('سؤال ','Question ')+'<bdi dir="ltr">'+(i+1)+' / '+qs.length+'</bdi></span>'+
         (q.lv?'<span class="lvp '+q.lv+'">'+({easy:T('سهل','Easy'),medium:T('متوسط','Medium'),hard:T('صعب','Hard')})[q.lv]+'</span>':'')+'</div>'+
