@@ -623,6 +623,15 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   </div>
 </main>
 
+<!-- ===== روابط الكتب والرزمة لكلّ فصل ===== -->
+<main id="books" class="page" data-screen="books" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" data-back aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2 id="booksTitle"></h2><span style="width:46px"></span>
+  </div>
+  <div class="wrap"><div class="list" id="booksList"></div></div>
+</main>
+
 <!-- ===== دروس الوحدة ===== -->
 <main id="unit" class="page" data-screen="unit" hidden>
   <div class="topbar">
@@ -905,7 +914,12 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 (function(){
   var VERSION='1.4.0';
   /* ===== روابط Drive (تُضاف حين تصل) ===== */
-  var LINKS={book:'',pack:''};
+  /* لكلّ فصل رابطه: 1 = الفصل الأول، 2 = الفصل الثاني */
+  var LINKS={
+    book:{1:'',2:'https://drive.google.com/file/d/1OxNxETpl5WpZ33V5wqKIoiOTMyLo0it1/view?usp=drivesdk'},
+    pack:{1:'',2:''}
+  };
+  function hasLink(k){return !!(LINKS[k][1]||LINKS[k][2])}
   /* محتوى الوحدات والدروس في data/lessons.js */
   var DATA=window.LEXORA_DATA||{units:{}};
   function unitData(n){return DATA.units&&DATA.units[n]}
@@ -929,6 +943,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-13',title:'كتاب الفصل الثاني',items:['أُضيف كتاب اللغة الإنجليزية للفصل الثاني في خانة «الكتب المدرسية»']},
     {date:'2026-11-13',title:'نقاط XP ومحطات الدرس',items:['نقاط XP عند إنهاء كلّ محطة وكلّ درس','100 مستوى في ملفّك الشخصي، وكلّ مستوى أصعب من الذي قبله','كلّ درس يمرّ بخمس محطات: اكتشف، تعلّم، تدرّب، تحدَّ نفسك، أتقنتُ الدرس','شهادة لكلّ درس تُنزَّل صورةً، وتظهر في «إنجازاتي»']},
     {date:'2026-11-13',title:'ملفّك الشخصي وواجهة جديدة',items:['واجهة رئيسية جديدة: الفصلان، والكتب المدرسية والرزمة، وأوراق العمل والاختبارات','ملفّك الشخصي: تقدّمك والشعبة وتعديل البيانات','قاموسي الخاص مع النطق والبحث واختبار نفسك','الدروس المحفوظة، وسجل التعلّم، وإنجازاتي وشاراتها','خطة الدراسة بجدولٍ أسبوعي وتذكير بالمهام','الإعدادات: حجم الخط ولغة الواجهة والأصوات والإشعارات','حول التطبيق']},
     {date:'2026-11-13',title:'واجهة رئيسية أوضح',items:['خانة «الوحدات» مقسّمة على الفصلين الأول والثاني','مشاركة التطبيق انتقلت إلى القائمة']},
@@ -986,7 +1001,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       e.placeholder=l==='en'&&EN[e.dataset.tp]?EN[e.dataset.tp]:e.dataset.arp;
     });
     document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.langBtn===l)});
-    document.querySelectorAll('[data-soon-for]').forEach(function(e){if(LINKS[e.dataset.soonFor])e.textContent=T('افتح على Drive','Open on Drive')});
+    document.querySelectorAll('[data-soon-for]').forEach(function(e){if(hasLink(e.dataset.soonFor))e.textContent=T('افتح','Open')});
   }
 
   /* ===== المظهر ===== */
@@ -1100,8 +1115,20 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   };
   document.querySelectorAll('[data-term-open]').forEach(function(b){b.addEventListener('click',function(){set.term=+b.dataset.termOpen;save(K.set,set);go('units')})});
   document.querySelectorAll('[data-link]').forEach(function(b){b.addEventListener('click',function(){
-    var u=LINKS[b.dataset.link];if(u)window.open(u,'_blank','noopener');else toast(T('سيُضاف الرابط قريباً إن شاء الله','The link will be added soon'));
+    if(hasLink(b.dataset.link))go('books='+b.dataset.link);else toast(T('سيُضاف الرابط قريباً إن شاء الله','The link will be added soon'));
   })});
+
+  /* روابط الكتب والرزمة */
+  renders.books=function(k){
+    if(!LINKS[k]){go('home');return}
+    $('booksTitle').textContent=k==='book'?T('الكتب المدرسية','School Books'):T('الرزمة التعليمية','Study Pack');
+    $('booksList').innerHTML=[1,2].map(function(t){
+      var u=LINKS[k][t],name=T(t===1?'الفصل الأول':'الفصل الثاني',t===1?'First Semester':'Second Semester');
+      var sub=k==='book'?T('كتاب اللغة الإنجليزية — الصف العاشر','English textbook — Grade 10'):T('الرزمة التعليمية — الصف العاشر','Study pack — Grade 10');
+      return u?'<a class="card row" href="'+esc(u)+'" target="_blank" rel="noopener" style="text-decoration:none;color:inherit"><span><b>'+name+'</b><small>'+sub+'</small></span><span class="pill ok">'+T('افتح على Drive','Open on Drive')+'</span></a>'
+        :'<div class="card row"><span><b>'+name+'</b><small>'+sub+'</small></span><span class="pill">'+T('قريباً','Soon')+'</span></div>';
+    }).join('');
+  };
 
   /* الوحدات */
   function soon(){toast(T('قريباً إن شاء الله','Coming soon'))}
