@@ -74,7 +74,9 @@ window.LEXORA_DATA = {
             { q: '"Doctors will find new medicines," he said. → He said that doctors ___ find new medicines.', o: ['will', 'would', 'can'], a: 1, why: 'will تصبح would' },
             { q: '"We have started a new project," they said. → They said that they ___ a new project.', o: ['have started', 'had started', 'started'], a: 1, why: 'have + V3 تصبح had + V3' },
             { q: '"I can walk again," Waleed said. → Waleed said that he ___ walk again.', o: ['can', 'could', 'would'], a: 1, why: 'can تصبح could' },
-            { q: '"She is working at the hospital," he said. → He said that she ___ at the hospital.', o: ['is working', 'was working', 'works'], a: 1, why: 'is + -ing تصبح was + -ing' }
+            { q: '"She is working at the hospital," he said. → He said that she ___ at the hospital.', o: ['is working', 'was working', 'works'], a: 1, why: 'is + -ing تصبح was + -ing' },
+            { type: 'type', q: '"I can swim," Lina said. → Lina said that she ___ swim.', a: ['could'], why: 'can تصبح could' },
+            { type: 'order', q: 'رتّب الكلمات: «قال إنّ الطبّ كان يتطوّر بسرعة»', words: ['He', 'said', 'that', 'medicine', 'was', 'developing', 'fast.'] }
           ]
         },
         {
@@ -92,7 +94,9 @@ window.LEXORA_DATA = {
             { q: '"Could you help me?" she asks him. → She asks him ___ her.', o: ['help', 'to help', 'helping'], a: 1, why: 'ask + شخص + to + فعل' },
             { q: '"Where do you live?" he asks. → He asks where ___.', o: ['do I live', 'I live', 'I do live'], a: 1, why: 'نحذف do وتصير الجملة خبرية.' },
             { q: '"What time is it?" she asked.', o: ['She asked what time was it.', 'She asked what time it was.', 'She asked what time it was?'], a: 1, why: 'فاعل ثم فعل، بلا علامة استفهام.' },
-            { q: '"Please come immediately," the hospital tells Samar. → The hospital tells Samar ___ immediately.', o: ['come', 'to come', 'coming'], a: 1 }
+            { q: '"Please come immediately," the hospital tells Samar. → The hospital tells Samar ___ immediately.', o: ['come', 'to come', 'coming'], a: 1 },
+            { type: 'type', q: '"Could you wait for me?" he asked me. → He asked me ___ wait for him.', a: ['to'], why: 'ask + شخص + to + فعل' },
+            { type: 'order', q: 'رتّب الكلمات: «سألتني إن كنتُ متفرّغاً»', words: ['She', 'asked', 'me', 'if', 'I', 'was', 'free.'] }
           ]
         }
       ],
@@ -106,6 +110,9 @@ window.LEXORA_DATA = {
         { lv: 'hard', q: '"We will visit the college," they said.', o: ['They said they will visit the college.', 'They said they would visit the college.', 'They said they would visited the college.'], a: 1 },
         { lv: 'hard', q: '"What did the doctor say?" Mum asked.', o: ['Mum asked what the doctor had said.', 'Mum asked what did the doctor say.', 'Mum asked what had the doctor said.'], a: 0, why: 'did تصبح had + V3، والجملة خبرية.' },
         { lv: 'hard', q: '"Can you open the window?" the teacher asked Sami.', o: ['The teacher asked Sami to open the window.', 'The teacher asked Sami can he open the window.', 'The teacher asked Sami opening the window.'], a: 0 },
+        { lv: 'medium', type: 'match', q: 'صِل الكلام المباشر بزمنه في الكلام المنقول', pairs: [['is', 'was'], ['will', 'would'], ['can', 'could'], ['have started', 'had started']] },
+        { lv: 'hard', type: 'type', q: '"We are visiting the college," they said. → They said that they ___ visiting the college.', a: ['were'] },
+        { lv: 'hard', type: 'order', q: 'رتّب الكلمات لتكوّن سؤالاً منقولاً صحيحاً', words: ['Mum', 'asked', 'where', 'I', 'had', 'been.'] },
         { lv: 'hard', q: 'Why can a bionic arm move like a real arm?', o: ['It gets messages from the brain.', 'It has a big battery only.', 'The doctor moves it.'], a: 0 }
       ]
     }] },
