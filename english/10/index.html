@@ -569,6 +569,16 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .rcard .exl .e{font-size:1.08rem;line-height:1.7}
 .rcard .exl .a{font-size:.88rem}
 
+/* --- تابع من حيث توقّفت --- */
+.resume{display:flex;align-items:center;gap:.9rem;padding:.9rem 1.1rem;text-align:start;border-color:var(--gold);
+  background:linear-gradient(135deg,rgba(243,201,105,.24),var(--card) 62%)}
+.resume .ic{flex:none;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:var(--btnText);
+  background:linear-gradient(180deg,var(--btn1),var(--btn2));box-shadow:0 6px 18px rgba(243,201,105,.4)}
+.resume .ic svg{width:22px;height:22px}
+.resume .t{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1rem}
+.resume small{font:400 .78rem var(--fb);color:var(--muted)}
+.resume b{font-family:var(--fh);font-size:1.15rem}
+
 /* الشهادة */
 .cert-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}
 .cert-wrap canvas{width:100%;max-width:640px;height:auto;border-radius:12px;box-shadow:0 12px 34px var(--shadow)}
@@ -688,6 +698,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   </div>
   <div class="wrap">
     <div class="card quote" id="quote"><span class="qi">✨</span><span class="qt"><span class="qe" id="qEn"></span><span class="qa" id="qAr"></span></span></div>
+    <button class="card resume" type="button" id="resumeCard" hidden><span class="ic"><svg><use href="#i-play"/></svg></span><span class="t"><small id="rsSmall"></small><b id="rsTitle"></b><span class="dots" id="rsDots"></span></span></button>
     <button class="card xpline" type="button" data-go="me"><span class="lvn" id="hLv">1</span><span class="t"><b id="hLvT"></b><i class="bar"><i id="hLvBar" style="width:0%"></i></i></span></button>
     <button class="card remind" type="button" id="remind" data-go="planner" hidden><svg><use href="#i-plan"/></svg><span id="remindTxt"></span></button>
 
@@ -1037,7 +1048,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 <script src="data/rulecards.js"></script>
 <script>
 (function(){
-  var VERSION='1.6.0';
+  var VERSION='1.7.0';
   /* ===== روابط Drive (تُضاف حين تصل) ===== */
   /* لكلّ فصل رابطه: 1 = الفصل الأول، 2 = الفصل الثاني، all = رابط واحد للسنة كلّها */
   var LINKS={
@@ -1071,6 +1082,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-14',title:'متابعة من حيث توقّفت',items:['إن خرجتَ من محطة أو درس تعود إلى المكان نفسه: المحطة، ثم بطاقة الكلمة أو الفقرة أو بطاقة القاعدة أو السؤال','زرّ «ابدأ رحلتك الآن» يعيدك مباشرةً إلى درسك الأخير','بطاقة «تابع من حيث توقّفت» في أعلى الواجهة الرئيسية']},
     {date:'2026-11-14',title:'القواعد على شكل بطاقات',items:['كلّ قاعدة تُعرض بطاقةً بطاقة: التعريف، ثم التكوين، ثم النفي والسؤال والملاحظات','بطاقة التعريف: اسم القاعدة بالإنجليزية ومعناها بالعربية ومتى نستخدمها بالنصّين','بطاقة التكوين: الصيغة بألوان تُبرز أدوات التكوين، وتحتها مثال توضيحي','زرّ «أكمل» بعد كلّ بطاقة، وزرّ «السابق» للرجوع']},
     {date:'2026-11-14',title:'تحفيز وإشعارات وصوت أوضح',items:['أزرار الكلمات: اليمين للكلمة التالية، واليسار للسابقة','تلميح «انقر على الكلمة» بارز، والمثال في إطار مع إبراز الكلمة','صوت رجل أوضح، مع اختيار الصوت الإنجليزي والعربي من الإعدادات','إشعار عند الإضافة إلى «قاموسي الخاص» أو الحفظ في «ذاكرة المحفوظات» مع زرّ فتح','تحفيز: ردود فورية، وعدّاد إجابات متتالية، واحتفال بالإنجازات، وشريط المستوى في الواجهة']},
     {date:'2026-11-13',title:'صوت جديد',items:['النطق أبطأ وأوضح','صوت رجل يقرأ (ويمكن اختيار صوت امرأة من الإعدادات)','قراءة العربية: معنى الكلمة ومثالها، وترجمة القصّة بزرّ «اقرأ الترجمة»','زرّ «جرّب الصوت» في الإعدادات']},
@@ -1294,7 +1306,11 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   });
   renders.profile=function(){if(profile){nameIn.value=profile.name||'';secIn.value=profile.section||'';if(profile.avatar)pick(profile.avatar)}};
   nameIn.addEventListener('input',update);
-  $('start').addEventListener('click',function(){go(profile?'home':'profile')});
+  $('start').addEventListener('click',function(){
+    var rs=profile&&prog.resume&&findLesson(prog.resume.id),rr=rs&&prog.lessons[prog.resume.id];
+    go(!profile?'profile':(rs&&rr&&!rr.done?'lesson='+prog.resume.id:'home'));   /* يعود إلى حيث كان */
+  });
+  $('resumeCard').addEventListener('click',function(){if(prog.resume)go('lesson='+prog.resume.id)});
   goBtn.addEventListener('click',function(){
     var first=!profile;
     profile={name:nameIn.value.trim(),avatar:chosen,section:secIn.value.trim()};save(K.profile,profile);go(first?'home':'me');
@@ -1318,6 +1334,13 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var dq=QUOTES[Math.floor(Date.now()/864e5)%QUOTES.length];$('qEn').textContent=dq[0];$('qAr').textContent=dq[1];
     $('meImg').src=src(profile.avatar);$('meName').textContent=profile.name;
     $('tp1').style.width=termPct(1)+'%';$('tp2').style.width=termPct(2)+'%';
+    var rsL=prog.resume&&findLesson(prog.resume.id),rsR=rsL&&prog.lessons[prog.resume.id];
+    if(rsL&&rsR&&!rsR.done){
+      var rsI=Math.min(rsR.cur||0,4);
+      $('resumeCard').hidden=false;$('rsSmall').textContent=T('تابع من حيث توقّفت','Continue where you left off');
+      $('rsTitle').textContent=T('الوحدة '+rsL.unit+' · «'+STATIONS[rsI].ar+'»','Unit '+rsL.unit+' · '+STATIONS[rsI].en);
+      $('rsDots').innerHTML=[0,1,2,3,4].map(function(j){return '<i'+(rsR.st[j]?' class="on"':'')+'></i>'}).join('');
+    }else $('resumeCard').hidden=true;
     var LI=levelInfo();$('hLv').textContent=LI.level;$('hLvBar').style.width=LI.frac*100+'%';
     var left='<bdi dir="ltr">'+(LI.need-LI.into)+' XP</bdi>';
     $('hLvT').innerHTML=LI.level>=100?T('وصلتَ إلى أعلى مستوى 👑','Top level reached 👑'):prog.xp===0?T('ابدأ درسك الأول واجمع نقاط <bdi dir="ltr">XP</bdi> ⭐','Start your first lesson and earn XP ⭐'):
@@ -1644,6 +1667,9 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
   /* ===== دروس الوحدة ===== */
   function lp(id){return prog.lessons[id]||(prog.lessons[id]={st:[false,false,false,false,false],done:false})}
+  /* الموضع داخل المحطة (بطاقة الكلمة، الفقرة، بطاقة القاعدة، السؤال…) يُحفظ ليعود الطالب إليه */
+  function saveSub(o){var r=lp(L.id);r.sub=o;saveProg()}
+  function subFor(st){var r=lp(L.id);return r.sub&&r.sub.s===st?r.sub:null}
   function stationsDone(id){var r=prog.lessons[id];return r?r.st.filter(Boolean).length:0}
   renders.unit=function(n){
     n=+n;var u=unitData(n);if(!u){go('units');return}
@@ -1678,8 +1704,15 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     prog.history=prog.history.filter(function(h){return h.id!==L.id});
     prog.history.push({id:L.id,unit:L.unit,title:L.titleAr||L.title,date:new Date().toISOString(),point:r.last||''});
     if(prog.history.length>50)prog.history.shift();saveProg();
-    if(certOnly&&r.done)cur=5;else{cur=0;while(cur<5&&r.st[cur])cur++;}
+    var first=0;while(first<5&&r.st[first])first++;
+    var visited=!!r.last;                                  /* دخل هذا الدرس من قبل */
+    if(certOnly&&r.done)cur=5;
+    else if(r.done)cur=5;
+    else if(first>=5)cur=5;                                          /* أنهى كلّ المحطات: يستلم شهادته */
+    else cur=(r.cur!=null&&r.cur<=first&&r.cur<5)?r.cur:first;   /* يعود إلى المحطة التي كان فيها */
+    if(L.unit){if(r.done){if(prog.resume&&prog.resume.id===L.id)prog.resume=null}else prog.resume={id:L.id,unit:L.unit}}
     renderStation();
+    if(visited&&!r.done&&(cur>0||subFor(cur)))toast(T('أكملتَ من حيث توقّفت 👋','Continuing where you left off 👋'));
   };
   function lessonHome(){return L&&L.unit?(LESSONS_PER_UNIT[L.unit-1]>1?'unit='+L.unit:'units'):'home'}
   $('lsBack').addEventListener('click',function(){go(lessonHome())});
@@ -1704,17 +1737,17 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function head(i){var s=STATIONS[i];return '<div class="st-head"><small>'+s.en.toUpperCase()+'</small><b>'+s.ic+' '+T(s.ar,s.en)+'</b><p>'+T(s.subAr,s.subEn)+'</p></div>'}
   function renderStation(){
     renderSteps();window.scrollTo(0,0);
-    var r=lp(L.id);r.last=STATIONS[cur].ar;saveProg();
+    var r=lp(L.id);r.last=STATIONS[cur].ar;r.cur=cur;if(r.sub&&r.sub.s!==cur)r.sub=null;saveProg();
     var st=$('stage');st.innerHTML='';st.style.animation='none';void st.offsetWidth;st.style.animation='';
     [discover,learn,practice,challenge,master,certificate][cur](st);
   }
   function completeStation(i){
-    var r=lp(L.id);
+    var r=lp(L.id);r.sub=null;
     if(!r.st[i]){r.st[i]=true;saveProg();addXP(XP_STATION);confetti(22);
       toast('🎉 '+T('أنهيت محطة «'+STATIONS[i].ar+'»! +'+XP_STATION+' XP','You finished “'+STATIONS[i].en+'”! +'+XP_STATION+' XP'))}
     var n=i+1;
     if(n===3&&!hasChallenge()){r.st[3]=true;saveProg();n=4}   /* لا قاعدة ثانية: تُتخطّى محطة التحدّي */
-    cur=n;setTimeout(renderStation,900);
+    cur=n;r.cur=n;saveProg();setTimeout(renderStation,900);
   }
   function nextBtn(label,fn){var b=document.createElement('button');b.type='button';b.className='btn gold next';b.innerHTML='<span>'+label+'</span>';b.addEventListener('click',fn);return b}
   function hl(s){return esc(s).replace(/\*\*(.+?)\*\*/g,'<mark>$1</mark>')}
@@ -1729,7 +1762,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   var RETRYOK=[['نجحت أخيراً! المهمّ أنك لم تستسلم 💪','You got it! You never gave up 💪'],['برافو! المحاولة الثانية أقوى 🌱','Bravo! Second try, stronger 🌱']];
   var WRONGS=[['لا بأس، حاول مرة أخرى 💪','No worries, try again 💪'],['قريب! جرّب ثانية 🎯','Close! Try once more 🎯'],['الخطأ يعلّمنا، أنت تتقدّم 🌱','Mistakes help us learn 🌱']];
   function runQs(box,qs,opt,done){
-    var i=0,score=0,streak=0;
+    var i=opt.start||0,score=0,streak=0;
     function cheer(c,ok,first){
       var d=c.querySelector('.cheer'),msg;
       if(!d){d=document.createElement('div');var qt=c.querySelector('.qtop');qt.parentNode.insertBefore(d,qt.nextSibling)}
@@ -1741,6 +1774,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     }
     function one(){
       if(i>=qs.length){done(score,qs.length);return}
+      if(opt.onQ)opt.onQ(i);
       var q=qs[i];
       if(q.type==='order'||q.type==='type'||q.type==='match'){special(q);return}
       var isTf=q.tf!=null,o=isTf?[T('صح','True'),T('خطأ','False')]:q.o,a=isTf?(q.tf?0:1):q.a,first=true;
@@ -1831,11 +1865,12 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
   /* 1) اكتشف: بطاقات الكلمات ثم اختبار قصير */
   function discover(st){
-    var v=L.vocab||[],i=0,seen={};
+    var v=L.vocab||[],sub0=subFor(0),i=(sub0&&sub0.i>0&&sub0.i<(L.vocab||[]).length)?sub0.i:0,seen={};
+    for(var z0=0;z0<i;z0++)seen[z0]=1;
     st.innerHTML=head(0)+'<div id="vArea"></div>';
     var area=st.querySelector('#vArea');
     function card(){
-      var w=v[i],back=false;seen[i]=1;
+      var w=v[i],back=false;seen[i]=1;saveSub({s:0,i:i});
       area.innerHTML='<div class="card flash" id="fc"></div><div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button>'+
         '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><button class="icon-btn sm" type="button" id="vNext" aria-label="التالي"><svg><use href="#i-back"/></svg></button></div>'+
         '<div class="btns"><button class="btn" type="button" id="vAdd"><svg><use href="#i-dict"/></svg>'+T('أضف إلى قاموسي','Add to my dictionary')+'</button></div>';
@@ -1888,7 +1923,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       vocab.forEach(function(w){var re=new RegExp('\\b('+w.en.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'[a-z]*)\\b','gi');
         html=html.replace(re,'<mark data-m="'+esc(w.ar)+'">$1</mark>')});return html;
     }
-    function para(){
+    function para(quiet){
       var p=R.paras[shown],sent=p.en.match(/[^.!?]+[.!?"]*\s*/g)||[p.en];
       var d=document.createElement('div');d.className='card para';
       d.innerHTML='<div class="en">'+sent.map(function(s){return '<span data-s="'+esc(s.trim())+'">'+markVocab(esc(s))+'</span>'}).join('')+'</div>'+
@@ -1906,18 +1941,22 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       })});
       var old=st.querySelector('#pNext');if(old)old.remove();
       var b=nextBtn(shown<R.paras.length?T('أكمل القصّة','Continue the story'):T('أسئلة الفهم','Comprehension questions'),function(){if(shown<R.paras.length)para();else questions()});
-      b.id='pNext';box.after(b);d.scrollIntoView({behavior:'smooth',block:'start'});
+      b.id='pNext';box.after(b);if(!quiet){saveSub({s:1,n:shown});d.scrollIntoView({behavior:'smooth',block:'start'})}
     }
-    function questions(){
+    function questions(qstart){
       var b=st.querySelector('#pNext');if(b)b.remove();
       var q=R.questions||[];if(!q.length){completeStation(1);return}
-      runQs(st.querySelector('#rq'),q,{retry:true},function(sc,tot){
+      runQs(st.querySelector('#rq'),q,{retry:true,start:qstart||0,onQ:function(k){saveSub({s:1,n:shown,q:k})}},function(sc,tot){
         st.querySelector('#rq').innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('فهمت القصّة! انتقل إلى القاعدة.','You understood the story! On to the grammar.')+'</p></div>';
         completeStation(1);
       });
     }
     if(!R.paras.length){completeStation(1);return}
-    para();
+    var sub1=subFor(1);
+    if(sub1&&((sub1.n||0)>1||sub1.q!=null)){
+      for(var z1=0;z1<Math.max(1,Math.min(sub1.n||1,R.paras.length));z1++)para(true);   /* أعِد عرض ما قرأه */
+      if(sub1.q!=null)questions(sub1.q);
+    }else para();
   }
 
   /* 3) تدرّب و 4) تحدَّ نفسك: شرح القاعدة وأمثلتها ثم أسئلتها */
@@ -1952,10 +1991,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     if(c.k==='note')return '<div class="card rcard">'+tag+'<div class="notebody" dir="auto">'+kfmt(c.body)+'</div>'+(c.examples&&c.examples.length?rcExamples(c.examples):'')+'</div>';
     return '<div class="card rcard">'+tag+'<div class="formula big">'+kfmt(c.formula)+'</div>'+rcLegend(c.formula)+(c.tip?'<p class="tip">'+kfmt(c.tip)+'</p>':'')+rcExamples(c.examples||[])+'</div>';
   }
-  function showRuleCards(area,r,cards,k,total,onDone){
-    var c=0;
+  function showRuleCards(area,r,cards,k,total,onDone,start,onCard){
+    var c=start>0&&start<cards.length?start:0;
     function draw(){
-      var last=c===cards.length-1;
+      var last=c===cards.length-1;if(onCard)onCard(c);
       area.innerHTML=(total>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+total+'</p>':'')+
         '<div class="rdots">'+cards.map(function(_,j){return '<i'+(j<=c?' class="on"':'')+'></i>'}).join('')+'</div>'+rcHtml(r,cards[c]);
       area.appendChild(nextBtn(last?T('فهمت، لنتدرّب','Got it — practise'):T('أكمل','Continue'),function(){if(last)onDone();else{c++;draw()}}));
@@ -1966,22 +2005,25 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     draw();
   }
   function rulesStation(st,idx,rules,off){
-    var k=0,area;
+    var k=0,area,subR=subFor(idx);
+    if(subR&&subR.k>0&&subR.k<rules.length)k=subR.k;
     st.innerHTML=head(idx)+'<div id="ra" class="stage"></div>';area=st.querySelector('#ra');
-    function show1(){
+    function show1(rs){
       var r=rules[k],cards=(window.LEXORA_RULECARDS||{})[L.id+'#'+(off+k)];
-      function startQs(){
-        runQs(area,r.questions||[],{retry:true},function(sc,tot){
+      rs=rs&&rs.k===k?rs:null;                         /* موضع محفوظ في هذه القاعدة */
+      function startQs(qstart){
+        runQs(area,r.questions||[],{retry:true,start:qstart||0,onQ:function(i){saveSub({s:idx,k:k,q:i})}},function(sc,tot){
           area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('من المحاولة الأولى','on the first try')+'</p></div>';
-          k++;if(k<rules.length)area.appendChild(nextBtn(T('القاعدة التالية','Next rule'),show1));else completeStation(idx);
+          k++;if(k<rules.length){saveSub({s:idx,k:k,c:0});area.appendChild(nextBtn(T('القاعدة التالية','Next rule'),function(){show1()}))}else completeStation(idx);
         });
       }
-      if(cards&&cards.length){showRuleCards(area,r,cards,k,rules.length,startQs);return}
+      if(rs&&rs.q!=null){startQs(rs.q);return}
+      if(cards&&cards.length){showRuleCards(area,r,cards,k,rules.length,function(){startQs(0)},rs?rs.c:0,function(c){saveSub({s:idx,k:k,c:c})});return}
       area.innerHTML=(rules.length>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+rules.length+'</p>':'')+ruleCard(r);
-      area.appendChild(nextBtn(T('فهمت، لنتدرّب','Got it — practise'),startQs));
+      area.appendChild(nextBtn(T('فهمت، لنتدرّب','Got it — practise'),function(){startQs(0)}));
     }
     if(!rules.length){completeStation(idx);return}
-    show1();
+    show1(subR);
   }
   function practice(st){rulesStation(st,2,(L.rules||[]).slice(0,1),0)}
   function challenge(st){rulesStation(st,3,(L.rules||[]).slice(1,3),1)}
@@ -2008,7 +2050,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   /* 6) الشهادة */
   function certificate(st){
     var r=lp(L.id);
-    if(!r.done){r.done=true;r.date=new Date().toISOString();
+    if(!r.done){r.done=true;r.date=new Date().toISOString();r.sub=null;if(prog.resume&&prog.resume.id===L.id)prog.resume=null;
       if(!prog.certs.some(function(c){return c.id===L.id}))prog.certs.push({id:L.id,title:L.titleAr||L.title,date:r.date,score:r.score||100,no:prog.certs.length+1,level:levelInfo().level});
       saveProg();addXP(XP_CERT);renderSteps();confetti(70);
       setTimeout(function(){toast(T('🏆 مبروك! حصلتَ على شهادتك. أنت بطل!','🏆 Congratulations! You earned your certificate!'))},1200);}
