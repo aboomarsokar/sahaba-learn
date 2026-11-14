@@ -8,7 +8,7 @@ var CSS='@font-face{font-family:"PCB Naskh";font-style:normal;font-weight:400 70
 ':root[data-theme="dark"]{--ink:#F6EEE2;--muted:#E6D3B8;--bg:#5A4636;--card:#6A5442;--accent:var(--accD);--accent-ink:#0b1410;--soft:#7A624C;--line:#8A7058;--ok:#66BB6A;--bad:#EF5350;--edge:rgba(0,0,0,.5);--sh:rgba(0,0,0,.5)}'+
 '*{box-sizing:border-box}html,body{margin:0;max-width:100%;overflow-x:hidden}'+
 'body{background:var(--bg);color:var(--ink);font-family:"PCB Naskh","Noto Naskh Arabic","Amiri",system-ui,sans-serif;font-weight:600;font-size:17px;line-height:1.8;-webkit-tap-highlight-color:transparent}'+
-'main{max-width:880px;margin:0 auto;padding:10px 12px 28px}@media (min-width:1000px){main{max-width:1100px}.stage3{height:420px}}h1{font-size:1.15rem;margin:0}b,h1,h2,h3,th{font-weight:800}sub{font-size:.72em;line-height:0}sup{font-size:.72em;line-height:0}'+
+'main{max-width:880px;margin:0 auto;padding:10px 12px 28px}@media (min-width:1000px){main{max-width:1100px}.stage3{height:420px}}@media (min-width:1000px) and (min-height:700px){main{max-width:min(1400px,96vw)}.stage3{min-height:min(500px,62vh)}}h1{font-size:1.15rem;margin:0}b,h1,h2,h3,th{font-weight:800}sub{font-size:.72em;line-height:0}sup{font-size:.72em;line-height:0}'+
 'button{font:inherit;cursor:pointer;color:var(--ink);border:1px solid var(--line);background:var(--card);border-radius:12px;padding:9px 14px;font-weight:700;box-shadow:0 4px 0 var(--edge),0 8px 14px -6px var(--sh);transition:transform .12s,box-shadow .12s,background .2s;touch-action:manipulation}'+
 'button:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--edge),0 12px 18px -6px var(--sh)}button:active{transform:translateY(4px);box-shadow:0 0 0 var(--edge),0 2px 4px var(--sh)}'+
 'button:disabled{transform:translateY(3px);box-shadow:0 1px 0 var(--edge);cursor:default;opacity:.75}button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}'+
@@ -58,18 +58,18 @@ function viewer(box,cfg){
     var key=new T.DirectionalLight(0xffffff,2.2);key.position.set(10,24,18);key.castShadow=true;key.shadow.mapSize.set(512,512);var sc=key.shadow.camera;sc.left=-30;sc.right=30;sc.top=30;sc.bottom=-30;sc.near=5;sc.far=120;key.shadow.bias=-.0008;scene.add(key);
     scene.add(new T.HemisphereLight(0xeaf3ff,0x778080,.6));
     if(cfg.floor!==false){var fl=new T.Mesh(new T.PlaneGeometry(300,300),new T.ShadowMaterial({opacity:.25}));fl.rotation.x=-Math.PI/2;fl.position.y=cfg.floorY||0;fl.receiveShadow=true;scene.add(fl)}
-    var v={R:null,scene:scene,cam:cam,box:box,dirty:true,yaw:cfg.yaw||0,pitch:cfg.pitch==null?14:cfg.pitch,r:cfg.r||40,ty:cfg.ty||0,tx:cfg.tx||0,maxYaw:cfg.maxYaw==null?180:cfg.maxYaw,drag:null,moved:0,pick:[],onframe:null,onpick:null,auto:cfg.auto||0,autoT:0,pinch:0,ptrs:{}};
+    var v={maxFps:cfg.maxFps||0,R:null,scene:scene,cam:cam,box:box,dirty:true,yaw:cfg.yaw||0,pitch:cfg.pitch==null?14:cfg.pitch,r:cfg.r||40,ty:cfg.ty||0,tx:cfg.tx||0,maxYaw:cfg.maxYaw==null?180:cfg.maxYaw,drag:null,moved:0,pick:[],onframe:null,onpick:null,auto:cfg.auto||0,autoT:0,pinch:0,ptrs:{}};
     /* إنشاء المُصيِّر عند أول ظهور فقط لتخفيف التحميل */
     v.init=function(){if(v.R||v.failed)return;
       try{var cv=document.createElement('canvas');box.insertBefore(cv,box.firstChild);
         var R=new T.WebGLRenderer({canvas:cv,antialias:true,alpha:true,powerPreference:'high-performance'});if(!R.getContext()){v.failed=1;return}
-        R.outputColorSpace=T.SRGBColorSpace;R.toneMapping=T.ACESFilmicToneMapping;R.toneMappingExposure=1.05;R.shadowMap.enabled=true;R.shadowMap.type=T.PCFShadowMap;R.setClearColor(0,0);
+        R.outputColorSpace=T.SRGBColorSpace;R.toneMapping=T.ACESFilmicToneMapping;R.toneMappingExposure=1.05;R.shadowMap.enabled=!cfg.noShadow;R.shadowMap.type=T.PCFShadowMap;R.setClearColor(0,0);
         var es=new T.Scene();es.add(new T.Mesh(new T.BoxGeometry(40,40,40),new T.MeshBasicMaterial({color:new T.Color(.5,.53,.55),side:T.BackSide})));
         function pn(x,y,z,w,h,rx,ry,I){var m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshBasicMaterial({color:new T.Color(I,I,I),side:T.DoubleSide}));m.position.set(x,y,z);m.rotation.set(rx,ry,0);es.add(m)}
         pn(0,19,0,18,18,Math.PI/2,0,10);pn(-19,4,6,10,18,0,Math.PI/2,6);pn(19,2,-4,8,14,0,-Math.PI/2,3.5);pn(0,2,-19,22,12,0,0,2.2);
         var pm=new T.PMREMGenerator(R);scene.environment=pm.fromScene(es,.03).texture;pm.dispose();
         v.R=R;
-        function resize(){var w=box.clientWidth||300,h=box.clientHeight||260;R.setPixelRatio(Math.min(1.5,devicePixelRatio||1));R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();v.dirty=true}
+        function resize(){var w=box.clientWidth||300,h=box.clientHeight||260;R.setPixelRatio(Math.min(cfg.maxDpr||1.5,devicePixelRatio||1));R.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();v.dirty=true}
         new ResizeObserver(resize).observe(box);resize();
       }catch(e){v.failed=1}};
     var rc=new T.Raycaster(),mv=new T.Vector2();
@@ -87,7 +87,7 @@ function viewer(box,cfg){
 }
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
 var lastF=0;
-function loop(t){requestAnimationFrame(loop);if(document.hidden)return;VW.forEach(function(v){if(!v.box.offsetParent)return;if(!v.R){v.init();if(!v.R)return}
+function loop(t){requestAnimationFrame(loop);if(document.hidden)return;VW.forEach(function(v){if(!v.box.offsetParent)return;if(!v.R){v.init();if(!v.R)return}if(v.maxFps&&!v.dirty){if(t-(v._lt||0)<1000/v.maxFps-3)return;v._lt=t}
   var ch=v.dirty;if(v.auto&&!reduce&&!v.drag){v.autoT=(v.autoT||0)+1;if(v.autoT<420){v.yaw+=v.auto;ch=true}else v.auto=0}
   if(v.onframe&&v.onframe(t))ch=true;if(ch){v.render();v.dirty=false}})}
 /* ---- مواد وأشكال ---- */
@@ -96,7 +96,7 @@ function phys(c,r,m){return new T.MeshPhysicalMaterial({color:c,roughness:r==nul
 function glass(c,op){return new T.MeshPhysicalMaterial({color:c||0xbfe3ff,roughness:.05,metalness:0,transparent:true,opacity:op==null?.3:op,clearcoat:1,side:T.DoubleSide,depthWrite:false})}
 function lathe(pts,seg){return new T.LatheGeometry(pts.map(function(p){return new T.Vector2(p[0],p[1])}),seg||48)}
 function mesh(g,m,x,y,z,cast){var o=new T.Mesh(g,m);o.position.set(x||0,y||0,z||0);if(cast!==false)o.castShadow=true;o.receiveShadow=true;return o}
-function label(text,o){o=o||{};var w=o.w||256,h=o.h||96,c=document.createElement('canvas');c.width=w*2;c.height=h*2;var g=c.getContext('2d');g.scale(2,2);
+function label(text,o){if(window.I18N)text=I18N.t(text);o=o||{};var w=o.w||256,h=o.h||96,c=document.createElement('canvas');c.width=w*2;c.height=h*2;var g=c.getContext('2d');g.scale(2,2);
   if(o.bg){g.fillStyle=o.bg;var r=14;g.beginPath();g.moveTo(r,0);g.lineTo(w-r,0);g.quadraticCurveTo(w,0,w,r);g.lineTo(w,h-r);g.quadraticCurveTo(w,h,w-r,h);g.lineTo(r,h);g.quadraticCurveTo(0,h,0,h-r);g.lineTo(0,r);g.quadraticCurveTo(0,0,r,0);g.fill()}
   g.fillStyle=o.color||'#fff';g.font=(o.weight||'800')+' '+(o.size||40)+'px "PCB Naskh","Noto Naskh Arabic",Arial,sans-serif';g.textAlign='center';g.textBaseline='middle';var lines=String(text).split('\n');lines.forEach(function(l,i){g.fillText(l,w/2,h/2+(i-(lines.length-1)/2)*(o.size||40)*1.15)});
   var tx=new T.CanvasTexture(c);tx.colorSpace=T.SRGBColorSpace;tx.anisotropy=4;return tx}
