@@ -533,6 +533,42 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .toast .tbtn{flex:none;border:0;border-radius:999px;padding:.4rem .9rem;cursor:pointer;font:700 .85rem var(--fb);color:#2a1250;background:linear-gradient(180deg,#ffe7a8,#f3c969)}
 .toast small{opacity:.8}
 
+/* --- بطاقات القواعد --- */
+:root{--k-s:#6cc3ff;--k-v:#5ee59a;--k-t:#ffe08a;--k-n:#ff8a9a}
+:root[data-mode="light"]{--k-s:#0d5fa8;--k-v:#13753d;--k-t:#8a5a00;--k-n:#c62828}
+.k-s{color:var(--k-s);font-weight:700}
+.k-v{color:var(--k-v);font-weight:700}
+.k-t{color:var(--k-t);font-weight:700;background:rgba(243,201,105,.2);padding:0 .3em;border-radius:6px;border-bottom:2px solid var(--gold)}
+.k-n{color:var(--k-n);font-weight:700;background:rgba(255,100,120,.16);padding:0 .3em;border-radius:6px;border-bottom:2px solid var(--k-n)}
+.rcard{padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.8rem;animation:rise .35s ease-out both}
+.rdots{display:flex;justify-content:center;gap:6px}
+.rdots i{width:26px;height:6px;border-radius:9px;background:var(--panel)}
+.rdots i.on{background:var(--gold)}
+.rtag{align-self:center;font:700 .82rem var(--fb);padding:.3rem .9rem;border-radius:999px;background:var(--panel);border:1px solid var(--cardBd);text-align:center}
+.rtag.pos{color:var(--k-v);border-color:var(--k-v)}
+.rtag.neg{color:var(--k-n);border-color:var(--k-n)}
+.rtag.q{color:var(--k-s);border-color:var(--k-s)}
+.rtag.note{color:var(--gold);border-color:var(--gold)}
+.rname{font:700 1.75rem/1.3 var(--fb);direction:ltr;text-align:center;color:var(--gold)}
+.rname-ar{font:700 1.3rem var(--fh);text-align:center;color:var(--k-v);margin-top:-.4rem}
+.use{display:flex;flex-direction:column;gap:.35rem;padding:.8rem;border-radius:16px;background:var(--panel);border:1px solid var(--cardBd)}
+.use .lbl,.sig .lbl{align-self:flex-start;font:700 .78rem var(--fb);padding:.15rem .7rem;border-radius:99px;background:rgba(108,195,255,.16);color:var(--k-s)}
+.use .lbl.ar,.sig .lbl.ar{background:rgba(94,229,154,.16);color:var(--k-v)}
+.use p.en{font:600 1.05rem/1.85 var(--fb);direction:ltr;text-align:left}
+.use p.ar{font:400 1rem/1.9 var(--fb);color:var(--text)}
+.sig{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}
+.sigs{display:flex;flex-wrap:wrap;gap:.4rem;width:100%;direction:ltr;margin-top:.2rem}
+.sigs span{font:700 .85rem var(--fb);padding:.25rem .7rem;border-radius:99px;background:rgba(243,201,105,.18);color:var(--k-t);border:1px solid var(--gold)}
+.formula.big{font:700 1.12rem/2.1 var(--fb);direction:ltr;text-align:center;padding:1rem .8rem;border-radius:16px;background:var(--panel);border:2px dashed var(--gold);word-spacing:.05em}
+.legend{display:flex;flex-wrap:wrap;gap:.35rem .8rem;justify-content:center;font:400 .72rem var(--fb);color:var(--muted)}
+.legend span{background:none!important;border:0!important;padding:0!important}
+.tip{font:400 .95rem/1.8 var(--fb);padding:.6rem .8rem;border-radius:12px;background:var(--panel);border-inline-start:3px solid var(--gold)}
+.exlabel{align-self:flex-start;font:700 .8rem var(--fb);color:var(--gold)}
+.notebody{font:600 1.05rem/2.1 var(--fb);padding:.8rem;border-radius:16px;background:var(--panel);text-align:start;direction:ltr}
+.notebody[dir]{direction:inherit}
+.rcard .exl .e{font-size:1.08rem;line-height:1.7}
+.rcard .exl .a{font-size:.88rem}
+
 /* الشهادة */
 .cert-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}
 .cert-wrap canvas{width:100%;max-width:640px;height:auto;border-radius:12px;box-shadow:0 12px 34px var(--shadow)}
@@ -998,9 +1034,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
 <script src="data/lessons.js"></script>
 <script src="data/practice.js"></script>
+<script src="data/rulecards.js"></script>
 <script>
 (function(){
-  var VERSION='1.5.0';
+  var VERSION='1.6.0';
   /* ===== روابط Drive (تُضاف حين تصل) ===== */
   /* لكلّ فصل رابطه: 1 = الفصل الأول، 2 = الفصل الثاني، all = رابط واحد للسنة كلّها */
   var LINKS={
@@ -1034,6 +1071,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-14',title:'القواعد على شكل بطاقات',items:['كلّ قاعدة تُعرض بطاقةً بطاقة: التعريف، ثم التكوين، ثم النفي والسؤال والملاحظات','بطاقة التعريف: اسم القاعدة بالإنجليزية ومعناها بالعربية ومتى نستخدمها بالنصّين','بطاقة التكوين: الصيغة بألوان تُبرز أدوات التكوين، وتحتها مثال توضيحي','زرّ «أكمل» بعد كلّ بطاقة، وزرّ «السابق» للرجوع']},
     {date:'2026-11-14',title:'تحفيز وإشعارات وصوت أوضح',items:['أزرار الكلمات: اليمين للكلمة التالية، واليسار للسابقة','تلميح «انقر على الكلمة» بارز، والمثال في إطار مع إبراز الكلمة','صوت رجل أوضح، مع اختيار الصوت الإنجليزي والعربي من الإعدادات','إشعار عند الإضافة إلى «قاموسي الخاص» أو الحفظ في «ذاكرة المحفوظات» مع زرّ فتح','تحفيز: ردود فورية، وعدّاد إجابات متتالية، واحتفال بالإنجازات، وشريط المستوى في الواجهة']},
     {date:'2026-11-13',title:'صوت جديد',items:['النطق أبطأ وأوضح','صوت رجل يقرأ (ويمكن اختيار صوت امرأة من الإعدادات)','قراءة العربية: معنى الكلمة ومثالها، وترجمة القصّة بزرّ «اقرأ الترجمة»','زرّ «جرّب الصوت» في الإعدادات']},
     {date:'2026-11-13',title:'أوراق المراجعة والاختبارات',items:['ورقة مراجعة لكلّ وحدة من الوحدات العشر: مفردات وقواعد وقراءة','ثلاثة اختبارات شاملة: الوحدات 1–3 و4–6 و7–10','اختبار نهائي للمنهج كلّه يتغيّر كلّ مرة','تُحفظ أفضل علامة لك، وتظهر نتائجك في «سجل التعلّم» و«إنجازاتي»']},
@@ -1891,24 +1929,62 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
           '<button class="btn tf-btn" type="button" data-tf>'+T('حوّلها ▶','Transform ▶')+'</button><span class="a" hidden>'+esc(x.ar||'')+'</span></span>'+sayBtn(plain.replace(' → ','. '))+'</div>';
         return '<div class="exl"><span class="t"><span class="e">'+hl(x.en)+'</span><span class="a">'+esc(x.ar||'')+'</span></span>'+sayBtn(plain)+'</div>'}).join('')+'</div></div>';
   }
-  function rulesStation(st,idx,rules){
+  /* ----- بطاقات القاعدة: تعريف ← تكوين ← نفي ← سؤال ← ملاحظة، وبعد كلّ بطاقة زرّ «أكمل» ----- */
+  var RC_ICON={pos:'✅',neg:'❌',q:'❓',note:'💡'};
+  function kfmt(t){return esc(t).replace(/\{(s|t|v|n)\|([^}]*)\}/g,'<span class="k-$1">$2</span>').replace(/\n/g,'<br>')}
+  function kplain(t){return t.replace(/\{[stvn]\|([^}]*)\}/g,'$1')}
+  function rcExamples(list){
+    return '<span class="exlabel">'+T('مثال توضيحي','Example')+' · Example</span><div class="exs">'+list.map(function(x){
+      var parts=x.en.split(' → ');
+      if(parts.length===2)return '<div class="exl"><span class="t"><span class="e">'+kfmt(parts[0])+'</span><span class="e to" hidden>'+kfmt(parts[1])+'</span>'+
+        '<button class="btn tf-btn" type="button" data-tf>'+T('حوّلها ▶','Transform ▶')+'</button><span class="a" hidden>'+esc(x.ar||'')+'</span></span>'+sayBtn(kplain(parts.join('. ')))+'</div>';
+      return '<div class="exl"><span class="t"><span class="e">'+kfmt(x.en)+'</span><span class="a">'+esc(x.ar||'')+'</span></span>'+sayBtn(kplain(x.en))+'</div>'}).join('')+'</div>';
+  }
+  function rcLegend(f){
+    var L2=[['s','الفاعل / الاسم · Subject'],['v','الفعل · Verb'],['t','أداة التكوين · Tool'],['n','أداة النفي · Negative']];
+    return '<div class="legend">'+L2.filter(function(x){return f.indexOf('{'+x[0]+'|')>-1}).map(function(x){return '<span class="k-'+x[0]+'">■ '+x[1]+'</span>'}).join('')+'</div>';
+  }
+  function rcHtml(r,c){
+    if(c.k==='intro')return '<div class="card rcard"><h3 class="rname">'+esc(r.title)+'</h3><h4 class="rname-ar">'+esc(r.titleAr||'')+'</h4>'+
+      '<div class="use"><span class="lbl">When do we use it?</span><p class="en">'+kfmt(c.useEn)+'</p><span class="lbl ar">متى نستخدمها؟</span><p class="ar">'+kfmt(c.useAr)+'</p></div>'+
+      (c.signals&&c.signals.length?'<div class="sig"><span class="lbl">Signal words</span><span class="lbl ar">كلمات تدلّ عليها</span><div class="sigs">'+c.signals.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div></div>':'')+'</div>';
+    var tag='<span class="rtag '+c.k+'">'+RC_ICON[c.k]+' '+esc(c.label)+(c.labelAr&&c.labelAr!==c.label?' · '+esc(c.labelAr):'')+'</span>';
+    if(c.k==='note')return '<div class="card rcard">'+tag+'<div class="notebody" dir="auto">'+kfmt(c.body)+'</div>'+(c.examples&&c.examples.length?rcExamples(c.examples):'')+'</div>';
+    return '<div class="card rcard">'+tag+'<div class="formula big">'+kfmt(c.formula)+'</div>'+rcLegend(c.formula)+(c.tip?'<p class="tip">'+kfmt(c.tip)+'</p>':'')+rcExamples(c.examples||[])+'</div>';
+  }
+  function showRuleCards(area,r,cards,k,total,onDone){
+    var c=0;
+    function draw(){
+      var last=c===cards.length-1;
+      area.innerHTML=(total>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+total+'</p>':'')+
+        '<div class="rdots">'+cards.map(function(_,j){return '<i'+(j<=c?' class="on"':'')+'></i>'}).join('')+'</div>'+rcHtml(r,cards[c]);
+      area.appendChild(nextBtn(last?T('فهمت، لنتدرّب','Got it — practise'):T('أكمل','Continue'),function(){if(last)onDone();else{c++;draw()}}));
+      if(c>0){var bb=document.createElement('button');bb.type='button';bb.className='btn';bb.style.alignSelf='center';bb.textContent=T('السابق','Back');
+        bb.addEventListener('click',function(){c--;draw()});area.appendChild(bb)}
+      window.scrollTo(0,0);
+    }
+    draw();
+  }
+  function rulesStation(st,idx,rules,off){
     var k=0,area;
     st.innerHTML=head(idx)+'<div id="ra" class="stage"></div>';area=st.querySelector('#ra');
     function show1(){
-      var r=rules[k];
-      area.innerHTML=(rules.length>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+rules.length+'</p>':'')+ruleCard(r);
-      area.appendChild(nextBtn(T('فهمت، لنتدرّب','Got it — practise'),function(){
+      var r=rules[k],cards=(window.LEXORA_RULECARDS||{})[L.id+'#'+(off+k)];
+      function startQs(){
         runQs(area,r.questions||[],{retry:true},function(sc,tot){
           area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('من المحاولة الأولى','on the first try')+'</p></div>';
           k++;if(k<rules.length)area.appendChild(nextBtn(T('القاعدة التالية','Next rule'),show1));else completeStation(idx);
         });
-      }));
+      }
+      if(cards&&cards.length){showRuleCards(area,r,cards,k,rules.length,startQs);return}
+      area.innerHTML=(rules.length>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+rules.length+'</p>':'')+ruleCard(r);
+      area.appendChild(nextBtn(T('فهمت، لنتدرّب','Got it — practise'),startQs));
     }
     if(!rules.length){completeStation(idx);return}
     show1();
   }
-  function practice(st){rulesStation(st,2,(L.rules||[]).slice(0,1))}
-  function challenge(st){rulesStation(st,3,(L.rules||[]).slice(1,3))}
+  function practice(st){rulesStation(st,2,(L.rules||[]).slice(0,1),0)}
+  function challenge(st){rulesStation(st,3,(L.rules||[]).slice(1,3),1)}
 
   /* 5) أتقنتُ الدرس: أسئلة من السهل إلى الصعب، والنجاح من 70% */
   var PASS=70;
