@@ -504,6 +504,35 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .passage .tools{justify-content:flex-end}
 .pill.best{color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));border:0;font-weight:700}
 
+/* --- بطاقة الكلمة: تلميح بارز ومثال بارز --- */
+.flash .hint{font:700 1rem var(--fb);color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));padding:.5rem 1.1rem;border-radius:999px;
+  box-shadow:0 6px 16px rgba(243,201,105,.35);animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(-4px)}}
+.exbox{width:100%;margin-top:.3rem;padding:.8rem .9rem;border-radius:16px;background:rgba(243,201,105,.14);border:2px solid var(--gold);display:flex;flex-direction:column;gap:.35rem}
+.exbox .et{font:700 .78rem "Cinzel",serif;letter-spacing:.12em;color:var(--gold);direction:ltr}
+.flash .x{font:700 1.2rem/1.6 var(--fb);direction:ltr}
+.flash .x mark,.exbox mark{background:rgba(243,201,105,.4);color:inherit;border-radius:5px;padding:0 4px}
+.flash .xa{font-size:.95rem}
+.navrow{direction:ltr}
+#vAdd.added{border-color:#2fbf71;color:#2fbf71}
+
+/* --- تحفيز: ردود فورية، احتفال، شريط المستوى --- */
+.cheer{font:700 1rem var(--fb);padding:.45rem .8rem;border-radius:12px;text-align:center;animation:pop .35s ease}
+.cheer.ok{background:rgba(47,191,113,.18);color:#2fbf71}
+.cheer.no{background:rgba(243,201,105,.18);color:var(--gold)}
+@keyframes pop{0%{transform:scale(.8);opacity:0}60%{transform:scale(1.06)}100%{transform:none;opacity:1}}
+.confetti{position:fixed;top:-30px;z-index:32;pointer-events:none;animation:fall 2.4s ease-in forwards}
+@keyframes fall{to{transform:translate(var(--dx,0),110vh) rotate(540deg);opacity:.9}}
+.xpline{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;text-align:start}
+.xpline .lvn{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);font:700 1.15rem "Cinzel",serif;box-shadow:0 0 16px rgba(243,201,105,.4)}
+.xpline .t{flex:1;min-width:0}
+.xpline b{display:block;font:700 .95rem var(--fb)}
+
+/* إشعار فيه زرّ */
+.toast.act{pointer-events:auto;display:flex;align-items:center;gap:.8rem;text-align:start}
+.toast .tbtn{flex:none;border:0;border-radius:999px;padding:.4rem .9rem;cursor:pointer;font:700 .85rem var(--fb);color:#2a1250;background:linear-gradient(180deg,#ffe7a8,#f3c969)}
+.toast small{opacity:.8}
+
 /* الشهادة */
 .cert-wrap{display:flex;flex-direction:column;align-items:center;gap:.8rem}
 .cert-wrap canvas{width:100%;max-width:640px;height:auto;border-radius:12px;box-shadow:0 12px 34px var(--shadow)}
@@ -532,7 +561,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
 /* ---- رسالة قصيرة ---- */
 .toast{position:fixed;z-index:30;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);
-  max-width:calc(100% - 32px);padding:.75rem 1.2rem;border-radius:14px;background:#1d1433;color:#fff;
+  width:max-content;max-width:calc(100% - 32px);padding:.75rem 1.2rem;border-radius:14px;background:#1d1433;color:#fff;
   font:400 .95rem/1.6 var(--fb);box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.25s;text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
@@ -623,6 +652,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   </div>
   <div class="wrap">
     <div class="card quote" id="quote"><span class="qi">✨</span><span class="qt"><span class="qe" id="qEn"></span><span class="qa" id="qAr"></span></span></div>
+    <button class="card xpline" type="button" data-go="me"><span class="lvn" id="hLv">1</span><span class="t"><b id="hLvT"></b><i class="bar"><i id="hLvBar" style="width:0%"></i></i></span></button>
     <button class="card remind" type="button" id="remind" data-go="planner" hidden><svg><use href="#i-plan"/></svg><span id="remindTxt"></span></button>
 
     <button class="card term" type="button" data-term-open="1">
@@ -907,6 +937,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
         <button type="button" data-voice-btn="f" data-t="vFemale">امرأة</button>
       </div>
       <button class="btn" type="button" id="voiceTest" style="align-self:flex-start"><svg><use href="#i-speak"/></svg><span data-t="vTest">جرّب الصوت</span></button>
+      <p class="sw-label" data-t="vEnL">الصوت الإنجليزي (إن لم يعجبك اختر غيره)</p>
+      <select class="field" id="vEn" aria-label="الصوت الإنجليزي"></select>
+      <p class="sw-label" data-t="vArL">الصوت العربي</p>
+      <select class="field" id="vAr" aria-label="الصوت العربي"></select>
       <label class="tg"><span data-t="sSlow">نطق أبطأ</span><input type="checkbox" id="optSlow"></label>
       <label class="tg"><span data-t="sFx">مؤثرات الإجابة الصحيحة والخاطئة</span><input type="checkbox" id="optFx"></label>
     </section>
@@ -966,7 +1000,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 <script src="data/practice.js"></script>
 <script>
 (function(){
-  var VERSION='1.4.0';
+  var VERSION='1.5.0';
   /* ===== روابط Drive (تُضاف حين تصل) ===== */
   /* لكلّ فصل رابطه: 1 = الفصل الأول، 2 = الفصل الثاني، all = رابط واحد للسنة كلّها */
   var LINKS={
@@ -1000,6 +1034,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-14',title:'تحفيز وإشعارات وصوت أوضح',items:['أزرار الكلمات: اليمين للكلمة التالية، واليسار للسابقة','تلميح «انقر على الكلمة» بارز، والمثال في إطار مع إبراز الكلمة','صوت رجل أوضح، مع اختيار الصوت الإنجليزي والعربي من الإعدادات','إشعار عند الإضافة إلى «قاموسي الخاص» أو الحفظ في «ذاكرة المحفوظات» مع زرّ فتح','تحفيز: ردود فورية، وعدّاد إجابات متتالية، واحتفال بالإنجازات، وشريط المستوى في الواجهة']},
     {date:'2026-11-13',title:'صوت جديد',items:['النطق أبطأ وأوضح','صوت رجل يقرأ (ويمكن اختيار صوت امرأة من الإعدادات)','قراءة العربية: معنى الكلمة ومثالها، وترجمة القصّة بزرّ «اقرأ الترجمة»','زرّ «جرّب الصوت» في الإعدادات']},
     {date:'2026-11-13',title:'أوراق المراجعة والاختبارات',items:['ورقة مراجعة لكلّ وحدة من الوحدات العشر: مفردات وقواعد وقراءة','ثلاثة اختبارات شاملة: الوحدات 1–3 و4–6 و7–10','اختبار نهائي للمنهج كلّه يتغيّر كلّ مرة','تُحفظ أفضل علامة لك، وتظهر نتائجك في «سجل التعلّم» و«إنجازاتي»']},
     {date:'2026-11-13',title:'الفصل الأول كاملاً',items:['الوحدة 1: التواصل مع الآخرين (المضارع للمستقبل، will و going to)','الوحدة 2: من هنا إلى هناك (المضارع التام والمستمر، والمضارع التام أم الماضي)','الوحدة 3: أنشطة وقت الفراغ (الأفعال الناقصة: ثلاث قواعد)','الوحدة 4: حالة طوارئ! (الصفات والظروف)','الوحدة 5: طقسٌ خطِر (المقارنة والتفضيل، as…as و so/such…that)','صار المنهج كلّه متاحاً: 10 وحدات بشهاداتها']},
@@ -1039,7 +1074,21 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
   function $(id){return document.getElementById(id)}
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-  var toastT;function toast(m){var t=$('toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},2600)}
+  var toastT;function toast(m){var t=$('toast');t.textContent=m;t.classList.remove('act');t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on')},2600)}
+  /* إشعار فيه زرّ يفتح الشاشة المعنيّة (قاموسي الخاص، ذاكرة المحفوظات…) */
+  function notify(html,label,hash){
+    var t=$('toast');t.innerHTML='<span>'+html+'</span>'+(label?'<button type="button" class="tbtn">'+label+'</button>':'');
+    t.classList.add('on','act');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('on','act')},4800);
+    var b=t.querySelector('.tbtn');if(b)b.addEventListener('click',function(){t.classList.remove('on','act');go(hash)});
+  }
+  function confetti(n){
+    if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var E=['🎉','⭐','✨','🔥','🎊','💫'];
+    for(var k=0;k<n;k++){var e=document.createElement('span');e.className='confetti';e.textContent=E[k%E.length];
+      e.style.left=Math.random()*100+'vw';e.style.animationDelay=(Math.random()*.5)+'s';e.style.fontSize=(1+Math.random()*1.2)+'rem';
+      e.style.setProperty('--dx',(Math.random()*120-60)+'px');document.body.appendChild(e);setTimeout(function(x){x.remove()},3200,e)}
+  }
+  function rnd(a){return a[Math.floor(Math.random()*a.length)]}
 
   var profile=load(K.profile,null);
   var set=load(K.set,{});
@@ -1064,7 +1113,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     pUnit:'Unit you are studying',pPerDay:'Lessons per day',pExam:'Exam date',addTask:'Add a task to the schedule',day:'Day',task:'Task',taskPh:'e.g. Unit 7 vocabulary',
     weekly:'Weekly schedule',resetWeek:'Start a new week (clear checkmarks)',mode:'Mode',light:'Light',dark:'Dark',bgLight:'Background colour (light mode)',
     bgDark:'Background colour (dark mode)',fontSize:'Font size',small:'Small',medium:'Medium',large:'Large',uiLang:'App language',sounds:'Sounds',
-    sSpeak:'Word pronunciation',sSlow:'Slower pronunciation',sVoice:'Reader voice',vMale:'Male',vFemale:'Female',vTest:'Test the voice',readAr:'Read the translation',sFx:'Right / wrong answer sounds',notifs:'Notifications',nUpd:'App update alerts',nPlan:'Study plan reminders',
+    sSpeak:'Word pronunciation',sSlow:'Slower pronunciation',sVoice:'Reader voice',vMale:'Male',vFemale:'Female',vTest:'Test the voice',readAr:'Read the translation',vEnL:'English voice (pick another if you prefer)',vArL:'Arabic voice',sFx:'Right / wrong answer sounds',notifs:'Notifications',nUpd:'App update alerts',nPlan:'Study plan reminders',
     aboutDesc:'An interactive app for learning English: lessons and grammar explained, word pronunciation, reading passages, worksheets and tests, a personal dictionary and a study planner.',
     kGrade:'Grade & curriculum',vGrade:'Grade 10 — English curriculum',kVer:'Version',kDev:'Developer',vDev:'Al-Tabi\'een School for Quran Memorisation — Gaza',
     kCopy:'Copyright',vCopy:'© 2026 Al-Tabi\'een School. All rights reserved.',share:'Share the app',install:'Install the app',certs:'My Certificates',level:'Level'};
@@ -1117,18 +1166,34 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function voiceBtns(){document.querySelectorAll('[data-voice-btn]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.voiceBtn===(set.voice||'m'))})}
   document.querySelectorAll('[data-voice-btn]').forEach(function(b){b.addEventListener('click',function(){set.voice=b.dataset.voiceBtn;save(K.set,set);voiceBtns();$('voiceTest').click()})});
   voiceBtns();
+  function fillVoices(){
+    [['vEn','en','voiceEn'],['vAr','ar','voiceAr']].forEach(function(x){
+      var sel=$(x[0]);if(!sel)return;
+      var vs=voices().filter(function(v){return (v.lang||'').toLowerCase().indexOf(x[1])===0});
+      sel.innerHTML='<option value="">'+T('تلقائي (رجل)','Auto (male)')+'</option>'+vs.map(function(v){return '<option value="'+esc(v.name)+'">'+esc(v.name)+' · '+esc(v.lang)+'</option>'}).join('')+
+        (vs.length?'':'<option disabled>'+T('لا توجد أصوات على هذا الجهاز','No voices on this device')+'</option>');
+      sel.value=set[x[2]]||'';if(sel.value!==(set[x[2]]||''))sel.value='';
+    });
+  }
+  ['vEn','vAr'].forEach(function(id){var sel=$(id);sel.addEventListener('change',function(){
+    var ar=id==='vAr';set[ar?'voiceAr':'voiceEn']=sel.value;save(K.set,set);
+    speak(ar?[['مرحباً، هذا صوتي','ar']]:[['Hello! This is my voice.','en']]);
+  })});
+  if('speechSynthesis' in window){voices();if(speechSynthesis.addEventListener)speechSynthesis.addEventListener('voiceschanged',fillVoices)}
   mq.addEventListener&&mq.addEventListener('change',function(){if(!set.mode)applyTheme()});
   applyTheme();applyLang();
 
   $('voiceTest').addEventListener('click',function(){speak([['Hello! Welcome to LEXORA.','en'],['أهلاً بك في ليكسورا','ar']])});
   /* ===== الصوت ===== */
   /* الصوت من الجهاز نفسه: نختار صوت رجل إن وُجد (الافتراضي)، أو صوت امرأة من الإعدادات */
-  var MALE=/\b(male|man|daniel|david|fred|alex|aaron|arthur|george|guy|james|mark|oliver|ryan|rishi|thomas|tom|lee|gordon|maged|majed|tarik|tariq|hamed|naayf|shakir|bassel|omar|hamza|fahed|ahmed)\b/i;
+  var MALE=/\b(male|man|daniel|david|fred|alex|aaron|arthur|george|guy|james|mark|oliver|ryan|rishi|thomas|tom|lee|gordon|maged|majed|tarik|tariq|hamed|naayf|shakir|bassel|omar|hamza|fahed|ahmed|iol|iom|tpd|rjs|gbb|gbd)\b/i;
   var FEMALE=/\b(female|woman|samantha|karen|victoria|zira|susan|kate|serena|moira|tessa|fiona|hazel|libby|sonia|jenny|aria|laila|mariam|salma|amira|zariyah|hoda|lana|sana|reem|layla)\b/i;
   function voices(){try{return speechSynthesis.getVoices()||[]}catch(e){return[]}}
   function pickVoice(lang){
     var vs=voices().filter(function(v){return (v.lang||'').toLowerCase().indexOf(lang)===0});
     if(!vs.length)return null;
+    var chosen=set[lang==='ar'?'voiceAr':'voiceEn'];            /* صوت اختاره الطالب بنفسه */
+    if(chosen){var c=vs.filter(function(v){return v.name===chosen})[0];if(c)return c}
     var want=set.voice==='f'?FEMALE:MALE,avoid=set.voice==='f'?MALE:FEMALE;
     if(lang==='en')vs.sort(function(a,b){return (/en-(gb|us)/i.test(b.lang)?1:0)-(/en-(gb|us)/i.test(a.lang)?1:0)});
     return vs.filter(function(v){return want.test(v.name)})[0]||vs.filter(function(v){return !avoid.test(v.name)})[0]||vs[0];
@@ -1144,7 +1209,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       if(!pt[0])return;var l=pt[1]||'en',u=new SpeechSynthesisUtterance(pt[0]),v=pickVoice(l);
       if(l==='ar'&&!v&&voices().length){toast(T('لا يوجد صوت عربي على جهازك','No Arabic voice on this device'));return}
       u.lang=v?v.lang:(l==='ar'?'ar-SA':'en-US');if(v)u.voice=v;
-      u.rate=set.slow?.6:.8;u.pitch=set.voice==='f'?1:.9;
+      var custom=v&&v.name===set[l==='ar'?'voiceAr':'voiceEn'];
+      u.rate=set.slow?.6:.8;u.volume=1;
+      /* صوت رجل: إن لم نجد صوتاً مسمّى رجلاً نخفض النغمة ليصير أعمق */
+      u.pitch=(custom||set.voice==='f')?1:(v&&MALE.test(v.name)?.95:.72);
       speechSynthesis.speak(u);
     });
   }
@@ -1212,6 +1280,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var dq=QUOTES[Math.floor(Date.now()/864e5)%QUOTES.length];$('qEn').textContent=dq[0];$('qAr').textContent=dq[1];
     $('meImg').src=src(profile.avatar);$('meName').textContent=profile.name;
     $('tp1').style.width=termPct(1)+'%';$('tp2').style.width=termPct(2)+'%';
+    var LI=levelInfo();$('hLv').textContent=LI.level;$('hLvBar').style.width=LI.frac*100+'%';
+    var left='<bdi dir="ltr">'+(LI.need-LI.into)+' XP</bdi>';
+    $('hLvT').innerHTML=LI.level>=100?T('وصلتَ إلى أعلى مستوى 👑','Top level reached 👑'):prog.xp===0?T('ابدأ درسك الأول واجمع نقاط <bdi dir="ltr">XP</bdi> ⭐','Start your first lesson and earn XP ⭐'):
+      T('تبقّى '+left+' للمستوى '+(LI.level+1)+' — واصل! 🔥',left+' to level '+(LI.level+1)+' — keep going! 🔥');
     /* تذكير بمهام اليوم المتبقية */
     var today=new Date().getDay(),left=plan.tasks.filter(function(t){return t.day===today&&!t.done}).length,msg='';
     if(set.nPlan){
@@ -1383,9 +1455,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   $('dForm').addEventListener('submit',function(e){
     e.preventDefault();
     var en=$('dEn').value.trim(),ar=$('dAr').value.trim();if(!en||!ar)return;
-    if(dict.some(function(w){return w.en.toLowerCase()===en.toLowerCase()})){toast(T('الكلمة موجودة في قاموسك','This word is already in your dictionary'));return}
+    if(dict.some(function(w){return w.en.toLowerCase()===en.toLowerCase()})){notify('📖 «'+esc(en)+'» '+T('موجودة في <b>قاموسي الخاص</b>','is already in <b>My Dictionary</b>'));return}
     dict.unshift({id:Date.now(),en:en,ar:ar,ex:$('dEx').value.trim(),unit:+$('dUnit').value,date:new Date().toISOString()});
-    save(K.dict,dict);this.reset();renderDict();toast(T('أُضيفت الكلمة','Word added'));
+    save(K.dict,dict);this.reset();renderDict();
+    notify('✅ '+T('أُضيفت','Added')+' «'+esc(en)+'» '+T('إلى <b>قاموسي الخاص</b>','to <b>My Dictionary</b>')+'<br><small>'+T('لديك '+dict.length+' كلمة محفوظة','You now have '+dict.length+' saved word(s)')+'</small>');
   });
   dSearch.addEventListener('input',renderDict);dFilter.addEventListener('change',renderDict);
   /* اختبار نفسه في الكلمات المحفوظة */
@@ -1418,6 +1491,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   }
   renders.dict=function(){unitOptions($('dUnit'));var f=dFilter.value;unitOptions(dFilter,true);dFilter.value=f||'all';$('dQuiz').hidden=true;renderDict()};
 
+  renders.settings=fillVoices;
   /* ===== الدروس المحفوظة ===== */
   renders.saved=function(){
     var box=$('savedList');
@@ -1527,7 +1601,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var pop=document.createElement('div');pop.className='xp-pop';pop.textContent='+'+n+' XP';document.body.appendChild(pop);
     setTimeout(function(){pop.remove()},1700);
     var after=levelInfo().level;
-    if(after>before)setTimeout(function(){beep(true);toast(T('🎉 مبروك! وصلت إلى المستوى '+after,'🎉 Level up! You reached level '+after))},900);
+    if(after>before)setTimeout(function(){beep(true);confetti(40);toast(T('🎉 مبروك! وصلت إلى المستوى '+after,'🎉 Level up! You reached level '+after))},900);
   }
 
   /* ===== دروس الوحدة ===== */
@@ -1576,7 +1650,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     if(on)prog.saved=prog.saved.filter(function(s){return s.id!==L.id});
     else prog.saved.push({id:L.id,unit:L.unit,title:L.titleAr||L.title});
     saveProg();this.setAttribute('aria-pressed',!on);this.style.color=!on?'var(--gold)':'';
-    toast(on?T('أُزيل من المحفوظات','Removed from saved'):T('حُفظ الدرس','Lesson saved'));
+    if(on)notify('🗑️ '+T('أُزيل الدرس من <b>ذاكرة المحفوظات</b>','Lesson removed from <b>Saved</b>'));
+    else{notify('🔖 '+T('تمّ حفظ الدرس في <b>ذاكرة المحفوظات</b>','Lesson saved to <b>Saved memory</b>')+'<br><small>'+T('لديك '+prog.saved.length+' درس محفوظ','You have '+prog.saved.length+' saved lesson(s)')+'</small>',T('افتح','Open'),'saved');beep(true)}
   });
   function renderSteps(){
     var r=lp(L.id);
@@ -1597,7 +1672,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   }
   function completeStation(i){
     var r=lp(L.id);
-    if(!r.st[i]){r.st[i]=true;saveProg();addXP(XP_STATION)}
+    if(!r.st[i]){r.st[i]=true;saveProg();addXP(XP_STATION);confetti(22);
+      toast('🎉 '+T('أنهيت محطة «'+STATIONS[i].ar+'»! +'+XP_STATION+' XP','You finished “'+STATIONS[i].en+'”! +'+XP_STATION+' XP'))}
     var n=i+1;
     if(n===3&&!hasChallenge()){r.st[3]=true;saveProg();n=4}   /* لا قاعدة ثانية: تُتخطّى محطة التحدّي */
     cur=n;setTimeout(renderStation,900);
@@ -1611,8 +1687,20 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   });
 
   /* أسئلة: مع retry يعيد الطالب حتى يصيب، وبدونه تُحسب العلامة من أول محاولة */
+  var PRAISE=[['ممتاز! 🌟','Excellent! 🌟'],['أحسنت! 👏','Great job! 👏'],['رائع! 🔥','Awesome! 🔥'],['إجابة صحيحة! ✅','Correct! ✅'],['يا بطل! 💪','Champion! 💪'],['مذهل! 🚀','Amazing! 🚀']];
+  var RETRYOK=[['نجحت أخيراً! المهمّ أنك لم تستسلم 💪','You got it! You never gave up 💪'],['برافو! المحاولة الثانية أقوى 🌱','Bravo! Second try, stronger 🌱']];
+  var WRONGS=[['لا بأس، حاول مرة أخرى 💪','No worries, try again 💪'],['قريب! جرّب ثانية 🎯','Close! Try once more 🎯'],['الخطأ يعلّمنا، أنت تتقدّم 🌱','Mistakes help us learn 🌱']];
   function runQs(box,qs,opt,done){
-    var i=0,score=0;
+    var i=0,score=0,streak=0;
+    function cheer(c,ok,first){
+      var d=c.querySelector('.cheer'),msg;
+      if(!d){d=document.createElement('div');var qt=c.querySelector('.qtop');qt.parentNode.insertBefore(d,qt.nextSibling)}
+      if(ok){
+        if(first){streak++;var pr=rnd(PRAISE);msg=T(pr[0],pr[1])+(streak>=2?'  🔥 '+streak+' '+T('متتالية','in a row'):'');if(streak%3===0)confetti(14)}
+        else{var rk=rnd(RETRYOK);msg=T(rk[0],rk[1])}
+      }else{streak=0;var wr=rnd(WRONGS);msg=T(wr[0],wr[1])}
+      d.className='cheer '+(ok?'ok':'no');void d.offsetWidth;d.textContent=msg;
+    }
     function one(){
       if(i>=qs.length){done(score,qs.length);return}
       var q=qs[i];
@@ -1626,7 +1714,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
         '<div class="qopts">'+o.map(function(x,k){return '<button type="button" data-k="'+k+'"'+(arOpts?' class="ar"':'')+'>'+esc(x)+'</button>'}).join('')+'</div><div class="why" hidden></div></div>';
       var c=box.querySelector('.qbox');
       c.querySelectorAll('[data-k]').forEach(function(b){b.addEventListener('click',function(){
-        var k=+b.dataset.k,ok=k===a;beep(ok);
+        var k=+b.dataset.k,ok=k===a;beep(ok);cheer(c,ok,first);
         if(ok){
           if(first)score++;b.classList.add('ok');c.querySelectorAll('[data-k]').forEach(function(x){x.disabled=true});
           if(q.why){var w=c.querySelector('.why');w.hidden=false;w.textContent='💡 '+q.why}
@@ -1642,7 +1730,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     function topHtml(q){return '<div class="qtop"><span>'+T('سؤال ','Question ')+'<bdi dir="ltr">'+(i+1)+' / '+qs.length+'</bdi></span>'+
       (q.lv?'<span class="lvp '+q.lv+'">'+({easy:T('سهل','Easy'),medium:T('متوسط','Medium'),hard:T('صعب','Hard')})[q.lv]+'</span>':'')+'</div>'}
     function finish(c,q,ok1){
-      if(ok1)score++;
+      if(ok1)score++;cheer(c,true,ok1);
       if(q.why){var w=c.querySelector('.why');w.hidden=false;w.textContent='💡 '+q.why}
       c.appendChild(nextBtn(i+1<qs.length?T('التالي','Next'):T('النتيجة','Result'),function(){i++;one()}));
     }
@@ -1665,7 +1753,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
         sp.querySelector('#oChk').addEventListener('click',function(){
           if(c.dataset.done)return;var got=Array.prototype.map.call(ans.children,function(x){return x.textContent}).join(' ');
           if(norm(got)===norm(target)){beep(true);ans.classList.add('ok');c.dataset.done=1;speak(target);sp.querySelector('.btns').remove();finish(c,q,first)}
-          else{beep(false);first=false;ans.classList.remove('no');void ans.offsetWidth;ans.classList.add('no');
+          else{beep(false);cheer(c,false);first=false;ans.classList.remove('no');void ans.offsetWidth;ans.classList.add('no');
             if(!opt.retry){c.dataset.done=1;ans.innerHTML='<span style="font:700 1rem var(--fb)">'+esc(target)+'</span>';sp.querySelector('.btns').remove();finish(c,q,false)}}
         });
       }
@@ -1679,7 +1767,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
         function check(){
           if(c.dataset.done)return;var ok=acc.some(function(x){return norm(x)===norm(inp.value)});beep(ok);
           if(ok){inp.classList.add('ok');inp.disabled=true;c.dataset.done=1;sp.querySelector('.btns').remove();finish(c,q,first)}
-          else{first=false;inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
+          else{cheer(c,false);first=false;inp.classList.remove('no');void inp.offsetWidth;inp.classList.add('no');
             if(!opt.retry){c.dataset.done=1;inp.disabled=true;inp.value=acc[0];inp.classList.add('ok');sp.querySelector('.btns').remove();finish(c,q,false)}}
         }
         sp.querySelector('#tChk').addEventListener('click',check);
@@ -1696,7 +1784,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
             if(b.classList.contains('ok')||!sel)return;
             if(sel.dataset.k===b.dataset.k){beep(true);sel.classList.remove('sel');sel.classList.add('ok');b.classList.add('ok');sel.disabled=b.disabled=true;sel=null;
               if(--left_n===0)finish(c,q,first)}
-            else{beep(false);first=false;b.classList.remove('no');void b.offsetWidth;b.classList.add('no')}
+            else{beep(false);cheer(c,false);first=false;b.classList.remove('no');void b.offsetWidth;b.classList.add('no')}
           });sp.querySelector('#mR').appendChild(b)});
       }
     }
@@ -1710,22 +1798,32 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var area=st.querySelector('#vArea');
     function card(){
       var w=v[i],back=false;seen[i]=1;
-      area.innerHTML='<div class="card flash" id="fc"></div><div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(var(--fx,1))"><use href="#i-back"/></svg></button>'+
-        '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><button class="icon-btn sm" type="button" id="vNext" aria-label="التالي"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button></div>'+
+      area.innerHTML='<div class="card flash" id="fc"></div><div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button>'+
+        '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><button class="icon-btn sm" type="button" id="vNext" aria-label="التالي"><svg><use href="#i-back"/></svg></button></div>'+
         '<div class="btns"><button class="btn" type="button" id="vAdd"><svg><use href="#i-dict"/></svg>'+T('أضف إلى قاموسي','Add to my dictionary')+'</button></div>';
+      function hlWord(ex,word){            /* يبرز الكلمة داخل المثال */
+        var base=word.length>4?word.slice(0,-1):word,re=new RegExp('\\b('+base.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\w*)','i');
+        return esc(ex).replace(re,'<mark>$1</mark>');
+      }
       function face(){
         var fc=$('fc');fc.classList.remove('flip');void fc.offsetWidth;fc.classList.add('flip');
-        fc.innerHTML=back?'<span class="em">'+(w.em||'')+'</span><span class="m">'+esc(w.ar)+' '+sayBtn(w.ar,'ar')+'</span><span class="x">'+esc(w.ex||'')+' '+(w.ex?sayBtn(w.ex):'')+'</span><span class="xa">'+esc(w.exAr||'')+' '+(w.exAr?sayBtn(w.exAr,'ar'):'')+'</span>'
-          :'<span class="em">'+(w.em||'')+'</span><span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+'<span class="hint">'+T('اضغط على البطاقة لترى المعنى','Tap the card to see the meaning')+'</span>';
+        fc.innerHTML=back?'<span class="em">'+(w.em||'')+'</span><span class="m">'+esc(w.ar)+' '+sayBtn(w.ar,'ar')+'</span>'+
+            (w.ex?'<div class="exbox"><span class="et">'+T('مثال','EXAMPLE')+' · EXAMPLE</span><span class="x">'+hlWord(w.ex,w.en)+' '+sayBtn(w.ex)+'</span><span class="xa">'+esc(w.exAr||'')+' '+(w.exAr?sayBtn(w.exAr,'ar'):'')+'</span></div>':'')
+          :'<span class="em">'+(w.em||'')+'</span><span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+'<span class="hint">👆 '+T('انقر على الكلمة لتتعرّف على معناها','Tap the word to see its meaning')+'</span>';
       }
       face();if(set.speak)speak(w.en);
       $('fc').addEventListener('click',function(e){if(e.target.closest('[data-speak]'))return;   /* أزرار الصوت لا تقلب البطاقة */
         back=!back;face();if(back&&set.speak)speak([[w.ar,'ar']])});
       $('vPrev').addEventListener('click',function(){if(i>0){i--;card()}});
       $('vNext').addEventListener('click',function(){if(i<v.length-1){i++;card()}else quiz()});
+      function inDict(){return dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})}
+      function markAdded(){var b=$('vAdd');if(!b)return;b.classList.add('added');b.innerHTML='<svg><use href="#i-dict"/></svg>'+T('في قاموسي ✓','In my dictionary ✓')}
+      if(inDict())markAdded();
       $('vAdd').addEventListener('click',function(){
-        if(dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})){toast(T('موجودة في قاموسك','Already in your dictionary'));return}
-        dict.unshift({id:Date.now(),en:w.en,ar:w.ar,ex:w.ex||'',unit:L.unit||0,date:new Date().toISOString()});save(K.dict,dict);toast(T('أُضيفت إلى قاموسك','Added to your dictionary'));
+        if(inDict()){notify('📖 «'+esc(w.en)+'» '+T('موجودة في <b>قاموسي الخاص</b>','is already in <b>My Dictionary</b>'),T('افتح','Open'),'dict');return}
+        dict.unshift({id:Date.now(),en:w.en,ar:w.ar,ex:w.ex||'',unit:L.unit||0,date:new Date().toISOString()});save(K.dict,dict);markAdded();
+        notify('✅ '+T('أُضيفت','Added')+' «'+esc(w.en)+'» '+T('إلى <b>قاموسي الخاص</b>','to <b>My Dictionary</b>')+'<br><small>'+T('لديك '+dict.length+' كلمة محفوظة','You now have '+dict.length+' saved word(s)')+'</small>',T('افتح','Open'),'dict');
+        beep(true);
       });
       if(Object.keys(seen).length===v.length&&!area.querySelector('#vQuiz'))area.appendChild(nextBtn(T('اختبر نفسك في الكلمات','Quiz me on the words'),quiz)).id='vQuiz';
     }
@@ -1836,7 +1934,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var r=lp(L.id);
     if(!r.done){r.done=true;r.date=new Date().toISOString();
       if(!prog.certs.some(function(c){return c.id===L.id}))prog.certs.push({id:L.id,title:L.titleAr||L.title,date:r.date,score:r.score||100,no:prog.certs.length+1,level:levelInfo().level});
-      saveProg();addXP(XP_CERT);renderSteps();}
+      saveProg();addXP(XP_CERT);renderSteps();confetti(70);
+      setTimeout(function(){toast(T('🏆 مبروك! حصلتَ على شهادتك. أنت بطل!','🏆 Congratulations! You earned your certificate!'))},1200);}
     st.innerHTML=head(5)+'<div class="cert-wrap"><canvas id="cv" width="1491" height="1055"></canvas><div class="btns">'+
       '<button class="btn gold" type="button" id="cDown"><svg><use href="#i-down"/></svg>'+T('تنزيل الشهادة','Download')+'</button>'+
       '<button class="btn" type="button" id="cBack">'+T('العودة إلى الدروس','Back to lessons')+'</button></div></div>';
