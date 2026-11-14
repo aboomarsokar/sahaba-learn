@@ -978,7 +978,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     <section class="card set">
       <h3 data-t="sounds">الأصوات</h3>
       <label class="tg"><span data-t="sSpeak">نطق الكلمات</span><input type="checkbox" id="optSpeak"></label>
-      <p class="sw-label" data-t="sVoice">صوت القارئ</p>
+      <label class="tg"><span data-t="sRec">صوت التطبيق (رجل، تسجيلات جاهزة)</span><input type="checkbox" id="optRec"></label>
+      <p class="sw-label" data-t="sVoice">صوت الجهاز (يُستعمل لما لا تسجيل له)</p>
       <div class="seg">
         <button type="button" data-voice-btn="m" data-t="vMale">رجل</button>
         <button type="button" data-voice-btn="f" data-t="vFemale">امرأة</button>
@@ -1046,9 +1047,11 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 <script src="data/lessons.js"></script>
 <script src="data/practice.js"></script>
 <script src="data/rulecards.js"></script>
+<script src="data/audio-norm.js"></script>
+<script src="data/audio-manifest.js"></script>
 <script>
 (function(){
-  var VERSION='1.7.0';
+  var VERSION='1.8.0';
   /* ===== روابط Drive (تُضاف حين تصل) ===== */
   /* لكلّ فصل رابطه: 1 = الفصل الأول، 2 = الفصل الثاني، all = رابط واحد للسنة كلّها */
   var LINKS={
@@ -1142,7 +1145,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
   var profile=load(K.profile,null);
   var set=load(K.set,{});
-  if(set.speak==null)set.speak=true;if(set.fx==null)set.fx=true;if(set.nUpd==null)set.nUpd=true;if(set.nPlan==null)set.nPlan=true;
+  if(set.speak==null)set.speak=true;if(set.rec==null)set.rec=true;if(set.fx==null)set.fx=true;if(set.nUpd==null)set.nUpd=true;if(set.nPlan==null)set.nPlan=true;
   /* التقدّم: يملؤه محتوى الدروس والاختبارات حين يُضاف */
   var prog=load(K.prog,{});
   ['lessons'].forEach(function(k){prog[k]=prog[k]||{}});['tests','saved','history','certs'].forEach(function(k){prog[k]=prog[k]||[]});prog.xp=prog.xp||0;
@@ -1163,7 +1166,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     pUnit:'Unit you are studying',pPerDay:'Lessons per day',pExam:'Exam date',addTask:'Add a task to the schedule',day:'Day',task:'Task',taskPh:'e.g. Unit 7 vocabulary',
     weekly:'Weekly schedule',resetWeek:'Start a new week (clear checkmarks)',mode:'Mode',light:'Light',dark:'Dark',bgLight:'Background colour (light mode)',
     bgDark:'Background colour (dark mode)',fontSize:'Font size',small:'Small',medium:'Medium',large:'Large',uiLang:'App language',sounds:'Sounds',
-    sSpeak:'Word pronunciation',sSlow:'Slower pronunciation',sVoice:'Reader voice',vMale:'Male',vFemale:'Female',vTest:'Test the voice',readAr:'Read the translation',vEnL:'English voice (pick another if you prefer)',vArL:'Arabic voice',sFx:'Right / wrong answer sounds',notifs:'Notifications',nUpd:'App update alerts',nPlan:'Study plan reminders',
+    sSpeak:'Word pronunciation',sSlow:'Slower pronunciation',sVoice:'Device voice (used when there is no recording)',sRec:'App voice (male, recorded)',vMale:'Male',vFemale:'Female',vTest:'Test the voice',readAr:'Read the translation',vEnL:'English voice (pick another if you prefer)',vArL:'Arabic voice',sFx:'Right / wrong answer sounds',notifs:'Notifications',nUpd:'App update alerts',nPlan:'Study plan reminders',
     aboutDesc:'An interactive app for learning English: lessons and grammar explained, word pronunciation, reading passages, worksheets and tests, a personal dictionary and a study planner.',
     kGrade:'Grade & curriculum',vGrade:'Grade 10 — English curriculum',kVer:'Version',kDev:'Developer',vDev:'Al-Tabi\'een School for Quran Memorisation — Gaza',
     kCopy:'Copyright',vCopy:'© 2026 Al-Tabi\'een School. All rights reserved.',share:'Share the app',install:'Install the app',certs:'My Certificates',level:'Level'};
@@ -1209,7 +1212,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   document.querySelectorAll('[data-mode-btn]').forEach(function(b){b.addEventListener('click',function(){set.mode=b.dataset.modeBtn;save(K.set,set);applyTheme()})});
   document.querySelectorAll('[data-fs-btn]').forEach(function(b){b.addEventListener('click',function(){set.fs=b.dataset.fsBtn;save(K.set,set);applyTheme()})});
   document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.addEventListener('click',function(){set.lang=b.dataset.langBtn;save(K.set,set);applyLang();show()})});
-  [['optSpeak','speak'],['optSlow','slow'],['optFx','fx'],['optUpd','nUpd'],['optPlan','nPlan']].forEach(function(x){
+  [['optSpeak','speak'],['optRec','rec'],['optSlow','slow'],['optFx','fx'],['optUpd','nUpd'],['optPlan','nPlan']].forEach(function(x){
     var c=$(x[0]);c.checked=!!set[x[1]];
     c.addEventListener('change',function(){set[x[1]]=c.checked;save(K.set,set);badges()});
   });
@@ -1249,22 +1252,53 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     return vs.filter(function(v){return want.test(v.name)})[0]||vs.filter(function(v){return !avoid.test(v.name)})[0]||vs[0];
   }
   if('speechSynthesis' in window&&speechSynthesis.addEventListener)speechSynthesis.addEventListener('voiceschanged',function(){});
-  /* parts: نصّ واحد أو قائمة [نصّ، لغة] تُقرأ بالتتابع */
-  function speak(text,lang){
+  /* ===== الصوت: تسجيلات رجل جاهزة داخل التطبيق (audio/)، وصوت الجهاز بديلٌ لما لا تسجيل له ===== */
+  var AUDIO=window.LEXORA_AUDIO||{en:{},ar:{}},AU=new Audio(),auOk=false,playTok=0;
+  AU.preload='auto';
+  function silentWav(){var n=800,b=new Uint8Array(44+n*2),dv=new DataView(b.buffer);function w(o,t){for(var k=0;k<t.length;k++)b[o+k]=t.charCodeAt(k)}
+    w(0,'RIFF');dv.setUint32(4,36+n*2,true);w(8,'WAVEfmt ');dv.setUint32(16,16,true);dv.setUint16(20,1,true);dv.setUint16(22,1,true);
+    dv.setUint32(24,8000,true);dv.setUint32(28,16000,true);dv.setUint16(32,2,true);dv.setUint16(34,16,true);w(36,'data');dv.setUint32(40,n*2,true);
+    return 'data:audio/wav;base64,'+btoa(String.fromCharCode.apply(null,b))}
+  /* أوّل لمسة تفتح الصوت (iOS يمنع التشغيل التلقائي قبلها)، ثم نعيد استعمال العنصر نفسه */
+  function unlockAudio(){if(auOk)return;auOk=true;try{AU.src=silentWav();var pr=AU.play();if(pr&&pr.catch)pr.catch(function(){auOk=false})}catch(e){auOk=false}}
+  document.addEventListener('pointerdown',function f(){unlockAudio();document.removeEventListener('pointerdown',f)},{passive:true});
+  function recFile(text,lang){if(set.rec===false)return null;var m=AUDIO[lang];return m&&m[lexNorm(text,lang)]||null}
+  function stopVoice(){playTok++;try{AU.pause()}catch(e){}try{if('speechSynthesis' in window)speechSynthesis.cancel()}catch(e){}}
+  function playFile(url,cb,rate){
+    var done=false;function fin(ok){if(done)return;done=true;AU.onended=AU.onerror=null;cb(ok)}
+    AU.onended=function(){fin(true)};AU.onerror=function(){fin(false)};
+    var r=rate||(set.slow?.8:1);AU.defaultPlaybackRate=r;AU.src=url;AU.playbackRate=r;AU.volume=1;
+    var pr=AU.play();if(pr&&pr.catch)pr.catch(function(){fin(false)});
+  }
+  function deviceSpeak(text,l,cb,rate){
+    if(!('speechSynthesis' in window)){toast(T('جهازك لا يدعم النطق','Your device does not support speech'));cb();return}
+    var u=new SpeechSynthesisUtterance(text),v=pickVoice(l);
+    if(l==='ar'&&!v&&voices().length){toast(T('لا يوجد صوت عربي على جهازك','No Arabic voice on this device'));cb();return}
+    u.lang=v?v.lang:(l==='ar'?'ar-SA':'en-US');if(v)u.voice=v;
+    var custom=v&&v.name===set[l==='ar'?'voiceAr':'voiceEn'];
+    u.rate=rate?rate*.8:(set.slow?.6:.8);u.volume=1;
+    u.pitch=(custom||set.voice==='f')?1:(v&&MALE.test(v.name)?.95:.72);   /* رجل: ننزل بالنغمة إن لم نجد صوتاً مسمّى رجلاً */
+    var fin=false,t=setTimeout(go,Math.max(2500,text.length*130));
+    function go(){if(fin)return;fin=true;clearTimeout(t);cb()}
+    u.onend=go;u.onerror=go;speechSynthesis.speak(u);
+  }
+  /* text: نصّ واحد، أو قائمة [[نصّ، لغة]…] تُقرأ بالتتابع. hooks: part(i) عند بدء كلّ جزء، done() عند الانتهاء، rate للسرعة */
+  function speak(text,lang,hooks){
+    hooks=hooks||{};
     if(!set.speak){toast(T('النطق متوقّف من الإعدادات','Pronunciation is off in Settings'));return}
-    if(!('speechSynthesis' in window)){toast(T('جهازك لا يدعم النطق','Your device does not support speech'));return}
     var parts=Array.isArray(text)?text:[[text,lang||'en']];
-    speechSynthesis.cancel();
-    parts.forEach(function(pt){
-      if(!pt[0])return;var l=pt[1]||'en',u=new SpeechSynthesisUtterance(pt[0]),v=pickVoice(l);
-      if(l==='ar'&&!v&&voices().length){toast(T('لا يوجد صوت عربي على جهازك','No Arabic voice on this device'));return}
-      u.lang=v?v.lang:(l==='ar'?'ar-SA':'en-US');if(v)u.voice=v;
-      var custom=v&&v.name===set[l==='ar'?'voiceAr':'voiceEn'];
-      u.rate=set.slow?.6:.8;u.volume=1;
-      /* صوت رجل: إن لم نجد صوتاً مسمّى رجلاً نخفض النغمة ليصير أعمق */
-      u.pitch=(custom||set.voice==='f')?1:(v&&MALE.test(v.name)?.95:.72);
-      speechSynthesis.speak(u);
-    });
+    stopVoice();var tok=playTok,i=0;
+    function next(){
+      if(tok!==playTok)return;
+      while(i<parts.length&&!parts[i][0])i++;
+      if(i>=parts.length){if(hooks.done)hooks.done();return}
+      var pt=parts[i],idx=i++,l=pt[1]||'en',f=recFile(pt[0],l);
+      if(hooks.part)hooks.part(idx);
+      function viaDevice(){deviceSpeak(pt[0],l,function(){if(tok===playTok)next()},hooks.rate)}
+      if(f)playFile('audio/'+l+'/'+f,function(ok){if(tok!==playTok)return;if(ok)next();else viaDevice()},hooks.rate);
+      else viaDevice();
+    }
+    next();
   }
   var actx;function beep(ok){
     if(!set.fx)return;try{actx=actx||new (window.AudioContext||window.webkitAudioContext)();
@@ -1448,7 +1482,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       var pc=document.createElement('div');pc.className='card passage';
       pc.innerHTML='<span class="pt">'+esc(R.title||'')+'</span>'+R.paras.map(function(p){return '<p>'+esc(p.en)+'</p>'}).join('')+
         '<div class="tools"><button class="btn" type="button" data-speak="'+esc(text)+'"><svg><use href="#i-speak"/></svg>'+T('اقرأ لي','Read to me')+'</button></div>';
-      pc.querySelector('[data-speak]').addEventListener('click',function(){speak(this.dataset.speak)});
+      pc.querySelector('[data-speak]').addEventListener('click',function(){speak(R.paras.map(function(p){return [p.en,'en']}))});
       st.appendChild(pc);
     }}
     var box=document.createElement('div');st.appendChild(box);
@@ -2134,7 +2168,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     if(/iphone|ipad|ipod/i.test(navigator.userAgent))toast(T('من زرّ المشاركة في Safari اختر «إضافة إلى الشاشة الرئيسية»','In Safari tap Share, then “Add to Home Screen”'));
     else toast(T('من قائمة المتصفّح (⋮) اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية»','From the browser menu (⋮) choose “Install app”'));
   });
-  if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('sw.js').catch(function(){});
+  if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js').catch(function(){});
 
   show();
 })();
