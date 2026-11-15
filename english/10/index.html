@@ -226,7 +226,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
 /* ورقة العمل والاختبارات: مربّعان */
 .squares{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.squares .square{min-width:0;padding:.5rem .3rem;overflow:hidden}
+.squares .square{min-width:0;padding:.8rem .3rem;overflow:hidden;justify-content:flex-start}
 .squares .square .ic{width:46px;height:46px;flex:none}.squares .square .ic svg{width:24px;height:24px}
 .squares .square b{font-size:.95rem}.squares .square .en{font-size:.72rem}
 .square{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;padding:.8rem;text-align:center}
@@ -507,10 +507,35 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .passage .tools{justify-content:flex-end}
 .pill.best{color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));border:0;font-weight:700}
 
+/* --- الواجهة الجديدة --- */
+.tb-l{display:flex;gap:.4rem}
+.icon-btn{position:relative}
+.mgrp{margin:.8rem .9rem .2rem;font:700 .72rem var(--fb);letter-spacing:.08em;color:var(--gold)}
+.drawer{overflow-y:auto}
+.tabbar [data-dot]{position:absolute;top:-2px;inset-inline-end:-4px;width:9px;height:9px;border-radius:50%;background:#ff4d4f;border:2px solid var(--panel,#222)}
+.tabbar .ti{position:relative;display:inline-flex}
+.ntf{display:flex;align-items:center;gap:.8rem;padding:.8rem 1rem}
+.ntf .ni{font-size:1.6rem;line-height:1}
+.ntf .nt{flex:1;display:flex;flex-direction:column;gap:.15rem;min-width:0}
+.ntf .nt b{font:700 .98rem var(--fb)}
+.ntf .nt small{font:400 .8rem var(--fb);color:var(--muted)}
+.dtasks{display:flex;flex-direction:column;gap:.7rem;padding:1rem}
+.drow{display:flex;align-items:center;gap:.7rem;padding:.7rem .8rem;border-radius:14px;background:var(--panel);border:1px solid var(--cardBd)}
+.drow .dc{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:2px solid var(--cardBd);font-weight:800;flex:none}
+.drow.ok{border-color:#2fbf71}.drow.ok .dc{background:#2fbf71;border-color:#2fbf71;color:#fff}
+.drow .dt{flex:1;font:600 .95rem var(--fb)}
+.xpchip{font:800 .75rem var(--fb);padding:.15rem .6rem;border-radius:99px;background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText)}
+.psum{display:flex;flex-direction:column;gap:.6rem;padding:1rem}
+.ps-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;text-align:center}
+.ps-i b{display:block;font:800 1.4rem var(--fb);color:var(--gold)}
+.ps-i small{font:400 .75rem var(--fb);color:var(--muted)}
+.ps-t{text-align:center;font:400 .8rem var(--fb);color:var(--muted)}
+.day{border-inline-start:4px solid var(--cardBd)}
+.day.today{border-inline-start-color:var(--gold)}
 /* --- الشريط السفلي --- */
 .tabbar{position:fixed;z-index:35;left:0;right:0;bottom:0;display:flex;justify-content:space-around;align-items:stretch;padding:.35rem .5rem calc(.35rem + env(safe-area-inset-bottom,0px));
   background:var(--panel,rgba(20,10,40,.85));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--cardBd);direction:rtl}
-.tabbar button{flex:1;max-width:200px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:.4rem 0;background:none;border:0;border-radius:14px;color:var(--muted);cursor:pointer;font:700 .72rem var(--fb)}
+.tabbar button{flex:1;max-width:120px;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:.4rem 0;background:none;border:0;border-radius:14px;color:var(--muted);cursor:pointer;font:700 .66rem var(--fb)}
 .tabbar svg{width:24px;height:24px}
 .tabbar button[aria-current="page"]{color:var(--gold);background:rgba(243,201,105,.14)}
 body.has-tabs .page{padding-bottom:calc(86px + env(safe-area-inset-bottom,0px))}
@@ -821,7 +846,8 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <!-- ===== الواجهة الرئيسية ===== -->
 <main id="home" class="page" data-screen="home" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-open-menu aria-label="القائمة"><svg><use href="#i-menu"/></svg><i class="dot" data-dot hidden></i></button>
+    <div class="tb-l"><button class="icon-btn" type="button" data-open-menu aria-label="القائمة"><svg><use href="#i-menu"/></svg></button>
+      <button class="icon-btn" type="button" data-go="updates" aria-label="الإشعارات"><svg><use href="#i-bell"/></svg><i class="dot" data-dot hidden></i></button></div>
     <div class="hello">
       <div>
         <p class="hello-t" lang="en">Hello, <b id="meName" dir="auto"></b></p>
@@ -831,13 +857,6 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     </div>
   </div>
   <div class="wrap">
-    <div class="card quote" id="quote"><span class="qi">✨</span><span class="qt"><span class="qe" id="qEn"></span><span class="qa" id="qAr"></span></span></div>
-    <div class="card streak" id="streakCard"><div class="top"><b id="stTitle"></b><span class="best" id="stBest"></span></div><div class="week7" id="week7"></div></div>
-    <button class="card chal" type="button" id="chalCard" data-go="challenge"><div class="top"><b>⚡ <span data-chal-t></span></b><span class="best" id="chSub"></span></div><div class="week7" id="chWeek"></div></button>
-    <button class="card resume" type="button" id="resumeCard" hidden><span class="ic"><svg><use href="#i-play"/></svg></span><span class="t"><small id="rsSmall"></small><b id="rsTitle"></b><span class="dots" id="rsDots"></span></span></button>
-    <button class="card xpline" type="button" data-go="me"><span class="lvn" id="hLv">1</span><span class="t"><b id="hLvT"></b><i class="bar"><i id="hLvBar" style="width:0%"></i></i></span></button>
-    <button class="card remind" type="button" id="remind" data-go="planner" hidden><svg><use href="#i-plan"/></svg><span id="remindTxt"></span></button>
-
     <button class="card term" type="button" data-term-open="1">
       <span class="big">I</span>
       <span class="t"><b data-t="term1">الفصل الأول</b><small data-t="term1s">الوحدات 1 – 5</small><i class="bar"><i id="tp1" style="width:0%"></i></i></span>
@@ -853,9 +872,9 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     </div>
 
     <div class="squares">
-      <button class="card square" type="button" data-go="worksheets"><span class="ic"><svg><use href="#i-sheet"/></svg></span><b>Worksheet</b><span class="en" data-t="wsSub">أوراق العمل</span></button>
-      <button class="card square" type="button" data-go="tests"><span class="ic"><svg><use href="#i-test"/></svg></span><b data-t="tests">اختبارات</b><span class="en">Tests</span></button>
-      <button class="card square" type="button" data-go="summaries"><span class="ic"><svg><use href="#i-edit"/></svg></span><b>تلخيص دروسي</b><span class="en">Summaries</span></button>
+      <button class="card square" type="button" data-go="tests"><span class="ic"><svg><use href="#i-test"/></svg></span><b data-t="tests">الاختبارات</b><span class="en">Tests</span></button>
+      <button class="card square" type="button" data-go="summaries"><span class="ic"><svg><use href="#i-edit"/></svg></span><b data-t="sumT">تلخيص الوحدات</b><span class="en">Unit Summaries</span></button>
+      <button class="card square" type="button" data-go="challenge"><span class="ic"><svg><use href="#i-medal"/></svg></span><b data-t="chalT">تحدياتي</b><span class="en">My Challenges</span></button>
     </div>
   </div>
 </main>
@@ -928,10 +947,10 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <main id="summaries" class="page" data-screen="summaries" hidden>
   <div class="topbar">
     <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
-    <h2>تلخيص دروسي · Lesson Summaries</h2><span style="width:46px"></span>
+    <h2>تلخيص الوحدات · Unit Summaries</h2><span style="width:46px"></span>
   </div>
   <div class="wrap">
-    <div class="card empty">قريباً: ملخّصات الدروس بالإنجليزية والعربية.<br><small>Coming soon: lesson summaries in English and Arabic.</small></div>
+    <div class="card empty">قريباً: ملخّصات الوحدات بالإنجليزية والعربية.<br><small>Coming soon: unit summaries in English and Arabic.</small></div>
   </div>
 </main>
 
@@ -960,26 +979,13 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
       <span class="lv"><small>LEVEL</small><b id="lvN">1</b></span>
       <span class="t"><b id="lvName"></b><i class="bar"><i id="lvBar" style="width:0%"></i></i><small id="lvTxt"></small></span>
     </div>
-    <div class="stats">
-      <div class="card stat"><span class="v" id="sLessons">0</span><span class="l" data-t="sLessons">الدروس المكتملة</span></div>
-      <div class="card stat"><span class="v" id="sTests">0</span><span class="l" data-t="sTests">الاختبارات المحلولة</span></div>
-      <div class="card stat"><span class="ring" id="sRing"><span id="sPct">0%</span></span><span class="l" data-t="sPct">نسبة إنجاز المنهج</span></div>
-    </div>
-    <div class="list">
-      <button class="card mrow" type="button" data-go="dict"><span class="ic"><svg><use href="#i-dict"/></svg></span><span class="t"><b data-t="dict">قاموسي الخاص</b><small data-t="dictS">كلماتك ومعانيها ونطقها</small></span><svg><use href="#i-back"/></svg></button>
-      <button class="card mrow" type="button" data-go="saved"><span class="ic"><svg><use href="#i-bookmark"/></svg></span><span class="t"><b data-t="saved">الدروس المحفوظة</b><small data-t="savedS">الدروس التي وضعت عليها علامة حفظ</small></span><svg><use href="#i-back"/></svg></button>
-      <button class="card mrow" type="button" data-go="history"><span class="ic"><svg><use href="#i-clock"/></svg></span><span class="t"><b data-t="history">سجل التعلّم</b><small data-t="historyS">آخر ما درسته ونتائج اختباراتك</small></span><svg><use href="#i-back"/></svg></button>
-      <button class="card mrow" type="button" data-go="achieve"><span class="ic"><svg><use href="#i-medal"/></svg></span><span class="t"><b data-t="achieve">إنجازاتي</b><small data-t="achieveS">تقدّمك وشاراتك</small></span><svg><use href="#i-back"/></svg></button>
-      <button class="card mrow" type="button" data-go="settings"><span class="ic"><svg><use href="#i-gear"/></svg></span><span class="t"><b data-t="settings">الإعدادات</b><small>Settings</small></span><svg><use href="#i-back"/></svg></button>
-      <button class="card mrow" type="button" data-go="about"><span class="ic"><svg><use href="#i-info"/></svg></span><span class="t"><b data-t="about">حول التطبيق</b><small>About</small></span><svg><use href="#i-back"/></svg></button>
-    </div>
   </div>
 </main>
 
 <!-- ===== قاموسي الخاص ===== -->
 <main id="dict" class="page" data-screen="dict" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-back="me" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="dict">قاموسي الخاص</h2><span style="width:46px"></span>
   </div>
   <div class="wrap">
@@ -1008,7 +1014,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <!-- ===== الدروس المحفوظة ===== -->
 <main id="saved" class="page" data-screen="saved" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-back="me" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="saved">الدروس المحفوظة</h2><span style="width:46px"></span>
   </div>
   <div class="wrap" id="savedList"></div>
@@ -1017,7 +1023,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <!-- ===== سجل التعلّم ===== -->
 <main id="history" class="page" data-screen="history" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-back="me" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="history">سجل التعلّم</h2><span style="width:46px"></span>
   </div>
   <div class="wrap">
@@ -1026,6 +1032,18 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     <div class="list" id="hLessons"></div>
     <h3 class="sec-t" data-t="pastTests">الاختبارات السابقة ونتائجها</h3>
     <div class="list" id="hTests"></div>
+  </div>
+</main>
+
+<!-- ===== السلسلة اليومية ===== -->
+<main id="streak" class="page" data-screen="streak" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2 data-t="streakT">السلسلة اليومية</h2><span style="width:46px"></span>
+  </div>
+  <div class="wrap">
+    <div class="card streak"><div class="top"><b id="stTitle"></b><span class="best" id="stBest"></span></div><div class="week7" id="week7"></div></div>
+    <div class="card dtasks" id="dTasks"></div>
   </div>
 </main>
 
@@ -1041,7 +1059,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <!-- ===== إنجازاتي ===== -->
 <main id="achieve" class="page" data-screen="achieve" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-back="me" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="achieve">إنجازاتي</h2><span style="width:46px"></span>
   </div>
   <div class="wrap">
@@ -1069,10 +1087,11 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <!-- ===== خطة الدراسة ===== -->
 <main id="planner" class="page" data-screen="planner" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-back="me" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="planner">خطة الدراسة</h2><span style="width:46px"></span>
   </div>
   <div class="wrap">
+    <div class="card psum" id="pSum"></div>
     <div class="card form">
       <div class="two">
         <label><span data-t="pUnit">الوحدة التي تدرسها</span><select class="field" id="pUnit"></select></label>
@@ -1100,7 +1119,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <!-- ===== الإعدادات ===== -->
 <main id="settings" class="page" data-screen="settings" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-back="me" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="settings">الإعدادات</h2><span style="width:46px"></span>
   </div>
   <div class="wrap">
@@ -1158,7 +1177,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <!-- ===== حول التطبيق ===== -->
 <main id="about" class="page" data-screen="about" hidden>
   <div class="topbar">
-    <button class="icon-btn" type="button" data-back="me" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="about">حول التطبيق</h2><span style="width:46px"></span>
   </div>
   <div class="wrap">
@@ -1178,9 +1197,11 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 </main>
 
 <nav class="tabbar" id="tabbar" hidden aria-label="التنقّل">
-  <button type="button" data-tab="home"><svg><use href="#i-home"/></svg><span data-tab-t="home"></span></button>
-  <button type="button" data-tab="achieve"><svg><use href="#i-medal"/></svg><span data-tab-t="achieve"></span></button>
-  <button type="button" data-tab="me"><svg><use href="#i-user"/></svg><span data-tab-t="me"></span></button>
+  <button type="button" data-tab="home"><svg><use href="#i-home"/></svg><span data-t="tHome">الرئيسية</span></button>
+  <button type="button" data-tab="settings"><svg><use href="#i-gear"/></svg><span data-t="settings">الإعدادات</span></button>
+  <button type="button" data-tab="me"><svg><use href="#i-user"/></svg><span data-t="tProfile">الملف الشخصي</span></button>
+  <button type="button" data-tab="tests"><svg><use href="#i-test"/></svg><span data-t="tests">الاختبارات</span></button>
+  <button type="button" data-tab="updates"><span class="ti"><svg><use href="#i-bell"/></svg><i class="dot" data-dot hidden></i></span><span data-t="tNotifs">الإشعارات</span></button>
 </nav>
 <button class="fab" type="button" id="resumeFab" hidden aria-label="أكمل من حيث وصلت"><svg><use href="#i-play"/></svg><span></span></button>
 
@@ -1190,18 +1211,30 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     <button class="icon-btn" type="button" data-back aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
     <h2 data-t="notifs">الإشعارات</h2><span style="width:46px"></span>
   </div>
-  <div class="wrap"><div class="list" id="updList"></div></div>
+  <div class="wrap">
+    <div class="seg" id="nTabs"><button type="button" data-nt="all" aria-pressed="true"><span data-t="nAll">الكلّ</span></button><button type="button" data-nt="rem" aria-pressed="false"><span data-t="nRem">تذكيراتي</span></button><button type="button" data-nt="upd" aria-pressed="false"><span data-t="nUpd2">تحديثات التطبيق</span></button></div>
+    <div class="list" id="updList"></div>
+  </div>
 </main>
 
 <!-- ===== القائمة الجانبية ===== -->
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="القائمة" aria-hidden="true">
   <div class="head"><b>LEXORA</b><button class="icon-btn" type="button" id="closeMenu" aria-label="إغلاق"><svg><use href="#i-close"/></svg></button></div>
-  <button class="menu-item" type="button" data-go="me"><svg><use href="#i-medal"/></svg><span data-t="myProfile">ملفي الشخصي</span></button>
+  <p class="mgrp" data-t="menuAcc">التطبيق</p>
   <button class="menu-item" type="button" data-go="settings"><svg><use href="#i-gear"/></svg><span data-t="settings">الإعدادات</span></button>
-  <button class="menu-item" type="button" data-go="updates"><svg><use href="#i-bell"/></svg><span data-t="notifs">الإشعارات</span><i class="badge-n" id="updBadge" hidden></i></button>
-  <button class="menu-item" type="button" id="share"><svg><use href="#i-share"/></svg><span data-t="share">مشاركة التطبيق</span></button>
+  <button class="menu-item" type="button" data-go="settings" data-scroll="swLight"><svg><use href="#i-sun"/></svg><span data-t="bgColor">لون الخلفية</span></button>
   <button class="menu-item" type="button" id="install"><svg><use href="#i-down"/></svg><span data-t="install">تنزيل التطبيق</span></button>
+  <p class="mgrp" data-t="menuStudy">دراستي</p>
+  <button class="menu-item" type="button" data-go="dict"><svg><use href="#i-dict"/></svg><span data-t="dict">قاموسي الخاص</span></button>
+  <button class="menu-item" type="button" data-go="planner"><svg><use href="#i-plan"/></svg><span data-t="planner">خطة الدراسة</span></button>
+  <button class="menu-item" type="button" data-go="saved"><svg><use href="#i-bookmark"/></svg><span data-t="saved">الدروس المحفوظة</span></button>
+  <button class="menu-item" type="button" data-go="history"><svg><use href="#i-clock"/></svg><span data-t="history">سجل التعلّم</span></button>
+  <button class="menu-item" type="button" data-go="achieve"><svg><use href="#i-medal"/></svg><span data-t="achieve">إنجازاتي</span></button>
+  <button class="menu-item" type="button" data-go="streak"><svg><use href="#i-sun"/></svg><span data-t="streakT">السلسلة اليومية</span></button>
+  <button class="menu-item" type="button" data-go="units"><svg><use href="#i-book"/></svg><span data-t="contentT">محتوى التطبيق</span></button>
+  <p class="mgrp" data-t="menuMore">المزيد</p>
+  <button class="menu-item" type="button" id="share"><svg><use href="#i-share"/></svg><span data-t="share">مشاركة التطبيق</span></button>
   <button class="menu-item" type="button" data-go="about"><svg><use href="#i-info"/></svg><span data-t="about">حول التطبيق</span></button>
 </aside>
 
@@ -1248,6 +1281,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
+    {date:'2026-11-15',title:'واجهة جديدة وأقسام الدرس الجديدة',items:['الدرس بأقسام: المفردات، القواعد، القراءة بالصور، ثم ورقة العمل التي تفتح الشهادة','المفردات في بطاقة مقسومة (الكلمة ومعناها) ثم الكلمة في جملة بلون واحد','واجهة رئيسية أبسط، وشريط سفلي بخمسة تبويبات، وقائمة ☰ فيها كلّ خدماتك','«تحدّ نفسك» و«تحدياتي»: اختر تحدياً أو اثنين كلّ يوم','السلسلة اليومية: ادخل وحلّ وشارك لتنال 15 XP','الإشعارات منظّمة: تذكيراتي وتحديثات التطبيق']},
     {date:'2026-11-14',title:'صوت رجل جاهز وقصّة تفاعلية وسلسلة أيام',items:['صوت رجل عميق مسجَّل داخل التطبيق للإنجليزية والعربية، يُسمَع كما هو على كلّ جهاز','القصّة بخمسة أنماط: قراءة، واستمع (قراءة مسموعة بتظليل الجملة)، وأكمل القصّة، ورتّب الأحداث، وإملاء','نقاط XP إضافية لكلّ نمط تُنهيه','سلسلة الأيام المتتالية في الواجهة الرئيسية، مع شارتَين جديدتين']},
     {date:'2026-11-14',title:'متابعة من حيث توقّفت',items:['إن خرجتَ من محطة أو درس تعود إلى المكان نفسه: المحطة، ثم بطاقة الكلمة أو الفقرة أو بطاقة القاعدة أو السؤال','زرّ «ابدأ رحلتك الآن» يعيدك مباشرةً إلى درسك الأخير','بطاقة «تابع من حيث توقّفت» في أعلى الواجهة الرئيسية']},
     {date:'2026-11-14',title:'القواعد على شكل بطاقات',items:['كلّ قاعدة تُعرض بطاقةً بطاقة: التعريف، ثم التكوين، ثم النفي والسؤال والملاحظات','بطاقة التعريف: اسم القاعدة بالإنجليزية ومعناها بالعربية ومتى نستخدمها بالنصّين','بطاقة التكوين: الصيغة بألوان تُبرز أدوات التكوين، وتحتها مثال توضيحي','زرّ «أكمل» بعد كلّ بطاقة، وزرّ «السابق» للرجوع']},
@@ -1322,7 +1356,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   var plan=load(K.plan,{unit:7,perDay:1,exam:'',tasks:[]});
 
   /* ===== اللغة ===== */
-  var EN={pickTitle:'Choose your picture and name',yourPic:'Your picture',yourName:'Your name',sectionPh:'Class section (e.g. A)',continue:'Continue',
+  var EN={tHome:'Home',tProfile:'Profile',tNotifs:'Notifications',sumT:'Unit Summaries',chalT:'My Challenges',bgColor:'Background color',contentT:'App content',streakT:'Daily Streak',menuAcc:'App',menuStudy:'My study',menuMore:'More',nAll:'All',nRem:'My reminders',nUpd2:'App updates',pickTitle:'Choose your picture and name',yourPic:'Your picture',yourName:'Your name',sectionPh:'Class section (e.g. A)',continue:'Continue',
     ask:'What would you like to start?',term1:'First Semester',term2:'Second Semester',term1s:'Units 1 – 5',term2s:'Units 6 – 10',
     books:'School Books',pack:'Study Pack',soonLink:'Coming soon',wsSub:'Worksheets',tests:'Tests',units:'Units',
     myProfile:'My Profile',editData:'Edit details',sLessons:'Lessons completed',sTests:'Tests taken',sPct:'Curriculum progress',
@@ -1489,7 +1523,8 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   function go(h){if(location.hash==='#'+h)show();else location.hash=h}
   window.addEventListener('hashchange',show);
   document.querySelectorAll('[data-back]').forEach(function(b){b.addEventListener('click',function(){go(b.dataset.back||'home')})});
-  document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){go(b.dataset.go)})});
+  document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){go(b.dataset.go);
+    if(b.dataset.scroll)setTimeout(function(){var t=$(b.dataset.scroll);if(t)t.scrollIntoView({behavior:'smooth',block:'center'})},120)})});
 
   /* ===== الصورة والاسم والشعبة ===== */
   var grid=$('grid'),nameIn=$('name'),secIn=$('section'),goBtn=$('go'),preview=$('preview'),chosen=null;
@@ -1512,7 +1547,6 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     var rs=profile&&prog.resume&&findLesson(prog.resume.id),rr=rs&&prog.lessons[prog.resume.id];
     go(!profile?'profile':(rs&&rr&&!rr.done?'lesson='+prog.resume.id:'home'));   /* يعود إلى حيث كان */
   });
-  $('resumeCard').addEventListener('click',function(){if(prog.resume)go('lesson='+prog.resume.id)});
   goBtn.addEventListener('click',function(){
     var first=!profile;
     profile={name:nameIn.value.trim(),avatar:chosen,section:secIn.value.trim()};save(K.profile,profile);go(first?'home':'me');
@@ -1550,12 +1584,6 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     for(var n=6;n>=0;n--){var d=dayOff(n),st=chState(d),wi=new Date(d+'T12:00:00').getDay();
       h+='<span class="wd'+(n===0?' today':'')+'"><small>'+T(wnA[wi],wnE[wi])+'</small><i class="'+(st==='done'?'on':st==='miss'?'red':st==='pend'?'pend':'')+'">'+(st==='done'?'⭐':'')+'</i></span>'}
     return h;
-  }
-  function renderChalCard(){
-    document.querySelector('[data-chal-t]').textContent=T('تحدّ نفسك','Challenge yourself');
-    var rec=chRec();
-    $('chSub').textContent=!rec?T('اختر تحدّي اليوم 👈','Pick today’s challenge 👈'):chDone(rec)?T('أنجزتَ تحدّي اليوم ✅','Today’s done ✅'):T('أنجزتَ '+Object.keys(rec.done||{}).length+' من '+rec.pick.length,Object.keys(rec.done||{}).length+' of '+rec.pick.length+' done');
-    $('chWeek').innerHTML=chWeekHtml();
   }
   var chTimer=null;
   function chQuestions(id){
@@ -1618,11 +1646,10 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   }
   /* زرّ «أكمل من حيث وصلت» العائم */
   function updateTabs(el){
-    var tb=$('tabbar'),show=['home','units','unit','books','worksheets','tests','summaries','achieve','me','dict','saved','history','planner','settings','about','updates'].indexOf(el)>-1;
+    var tb=$('tabbar'),ALL=['home','units','unit','books','worksheets','tests','summaries','achieve','me','dict','saved','history','planner','settings','about','updates','streak'],
+      show=ALL.indexOf(el)>-1,map={home:'home',units:'home',unit:'home',books:'home',summaries:'home',worksheets:'tests',tests:'tests',me:'me',settings:'settings',updates:'updates'};
     tb.hidden=!show;document.body.classList.toggle('has-tabs',show);if(!show)return;
-    var cur=el==='achieve'?'achieve':['me','dict','saved','history','planner','settings','about','updates'].indexOf(el)>-1?'me':'home';
-    tb.querySelectorAll('[data-tab]').forEach(function(b){var on=b.dataset.tab===cur;if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
-      b.querySelector('[data-tab-t]').textContent=({home:T('الرئيسية','Home'),achieve:T('إنجازاتي','Achievements'),me:T('ملفي الشخصي','Profile')})[b.dataset.tab]});
+    tb.querySelectorAll('[data-tab]').forEach(function(b){if(map[el]===b.dataset.tab)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});
   }
   document.querySelectorAll('[data-tab]').forEach(function(b){b.addEventListener('click',function(){go(b.dataset.tab)})});
   function updateFab(el){
@@ -1632,36 +1659,37 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   }
   $('resumeFab').addEventListener('click',function(){if(prog.resume)go('lesson='+prog.resume.id)});
 
-  /* ===== الواجهة الرئيسية ===== */
-  renders.home=function(){
-    if(!profile)return;
-    var dq=QUOTES[Math.floor(Date.now()/864e5)%QUOTES.length];$('qEn').textContent=dq[0];$('qAr').textContent=dq[1];
-    $('meImg').src=src(profile.avatar);$('meName').textContent=profile.name;
-    $('tp1').style.width=termPct(1)+'%';$('tp2').style.width=termPct(2)+'%';
+  /* ===== السلسلة اليومية: دخول + نشاط + مشاركة = 15 XP كلّ يوم ===== */
+  var XP_DAILY=15;
+  prog.enter=prog.enter||{};if(!prog.enter[dayOff(0)]){prog.enter[dayOff(0)]=1;saveProg()}
+  function dailyState(){var t=dayOff(0);return {enter:true,solve:(prog.days||[]).indexOf(t)>-1,share:prog.shareDay===t,paid:!!(prog.bonus&&prog.bonus[t])}}
+  function checkDaily(){var d=dailyState();
+    if(d.solve&&d.share&&!d.paid){prog.bonus=prog.bonus||{};prog.bonus[dayOff(0)]=true;saveProg();addXP(XP_DAILY);confetti(24);
+      toast('🔥 '+T('أنجزتَ سلسلة اليوم! +'+XP_DAILY+' XP','Daily streak done! +'+XP_DAILY+' XP'))}}
+  renders.streak=function(){
+    checkDaily();
     var sn=streakNow(),ds=prog.days||[],wk='',wnA=['أحد','إثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'],wnE=['Su','Mo','Tu','We','Th','Fr','Sa'];
     $('stTitle').textContent=sn>1?T('🔥 '+arDays(sn)+' على التوالي','🔥 '+sn+'-day streak'):sn===1?T('🔥 بدأتَ سلسلتك! عُد غداً','🔥 Streak started — come back tomorrow'):T('ابدأ سلسلتك اليوم 🔥','Start your streak today 🔥');
     $('stBest').textContent=T('أفضل سلسلة: ','Best: ')+bestStreak();
-    for(var wk0=6;wk0>=0;wk0--){var wd=dayOff(wk0),on=ds.indexOf(wd)>-1,wi=new Date(wd+'T12:00:00').getDay();
-      wk+='<span class="wd'+(wk0===0?' today':'')+'"><small>'+T(wnA[wi],wnE[wi])+'</small><i class="'+(on?'on':'')+'">'+(on?'⭐':'')+'</i></span>'}
-    $('week7').innerHTML=wk;renderChalCard();
-    var rsL=prog.resume&&findLesson(prog.resume.id),rsR=rsL&&prog.lessons[prog.resume.id];
-    if(rsL&&rsR&&!rsR.done){
-      var rsI=Math.min(rsR.cur||0,4);
-      $('resumeCard').hidden=false;$('rsSmall').textContent=T('تابع من حيث توقّفت','Continue where you left off');
-      $('rsTitle').textContent=T('الوحدة '+rsL.unit+' · «'+STATIONS[rsI].ar+'»','Unit '+rsL.unit+' · '+STATIONS[rsI].en);
-      $('rsDots').innerHTML=[0,1,2,3,4].map(function(j){return '<i'+(rsR.st[j]?' class="on"':'')+'></i>'}).join('');
-    }else $('resumeCard').hidden=true;
-    var LI=levelInfo();$('hLv').textContent=LI.level;$('hLvBar').style.width=LI.frac*100+'%';
-    var left='<bdi dir="ltr">'+(LI.need-LI.into)+' XP</bdi>';
-    $('hLvT').innerHTML=LI.level>=100?T('وصلتَ إلى أعلى مستوى 👑','Top level reached 👑'):prog.xp===0?T('ابدأ درسك الأول واجمع نقاط <bdi dir="ltr">XP</bdi> ⭐','Start your first lesson and earn XP ⭐'):
-      T('تبقّى '+left+' للمستوى '+(LI.level+1)+' — واصل! 🔥',left+' to level '+(LI.level+1)+' — keep going! 🔥');
-    /* تذكير بمهام اليوم المتبقية */
-    var today=new Date().getDay(),left=plan.tasks.filter(function(t){return t.day===today&&!t.done}).length,msg='';
-    if(set.nPlan){
-      if(left)msg=T('لديك '+left+' مهمة متبقية اليوم في خطة الدراسة','You have '+left+' task(s) left today in your study plan');
-      var dl=daysLeft();if(dl!=null&&dl>=0)msg+=(msg?' · ':'')+T('الاختبار بعد '+dl+' يوم','Exam in '+dl+' day(s)');
-    }
-    $('remind').hidden=!msg;$('remindTxt').textContent=msg;
+    for(var n=6;n>=0;n--){var wd=dayOff(n),on=ds.indexOf(wd)>-1,wi=new Date(wd+'T12:00:00').getDay();
+      wk+='<span class="wd'+(n===0?' today':'')+'"><small>'+T(wnA[wi],wnE[wi])+'</small><i class="'+(on?'on':'')+'">'+(on?'⭐':'')+'</i></span>'}
+    $('week7').innerHTML=wk;
+    var d=dailyState();
+    function row(ok,ar,en,extra){return '<div class="drow'+(ok?' ok':'')+'"><span class="dc">'+(ok?'✓':'')+'</span><span class="dt">'+T(ar,en)+'</span>'+(extra||'')+'</div>'}
+    $('dTasks').innerHTML='<h3 class="sec-t">'+T('مهام اليوم','Today’s tasks')+' <span class="xpchip">+'+XP_DAILY+' XP</span></h3>'+
+      row(d.enter,'دخلتَ التطبيق اليوم','You opened the app today')+
+      row(d.solve,'حللتَ نشاطاً (درساً أو تحدّياً أو ورقة عمل)','You did an activity (lesson, challenge or worksheet)',d.solve?'':'<button class="btn" type="button" data-go="home">'+T('ابدأ','Start')+'</button>')+
+      row(d.share,'شاركتَ التطبيق مع صديق','You shared the app with a friend',d.share?'':'<button class="btn gold" type="button" id="stShare">'+T('شارك الآن','Share now')+'</button>')+
+      '<p class="sw-label" style="text-align:center">'+(d.paid?T('✅ نلتَ نقاط اليوم! عُد غداً لسلسلة جديدة','✅ You earned today’s XP! Come back tomorrow'):T('أكمل المهام الثلاث لتنال '+XP_DAILY+' XP','Finish all three tasks to earn '+XP_DAILY+' XP'))+'</p>';
+    var sb=$('stShare');if(sb)sb.addEventListener('click',function(){$('share').click()});
+    $('dTasks').querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){go(b.dataset.go)})});
+  };
+
+  /* ===== الواجهة الرئيسية ===== */
+  renders.home=function(){
+    if(!profile)return;
+    $('meImg').src=src(profile.avatar);$('meName').textContent=profile.name;
+    $('tp1').style.width=termPct(1)+'%';$('tp2').style.width=termPct(2)+'%';
   };
   document.querySelectorAll('[data-term-open]').forEach(function(b){b.addEventListener('click',function(){set.term=+b.dataset.termOpen;save(K.set,set);go('units')})});
   document.querySelectorAll('[data-link]').forEach(function(b){b.addEventListener('click',function(){
@@ -1791,8 +1819,6 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     if(!profile)return;
     $('pImg').src=src(profile.avatar);$('pName').textContent=profile.name;
     $('pClass').textContent=T('الصف العاشر','Grade 10')+(profile.section?T(' — شعبة ',' — Section ')+profile.section:'');
-    $('sLessons').textContent=doneLessons();$('sTests').textContent=prog.tests.length;
-    var p=pct();$('sPct').textContent=p+'%';setRing('sRing',p);
     var L=levelInfo();$('lvN').textContent=L.level;$('lvBar').style.width=L.frac*100+'%';
     $('lvName').textContent=T('المستوى ','Level ')+L.level+T(' من 100',' of 100');
     $('lvTxt').innerHTML=L.level>=100?T('وصلت إلى أعلى مستوى! ','Max level reached! ')+'<bdi dir="ltr">'+prog.xp+' XP</bdi>'
@@ -1949,6 +1975,11 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   function renderWeek(){
     var today=new Date().getDay(),left=plan.tasks.filter(function(t){return !t.done}).length,dl=daysLeft();
     $('pCount').textContent=T('المهام المتبقية هذا الأسبوع: ','Tasks left this week: ')+left+(dl!=null?(dl>=0?T(' · الاختبار بعد '+dl+' يوم',' · Exam in '+dl+' day(s)'):T(' · مضى موعد الاختبار',' · Exam date has passed')):'');
+    var tot=plan.tasks.length,dn=plan.tasks.filter(function(t){return t.done}).length,pc=tot?Math.round(dn/tot*100):0,tl=plan.tasks.filter(function(t){return t.day===today&&!t.done}).length;
+    $('pSum').innerHTML='<div class="ps-row"><div class="ps-i"><b>'+dn+'/'+tot+'</b><small>'+T('مهام منجزة','Tasks done')+'</small></div>'+
+      '<div class="ps-i"><b>'+tl+'</b><small>'+T('متبقّية اليوم','Left today')+'</small></div>'+
+      '<div class="ps-i"><b>'+(dl!=null&&dl>=0?dl:'—')+'</b><small>'+T('يوماً للاختبار','Days to exam')+'</small></div></div>'+
+      '<i class="bar"><i style="width:'+pc+'%"></i></i><small class="ps-t">'+pc+'% '+T('من خطة هذا الأسبوع','of this week’s plan')+'</small>';
     $('week').innerHTML=WEEK_ORDER.map(function(d){
       var ts=plan.tasks.filter(function(t){return t.day===d});
       return '<div class="card day'+(d===today?' today':'')+'"><h4>'+T(DAYS_AR[d],DAYS_EN[d])+(d===today?'<small>'+T('اليوم','Today')+'</small>':'')+'</h4>'+
@@ -2688,24 +2719,46 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   /* الإشعارات: قائمة التحديثات، وعلامة حمراء لما لم يُقرأ */
   function unseen(){return Math.max(0,UPDATES.length-load(K.seen,0))}
   function badges(){
-    var n=set.nUpd?unseen():0;$('updBadge').hidden=!n;$('updBadge').textContent=n;
+    var n=set.nUpd?unseen():0;
     document.querySelectorAll('[data-dot]').forEach(function(d){d.hidden=!n});
   }
+  var nTab='all';
+  function reminders(){
+    var out=[],rec=chRec(),dl=daysLeft(),today=new Date().getDay(),left=plan.tasks.filter(function(t){return t.day===today&&!t.done}).length;
+    var rsL=prog.resume&&findLesson(prog.resume.id),rsR=rsL&&prog.lessons[prog.resume.id];
+    if(rsL&&rsR&&!rsR.done)out.push({ic:'▶️',t:T('أكمل درسك من حيث وصلت','Continue your lesson'),s:T('الوحدة '+rsL.unit+' · «'+STATIONS[Math.min(rsR.cur||0,5)].ar+'»','Unit '+rsL.unit+' · '+STATIONS[Math.min(rsR.cur||0,5)].en),go:'lesson='+prog.resume.id,b:T('تابع','Continue')});
+    if(!rec)out.push({ic:'⚡',t:T('اختر تحدّي اليوم','Pick today’s challenge'),s:T('تحدٍّ واحد على الأقل كلّ يوم يحفظ لك ⭐ في أسبوعك','At least one challenge a day keeps your week ⭐'),go:'challenge',b:T('اختر','Pick')});
+    else if(!chDone(rec))out.push({ic:'⚡',t:T('لم تُنجز تحدّيك بعد','Your challenge isn’t done yet'),s:T('أنجزه قبل نهاية اليوم كي لا تظهر دائرة حمراء','Finish it today to avoid a red circle'),go:'challenge',b:T('أكمل','Go')});
+    var d=dailyState();
+    if(!d.paid)out.push({ic:'🔥',t:T('السلسلة اليومية: '+XP_DAILY+' XP بانتظارك','Daily streak: '+XP_DAILY+' XP waiting'),s:T('حلّ نشاطاً وشارك التطبيق اليوم','Do an activity and share the app today'),go:'streak',b:T('افتح','Open')});
+    if(left)out.push({ic:'🗓️',t:T('لديك '+left+' مهمة اليوم في خطة الدراسة','You have '+left+' task(s) today in your study plan'),s:'',go:'planner',b:T('الخطة','Plan')});
+    if(dl!=null&&dl>=0)out.push({ic:'⏳',t:T('الاختبار بعد '+dl+' يوم','Exam in '+dl+' day(s)'),s:T('راجع خطتك واستعدّ','Review your plan and get ready'),go:'planner',b:T('الخطة','Plan')});
+    return out;
+  }
   renders.updates=function(){
-    var n=unseen();
-    $('updList').innerHTML=UPDATES.map(function(u,i){
-      return '<div class="card upd'+(i<n?' new':'')+'"><time>'+u.date+'</time><b>'+u.title+'</b><ul>'+
-        u.items.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>';
-    }).join('');
+    var n=unseen(),h='';
+    document.querySelectorAll('#nTabs [data-nt]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.nt===nTab)});
+    if(nTab!=='upd'){
+      var rs=reminders();
+      h+='<h3 class="sec-t">'+T('تذكيراتي','My reminders')+'</h3>'+(rs.length?rs.map(function(r){
+        return '<div class="card ntf"><span class="ni">'+r.ic+'</span><span class="nt"><b>'+r.t+'</b>'+(r.s?'<small>'+r.s+'</small>':'')+'</span><button class="btn" type="button" data-ngo="'+r.go+'">'+r.b+'</button></div>'}).join('')
+        :'<div class="card empty">'+T('لا تذكيرات الآن 🎉 أنت على المسار الصحيح','No reminders right now 🎉 You’re on track')+'</div>');
+    }
+    if(nTab!=='rem')h+='<h3 class="sec-t">'+T('تحديثات التطبيق','App updates')+'</h3>'+UPDATES.map(function(u,i){
+      return '<div class="card upd'+(i<n?' new':'')+'"><time>'+u.date+'</time><b>'+u.title+'</b><ul>'+u.items.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul></div>'}).join('');
+    $('updList').innerHTML=h;
+    $('updList').querySelectorAll('[data-ngo]').forEach(function(b){b.addEventListener('click',function(){go(b.dataset.ngo)})});
     save(K.seen,UPDATES.length);badges();
   };
+  document.querySelectorAll('#nTabs [data-nt]').forEach(function(b){b.addEventListener('click',function(){nTab=b.dataset.nt;renders.updates()})});
   badges();
 
   /* مشاركة التطبيق */
   $('share').addEventListener('click',function(){
     var url=location.href.split('#')[0],data={title:'LEXORA',text:T('تعلّم الإنجليزية للصف العاشر مع LEXORA','Learn Grade 10 English with LEXORA'),url:url};
-    if(navigator.share){navigator.share(data).catch(function(){});return}
-    if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast(T('نُسخ رابط التطبيق','App link copied'))},function(){toast(url)})}else toast(url);
+    function shared(){prog.shareDay=dayOff(0);saveProg();checkDaily();if(location.hash==='#streak')renders.streak()}
+    if(navigator.share){navigator.share(data).then(shared,function(){});return}
+    if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast(T('نُسخ رابط التطبيق','App link copied'));shared()},function(){toast(url)})}else toast(url);
   });
 
   /* تنزيل التطبيق */
