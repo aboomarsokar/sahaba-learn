@@ -504,6 +504,17 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .passage .tools{justify-content:flex-end}
 .pill.best{color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));border:0;font-weight:700}
 
+/* --- بطاقة الكلمة (جديدة): كلّ شيء على وجهٍ واحد، ولكلّ كلمة لونها --- */
+.vcard{position:relative;display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:1.2rem 1rem 1rem;text-align:center;cursor:pointer;min-height:250px}
+.vcard .em{font-size:1.9rem;line-height:1}
+.vcard .w{font:800 2.5rem var(--fb);direction:ltr;color:var(--wc)}
+.vcard .vm{font-family:var(--fh);font-size:1.5rem}
+.vcard mark,.vcard .exbox mark{background:color-mix(in srgb,var(--wc) 25%,transparent);color:inherit;border-bottom:3px solid var(--wc);border-radius:5px;padding:0 4px}
+.vcard .exbox{border-color:var(--wc);background:color-mix(in srgb,var(--wc) 10%,transparent)}
+.vcard .exbox .et{color:var(--wc)}
+.vstar{position:absolute;top:.5rem;inset-inline-start:.6rem;background:none;border:0;font-size:1.7rem;line-height:1;color:var(--muted);cursor:pointer}
+.vstar.on{color:var(--gold)}
+
 /* --- بطاقة الكلمة: تلميح بارز ومثال بارز --- */
 .flash .hint{font:700 1rem var(--fb);color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));padding:.5rem 1.1rem;border-radius:999px;
   box-shadow:0 6px 16px rgba(243,201,105,.35);animation:nudge 1.8s ease-in-out infinite}
@@ -514,7 +525,6 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .flash .x mark,.exbox mark{background:rgba(243,201,105,.4);color:inherit;border-radius:5px;padding:0 4px}
 .flash .xa{font-size:.95rem}
 .navrow{direction:ltr}
-#vAdd.added{border-color:#2fbf71;color:#2fbf71}
 
 /* --- تحفيز: ردود فورية، احتفال، شريط المستوى --- */
 .cheer{font:700 1rem var(--fb);padding:.45rem .8rem;border-radius:12px;text-align:center;animation:pop .35s ease}
@@ -1971,35 +1981,46 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     for(var z0=0;z0<i;z0++)seen[z0]=1;
     st.innerHTML=head(0)+'<div id="vArea"></div>';
     var area=st.querySelector('#vArea');
+    var WCOL=['#ff7a8a','#f3c969','#4fd69b','#5db8ff','#b98cff','#ff9f5a','#2fd1c0','#f472b6'];
+    function arNorm(t){return t.replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[إأآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')}
+    function arHl(txt,meaning){            /* يلوّن في الجملة العربية الكلمات التي تقابل المعنى */
+      var stems=arNorm(meaning).split(/[\s/،,]+/).map(function(m){m=m.replace(/^(ال|و|ي|ت|ن|ا)/,'');return m.length>4?m.slice(0,m.length-1):m}).filter(function(m){return m.length>=3});
+      return txt.split(/(\s+)/).map(function(tok){
+        var n=arNorm(tok).replace(/[.،؟!"«»]/g,'').replace(/^(ال|و|ب|ل|ك|ف)/,'');
+        var hit=stems.some(function(m){return n.indexOf(m)>-1||(n.length>=3&&m.indexOf(n)===0)});
+        return hit?'<mark>'+esc(tok)+'</mark>':esc(tok)}).join('');
+    }
+    function enHl(ex,word){
+      var base=word.length>4?word.slice(0,-1):word,re=new RegExp('\\b('+base.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\w*)','i');
+      return esc(ex).replace(re,'<mark>$1</mark>');
+    }
+    function inDictW(w){return dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})}
     function card(){
-      var w=v[i],back=false;seen[i]=1;saveSub({s:0,i:i});
-      area.innerHTML='<div class="card flash" id="fc"></div><div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button>'+
-        '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><button class="icon-btn sm" type="button" id="vNext" aria-label="التالي"><svg><use href="#i-back"/></svg></button></div>'+
-        '<div class="btns"><button class="btn" type="button" id="vAdd"><svg><use href="#i-dict"/></svg>'+T('أضف إلى قاموسي','Add to my dictionary')+'</button></div>';
-      function hlWord(ex,word){            /* يبرز الكلمة داخل المثال */
-        var base=word.length>4?word.slice(0,-1):word,re=new RegExp('\\b('+base.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\w*)','i');
-        return esc(ex).replace(re,'<mark>$1</mark>');
-      }
-      function face(){
-        var fc=$('fc');fc.classList.remove('flip');void fc.offsetWidth;fc.classList.add('flip');
-        fc.innerHTML=back?'<span class="em">'+(w.em||'')+'</span><span class="m">'+esc(w.ar)+' '+sayBtn(w.ar,'ar')+'</span>'+
-            (w.ex?'<div class="exbox"><span class="et">'+T('مثال','EXAMPLE')+' · EXAMPLE</span><span class="x">'+hlWord(w.ex,w.en)+' '+sayBtn(w.ex)+'</span><span class="xa">'+esc(w.exAr||'')+' '+(w.exAr?sayBtn(w.exAr,'ar'):'')+'</span></div>':'')
-          :'<span class="em">'+(w.em||'')+'</span><span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+'<span class="hint">👆 '+T('انقر على الكلمة لتتعرّف على معناها','Tap the word to see its meaning')+'</span>';
-      }
-      face();if(set.speak)speak(w.en);
-      $('fc').addEventListener('click',function(e){if(e.target.closest('[data-speak]'))return;   /* أزرار الصوت لا تقلب البطاقة */
-        back=!back;face();if(back&&set.speak)speak([[w.ar,'ar']])});
+      var w=v[i],col=WCOL[i%WCOL.length],shownTr=false;seen[i]=1;saveSub({s:0,i:i});
+      area.innerHTML='<div class="card vcard" id="fc" style="--wc:'+col+'">'+
+        '<button class="vstar" type="button" id="vStar" aria-label="'+T('المفضّلة','Favourite')+'">☆</button>'+
+        '<span class="em">'+(w.em||'')+'</span>'+
+        '<span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+
+        '<button class="btn" type="button" id="vTr">'+T('إظهار الترجمة','Show translation')+'</button>'+
+        '<div class="vm" id="vM" hidden><mark>'+esc(w.ar)+'</mark> '+sayBtn(w.ar,'ar')+'</div>'+
+        (w.ex?'<div class="exbox"><span class="et">'+T('مثال','EXAMPLE')+' · EXAMPLE</span><span class="x">'+enHl(w.ex,w.en)+' '+sayBtn(w.ex)+'</span>'+
+          '<span class="xa" id="vXa" hidden>'+(w.exAr?arHl(w.exAr,w.ar)+' '+sayBtn(w.exAr,'ar'):'')+'</span></div>':'')+
+        '</div><div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button>'+
+        '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><button class="icon-btn sm" type="button" id="vNext" aria-label="التالي"><svg><use href="#i-back"/></svg></button></div>';
+      var fc=$('fc');fc.classList.add('flip');
+      function star(){var on=inDictW(w),b=$('vStar');b.textContent=on?'⭐':'☆';b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}
+      star();if(set.speak)speak(w.en);
+      function showTr(){shownTr=true;$('vM').hidden=false;if($('vXa'))$('vXa').hidden=false;$('vTr').hidden=true}
+      $('vTr').addEventListener('click',function(e){e.stopPropagation();showTr();if(set.speak)speak([[w.ar,'ar']])});
+      fc.addEventListener('click',function(e){if(e.target.closest('[data-speak],button'))return;speak(w.en)});   /* الضغط على البطاقة ينطق الكلمة */
+      $('vStar').addEventListener('click',function(e){e.stopPropagation();
+        if(inDictW(w)){dict=dict.filter(function(d){return d.en.toLowerCase()!==w.en.toLowerCase()});save(K.dict,dict);star();
+          notify('🗑️ «'+esc(w.en)+'» '+T('أُزيلت من <b>قاموسي الخاص</b>','removed from <b>My Dictionary</b>'));return}
+        dict.unshift({id:Date.now(),en:w.en,ar:w.ar,ex:w.ex||'',unit:L.unit||0,date:new Date().toISOString()});save(K.dict,dict);star();
+        notify('⭐ «'+esc(w.en)+'» '+T('أُضيفت إلى <b>قاموسي الخاص</b>','added to <b>My Dictionary</b>')+'<br><small>'+T('لديك '+dict.length+' كلمة محفوظة','You now have '+dict.length+' saved word(s)')+'</small>',T('افتح','Open'),'dict');
+        beep(true)});
       $('vPrev').addEventListener('click',function(){if(i>0){i--;card()}});
       $('vNext').addEventListener('click',function(){if(i<v.length-1){i++;card()}else quiz()});
-      function inDict(){return dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})}
-      function markAdded(){var b=$('vAdd');if(!b)return;b.classList.add('added');b.innerHTML='<svg><use href="#i-dict"/></svg>'+T('في قاموسي ✓','In my dictionary ✓')}
-      if(inDict())markAdded();
-      $('vAdd').addEventListener('click',function(){
-        if(inDict()){notify('📖 «'+esc(w.en)+'» '+T('موجودة في <b>قاموسي الخاص</b>','is already in <b>My Dictionary</b>'),T('افتح','Open'),'dict');return}
-        dict.unshift({id:Date.now(),en:w.en,ar:w.ar,ex:w.ex||'',unit:L.unit||0,date:new Date().toISOString()});save(K.dict,dict);markAdded();
-        notify('✅ '+T('أُضيفت','Added')+' «'+esc(w.en)+'» '+T('إلى <b>قاموسي الخاص</b>','to <b>My Dictionary</b>')+'<br><small>'+T('لديك '+dict.length+' كلمة محفوظة','You now have '+dict.length+' saved word(s)')+'</small>',T('افتح','Open'),'dict');
-        beep(true);
-      });
       if(Object.keys(seen).length===v.length&&!area.querySelector('#vQuiz'))area.appendChild(nextBtn(T('اختبر نفسك في الكلمات','Quiz me on the words'),quiz)).id='vQuiz';
     }
     function quiz(){
