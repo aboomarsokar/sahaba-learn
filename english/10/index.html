@@ -507,6 +507,18 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .passage .tools{justify-content:flex-end}
 .pill.best{color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));border:0;font-weight:700}
 
+/* --- صفحة عن التطبيق: الاعتمادات --- */
+.cred{padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.9rem;text-align:start}
+.cred-h{display:flex;align-items:center;gap:.7rem}
+.cred-h .ci{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;flex:none;background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);box-shadow:0 6px 14px rgba(243,201,105,.3)}
+.cred-h .ci svg{width:24px;height:24px}
+.cred-h h3{font:700 1.12rem var(--fh);color:var(--gold)}
+.names{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.names li{display:flex;align-items:center;gap:.65rem;padding:.7rem .9rem;border-radius:14px;background:var(--panel);border:1px solid var(--cardBd);font:700 1.08rem/1.6 var(--fh)}
+.names li::before{content:"◆";color:var(--gold);font-size:.7rem;flex:none}
+.sep{display:flex;align-items:center;gap:.8rem;color:var(--gold);width:100%}
+.sep i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.cred-rights{text-align:center;font:400 .85rem var(--fb);color:var(--muted);padding-top:.4rem;border-top:1px dashed var(--cardBd)}
 /* --- الواجهة الجديدة --- */
 .tb-l{display:flex;gap:.4rem}
 .icon-btn{position:relative}
@@ -1193,6 +1205,39 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
         <dt data-t="kCopy">حقوق الملكية</dt><dd data-t="vCopy">© 2026 مدرسة التابعين الشرعية. جميع الحقوق محفوظة.</dd>
       </dl>
     </div>
+
+    <div class="sep" aria-hidden="true"><i></i><span>✦</span><i></i></div>
+
+    <section class="card cred" aria-labelledby="credDevT">
+      <div class="cred-h"><span class="ci"><svg><use href="#i-gear"/></svg></span><h3 id="credDevT" data-t="credDev">إعداد وتطوير التطبيق</h3></div>
+      <ul class="names">
+        <li>المهندس فتحي محمد الأشرم</li>
+        <li>المهندس كريم أسامة أبو حصيرة</li>
+        <li>المهندس محمد سالم سكر</li>
+      </ul>
+    </section>
+
+    <div class="sep" aria-hidden="true"><i></i><span>✦</span><i></i></div>
+
+    <section class="card cred" aria-labelledby="credSupT">
+      <div class="cred-h"><span class="ci"><svg><use href="#i-medal"/></svg></span><h3 id="credSupT" data-t="credSup">الإشراف الأكاديمي والتربوي</h3></div>
+      <ul class="names">
+        <li>الأستاذ حمزة الخولي</li>
+        <li>الأستاذ سعيد السكافي</li>
+      </ul>
+    </section>
+
+    <div class="sep" aria-hidden="true"><i></i><span>✦</span><i></i></div>
+
+    <section class="card cred" aria-labelledby="credRelT">
+      <div class="cred-h"><span class="ci"><svg><use href="#i-info"/></svg></span><h3 id="credRelT" data-t="relInfo">معلومات الإصدار</h3></div>
+      <dl class="kv">
+        <dt data-t="kAppName">اسم التطبيق</dt><dd dir="ltr" style="text-align:start">LEXORA</dd>
+        <dt data-t="kVerNo">رقم الإصدار</dt><dd id="ver2" dir="ltr" style="text-align:start"></dd>
+        <dt data-t="kStatus">حالة الإصدار</dt><dd data-t="vStatus">الإصدار الأول الرسمي.</dd>
+      </dl>
+      <p class="cred-rights" data-t="vRights">حقوق التطوير محفوظة لفريق العمل.</p>
+    </section>
   </div>
 </main>
 
@@ -1247,7 +1292,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 <script src="data/audio-manifest.js"></script>
 <script>
 (function(){
-  var VERSION='2.0.0';
+  var VERSION='1.0.0';
   /* ===== روابط Drive (تُضاف حين تصل) ===== */
   /* لكلّ فصل رابطه: 1 = الفصل الأول، 2 = الفصل الثاني، all = رابط واحد للسنة كلّها */
   var LINKS={
@@ -1356,7 +1401,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   var plan=load(K.plan,{unit:7,perDay:1,exam:'',tasks:[]});
 
   /* ===== اللغة ===== */
-  var EN={tHome:'Home',tProfile:'Profile',tNotifs:'Notifications',sumT:'Unit Summaries',chalT:'My Challenges',bgColor:'Background color',contentT:'App content',streakT:'Daily Streak',menuAcc:'App',menuStudy:'My study',menuMore:'More',nAll:'All',nRem:'My reminders',nUpd2:'App updates',pickTitle:'Choose your picture and name',yourPic:'Your picture',yourName:'Your name',sectionPh:'Class section (e.g. A)',continue:'Continue',
+  var EN={credDev:'App preparation and development',credSup:'Academic and educational supervision',relInfo:'Release information',kAppName:'App name',kVerNo:'Version number',kStatus:'Release status',vStatus:'The first official release.',vRights:'Development rights are reserved for the team.',tHome:'Home',tProfile:'Profile',tNotifs:'Notifications',sumT:'Unit Summaries',chalT:'My Challenges',bgColor:'Background color',contentT:'App content',streakT:'Daily Streak',menuAcc:'App',menuStudy:'My study',menuMore:'More',nAll:'All',nRem:'My reminders',nUpd2:'App updates',pickTitle:'Choose your picture and name',yourPic:'Your picture',yourName:'Your name',sectionPh:'Class section (e.g. A)',continue:'Continue',
     ask:'What would you like to start?',term1:'First Semester',term2:'Second Semester',term1s:'Units 1 – 5',term2s:'Units 6 – 10',
     books:'School Books',pack:'Study Pack',soonLink:'Coming soon',wsSub:'Worksheets',tests:'Tests',units:'Units',
     myProfile:'My Profile',editData:'Edit details',sLessons:'Lessons completed',sTests:'Tests taken',sPct:'Curriculum progress',
@@ -2706,7 +2751,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   }
 
   /* ===== حول التطبيق ===== */
-  $('ver').textContent='v'+VERSION;
+  $('ver').textContent='v'+VERSION;$('ver2').textContent=VERSION;
 
   /* ===== القائمة ===== */
   var drawer=$('drawer'),scrim=$('scrim');
