@@ -504,6 +504,43 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .passage .tools{justify-content:flex-end}
 .pill.best{color:var(--btnText);background:linear-gradient(180deg,var(--btn1),var(--btn2));border:0;font-weight:700}
 
+/* --- تحدّ نفسك --- */
+.chal{display:flex;flex-direction:column;gap:.6rem;padding:.8rem 1rem;text-align:start;cursor:pointer;width:100%}
+.chal .top{display:flex;align-items:center;justify-content:space-between;gap:.6rem}
+.chal b{font:700 1.02rem var(--fb)}
+.chal .best{font:400 .75rem var(--fb);color:var(--muted)}
+.wd i.red{background:#e5484d;border:0;box-shadow:0 0 10px rgba(229,72,77,.45)}
+.wd i.pend{border:2px dashed var(--gold)}
+.chcard{display:flex;align-items:center;gap:.8rem;padding:1rem;text-align:start;cursor:pointer;width:100%;border:2px solid var(--cardBd)}
+.chcard[aria-pressed="true"]{border-color:var(--gold);background:rgba(243,201,105,.14)}
+.chcard .ci{font-size:2rem;line-height:1}
+.chcard .ct{flex:1;display:flex;flex-direction:column;gap:.15rem}
+.chcard .ct b{font:700 1.05rem var(--fb)}
+.chcard .ct span{font:400 .85rem var(--fb);color:var(--muted)}
+.chcard .ct small{font:700 .75rem var(--fb);color:var(--gold)}
+.chcard .ck{font-size:1.4rem}
+.chcard.done{border-color:#2fbf71}
+.chtimer{align-self:center;font:800 1.6rem var(--fb);direction:ltr;padding:.3rem 1.1rem;border-radius:999px;background:var(--panel);border:2px solid var(--gold)}
+.chtimer.low{color:#ff6b6b;border-color:#ff6b6b}
+/* --- زرّ أكمل من حيث وصلت --- */
+.fab{position:fixed;bottom:18px;inset-inline-start:14px;z-index:40;width:74px;height:74px;border-radius:50%;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+  background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);box-shadow:0 8px 22px rgba(0,0,0,.45),0 0 0 3px rgba(255,255,255,.18);animation:nudge 2.2s ease-in-out infinite}
+.fab svg{width:18px;height:18px}
+.fab span{font:800 .56rem/1.15 var(--fb);text-align:center;padding:0 6px}
+/* --- القواعد: قائمة التبويبات وبطاقات مربّعة --- */
+.gtabs{display:flex;flex-direction:column;gap:.6rem}
+.gtab{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem;border-radius:18px;text-align:start;cursor:pointer;width:100%;background:var(--panel);border:2px solid var(--cardBd);color:inherit}
+.gtab .gn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:800 1.05rem var(--fb);background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);flex:none}
+.gtab.done{border-color:#2fbf71}.gtab.done .gn{background:#2fbf71;color:#fff}
+.gtab .gt{flex:1;display:flex;flex-direction:column;gap:.1rem;min-width:0}
+.gtab .gt b{font:700 1.02rem var(--fb);direction:ltr;text-align:start}
+.gtab .gt small{font:400 .85rem var(--fb);color:var(--muted)}
+.rtag.sig{color:var(--gold);border-color:var(--gold)}
+.swg{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;width:100%}
+.sw{display:flex;flex-direction:column;align-items:center;gap:.2rem;padding:.7rem .4rem;border-radius:16px;cursor:pointer;border:2px solid var(--wc);background:color-mix(in srgb,var(--wc) 14%,transparent);color:inherit}
+.sw b{font:800 1.05rem var(--fb);direction:ltr;color:var(--wc)}
+.sw span{font:400 .88rem var(--fb)}
+
 /* --- بطاقة الكلمة (جديدة): كلّ شيء على وجهٍ واحد، ولكلّ كلمة لونها --- */
 .vcard{position:relative;display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:1.2rem 1rem 1rem;text-align:center;cursor:pointer;min-height:250px}
 .vcard .em{font-size:2.6rem;line-height:1;display:grid;place-items:center;height:76px}
@@ -551,7 +588,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .k-v{color:var(--k-v);font-weight:700}
 .k-t{color:var(--k-t);font-weight:700;background:rgba(243,201,105,.2);padding:0 .3em;border-radius:6px;border-bottom:2px solid var(--gold)}
 .k-n{color:var(--k-n);font-weight:700;background:rgba(255,100,120,.16);padding:0 .3em;border-radius:6px;border-bottom:2px solid var(--k-n)}
-.rcard{padding:1.1rem 1rem;display:flex;flex-direction:column;gap:.8rem;animation:rise .35s ease-out both}
+.rcard{padding:1.1rem 1rem;display:flex;flex-direction:column;justify-content:center;gap:.8rem;min-height:min(92vw,430px);animation:rise .35s ease-out both}
 .rdots{display:flex;justify-content:center;gap:6px}
 .rdots i{width:26px;height:6px;border-radius:9px;background:var(--panel)}
 .rdots i.on{background:var(--gold)}
@@ -763,6 +800,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   <div class="wrap">
     <div class="card quote" id="quote"><span class="qi">✨</span><span class="qt"><span class="qe" id="qEn"></span><span class="qa" id="qAr"></span></span></div>
     <div class="card streak" id="streakCard"><div class="top"><b id="stTitle"></b><span class="best" id="stBest"></span></div><div class="week7" id="week7"></div></div>
+    <button class="card chal" type="button" id="chalCard" data-go="challenge"><div class="top"><b>⚡ <span data-chal-t></span></b><span class="best" id="chSub"></span></div><div class="week7" id="chWeek"></div></button>
     <button class="card resume" type="button" id="resumeCard" hidden><span class="ic"><svg><use href="#i-play"/></svg></span><span class="t"><small id="rsSmall"></small><b id="rsTitle"></b><span class="dots" id="rsDots"></span></span></button>
     <button class="card xpline" type="button" data-go="me"><span class="lvn" id="hLv">1</span><span class="t"><b id="hLvT"></b><i class="bar"><i id="hLvBar" style="width:0%"></i></i></span></button>
     <button class="card remind" type="button" id="remind" data-go="planner" hidden><svg><use href="#i-plan"/></svg><span id="remindTxt"></span></button>
@@ -888,7 +926,6 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       <button class="card mrow" type="button" data-go="saved"><span class="ic"><svg><use href="#i-bookmark"/></svg></span><span class="t"><b data-t="saved">الدروس المحفوظة</b><small data-t="savedS">الدروس التي وضعت عليها علامة حفظ</small></span><svg><use href="#i-back"/></svg></button>
       <button class="card mrow" type="button" data-go="history"><span class="ic"><svg><use href="#i-clock"/></svg></span><span class="t"><b data-t="history">سجل التعلّم</b><small data-t="historyS">آخر ما درسته ونتائج اختباراتك</small></span><svg><use href="#i-back"/></svg></button>
       <button class="card mrow" type="button" data-go="achieve"><span class="ic"><svg><use href="#i-medal"/></svg></span><span class="t"><b data-t="achieve">إنجازاتي</b><small data-t="achieveS">تقدّمك وشاراتك</small></span><svg><use href="#i-back"/></svg></button>
-      <button class="card mrow" type="button" data-go="planner"><span class="ic"><svg><use href="#i-plan"/></svg></span><span class="t"><b data-t="planner">خطة الدراسة</b><small>Study Planner</small></span><svg><use href="#i-back"/></svg></button>
       <button class="card mrow" type="button" data-go="settings"><span class="ic"><svg><use href="#i-gear"/></svg></span><span class="t"><b data-t="settings">الإعدادات</b><small>Settings</small></span><svg><use href="#i-back"/></svg></button>
       <button class="card mrow" type="button" data-go="about"><span class="ic"><svg><use href="#i-info"/></svg></span><span class="t"><b data-t="about">حول التطبيق</b><small>About</small></span><svg><use href="#i-back"/></svg></button>
     </div>
@@ -946,6 +983,15 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     <h3 class="sec-t" data-t="pastTests">الاختبارات السابقة ونتائجها</h3>
     <div class="list" id="hTests"></div>
   </div>
+</main>
+
+<!-- ===== تحدّ نفسك ===== -->
+<main id="challenge" class="page" data-screen="challenge" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2 id="chTitle">تحدّ نفسك</h2><span style="width:46px"></span>
+  </div>
+  <div class="wrap" id="chBody"></div>
 </main>
 
 <!-- ===== إنجازاتي ===== -->
@@ -1086,6 +1132,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     </div>
   </div>
 </main>
+
+<button class="fab" type="button" id="resumeFab" hidden aria-label="أكمل من حيث وصلت"><svg><use href="#i-play"/></svg><span></span></button>
 
 <!-- ===== الإشعارات ===== -->
 <main id="updates" class="page" data-screen="updates" hidden>
@@ -1383,7 +1431,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var el=document.querySelector('[data-screen="'+h+'"]')?h:'';
     document.querySelectorAll('[data-screen]').forEach(function(s){s.hidden=s.dataset.screen!==el});
     if(renders[el])renders[el](param);
-    closeMenu();window.scrollTo(0,0);
+    updateFab(el);closeMenu();window.scrollTo(0,0);
   }
   function go(h){if(location.hash==='#'+h)show();else location.hash=h}
   window.addEventListener('hashchange',show);
@@ -1429,6 +1477,100 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function unitName(n){return UNIT_TITLES[n-1]||T('الوحدة ','Unit ')+n}
   function fmtDate(d){try{return new Date(d).toLocaleDateString(lang()==='en'?'en-GB':'ar',{day:'numeric',month:'short',year:'numeric'})}catch(e){return d}}
 
+  /* ===== تحدّ نفسك: تحدٍّ واحد على الأقل واثنان على الأكثر كلّ يوم ===== */
+  var CHS=[
+    {id:'think',ic:'🧠',ar:'تحدّي التفكير',en:'Thinking Challenge',dAr:'سؤال يحتاج إلى التفكير والفهم من منهج اللغة الإنجليزية.',dEn:'One question that needs thinking and understanding.',min:2,n:1,xp:20},
+    {id:'speed',ic:'⚡',ar:'تحدّي السرعة',en:'Speed Challenge',dAr:'5 أسئلة متنوّعة، أجب عنها بأسرع وقت ممكن.',dEn:'5 mixed questions — answer as fast as you can.',min:3,n:5,xp:25},
+    {id:'hero',ic:'🏆',ar:'تحدّي الأبطال',en:'Champions Challenge',dAr:'سؤال متقدّم يحتاج إلى ربط المعلومات وتطبيق ما تعلّمته.',dEn:'An advanced question: connect what you know and apply it.',min:5,n:1,xp:35}
+  ];
+  function chRec(d){prog.ch=prog.ch||{};return prog.ch[d||dayOff(0)]||null}
+  function chDone(rec){return !!rec&&rec.pick.length>0&&rec.pick.every(function(i){return rec.done&&rec.done[i]})}
+  function chState(d){                      /* done | miss | pend | none */
+    var rec=chRec(d),keys=Object.keys(prog.ch||{}).sort(),t=dayOff(0);
+    if(chDone(rec))return 'done';
+    if(d===t)return rec?'pend':'none';
+    if(keys.length&&d>=keys[0]&&d<t)return 'miss';
+    return 'none';
+  }
+  function chWeekHtml(){
+    var wnA=['أحد','إثنين','ثلاثاء','أربعاء','خميس','جمعة','سبت'],wnE=['Su','Mo','Tu','We','Th','Fr','Sa'],h='';
+    for(var n=6;n>=0;n--){var d=dayOff(n),st=chState(d),wi=new Date(d+'T12:00:00').getDay();
+      h+='<span class="wd'+(n===0?' today':'')+'"><small>'+T(wnA[wi],wnE[wi])+'</small><i class="'+(st==='done'?'on':st==='miss'?'red':st==='pend'?'pend':'')+'">'+(st==='done'?'⭐':'')+'</i></span>'}
+    return h;
+  }
+  function renderChalCard(){
+    document.querySelector('[data-chal-t]').textContent=T('تحدّ نفسك','Challenge yourself');
+    var rec=chRec();
+    $('chSub').textContent=!rec?T('اختر تحدّي اليوم 👈','Pick today’s challenge 👈'):chDone(rec)?T('أنجزتَ تحدّي اليوم ✅','Today’s done ✅'):T('أنجزتَ '+Object.keys(rec.done||{}).length+' من '+rec.pick.length,Object.keys(rec.done||{}).length+' of '+rec.pick.length+' done');
+    $('chWeek').innerHTML=chWeekHtml();
+  }
+  var chTimer=null;
+  function chQuestions(id){
+    var pool=[];Object.keys(window.LEXORA_DATA.units).forEach(function(u){(window.LEXORA_DATA.units[u].lessons||[]).forEach(function(l){(l.mastery||[]).forEach(function(q){pool.push(q)})})});
+    var hard=pool.filter(function(q){return q.lv==='hard'||q.type==='type'||q.type==='order'}),mid=pool.filter(function(q){return q.lv==='medium'||q.lv==='hard'});
+    if(id==='think')return [rnd(shuffle(mid.length?mid:pool))];
+    if(id==='hero')return [rnd(shuffle(hard.length?hard:pool))];
+    var seen={},out=[];shuffle(pool).forEach(function(q){var t=q.type||(q.tf!=null?'tf':'mc');if(out.length<5&&!seen[t]){seen[t]=1;out.push(q)}});
+    shuffle(pool).forEach(function(q){if(out.length<5&&out.indexOf(q)<0)out.push(q)});
+    return out;
+  }
+  renders.challenge=function(){
+    clearInterval(chTimer);$('chTitle').textContent=T('تحدّ نفسك','Challenge yourself');
+    var body=$('chBody'),rec=chRec();
+    if(!rec){
+      var sel={};
+      body.innerHTML='<p class="sw-label" style="text-align:center">'+T('اختر تحدّياً واحداً على الأقل واثنين على الأكثر لهذا اليوم','Choose at least one and at most two challenges for today')+'</p>'+
+        CHS.map(function(c){return '<button type="button" class="card chcard" data-c="'+c.id+'" aria-pressed="false"><span class="ci">'+c.ic+'</span><span class="ct"><b>'+T(c.ar,c.en)+'</b><span>'+T(c.dAr,c.dEn)+'</span><small>⏱ '+c.min+' '+T('دقائق','min')+' · '+c.n+' '+T(c.n>1?'أسئلة':'سؤال',c.n>1?'questions':'question')+' · +'+c.xp+' XP</small></span><span class="ck"></span></button>'}).join('')+
+        '<button class="btn gold next" type="button" id="chOk" disabled><span>'+T('ثبّت اختياري','Confirm my choice')+'</span></button>'+
+        '<p class="taphint" style="text-align:center">'+T('لا يمكن تغيير الاختيار بعد التثبيت. أنجز تحدّياتك لتنال ⭐ في يومك.','You can’t change it after confirming. Finish them to earn a ⭐ today.')+'</p>';
+      function upd(){var n=Object.keys(sel).length;$('chOk').disabled=n<1;body.querySelectorAll('.chcard').forEach(function(b){var on=!!sel[b.dataset.c];b.setAttribute('aria-pressed',on);b.querySelector('.ck').textContent=on?'✅':''})}
+      body.querySelectorAll('.chcard').forEach(function(b){b.addEventListener('click',function(){var id=b.dataset.c;
+        if(sel[id])delete sel[id];else{if(Object.keys(sel).length>=2){toast(T('الحدّ الأقصى تحدّيان في اليوم','Two challenges a day at most'));return}sel[id]=1}upd()})});
+      $('chOk').addEventListener('click',function(){prog.ch=prog.ch||{};prog.ch[dayOff(0)]={pick:CHS.filter(function(c){return sel[c.id]}).map(function(c){return c.id}),done:{}};saveProg();renders.challenge()});
+      return;
+    }
+    body.innerHTML='<div class="week7" id="chW2" style="margin-bottom:.4rem">'+chWeekHtml()+'</div>'+
+      rec.pick.map(function(id){var c=CHS.filter(function(x){return x.id===id})[0],d=rec.done&&rec.done[id];
+        return '<div class="card chcard'+(d?' done':'')+'"><span class="ci">'+c.ic+'</span><span class="ct"><b>'+T(c.ar,c.en)+'</b><span>'+T(c.dAr,c.dEn)+'</span><small>⏱ '+c.min+' '+T('دقائق','min')+' · +'+c.xp+' XP</small></span>'+
+          (d?'<span class="ck">✅</span>':'<button class="btn gold" type="button" data-run="'+id+'">'+T('ابدأ','Start')+'</button>')+'</div>'}).join('')+
+      (chDone(rec)?'<div class="card result"><span class="big">🎉</span><p>'+T('أنجزتَ تحدّيات اليوم! عُد غداً لتحدٍّ جديد.','You finished today’s challenges! Come back tomorrow.')+'</p></div>':'');
+    body.querySelectorAll('[data-run]').forEach(function(b){b.addEventListener('click',function(){runChal(b.dataset.run)})});
+  };
+  function runChal(id){
+    var c=CHS.filter(function(x){return x.id===id})[0],body=$('chBody'),qs=chQuestions(id),left=c.min*60,over=false;
+    body.innerHTML='<div class="chtimer" id="chT"></div><div id="chBox"></div>';
+    var tEl=$('chT');
+    function fmt(){return Math.floor(left/60)+':'+('0'+(left%60)).slice(-2)}
+    tEl.textContent=fmt();
+    function fail(msg){
+      clearInterval(chTimer);over=true;
+      body.innerHTML='<div class="card result"><span class="big">😅</span><p>'+msg+'</p></div>';
+      body.appendChild(nextBtn(T('حاول مرة أخرى','Try again'),function(){runChal(id)}));
+      var bk=document.createElement('button');bk.type='button';bk.className='btn';bk.style.alignSelf='center';bk.textContent=T('رجوع','Back');bk.addEventListener('click',function(){renders.challenge()});body.appendChild(bk);
+    }
+    clearInterval(chTimer);
+    chTimer=setInterval(function(){
+      if(location.hash.indexOf('challenge')<0||!document.body.contains(tEl)){clearInterval(chTimer);return}
+      left--;tEl.textContent=fmt();tEl.classList.toggle('low',left<=20);
+      if(left<=0)fail(T('انتهى الوقت!','Time is up!'));
+    },1000);
+    runQs($('chBox'),qs,{retry:c.n===1,shuffle:true},function(sc,tot){
+      if(over)return;clearInterval(chTimer);
+      var pass=c.id==='speed'?sc>=3:sc>=1;
+      if(!pass){fail(T('لم تنجح هذه المرة ('+sc+' / '+tot+')، جرّب بأسئلة جديدة','Not this time ('+sc+' / '+tot+') — try new questions'));return}
+      var rec=chRec();rec.done=rec.done||{};rec.done[id]=true;saveProg();addXP(c.xp);confetti(30);beep(true);
+      body.innerHTML='<div class="card result"><span class="big">'+c.ic+'</span><p>'+T('أنجزتَ «'+c.ar+'»! +'+c.xp+' XP','You completed “'+c.en+'”! +'+c.xp+' XP')+'</p></div>';
+      body.appendChild(nextBtn(T('متابعة','Continue'),function(){renders.challenge()}));
+    });
+  }
+  /* زرّ «أكمل من حيث وصلت» العائم */
+  function updateFab(el){
+    var f=$('resumeFab'),L0=profile&&prog.resume&&findLesson(prog.resume.id),R0=L0&&prog.lessons[prog.resume.id];
+    var ok=L0&&R0&&!R0.done&&el&&el!=='lesson'&&el!=='profile';
+    f.hidden=!ok;if(ok)f.querySelector('span').textContent=T('أكمل من حيث وصلت','Continue where you stopped');
+  }
+  $('resumeFab').addEventListener('click',function(){if(prog.resume)go('lesson='+prog.resume.id)});
+
   /* ===== الواجهة الرئيسية ===== */
   renders.home=function(){
     if(!profile)return;
@@ -1440,7 +1582,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     $('stBest').textContent=T('أفضل سلسلة: ','Best: ')+bestStreak();
     for(var wk0=6;wk0>=0;wk0--){var wd=dayOff(wk0),on=ds.indexOf(wd)>-1,wi=new Date(wd+'T12:00:00').getDay();
       wk+='<span class="wd'+(wk0===0?' today':'')+'"><small>'+T(wnA[wi],wnE[wi])+'</small><i class="'+(on?'on':'')+'">'+(on?'⭐':'')+'</i></span>'}
-    $('week7').innerHTML=wk;
+    $('week7').innerHTML=wk;renderChalCard();
     var rsL=prog.resume&&findLesson(prog.resume.id),rsR=rsL&&prog.lessons[prog.resume.id];
     if(rsL&&rsR&&!rsR.done){
       var rsI=Math.min(rsR.cur||0,4);
@@ -1808,14 +1950,13 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   var STATIONS=[
     {k:'discover',ar:'اكتشف',en:'Discover',ic:'🔍',subAr:'كلمات الدرس',subEn:'Lesson words'},
     {k:'learn',ar:'تعلّم',en:'Learn',ic:'📖',subAr:'فقرة الدرس',subEn:'Reading'},
-    {k:'practice',ar:'تدرّب',en:'Practice',ic:'✏️',subAr:'القاعدة الأولى',subEn:'First rule'},
+    {k:'practice',ar:'القواعد',en:'Grammar',ic:'✏️',subAr:'تعلّم قواعد الدرس وتدرّب عليها',subEn:'Learn and practise the rules'},
     {k:'challenge',ar:'تحدَّ نفسك',en:'Challenge',ic:'⚡',subAr:'القاعدة الثانية والثالثة',subEn:'More rules'},
     {k:'master',ar:'أتقنتُ الدرس',en:'Mastery',ic:'🎯',subAr:'أسئلة من كلّ المستويات',subEn:'Mixed questions'},
     {k:'cert',ar:'الشهادة',en:'Certificate',ic:'🏆',subAr:'شهادة الدرس',subEn:'Lesson certificate'}
   ];
   var L=null,cur=0;
   function unlocked(i){if(i===0)return true;var r=lp(L.id);for(var k=0;k<i&&k<5;k++)if(!r.st[k])return false;return true}
-  function hasChallenge(){return L.rules&&L.rules.length>1}
   renders.lesson=function(id){
     var certOnly=/&cert$/.test(id);id=id.replace(/&cert$/,'');
     L=findLesson(id);if(!L){go('home');return}
@@ -1847,8 +1988,9 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     else{notify('🔖 '+T('تمّ حفظ الدرس في <b>ذاكرة المحفوظات</b>','Lesson saved to <b>Saved memory</b>')+'<br><small>'+T('لديك '+prog.saved.length+' درس محفوظ','You have '+prog.saved.length+' saved lesson(s)')+'</small>',T('افتح','Open'),'saved');beep(true)}
   });
   function renderSteps(){
-    var r=lp(L.id);
+    var r=lp(L.id);if(r.st[2]&&!r.st[3]){r.st[3]=true;saveProg()}
     $('steps').innerHTML=STATIONS.map(function(s,i){
+      if(i===3)return '';
       var done=i<5?r.st[i]:r.done,lock=!unlocked(i);
       return '<button class="step'+(done?' done':'')+(i===cur?' cur':'')+(lock?' lock':'')+'" type="button" data-st="'+i+'"'+(lock?' aria-disabled="true"':'')+'>'+
         '<span class="c">'+(done?'✓':s.ic)+'</span>'+T(s.ar,s.en)+'</button>'}).join('');
@@ -2275,7 +2417,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
         return '<div class="exl tap"><span class="t"><span class="e">'+hl(x.en)+'</span><span class="a" hidden>'+esc(x.ar||'')+'</span></span>'+sayBtn(plain)+'</div>'}).join('')+'</div></div>';
   }
   /* ----- بطاقات القاعدة: تعريف ← تكوين ← نفي ← سؤال ← ملاحظة، وبعد كلّ بطاقة زرّ «أكمل» ----- */
-  var RC_ICON={pos:'✅',neg:'❌',q:'❓',note:'💡'};
+  var RC_ICON={pos:'✅',neg:'❌',q:'❓',note:'💡',sig:'🎯'};
+  var SWCOL=['#ff7a8a','#f3c969','#4fd69b','#5db8ff','#b98cff','#ff9f5a','#2fd1c0','#f472b6'];
   function kfmt(t){return esc(t).replace(/\{(s|t|v|n)\|([^}]*)\}/g,'<span class="k-$1">$2</span>').replace(/\n/g,'<br>')}
   function kplain(t){return t.replace(/\{[stvn]\|([^}]*)\}/g,'$1')}
   function rcExamples(list){
@@ -2290,6 +2433,10 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     return '<div class="legend">'+L2.filter(function(x){return f.indexOf('{'+x[0]+'|')>-1}).map(function(x){return '<span class="k-'+x[0]+'">■ '+x[1]+'</span>'}).join('')+'</div>';
   }
   function rcHtml(r,c){
+    if(c.k==='legacy')return ruleCard(r);
+    if(c.k==='sig'){var SA=window.LEXORA_SIGNALS_AR||{};
+      return '<div class="card rcard"><span class="rtag sig">🎯 Signal words · الكلمات الدالّة</span><p class="taphint" style="align-self:center">👆 '+T('اضغط على الكلمة لتسمعها. هذه الكلمات تدلّك على القاعدة','Tap a word to hear it. These words point to the rule')+'</p>'+
+        '<div class="swg">'+c.items.map(function(w,i){return '<button type="button" class="sw" style="--wc:'+SWCOL[i%SWCOL.length]+'" data-speak="'+esc(w)+'"><b>'+esc(w)+'</b><span>'+esc(SA[w]||'')+'</span></button>'}).join('')+'</div></div>'}
     if(c.k==='intro')return '<div class="card rcard"><h3 class="rname">'+esc(r.title)+'</h3><h4 class="rname-ar">'+esc(r.titleAr||'')+'</h4>'+
       '<div class="use"><span class="lbl">When do we use it?</span><p class="en">'+kfmt(c.useEn)+'</p><span class="lbl ar">متى نستخدمها؟</span><p class="ar">'+kfmt(c.useAr)+'</p></div>'+
       (c.signals&&c.signals.length?'<div class="sig"><span class="lbl">Signal words</span><span class="lbl ar">كلمات تدلّ عليها</span><div class="sigs">'+c.signals.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div></div>':'')+'</div>';
@@ -2297,15 +2444,15 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     if(c.k==='note')return '<div class="card rcard">'+tag+'<div class="notebody" dir="auto">'+kfmt(c.body)+'</div>'+(c.examples&&c.examples.length?rcExamples(c.examples):'')+'</div>';
     return '<div class="card rcard">'+tag+'<div class="formula big">'+kfmt(c.formula)+'</div>'+rcLegend(c.formula)+(c.tip?'<p class="tip">'+kfmt(c.tip)+'</p>':'')+rcExamples(c.examples||[])+'</div>';
   }
-  function showRuleCards(area,r,cards,k,total,onDone,start,onCard){
+  function showRuleCards(area,r,cards,k,total,onDone,start,onCard,onBack){
     var c=start>0&&start<cards.length?start:0;
     function draw(){
       var last=c===cards.length-1;if(onCard)onCard(c);
       area.innerHTML=(total>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+total+'</p>':'')+
         '<div class="rdots">'+cards.map(function(_,j){return '<i'+(j<=c?' class="on"':'')+'></i>'}).join('')+'</div>'+rcHtml(r,cards[c]);
-      area.appendChild(nextBtn(last?T('فهمت، لنتدرّب','Got it — practise'):T('أكمل','Continue'),function(){if(last)onDone();else{c++;draw()}}));
-      if(c>0){var bb=document.createElement('button');bb.type='button';bb.className='btn';bb.style.alignSelf='center';bb.textContent=T('السابق','Back');
-        bb.addEventListener('click',function(){c--;draw()});area.appendChild(bb)}
+      area.appendChild(nextBtn(last?T('فهمت، لنتدرّب','Got it — practise'):T('التالي','Next'),function(){if(last)onDone();else{c++;draw()}}));
+      if(c>0||onBack){var bb=document.createElement('button');bb.type='button';bb.className='btn';bb.style.alignSelf='center';bb.textContent=c>0?T('السابق','Back'):T('القواعد','Rules');
+        bb.addEventListener('click',function(){if(c>0){c--;draw()}else onBack()});area.appendChild(bb)}
       window.scrollTo(0,0);
     }
     draw();
@@ -2335,8 +2482,44 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     if(!rules.length){completeStation(idx);return}
     show1(subR);
   }
-  function practice(st){rulesStation(st,2,(L.rules||[]).slice(0,1),0)}
-  function challenge(st){rulesStation(st,3,(L.rules||[]).slice(1,3),1)}
+  /* 3) القواعد: تبويب لكلّ قاعدة ← بطاقات (تعريف، تكوين، نفي، الكلمات الدالّة) ← تدريب */
+  function ruleCardsFor(x,k){
+    var cs=(window.LEXORA_RULECARDS||{})[L.id+'#'+k];if(!cs||!cs.length)return [{k:'legacy'}];
+    var out=cs.map(function(c){return c.k==='intro'?Object.assign({},c,{signals:[]}):c}),it=cs.filter(function(c){return c.k==='intro'})[0];
+    var sg=((it&&it.signals)||[]).filter(function(w){return w&&w!=='—'});
+    if(sg.length)out.push({k:'sig',items:sg});
+    return out;
+  }
+  function practice(st){
+    var rules=L.rules||[],r=lp(L.id);r.gd=r.gd||{};
+    if(!rules.length){completeStation(2);return}
+    st.innerHTML=head(2)+'<div id="ra" class="stage"></div>';var area=st.querySelector('#ra');
+    function allDone(){return rules.every(function(_,k){return r.gd[k]})}
+    function list(){
+      r.sub=null;saveProg();window.scrollTo(0,0);
+      area.innerHTML='<p class="sw-label" style="text-align:center">'+T('اختر قاعدة لتتعلّمها ثم تتدرّب عليها','Pick a rule to learn, then practise it')+'</p><div class="gtabs">'+
+        rules.map(function(x,k){return '<button type="button" class="gtab'+(r.gd[k]?' done':'')+'" data-g="'+k+'"><span class="gn">'+(r.gd[k]?'✓':(k+1))+'</span><span class="gt"><b>'+esc(x.title)+'</b><small>'+esc(x.titleAr||'')+'</small></span><svg><use href="#i-back"/></svg></button>'}).join('')+'</div>';
+      area.querySelectorAll('[data-g]').forEach(function(b){b.addEventListener('click',function(){openRule(+b.dataset.g,0)})});
+      if(allDone())area.appendChild(nextBtn(T('أكملتُ القواعد','I finished the rules'),function(){completeStation(2)}));
+    }
+    function qsOf(k,qstart){
+      var x=rules[k];
+      runQs(area,x.questions||[],{retry:true,start:qstart||0,onQ:function(i){saveSub({s:2,k:k,q:i})}},function(sc,tot){
+        r.gd[k]=true;r.sub=null;saveProg();
+        area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('من المحاولة الأولى','on the first try')+'</p></div>';
+        area.appendChild(nextBtn(allDone()?T('متابعة','Continue'):T('العودة إلى القواعد','Back to the rules'),function(){if(allDone())completeStation(2);else list()}));
+      });
+    }
+    function openRule(k,start){
+      var x=rules[k];
+      showRuleCards(area,x,ruleCardsFor(x,k),k,rules.length,function(){qsOf(k,0)},start,function(c){saveSub({s:2,k:k,c:c})},list);
+    }
+    var sub=subFor(2);
+    if(sub&&sub.k!=null&&sub.k<rules.length){if(sub.q!=null)qsOf(sub.k,sub.q);else openRule(sub.k,sub.c||0)}
+    else list();
+  }
+  function hasChallenge(){return false}
+  function challenge(){var r=lp(L.id);r.st[3]=true;r.cur=4;cur=4;saveProg();renderStation()}   /* لم تعد محطة التحدّي جزءاً من الدرس */
 
   /* 5) أتقنتُ الدرس: أسئلة من السهل إلى الصعب، والنجاح من 70% */
   var PASS=70;

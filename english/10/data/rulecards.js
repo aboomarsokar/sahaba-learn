@@ -1447,3 +1447,18 @@ window.LEXORA_RULECARDS = {
   }
  ]
 };
+
+/* معاني الكلمات الدالّة (تظهر في آخر بطاقات كلّ قاعدة) */
+window.LEXORA_SIGNALS_AR = {
+ "next month":"الشهر القادم","tomorrow":"غداً","on Monday":"يوم الاثنين","at 8:30":"في الثامنة والنصف","next Saturday":"السبت القادم",
+ "I think":"أظنّ","probably":"على الأرجح","I'm sure":"أنا متأكّد","Look!":"انظر!","I promise":"أعدك","just":"للتوّ","already":"بالفعل","yet":"بعدُ / حتى الآن","so far":"حتى الآن",
+ "for":"لمدّة","since":"منذ","yesterday":"أمس","ago":"قبل (مدّة)","in 2004":"في عام 2004","last week":"الأسبوع الماضي","recently":"مؤخّراً","ever":"يوماً ما","maybe":"ربما","perhaps":"لعلّ",
+ "please":"من فضلك","if you like":"إن أحببتَ","it's a good idea":"فكرة جيّدة","it's necessary":"من الضروري","it's forbidden":"ممنوع","last year":"العام الماضي","when I was five":"عندما كنتُ في الخامسة",
+ "thick":"سميك","exhausted":"مُنهَك","amazing":"مذهل","bored":"ضجِر","quickly":"بسرعة","luckily":"لحسن الحظّ","really":"حقّاً","fast":"سريع","well":"جيّداً",
+ "than":"من (للمقارنة)","the":"أل التعريف","more":"أكثر","most":"الأكثر","as … as":"بقدر / مثل","not as … as":"ليس بقدر","so":"جدّاً / لذلك","such":"إلى هذا الحدّ","that":"أنّ / حتى",
+ "while":"بينما","when":"عندما","at that moment":"في تلك اللحظة","before":"قبل","by the time":"بحلول الوقت الذي","after":"بعد",
+ "said (that)":"قال إنّ","told (someone)":"أخبر (شخصاً)","explained":"شرح","added":"أضاف","asked":"سأل","wondered":"تساءل","told":"أخبر","if / whether":"إذا / هل","if":"إذا / لو","would":"سوف / لـ (في الشرط)",
+ "imagine":"تخيّل","if I were you":"لو كنتُ مكانك","if … had":"لو كان قد…","would have":"لكان قد","what if":"ماذا لو","regret":"يندم",
+ "a / an":"أداة نكرة","some":"بعض","who":"الذي (للعاقل)","which":"الذي (لغير العاقل)","by + agent":"بواسطة الفاعل",
+ "is / are":"يُـ (الحاضر)","was / were":"كان (الماضي)","has been":"تمّ (التامّ)","have been":"تمّ (التامّ)","will be":"سيكون / سيتمّ","going to be":"سيكون / سيتمّ"
+};
