@@ -1479,9 +1479,9 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
   /* ===== تحدّ نفسك: تحدٍّ واحد على الأقل واثنان على الأكثر كلّ يوم ===== */
   var CHS=[
-    {id:'think',ic:'🧠',ar:'تحدّي التفكير',en:'Thinking Challenge',dAr:'سؤال يحتاج إلى التفكير والفهم من منهج اللغة الإنجليزية.',dEn:'One question that needs thinking and understanding.',min:2,n:1,xp:20},
-    {id:'speed',ic:'⚡',ar:'تحدّي السرعة',en:'Speed Challenge',dAr:'5 أسئلة متنوّعة، أجب عنها بأسرع وقت ممكن.',dEn:'5 mixed questions — answer as fast as you can.',min:3,n:5,xp:25},
-    {id:'hero',ic:'🏆',ar:'تحدّي الأبطال',en:'Champions Challenge',dAr:'سؤال متقدّم يحتاج إلى ربط المعلومات وتطبيق ما تعلّمته.',dEn:'An advanced question: connect what you know and apply it.',min:5,n:1,xp:35}
+    {id:'think',ic:'🧠',ar:'اختبر ذكاءك',en:'Test Your Intelligence',dAr:'سؤال يحتاج إلى التفكير والفهم من إحدى المواد الدراسية.',dEn:'One question that needs thinking and understanding.',uAr:'دقيقتان • سؤال واحد',uEn:'2 minutes • 1 question',min:2,n:1,xp:20},
+    {id:'speed',ic:'⚡',ar:'تحدّي السرعة',en:'Speed Challenge',dAr:'5 أسئلة متنوعة، أجب عنها بأسرع وقت ممكن.',dEn:'5 mixed questions — answer as fast as you can.',uAr:'3 دقائق • 5 أسئلة',uEn:'3 minutes • 5 questions',min:3,n:5,xp:25},
+    {id:'hero',ic:'🏆',ar:'تحدّي الأبطال',en:'Champions Challenge',dAr:'سؤال متقدم يحتاج إلى ربط المعلومات وتطبيق ما تعلمته.',dEn:'An advanced question: connect what you know and apply it.',uAr:'5 دقائق • سؤال واحد',uEn:'5 minutes • 1 question',min:5,n:1,xp:35}
   ];
   function chRec(d){prog.ch=prog.ch||{};return prog.ch[d||dayOff(0)]||null}
   function chDone(rec){return !!rec&&rec.pick.length>0&&rec.pick.every(function(i){return rec.done&&rec.done[i]})}
@@ -1520,7 +1520,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     if(!rec){
       var sel={};
       body.innerHTML='<p class="sw-label" style="text-align:center">'+T('اختر تحدّياً واحداً على الأقل واثنين على الأكثر لهذا اليوم','Choose at least one and at most two challenges for today')+'</p>'+
-        CHS.map(function(c){return '<button type="button" class="card chcard" data-c="'+c.id+'" aria-pressed="false"><span class="ci">'+c.ic+'</span><span class="ct"><b>'+T(c.ar,c.en)+'</b><span>'+T(c.dAr,c.dEn)+'</span><small>⏱ '+c.min+' '+T('دقائق','min')+' · '+c.n+' '+T(c.n>1?'أسئلة':'سؤال',c.n>1?'questions':'question')+' · +'+c.xp+' XP</small></span><span class="ck"></span></button>'}).join('')+
+        CHS.map(function(c){return '<button type="button" class="card chcard" data-c="'+c.id+'" aria-pressed="false"><span class="ci">'+c.ic+'</span><span class="ct"><b>'+T(c.ar,c.en)+'</b><span>'+T(c.dAr,c.dEn)+'</span><small>⏱ '+T('المدة: '+c.uAr,'Time: '+c.uEn)+' · +'+c.xp+' XP</small></span><span class="ck"></span></button>'}).join('')+
         '<button class="btn gold next" type="button" id="chOk" disabled><span>'+T('ثبّت اختياري','Confirm my choice')+'</span></button>'+
         '<p class="taphint" style="text-align:center">'+T('لا يمكن تغيير الاختيار بعد التثبيت. أنجز تحدّياتك لتنال ⭐ في يومك.','You can’t change it after confirming. Finish them to earn a ⭐ today.')+'</p>';
       function upd(){var n=Object.keys(sel).length;$('chOk').disabled=n<1;body.querySelectorAll('.chcard').forEach(function(b){var on=!!sel[b.dataset.c];b.setAttribute('aria-pressed',on);b.querySelector('.ck').textContent=on?'✅':''})}
@@ -1531,7 +1531,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     }
     body.innerHTML='<div class="week7" id="chW2" style="margin-bottom:.4rem">'+chWeekHtml()+'</div>'+
       rec.pick.map(function(id){var c=CHS.filter(function(x){return x.id===id})[0],d=rec.done&&rec.done[id];
-        return '<div class="card chcard'+(d?' done':'')+'"><span class="ci">'+c.ic+'</span><span class="ct"><b>'+T(c.ar,c.en)+'</b><span>'+T(c.dAr,c.dEn)+'</span><small>⏱ '+c.min+' '+T('دقائق','min')+' · +'+c.xp+' XP</small></span>'+
+        return '<div class="card chcard'+(d?' done':'')+'"><span class="ci">'+c.ic+'</span><span class="ct"><b>'+T(c.ar,c.en)+'</b><span>'+T(c.dAr,c.dEn)+'</span><small>⏱ '+T('المدة: '+c.uAr,'Time: '+c.uEn)+' · +'+c.xp+' XP</small></span>'+
           (d?'<span class="ck">✅</span>':'<button class="btn gold" type="button" data-run="'+id+'">'+T('ابدأ','Start')+'</button>')+'</div>'}).join('')+
       (chDone(rec)?'<div class="card result"><span class="big">🎉</span><p>'+T('أنجزتَ تحدّيات اليوم! عُد غداً لتحدٍّ جديد.','You finished today’s challenges! Come back tomorrow.')+'</p></div>':'');
     body.querySelectorAll('[data-run]').forEach(function(b){b.addEventListener('click',function(){runChal(b.dataset.run)})});
