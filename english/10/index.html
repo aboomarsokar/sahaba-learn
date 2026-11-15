@@ -506,7 +506,8 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 
 /* --- بطاقة الكلمة (جديدة): كلّ شيء على وجهٍ واحد، ولكلّ كلمة لونها --- */
 .vcard{position:relative;display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:1.2rem 1rem 1rem;text-align:center;cursor:pointer;min-height:250px}
-.vcard .em{font-size:1.9rem;line-height:1}
+.vcard .em{font-size:2.6rem;line-height:1;display:grid;place-items:center;height:76px}
+.vcard .em img{width:72px;height:72px;object-fit:contain}
 .vcard .w{font:800 2.5rem var(--fb);direction:ltr;color:var(--wc)}
 .vcard .vm{font-family:var(--fh);font-size:1.5rem}
 .vcard mark,.vcard .exbox mark{background:color-mix(in srgb,var(--wc) 25%,transparent);color:inherit;border-bottom:3px solid var(--wc);border-radius:5px;padding:0 4px}
@@ -573,6 +574,14 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .legend{display:flex;flex-wrap:wrap;gap:.35rem .8rem;justify-content:center;font:400 .72rem var(--fb);color:var(--muted)}
 .legend span{background:none!important;border:0!important;padding:0!important}
 .tip{font:400 .95rem/1.8 var(--fb);padding:.6rem .8rem;border-radius:12px;background:var(--panel);border-inline-start:3px solid var(--gold)}
+.taphint{align-self:flex-start;font:400 .78rem var(--fb);color:var(--muted)}
+.exl.tap{cursor:pointer;border:1px dashed transparent}
+.exl.tap.open{border-color:var(--gold)}
+.rintro{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:1.6rem 1rem;text-align:center;cursor:pointer;width:100%}
+.rintro small{font:700 .85rem "Cinzel",serif;letter-spacing:.14em;color:var(--gold)}
+.rintro .rn{font:800 2rem var(--fb)}
+.rintro .rt{font:700 1.15rem var(--fb);direction:ltr}
+.rintro .rta{font:400 1rem var(--fb);color:var(--muted)}
 .exlabel{align-self:flex-start;font:700 .8rem var(--fb);color:var(--gold)}
 .notebody{font:600 1.05rem/2.1 var(--fb);padding:.8rem;border-radius:16px;background:var(--panel);text-align:start;direction:ltr}
 .notebody[dir]{direction:inherit}
@@ -1071,6 +1080,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
         <dt data-t="kGrade">الصف والمنهاج</dt><dd data-t="vGrade">الصف العاشر — منهاج اللغة الإنجليزية</dd>
         <dt data-t="kVer">الإصدار</dt><dd id="ver" dir="ltr" style="text-align:start"></dd>
         <dt data-t="kDev">المطوّر</dt><dd data-t="vDev">مدرسة التابعين الشرعية لتحفيظ القرآن الكريم — غزة</dd>
+        <dt>Credits</dt><dd dir="ltr" style="text-align:start">Emoji artwork: Twemoji © Twitter, Inc. and other contributors, CC-BY 4.0</dd>
         <dt data-t="kCopy">حقوق الملكية</dt><dd data-t="vCopy">© 2026 مدرسة التابعين الشرعية. جميع الحقوق محفوظة.</dd>
       </dl>
     </div>
@@ -1866,6 +1876,7 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function sayBtn(text,lang){return '<button class="icon-btn sm" type="button" data-speak="'+esc(text)+'"'+(lang?' data-lang="'+lang+'"':'')+' aria-label="'+T('استمع','Listen')+'"><svg><use href="#i-speak"/></svg></button>'}
   $('stage').addEventListener('click',function(e){
     var b=e.target.closest('[data-speak]');if(b){e.stopPropagation();speak(b.dataset.speak,b.dataset.lang);return}
+    var ex=e.target.closest('.exl.tap');if(ex&&!e.target.closest('button')){var a=ex.querySelector('.a');if(a){a.hidden=!a.hidden;ex.classList.toggle('open',!a.hidden);if(!a.hidden)speak([[a.textContent,'ar']])}return}
     var t=e.target.closest('[data-tf]');if(t){var box=t.parentNode,to=box.querySelector('.to');to.hidden=false;box.querySelector('.a').hidden=false;t.remove();beep(true);speak(to.textContent)}
   });
 
@@ -1994,12 +2005,14 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
       var base=word.length>4?word.slice(0,-1):word,re=new RegExp('\\b('+base.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\w*)','i');
       return esc(ex).replace(re,'<mark>$1</mark>');
     }
+    function emImg(e){if(!e)return '';var f=Array.from(e).map(function(c){return c.codePointAt(0).toString(16)}).filter(function(x){return x!=='fe0f'}).join('-');
+      return '<img src="images/emoji/'+f+'.svg" alt="" width="72" height="72" onerror="this.replaceWith(document.createTextNode(\''+e+'\'))">'}
     function inDictW(w){return dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})}
     function card(){
       var w=v[i],col=WCOL[i%WCOL.length],shownTr=false;seen[i]=1;saveSub({s:0,i:i});
       area.innerHTML='<div class="card vcard" id="fc" style="--wc:'+col+'">'+
         '<button class="vstar" type="button" id="vStar" aria-label="'+T('المفضّلة','Favourite')+'">☆</button>'+
-        '<span class="em">'+(w.em||'')+'</span>'+
+        '<span class="em">'+emImg(w.em)+'</span>'+
         '<span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+
         '<button class="btn" type="button" id="vTr">'+T('إظهار الترجمة','Show translation')+'</button>'+
         '<div class="vm" id="vM" hidden><mark>'+esc(w.ar)+'</mark> '+sayBtn(w.ar,'ar')+'</div>'+
@@ -2256,21 +2269,21 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
   function ruleCard(r){
     return '<div class="card rule"><h3>'+esc(r.title)+'</h3><h4>'+esc(r.titleAr||'')+'</h4><p>'+(r.explain||'')+'</p>'+
       (r.form?'<div class="formula">'+esc(r.form)+'</div>':'')+
-      '<div class="exs">'+(r.examples||[]).map(function(x){var plain=x.en.replace(/\*\*/g,''),parts=x.en.split(' → ');
+      '<span class="taphint">👆 '+T('اضغط على الجملة لترى ترجمتها','Tap a sentence to see its translation')+'</span><div class="exs">'+(r.examples||[]).map(function(x){var plain=x.en.replace(/\*\*/g,''),parts=x.en.split(' → ');
         if(parts.length===2)return '<div class="exl"><span class="t"><span class="e">'+hl(parts[0])+'</span><span class="e to" hidden>'+hl(parts[1])+'</span>'+
           '<button class="btn tf-btn" type="button" data-tf>'+T('حوّلها ▶','Transform ▶')+'</button><span class="a" hidden>'+esc(x.ar||'')+'</span></span>'+sayBtn(plain.replace(' → ','. '))+'</div>';
-        return '<div class="exl"><span class="t"><span class="e">'+hl(x.en)+'</span><span class="a">'+esc(x.ar||'')+'</span></span>'+sayBtn(plain)+'</div>'}).join('')+'</div></div>';
+        return '<div class="exl tap"><span class="t"><span class="e">'+hl(x.en)+'</span><span class="a" hidden>'+esc(x.ar||'')+'</span></span>'+sayBtn(plain)+'</div>'}).join('')+'</div></div>';
   }
   /* ----- بطاقات القاعدة: تعريف ← تكوين ← نفي ← سؤال ← ملاحظة، وبعد كلّ بطاقة زرّ «أكمل» ----- */
   var RC_ICON={pos:'✅',neg:'❌',q:'❓',note:'💡'};
   function kfmt(t){return esc(t).replace(/\{(s|t|v|n)\|([^}]*)\}/g,'<span class="k-$1">$2</span>').replace(/\n/g,'<br>')}
   function kplain(t){return t.replace(/\{[stvn]\|([^}]*)\}/g,'$1')}
   function rcExamples(list){
-    return '<span class="exlabel">'+T('مثال توضيحي','Example')+' · Example</span><div class="exs">'+list.map(function(x){
+    return '<span class="exlabel">'+T('مثال توضيحي','Example')+' · Example</span><span class="taphint">👆 '+T('اضغط على الجملة لترى ترجمتها','Tap a sentence to see its translation')+'</span><div class="exs">'+list.map(function(x){
       var parts=x.en.split(' → ');
       if(parts.length===2)return '<div class="exl"><span class="t"><span class="e">'+kfmt(parts[0])+'</span><span class="e to" hidden>'+kfmt(parts[1])+'</span>'+
         '<button class="btn tf-btn" type="button" data-tf>'+T('حوّلها ▶','Transform ▶')+'</button><span class="a" hidden>'+esc(x.ar||'')+'</span></span>'+sayBtn(kplain(parts.join('. ')))+'</div>';
-      return '<div class="exl"><span class="t"><span class="e">'+kfmt(x.en)+'</span><span class="a">'+esc(x.ar||'')+'</span></span>'+sayBtn(kplain(x.en))+'</div>'}).join('')+'</div>';
+      return '<div class="exl tap"><span class="t"><span class="e">'+kfmt(x.en)+'</span><span class="a" hidden>'+esc(x.ar||'')+'</span></span>'+sayBtn(kplain(x.en))+'</div>'}).join('')+'</div>';
   }
   function rcLegend(f){
     var L2=[['s','الفاعل / الاسم · Subject'],['v','الفعل · Verb'],['t','أداة التكوين · Tool'],['n','أداة النفي · Negative']];
@@ -2301,9 +2314,13 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
     var k=0,area,subR=subFor(idx);
     if(subR&&subR.k>0&&subR.k<rules.length)k=subR.k;
     st.innerHTML=head(idx)+'<div id="ra" class="stage"></div>';area=st.querySelector('#ra');
+    var introSeen={};
     function show1(rs){
       var r=rules[k],cards=(window.LEXORA_RULECARDS||{})[L.id+'#'+(off+k)];
       rs=rs&&rs.k===k?rs:null;                         /* موضع محفوظ في هذه القاعدة */
+      if(!rs&&!introSeen[k]){                          /* بطاقة افتتاحية: رقم القاعدة واسمها */
+        area.innerHTML='<button class="card rintro" type="button" id="rIntro"><small>RULE '+(off+k+1)+'</small><span class="rn">'+T('قاعدة ','Rule ')+(off+k+1)+'</span><span class="rt">'+esc(r.title)+'</span><span class="rta">'+esc(r.titleAr||'')+'</span><span class="btn gold" style="margin-top:.6rem">'+T('ابدأ','Start')+' ▶</span></button>';
+        area.querySelector('#rIntro').addEventListener('click',function(){introSeen[k]=1;show1(rs)});return}
       function startQs(qstart){
         runQs(area,r.questions||[],{retry:true,start:qstart||0,onQ:function(i){saveSub({s:idx,k:k,q:i})}},function(sc,tot){
           area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('من المحاولة الأولى','on the first try')+'</p></div>';
