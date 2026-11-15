@@ -48,8 +48,32 @@
     }, 8000);
   }
 
+  /* تجهيز التطبيق للعمل بلا إنترنت: شريطٌ صغير يظهر فقط أوّل مرّة حين يكون هناك ما يُخزَّن */
+  var offShown = false;
+  function pill(text, ok) {
+    var d = document.getElementById('offBar');
+    if (!d) {
+      d = document.createElement('div'); d.id = 'offBar'; d.dir = 'rtl'; d.setAttribute('role', 'status');
+      d.style.cssText = 'position:fixed;z-index:2147482999;left:50%;transform:translateX(-50%);bottom:calc(150px + env(safe-area-inset-bottom,0px));padding:8px 16px;border-radius:999px;background:rgba(27,11,58,.95);color:#fff;border:1px solid rgba(243,201,105,.6);font:600 13px "Plex Arabic",system-ui,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.4);white-space:nowrap';
+      document.body.appendChild(d);
+    }
+    d.textContent = text; d.style.borderColor = ok ? '#2fbf71' : 'rgba(243,201,105,.6)';
+    return d;
+  }
+  navigator.serviceWorker.addEventListener('message', function (e) {
+    var m = e.data || {};
+    if (m.type === 'precache-progress' && m.done < m.total) { offShown = true; pill('جارٍ تجهيز التطبيق للعمل بدون إنترنت… ' + Math.round(m.done / m.total * 100) + '%'); }
+    if (m.type === 'precache-done' && offShown) {
+      if (m.failed) { var f = document.getElementById('offBar'); if (f) f.remove(); return; }
+      var d = pill('✅ التطبيق جاهز للعمل بدون إنترنت', true); setTimeout(function () { d.remove(); }, 4500);
+    }
+  });
+  function requestPrecache(r) {
+    var w = r.active || navigator.serviceWorker.controller;
+    if (w) setTimeout(function () { w.postMessage({ type: 'precache' }); }, 2500);
+  }
   navigator.serviceWorker.ready.then(function (r) {
-    reg = r;
+    reg = r; requestPrecache(r);
     if ('Notification' in window && Notification.permission === 'granted') enablePeriodic();
     function check() { r.update().catch(function () {}); }
     check();

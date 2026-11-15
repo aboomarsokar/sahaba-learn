@@ -1,6 +1,6 @@
 /* عامل خدمة LEXORA: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (lex10-). */
 const P = "lex10-";
-const V = P + "v18";
+const V = P + "v19";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png",
   "./images/logo.jpg", "./images/certificate.jpg", "./data/lessons.js", "./data/practice.js", "./data/rulecards.js", "./data/highlights.js",
   "./data/audio-norm.js", "./data/audio-manifest.js", "./fonts/aref-ruqaa-arabic-700.woff2", "./fonts/cinzel-latin-700.woff2"];
@@ -47,3 +47,26 @@ async function checkUpdate(){try{const r=await fetch('./index.html',{cache:'no-s
 const c=await caches.open(UPD),old=await c.match('sig'),was=old?await old.text():null;await c.put('sig',new Response(sig));
 if(was&&was!==sig)await self.registration.showNotification('تحديث جديد · اللغة الإنجليزية',{body:'صدرت نسخة جديدة من التطبيق. افتحه لتحصل على آخر التعديلات.',icon:'./icons/icon-192.png',tag:'app-update',dir:'rtl',lang:'ar'})}catch(e){}}
 self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil(self.clients.matchAll({type:'window',includeUncontrolled:true}).then(l=>{for(const c of l){if('focus' in c)return c.focus()}return self.clients.openWindow('./')}))});
+
+/* العمل بلا إنترنت: بعد أول فتح تطلب الصفحة تخزين كلّ ملفات التطبيق (القائمة في precache.json) */
+async function precacheAll() {
+  const c = await caches.open(V);
+  let list = [];
+  try { list = (await (await fetch("./precache.json", { cache: "no-store" })).json()).files; } catch (e) { return; }
+  const todo = [];
+  for (const u of list) if (!(await c.match(u))) todo.push(u);
+  const total = list.length;
+  let done = total - todo.length, failed = 0;
+  const say = async (type) => { for (const cl of await self.clients.matchAll()) cl.postMessage({ type, done, total, failed }); };
+  await say("precache-progress");
+  let i = 0;
+  await Promise.all(Array.from({ length: 5 }, async () => {
+    while (i < todo.length) {
+      const u = todo[i++];
+      try { const r = await fetch(u, { cache: "reload" }); if (r.ok) await c.put(u, r); else failed++; } catch (e) { failed++; }
+      done++; if (done % 6 === 0) await say("precache-progress");
+    }
+  }));
+  await say("precache-done");
+}
+self.addEventListener("message", e => { if (e.data && e.data.type === "precache") e.waitUntil(precacheAll()); });

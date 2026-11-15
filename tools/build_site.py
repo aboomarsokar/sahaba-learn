@@ -21,7 +21,7 @@ def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir()
-    for name in ("index.html", "subjects.json"):
+    for name in ("index.html", "subjects.json", "sw.js"):
         shutil.copy2(ROOT / name, OUT / name)
     shutil.copytree(ROOT / "shared", OUT / "shared", ignore=SKIP)
     (OUT / ".nojekyll").write_text("")

@@ -125,6 +125,7 @@ function drawSubjects(){
   }).join("");
 }
 
+if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function(){});
 fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(d){
   data = d;
   if (d.title) document.getElementById("title").textContent = d.title;
