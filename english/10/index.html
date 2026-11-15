@@ -225,13 +225,16 @@ button.card:hover{transform:translateY(-2px);border-color:var(--gold)}
 .penta:focus-visible::before{background:var(--text)}
 
 /* ورقة العمل والاختبارات: مربّعان */
-.squares{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.squares{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.squares .square{min-width:0;padding:.5rem .3rem;overflow:hidden}
+.squares .square .ic{width:46px;height:46px;flex:none}.squares .square .ic svg{width:24px;height:24px}
+.squares .square b{font-size:.95rem}.squares .square .en{font-size:.72rem}
 .square{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;padding:.8rem;text-align:center}
 .square .ic{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;background:var(--panel);color:var(--gold);border:1px solid var(--cardBd)}
 .square .ic svg{width:30px;height:30px}
 .square b{font-family:var(--fh);font-size:1.3rem}
 .square .en{font:700 .75rem "Cinzel",serif;letter-spacing:.08em;color:var(--muted);direction:ltr}
-@media (min-width:640px){.squares{grid-template-columns:repeat(2,minmax(0,220px));justify-content:center}}
+@media (min-width:640px){.squares{grid-template-columns:repeat(3,minmax(0,200px));justify-content:center}}
 
 /* تذكير الخطة */
 .quote{padding:1rem 1.1rem;display:flex;align-items:center;gap:.8rem;border-color:rgba(243,201,105,.5);
@@ -833,6 +836,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     <div class="squares">
       <button class="card square" type="button" data-go="worksheets"><span class="ic"><svg><use href="#i-sheet"/></svg></span><b>Worksheet</b><span class="en" data-t="wsSub">أوراق العمل</span></button>
       <button class="card square" type="button" data-go="tests"><span class="ic"><svg><use href="#i-test"/></svg></span><b data-t="tests">اختبارات</b><span class="en">Tests</span></button>
+      <button class="card square" type="button" data-go="summaries"><span class="ic"><svg><use href="#i-edit"/></svg></span><b>تلخيص دروسي</b><span class="en">Summaries</span></button>
     </div>
   </div>
 </main>
@@ -902,6 +906,16 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 </main>
 
 <!-- ===== الاختبارات ===== -->
+<main id="summaries" class="page" data-screen="summaries" hidden>
+  <div class="topbar">
+    <button class="icon-btn" type="button" data-back="home" aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
+    <h2>تلخيص دروسي · Lesson Summaries</h2><span style="width:46px"></span>
+  </div>
+  <div class="wrap">
+    <div class="card empty">قريباً: ملخّصات الدروس بالإنجليزية والعربية.<br><small>Coming soon: lesson summaries in English and Arabic.</small></div>
+  </div>
+</main>
+
 <main id="tests" class="page" data-screen="tests" hidden>
   <div class="topbar">
     <button class="icon-btn" type="button" data-back aria-label="رجوع"><svg><use href="#i-back"/></svg></button>
@@ -1581,7 +1595,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   }
   /* زرّ «أكمل من حيث وصلت» العائم */
   function updateTabs(el){
-    var tb=$('tabbar'),show=['home','units','unit','books','worksheets','tests','achieve','me','dict','saved','history','planner','settings','about','updates'].indexOf(el)>-1;
+    var tb=$('tabbar'),show=['home','units','unit','books','worksheets','tests','summaries','achieve','me','dict','saved','history','planner','settings','about','updates'].indexOf(el)>-1;
     tb.hidden=!show;document.body.classList.toggle('has-tabs',show);if(!show)return;
     var cur=el==='achieve'?'achieve':['me','dict','saved','history','planner','settings','about','updates'].indexOf(el)>-1?'me':'home';
     tb.querySelectorAll('[data-tab]').forEach(function(b){var on=b.dataset.tab===cur;if(on)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');
