@@ -11,12 +11,23 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 OUT = HERE / 'نشر'
 src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encoding='utf-8')
-ver = hashlib.sha256(src.encode()).hexdigest()[:10]
+upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
+ver = hashlib.sha256((src + upd).encode()).hexdigest()[:10]
 
 head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f8a9e">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
         '<meta name="apple-mobile-web-app-capable" content="yes">')
 reg = ("<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))</script>")
+reg += '<script data-app="الرياضيات" data-icon="icon-192.png">' + upd.replace('</script', '<\\/script') + '</script>'
+UPD_SW = '''
+/* إشعار التحديث وهو مغلق (أندرويد/كروم لتطبيقٍ مثبَّت على الشاشة الرئيسية): فحصٌ دوريّ لنسخة الصفحة */
+const UPD='upd-math10';
+self.addEventListener('periodicsync',e=>{if(e.tag==='check-update')e.waitUntil(checkUpdate())});
+async function checkUpdate(){try{const r=await fetch('./index.html',{cache:'no-store'});const sig=[r.headers.get('etag'),r.headers.get('last-modified'),r.headers.get('content-length')].join('|');
+const c=await caches.open(UPD),old=await c.match('sig'),was=old?await old.text():null;await c.put('sig',new Response(sig));
+if(was&&was!==sig)await self.registration.showNotification('تحديث جديد · الرياضيات',{body:'صدرت نسخة جديدة من التطبيق. افتحه لتحصل على آخر التعديلات.',icon:'./icon-192.png',tag:'app-update',dir:'rtl',lang:'ar'})}catch(e){}}
+self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil(self.clients.matchAll({type:'window',includeUncontrolled:true}).then(l=>{for(const c of l){if('focus' in c)return c.focus()}return self.clients.openWindow('./')}))});
+'''
 assert '</head>' in src and '</body>' in src
 html = src.replace('</head>', head + '</head>', 1)
 i = html.rindex('</body>')
@@ -38,7 +49,7 @@ self.addEventListener('activate',e=>{{e.waitUntil(caches.keys().then(k=>Promise.
 self.addEventListener('fetch',e=>{{if(e.request.method!=='GET')return;
 e.respondWith(caches.match(e.request,{{ignoreSearch:true}}).then(hit=>{{const net=fetch(e.request).then(r=>{{if(r&&r.ok)caches.open(V).then(c=>c.put(e.request,r.clone()));return r}}).catch(()=>hit);
 return hit||net||caches.match('./index.html')}}))}});
-""", encoding='utf-8')
+""" + UPD_SW, encoding='utf-8')
 logo = HERE / 'شعار-المدرسة.jpg'
 for n in (192, 512):
     if not shutil.which('sips'):  # خادم النشر (لينكس) بلا sips: تبقى الأيقونات المحفوظة في «نشر»

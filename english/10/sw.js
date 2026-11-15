@@ -1,6 +1,6 @@
 /* عامل خدمة LEXORA: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (lex10-). */
 const P = "lex10-";
-const V = P + "v17";
+const V = P + "v18";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png",
   "./images/logo.jpg", "./images/certificate.jpg", "./data/lessons.js", "./data/practice.js", "./data/rulecards.js", "./data/highlights.js",
   "./data/audio-norm.js", "./data/audio-manifest.js", "./fonts/aref-ruqaa-arabic-700.woff2", "./fonts/cinzel-latin-700.woff2"];
@@ -39,3 +39,11 @@ self.addEventListener("fetch", e => {
   /* بقية الملفات: نعرض المحفوظ فوراً ونحدّثه في الخلفية */
   e.respondWith(caches.match(r).then(m => { const net = fetch(r).then(x => { if (x.ok) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }).catch(() => m); return m || net; }));
 });
+
+/* إشعار التحديث وهو مغلق (أندرويد/كروم لتطبيقٍ مثبَّت على الشاشة الرئيسية): فحصٌ دوريّ لنسخة الصفحة */
+const UPD='upd-english10';
+self.addEventListener('periodicsync',e=>{if(e.tag==='check-update')e.waitUntil(checkUpdate())});
+async function checkUpdate(){try{const r=await fetch('./index.html',{cache:'no-store'});const sig=[r.headers.get('etag'),r.headers.get('last-modified'),r.headers.get('content-length')].join('|');
+const c=await caches.open(UPD),old=await c.match('sig'),was=old?await old.text():null;await c.put('sig',new Response(sig));
+if(was&&was!==sig)await self.registration.showNotification('تحديث جديد · اللغة الإنجليزية',{body:'صدرت نسخة جديدة من التطبيق. افتحه لتحصل على آخر التعديلات.',icon:'./icons/icon-192.png',tag:'app-update',dir:'rtl',lang:'ar'})}catch(e){}}
+self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil(self.clients.matchAll({type:'window',includeUncontrolled:true}).then(l=>{for(const c of l){if('focus' in c)return c.focus()}return self.clients.openWindow('./')}))});
