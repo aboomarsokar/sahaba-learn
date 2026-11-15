@@ -553,6 +553,25 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 .sw b{font:800 1.05rem var(--fb);direction:ltr;color:var(--wc)}
 .sw span{font:400 .88rem var(--fb)}
 
+/* --- المفردات: مستطيل مقسوم نصفين --- */
+.vrect{padding:0;overflow:hidden;position:relative;display:flex;flex-direction:column;min-height:280px}
+.vrect .vtop{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;padding:1.2rem 1rem;border-bottom:3px solid var(--wc);background:color-mix(in srgb,var(--wc) 12%,transparent)}
+.vrect .vbot{flex:1;display:flex;align-items:center;justify-content:center;gap:.6rem;padding:1.2rem 1rem}
+.vrect .em{display:grid;place-items:center;height:60px;font-size:2.2rem}
+.vrect .em img{width:56px;height:56px;object-fit:contain}
+.vrect .w{font:800 2.4rem var(--fb);direction:ltr;color:var(--wc)}
+.vrect .m{font:700 1.7rem var(--fh)}
+.vrect.sent{min-height:0}
+.vrect .chipw{font:700 1rem var(--fb);padding:.3rem .9rem;border-radius:999px;border:2px solid var(--wc);direction:ltr}
+.vrect .chipw b{color:var(--wc)}
+.vrect .vsen{display:flex;align-items:center;gap:.5rem;padding:.9rem 1rem;justify-content:space-between}
+.vrect .vsen .x{font:700 1.2rem/1.7 var(--fb);direction:ltr;text-align:left;flex:1}
+.vrect .vsen.ar{border-top:1px dashed var(--cardBd)}
+.vrect .vsen .xa{font:400 1.05rem/1.9 var(--fb);flex:1}
+.vrect mark{background:color-mix(in srgb,var(--wc) 28%,transparent);color:inherit;border-bottom:3px solid var(--wc);border-radius:5px;padding:0 4px}
+.vrect .vstar{position:absolute;top:.5rem;inset-inline-start:.6rem;z-index:2;background:none;border:0;font-size:1.7rem;line-height:1;color:var(--muted);cursor:pointer}
+.vrect .vstar.on{color:var(--gold)}
+.pimg{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:14px;margin-bottom:.6rem;background:var(--panel)}
 /* --- بطاقة الكلمة (جديدة): كلّ شيء على وجهٍ واحد، ولكلّ كلمة لونها --- */
 .vcard{position:relative;display:flex;flex-direction:column;align-items:center;gap:.55rem;padding:1.2rem 1rem 1rem;text-align:center;cursor:pointer;min-height:250px}
 .vcard .em{font-size:2.6rem;line-height:1;display:grid;place-items:center;height:76px}
@@ -1295,6 +1314,10 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   var prog=load(K.prog,{});
   ['lessons'].forEach(function(k){prog[k]=prog[k]||{}});['tests','saved','history','certs','days'].forEach(function(k){prog[k]=prog[k]||[]});prog.xp=prog.xp||0;
   function saveProg(){save(K.prog,prog)}
+  /* ترتيب الأقسام الجديد: 0 مفردات، 1 قواعد، 2 قراءة، 3 (مخفي)، 4 ورقة عمل. التقدّم القديم يُرحَّل مرّة واحدة */
+  if(!prog.v3){Object.keys(prog.lessons).forEach(function(k){var r=prog.lessons[k],o=(r.st||[]).slice();
+      r.st=r.done?[true,true,true,true,true]:[!!o[0],!!(o[2]&&o[3]),!!o[1],!!(o[2]&&o[3]),false];r.cur=0;r.sub=null});
+    if(prog.resume)prog.resume=null;prog.v3=1;saveProg()}
   var dict=load(K.dict,[]);
   var plan=load(K.plan,{unit:7,perDay:1,exam:'',tasks:[]});
 
@@ -1715,7 +1738,9 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     return null;
   }
   renders.sheet=function(id){
+    var fromL=null,pp=id.split('&from=');id=pp[0];fromL=pp[1]||null;
     SH=buildSheet(id);if(!SH){go('home');return}
+    if(fromL&&/^ws-/.test(id)){SH.from=fromL;SH.back='lesson='+fromL}
     $('shTitle').textContent=SH.title;
     var st=$('shStage'),total=0;SH.sections.forEach(function(x){total+=x.questions.length});
     st.innerHTML='<div class="card result"><span class="big">📝</span><p><b>'+esc(SH.title)+'</b></p><p>'+
@@ -1750,8 +1775,14 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     st.innerHTML='<div class="card result"><span class="big">'+p+'%</span><p><b dir="ltr">'+score+' / '+total+'</b></p><p>'+msg+'</p>'+
       (better?'<p>'+T('🎉 هذه أفضل علامة لك!','🎉 Your best score!')+'</p>':'')+'</div>';
     var b=document.createElement('div');b.className='btns';st.appendChild(b);
-    b.appendChild(nextBtn(T('أعِد المحاولة','Try again'),function(){renders.sheet(SH.id)}));
-    b.appendChild(nextBtn(T('عودة','Back'),function(){go(SH.back)}));
+    if(SH.from){
+      var lr=lp(SH.from);
+      if(p>=PASS){if(!lr.st[4]){lr.st[4]=true;lr.cur=5;saveProg();addXP(XP_STATION);confetti(30)}
+        st.querySelector('.result').insertAdjacentHTML('beforeend','<p>'+T('🎓 فُتحت شهادتك!','🎓 Your certificate is unlocked!')+'</p>')}
+      else st.querySelector('.result').insertAdjacentHTML('beforeend','<p>'+T('تحتاج 70% على الأقل لتفتح الشهادة. حاول مرة أخرى 💪','You need at least 70% to unlock the certificate. Try again 💪')+'</p>');
+    }
+    b.appendChild(nextBtn(T('أعِد المحاولة','Try again'),function(){renders.sheet(SH.id+(SH.from?'&from='+SH.from:''))}));
+    b.appendChild(nextBtn(SH.from&&lp(SH.from).st[4]?T('إلى الشهادة','To the certificate'):T('عودة','Back'),function(){go(SH.back)}));
   }
 
   /* ===== الملف الشخصي ===== */
@@ -1986,11 +2017,11 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 
   /* ===== مشغّل الدرس ===== */
   var STATIONS=[
-    {k:'discover',ar:'اكتشف',en:'Discover',ic:'🔍',subAr:'كلمات الدرس',subEn:'Lesson words'},
-    {k:'learn',ar:'تعلّم',en:'Learn',ic:'📖',subAr:'فقرة الدرس',subEn:'Reading'},
-    {k:'practice',ar:'القواعد',en:'Grammar',ic:'✏️',subAr:'تعلّم قواعد الدرس وتدرّب عليها',subEn:'Learn and practise the rules'},
-    {k:'challenge',ar:'تحدَّ نفسك',en:'Challenge',ic:'⚡',subAr:'القاعدة الثانية والثالثة',subEn:'More rules'},
-    {k:'master',ar:'أتقنتُ الدرس',en:'Mastery',ic:'🎯',subAr:'أسئلة من كلّ المستويات',subEn:'Mixed questions'},
+    {k:'vocab',ar:'المفردات',en:'Vocabulary',ic:'🔤',subAr:'كلمات الدرس ومعانيها',subEn:'Words and meanings'},
+    {k:'grammar',ar:'القواعد',en:'Grammar',ic:'✏️',subAr:'تعلّم قواعد الدرس وتدرّب عليها',subEn:'Learn and practise the rules'},
+    {k:'reading',ar:'القراءة',en:'Reading',ic:'📖',subAr:'قطعة الدرس بالصور',subEn:'The lesson story'},
+    {k:'skip',ar:'',en:'',ic:'',subAr:'',subEn:''},
+    {k:'sheet',ar:'ورقة العمل',en:'Worksheet',ic:'📝',subAr:'تُفتح بعد إنجاز الأقسام الثلاثة',subEn:'Unlocks after the three sections'},
     {k:'cert',ar:'الشهادة',en:'Certificate',ic:'🏆',subAr:'شهادة الدرس',subEn:'Lesson certificate'}
   ];
   var L=null,cur=0;
@@ -2033,7 +2064,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
       return '<button class="step'+(done?' done':'')+(i===cur?' cur':'')+(lock?' lock':'')+'" type="button" data-st="'+i+'"'+(lock?' aria-disabled="true"':'')+'>'+
         '<span class="c">'+(done?'✓':s.ic)+'</span>'+T(s.ar,s.en)+'</button>'}).join('');
     $('steps').querySelectorAll('[data-st]').forEach(function(b){b.addEventListener('click',function(){
-      var i=+b.dataset.st;if(!unlocked(i)){toast(T('أكمل المحطة السابقة أولاً','Finish the previous station first'));return}cur=i;renderStation();
+      var i=+b.dataset.st;if(!unlocked(i)){toast(i>=4?T('تُفتح بعد إنجاز المفردات والقواعد والقراءة 🔒','Unlocks after Vocabulary, Grammar and Reading 🔒'):T('أكمل القسم السابق أولاً','Finish the previous section first'));return}cur=i;renderStation();
     })});
   }
   function head(i){var s=STATIONS[i];return '<div class="st-head"><small>'+s.en.toUpperCase()+'</small><b>'+s.ic+' '+T(s.ar,s.en)+'</b><p>'+T(s.subAr,s.subEn)+'</p></div>'}
@@ -2041,7 +2072,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     renderSteps();window.scrollTo(0,0);
     var r=lp(L.id);r.last=STATIONS[cur].ar;r.cur=cur;if(r.sub&&r.sub.s!==cur)r.sub=null;saveProg();
     var st=$('stage');st.innerHTML='';st.style.animation='none';void st.offsetWidth;st.style.animation='';
-    [discover,learn,practice,challenge,master,certificate][cur](st);
+    [discover,practice,learn,challenge,worksheetStation,certificate][cur](st);
   }
   function completeStation(i){
     var r=lp(L.id);r.sub=null;
@@ -2168,8 +2199,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 
   /* 1) اكتشف: بطاقات الكلمات ثم اختبار قصير */
   function discover(st){
-    var v=L.vocab||[],sub0=subFor(0),i=(sub0&&sub0.i>0&&sub0.i<(L.vocab||[]).length)?sub0.i:0,seen={};
-    for(var z0=0;z0<i;z0++)seen[z0]=1;
+    var v=L.vocab||[],sub0=subFor(0),ph=(sub0&&sub0.ph===1)?1:0,i=(sub0&&sub0.i>0&&sub0.i<v.length)?sub0.i:0;
     st.innerHTML=head(0)+'<div id="vArea"></div>';
     var area=st.querySelector('#vArea');
     var WCOL=['#ff7a8a','#f3c969','#4fd69b','#5db8ff','#b98cff','#ff9f5a','#2fd1c0','#f472b6'];
@@ -2186,48 +2216,62 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
       return esc(ex).replace(re,'<mark>$1</mark>');
     }
     function emImg(e){if(!e)return '';var f=Array.from(e).map(function(c){return c.codePointAt(0).toString(16)}).filter(function(x){return x!=='fe0f'}).join('-');
-      return '<img src="images/emoji/'+f+'.svg" alt="" width="72" height="72" onerror="this.replaceWith(document.createTextNode(\''+e+'\'))">'}
+      return '<img src="images/emoji/'+f+'.svg" alt="" width="56" height="56" onerror="this.replaceWith(document.createTextNode(\''+e+'\'))">'}
     function inDictW(w){return dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})}
-    function card(){
-      var w=v[i],col=WCOL[i%WCOL.length],shownTr=false;seen[i]=1;saveSub({s:0,i:i});
-      area.innerHTML='<div class="card vcard" id="fc" style="--wc:'+col+'">'+
-        '<button class="vstar" type="button" id="vStar" aria-label="'+T('المفضّلة','Favourite')+'">☆</button>'+
-        '<span class="em">'+emImg(w.em)+'</span>'+
-        '<span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+
-        '<button class="btn" type="button" id="vTr">'+T('إظهار الترجمة','Show translation')+'</button>'+
-        '<div class="vm" id="vM" hidden><mark>'+esc(w.ar)+'</mark> '+sayBtn(w.ar,'ar')+'</div>'+
-        (w.ex?'<div class="exbox"><span class="et">'+T('مثال','EXAMPLE')+' · EXAMPLE</span><span class="x">'+enHl(w.ex,w.en)+' '+sayBtn(w.ex)+'</span>'+
-          '<span class="xa" id="vXa" hidden>'+(w.exAr?arHl(w.exAr,w.ar)+' '+sayBtn(w.exAr,'ar'):'')+'</span></div>':'')+
-        '</div><div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button>'+
-        '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><button class="icon-btn sm" type="button" id="vNext" aria-label="التالي"><svg><use href="#i-back"/></svg></button></div>';
-      var fc=$('fc');fc.classList.add('flip');
-      function star(){var on=inDictW(w),b=$('vStar');b.textContent=on?'⭐':'☆';b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}
-      star();if(set.speak)speak(w.en);
-      function showTr(){shownTr=true;$('vM').hidden=false;if($('vXa'))$('vXa').hidden=false;$('vTr').hidden=true}
-      $('vTr').addEventListener('click',function(e){e.stopPropagation();showTr();if(set.speak)speak([[w.ar,'ar']])});
-      fc.addEventListener('click',function(e){if(e.target.closest('[data-speak],button'))return;speak(w.en)});   /* الضغط على البطاقة ينطق الكلمة */
-      $('vStar').addEventListener('click',function(e){e.stopPropagation();
+    function bindStar(w){
+      var b=$('vStar');if(!b)return;
+      function star(){var on=inDictW(w);b.textContent=on?'⭐':'☆';b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}
+      star();
+      b.addEventListener('click',function(e){e.stopPropagation();
         if(inDictW(w)){dict=dict.filter(function(d){return d.en.toLowerCase()!==w.en.toLowerCase()});save(K.dict,dict);star();
           notify('🗑️ «'+esc(w.en)+'» '+T('أُزيلت من <b>قاموسي الخاص</b>','removed from <b>My Dictionary</b>'));return}
         dict.unshift({id:Date.now(),en:w.en,ar:w.ar,ex:w.ex||'',unit:L.unit||0,date:new Date().toISOString()});save(K.dict,dict);star();
         notify('⭐ «'+esc(w.en)+'» '+T('أُضيفت إلى <b>قاموسي الخاص</b>','added to <b>My Dictionary</b>')+'<br><small>'+T('لديك '+dict.length+' كلمة محفوظة','You now have '+dict.length+' saved word(s)')+'</small>',T('افتح','Open'),'dict');
         beep(true)});
-      $('vPrev').addEventListener('click',function(){if(i>0){i--;card()}});
-      $('vNext').addEventListener('click',function(){if(i<v.length-1){i++;card()}else quiz()});
-      if(Object.keys(seen).length===v.length&&!area.querySelector('#vQuiz'))area.appendChild(nextBtn(T('اختبر نفسك في الكلمات','Quiz me on the words'),quiz)).id='vQuiz';
+    }
+    function phaseBar(n){return '<div class="rdots">'+[0,1,2].map(function(j){return '<i'+(j<=n?' class="on"':'')+'></i>'}).join('')+'</div>'}
+    /* 1) الكلمة ومعناها: مستطيل مقسوم نصفين */
+    function words(){
+      var w=v[i],col=WCOL[i%WCOL.length],last=i===v.length-1;saveSub({s:0,ph:0,i:i});
+      area.innerHTML=phaseBar(0)+'<div class="card vrect flip" id="fc" style="--wc:'+col+'">'+
+        '<button class="vstar" type="button" id="vStar" aria-label="'+T('المفضّلة','Favourite')+'">☆</button>'+
+        '<div class="vtop"><span class="em">'+emImg(w.em)+'</span><span class="w">'+esc(w.en)+'</span>'+sayBtn(w.en)+'</div>'+
+        '<div class="vbot"><span class="m">'+esc(w.ar)+'</span>'+sayBtn(w.ar,'ar')+'</div></div>'+
+        '<div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button>'+
+        '<bdi dir="ltr">'+(i+1)+' / '+v.length+'</bdi><span style="width:38px"></span></div>';
+      area.appendChild(nextBtn(last?T('انتقل إلى الجمل ◀','Go to the sentences ◀'):T('انتقل إلى الكلمة التالية ◀','Next word ◀'),function(){if(last){i=0;sentences()}else{i++;words()}}));
+      bindStar(w);
+      if(set.speak)speak([[w.en,'en'],[w.ar,'ar']]);
+      $('vPrev').addEventListener('click',function(){if(i>0){i--;words()}});
+    }
+    /* 2) الكلمة في جملة: تُلوَّن الكلمة الإنجليزية ومعناها العربي بلونٍ واحد */
+    var sv=v.filter(function(w){return w.ex});
+    function sentences(){
+      if(!sv.length){quiz();return}
+      var w=sv[i],col=WCOL[v.indexOf(w)%WCOL.length],last=i===sv.length-1;saveSub({s:0,ph:1,i:i});
+      area.innerHTML=phaseBar(1)+'<div class="card vrect sent flip" style="--wc:'+col+'">'+
+        '<div class="vtop"><span class="chipw"><b>'+esc(w.en)+'</b> = '+esc(w.ar)+'</span></div>'+
+        '<div class="vsen"><span class="x">'+enHl(w.ex,w.en)+'</span>'+sayBtn(w.ex)+'</div>'+
+        '<div class="vsen ar"><span class="xa">'+(w.exAr?arHl(w.exAr,w.ar):'')+'</span>'+(w.exAr?sayBtn(w.exAr,'ar'):'')+'</div></div>'+
+        '<div class="navrow"><button class="icon-btn sm" type="button" id="vPrev" aria-label="السابق"><svg style="transform:scaleX(-1)"><use href="#i-back"/></svg></button>'+
+        '<bdi dir="ltr">'+(i+1)+' / '+sv.length+'</bdi><span style="width:38px"></span></div>';
+      area.appendChild(nextBtn(last?T('اختبر نفسك في الكلمات ◀','Quiz me on the words ◀'):T('التالي ◀','Next ◀'),function(){if(last)quiz();else{i++;sentences()}}));
+      if(set.speak)speak([[w.ex,'en'],[w.exAr||'','ar']]);
+      $('vPrev').addEventListener('click',function(){if(i>0){i--;sentences()}else{i=v.length-1;words()}});
     }
     function quiz(){
-      /* ألعاب توصيل: 5 كلمات في كلّ جولة */
+      saveSub({s:0,ph:2,i:0});
       var all=shuffle(v),qs=[];
       for(var k=0;k<all.length;k+=5){var g=all.slice(k,k+5);if(g.length<2&&qs.length){qs[qs.length-1].pairs.push([g[0].en,g[0].ar]);break}
         qs.push({type:'match',q:T('صِل كلّ كلمة بمعناها','Match each word with its meaning'),pairs:g.map(function(w){return [w.en,w.ar]})})}
-      runQs(area,qs,{retry:true},function(sc,tot){
+      area.innerHTML=phaseBar(2);var qb=document.createElement('div');area.appendChild(qb);
+      runQs(qb,qs,{retry:true},function(sc,tot){
         area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('أحسنت! تعرّفت على كلمات الدرس.','Well done! You know the lesson words.')+'</p></div>';
         completeStation(0);
       });
     }
     if(!v.length){area.innerHTML='<div class="card empty">'+T('لا كلمات لهذا الدرس.','No words for this lesson.')+'</div>';area.appendChild(nextBtn(T('متابعة','Continue'),function(){completeStation(0)}));return}
-    card();
+    if(sub0&&sub0.ph===2)quiz();else if(ph===1)sentences();else words();
   }
 
   /* 2) تعلّم: القصّة بخمسة أنماط (قراءة، استمع، أكمل، رتّب، إملاء) ثم أسئلة الفهم */
@@ -2237,7 +2281,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   function bonusXP(mode){var r=lp(L.id);r.modes=r.modes||{};if(r.modes[mode])return false;r.modes[mode]=true;saveProg();addXP(10);return true}
   function learn(st){
     var R=L.reading||{paras:[]},vocab=(L.vocab||[]),shown=0,seenN=1,qIdx=null,lm,box;
-    var sub1=subFor(1);
+    var sub1=subFor(2);
     if(sub1){if((sub1.n||0)>1)seenN=sub1.n;if(sub1.q!=null){qIdx=sub1.q;seenN=R.paras.length}}
     var sents=[];R.paras.forEach(function(p,pi){sentencesOf(p.en).forEach(function(t){sents.push({t:t,pi:pi})})});
 
@@ -2262,7 +2306,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     var gaps=buildGaps(),orderItems=buildOrder(),dictItems=buildDict();
     var MODES=[['read','📖','قراءة','Read'],['listen','🎧','استمع','Listen'],['fill','✍️','أكمل','Fill in'],['order','🔀','رتّب','Order'],['dict','✏️','إملاء','Dictate']];
     var avail={read:true,listen:sents.length>0,fill:gaps.length>=3,order:orderItems.length>=3,dict:dictItems.length>=3};
-    st.innerHTML=head(1)+(R.title?'<div class="story-t">'+esc(R.title)+'</div>':'')+
+    st.innerHTML=head(2)+(R.title?'<div class="story-t">'+esc(R.title)+'</div>':'')+
       '<div class="seg modes" id="lmodes">'+MODES.filter(function(m){return avail[m[0]]}).map(function(m){
         return '<button type="button" data-lm="'+m[0]+'" aria-pressed="'+(m[0]==='read')+'"><span>'+m[1]+'</span>'+T(m[2],m[3])+'</button>'}).join('')+'</div><div id="lmode"></div>';
     lm=st.querySelector('#lmode');
@@ -2277,7 +2321,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
     function para(quiet){
       var p=R.paras[shown],sent=p.en.match(/[^.!?]+[.!?"]*\s*/g)||[p.en];
       var d=document.createElement('div');d.className='card para';
-      d.innerHTML='<div class="en">'+sent.map(function(x){return '<span data-s="'+esc(x.trim())+'">'+markVocab(esc(x))+'</span>'}).join('')+'</div>'+
+      d.innerHTML='<img class="pimg" src="images/reading/'+L.unit+'-'+(shown+1)+'.webp" alt="" loading="lazy" onerror="this.remove()">'+'<div class="en">'+sent.map(function(x){return '<span data-s="'+esc(x.trim())+'">'+markVocab(esc(x))+'</span>'}).join('')+'</div>'+
         '<div class="ar" hidden>'+esc(p.ar||'')+'</div>'+
         '<div class="tools"><button class="btn" type="button" data-tr>'+T('الترجمة','Translation')+'</button>'+
         '<button class="btn" type="button" data-read="'+esc(p.en)+'"><svg><use href="#i-speak"/></svg>'+T('اقرأ لي','Read to me')+'</button>'+
@@ -2292,21 +2336,21 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
       })});
       var old=lm.querySelector('#pNext');if(old)old.remove();
       var b=nextBtn(shown<R.paras.length?T('أكمل القصّة','Continue the story'):T('أسئلة الفهم','Comprehension questions'),function(){if(shown<R.paras.length)para();else questions()});
-      b.id='pNext';box.after(b);if(!quiet){saveSub({s:1,n:shown});d.scrollIntoView({behavior:'smooth',block:'start'})}
+      b.id='pNext';box.after(b);if(!quiet){saveSub({s:2,n:shown});d.scrollIntoView({behavior:'smooth',block:'start'})}
     }
     function questions(qstart){
       var b=lm.querySelector('#pNext');if(b)b.remove();
-      var q=R.questions||[];if(!q.length){completeStation(1);return}
-      runQs(lm.querySelector('#rq'),q,{retry:true,start:qstart||0,onQ:function(k){qIdx=k;saveSub({s:1,n:shown,q:k})}},function(sc,tot){
+      var q=R.questions||[];if(!q.length){completeStation(2);return}
+      runQs(lm.querySelector('#rq'),q,{retry:true,start:qstart||0,onQ:function(k){qIdx=k;saveSub({s:2,n:shown,q:k})}},function(sc,tot){
         lm.querySelector('#rq').innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('فهمت القصّة! انتقل إلى القاعدة.','You understood the story! On to the grammar.')+'</p></div>';
-        completeStation(1);
+        completeStation(2);
       });
     }
     function readMode(root){
       root.innerHTML='<div class="list" id="paras"></div><div id="rq"></div>';box=root.querySelector('#paras');shown=0;
-      if(!R.paras.length){completeStation(1);return}
+      if(!R.paras.length){completeStation(2);return}
       for(var z=0;z<Math.max(1,Math.min(seenN,R.paras.length));z++)para(true);
-      if(qIdx!=null)questions(qIdx);else saveSub({s:1,n:shown});
+      if(qIdx!=null)questions(qIdx);else saveSub({s:2,n:shown});
     }
 
     /* ===== 2) استمع: قراءة مسموعة بتظليل الجملة الجارية ===== */
@@ -2530,31 +2574,40 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   }
   function practice(st){
     var rules=L.rules||[],r=lp(L.id);r.gd=r.gd||{};
-    if(!rules.length){completeStation(2);return}
-    st.innerHTML=head(2)+'<div id="ra" class="stage"></div>';var area=st.querySelector('#ra');
+    if(!rules.length){completeStation(1);return}
+    st.innerHTML=head(1)+'<div id="ra" class="stage"></div>';var area=st.querySelector('#ra');
     function allDone(){return rules.every(function(_,k){return r.gd[k]})}
     function list(){
       r.sub=null;saveProg();window.scrollTo(0,0);
       area.innerHTML='<p class="sw-label" style="text-align:center">'+T('اختر قاعدة لتتعلّمها ثم تتدرّب عليها','Pick a rule to learn, then practise it')+'</p><div class="gtabs">'+
         rules.map(function(x,k){return '<button type="button" class="gtab'+(r.gd[k]?' done':'')+'" data-g="'+k+'"><span class="gn">'+(r.gd[k]?'✓':(k+1))+'</span><span class="gt"><b>'+esc(x.title)+'</b><small>'+esc(x.titleAr||'')+'</small></span><svg><use href="#i-back"/></svg></button>'}).join('')+'</div>';
       area.querySelectorAll('[data-g]').forEach(function(b){b.addEventListener('click',function(){openRule(+b.dataset.g,0)})});
-      if(allDone())area.appendChild(nextBtn(T('أكملتُ القواعد','I finished the rules'),function(){completeStation(2)}));
+      if(allDone())area.appendChild(nextBtn(T('أكملتُ القواعد','I finished the rules'),function(){completeStation(1)}));
     }
     function qsOf(k,qstart){
       var x=rules[k];
-      runQs(area,x.questions||[],{retry:true,start:qstart||0,onQ:function(i){saveSub({s:2,k:k,q:i})}},function(sc,tot){
+      runQs(area,x.questions||[],{retry:true,start:qstart||0,onQ:function(i){saveSub({s:1,k:k,q:i})}},function(sc,tot){
         r.gd[k]=true;r.sub=null;saveProg();
         area.innerHTML='<div class="card result"><span class="big">'+sc+' / '+tot+'</span><p>'+T('من المحاولة الأولى','on the first try')+'</p></div>';
-        area.appendChild(nextBtn(allDone()?T('متابعة','Continue'):T('العودة إلى القواعد','Back to the rules'),function(){if(allDone())completeStation(2);else list()}));
+        area.appendChild(nextBtn(allDone()?T('متابعة','Continue'):T('العودة إلى القواعد','Back to the rules'),function(){if(allDone())completeStation(1);else list()}));
       });
     }
     function openRule(k,start){
       var x=rules[k];
-      showRuleCards(area,x,ruleCardsFor(x,k),k,rules.length,function(){qsOf(k,0)},start,function(c){saveSub({s:2,k:k,c:c})},list);
+      showRuleCards(area,x,ruleCardsFor(x,k),k,rules.length,function(){qsOf(k,0)},start,function(c){saveSub({s:1,k:k,c:c})},list);
     }
-    var sub=subFor(2);
+    var sub=subFor(1);
     if(sub&&sub.k!=null&&sub.k<rules.length){if(sub.q!=null)qsOf(sub.k,sub.q);else openRule(sub.k,sub.c||0)}
     else list();
+  }
+  /* 4) ورقة العمل: تُفتح بعد المفردات والقواعد والقراءة، والنجاح فيها (70%) يفتح الشهادة */
+  function worksheetStation(st){
+    var n=L.unit,w=PR.worksheets[n];
+    st.innerHTML=head(4)+'<div class="card result"><span class="big">📝</span><p><b>'+T('ورقة عمل الوحدة '+n,'Unit '+n+' Worksheet')+'</b></p>'+
+      '<p>'+T('أسئلة على المفردات والقواعد والقراءة. تحتاج 70% لتنال شهادتك 🏆','Vocabulary, grammar and reading questions. You need 70% to earn your certificate 🏆')+'</p>'+
+      (prog.best['ws-'+n]!=null?'<p>'+T('أفضل علامة لك: ','Your best: ')+prog.best['ws-'+n]+'%</p>':'')+'</div>';
+    if(!w){completeStation(4);return}
+    st.appendChild(nextBtn(T('ابدأ ورقة العمل','Start the worksheet'),function(){go('sheet=ws-'+n+'&from='+L.id)}));
   }
   function hasChallenge(){return false}
   function challenge(){var r=lp(L.id);r.st[3]=true;r.cur=4;cur=4;saveProg();renderStation()}   /* لم تعد محطة التحدّي جزءاً من الدرس */
