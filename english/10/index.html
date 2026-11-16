@@ -1405,6 +1405,11 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
   function rnd(a){return a[Math.floor(Math.random()*a.length)]}
 
   var profile=load(K.profile,null);
+  /* من بوابة الصحابة: الاسم مأخوذ من البوابة فلا تظهر شاشتا البداية والاسم، ونفتح الواجهة الرئيسية مباشرة */
+  (function(){try{var su=JSON.parse(localStorage.getItem('sahaba-user')||'null');
+    if(su&&su.first){var nm=[su.first,su.father,su.family].join(' ').replace(/\s+/g,' ').trim();
+      if(!profile){profile={name:nm,avatar:1,section:''};save(K.profile,profile)}else if(!profile.name){profile.name=nm;save(K.profile,profile)}}
+    if(/[?&]from=portal/.test(location.search)&&profile&&!location.hash){history.replaceState(null,'','#home')}}catch(e){}})();
   var set=load(K.set,{});
   if(set.speak==null)set.speak=true;if(set.rec==null)set.rec=true;if(set.fx==null)set.fx=true;if(set.nUpd==null)set.nUpd=true;if(set.nPlan==null)set.nPlan=true;
   /* التقدّم: يملؤه محتوى الدروس والاختبارات حين يُضاف */
@@ -2844,5 +2849,6 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 </script>
 
 <script src="../../shared/update-notify.js" data-app="اللغة الإنجليزية" defer></script>
+<script src="../../shared/portal-nav.js" data-app="english" data-bottom="84px" defer></script>
 </body>
 </html>

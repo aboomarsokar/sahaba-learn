@@ -12,13 +12,15 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE / 'نشر'
 src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encoding='utf-8')
 upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
-ver = hashlib.sha256((src + upd).encode()).hexdigest()[:10]
+nav = (HERE.parent.parent / 'shared' / 'portal-nav.js').read_text(encoding='utf-8')   # زر البوابة وجولة كينيكس المشتركان
+ver = hashlib.sha256((src + upd + nav).encode()).hexdigest()[:10]
 
 head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f8a9e">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
         '<meta name="apple-mobile-web-app-capable" content="yes">')
 reg = ("<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))</script>")
 reg += '<script data-app="الرياضيات" data-icon="icon-192.png">' + upd.replace('</script', '<\\/script') + '</script>'
+reg += '<script data-app="math">' + nav.replace('</script', '<\\/script') + '</script>'
 UPD_SW = '''
 /* إشعار التحديث وهو مغلق (أندرويد/كروم لتطبيقٍ مثبَّت على الشاشة الرئيسية): فحصٌ دوريّ لنسخة الصفحة */
 const UPD='upd-math10';

@@ -216,7 +216,8 @@
       "grades": {
         "10": {
           "dir": "english/10",
-          "note": "LEXORA"
+          "note": "LEXORA",
+          "query": "?from=portal"
         }
       }
     },
