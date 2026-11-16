@@ -416,7 +416,7 @@ function drawBanners(){
 function drawSubjects(){
   var g = gradeById(current);
   $("subjectsLabel").textContent = g ? g.name : "المواد";
-  var list = data.subjects.filter(function(s){ return !g || !g.subjects || g.subjects.indexOf(s.id) >= 0; });
+  var list = (g && g.subjects) ? g.subjects.map(function(id){ return data.subjects.filter(function(s){ return s.id === id; })[0]; }).filter(Boolean) : data.subjects;
   $("subjects").innerHTML = list.map(function(s){
     var e = s.grades && s.grades[current];
     var icon = ICONS[s.icon] || ICONS.book;

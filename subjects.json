@@ -10,7 +10,8 @@
       "subjects": [
         "english",
         "arabic",
-        "math"
+        "math",
+        "islamic"
       ]
     },
     {
@@ -21,50 +22,93 @@
       "subjects": [
         "english",
         "arabic",
-        "math"
+        "math",
+        "islamic"
       ]
     },
     {
       "id": "3",
       "name": "الصف الثالث الابتدائي",
       "stage": "p",
-      "img": "shared/grades/g3.webp"
+      "img": "shared/grades/g3.webp",
+      "subjects": [
+        "science",
+        "arabic",
+        "math",
+        "english"
+      ]
     },
     {
       "id": "4",
       "name": "الصف الرابع الابتدائي",
       "stage": "p",
-      "img": "shared/grades/g4.webp"
+      "img": "shared/grades/g4.webp",
+      "subjects": [
+        "science",
+        "arabic",
+        "math",
+        "english"
+      ]
     },
     {
       "id": "5",
       "name": "الصف الخامس الابتدائي",
       "stage": "p",
-      "img": "shared/grades/g5.webp"
+      "img": "shared/grades/g5.webp",
+      "subjects": [
+        "science",
+        "arabic",
+        "math",
+        "english"
+      ]
     },
     {
       "id": "6",
       "name": "الصف السادس الابتدائي",
       "stage": "p",
-      "img": "shared/grades/g6.webp"
+      "img": "shared/grades/g6.webp",
+      "subjects": [
+        "science",
+        "arabic",
+        "math",
+        "english"
+      ]
     },
     {
       "id": "7",
       "name": "الصف الأول الإعدادي",
       "stage": "m",
-      "img": "shared/grades/g7.webp"
+      "img": "shared/grades/g7.webp",
+      "subjects": [
+        "science",
+        "arabic",
+        "math",
+        "english"
+      ]
     },
     {
       "id": "8",
       "name": "الصف الثاني الإعدادي",
       "stage": "m",
-      "img": "shared/grades/g8.webp"
+      "img": "shared/grades/g8.webp",
+      "subjects": [
+        "science",
+        "arabic",
+        "math",
+        "english"
+      ]
     },
     {
       "id": "9",
       "name": "الصف الثالث الإعدادي",
       "stage": "m",
-      "img": "shared/grades/g9.webp"
+      "img": "shared/grades/g9.webp",
+      "subjects": [
+        "science",
+        "arabic",
+        "math",
+        "english"
+      ]
     },
     {
       "id": "10",
@@ -103,7 +147,8 @@
           "dir": "science/10",
           "note": "فيزياء · كيمياء · أحياء — دروس تفاعلية ومختبر"
         }
-      }
+      },
+      "banner": "shared/subjects/science.webp"
     },
     {
       "id": "english",
@@ -131,7 +176,8 @@
       "name": "التربية الإسلامية",
       "color": "#2f8f6b",
       "icon": "book",
-      "grades": {}
+      "grades": {},
+      "banner": "shared/subjects/islamic.webp"
     }
   ],
   "version": "1.0.0",
