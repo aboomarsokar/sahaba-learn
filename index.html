@@ -3,119 +3,417 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>مدارس الصحابة — المنصّة التعليمية</title>
-<meta name="description" content="دروس تفاعلية وأنشطة واختبارات لطلاب مدارس الصحابة من الصف الأول إلى العاشر.">
-<meta name="theme-color" content="#0f5c4a">
+<title>بوابة الصحابة التعليمية</title>
+<meta name="description" content="بوابة الصحابة التعليمية: بوابتك نحو العلم والمعرفة والتميّز. دروس تفاعلية وأنشطة واختبارات تعمل على الجوال والحاسوب وتبقى متاحةً بلا إنترنت.">
+<meta name="theme-color" content="#123C46">
 <style>
 @font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"Ruqaa";src:url("shared/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
+/* لون الخلفية #123C46 في الوضعين الفاتح والداكن، بلا رموز ولا زخارف على الخلفية */
 :root{
-  --bg:#f6f3ec;--surface:#fffdf8;--ink:#1d2622;--muted:#66706b;--line:#e4ddcf;
-  --brand:#0f5c4a;--brand-soft:#e3efe9;--gold:#b8892b;--soon:#9aa09c;
-  --shadow:0 1px 2px rgba(29,38,34,.06),0 6px 20px rgba(29,38,34,.06);
+  color-scheme:dark;
+  --bg:#123C46;--surface:rgba(255,255,255,.07);--surface2:rgba(255,255,255,.12);--line:rgba(255,255,255,.16);
+  --ink:#f6f3ea;--muted:#aebfc3;--gold:#E6C168;--gold2:#f3d98f;--onGold:#123C46;--soon:#8ea3a8;--deep:#0d2f38;
+  --shadow:0 10px 30px rgba(0,0,0,.28);
 }
-@media (prefers-color-scheme:dark){:root{
-  --bg:#121715;--surface:#1a211e;--ink:#eef1ec;--muted:#9ba49f;--line:#2b3430;
-  --brand:#5cc3a3;--brand-soft:#1d2f28;--gold:#d9b25c;--soon:#6d7571;
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.25);
-}}
+:root[data-fs="s"]{font-size:14px}:root[data-fs="m"]{font-size:16px}:root[data-fs="l"]{font-size:18.5px}
 *{box-sizing:border-box}
-html,body{margin:0}
-body{background:var(--bg);color:var(--ink);font-family:"Plex Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+html,body{margin:0;min-height:100%;background:var(--bg)}
+body{color:var(--ink);font-family:"Plex Arabic",system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.scr{min-height:100dvh}
 .wrap{max-width:960px;margin:0 auto;padding:0 16px}
-header{padding:36px 0 20px}
-.brand{display:flex;align-items:center;gap:14px}
-.mark{width:52px;height:52px;flex:none;border-radius:14px;background:var(--brand);display:grid;place-items:center;box-shadow:var(--shadow)}
-.mark svg{width:30px;height:30px}
-h1{margin:0;font-size:clamp(1.5rem,4vw,2rem);font-weight:700;letter-spacing:0}
-.sub{margin:0;color:var(--muted);font-size:1rem}
-.lead{margin:22px 0 0;color:var(--muted);max-width:36em}
-h2{font-size:1.05rem;margin:28px 0 12px;font-weight:700}
-.grades{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
-@media (min-width:720px){.grades{flex-wrap:wrap;overflow:visible}}
-.grade{flex:none;font:inherit;font-size:.95rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:999px;cursor:pointer;position:relative;transition:background .15s,border-color .15s}
-.grade:hover{border-color:var(--brand)}
-.grade[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff}
-@media (prefers-color-scheme:dark){.grade[aria-pressed="true"]{color:#0d1513}}
-.grade .dot{position:absolute;top:6px;left:8px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+/* ===== شاشة البداية ===== */
+#scr-splash{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 22px calc(28px + env(safe-area-inset-bottom,0px))}
+.basmala{display:flex;align-items:center;gap:14px;width:min(100%,430px);margin-bottom:22px}
+.basmala i{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--gold));border-radius:2px}
+.basmala i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
+.basmala b{font:700 clamp(1.7rem,7.2vw,2.3rem)/1.5 "Ruqaa","Plex Arabic",serif;color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.25),0 0 22px rgba(230,193,104,.35);white-space:nowrap}
+.logo-frame{position:relative;width:min(62vw,250px);aspect-ratio:1;border-radius:50%;padding:9px;background:linear-gradient(145deg,#f3d98f,#c9962f 45%,#f3d98f);box-shadow:0 0 0 3px rgba(230,193,104,.35),0 18px 44px rgba(0,0,0,.4),0 0 60px rgba(230,193,104,.22)}
+.logo-frame::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(230,193,104,.55)}
+.logo-frame img{width:100%;height:100%;display:block;border-radius:50%;background:#fff;border:5px solid #123C46}
+#scr-splash h1{margin:30px 0 6px;font-size:clamp(1.7rem,7.4vw,2.3rem);font-weight:700;color:#fff}
+.tag{margin:0;color:var(--gold);font-size:clamp(1rem,4.2vw,1.15rem)}
+.go-btn{margin-top:40px;width:min(100%,320px);padding:15px 20px;border-radius:18px;border:2px solid rgba(255,255,255,.35);background:linear-gradient(180deg,#f0cf7e,var(--gold));color:var(--onGold);font-weight:700;font-size:1.35rem;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.go-btn:active{transform:scale(.98)}
+.loading{margin-top:30px;width:min(100%,320px);display:flex;flex-direction:column;align-items:center;gap:8px}
+.loading .bar{width:100%;height:5px;border-radius:9px;background:rgba(255,255,255,.14);overflow:hidden}
+.loading .bar i{display:block;height:100%;width:0;background:var(--gold);border-radius:9px;transition:width .35s}
+.loading small{color:var(--muted);font-size:.82rem}
+
+/* ===== الشاشات الداخلية ===== */
+.topbar{display:flex;align-items:center;gap:12px;padding:16px 0 8px}
+.topbar h2{margin:0;font-size:1.2rem;flex:1}
+.ib{width:46px;height:46px;border-radius:14px;border:1px solid var(--line);background:var(--surface);display:grid;place-items:center;cursor:pointer;position:relative;flex:none}
+.ib svg{width:24px;height:24px}
+.ib .dot{position:absolute;top:8px;left:9px;width:10px;height:10px;border-radius:50%;background:#ff5a5f;border:2px solid var(--bg)}
+.me{display:flex;align-items:center;gap:10px;flex:1;min-width:0;background:none;border:0;padding:0;cursor:pointer;text-align:start}
+.me .av{width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--onGold);display:grid;place-items:center;font-weight:700;font-size:1.2rem;overflow:hidden;flex:none;border:2px solid rgba(255,255,255,.4)}
+.me .av img{width:100%;height:100%;object-fit:cover}
+.me b{display:block;font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.me small{color:var(--muted);font-size:.82rem}
+h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
+
+/* مراحل الصفوف: ثلاث خانات */
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 16px}
+.tab{padding:12px 6px;border-radius:14px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:1rem;text-align:center}
+.tab[aria-pressed="true"]{background:linear-gradient(180deg,#f0cf7e,var(--gold));color:var(--onGold);border-color:transparent;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.banners{display:flex;flex-direction:column;gap:14px;margin-bottom:34px}
+.gb{position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;border-radius:18px;box-shadow:var(--shadow);transition:transform .15s}
+.gb:active{transform:scale(.985)}
+.gb img{width:100%;height:auto;display:block;border-radius:18px}
+.gb .rd{position:absolute;top:10px;left:12px;background:var(--gold);color:var(--onGold);font-weight:700;font-size:.78rem;padding:2px 11px;border-radius:999px}
+.gb:focus-visible,.tab:focus-visible,.ib:focus-visible,.mi:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+
+/* المواد */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:40px}
-.card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:inherit;box-shadow:var(--shadow);min-height:168px;position:relative;transition:transform .15s,border-color .15s}
+.card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:inherit;box-shadow:var(--shadow);position:relative;transition:transform .15s,border-color .15s}
 a.card:hover{transform:translateY(-2px);border-color:var(--c)}
-a.card:focus-visible,.grade:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
+a.card:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.card .ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c)}
 .card .ic svg{width:26px;height:26px}
 .card h3{margin:0;font-size:1.15rem}
 .card p{margin:0;color:var(--muted);font-size:.92rem}
 .card .go{margin-top:auto;font-weight:700;color:var(--c);font-size:.95rem}
 .card.soon{box-shadow:none;background:transparent;border-style:dashed;--c:var(--soon)}
 .card.soon h3{color:var(--muted)}
-.badge{position:absolute;top:16px;left:16px;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--brand-soft);color:var(--brand)}
+.badge{position:absolute;top:16px;left:16px;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(230,193,104,.18);color:var(--gold)}
 .card.soon .badge{background:transparent;border:1px solid var(--line);color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:.85rem}
-.err{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.err,.empty{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;color:var(--muted)}
+
+/* ===== القائمة الجانبية ☰ ===== */
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.2s;z-index:50}
+.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;bottom:0;right:0;width:min(88vw,380px);background:#0e323b;border-left:1px solid var(--line);z-index:51;transform:translateX(105%);transition:transform .25s;padding:16px 14px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);overflow-y:auto}
+.drawer.on{transform:none}
+.drawer .head{display:flex;align-items:center;justify-content:space-between;padding:4px 4px 12px;border-bottom:1px solid var(--line);margin-bottom:6px}
+.drawer .head b{font-size:1.15rem}
+.mi{display:flex;align-items:center;gap:14px;padding:10px 8px;border-radius:16px;background:none;border:0;cursor:pointer;width:100%;text-align:start}
+.mi:active,.mi:hover{background:var(--surface)}
+.mi .bx{width:48px;height:48px;border-radius:13px;background:var(--bg);border:1px solid var(--line);display:grid;place-items:center;flex:none}
+.mi .bx svg{width:24px;height:24px;color:var(--gold)}
+.mi .tx{flex:1;min-width:0}
+.mi .tx b{display:block;font-size:1.08rem}
+.mi .tx small{display:block;color:var(--muted);font-size:.82rem}
+.mi .ch{width:20px;height:20px;color:var(--muted);flex:none;transform:scaleX(-1)}
+.mi .n{background:#ff5a5f;color:#fff;border-radius:999px;font-size:.72rem;padding:0 8px;font-weight:700;flex:none}
+.mi.out{margin-top:8px;border-top:1px solid var(--line);border-radius:0;padding-top:16px;color:#ff9a9a;font-weight:700}
+.mi.out svg{width:22px;height:22px}
+
+/* ===== النماذج والصفحات ===== */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:var(--shadow)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.field span{font-size:.92rem;color:var(--muted)}
+.field input[type=text]{font:inherit;color:var(--ink);background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:13px 14px;width:100%}
+.field input[type=text]:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.photo{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.photo .pv{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.1);border:2px dashed var(--line);display:grid;place-items:center;overflow:hidden;color:var(--muted);flex:none;font-size:.78rem;text-align:center}
+.photo .pv img{width:100%;height:100%;object-fit:cover}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:14px;border:1px solid var(--line);background:var(--surface2);cursor:pointer;font-weight:700}
+.btn.gold{background:linear-gradient(180deg,#f0cf7e,var(--gold));color:var(--onGold);border-color:transparent}
+.ntf{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);margin-bottom:10px}
+.ntf .ni{font-size:1.5rem;line-height:1}
+.ntf b{display:block}
+.ntf small{color:var(--muted)}
+.ach{margin-bottom:14px}
+.ach .hd{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.ach .hd .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c)}
+.ach .hd .ic svg{width:24px;height:24px}
+.ach .hd b{font-size:1.1rem;flex:1}
+.pbar{height:8px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden;margin-bottom:8px}
+.pbar i{display:block;height:100%;background:var(--c,var(--gold));border-radius:9px}
+.sub-h{font-size:.9rem;color:var(--muted);margin:10px 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);font-size:.88rem}
+.chip.cert{border-color:rgba(230,193,104,.6)}
+.sum{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
+.sum .panel{text-align:center;padding:14px}
+.sum b{display:block;font-size:1.7rem;color:var(--gold)}
+.ct{display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:inherit;margin-bottom:10px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg button{padding:11px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700}
+.seg button[aria-pressed="true"]{background:var(--gold);color:var(--onGold);border-color:transparent}
+.about{text-align:center}
+.about img{width:110px;height:110px;border-radius:50%;background:#fff;padding:4px;box-shadow:0 0 0 3px rgba(230,193,104,.6)}
+.about h3{margin:14px 0 4px;font-size:1.3rem}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;text-align:start;margin-top:16px;font-size:.95rem}
+.kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:700}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand">
-      <div class="mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7c4-1.5 8-1.5 12 1 4-2.5 8-2.5 12-1v18c-4-1.5-8-1.5-12 1-4-2.5-8-2.5-12-1z"/><path d="M16 8v18"/></svg>
+
+<!-- ===== شاشة البداية ===== -->
+<section class="scr" id="scr-splash">
+  <div class="basmala" aria-label="بسم الله الرحمن الرحيم"><i></i><b>بسم الله الرحمن الرحيم</b><i></i></div>
+  <div class="logo-frame"><img src="shared/logo.webp" alt="شعار مدرسة التابعين الشرعية لتحفيظ القرآن الكريم" width="420" height="420"></div>
+  <h1>بوابة الصحابة التعليمية</h1>
+  <p class="tag">بوابتك نحو العلم والمعرفة والتميّز</p>
+  <button class="go-btn" type="button" id="goBtn">ابدأ الآن</button>
+  <div class="loading" aria-live="polite"><div class="bar"><i id="ldBar"></i></div><small id="ldTxt">0% جاري التحميل…</small></div>
+</section>
+
+<!-- ===== ما اسمك؟ ===== -->
+<section class="scr" id="scr-name" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" id="nameBack" hidden aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2 id="nameTitle">ما اسمك؟</h2></div>
+    <form class="panel" id="nameForm" autocomplete="off">
+      <label class="field"><span>الاسم الأول</span><input type="text" id="fFirst" maxlength="30" required></label>
+      <label class="field"><span>اسم الوالد</span><input type="text" id="fFather" maxlength="30" required></label>
+      <label class="field"><span>اسم العائلة</span><input type="text" id="fFamily" maxlength="30" required></label>
+      <div class="photo">
+        <div class="pv" id="pPrev">صورتك<br>(اختيارية)</div>
+        <div><label class="btn" for="fPhoto">اختر صورة</label><input type="file" id="fPhoto" accept="image/*" hidden>
+          <button class="btn" type="button" id="pClear" hidden style="margin-inline-start:6px">إزالة</button></div>
       </div>
-      <div>
-        <h1 id="title">مدارس الصحابة</h1>
-        <p class="sub" id="subtitle">المنصّة التعليمية</p>
-      </div>
+      <button class="btn gold" type="submit" style="width:100%;font-size:1.1rem">متابعة</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===== اختيار الصف ===== -->
+<section class="scr" id="scr-grades" hidden>
+  <div class="wrap">
+    <div class="topbar">
+      <button class="ib" type="button" id="menuBtn" aria-label="القائمة"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><i class="dot" id="menuDot" hidden></i></button>
+      <button class="me" type="button" id="meBtn" aria-label="الملف الشخصي"><span class="av" id="meAv"></span><span style="min-width:0"><b id="meName"></b><small>بوابة الصحابة التعليمية</small></span></button>
     </div>
-    <p class="lead">دروسٌ تفاعلية وأنشطة واختبارات تعمل على الجوال والحاسوب، وتبقى متاحةً بلا إنترنت بعد أوّل فتح.</p>
-  </header>
+    <h2 class="sec">اختر صفّك الدراسي</h2>
+    <div class="tabs" id="tabs" role="group" aria-label="المرحلة"></div>
+    <div class="banners" id="banners"></div>
+    <footer>© مدارس الصحابة — المواد المعلَّمة «قريباً» قيد الإعداد.</footer>
+  </div>
+</section>
 
-  <main>
-    <h2 id="gradeLabel">اختر صفّك</h2>
-    <div class="grades" id="grades" role="group" aria-labelledby="gradeLabel"></div>
-    <h2 id="subjectsLabel">المواد</h2>
+<!-- ===== مواد الصف ===== -->
+<section class="scr" id="scr-subjects" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2 id="subjectsLabel">المواد</h2></div>
     <div class="grid" id="subjects" aria-live="polite"></div>
-  </main>
+  </div>
+</section>
 
-  <footer>© مدارس الصحابة — المواد المعلَّمة «قريباً» قيد الإعداد.</footer>
-</div>
+<!-- ===== إنجازاتي وتقدمي ===== -->
+<section class="scr" id="scr-progress" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2>إنجازاتي وتقدمي</h2></div>
+    <div id="progBody"></div>
+  </div>
+</section>
+
+<!-- ===== شهاداتي ===== -->
+<section class="scr" id="scr-certs" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2>شهاداتي</h2></div>
+    <div id="certBody"></div>
+  </div>
+</section>
+
+<!-- ===== الإشعارات ===== -->
+<section class="scr" id="scr-notifs" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2>الإشعارات</h2></div>
+    <div id="notifBody"></div>
+  </div>
+</section>
+
+<!-- ===== المساعدة والدعم ===== -->
+<section class="scr" id="scr-contact" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2>المساعدة والدعم</h2></div>
+    <div id="contactBody"></div>
+  </div>
+</section>
+
+<!-- ===== عن المنصة ===== -->
+<section class="scr" id="scr-about" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2>عن المنصة</h2></div>
+    <div class="panel about"><img src="shared/logo.webp" alt="" width="110" height="110"><h3>بوابة الصحابة التعليمية</h3><p style="color:var(--gold);margin:0">بوابتك نحو العلم والمعرفة والتميّز</p>
+      <dl class="kv"><dt>المدرسة</dt><dd>مدرسة التابعين الشرعية لتحفيظ القرآن الكريم — غزة</dd><dt>رقم الإصدار</dt><dd id="aboutVer" dir="ltr" style="text-align:start"></dd></dl></div>
+  </div>
+</section>
+
+<!-- ===== الإعدادات ===== -->
+<section class="scr" id="scr-settings" hidden>
+  <div class="wrap">
+    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2>الإعدادات</h2></div>
+    <div class="panel" style="margin-bottom:14px"><b>حجم الخط</b>
+      <div class="seg" style="margin-top:10px"><button type="button" data-fs="s">صغير</button><button type="button" data-fs="m">متوسط</button><button type="button" data-fs="l">كبير</button></div></div>
+    <div class="panel"><b>اللغة</b><p style="margin:6px 0 0;color:var(--muted)">العربية</p></div>
+  </div>
+</section>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="القائمة">
+  <div class="head"><b>بوابة الصحابة التعليمية</b><button class="ib" type="button" id="closeMenu" aria-label="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div id="menuList"></div>
+</aside>
 
 <script>
 var ICONS = {
   math: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 6h6M8 3v6M14 6h5M5 16l5 5M10 16l-5 5M14 16h5M14 20h5"/></svg>',
-  science: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.5L14 9V3"/><path d="M7.5 15h9"/></svg>',
-  english: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19 8.5 6h1L14 19M5.7 14.5h6.6"/><path d="M16 10h4M18 8v9a2 2 0 0 0 2 2"/></svg>',
-  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C7 4.5 9.5 4.5 12 6c2.5-1.5 5-1.5 8-.5v13c-3-1-5.5-1-8 .5-2.5-1.5-5-1.5-8-.5z"/><path d="M12 6v13"/></svg>'
+  science: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7.5 15h9"/></svg>',
+  english: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19 8.5 6h1L14 19M5.7 14h6.6M16 10h4M18 8v2c0 3-1.5 5-4 6M15 13c1 1.5 2.5 2.5 5 3"/></svg>',
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C7 4.5 9.5 4.5 12 6c2.5-1.5 5-1.5 8-.5V19c-3-1-5.5-1-8 .5-2.5-1.5-5-1.5-8-.5z"/><path d="M12 6v13.5"/></svg>'
 };
-var KEY = "sahaba-learn-grade";
-var data, current;
-
+var MI = {
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
+  book: '<path d="M4 5.5C7 4.5 9.5 4.5 12 6c2.5-1.5 5-1.5 8-.5V19c-3-1-5.5-1-8 .5-2.5-1.5-5-1.5-8-.5z"/><path d="M12 6v13.5"/>',
+  chart: '<path d="M5 20V10M12 20V4M19 20v-7"/>',
+  medal: '<circle cx="12" cy="15" r="6"/><path d="M8.5 10.2L6 2h4l2 5 2-5h4l-2.5 8.2"/>',
+  bell: '<path d="M6 17V11a6 6 0 0 1 12 0v6l1.5 2h-15z"/><path d="M10 21a2 2 0 0 0 4 0"/>',
+  help: '<circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/>',
+  info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
+  gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  out: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>'
+};
+function mic(n){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+MI[n]+'</svg>'; }
+var MENU = [
+  ["profile","الملف الشخصي","الاسم والصورة والصف الدراسي","user"],
+  ["subjects","موادي التعليمية","الوصول إلى التطبيقات والمواد","book"],
+  ["progress","إنجازاتي وتقدمي","نسب الإنجاز والوحدات المكتملة","chart"],
+  ["certs","شهاداتي","الشهادات التعليمية والإنجازات","medal"],
+  ["notifs","الإشعارات","التنبيهات والتحديثات","bell"],
+  ["contact","المساعدة والدعم","الاستفسارات والملاحظات","help"],
+  ["about","عن المنصة","التعريف بالبوابة وإصدارها","info"],
+  ["settings","الإعدادات","اللغة والمظهر وإعدادات التطبيق","gear"]
+];
+var K = { grade: "sahaba-learn-grade", stage: "sahaba-portal-stage", profile: "sahaba-portal-profile", seen: "sahaba-portal-seen", fs: "sahaba-portal-fs" };
+var data, current, stage, profile, editing = false;
+function $(id){ return document.getElementById(id); }
 function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
 function hasReady(g){ return data.subjects.some(function(s){ return s.grades && s.grades[g]; }); }
-function remember(g){ try{ localStorage.setItem(KEY, g); }catch(e){} }
-function recall(){ try{ return localStorage.getItem(KEY); }catch(e){ return null; } }
+function gradeById(id){ return data.grades.filter(function(g){ return g.id === id; })[0]; }
 
-function drawGrades(){
-  var box = document.getElementById("grades");
-  box.innerHTML = data.grades.map(function(g){
-    return '<button type="button" class="grade" data-g="'+esc(g.id)+'" aria-pressed="'+(g.id===current)+'">'
-      + esc(g.name) + (hasReady(g.id) ? '<span class="dot" title="فيه موادّ جاهزة"></span>' : '') + '</button>';
+/* ---------- الشاشات ---------- */
+var SCREENS = ["splash","name","grades","subjects","progress","certs","notifs","contact","about","settings"];
+function show(id){
+  SCREENS.forEach(function(s){ $("scr-"+s).hidden = s !== id; });
+  closeMenu(); window.scrollTo(0,0);
+  if (id === "grades") { badges(); drawTabs(); drawBanners(); }
+  if (id === "subjects") drawSubjects();
+  if (id === "progress") drawProgress();
+  if (id === "certs") drawCerts();
+  if (id === "notifs") drawNotifs();
+  if (id === "contact") drawContact();
+  if (id === "about") $("aboutVer").textContent = (data && data.version) || "1.0.0";
+  if (id === "settings") drawSettings();
+}
+document.querySelectorAll("[data-to]").forEach(function(b){ b.addEventListener("click", function(){ show(b.dataset.to); }); });
+
+/* ---------- القائمة ☰ ---------- */
+function drawMenu(){
+  var n = unseen();
+  $("menuList").innerHTML = MENU.map(function(m){
+    return '<button type="button" class="mi" data-m="'+m[0]+'"><span class="bx">'+mic(m[3])+'</span><span class="tx"><b>'+m[1]+'</b><small>'+m[2]+'</small></span>'
+      + (m[0]==="notifs" && n ? '<i class="n">'+n+'</i>' : '')
+      + '<svg class="ch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>';
+  }).join("") + '<button type="button" class="mi out" data-m="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+MI.out+'</svg><span>تسجيل الخروج</span></button>';
+  $("menuList").querySelectorAll("[data-m]").forEach(function(b){ b.addEventListener("click", function(){ menuGo(b.dataset.m); }); });
+}
+function menuGo(k){
+  closeMenu();
+  if (k === "profile") return editProfile();
+  if (k === "subjects") return show(current && gradeById(current) ? "subjects" : "grades");
+  if (k === "logout") {
+    if (!confirm("هل تريد تسجيل الخروج؟ سيُمسح اسمك وصورتك من هذا الجهاز، وتبقى إنجازاتك في تطبيقاتك.")) return;
+    try{ localStorage.removeItem(K.profile); sessionStorage.removeItem("sahaba-splash"); }catch(e){}
+    location.reload(); return;
+  }
+  show(k);
+}
+function openMenu(){ drawMenu(); $("drawer").classList.add("on"); $("scrim").classList.add("on"); $("drawer").setAttribute("aria-hidden","false"); }
+function closeMenu(){ $("drawer").classList.remove("on"); $("scrim").classList.remove("on"); $("drawer").setAttribute("aria-hidden","true"); }
+$("menuBtn").addEventListener("click", openMenu);
+$("closeMenu").addEventListener("click", closeMenu);
+$("scrim").addEventListener("click", closeMenu);
+
+/* ---------- شاشة البداية: تقدّم التحميل الفعلي ---------- */
+var steps = { json: false, fonts: false, page: false };
+function progress(){
+  var n = 0; for (var k in steps) if (steps[k]) n++;
+  var p = Math.round(n / 3 * 100);
+  $("ldBar").style.width = p + "%";
+  $("ldTxt").textContent = p >= 100 ? "✓ جاهزة" : p + "% جاري التحميل…";
+}
+(document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function(){ steps.fonts = true; progress(); });
+if (document.readyState === "complete") { steps.page = true; progress(); } else addEventListener("load", function(){ steps.page = true; progress(); });
+$("goBtn").addEventListener("click", function(){
+  try{ sessionStorage.setItem("sahaba-splash", "1"); }catch(e){}
+  show(profile ? "grades" : "name");
+});
+
+/* ---------- ما اسمك؟ ---------- */
+var photoData = null;
+function drawMe(){
+  if (!profile) return;
+  $("meName").textContent = "أهلاً، " + profile.first;
+  $("meAv").innerHTML = profile.photo ? '<img alt="" src="'+profile.photo+'">' : esc((profile.first || "?").charAt(0));
+}
+function setPhoto(d){
+  photoData = d;
+  $("pPrev").innerHTML = d ? '<img alt="" src="'+d+'">' : "صورتك<br>(اختيارية)";
+  $("pClear").hidden = !d;
+}
+$("fPhoto").addEventListener("change", function(){
+  var f = this.files && this.files[0]; if (!f) return;
+  var r = new FileReader();
+  r.onload = function(){
+    var img = new Image();
+    img.onload = function(){
+      var s = 192, c = document.createElement("canvas"); c.width = c.height = s;
+      var m = Math.min(img.width, img.height), x = (img.width - m) / 2, y = (img.height - m) / 2;
+      c.getContext("2d").drawImage(img, x, y, m, m, 0, 0, s, s);
+      setPhoto(c.toDataURL("image/jpeg", .82));
+    };
+    img.src = r.result;
+  };
+  r.readAsDataURL(f);
+});
+$("pClear").addEventListener("click", function(){ setPhoto(null); $("fPhoto").value = ""; });
+$("nameForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var p = { first: $("fFirst").value.trim(), father: $("fFather").value.trim(), family: $("fFamily").value.trim(), photo: photoData };
+  if (!p.first || !p.father || !p.family) return;
+  profile = p; lsSet(K.profile, JSON.stringify(p)); drawMe(); show("grades");
+});
+function editProfile(){
+  $("nameTitle").textContent = "الملف الشخصي";
+  if (profile) { $("fFirst").value = profile.first; $("fFather").value = profile.father; $("fFamily").value = profile.family; setPhoto(profile.photo || null); }
+  $("nameBack").hidden = !profile; show("name");
+}
+$("meBtn").addEventListener("click", editProfile);
+$("nameBack").addEventListener("click", function(){ show("grades"); });
+
+/* ---------- المراحل والصفوف: ثلاث خانات ثم مستطيلات الصفوف ---------- */
+function drawTabs(){
+  $("tabs").innerHTML = data.stages.map(function(s){ return '<button type="button" class="tab" data-s="'+esc(s.id)+'" aria-pressed="'+(s.id===stage)+'">'+esc(s.name)+'</button>'; }).join("");
+  $("tabs").querySelectorAll(".tab").forEach(function(b){ b.addEventListener("click", function(){ stage = b.dataset.s; lsSet(K.stage, stage); drawTabs(); drawBanners(); }); });
+}
+function drawBanners(){
+  var gs = data.grades.filter(function(g){ return g.stage === stage; });
+  $("banners").innerHTML = gs.map(function(g){
+    var inner = g.img ? '<img src="'+esc(g.img)+'" alt="'+esc(g.name)+'" loading="lazy">' : '<span class="empty" style="display:block;padding:28px;text-align:center">'+esc(g.name)+'</span>';
+    return '<button type="button" class="gb" data-g="'+esc(g.id)+'" aria-label="'+esc(g.name)+'">'+inner+(hasReady(g.id) ? '<span class="rd">مواد جاهزة</span>' : '')+'</button>';
   }).join("");
-  box.querySelectorAll(".grade").forEach(function(b){
-    b.addEventListener("click", function(){ current = b.dataset.g; remember(current); drawGrades(); drawSubjects(); });
-  });
-  var on = box.querySelector('[aria-pressed="true"]');
-  if (on && on.scrollIntoView) on.scrollIntoView({block:"nearest", inline:"center"});
+  $("banners").querySelectorAll(".gb").forEach(function(b){ b.addEventListener("click", function(){ current = b.dataset.g; lsSet(K.grade, current); show("subjects"); }); });
 }
 
+/* ---------- مواد الصف ---------- */
 function drawSubjects(){
-  var g = data.grades.filter(function(x){ return x.id===current; })[0];
-  document.getElementById("subjectsLabel").textContent = "موادّ " + (g ? g.name : "");
-  document.getElementById("subjects").innerHTML = data.subjects.map(function(s){
+  var g = gradeById(current);
+  $("subjectsLabel").textContent = g ? g.name : "المواد";
+  $("subjects").innerHTML = data.subjects.map(function(s){
     var e = s.grades && s.grades[current];
     var icon = ICONS[s.icon] || ICONS.book;
     if (e) {
-      return '<a class="card" style="--c:'+esc(s.color||"#0f5c4a")+'" href="'+esc(e.dir)+'/">'
+      return '<a class="card" style="--c:'+esc(s.color||"#E6C168")+'" href="'+esc(e.dir)+'/">'
         + '<span class="badge">جاهز</span><span class="ic">'+icon+'</span>'
         + '<h3>'+esc(s.name)+'</h3>' + (e.note ? '<p>'+esc(e.note)+'</p>' : '')
         + '<span class="go">ادخل ‹</span></a>';
@@ -125,17 +423,80 @@ function drawSubjects(){
   }).join("");
 }
 
+/* ---------- إنجازاتي وتقدمي / شهاداتي ----------
+   كلّ تطبيق يكتب ملخّصه في localStorage باسم sahaba-ach:<مجلّد التطبيق> بالصيغة:
+   { pct: 0..100, units: {done, total}, certs: [{t,d}], badges: [{i,t}], updated: "ISO" } */
+function readAch(dir){ try{ return JSON.parse(lsGet("sahaba-ach:" + dir)) || null; }catch(e){ return null; } }
+function readyList(){ return data.subjects.filter(function(s){ return s.grades && s.grades[current]; }); }
+function drawProgress(){
+  var g = gradeById(current), list = readyList();
+  $("progBody").innerHTML = (g ? '<p style="color:var(--muted);margin:4px 0 14px">'+esc(g.name)+'</p>' : '')
+    + (list.map(function(s){
+      var d = readAch(s.grades[current].dir) || {}, pct = Math.max(0, Math.min(100, d.pct || 0)), u = d.units;
+      return '<div class="panel ach" style="--c:'+esc(s.color||"#E6C168")+'"><div class="hd"><span class="ic">'+(ICONS[s.icon]||ICONS.book)+'</span><b>'+esc(s.name)+'</b><span>'+pct+'%</span></div>'
+        + '<div class="pbar"><i style="width:'+pct+'%"></i></div>'
+        + '<small style="color:var(--muted)">'+(u ? 'الوحدات المكتملة: '+u.done+' من '+u.total : (pct ? 'نسبة الإنجاز '+pct+'%' : 'لم تبدأ بعد'))+'</small></div>';
+    }).join("") || '<div class="empty">لا مواد جاهزة لهذا الصف بعد.</div>');
+}
+function drawCerts(){
+  var list = readyList(), tc = 0, tb = 0;
+  var cards = list.map(function(s){
+    var d = readAch(s.grades[current].dir) || {}, certs = d.certs || [], bd = d.badges || [];
+    tc += certs.length; tb += bd.length;
+    return '<div class="panel ach" style="--c:'+esc(s.color||"#E6C168")+'"><div class="hd"><span class="ic">'+(ICONS[s.icon]||ICONS.book)+'</span><b>'+esc(s.name)+'</b></div>'
+      + '<div class="sub-h">الشهادات ('+certs.length+')</div>'
+      + (certs.length ? '<div class="chips">'+certs.map(function(c){ return '<span class="chip cert">🏆 '+esc(c.t)+(c.d ? ' · '+esc(c.d) : '')+'</span>'; }).join("")+'</div>' : '<small style="color:var(--muted)">لم تحصل على شهادة بعد</small>')
+      + '<div class="sub-h">الأوسمة ('+bd.length+')</div>'
+      + (bd.length ? '<div class="chips">'+bd.map(function(b){ return '<span class="chip">'+esc(b.i||"🏅")+' '+esc(b.t)+'</span>'; }).join("")+'</div>' : '<small style="color:var(--muted)">لم تحصل على وسام بعد</small>')
+      + '</div>';
+  });
+  $("certBody").innerHTML = '<div class="sum"><div class="panel"><b>'+tc+'</b>شهاداتي</div><div class="panel"><b>'+tb+'</b>أوسمتي</div></div>' + (cards.join("") || '<div class="empty">لا مواد جاهزة لهذا الصف بعد.</div>');
+}
+
+/* ---------- الإشعارات ---------- */
+function notices(){ return (data && data.notices) || []; }
+function unseen(){ return Math.max(0, notices().length - (parseInt(lsGet(K.seen), 10) || 0)); }
+function badges(){ $("menuDot").hidden = !unseen(); }
+function drawNotifs(){
+  var ns = notices();
+  $("notifBody").innerHTML = ns.length ? ns.map(function(n){
+    return '<div class="ntf"><span class="ni">'+esc(n.icon || "🔔")+'</span><span><b>'+esc(n.text)+'</b>'+(n.date ? '<small>'+esc(n.date)+'</small>' : '')+'</span></div>';
+  }).join("") : '<div class="empty">لا إشعارات جديدة.</div>';
+  lsSet(K.seen, String(ns.length)); badges();
+}
+
+/* ---------- المساعدة والدعم ---------- */
+function drawContact(){
+  var c = data.contact || {}, h = "";
+  if (c.whatsapp) h += '<a class="ct" href="https://wa.me/'+esc(c.whatsapp.replace(/\D/g,""))+'" target="_blank" rel="noopener"><span style="font-size:1.6rem">💬</span><span><b>واتساب</b><br><small dir="ltr">'+esc(c.whatsapp)+'</small></span></a>';
+  if (c.phone) h += '<a class="ct" href="tel:'+esc(c.phone)+'"><span style="font-size:1.6rem">📞</span><span><b>اتصال</b><br><small dir="ltr">'+esc(c.phone)+'</small></span></a>';
+  if (c.email) h += '<a class="ct" href="mailto:'+esc(c.email)+'"><span style="font-size:1.6rem">✉️</span><span><b>بريد إلكتروني</b><br><small dir="ltr">'+esc(c.email)+'</small></span></a>';
+  $("contactBody").innerHTML = h || '<div class="empty">ستُضاف قنوات الاستفسار والملاحظات والدعم قريباً.</div>';
+}
+
+/* ---------- الإعدادات ---------- */
+function applyFs(v){ document.documentElement.setAttribute("data-fs", v); }
+function drawSettings(){
+  var cur = lsGet(K.fs) || "m";
+  document.querySelectorAll("[data-fs]").forEach(function(b){ b.setAttribute("aria-pressed", b.dataset.fs === cur); });
+}
+document.querySelectorAll("[data-fs]").forEach(function(b){ b.addEventListener("click", function(){ lsSet(K.fs, b.dataset.fs); applyFs(b.dataset.fs); drawSettings(); }); });
+applyFs(lsGet(K.fs) || "m");
+
+/* ---------- البدء ---------- */
 if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function(){});
+try{ profile = JSON.parse(lsGet(K.profile)); }catch(e){ profile = null; }
 fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(d){
-  data = d;
-  if (d.title) document.getElementById("title").textContent = d.title;
-  if (d.subtitle) document.getElementById("subtitle").textContent = d.subtitle;
-  var saved = recall();
-  var ids = d.grades.map(function(g){ return g.id; });
-  current = ids.indexOf(saved) >= 0 ? saved : (ids.filter(hasReady)[0] || ids[0]);
-  drawGrades(); drawSubjects();
+  data = d; steps.json = true; progress();
+  var ids = d.grades.map(function(g){ return g.id; }), saved = lsGet(K.grade);
+  current = ids.indexOf(saved) >= 0 ? saved : null;
+  var sid = d.stages.map(function(s){ return s.id; }), st = lsGet(K.stage);
+  stage = sid.indexOf(st) >= 0 ? st : (current ? gradeById(current).stage : (d.grades.filter(function(g){ return hasReady(g.id); })[0] || d.grades[0]).stage);
+  drawMe();
+  var seen = false; try{ seen = sessionStorage.getItem("sahaba-splash") === "1"; }catch(e){}
+  if (seen) show(profile ? "grades" : "name");   /* العودة من تطبيقٍ داخل الجلسة نفسها لا تُعيد الغلاف */
 }).catch(function(){
-  document.getElementById("subjects").innerHTML = '<div class="err">تعذّر تحميل قائمة المواد. تأكّد من الاتصال وأعد المحاولة.</div>';
+  steps.json = true; progress();
 });
 </script>
 </body>

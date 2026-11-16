@@ -1,17 +1,67 @@
 {
-  "title": "مدارس الصحابة",
-  "subtitle": "المنصّة التعليمية",
+  "title": "بوابة الصحابة التعليمية",
+  "subtitle": "بوابتك نحو العلم والمعرفة والتميّز",
   "grades": [
-    { "id": "1", "name": "الصف الأول" },
-    { "id": "2", "name": "الصف الثاني" },
-    { "id": "3", "name": "الصف الثالث" },
-    { "id": "4", "name": "الصف الرابع" },
-    { "id": "5", "name": "الصف الخامس" },
-    { "id": "6", "name": "الصف السادس" },
-    { "id": "7", "name": "الصف السابع" },
-    { "id": "8", "name": "الصف الثامن" },
-    { "id": "9", "name": "الصف التاسع" },
-    { "id": "10", "name": "الصف العاشر" }
+    {
+      "id": "1",
+      "name": "الصف الأول الابتدائي",
+      "stage": "p",
+      "img": "shared/grades/g1.webp"
+    },
+    {
+      "id": "2",
+      "name": "الصف الثاني الابتدائي",
+      "stage": "p",
+      "img": "shared/grades/g2.webp"
+    },
+    {
+      "id": "3",
+      "name": "الصف الثالث الابتدائي",
+      "stage": "p",
+      "img": "shared/grades/g3.webp"
+    },
+    {
+      "id": "4",
+      "name": "الصف الرابع الابتدائي",
+      "stage": "p",
+      "img": "shared/grades/g4.webp"
+    },
+    {
+      "id": "5",
+      "name": "الصف الخامس الابتدائي",
+      "stage": "p",
+      "img": "shared/grades/g5.webp"
+    },
+    {
+      "id": "6",
+      "name": "الصف السادس الابتدائي",
+      "stage": "p",
+      "img": "shared/grades/g6.webp"
+    },
+    {
+      "id": "7",
+      "name": "الصف الأول الإعدادي",
+      "stage": "m",
+      "img": "shared/grades/g7.webp"
+    },
+    {
+      "id": "8",
+      "name": "الصف الثاني الإعدادي",
+      "stage": "m",
+      "img": "shared/grades/g8.webp"
+    },
+    {
+      "id": "9",
+      "name": "الصف الثالث الإعدادي",
+      "stage": "m",
+      "img": "shared/grades/g9.webp"
+    },
+    {
+      "id": "10",
+      "name": "الصف الأول الثانوي",
+      "stage": "s",
+      "img": "shared/grades/g10.webp"
+    }
   ],
   "subjects": [
     {
@@ -56,5 +106,26 @@
         }
       }
     }
-  ]
+  ],
+  "version": "1.0.0",
+  "stages": [
+    {
+      "id": "p",
+      "name": "الابتدائية"
+    },
+    {
+      "id": "m",
+      "name": "الإعدادية"
+    },
+    {
+      "id": "s",
+      "name": "الثانوية"
+    }
+  ],
+  "contact": {
+    "whatsapp": "",
+    "phone": "",
+    "email": ""
+  },
+  "notices": []
 }
