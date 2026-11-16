@@ -272,6 +272,7 @@ var MI = {
   help: '<circle cx="12" cy="12" r="10"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/>',
   info: '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>',
   gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  down: '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>',
   out: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>'
 };
 function mic(n){ return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+MI[n]+'</svg>'; }
@@ -282,7 +283,8 @@ var MENU = [
   ["certs","شهاداتي","الشهادات التعليمية والإنجازات","medal"],
   ["notifs","الإشعارات","التنبيهات والتحديثات","bell"],
   ["about","عن المنصة","التعريف بالبوابة وإصدارها","info"],
-  ["settings","الإعدادات","اللغة والمظهر وإعدادات التطبيق","gear"]
+  ["settings","الإعدادات","اللغة والمظهر وإعدادات التطبيق","gear"],
+  ["install","تنزيل التطبيق","ثبّته على شاشتك ليعمل بلا إنترنت","down"]
 ];
 var K = { grade: "sahaba-learn-grade", stage: "sahaba-portal-stage", profile: "sahaba-portal-profile", seen: "sahaba-portal-seen", fs: "sahaba-portal-fs" };
 var data, current, stage, profile, editing = false;
@@ -311,15 +313,26 @@ document.querySelectorAll("[data-to]").forEach(function(b){ b.addEventListener("
 /* ---------- القائمة ☰ ---------- */
 function drawMenu(){
   var n = unseen();
-  $("menuList").innerHTML = MENU.map(function(m){
+  $("menuList").innerHTML = MENU.filter(function(m){ return !(m[0]==="install" && installed()); }).map(function(m){
     return '<button type="button" class="mi" data-m="'+m[0]+'"><span class="bx">'+mic(m[3])+'</span><span class="tx"><b>'+m[1]+'</b><small>'+m[2]+'</small></span>'
       + (m[0]==="notifs" && n ? '<i class="n">'+n+'</i>' : '')
       + '<svg class="ch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>';
   }).join("") + '<button type="button" class="mi out" data-m="logout"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'+MI.out+'</svg><span>تسجيل الخروج</span></button>';
   $("menuList").querySelectorAll("[data-m]").forEach(function(b){ b.addEventListener("click", function(){ menuGo(b.dataset.m); }); });
 }
+var dip;
+window.addEventListener("beforeinstallprompt", function(e){ e.preventDefault(); dip = e; });
+window.addEventListener("appinstalled", function(){ dip = null; toast("تمّ تنزيل التطبيق ✓"); });
+function installed(){ return (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true; }
+function installApp(){
+  if (dip) { dip.prompt(); dip.userChoice.then(function(){ dip = null; }); return; }
+  var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  alert(ios ? "لتنزيل التطبيق: اضغط زرّ المشاركة في سفاري ثم «إضافة إلى الشاشة الرئيسية»."
+            : "لتنزيل التطبيق: افتح قائمة المتصفح (⋮) ثم اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».");
+}
 function menuGo(k){
   closeMenu();
+  if (k === "install") return installApp();
   if (k === "profile") return editProfile();
   if (k === "subjects") return show(current && gradeById(current) ? "subjects" : "grades");
   if (k === "logout") {
@@ -507,6 +520,7 @@ fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); })
 });
 </script>
 <script src="shared/intro.js"></script>
+<script src="shared/update-notify.js" data-app="بوابة الصحابة التعليمية" data-icon="shared/icons/portal-192.png" defer></script>
 <script>
 var KX = {id:"portal", kinex:"shared/kinex.jpg", steps:[{"t": "أهلاً بك، أنا كينيكس", "x": "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، بوابتك نحو العلم والمعرفة والتميّز. سأريك البوابة في دقيقة، وبعدها أبقى معك في كل مادة.", "s": null, "i": 1}, {"t": "🏫 المراحل الدراسية", "x": "اختر مرحلتك: الابتدائية أو الإعدادية أو الثانوية.", "s": ["#tabs"]}, {"t": "🎓 صفّك", "x": "اضغط على صفّك فتظهر موادّه. وما لم يجهز بعد يظهر عليه «قريباً»، وسيُضاف تباعاً بإذن الله.", "s": ["#banners .gb"]}, {"t": "☰ القائمة", "x": "من هنا تصل إلى ملفك الشخصي وموادك وإنجازاتك وتقدمك وشهاداتك والإشعارات والإعدادات.", "s": ["#menuBtn"]}, {"t": "أنا معك دائماً 🚀", "x": "ستجدني في كل تطبيق: أعرّفك عليه بجولة قصيرة، وأساعدك على الفهم في الأسئلة. وإذا أردت إعادة هذه الجولة فستجد زرّها في الإعدادات. بالتوفيق دائماً! ✨", "s": null}],
   ready:function(){ var g=document.getElementById("scr-grades"); return g && !g.hidden; }};
