@@ -603,6 +603,20 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 .ptile .bd{position:absolute;top:8px;inset-inline-start:14px;font-size:1.15rem;transform:skewX(9deg)}
 .ptile.done{border-color:#2fbf71}
 .ptile.lock{opacity:.5;filter:grayscale(.5);cursor:not-allowed}
+.rcard .rname,.rcard .rname-ar{display:none}
+.rhead{display:flex;align-items:center;gap:.75rem;padding:.65rem .8rem;margin:0 0 .55rem;border-radius:18px;background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,var(--g3));color:#2b1b00;box-shadow:0 6px 16px rgba(0,0,0,.22)}
+.rhead .rn{flex:none;width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:rgba(255,255,255,.4);font:800 1.3rem var(--fh)}
+.rhead .rt{flex:1;min-width:0;display:flex;flex-direction:column;gap:.1rem}
+.rhead .rt b{font:800 1.12rem/1.2 var(--fh);text-align:start}
+.rhead .rt small{font:700 .85rem var(--fb);opacity:.85}
+.rhead .rs{flex:none;font:700 .78rem var(--fb);background:rgba(0,0,0,.18);color:#fff;border-radius:999px;padding:.2rem .6rem;direction:ltr}
+.ptile.pimg{transform:none;border:0;background:none;box-shadow:none;min-height:0;display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:0}
+.ptile.pimg:active{transform:scale(.96)}
+.ptile.pimg .pim{display:flex;align-items:center;justify-content:center;width:100%;height:118px}
+.ptile.pimg .pim img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;filter:drop-shadow(0 4px 8px rgba(0,0,0,.25))}
+.ptile.pimg small{font:600 .74rem var(--fb);color:var(--muted);text-align:center}
+.ptile.pimg .bd{top:0;inset-inline-start:6px;transform:none;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4))}
+.ptile.pimg.done .pim img{filter:drop-shadow(0 0 0 2px #2fbf71) drop-shadow(0 4px 8px rgba(0,0,0,.25))}
 .mi.pc{background:color-mix(in srgb,var(--pc) 28%,transparent)!important;border-color:var(--pc)!important;color:inherit!important}
 [data-speak],[data-say],#qSay{display:none!important}
 /* --- المفردات: مستطيل مقسوم نصفين --- */
@@ -1291,6 +1305,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="القائمة" aria-hidden="true">
   <div class="head"><b>LEXORA</b><button class="icon-btn" type="button" id="closeMenu" aria-label="إغلاق"><svg><use href="#i-close"/></svg></button></div>
+  <button class="menu-item" type="button" onclick="location.href='../../index.html'"><svg><use href="#i-home"/></svg><span>بوابة الصحابة التعليمية</span></button>
   <p class="mgrp" data-t="menuAcc">التطبيق</p>
   <button class="menu-item" type="button" data-go="settings"><svg><use href="#i-gear"/></svg><span data-t="settings">الإعدادات</span></button>
   <button class="menu-item" type="button" data-go="settings" data-scroll="swLight"><svg><use href="#i-sun"/></svg><span data-t="bgColor">لون الخلفية</span></button>
@@ -2145,12 +2160,12 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   function renderHub(){
     var r=lp(L.id);cur=-1;r.cur=-1;if(r.st[0]&&r.st[1]&&r.st[2]&&!r.st[3])r.st[3]=true;saveProg();
     window.scrollTo(0,0);
-    var tiles=[[0,'🔤',T('المفردات','Vocabulary'),(L.vocab||[]).length+' '+T('كلمة','words')],[1,'✏️',T('القواعد','Grammar'),(L.rules||[]).length+' '+T('قاعدة','rules')],
-      [2,'📖',T('القراءة','Reading'),((L.reading&&L.reading.paras)||[]).length+' '+T('فقرات','paragraphs')],[4,'📝',T('ورقة العمل','Worksheet'),T('تُفتح بعد الأقسام الثلاثة','Opens after the three sections')]];
+    var tiles=[[0,'vocab',T('المفردات','Vocabulary'),(L.vocab||[]).length+' '+T('كلمة','words')],[1,'grammar',T('القواعد','Grammar'),(L.rules||[]).length+' '+T('قاعدة','rules')],
+      [2,'reading',T('القراءة','Reading'),((L.reading&&L.reading.paras)||[]).length+' '+T('فقرات','paragraphs')],[4,'worksheet',T('ورقة العمل','Worksheet'),T('تُفتح بعد الأقسام الثلاثة','Opens after the three sections')]];
     var st=$('stage');st.style.animation='none';void st.offsetWidth;st.style.animation='';
     st.innerHTML='<p class="sw-label" style="text-align:center">'+T('اختر القسم الذي تريده، بالترتيب الذي يناسبك','Pick any section, in the order you like')+'</p>'+
       '<div class="hub">'+tiles.map(function(t){var i=t[0],lock=!unlocked(i),done=!!r.st[i];
-        return '<button type="button" class="ptile'+(done?' done':'')+(lock?' lock':'')+'" data-sec="'+i+'"'+(lock?' aria-disabled="true"':'')+'><span class="in"><span class="ic">'+t[1]+'</span><b>'+t[2]+'</b><small>'+t[3]+'</small></span>'+
+        return '<button type="button" class="ptile pimg'+(done?' done':'')+(lock?' lock':'')+'" data-sec="'+i+'"'+(lock?' aria-disabled="true"':'')+' aria-label="'+t[2]+'"><span class="pim"><img alt="'+t[2]+'" src="images/hub/'+t[1]+'.webp" draggable="false"></span><small>'+t[3]+'</small>'+
           '<span class="bd">'+(lock?'🔒':done?'✅':'')+'</span></button>'}).join('')+'</div>';
     if(r.st[4])st.appendChild(nextBtn('🏆 '+(r.done?T('شهادتي','My certificate'):T('استلم شهادتك','Get your certificate')),function(){cur=5;renderStation()}));
     st.querySelectorAll('[data-sec]').forEach(function(b){b.addEventListener('click',function(){
@@ -2354,16 +2369,16 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     function vocabQs(){
       var qs=[],all=shuffle(v),matches=[];
       for(var k=0;k<all.length;k+=5){var g=all.slice(k,k+5);if(g.length<2&&matches.length){matches[matches.length-1].pairs.push([g[0].en,g[0].ar]);break}
-        matches.push({type:'match',q:T('صِل كلّ كلمة بمعناها','Match each word with its meaning'),pairs:g.map(function(w){return [w.en,w.ar]})})}
+        matches.push({type:'match',q:(matches.length?'Match each word with its meaning':'صِل كلّ كلمة بمعناها'),pairs:g.map(function(w){return [w.en,w.ar]})})}
       var kinds=['mcAr','fill','mcEn','type','tf'],singles=[];
       shuffle(v).slice(0,Math.min(10,v.length)).forEach(function(w,idx){
         var t=kinds[idx%kinds.length],others=shuffle(v.filter(function(x){return x!==w}));
         if(t==='fill'&&!(w.ex&&enPhrase(w)))t='mcAr';
-        if(t==='mcAr'){var o=shuffle([w].concat(others.slice(0,3)));singles.push({q:T('ما معنى «'+w.en+'»؟','What does “'+w.en+'” mean?'),o:o.map(function(x){return x.ar}),a:o.indexOf(w)})}
-        else if(t==='mcEn'){var o2=shuffle([w].concat(others.slice(0,3)));singles.push({q:T('أيّ كلمة تعني «'+w.ar+'»؟','Which word means “'+w.ar+'”?'),o:o2.map(function(x){return x.en}),a:o2.indexOf(w)})}
+        if(t==='mcAr'){var o=shuffle([w].concat(others.slice(0,3)));singles.push({q:'What does “'+w.en+'” mean?',o:o.map(function(x){return x.ar}),a:o.indexOf(w)})}
+        else if(t==='mcEn'){var o2=shuffle([w].concat(others.slice(0,3)));singles.push({q:'Which word means “'+w.ar+'”?',o:o2.map(function(x){return x.en}),a:o2.indexOf(w)})}
         else if(t==='fill'){var o3=shuffle([w].concat(others.slice(0,3)));singles.push({q:w.ex.replace(enPhrase(w),'___'),o:o3.map(function(x){return x.en}),a:o3.indexOf(w),why:w.en+' = '+w.ar})}
-        else if(t==='type'){singles.push({type:'type',q:T('اكتب بالإنجليزية: «'+w.ar+'»','Type in English: “'+w.ar+'”'),a:[w.en]})}
-        else{var truth=Math.random()<.5;singles.push({q:T('«'+w.en+'» تعني «'+(truth?w.ar:others[0].ar)+'»','“'+w.en+'” means “'+(truth?w.ar:others[0].ar)+'”'),tf:truth,why:w.en+' = '+w.ar})}
+        else if(t==='type'){singles.push({type:'type',q:'Type in English: “'+w.ar+'”',a:[w.en]})}
+        else{var truth=Math.random()<.5;singles.push({q:'“'+w.en+'” means “'+(truth?w.ar:others[0].ar)+'”',tf:truth,why:w.en+' = '+w.ar})}
       });
       singles=shuffle(singles);
       var half=Math.ceil(singles.length/2);
@@ -2622,11 +2637,11 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   function rcHtml(r,c){
     if(c.k==='legacy')return ruleCard(r);
     if(c.k==='sig'){var SA=window.LEXORA_SIGNALS_AR||{};
-      return '<div class="card rcard"><span class="rtag sig">🎯 Signal words · الكلمات الدالّة</span><p class="taphint" style="align-self:center">👆 '+T('اضغط على الكلمة لتسمعها. هذه الكلمات تدلّك على القاعدة','Tap a word to hear it. These words point to the rule')+'</p>'+
+      return '<div class="card rcard"><span class="rtag sig">🎯 Key Words</span><p class="taphint" style="align-self:center">👆 '+T('اضغط على الكلمة لتسمعها. هذه الكلمات تدلّك على القاعدة','Tap a word to hear it. These words point to the rule')+'</p>'+
         '<div class="swg">'+c.items.map(function(w,i){return '<button type="button" class="sw" style="--wc:'+SWCOL[i%SWCOL.length]+'"><b>'+esc(w)+'</b><span>'+esc(SA[w]||'')+'</span></button>'}).join('')+'</div></div>'}
     if(c.k==='intro')return '<div class="card rcard"><h3 class="rname">'+esc(r.title)+'</h3><h4 class="rname-ar">'+esc(r.titleAr||'')+'</h4>'+
       '<div class="use"><span class="lbl">When do we use it?</span><p class="en">'+kfmt(c.useEn)+'</p><span class="lbl ar">متى نستخدمها؟</span><p class="ar">'+kfmt(c.useAr)+'</p></div>'+
-      (c.signals&&c.signals.length?'<div class="sig"><span class="lbl">Signal words</span><span class="lbl ar">كلمات تدلّ عليها</span><div class="sigs">'+c.signals.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div></div>':'')+'</div>';
+      (c.signals&&c.signals.length?'<div class="sig"><span class="lbl">Key Words</span><div class="sigs">'+c.signals.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div></div>':'')+'</div>';
     var tag='<span class="rtag '+c.k+'">'+RC_ICON[c.k]+' '+esc(c.label)+(c.labelAr&&c.labelAr!==c.label?' · '+esc(c.labelAr):'')+'</span>';
     if(c.k==='note')return '<div class="card rcard">'+tag+'<div class="notebody" dir="auto">'+kfmt(c.body)+'</div>'+(c.examples&&c.examples.length?rcExamples(c.examples):'')+'</div>';
     return '<div class="card rcard">'+tag+'<div class="formula big">'+kfmt(c.formula)+'</div>'+rcLegend(c.formula)+(c.tip?'<p class="tip">'+kfmt(c.tip)+'</p>':'')+rcExamples(c.examples||[])+'</div>';
@@ -2636,6 +2651,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     function draw(){
       var last=c===cards.length-1;if(onCard)onCard(c);
       area.innerHTML=(total>1?'<p class="sw-label" style="text-align:center">'+T('القاعدة ','Rule ')+(k+1)+' / '+total+'</p>':'')+
+        '<div class="rhead"><span class="rn">'+(k+1)+'</span><span class="rt"><b dir="ltr">'+esc(r.title)+'</b><small>'+esc(r.titleAr||'')+'</small></span><span class="rs">'+(c+1)+' / '+cards.length+'</span></div>'+
         '<div class="rdots">'+cards.map(function(_,j){return '<i'+(j<=c?' class="on"':'')+'></i>'}).join('')+'</div>'+rcHtml(r,cards[c]);
       area.appendChild(nextBtn(last?T('فهمت، لنتدرّب','Got it — practise'):T('التالي','Next'),function(){if(last)onDone();else{c++;draw()}}));
       if(c>0||onBack){var bb=document.createElement('button');bb.type='button';bb.className='btn';bb.style.alignSelf='center';bb.textContent=c>0?T('السابق','Back'):T('القواعد','Rules');

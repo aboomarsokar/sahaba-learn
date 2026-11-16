@@ -1,6 +1,6 @@
 /* عامل خدمة الأحياء: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (bio10-). الملفّات الثقيلة من science/10. */
 const P = "bio10-";
-const V = P + "v2";
+const V = P + "v5";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../science/10/icons/icon-192.png", "../../science/10/icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -9,8 +9,8 @@ self.addEventListener("fetch", e => {
   if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;   /* الروابط الخارجية (Drive) تمرّ كما هي */
   if (/\.mp4$/.test(r.url)) { e.respondWith(videoFromCache(r).catch(() => fetch(r))); return; }
   const isDoc = r.mode === "navigate" || r.destination === "document";
-  if (isDoc) {                                                     /* الصفحة: الشبكة أولاً ثم النسخة المحفوظة */
-    e.respondWith(fetch(r).then(x => { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); return x; }).catch(() => caches.match(r).then(m => m || caches.match("./index.html"))));
+  if (isDoc) {                                                     /* الصفحة: النسخة المحفوظة فوراً ثم تحديثها في الخلفية (لا انتظار للشبكة) */
+    e.respondWith(caches.match(r, { ignoreSearch: true }).then(m => { const net = fetch(r).then(x => { if (x.ok) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }).catch(() => m || caches.match("./index.html")); return m || net; }));
     return;
   }
   /* بقية الملفات: نعرض المحفوظ فوراً ونحدّثه في الخلفية */
@@ -42,7 +42,7 @@ async function precacheAll() {
   const say = async (type) => { for (const cl of await self.clients.matchAll()) cl.postMessage({ type, done, total, failed }); };
   await say("precache-progress");
   let i = 0;
-  await Promise.all(Array.from({ length: 5 }, async () => {
+  await Promise.all(Array.from({ length: 2 }, async () => {
     while (i < todo.length) {
       const u = todo[i++];
       try { const r = await fetch(u, { cache: "reload" }); if (r.ok) await c.put(u, r); else failed++; } catch (e) { failed++; }

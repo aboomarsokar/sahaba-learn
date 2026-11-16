@@ -87,7 +87,7 @@ LOCK = r"""
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). الملفّات الثقيلة من science/10. */
 const P = "__PRE__";
-const V = P + "v2";
+const V = P + "v5";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../science/10/icons/icon-192.png", "../../science/10/icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -96,8 +96,8 @@ self.addEventListener("fetch", e => {
   if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;   /* الروابط الخارجية (Drive) تمرّ كما هي */
   if (/\.mp4$/.test(r.url)) { e.respondWith(videoFromCache(r).catch(() => fetch(r))); return; }
   const isDoc = r.mode === "navigate" || r.destination === "document";
-  if (isDoc) {                                                     /* الصفحة: الشبكة أولاً ثم النسخة المحفوظة */
-    e.respondWith(fetch(r).then(x => { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); return x; }).catch(() => caches.match(r).then(m => m || caches.match("./index.html"))));
+  if (isDoc) {                                                     /* الصفحة: النسخة المحفوظة فوراً ثم تحديثها في الخلفية (لا انتظار للشبكة) */
+    e.respondWith(caches.match(r, { ignoreSearch: true }).then(m => { const net = fetch(r).then(x => { if (x.ok) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }).catch(() => m || caches.match("./index.html")); return m || net; }));
     return;
   }
   /* بقية الملفات: نعرض المحفوظ فوراً ونحدّثه في الخلفية */
@@ -129,7 +129,7 @@ async function precacheAll() {
   const say = async (type) => { for (const cl of await self.clients.matchAll()) cl.postMessage({ type, done, total, failed }); };
   await say("precache-progress");
   let i = 0;
-  await Promise.all(Array.from({ length: 5 }, async () => {
+  await Promise.all(Array.from({ length: 2 }, async () => {
     while (i < todo.length) {
       const u = todo[i++];
       try { const r = await fetch(u, { cache: "reload" }); if (r.ok) await c.put(u, r); else failed++; } catch (e) { failed++; }
@@ -178,6 +178,8 @@ def make(k, d, name, store, pre, color):
     m = re.search(r"var STEPS=\[.*?\];\n(?=window\.KXMS)", s, re.S)
     assert m and s.count("var STEPS=[") == 1
     s = s[:m.start()] + STEPS_TPL.strip().replace("__SUB__", name) + "\n" + s[m.end():]
+    # 7ب2) زرّ العودة إلى بوابة الصحابة في القائمة الجانبية
+    s = rep(s, """$("menu").innerHTML='<h2>'+t.menu+'</h2><div class="mi" onclick="tl()">""", """$("menu").innerHTML='<h2>'+t.menu+'</h2><div class="mi" onclick="location.href=\\'../../index.html\\'"><span>🏠 بوابة الصحابة التعليمية</span></div><div class="mi" onclick="tl()">""")
     # 7ج) غلاف المادة: صورةٌ فقط ثم «ابدأ الآن»
     assert s.count("<body>") == 1
     s = s.replace("<body>", "<body>\n<script src=\"../../shared/intro.js\"></script>\n<script>SahabaIntro.cover({id:\"" + d + "10\",cover:\"../../shared/covers/" + d + ".webp\"},function(){})</script>", 1)

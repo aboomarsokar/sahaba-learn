@@ -12,7 +12,7 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE / 'نشر'
 src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encoding='utf-8')
 upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
-ver = hashlib.sha256((src + upd + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
+ver = hashlib.sha256(('r3' + src + upd + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 
 head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f8a9e">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
@@ -32,6 +32,7 @@ STEPS = [
 ]
 CFG = ('<script>(function(){var o={id:"math10",cover:"cover.webp",kinex:"kinex.jpg",steps:' + json.dumps(STEPS, ensure_ascii=False)
        + ',ready:function(){var h=document.getElementById("hub");return h&&!h.hidden}};'
+       + '(function(){var a=document.createElement("a");a.href="../../../index.html";a.textContent="🏠 بوابة الصحابة التعليمية";a.style.cssText="display:inline-block;margin:10px 0 0;padding:8px 16px;border-radius:14px;background:#123C46;color:#fff;text-decoration:none;font-weight:700;font-size:14px";function m(){var h=document.querySelector(".hero");if(h&&!h.querySelector("a[href$=\'index.html\']"))h.appendChild(a)}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",m);else m()})();'
        + 'SahabaIntro.run(o);document.addEventListener("DOMContentLoaded",function(){SahabaIntro.replay(o,document.querySelector(".note"))});'
        + 'if(document.readyState!=="loading")SahabaIntro.replay(o,document.querySelector(".note"))})()</script>')
 UPD_SW = '''
@@ -44,6 +45,13 @@ if(was&&was!==sig)await self.registration.showNotification('تحديث جديد 
 self.addEventListener('notificationclick',e=>{e.notification.close();e.waitUntil(self.clients.matchAll({type:'window',includeUncontrolled:true}).then(l=>{for(const c of l){if('focus' in c)return c.focus()}return self.clients.openWindow('./')}))});
 '''
 assert '</head>' in src and '</body>' in src
+# الدروس (1.5 م.ب) في ملفٍ مستقلّ يُحمَّل بعد ظهور الرئيسية، فتفتح الصفحة فوراً
+k0 = src.index('<script>window.LESSONS=')
+k1 = src.index('</script>', k0)
+lessons_js = src[k0 + len('<script>'):k1]
+src = src[:k0] + '<script src="lessons.js" defer></script>' + src[k1 + len('</script>'):]
+assert src.count('function openL(id){') == 1
+src = src.replace('function openL(id){', 'function openL(id){if(!window.LESSONS){setTimeout(()=>openL(id),120);return}', 1)
 html = src.replace('</head>', head + '</head>', 1)
 i = html.rindex('</body>')
 html = html[:i] + reg + html[i:]
@@ -52,6 +60,7 @@ html = html[:j] + '<script>' + intro.replace('</script', '<\\/script') + '</scri
 
 OUT.mkdir(exist_ok=True)
 (OUT / 'index.html').write_text(html, encoding='utf-8')
+(OUT / 'lessons.js').write_text(lessons_js, encoding='utf-8')
 (OUT / 'manifest.json').write_text(json.dumps({
     'name': 'رياضيات الصف العاشر — مدرسة التابعين الشرعية (أ)', 'short_name': 'رياضيات العاشر',
     'lang': 'ar', 'dir': 'rtl', 'start_url': './index.html', 'scope': './', 'display': 'standalone',
@@ -59,7 +68,7 @@ OUT.mkdir(exist_ok=True)
     'icons': [{'src': 'icon-192.png', 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any maskable'},
               {'src': 'icon-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'any maskable'}]},
     ensure_ascii=False, indent=2), encoding='utf-8')
-(OUT / 'sw.js').write_text(f"""const V='math10-{ver}',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./cover.webp','./kinex.jpg'];
+(OUT / 'sw.js').write_text(f"""const V='math10-{ver}',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./cover.webp','./kinex.jpg','./lessons.js'];
 self.addEventListener('install',e=>{{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))}});
 self.addEventListener('activate',e=>{{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith('math10-')&&x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))}});
 // من الذاكرة أولاً (يعمل بلا إنترنت)، وتُحدَّث النسخة في الخلفية كلّما وُجد اتصال

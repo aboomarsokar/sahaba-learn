@@ -1,6 +1,6 @@
 /* عامل خدمة LEXORA: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (lex10-). */
 const P = "lex10-";
-const V = P + "v20";
+const V = P + "v24";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png",
   "./images/logo.jpg", "./images/certificate.jpg", "./data/lessons.js", "./data/practice.js", "./data/rulecards.js", "./data/highlights.js",
   "./data/audio-norm.js", "./data/audio-manifest.js", "./fonts/aref-ruqaa-arabic-700.woff2", "./fonts/cinzel-latin-700.woff2"];
@@ -32,8 +32,8 @@ self.addEventListener("fetch", e => {
     return;
   }
   const isDoc = r.mode === "navigate" || r.destination === "document";
-  if (isDoc) {                                                     /* الصفحة: الشبكة أولاً ثم النسخة المحفوظة */
-    e.respondWith(fetch(r).then(x => { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); return x; }).catch(() => caches.match(r).then(m => m || caches.match("./index.html"))));
+  if (isDoc) {                                                     /* الصفحة: النسخة المحفوظة فوراً ثم تحديثها في الخلفية (لا انتظار للشبكة) */
+    e.respondWith(caches.match(r, { ignoreSearch: true }).then(m => { const net = fetch(r).then(x => { if (x.ok) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }).catch(() => m || caches.match("./index.html")); return m || net; }));
     return;
   }
   /* بقية الملفات: نعرض المحفوظ فوراً ونحدّثه في الخلفية */
@@ -60,7 +60,7 @@ async function precacheAll() {
   const say = async (type) => { for (const cl of await self.clients.matchAll()) cl.postMessage({ type, done, total, failed }); };
   await say("precache-progress");
   let i = 0;
-  await Promise.all(Array.from({ length: 5 }, async () => {
+  await Promise.all(Array.from({ length: 2 }, async () => {
     while (i < todo.length) {
       const u = todo[i++];
       try { const r = await fetch(u, { cache: "reload" }); if (r.ok) await c.put(u, r); else failed++; } catch (e) { failed++; }

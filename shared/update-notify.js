@@ -70,7 +70,9 @@
   });
   function requestPrecache(r) {
     var w = r.active || navigator.serviceWorker.controller;
-    if (w) setTimeout(function () { w.postMessage({ type: 'precache' }); }, 2500);
+    /* لا ننافس فتح الصفحة: نؤجّل التخزين الخلفي حتى تهدأ الصفحة، ونتجنّب وضع توفير البيانات */
+    var c = navigator.connection; if (c && c.saveData) return;
+    setTimeout(function () { var go = function () { w.postMessage({ type: 'precache' }); }; if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 8000 }); else go(); }, 12000);
   }
   navigator.serviceWorker.ready.then(function (r) {
     reg = r; requestPrecache(r);
