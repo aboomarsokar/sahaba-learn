@@ -28,6 +28,8 @@ def main() -> None:
 
     for subj in data["subjects"]:
         for grade, entry in subj.get("grades", {}).items():
+            if entry.get("shared"):   # تطبيقٌ يشترك في مجلّد تطبيقٍ آخر مؤقتاً: لا يُنسخ مرتين
+                continue
             src = ROOT / entry["dir"]
             if not src.is_dir():
                 sys.exit(f"مجلّدٌ مفقود: {entry['dir']} ({subj['name']} — الصف {grade})")

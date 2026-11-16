@@ -1,10 +1,10 @@
 /* عامل خدمة البوابة: تعمل قائمة الصفوف والمواد بلا إنترنت بعد أوّل فتح. يحذف ذاكرته وحدها (portal-).
    لا يتدخّل في صفحات التطبيقات: لكلّ تطبيقٍ عامل خدمته وذاكرته. */
 const P = "portal-";
-const V = P + "v4";
+const V = P + "v5";
 const CORE = ["./", "./index.html", "./subjects.json", "./shared/logo.webp", "./shared/fonts/IBMPlexSansArabic-Regular.ttf", "./shared/fonts/IBMPlexSansArabic-Bold.ttf", "./shared/fonts/aref-ruqaa-arabic-700.woff2",
   "./shared/grades/g1.webp", "./shared/grades/g2.webp", "./shared/grades/g3.webp", "./shared/grades/g4.webp", "./shared/grades/g5.webp", "./shared/grades/g6.webp", "./shared/grades/g7.webp", "./shared/grades/g8.webp", "./shared/grades/g9.webp", "./shared/grades/g10.webp",
-  "./shared/subjects/english.webp", "./shared/subjects/arabic.webp", "./shared/subjects/math.webp", "./shared/subjects/science.webp", "./shared/subjects/islamic.webp"];
+  "./shared/subjects/english.webp", "./shared/subjects/arabic.webp", "./shared/subjects/math.webp", "./shared/subjects/science.webp", "./shared/subjects/islamic.webp", "./shared/subjects/physics.webp", "./shared/subjects/chemistry.webp", "./shared/subjects/biology.webp"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {

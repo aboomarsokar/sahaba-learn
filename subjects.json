@@ -114,7 +114,16 @@
       "id": "10",
       "name": "الصف الأول الثانوي",
       "stage": "s",
-      "img": "shared/grades/g10.webp"
+      "img": "shared/grades/g10.webp",
+      "subjects": [
+        "arabic",
+        "islamic",
+        "math",
+        "english",
+        "physics",
+        "chemistry",
+        "biology"
+      ]
     }
   ],
   "subjects": [
@@ -178,6 +187,48 @@
       "icon": "book",
       "grades": {},
       "banner": "shared/subjects/islamic.webp"
+    },
+    {
+      "id": "physics",
+      "name": "الفيزياء",
+      "color": "#1e3fa8",
+      "icon": "science",
+      "banner": "shared/subjects/physics.webp",
+      "grades": {
+        "10": {
+          "dir": "science/10",
+          "shared": true,
+          "note": "مؤقتاً: تطبيق العلوم الحالي حتى يُقسَّم"
+        }
+      }
+    },
+    {
+      "id": "chemistry",
+      "name": "الكيمياء",
+      "color": "#a31515",
+      "icon": "science",
+      "banner": "shared/subjects/chemistry.webp",
+      "grades": {
+        "10": {
+          "dir": "science/10",
+          "shared": true,
+          "note": "مؤقتاً: تطبيق العلوم الحالي حتى يُقسَّم"
+        }
+      }
+    },
+    {
+      "id": "biology",
+      "name": "الأحياء",
+      "color": "#d4570f",
+      "icon": "science",
+      "banner": "shared/subjects/biology.webp",
+      "grades": {
+        "10": {
+          "dir": "science/10",
+          "shared": true,
+          "note": "مؤقتاً: تطبيق العلوم الحالي حتى يُقسَّم"
+        }
+      }
     }
   ],
   "version": "1.0.0",
