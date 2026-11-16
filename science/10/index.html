@@ -792,7 +792,8 @@ document.addEventListener("click",function(){if(!KB.ik)setTimeout(kHide,0)});
 /*PCB-PATCH5*/
 function PG(){try{return JSON.parse(localStorage.getItem("pcbP"))||{d:{},m:[null,null,null]}}catch(e){return{d:{},m:[null,null,null]}}}
 function PS(p){try{localStorage.setItem("pcbP",JSON.stringify(p))}catch(e){}}
-var _ol=ol;ol=function(j){var p=PG();p.d[si+"-"+ui+"-"+j]=1;PS(p);_ol(j)};
+/* الدرس لا يُحسب مكتملاً بمجرّد فتحه: يكتمل بنيل وسامه (إنجاز مستويات المراجعة). نُصلح هنا ما سُجّل خطأً سابقاً. */
+(function(){try{var P=PG(),L=JSON.parse(localStorage.getItem("pcbL"))||{},d={};Object.keys(L).forEach(function(k){if(L[k]&&L[k].b&&/^\d-\d+-\d+$/.test(k))d[k]=1});P.d=d;PS(P)}catch(e){}})();
 var QCUR=-1,_sqn=startQN;startQN=function(i){QCUR=i;_sqn(i)};
 var _sq2=startQ;startQ=function(b){if(b)QCUR=-1;_sq2(b)};
 var _d5=draw;draw=function(){if(V=="res"&&QCUR>=0){var s=0;Q.forEach(function(x,i){if(an[i]==x.a)s++});var p=PG();p.m[QCUR]=Math.max(p.m[QCUR]||0,s);PS(p)}_d5()};

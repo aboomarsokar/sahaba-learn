@@ -196,9 +196,8 @@
       "banner": "shared/subjects/physics.webp",
       "grades": {
         "10": {
-          "dir": "science/10",
-          "shared": true,
-          "note": "مؤقتاً: تطبيق العلوم الحالي حتى يُقسَّم"
+          "dir": "physics/10",
+          "note": "تطبيق مستقل: كتب ورزم واختبارات وتقدّم خاص"
         }
       }
     },
@@ -210,9 +209,8 @@
       "banner": "shared/subjects/chemistry.webp",
       "grades": {
         "10": {
-          "dir": "science/10",
-          "shared": true,
-          "note": "مؤقتاً: تطبيق العلوم الحالي حتى يُقسَّم"
+          "dir": "chemistry/10",
+          "note": "تطبيق مستقل: كتب ورزم واختبارات وتقدّم خاص"
         }
       }
     },
@@ -224,9 +222,8 @@
       "banner": "shared/subjects/biology.webp",
       "grades": {
         "10": {
-          "dir": "science/10",
-          "shared": true,
-          "note": "مؤقتاً: تطبيق العلوم الحالي حتى يُقسَّم"
+          "dir": "biology/10",
+          "note": "تطبيق مستقل: كتب ورزم واختبارات وتقدّم خاص"
         }
       }
     }
