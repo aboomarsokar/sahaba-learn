@@ -186,6 +186,9 @@
 "./index.html",
 "./manifest.webmanifest",
 "../../shared/update-notify.js",
+"../../shared/intro.js",
+"../../shared/kinex.jpg",
+"../../shared/covers/english.webp",
 "../../shared/fonts/IBMPlexSansArabic-Regular.ttf",
 "../../shared/fonts/IBMPlexSansArabic-Bold.ttf"
 ]

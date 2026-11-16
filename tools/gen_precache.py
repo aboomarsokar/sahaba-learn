@@ -17,7 +17,7 @@ SKIP_FILES = {"sw.js", "precache.json", ".gitignore", ".DS_Store", "CLAUDE.md", 
 SKIP_EXT = {".md", ".py", ".txt"}
 # ملفّاتٌ مشتركة خارج مجلّد التطبيق تحتاجها صفحاته
 EXTRAS = {
-    "english/10": ["../../shared/update-notify.js", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf"],
+    "english/10": ["../../shared/update-notify.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/english.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf"],
     "science/10": ["../../shared/update-notify.js"],
 }
 

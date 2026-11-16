@@ -12,13 +12,28 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE / 'نشر'
 src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encoding='utf-8')
 upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
-ver = hashlib.sha256((src + upd).encode()).hexdigest()[:10]
+ver = hashlib.sha256((src + upd + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 
 head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f8a9e">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
         '<meta name="apple-mobile-web-app-capable" content="yes">')
 reg = ("<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))</script>")
 reg += '<script data-app="الرياضيات" data-icon="icon-192.png">' + upd.replace('</script', '<\\/script') + '</script>'
+# غلاف المادة + جولة كينيكس (مشتركان في shared/): الصورتان تُنسخان إلى «نشر» لتعملا بلا إنترنت
+intro = (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')
+STEPS = [
+    {"t": "أهلاً بك، أنا كينيكس", "x": "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق رياضيات الصف العاشر. سأعرّفك عليه في دقيقة، وبعدها أبقى معك في كل درس حتى تتفوّق بإذن الله.", "s": None, "i": 1},
+    {"t": "📘 رياضيات الصف العاشر", "x": "تطبيق دروس الرياضيات لمدرسة التابعين الشرعية (أ) بإشراف المعلّم الفاضل أ. محمد فارس هاشم، وهو جزءٌ من بوابة الصحابة التعليمية التي تجمع موادّك كلّها في مكانٍ واحد.", "s": ".hero"},
+    {"t": "🧩 أربع وحدات", "x": "الدروس مرتّبةٌ في أربع وحدات: الاقترانات، ثم الأسس واللوغاريتمات والارتباط والعدّ، ثم المثلثات، ثم الإنشاءات الهندسية. ابدأ من الأولى وتدرّج.", "s": ".unit.u1"},
+    {"t": "📖 الدروس", "x": "اضغط على أي درسٍ لتفتحه: شرحٌ تفاعلي، ثم أمثلة وتمارين تحلّها بنفسك. الشريط الأخضر يريك مقدار ما أنجزته من الدرس.", "s": "#u1 .ls"},
+    {"t": "✎ ورقة العمل والاختبار الذاتي", "x": "في آخر الوحدة ورقة عملٍ واختبارٌ ذاتي تقيس بهما فهمك، ويُحفظ أفضل نتيجةٍ لك. الخطأ ليس فشلاً، بل درسٌ يقرّبك من النجاح.", "s": "#u1 .ls:last-child"},
+    {"t": "📶 بلا إنترنت", "x": "بعد أول فتحٍ مع الإنترنت تعمل الدروس بلا إنترنت، ويُحفظ تقدّمك على هذا الجهاز. وللعودة من أي درسٍ إلى هذه الصفحة اضغط زرّ 🏠 أو زرّ الرجوع.", "s": ".note"},
+    {"t": "جاهز للانطلاق؟ 🚀", "x": "المذاكرة اليومية القليلة أفضل من الكثيرة المتقطّعة. ابدأ بدرسٍ واحد اليوم، وأنا معك في كل خطوة. وإذا أردت أن أعيد لك الجولة فستجد زرّها أسفل هذه الصفحة. بالتوفيق دائماً! ✨", "s": None},
+]
+CFG = ('<script>(function(){var o={id:"math10",cover:"cover.webp",kinex:"kinex.jpg",steps:' + json.dumps(STEPS, ensure_ascii=False)
+       + ',ready:function(){var h=document.getElementById("hub");return h&&!h.hidden}};'
+       + 'SahabaIntro.run(o);document.addEventListener("DOMContentLoaded",function(){SahabaIntro.replay(o,document.querySelector(".note"))});'
+       + 'if(document.readyState!=="loading")SahabaIntro.replay(o,document.querySelector(".note"))})()</script>')
 UPD_SW = '''
 /* إشعار التحديث وهو مغلق (أندرويد/كروم لتطبيقٍ مثبَّت على الشاشة الرئيسية): فحصٌ دوريّ لنسخة الصفحة */
 const UPD='upd-math10';
@@ -32,6 +47,8 @@ assert '</head>' in src and '</body>' in src
 html = src.replace('</head>', head + '</head>', 1)
 i = html.rindex('</body>')
 html = html[:i] + reg + html[i:]
+j = html.index('<body>') + len('<body>')   # الغلاف أوّلاً كي لا تُرى الصفحة قبله
+html = html[:j] + '<script>' + intro.replace('</script', '<\\/script') + '</script>' + CFG + html[j:]
 
 OUT.mkdir(exist_ok=True)
 (OUT / 'index.html').write_text(html, encoding='utf-8')
@@ -42,7 +59,7 @@ OUT.mkdir(exist_ok=True)
     'icons': [{'src': 'icon-192.png', 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any maskable'},
               {'src': 'icon-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'any maskable'}]},
     ensure_ascii=False, indent=2), encoding='utf-8')
-(OUT / 'sw.js').write_text(f"""const V='math10-{ver}',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png'];
+(OUT / 'sw.js').write_text(f"""const V='math10-{ver}',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./cover.webp','./kinex.jpg'];
 self.addEventListener('install',e=>{{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))}});
 self.addEventListener('activate',e=>{{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith('math10-')&&x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))}});
 // من الذاكرة أولاً (يعمل بلا إنترنت)، وتُحدَّث النسخة في الخلفية كلّما وُجد اتصال
@@ -50,6 +67,8 @@ self.addEventListener('fetch',e=>{{if(e.request.method!=='GET')return;
 e.respondWith(caches.match(e.request,{{ignoreSearch:true}}).then(hit=>{{const net=fetch(e.request).then(r=>{{if(r&&r.ok)caches.open(V).then(c=>c.put(e.request,r.clone()));return r}}).catch(()=>hit);
 return hit||net||caches.match('./index.html')}}))}});
 """ + UPD_SW, encoding='utf-8')
+shutil.copyfile(HERE.parent.parent / 'shared' / 'covers' / 'math.webp', OUT / 'cover.webp')
+shutil.copyfile(HERE.parent.parent / 'shared' / 'kinex.jpg', OUT / 'kinex.jpg')
 logo = HERE / 'شعار-المدرسة.jpg'
 for n in (192, 512):
     if not shutil.which('sips'):  # خادم النشر (لينكس) بلا sips: تبقى الأيقونات المحفوظة في «نشر»

@@ -6,6 +6,9 @@
 <title>بوابة الصحابة التعليمية</title>
 <meta name="description" content="بوابة الصحابة التعليمية: بوابتك نحو العلم والمعرفة والتميّز. دروس تفاعلية وأنشطة واختبارات تعمل على الجوال والحاسوب وتبقى متاحةً بلا إنترنت.">
 <meta name="theme-color" content="#123C46">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="shared/icons/portal-192.png">
+<link rel="apple-touch-icon" href="shared/icons/portal-180.png">
 <style>
 @font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
@@ -226,14 +229,6 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   </div>
 </section>
 
-<!-- ===== المساعدة والدعم ===== -->
-<section class="scr" id="scr-contact" hidden>
-  <div class="wrap">
-    <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2>المساعدة والدعم</h2></div>
-    <div id="contactBody"></div>
-  </div>
-</section>
-
 <!-- ===== عن المنصة ===== -->
 <section class="scr" id="scr-about" hidden>
   <div class="wrap">
@@ -250,6 +245,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
     <div class="panel" style="margin-bottom:14px"><b>حجم الخط</b>
       <div class="seg" style="margin-top:10px"><button type="button" data-fs="s">صغير</button><button type="button" data-fs="m">متوسط</button><button type="button" data-fs="l">كبير</button></div></div>
     <div class="panel"><b>اللغة</b><p style="margin:6px 0 0;color:var(--muted)">العربية</p></div>
+    <div id="kxReplay"></div>
   </div>
 </section>
 
@@ -285,7 +281,6 @@ var MENU = [
   ["progress","إنجازاتي وتقدمي","نسب الإنجاز والوحدات المكتملة","chart"],
   ["certs","شهاداتي","الشهادات التعليمية والإنجازات","medal"],
   ["notifs","الإشعارات","التنبيهات والتحديثات","bell"],
-  ["contact","المساعدة والدعم","الاستفسارات والملاحظات","help"],
   ["about","عن المنصة","التعريف بالبوابة وإصدارها","info"],
   ["settings","الإعدادات","اللغة والمظهر وإعدادات التطبيق","gear"]
 ];
@@ -299,7 +294,7 @@ function hasReady(g){ return data.subjects.some(function(s){ return s.grades && 
 function gradeById(id){ return data.grades.filter(function(g){ return g.id === id; })[0]; }
 
 /* ---------- الشاشات ---------- */
-var SCREENS = ["splash","name","grades","subjects","progress","certs","notifs","contact","about","settings"];
+var SCREENS = ["splash","name","grades","subjects","progress","certs","notifs","about","settings"];
 function show(id){
   SCREENS.forEach(function(s){ $("scr-"+s).hidden = s !== id; });
   closeMenu(); window.scrollTo(0,0);
@@ -308,7 +303,6 @@ function show(id){
   if (id === "progress") drawProgress();
   if (id === "certs") drawCerts();
   if (id === "notifs") drawNotifs();
-  if (id === "contact") drawContact();
   if (id === "about") $("aboutVer").textContent = (data && data.version) || "1.0.0";
   if (id === "settings") drawSettings();
 }
@@ -423,7 +417,7 @@ function drawSubjects(){
     if (s.banner) {   /* مادةٌ لها مستطيلها (صورة) */
       var img = '<img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy">';
       return e ? '<a class="gb" href="'+esc(e.dir)+'/" aria-label="'+esc(s.name)+'">'+img+'<span class="rd">جاهز</span></a>'
-               : '<button type="button" class="gb" data-soon aria-label="'+esc(s.name)+'">'+img+'<span class="rd soon">قريباً</span></button>';
+               : '<button type="button" class="gb" data-soon data-sid="'+esc(s.id)+'" aria-label="'+esc(s.name)+'">'+img+'<span class="rd soon">قريباً</span></button>';
     }
     if (e) {
       return '<a class="card" style="--c:'+esc(s.color||"#E6C168")+'" href="'+esc(e.dir)+'/">'
@@ -434,7 +428,13 @@ function drawSubjects(){
     return '<button type="button" class="card soon" data-soon style="text-align:start"><span class="badge">قريباً</span>'
       + '<span class="ic">'+icon+'</span><h3>'+esc(s.name)+'</h3><p>قيد الإعداد</p></button>';
   }).join("");
-  $("subjects").querySelectorAll("[data-soon]").forEach(function(b){ b.addEventListener("click", function(){ toast("سيُضاف قريباً"); }); });
+  $("subjects").querySelectorAll("[data-soon]").forEach(function(b){ b.addEventListener("click", function(){
+    var sid = b.getAttribute("data-sid");
+    if (sid === "arabic" || sid === "islamic") {   /* غلاف المادة ثم «ابدأ الآن» ← رسالة قريباً */
+      try{ sessionStorage.removeItem("sahaba-cover:soon-"+sid); }catch(e){}
+      SahabaIntro.cover({id:"soon-"+sid, cover:"shared/covers/"+sid+".webp", onStart:function(){ toast("سيُضاف قريباً"); }}, function(){});
+    } else toast("سيُضاف قريباً");
+  }); });
 }
 var toastT;
 function toast(m){ var t = $("toast"); t.textContent = m; t.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove("on"); }, 2200); }
@@ -481,15 +481,6 @@ function drawNotifs(){
   lsSet(K.seen, String(ns.length)); badges();
 }
 
-/* ---------- المساعدة والدعم ---------- */
-function drawContact(){
-  var c = data.contact || {}, h = "";
-  if (c.whatsapp) h += '<a class="ct" href="https://wa.me/'+esc(c.whatsapp.replace(/\D/g,""))+'" target="_blank" rel="noopener"><span style="font-size:1.6rem">💬</span><span><b>واتساب</b><br><small dir="ltr">'+esc(c.whatsapp)+'</small></span></a>';
-  if (c.phone) h += '<a class="ct" href="tel:'+esc(c.phone)+'"><span style="font-size:1.6rem">📞</span><span><b>اتصال</b><br><small dir="ltr">'+esc(c.phone)+'</small></span></a>';
-  if (c.email) h += '<a class="ct" href="mailto:'+esc(c.email)+'"><span style="font-size:1.6rem">✉️</span><span><b>بريد إلكتروني</b><br><small dir="ltr">'+esc(c.email)+'</small></span></a>';
-  $("contactBody").innerHTML = h || '<div class="empty">ستُضاف قنوات الاستفسار والملاحظات والدعم قريباً.</div>';
-}
-
 /* ---------- الإعدادات ---------- */
 function applyFs(v){ document.documentElement.setAttribute("data-fs", v); }
 function drawSettings(){
@@ -514,6 +505,13 @@ fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); })
 }).catch(function(){
   steps.json = true; progress();
 });
+</script>
+<script src="shared/intro.js"></script>
+<script>
+var KX = {id:"portal", kinex:"shared/kinex.jpg", steps:[{"t": "أهلاً بك، أنا كينيكس", "x": "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، بوابتك نحو العلم والمعرفة والتميّز. سأريك البوابة في دقيقة، وبعدها أبقى معك في كل مادة.", "s": null, "i": 1}, {"t": "🏫 المراحل الدراسية", "x": "اختر مرحلتك: الابتدائية أو الإعدادية أو الثانوية.", "s": ["#tabs"]}, {"t": "🎓 صفّك", "x": "اضغط على صفّك فتظهر موادّه. وما لم يجهز بعد يظهر عليه «قريباً»، وسيُضاف تباعاً بإذن الله.", "s": ["#banners .gb"]}, {"t": "☰ القائمة", "x": "من هنا تصل إلى ملفك الشخصي وموادك وإنجازاتك وتقدمك وشهاداتك والإشعارات والإعدادات.", "s": ["#menuBtn"]}, {"t": "أنا معك دائماً 🚀", "x": "ستجدني في كل تطبيق: أعرّفك عليه بجولة قصيرة، وأساعدك على الفهم في الأسئلة. وإذا أردت إعادة هذه الجولة فستجد زرّها في الإعدادات. بالتوفيق دائماً! ✨", "s": null}],
+  ready:function(){ var g=document.getElementById("scr-grades"); return g && !g.hidden; }};
+SahabaIntro.run(KX);
+SahabaIntro.replay(KX, document.getElementById("kxReplay"));
 </script>
 </body>
 </html>

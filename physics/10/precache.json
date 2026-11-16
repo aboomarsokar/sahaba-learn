@@ -246,6 +246,8 @@
 "../../science/10/lessons/phys_sys.html",
 "../../science/10/lessons/phys_vec1.html",
 "../../science/10/lessons/phys_vec2.html",
-"../../shared/update-notify.js"
+"../../shared/update-notify.js",
+"../../shared/intro.js",
+"../../shared/covers/physics.webp"
 ]
 }

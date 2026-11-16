@@ -22,6 +22,20 @@ APPS = [
 ]
 
 
+STEPS_TPL = """var STEPS=[
+{t:"أهلاً بك، أنا كينيكس",x:"مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق __SUB__ للصف العاشر. سأعرّفك عليه في دقيقة، وبعدها أبقى معك في كل درس حتى تتفوّق بإذن الله.",s:null,i:1},
+{t:"📚 مادة __SUB__",x:"اضغط على بطاقة المادة لتدخل وحداتها، وفي كل وحدة دروس مرتبة. وداخل كل درس تبويبات: الشرح، وصور توضيحية، وملاحظات، وأسئلة. ونسبة إنجازك الحقيقية تظهر على البطاقة. ركّز، فالفهم أهم من الحفظ!",s:".sc.im"},
+{t:"📕 الكتب والرزم المدرسية",x:"من هنا تفتح كتب __SUB__ والرزم المدرسية لتراجع منها متى شئت.",s:".q2"},
+{t:"📝 الاختبارات",x:"اختبر نفسك في __SUB__ بمستويات سهل ومتوسط وصعب وشامل. الخطأ ليس فشلاً، هو درس يقرّبك من النجاح، فلا تخف من المحاولة.",s:".q4>div:nth-child(1)"},
+{t:"📤 مشاركة التطبيق",x:"أرسل التطبيق لزملائك ليستفيدوا معك. من علّم غيره ثبّت علمه، وأجر العلم يتضاعف بنشره. 🌟",s:".q4>div:nth-child(2)"},
+{t:"📈 تقدمي",x:"هنا ترى نسبة إنجازك في __SUB__ ودروسك المنجزة ونتائج اختباراتك. الدرس لا يُحسب مكتملاً إلا بعد أن تنال وسامه، فتحدَّ نفسك كل يوم!",s:".q4>div:nth-child(3)"},
+{t:"⚙️ الإعدادات",x:"من هنا تغيّر اللغة والوضع الليلي، وتنزّل التطبيق وتثبّته على شاشة هاتفك، وتعيد هذه الجولة متى شئت.",s:".q4>div:nth-child(4)"},
+{t:"🖼️ صورتك الشخصية",x:"اضغط على دائرة صورتك لتختار صورة جاهزة أو من الاستوديو أو تلتقط واحدة بالكاميرا، وتجعل التطبيق تطبيقك أنت.",s:".avh .av"},
+{t:"🤖 اسأل كينيكس",x:"عندما يصعب عليك سؤال، اضغط على دائرتي التي تظهر على جانب الشاشة في الاختبارات وأسئلة المراجعة. سأشرح لك الفكرة وطريقة التفكير، أما الحلّ فعليك أنت!",s:null,k:1},
+{t:"جاهز للانطلاق؟ 🚀",x:"المذاكرة اليومية القليلة أفضل من الكثيرة المتقطعة. ابدأ بدرس واحد اليوم، وأنا معك في كل خطوة، وإذا أردت العودة إلى بوابة الصحابة التعليمية فهي تنتظرك بجميع موادك. بالتوفيق دائماً! ✨",s:null}];
+"""
+
+
 def rep(s: str, a: str, b: str) -> str:
     assert s.count(a) == 1, (s.count(a), a[:80])
     return s.replace(a, b)
@@ -73,7 +87,7 @@ LOCK = r"""
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). الملفّات الثقيلة من science/10. */
 const P = "__PRE__";
-const V = P + "v1";
+const V = P + "v2";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../science/10/icons/icon-192.png", "../../science/10/icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -160,6 +174,13 @@ def make(k, d, name, store, pre, color):
     # 7) مكتبة الأوسمة: أوسمة هذه المادة وحدها
     s = rep(s, "ks=Object.keys(o).filter(function(k){return k!=\"AFKU\"&&o[k].b&&(", "ks=Object.keys(o).filter(function(k){return k!=\"AFKU\"&&PCB_KEY(k)&&o[k].b&&(")
     s = rep(s, "tot=0;DATA.forEach(function(s){(s||[]).forEach(function(u){tot+=(u||[]).length})});\nvar h='<h3 class=\"blh\">", "tot=0;[DATA[window.PCB_K]].forEach(function(s){(s||[]).forEach(function(u){tot+=(u||[]).length})});\nvar h='<h3 class=\"blh\">")
+    # 7ب) جولة كينيكس خاصّة بالمادة (الجولة نفسها وتصميمها كما في تطبيق العلوم)
+    m = re.search(r"var STEPS=\[.*?\];\n(?=window\.KXMS)", s, re.S)
+    assert m and s.count("var STEPS=[") == 1
+    s = s[:m.start()] + STEPS_TPL.strip().replace("__SUB__", name) + "\n" + s[m.end():]
+    # 7ج) غلاف المادة: صورةٌ فقط ثم «ابدأ الآن»
+    assert s.count("<body>") == 1
+    s = s.replace("<body>", "<body>\n<script src=\"../../shared/intro.js\"></script>\n<script>SahabaIntro.cover({id:\"" + d + "10\",cover:\"../../shared/covers/" + d + ".webp\"},function(){})</script>", 1)
     # 8) طبقة القفل في آخر الصفحة
     s = rep(s, "</body>", LOCK.replace("__DIR__", d) + '<script src="../../shared/update-notify.js" data-app="' + name + '" data-icon="../../science/10/icons/icon-192.png" defer></script>\n</body>')
     out = ROOT / d / "10"
@@ -193,7 +214,7 @@ def make(k, d, name, store, pre, color):
             if p.is_file():
                 files.append(f"{SHARED}{sub}/{p.name}")
     files += [f"{SHARED}lessons/{n}" for n in sorted(mine)]
-    files.append("../../shared/update-notify.js")
+    files += ["../../shared/update-notify.js", "../../shared/intro.js", f"../../shared/covers/{d}.webp"]
     (out / "precache.json").write_text(json.dumps({"files": files}, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     print(f"✔ {d}/10 — {len(files)} ملفاً في قائمة التخزين، {len(mine)} درساً")
 
