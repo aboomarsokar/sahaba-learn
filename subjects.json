@@ -6,13 +6,23 @@
       "id": "1",
       "name": "الصف الأول الابتدائي",
       "stage": "p",
-      "img": "shared/grades/g1.webp"
+      "img": "shared/grades/g1.webp",
+      "subjects": [
+        "english",
+        "arabic",
+        "math"
+      ]
     },
     {
       "id": "2",
       "name": "الصف الثاني الابتدائي",
       "stage": "p",
-      "img": "shared/grades/g2.webp"
+      "img": "shared/grades/g2.webp",
+      "subjects": [
+        "english",
+        "arabic",
+        "math"
+      ]
     },
     {
       "id": "3",
@@ -80,7 +90,8 @@
           ],
           "note": "أربع وحدات · أنشطة واختبارات وأوراق عمل"
         }
-      }
+      },
+      "banner": "shared/subjects/math.webp"
     },
     {
       "id": "science",
@@ -104,7 +115,23 @@
           "dir": "english/10",
           "note": "LEXORA"
         }
-      }
+      },
+      "banner": "shared/subjects/english.webp"
+    },
+    {
+      "id": "arabic",
+      "name": "اللغة العربية",
+      "color": "#a3243b",
+      "icon": "book",
+      "banner": "shared/subjects/arabic.webp",
+      "grades": {}
+    },
+    {
+      "id": "islamic",
+      "name": "التربية الإسلامية",
+      "color": "#2f8f6b",
+      "icon": "book",
+      "grades": {}
     }
   ],
   "version": "1.0.0",

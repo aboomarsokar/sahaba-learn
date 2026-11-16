@@ -70,6 +70,12 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 
 /* المواد */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:40px}
+#subjects:has(.gb){grid-template-columns:1fr}
+a.gb{text-decoration:none}
+.gb .rd{display:none}   /* المستطيلات صور خالصة بلا عناصر فوقها */
+.toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#0d2f38;border:1px solid var(--gold);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:.2s;z-index:60}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+button.card.soon{width:100%;cursor:pointer;color:inherit;font:inherit}
 .card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:inherit;box-shadow:var(--shadow);position:relative;transition:transform .15s,border-color .15s}
 a.card:hover{transform:translateY(-2px);border-color:var(--c)}
 a.card:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
@@ -247,6 +253,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   </div>
 </section>
 
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-hidden="true" aria-label="القائمة">
   <div class="head"><b>بوابة الصحابة التعليمية</b><button class="ib" type="button" id="closeMenu" aria-label="إغلاق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
@@ -409,19 +416,28 @@ function drawBanners(){
 function drawSubjects(){
   var g = gradeById(current);
   $("subjectsLabel").textContent = g ? g.name : "المواد";
-  $("subjects").innerHTML = data.subjects.map(function(s){
+  var list = data.subjects.filter(function(s){ return !g || !g.subjects || g.subjects.indexOf(s.id) >= 0; });
+  $("subjects").innerHTML = list.map(function(s){
     var e = s.grades && s.grades[current];
     var icon = ICONS[s.icon] || ICONS.book;
+    if (s.banner) {   /* مادةٌ لها مستطيلها (صورة) */
+      var img = '<img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy">';
+      return e ? '<a class="gb" href="'+esc(e.dir)+'/" aria-label="'+esc(s.name)+'">'+img+'<span class="rd">جاهز</span></a>'
+               : '<button type="button" class="gb" data-soon aria-label="'+esc(s.name)+'">'+img+'<span class="rd soon">قريباً</span></button>';
+    }
     if (e) {
       return '<a class="card" style="--c:'+esc(s.color||"#E6C168")+'" href="'+esc(e.dir)+'/">'
         + '<span class="badge">جاهز</span><span class="ic">'+icon+'</span>'
         + '<h3>'+esc(s.name)+'</h3>' + (e.note ? '<p>'+esc(e.note)+'</p>' : '')
         + '<span class="go">ادخل ‹</span></a>';
     }
-    return '<div class="card soon" aria-disabled="true"><span class="badge">قريباً</span>'
-      + '<span class="ic">'+icon+'</span><h3>'+esc(s.name)+'</h3><p>قيد الإعداد</p></div>';
+    return '<button type="button" class="card soon" data-soon style="text-align:start"><span class="badge">قريباً</span>'
+      + '<span class="ic">'+icon+'</span><h3>'+esc(s.name)+'</h3><p>قيد الإعداد</p></button>';
   }).join("");
+  $("subjects").querySelectorAll("[data-soon]").forEach(function(b){ b.addEventListener("click", function(){ toast("سيُضاف قريباً"); }); });
 }
+var toastT;
+function toast(m){ var t = $("toast"); t.textContent = m; t.classList.add("on"); clearTimeout(toastT); toastT = setTimeout(function(){ t.classList.remove("on"); }, 2200); }
 
 /* ---------- إنجازاتي وتقدمي / شهاداتي ----------
    كلّ تطبيق يكتب ملخّصه في localStorage باسم sahaba-ach:<مجلّد التطبيق> بالصيغة:
