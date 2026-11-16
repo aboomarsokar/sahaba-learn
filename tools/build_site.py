@@ -37,7 +37,8 @@ def main() -> None:
             pub = src / entry["publish"] if entry.get("publish") else src
             if not (pub / "index.html").is_file():
                 sys.exit(f"لا index.html في {pub.relative_to(ROOT)}")
-            shutil.copytree(pub, OUT / entry["dir"], ignore=SKIP)
+            if not (OUT / entry["dir"]).exists():   # عدّة مواد قد تشير إلى تطبيقٍ واحد (فيزياء/كيمياء/أحياء ← science/10)
+                shutil.copytree(pub, OUT / entry["dir"], ignore=SKIP)
             print(f"✔ {subj['name']} — الصف {grade} → /{entry['dir']}/")
 
     size = sum(p.stat().st_size for p in OUT.rglob("*") if p.is_file()) / 1024 / 1024

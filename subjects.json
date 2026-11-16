@@ -1,24 +1,138 @@
 {
-  "title": "مدارس الصحابة",
-  "subtitle": "المنصّة التعليمية",
+  "title": "بوابة الصحابة التعليمية",
+  "subtitle": "بوابتك نحو العلم والمعرفة والتميّز",
   "grades": [
-    { "id": "1", "name": "الصف الأول" },
-    { "id": "2", "name": "الصف الثاني" },
-    { "id": "3", "name": "الصف الثالث" },
-    { "id": "4", "name": "الصف الرابع" },
-    { "id": "5", "name": "الصف الخامس" },
-    { "id": "6", "name": "الصف السادس" },
-    { "id": "7", "name": "الصف السابع" },
-    { "id": "8", "name": "الصف الثامن" },
-    { "id": "9", "name": "الصف التاسع" },
-    { "id": "10", "name": "الصف العاشر" }
+    {
+      "id": "1",
+      "name": "الصف الأول الابتدائي",
+      "img": "shared/img/grade-p1.webp",
+      "subjects": [
+        "arabic",
+        "math",
+        "english",
+        "islamic"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "الصف الثاني الابتدائي",
+      "img": "shared/img/grade-p2.webp",
+      "subjects": [
+        "arabic",
+        "math",
+        "english",
+        "islamic"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "الصف الثالث الابتدائي",
+      "img": "shared/img/grade-p3.webp",
+      "subjects": [
+        "science",
+        "math",
+        "english",
+        "islamic",
+        "arabic"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "الصف الرابع الابتدائي",
+      "img": "shared/img/grade-p4.webp",
+      "subjects": [
+        "science",
+        "math",
+        "english",
+        "islamic",
+        "arabic"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "الصف الخامس الابتدائي",
+      "img": "shared/img/grade-p5.webp",
+      "subjects": [
+        "science",
+        "math",
+        "english",
+        "islamic",
+        "arabic"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "الصف السادس الابتدائي",
+      "img": "shared/img/grade-p6.webp",
+      "subjects": [
+        "science",
+        "math",
+        "english",
+        "islamic",
+        "arabic"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "الصف الأول الإعدادي",
+      "img": "shared/img/grade-m1.webp",
+      "subjects": [
+        "science",
+        "math",
+        "english",
+        "islamic",
+        "arabic"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "الصف الثاني الإعدادي",
+      "img": "shared/img/grade-m2.webp",
+      "subjects": [
+        "science",
+        "math",
+        "english",
+        "islamic",
+        "arabic"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "الصف الثالث الإعدادي",
+      "img": "shared/img/grade-m3.webp",
+      "subjects": [
+        "science",
+        "math",
+        "english",
+        "islamic",
+        "arabic"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "الصف الأول الثانوي",
+      "img": "shared/img/grade-s1.webp",
+      "subjects": [
+        "math",
+        "chemistry",
+        "physics",
+        "biology",
+        "english",
+        "arabic",
+        "islamic"
+      ]
+    }
   ],
   "subjects": [
     {
       "id": "math",
       "name": "الرياضيات",
-      "color": "#1f8a9e",
-      "icon": "math",
+      "color": "#1e7f8f",
+      "banner": {
+        "default": "shared/img/gs-math.webp",
+        "10": "shared/img/gs10-math.webp"
+      },
+      "cover": "shared/img/cover-math.webp",
       "grades": {
         "10": {
           "dir": "math/10",
@@ -34,27 +148,99 @@
     },
     {
       "id": "science",
-      "name": "العلوم العامة",
+      "name": "العلوم",
       "color": "#2e7d32",
-      "icon": "science",
+      "banner": {
+        "default": "shared/img/gs-science.webp"
+      },
+      "cover": null,
+      "grades": {}
+    },
+    {
+      "id": "chemistry",
+      "name": "الكيمياء",
+      "color": "#b3261e",
+      "banner": {
+        "10": "shared/img/gs10-chem.webp"
+      },
+      "cover": "shared/img/cover-chem.webp",
       "grades": {
         "10": {
           "dir": "science/10",
-          "note": "فيزياء · كيمياء · أحياء — دروس تفاعلية ومختبر"
+          "query": "?s=1",
+          "note": "تطبيق مستقل"
+        }
+      }
+    },
+    {
+      "id": "physics",
+      "name": "الفيزياء",
+      "color": "#1f4fb3",
+      "banner": {
+        "10": "shared/img/gs10-physics.webp"
+      },
+      "cover": "shared/img/cover-phys.webp",
+      "grades": {
+        "10": {
+          "dir": "science/10",
+          "query": "?s=0",
+          "note": "تطبيق مستقل"
+        }
+      }
+    },
+    {
+      "id": "biology",
+      "name": "الأحياء",
+      "color": "#d2570a",
+      "banner": {
+        "10": "shared/img/gs10-bio.webp"
+      },
+      "cover": "shared/img/cover-bio.webp",
+      "grades": {
+        "10": {
+          "dir": "science/10",
+          "query": "?s=2",
+          "note": "تطبيق مستقل"
         }
       }
     },
     {
       "id": "english",
       "name": "اللغة الإنجليزية",
-      "color": "#c2185b",
-      "icon": "english",
+      "color": "#4527a0",
+      "banner": {
+        "default": "shared/img/gs-english.webp",
+        "10": "shared/img/gs10-english.webp"
+      },
+      "cover": "shared/img/cover-english.webp",
       "grades": {
         "10": {
           "dir": "english/10",
           "note": "LEXORA"
         }
       }
+    },
+    {
+      "id": "arabic",
+      "name": "اللغة العربية",
+      "color": "#7b1e2b",
+      "banner": {
+        "default": "shared/img/gs-arabic.webp",
+        "10": "shared/img/gs10-arabic.webp"
+      },
+      "cover": "shared/img/cover-arabic.webp",
+      "grades": {}
+    },
+    {
+      "id": "islamic",
+      "name": "التربية الإسلامية",
+      "color": "#8a6a2b",
+      "banner": {
+        "default": "shared/img/gs-islamic.webp",
+        "10": "shared/img/gs10-islamic.webp"
+      },
+      "cover": "shared/img/cover-islamic.webp",
+      "grades": {}
     }
   ]
 }
