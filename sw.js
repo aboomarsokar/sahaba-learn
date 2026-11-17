@@ -1,7 +1,7 @@
 /* عامل خدمة البوابة: تعمل قائمة الصفوف والمواد بلا إنترنت بعد أوّل فتح. يحذف ذاكرته وحدها (portal-).
    لا يتدخّل في صفحات التطبيقات: لكلّ تطبيقٍ عامل خدمته وذاكرته. */
 const P = "portal-";
-const V = P + "v10";
+const V = P + "v11";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./shared/intro.js", "./shared/update-notify.js", "./shared/kinex.jpg", "./shared/covers/arabic.webp", "./shared/covers/islamic.webp", "./shared/icons/portal-192.png", "./shared/icons/portal-512.png", "./shared/icons/portal-180.png", "./subjects.json", "./shared/logo.webp", "./shared/fonts/IBMPlexSansArabic-Regular.ttf", "./shared/fonts/IBMPlexSansArabic-Bold.ttf", "./shared/fonts/aref-ruqaa-arabic-700.woff2",
   "./shared/grades/g1.webp", "./shared/grades/g2.webp", "./shared/grades/g3.webp", "./shared/grades/g4.webp", "./shared/grades/g5.webp", "./shared/grades/g6.webp", "./shared/grades/g7.webp", "./shared/grades/g8.webp", "./shared/grades/g9.webp", "./shared/grades/g10.webp",
   "./shared/subjects/english.webp", "./shared/subjects/arabic.webp", "./shared/subjects/math.webp", "./shared/subjects/science.webp", "./shared/subjects/islamic.webp", "./shared/subjects/physics.webp", "./shared/subjects/chemistry.webp", "./shared/subjects/biology.webp"];

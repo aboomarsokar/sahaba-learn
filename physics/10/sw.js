@@ -1,6 +1,6 @@
 /* عامل خدمة الفيزياء: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (phy10-). الملفّات الثقيلة من science/10. */
 const P = "phy10-";
-const V = P + "v6";
+const V = P + "v7";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../science/10/icons/icon-192.png", "../../science/10/icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
