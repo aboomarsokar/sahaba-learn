@@ -2,7 +2,7 @@
 const P = "isl10-";
 const V = P + "v1";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./images/durra.webp",
-  "./data/curriculum.js", "./data/u1.js"];
+  "./data/curriculum.js", "./data/u1.js", "./data/u2.js", "./data/u3.js", "./data/u4.js", "./data/u5.js", "./data/u6.js", "./data/u8.js", "./data/u9.js", "./data/u11.js", "./data/u12.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 
