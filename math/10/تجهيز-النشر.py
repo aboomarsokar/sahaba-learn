@@ -32,7 +32,7 @@ STEPS = [
 ]
 CFG = ('<script>(function(){var o={id:"math10",cover:"cover.webp",kinex:"kinex.jpg",steps:' + json.dumps(STEPS, ensure_ascii=False)
        + ',ready:function(){var h=document.getElementById("hub");return h&&!h.hidden}};'
-       + '(function(){var a=document.createElement("a");a.href="../../../index.html";a.textContent="🏠 بوابة الصحابة التعليمية";a.style.cssText="display:inline-block;margin:10px 0 0;padding:8px 16px;border-radius:14px;background:#123C46;color:#fff;text-decoration:none;font-weight:700;font-size:14px";function m(){var h=document.querySelector(".hero");if(h&&!h.querySelector("a[href$=\'index.html\']"))h.appendChild(a)}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",m);else m()})();'
+       + '(function(){var a=document.createElement("a");a.href="../../../index.html";a.textContent="🏠 الرجوع للبوابة";a.setAttribute("aria-label","الرجوع إلى بوابة الصحابة التعليمية");a.style.cssText="position:absolute;top:10px;right:10px;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:#123C46;color:#fff;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 3px 10px rgba(0,0,0,.25);z-index:5";function m(){var h=document.querySelector(".hero");if(h&&!h.querySelector("a[href$=\'index.html\']")){h.style.position="relative";h.appendChild(a)}}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",m);else m()})();'
        + 'SahabaIntro.run(o);document.addEventListener("DOMContentLoaded",function(){SahabaIntro.replay(o,document.querySelector(".note"))});'
        + 'if(document.readyState!=="loading")SahabaIntro.replay(o,document.querySelector(".note"))})()</script>')
 UPD_SW = '''
@@ -72,7 +72,7 @@ OUT.mkdir(exist_ok=True)
 self.addEventListener('install',e=>{{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))}});
 self.addEventListener('activate',e=>{{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith('math10-')&&x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))}});
 // من الذاكرة أولاً (يعمل بلا إنترنت)، وتُحدَّث النسخة في الخلفية كلّما وُجد اتصال
-self.addEventListener('fetch',e=>{{if(e.request.method!=='GET')return;
+self.addEventListener('fetch',e=>{{if(e.request.method!=='GET'||e.request.cache==='no-store')return;
 e.respondWith(caches.match(e.request,{{ignoreSearch:true}}).then(hit=>{{const net=fetch(e.request).then(r=>{{if(r&&r.ok)caches.open(V).then(c=>c.put(e.request,r.clone()));return r}}).catch(()=>hit);
 return hit||net||caches.match('./index.html')}}))}});
 """ + UPD_SW, encoding='utf-8')

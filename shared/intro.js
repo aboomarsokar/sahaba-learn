@@ -14,8 +14,7 @@
     english: [0.23, 0.82, 0.56, 0.12], chemistry: [0.16, 0.815, 0.62, 0.12], biology: [0.23, 0.815, 0.56, 0.125] };
   var CSS = "#shc{position:fixed;inset:0;z-index:2147483000;background:#0b1a1f;overflow:hidden;-webkit-tap-highlight-color:transparent;animation:shin .35s ease;touch-action:manipulation}" +
     "#shc .bg,#shc .mn{position:absolute;inset:0;width:100%;height:100%;display:block;-webkit-user-select:none;user-select:none;pointer-events:none}" +
-    "#shc .bg{object-fit:cover;filter:blur(22px) brightness(.75);transform:scale(1.12)}" +
-    "#shc .mn{object-fit:contain}" +
+    "#shc .mn{object-fit:cover;object-position:center}" +
     "#shc .hot{position:absolute;background:transparent;border:0;border-radius:999px;padding:0;cursor:pointer;-webkit-tap-highlight-color:rgba(255,255,255,.25)}" +
     "#shc .hot:active{background:rgba(255,255,255,.18)}" +
     "#shc.out{opacity:0;transition:opacity .35s}@keyframes shin{from{opacity:0}to{opacity:1}}" +
@@ -51,16 +50,15 @@
     if (!o.cover || ses("sahaba-cover:" + o.id) === "1") { done(); return; }
     css();
     var c = D.createElement("div"); c.id = "shc"; c.setAttribute("aria-label", "ابدأ الآن");
-    var bg = D.createElement("img"); bg.className = "bg"; bg.alt = ""; bg.setAttribute("aria-hidden", "true");
     var im = D.createElement("img"); im.className = "mn"; im.alt = ""; im.draggable = false;
     var hot = D.createElement("button"); hot.type = "button"; hot.className = "hot"; hot.setAttribute("aria-label", "ابدأ الآن");
-    c.appendChild(bg); c.appendChild(im); c.appendChild(hot);
+    c.appendChild(im); c.appendChild(hot);
     var fin = false;
-    /* الصورة كاملةً بلا قصّ، وخلفها نسخةٌ مموَّهة تملأ الهامش، وزرّ «ابدأ الآن» المرسوم في الصورة هو المنطقة القابلة للّمس */
+    /* الصورة تملأ شاشة الجهاز، وزرّ «ابدأ الآن» المرسوم فيها هو وحده المنطقة القابلة للّمس */
     var key = (String(o.cover).split("/").pop() || "").replace(/\.\w+$/, ""), H = HOT[key] || [0.2, 0.82, 0.6, 0.12];
     function lay() {
       var W = c.clientWidth || innerWidth, Hh = c.clientHeight || innerHeight, iw = im.naturalWidth, ih = im.naturalHeight; if (!iw) return;
-      var k = Math.min(W / iw, Hh / ih), dw = iw * k, dh = ih * k, ox = (W - dw) / 2, oy = (Hh - dh) / 2;
+      var k = Math.max(W / iw, Hh / ih), dw = iw * k, dh = ih * k, ox = (W - dw) / 2, oy = (Hh - dh) / 2;
       hot.style.left = (ox + H[0] * dw) + "px"; hot.style.top = (oy + H[1] * dh) + "px"; hot.style.width = (H[2] * dw) + "px"; hot.style.height = (H[3] * dh) + "px";
     }
     function go() { if (fin) return; fin = true; ses("sahaba-cover:" + o.id, "1"); c.classList.add("out"); setTimeout(function () { if (c.parentNode) c.parentNode.removeChild(c); }, 360); removeEventListener("resize", lay); try { o.onStart && o.onStart(); } catch (e) {} done(); }
@@ -69,8 +67,7 @@
     im.onload = lay; addEventListener("resize", lay);
     setTimeout(function () { if (!fin && !(im.complete && im.naturalWidth)) go(); }, 6000);
     hot.addEventListener("click", function (e) { e.stopPropagation(); go(); });
-    c.addEventListener("click", go);   /* احتياطاً: لمس أي مكانٍ في الغلاف يدخل أيضاً */
-    bg.src = o.cover; im.src = o.cover;
+    im.src = o.cover;
     (D.body || D.documentElement).appendChild(c);
   }
 

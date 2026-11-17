@@ -89,13 +89,14 @@ LOCK = r"""
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). الملفّات الثقيلة من science/10. */
 const P = "__PRE__";
-const V = P + "v8";
+const V = P + "v9";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../science/10/icons/icon-192.png", "../../science/10/icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {
   const r = e.request;
-  if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;   /* الروابط الخارجية (Drive) تمرّ كما هي */
+  if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;
+  if (r.cache === "no-store") return;                              /* فحص التحديث: يذهب إلى الشبكة مباشرةً */   /* الروابط الخارجية (Drive) تمرّ كما هي */
   if (/\.mp4$/.test(r.url)) { e.respondWith(videoFromCache(r).catch(() => fetch(r))); return; }
   const isDoc = r.mode === "navigate" || r.destination === "document";
   if (isDoc) {                                                     /* الصفحة: الشبكة أولاً بمهلة 2.5 ثانية ثم النسخة المحفوظة (تحديثٌ سليم وبلا انتظارٍ طويل) */
@@ -180,6 +181,10 @@ def make(k, d, name, store, pre, color):
     m = re.search(r"var STEPS=\[.*?\];\n(?=window\.KXMS)", s, re.S)
     assert m and s.count("var STEPS=[") == 1
     s = s[:m.start()] + STEPS_TPL.strip().replace("__SUB__", name) + "\n" + s[m.end():]
+    # 7ب3) زرّ بيت ظاهر في ترويسة الواجهة الرئيسية (خارج القائمة)
+    pair = """<span>PCB</span><div class="ic" onclick="mn(true)">🔔</div>"""
+    assert s.count(pair) >= 1, s.count(pair)
+    s = s.replace(pair, """<span>PCB</span><div class="ic" aria-label="بوابة الصحابة" onclick="location.href=\\'../../index.html\\'">🏠</div><div class="ic" onclick="mn(true)">🔔</div>""")
     # 7ب2) زرّ العودة إلى بوابة الصحابة في القائمة الجانبية
     s = rep(s, """$("menu").innerHTML='<h2>'+t.menu+'</h2><div class="mi" onclick="tl()">""", """$("menu").innerHTML='<h2>'+t.menu+'</h2><div class="mi" onclick="location.href=\\'../../index.html\\'"><span>🏠 بوابة الصحابة التعليمية</span></div><div class="mi" onclick="tl()">""")
     # 7ج) غلاف المادة: صورةٌ فقط ثم «ابدأ الآن»

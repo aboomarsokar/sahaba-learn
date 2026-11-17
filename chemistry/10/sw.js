@@ -1,12 +1,13 @@
 /* عامل خدمة الكيمياء: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (che10-). الملفّات الثقيلة من science/10. */
 const P = "che10-";
-const V = P + "v8";
+const V = P + "v9";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../science/10/icons/icon-192.png", "../../science/10/icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {
   const r = e.request;
-  if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;   /* الروابط الخارجية (Drive) تمرّ كما هي */
+  if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;
+  if (r.cache === "no-store") return;                              /* فحص التحديث: يذهب إلى الشبكة مباشرةً */   /* الروابط الخارجية (Drive) تمرّ كما هي */
   if (/\.mp4$/.test(r.url)) { e.respondWith(videoFromCache(r).catch(() => fetch(r))); return; }
   const isDoc = r.mode === "navigate" || r.destination === "document";
   if (isDoc) {                                                     /* الصفحة: الشبكة أولاً بمهلة 2.5 ثانية ثم النسخة المحفوظة (تحديثٌ سليم وبلا انتظارٍ طويل) */

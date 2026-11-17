@@ -1,8 +1,8 @@
-const V='math10-7343da8905',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./cover.webp','./kinex.jpg','./lessons.js'];
+const V='math10-6cd163f724',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./cover.webp','./kinex.jpg','./lessons.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith('math10-')&&x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 // من الذاكرة أولاً (يعمل بلا إنترنت)، وتُحدَّث النسخة في الخلفية كلّما وُجد اتصال
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||e.request.cache==='no-store')return;
 e.respondWith(caches.match(e.request,{ignoreSearch:true}).then(hit=>{const net=fetch(e.request).then(r=>{if(r&&r.ok)caches.open(V).then(c=>c.put(e.request,r.clone()));return r}).catch(()=>hit);
 return hit||net||caches.match('./index.html')}))});
 

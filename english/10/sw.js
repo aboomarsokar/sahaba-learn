@@ -1,6 +1,6 @@
 /* عامل خدمة LEXORA: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (lex10-). */
 const P = "lex10-";
-const V = P + "v27";
+const V = P + "v28";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png",
   "./images/logo.jpg", "./images/certificate.jpg", "./data/lessons.js", "./data/practice.js", "./data/rulecards.js", "./data/highlights.js",
   "./data/audio-norm.js", "./data/audio-manifest.js", "./fonts/aref-ruqaa-arabic-700.woff2", "./fonts/cinzel-latin-700.woff2"];
@@ -27,6 +27,7 @@ async function audioResponse(r) {
 self.addEventListener("fetch", e => {
   const r = e.request;
   if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;   /* الروابط الخارجية (Drive) تمرّ كما هي */
+  if (r.cache === "no-store") return;                              /* فحص التحديث: يذهب إلى الشبكة مباشرةً */
   if (/\/audio\/(en|ar)\/[^/]+\.mp3$/.test(r.url)) {
     e.respondWith(audioResponse(r).catch(() => fetch(r)));
     return;
