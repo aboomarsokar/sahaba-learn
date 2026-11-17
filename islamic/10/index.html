@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>التربية الإسلامية — الصف العاشر</title>
+<meta name="theme-color" content="#0e7a55">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+@font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"Ruqaa";src:url("../../shared/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{--pri:#0e7a55;--pri2:#0a5c40;--bg:#f6f1e3;--card:#ffffff;--ink:#0b3b2c;--mut:#5f7a6e;--gold:#c8a24a;--bd:#e4dcc4;--onpri:#ffffff;--ok:#1f9d5c;--bad:#c9443b;--soft:#eaf3ee}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{font-family:"Plex Arabic",system-ui,Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;min-height:100vh;transition:background .25s,color .25s}
+[hidden]{display:none!important}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
+#app{max-width:600px;margin:0 auto;padding:12px 14px calc(92px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;align-items:center;gap:10px;margin:4px 0 12px}
+.top h1{flex:1;font-size:1.35rem;line-height:1.3}
+.ib{flex:none;width:42px;height:42px;border-radius:14px;border:1.5px solid var(--bd);background:var(--card);display:grid;place-items:center;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.wallet{display:flex;align-items:center;gap:6px;border:1.5px solid var(--gold);background:var(--card);border-radius:999px;padding:4px 12px 4px 6px;font-weight:700}
+.wallet img{width:30px;height:30px;object-fit:contain}
+.card{background:var(--card);border:1.5px solid var(--bd);border-radius:20px;padding:14px;margin-bottom:12px;box-shadow:0 3px 12px rgba(0,0,0,.05)}
+.hello{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--onpri);border:0}
+.hello b{display:block;font-size:1.1rem}.hello small{opacity:.85}
+.ring{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--gold) calc(var(--p)*1%),rgba(255,255,255,.25) 0);position:relative;font-weight:700}
+.ring::before{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--pri2)}
+.ring span{position:relative;font-size:.95rem}
+.tabs{display:flex;gap:8px;margin:0 0 12px}
+.tab{flex:1;padding:9px 10px;border-radius:14px;border:1.5px solid var(--bd);background:var(--card);font-weight:700}
+.tab[aria-pressed=true]{background:var(--pri);border-color:var(--pri);color:var(--onpri)}
+.book{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.book .bi{font-size:1.7rem}
+.book b{display:block}.book small{color:var(--mut)}
+.uc{display:flex;align-items:center;gap:12px;width:100%;text-align:start;border:1.5px solid var(--bd);background:var(--card);border-radius:20px;padding:12px;margin-bottom:10px}
+.uc .ic{flex:none;width:52px;height:52px;border-radius:16px;background:var(--soft);display:grid;place-items:center;font-size:1.6rem}
+.uc .tx{flex:1;min-width:0}.uc b{display:block;font-size:1.02rem}.uc small{color:var(--mut)}
+.bar{height:7px;border-radius:9px;background:var(--soft);overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--gold));border-radius:9px}
+.chev{color:var(--mut);font-size:1.2rem}
+.lrow{display:flex;align-items:center;gap:10px;width:100%;text-align:start;border:1.5px solid var(--bd);background:var(--card);border-radius:18px;padding:11px;margin-bottom:9px}
+.lrow .no{flex:none;min-width:38px;height:38px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-weight:700}
+.lrow .tx{flex:1;min-width:0}.lrow b{display:block;font-size:.97rem;line-height:1.5}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:4px}
+.chip{font-size:.72rem;border-radius:999px;padding:1px 9px;background:var(--soft);color:var(--mut);font-weight:700}
+.chip.on{background:var(--pri);color:var(--onpri)}
+.lrow.off{opacity:.55}
+.modes{display:flex;gap:8px;margin:0 0 12px}
+.mode{flex:1;padding:9px 4px;border-radius:14px;border:1.5px solid var(--bd);background:var(--card);font-weight:700;font-size:.92rem}
+.mode[aria-pressed=true]{background:var(--pri);border-color:var(--pri);color:var(--onpri)}
+.dots{display:flex;gap:4px;justify-content:center;margin:0 0 10px}.dots i{width:18px;height:5px;border-radius:5px;background:var(--bd)}.dots i.on{background:var(--pri)}
+.blk h3{font-size:1.25rem;margin-bottom:8px}
+.blk p{margin:0 0 10px;font-size:1.02rem}
+.def{background:var(--soft);border-inline-start:5px solid var(--gold);border-radius:12px;padding:10px 12px;font-weight:700;margin-top:6px}
+.verse{font-family:"Noto Naskh Arabic","Traditional Arabic","Amiri",serif;font-size:1.45rem;line-height:2.4;text-align:justify;background:linear-gradient(180deg,#fffdf4,var(--card));border:1.5px solid var(--gold);border-radius:18px;padding:14px;color:#0b3b2c}
+.vref{font-size:.82rem;color:var(--mut);margin:6px 2px}
+.meaning{margin-top:8px;background:var(--soft);border-radius:14px;padding:10px 12px;font-size:.98rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:14px;border:0;background:var(--pri);color:var(--onpri);font-weight:700}
+.btn.gold{background:linear-gradient(135deg,#e9cd7e,var(--gold));color:#3b2a00}
+.btn.ghost{background:var(--card);color:var(--ink);border:1.5px solid var(--bd)}
+.btn:disabled{opacity:.45}
+.row{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fc{min-height:96px;border-radius:16px;border:1.5px solid var(--bd);background:var(--card);padding:10px;text-align:center;display:grid;place-items:center;font-weight:700}
+.fc.flip{background:var(--pri);color:var(--onpri);border-color:var(--pri);font-weight:400;font-size:.92rem}
+.li{display:flex;gap:10px;margin-bottom:8px}.li .n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--gold);color:#3b2a00;display:grid;place-items:center;font-weight:700}
+.li .t{flex:1;background:var(--card);border:1.5px solid var(--bd);border-radius:14px;padding:8px 12px}
+.q{background:var(--card);border:1.5px solid var(--bd);border-radius:20px;padding:14px}
+.qtop{display:flex;justify-content:space-between;color:var(--mut);font-size:.85rem;margin-bottom:8px}
+.qq{font-size:1.08rem;font-weight:700;margin-bottom:12px}
+.opt{display:block;width:100%;text-align:start;padding:11px 14px;margin-bottom:8px;border-radius:14px;border:1.5px solid var(--bd);background:var(--card)}
+.opt.sel{border-color:var(--pri);background:var(--soft)}
+.opt.ok{border-color:var(--ok);background:#e5f6ec}.opt.no{border-color:var(--bad);background:#fbe9e7}
+.fb{margin-top:10px;padding:10px 12px;border-radius:14px;font-size:.95rem}.fb.ok{background:#e5f6ec;color:#14633a}.fb.no{background:#fbe9e7;color:#8a2a22}
+.mt{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mi{padding:10px 8px;border-radius:12px;border:1.5px solid var(--bd);background:var(--card);font-size:.9rem;text-align:center}
+.mi.sel{border-color:var(--pri);background:var(--soft)}.mi.done{border-color:var(--ok);background:#e5f6ec;pointer-events:none}.mi.bad{border-color:var(--bad);background:#fbe9e7}
+.res{text-align:center}.res .big{font-size:2.6rem;font-weight:700;color:var(--pri2)}
+.gain{display:inline-flex;align-items:center;gap:6px;background:var(--soft);border:1.5px solid var(--gold);border-radius:999px;padding:3px 12px;font-weight:700;margin:3px}
+.gain img{width:22px;height:22px;object-fit:contain}
+.rev{border-top:1px dashed var(--bd);padding:10px 0;font-size:.92rem}.rev b{display:block}
+.store-h{display:flex;align-items:center;gap:12px}.store-h img{width:64px;height:64px;object-fit:contain}
+.sw{display:flex;align-items:center;gap:10px;border:1.5px solid var(--bd);background:var(--card);border-radius:18px;padding:10px;margin-bottom:9px}
+.sw .dots2{display:flex;flex:none}.sw .dots2 i{width:22px;height:40px;display:block}.sw .dots2 i:first-child{border-radius:0 10px 10px 0}.sw .dots2 i:last-child{border-radius:10px 0 0 10px}
+.sw .tx{flex:1;min-width:0}.sw b{display:block}.sw small{color:var(--mut)}
+.pbar{position:fixed;left:10px;right:10px;bottom:calc(86px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;background:var(--card);border:2px solid var(--gold);border-radius:18px;padding:10px 12px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:30;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pbar span{flex:1 1 140px;font-weight:700}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat .card{margin:0;text-align:center}.stat b{display:block;font-size:1.5rem;color:var(--pri2)}.stat small{color:var(--mut)}
+.empty{text-align:center;color:var(--mut);padding:18px 8px}
+#nav{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:space-around;background:var(--card);border-top:1.5px solid var(--bd);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px))}
+#nav button{flex:1;border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:0;font-size:.72rem;color:var(--mut);padding:4px 0;font-weight:700}
+#nav button span{font-size:1.25rem;line-height:1.3}
+#nav button[aria-current=page]{color:var(--pri)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(150px + env(safe-area-inset-bottom,0px));background:#102a20;color:#fff;border-radius:999px;padding:8px 18px;z-index:40;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,.35);display:flex;align-items:center;gap:8px;animation:tin .3s}
+.toast img{width:22px;height:22px}@keyframes tin{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1}}
+</style>
+</head>
+<body>
+<script src="../../shared/intro.js"></script>
+<main id="app"></main>
+<nav id="nav" aria-label="التنقّل"></nav>
+<script src="data/curriculum.js"></script>
+<script src="data/u1.js"></script>
+<script>
+(function () {
+  "use strict";
+  var D = window.ISL, LS = window.ISL_LESSONS, KEY = "isl10:st", APPID = "islamic10";
+  function $(s, r) { return (r || document).querySelector(s); }
+  function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function toAr(n) { return String(n).replace(/\d/g, function (d) { return "٠١٢٣٤٥٦٧٨٩"[d]; }); }
+  function shuffle(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function today() { return new Date().toISOString().slice(0, 10); }
+
+  /* ---------------- الألوان (المتجر) ---------------- */
+  var THEMES = [
+    { id: "emerald", n: "الزمردي (الأساسي)", price: 0, v: { pri: "#0e7a55", pri2: "#0a5c40", bg: "#f6f1e3", card: "#ffffff", ink: "#0b3b2c", mut: "#5f7a6e", gold: "#c8a24a", bd: "#e4dcc4", onpri: "#ffffff", soft: "#eaf3ee" } },
+    { id: "royalemerald", n: "الزمردي الملكي", price: 60, v: { pri: "#0b8a5e", pri2: "#064e36", bg: "#f2efe0", card: "#fffdf6", ink: "#073b2a", mut: "#5b7568", gold: "#d4af37", bd: "#e0d7b4", onpri: "#ffffff", soft: "#e6f2ea" } },
+    { id: "royalblue", n: "الأزرق الملكي", price: 60, v: { pri: "#1d3f8a", pri2: "#122a63", bg: "#eef2f9", card: "#ffffff", ink: "#12234a", mut: "#5d6b8a", gold: "#aab6cc", bd: "#d3dbe9", onpri: "#ffffff", soft: "#e4ebf7" } },
+    { id: "purple", n: "البنفسجي الراقي", price: 80, v: { pri: "#6b3fa0", pri2: "#4a2a73", bg: "#faf7ff", card: "#ffffff", ink: "#2c1a47", mut: "#74658c", gold: "#b79be0", bd: "#e4daf2", onpri: "#ffffff", soft: "#f0e9fa" } },
+    { id: "olive", n: "الزيتي الطبيعي", price: 80, v: { pri: "#6b7a2e", pri2: "#4a5620", bg: "#f5f1e4", card: "#fffef9", ink: "#2d3412", mut: "#6f7655", gold: "#b59a5b", bd: "#e1dcc3", onpri: "#ffffff", soft: "#eef0dc" } },
+    { id: "night", n: "الليلي", price: 100, dark: true, v: { pri: "#d4af37", pri2: "#f0d58a", bg: "#0c1322", card: "#151e33", ink: "#eef1f8", mut: "#9aa6c0", gold: "#d4af37", bd: "#27324d", onpri: "#1a1400", soft: "#1c2742" } },
+    { id: "sand", n: "الرملي", price: 60, v: { pri: "#8b6b4a", pri2: "#5f4630", bg: "#f3e8d6", card: "#fff9ee", ink: "#3b2a18", mut: "#836e58", gold: "#c9a45c", bd: "#e3d3b8", onpri: "#ffffff", soft: "#f1e6d2" } },
+    { id: "turquoise", n: "الفيروزي", price: 80, v: { pri: "#0f9fa0", pri2: "#0a6e70", bg: "#f2fbfb", card: "#ffffff", ink: "#0a3a3b", mut: "#5b8283", gold: "#5fc6c7", bd: "#cfe7e7", onpri: "#ffffff", soft: "#e2f4f4" } }
+  ];
+  function themeById(id) { return THEMES.filter(function (t) { return t.id === id; })[0] || THEMES[0]; }
+  function applyTheme(id) {
+    var t = themeById(id), r = document.documentElement.style, v = t.v;
+    Object.keys(v).forEach(function (k) { r.setProperty("--" + k, v[k]); });
+    r.colorScheme = t.dark ? "dark" : "light";
+    var m = document.querySelector('meta[name=theme-color]'); if (m) m.setAttribute("content", v.pri === "#d4af37" ? v.bg : v.pri);
+  }
+
+  /* ---------------- الحالة والحفظ ---------------- */
+  var S = { coins: 0, earned: 0, spent: 0, owned: ["emerald"], theme: "emerald", L: {}, mis: {}, log: [], unitDone: {} };
+  try { var sv = JSON.parse(localStorage.getItem(KEY) || "null"); if (sv) Object.keys(sv).forEach(function (k) { S[k] = sv[k]; }); } catch (e) {}
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} publish(); }
+  function userName() { try { var p = JSON.parse(localStorage.getItem("sahaba-portal-profile") || "null"); return p && p.first ? p.first : ""; } catch (e) { return ""; } }
+
+  var ALL = []; D.terms[0].units.forEach(function (u) { u.lessons.forEach(function (l) { l.unit = u.id; ALL.push(l); }); });
+  function hasContent(id) { return !!LS[id]; }
+  function st(id) { return S.L[id] || (S.L[id] = {}); }
+  function lessonPct(id) {
+    var s = S.L[id] || {}, p = 0; if (s.learn) p += 30; if (s.chDone) p += 30; if (s.msBest) p += Math.round(s.msBest * 0.4); return Math.min(100, p);
+  }
+  function unitPct(u) { var t = 0; u.lessons.forEach(function (l) { t += lessonPct(l.id); }); return u.lessons.length ? Math.round(t / u.lessons.length) : 0; }
+  function overallPct() { var t = 0; ALL.forEach(function (l) { t += lessonPct(l.id); }); return ALL.length ? Math.round(t / ALL.length) : 0; }
+
+  function toast(html) { var o = $(".toast"); if (o) o.remove(); var d = document.createElement("div"); d.className = "toast"; d.innerHTML = html; document.body.appendChild(d); setTimeout(function () { if (d.parentNode) d.remove(); }, 2600); }
+  function gain(n, why) {
+    if (n <= 0) return;
+    S.coins += n; S.earned += n; S.log.push({ d: Date.now(), t: why, a: n }); if (S.log.length > 80) S.log.shift(); save();
+    toast('<img src="images/durra.webp" alt="">+' + toAr(n) + " دُرّة — " + esc(why)); refreshWallet();
+  }
+  function refreshWallet() { var w = $(".wallet b"); if (w) w.textContent = toAr(S.coins); }
+
+  function publish() {
+    try {
+      var done = 0, units = D.terms[0].units;
+      units.forEach(function (u) { if (u.lessons.every(function (l) { return (S.L[l.id] || {}).msBest >= 70; })) done++; });
+      var badges = []; ALL.forEach(function (l) { var s = S.L[l.id]; if (s && s.msBest >= 90) badges.push({ i: "🏅", t: l.t }); });
+      var certs = []; units.forEach(function (u) { if (S.unitDone[u.id]) certs.push({ t: "إتمام وحدة: " + u.t, d: "" }); });
+      localStorage.setItem("sahaba-ach:islamic/10", JSON.stringify({ pct: overallPct(), units: { done: done, total: units.length }, certs: certs, badges: badges, updated: new Date().toISOString() }));
+    } catch (e) {}
+  }
+
+  /* ---------------- التوجيه ---------------- */
+  var R = { v: "home", term: 1, tab: "colors", prev: null };
+  function route() {
+    var h = decodeURIComponent(location.hash.slice(1)), p = {}; h.split("&").forEach(function (x) { var i = x.indexOf("="); if (i > 0) p[x.slice(0, i)] = x.slice(i + 1); else if (x) p.v = x; });
+    R.v = p.v || (p.unit ? "unit" : p.lesson ? "lesson" : "home"); R.unit = p.unit; R.lesson = p.lesson; R.mode = p.m || "learn";
+    if (R.v !== "store") applyTheme(S.theme);
+    render();
+  }
+  function go(h) { if (location.hash === "#" + h) route(); else location.hash = h; }
+  window.addEventListener("hashchange", route);
+
+  var NAV = [["home", "🏠", "الرئيسية"], ["books", "📕", "الكتب"], ["store", "💎", "المتجر"], ["progress", "📊", "تقدّمي"], ["settings", "⚙️", "الإعدادات"]];
+  function drawNav() {
+    var inLesson = R.v === "lesson", nav = $("#nav"); nav.hidden = inLesson;
+    var cur = R.v === "unit" ? "home" : R.v;
+    nav.innerHTML = NAV.map(function (n) { return '<button type="button" data-g="' + n[0] + '"' + (cur === n[0] ? ' aria-current="page"' : "") + "><span>" + n[1] + "</span>" + n[2] + "</button>"; }).join("");
+    nav.querySelectorAll("[data-g]").forEach(function (b) { b.addEventListener("click", function () { go(b.dataset.g); }); });
+  }
+  function top(title, back) {
+    return '<div class="top">' + (back ? '<button class="ib" type="button" data-back aria-label="رجوع">›</button>' : '<a class="ib" href="../../index.html" aria-label="الرجوع إلى بوابة الصحابة التعليمية">🏠</a>') +
+      "<h1>" + esc(title) + '</h1><button class="wallet" type="button" data-g2="store" aria-label="محفظة دُرّة"><img src="images/durra.webp" alt=""><b>' + toAr(S.coins) + "</b></button></div>";
+  }
+  function bindTop(root) {
+    var b = $("[data-back]", root); if (b) b.addEventListener("click", function () { history.length > 1 ? history.back() : go("home"); });
+    var w = $("[data-g2]", root); if (w) w.addEventListener("click", function () { go("store"); });
+  }
+
+  function render() {
+    var app = $("#app"); window.scrollTo(0, 0); var pb = $(".pbar"); if (pb) pb.remove();
+    var f = { home: vHome, unit: vUnit, lesson: vLesson, books: vBooks, store: vStore, progress: vProgress, settings: vSettings }[R.v] || vHome;
+    f(app); drawNav();
+  }
+
+  /* ---------------- الرئيسية ---------------- */
+  function vHome(app) {
+    var term = D.terms[R.term - 1], nm = userName(), pct = overallPct();
+    var h = top("التربية الإسلامية • الصف العاشر");
+    h += '<div class="card hello"><div class="ring" style="--p:' + pct + '"><span>' + toAr(pct) + '٪</span></div><div><b>' + (nm ? "مرحباً يا " + esc(nm) : "مرحباً بك") + '</b><small>طالب مجتهد، واصل رحلتك في التعلّم</small></div></div>';
+    h += '<div class="tabs">' + D.terms.map(function (t) { return '<button class="tab" type="button" data-t="' + t.id + '" aria-pressed="' + (t.id === R.term) + '">' + t.name + "</button>"; }).join("") + "</div>";
+    h += '<a class="card book" href="' + esc(term.book) + '" target="_blank" rel="noopener"><span class="bi">📕</span><span><b>الكتاب المدرسي — ' + term.name + "</b><small>افتح الكتاب (يحتاج إنترنت)</small></span></a>";
+    if (term.units.length) {
+      h += '<div class="units">' + term.units.map(function (u) {
+        var p = unitPct(u), c = u.lessons.filter(function (l) { return (S.L[l.id] || {}).msBest >= 70; }).length;
+        return '<button class="uc" type="button" data-u="' + u.id + '"><span class="ic">' + u.ic + '</span><span class="tx"><b>الوحدة ' + toAr(u.id) + ": " + esc(u.t) + "</b><small>" + toAr(c) + " من " + toAr(u.lessons.length) + ' دروس متقنة • ' + toAr(p) + '٪</small><div class="bar"><i style="width:' + p + '%"></i></div></span><span class="chev">‹</span></button>';
+      }).join("") + "</div>";
+    } else h += '<div class="card empty">المحتوى التفاعلي للفصل الثاني سيُضاف قريباً، ويمكنك الآن فتح كتابه من الزرّ أعلاه.</div>';
+    app.innerHTML = h; bindTop(app);
+    app.querySelectorAll("[data-t]").forEach(function (b) { b.addEventListener("click", function () { R.term = +b.dataset.t; render(); }); });
+    app.querySelectorAll("[data-u]").forEach(function (b) { b.addEventListener("click", function () { go("unit=" + b.dataset.u); }); });
+  }
+
+  /* ---------------- الوحدة ---------------- */
+  function vUnit(app) {
+    var u = D.terms[0].units.filter(function (x) { return String(x.id) === String(R.unit); })[0]; if (!u) { go("home"); return; }
+    var h = top("الوحدة " + toAr(u.id) + ": " + u.t, true);
+    h += u.lessons.map(function (l, i) {
+      var s = S.L[l.id] || {}, ok = hasContent(l.id);
+      return '<button class="lrow' + (ok ? "" : " off") + '" type="button" data-l="' + l.id + '"' + (ok ? "" : " disabled") + '><span class="no">' + toAr(i + 1) + '</span><span class="tx"><b>' + esc(l.t) + '</b><span class="chips">' +
+        (ok ? '<span class="chip' + (s.learn ? " on" : "") + '">تعلّم</span><span class="chip' + (s.chDone ? " on" : "") + '">تحدّي</span><span class="chip' + (s.msBest >= 70 ? " on" : "") + '">إتقان ' + (s.msBest ? toAr(s.msBest) + "٪" : "") + "</span>" : '<span class="chip">قريباً</span>') + '</span></span><span class="chev">‹</span></button>';
+    }).join("");
+    app.innerHTML = h; bindTop(app);
+    app.querySelectorAll("[data-l]").forEach(function (b) { b.addEventListener("click", function () { go("lesson=" + b.dataset.l + "&m=learn"); }); });
+  }
+
+  /* ---------------- الدرس ---------------- */
+  function lessonMeta(id) { return ALL.filter(function (l) { return l.id === id; })[0]; }
+  function vLesson(app) {
+    var id = R.lesson, meta = lessonMeta(id), data = LS[id]; if (!meta || !data) { go("home"); return; }
+    var h = top(meta.t, true);
+    h += '<div class="modes">' + [["learn", "📖 تعلّم"], ["ch", "🎯 تحدّي"], ["ms", "🏆 إتقان"]].map(function (m) { return '<button class="mode" type="button" data-m="' + m[0] + '" aria-pressed="' + (R.mode === m[0]) + '">' + m[1] + "</button>"; }).join("") + '</div><div id="body"></div>';
+    app.innerHTML = h; bindTop(app);
+    app.querySelectorAll("[data-m]").forEach(function (b) { b.addEventListener("click", function () { go("lesson=" + id + "&m=" + b.dataset.m); }); });
+    var body = $("#body");
+    if (R.mode === "learn") learn(body, id, data); else if (R.mode === "ch") challenge(body, id, data); else mastery(body, id, data);
+  }
+
+  /* ---- وضع التعلّم ---- */
+  function learn(body, id, data) {
+    var i = 0, B = data.learn;
+    function draw() {
+      var b = B[i], h = '<div class="dots">' + B.map(function (_, j) { return "<i" + (j <= i ? ' class="on"' : "") + "></i>"; }).join("") + '</div><div class="card blk">' + blk(b) + "</div>";
+      h += '<div class="row">' + (i > 0 ? '<button class="btn ghost" type="button" id="pv">› السابق</button>' : "") + '<button class="btn" type="button" id="nx">' + (i === B.length - 1 ? "أتممتُ الدرس ✓" : "التالي ‹") + "</button></div>";
+      body.innerHTML = h; window.scrollTo(0, 0); wire(b);
+      $("#nx").addEventListener("click", function () { if (i === B.length - 1) finish(); else { i++; draw(); } });
+      var pv = $("#pv"); if (pv) pv.addEventListener("click", function () { i--; draw(); });
+    }
+    function blk(b) {
+      if (b.k === "text") return "<h3>" + esc(b.h) + "</h3>" + b.p.map(function (x) { return "<p>" + esc(x) + "</p>"; }).join("") + (b.def ? '<div class="def">' + esc(b.def) + "</div>" : "");
+      if (b.k === "verse") { var vt = b.v.a.map(function (t, j) { return t + " ﴿" + toAr(b.v.from + j) + "﴾"; }).join(" "); if (b.plain) vt = b.v.a[0]; return "<h3>" + esc(b.h) + '</h3><div class="verse">﴿ ' + vt + ' ﴾</div><div class="vref">' + esc(b.ref) + '</div><button class="btn ghost" type="button" id="mn">المعنى الإجمالي</button><div class="meaning" id="mnt" hidden>' + esc(b.m) + "</div>"; }
+      if (b.k === "terms") return "<h3>" + esc(b.h) + '</h3><div class="fgrid">' + b.t.map(function (t, j) { return '<button class="fc" type="button" data-f="' + j + '">' + esc(t[0]) + "</button>"; }).join("") + "</div>";
+      if (b.k === "list") return "<h3>" + esc(b.h) + "</h3>" + b.items.map(function (t, j) { return '<div class="li"' + (j ? " hidden" : "") + ' data-i="' + j + '"><span class="n">' + toAr(j + 1) + '</span><span class="t">' + esc(t) + "</span></div>"; }).join("") + (b.items.length > 1 ? '<div class="row"><button class="btn ghost" type="button" id="more">أظهر التالي ⌄</button></div>' : "");
+      if (b.k === "think") return "<h3>🤔 " + esc(b.h) + "</h3><p><b>" + esc(b.q) + '</b></p><button class="btn ghost" type="button" id="ans">أظهر الإجابة</button><div class="meaning" id="ant" hidden>' + esc(b.a) + "</div>";
+      return "";
+    }
+    function wire(b) {
+      if (b.k === "verse") $("#mn").addEventListener("click", function () { $("#mnt").hidden = !$("#mnt").hidden; });
+      if (b.k === "think") $("#ans").addEventListener("click", function () { $("#ant").hidden = false; this.hidden = true; });
+      if (b.k === "terms") body.querySelectorAll("[data-f]").forEach(function (c) { c.addEventListener("click", function () { var j = +c.dataset.f, f = c.classList.toggle("flip"); c.textContent = f ? b.t[j][1] : b.t[j][0]; }); });
+      if (b.k === "list") { var m = $("#more"); if (m) m.addEventListener("click", function () { var hid = body.querySelector(".li[hidden]"); if (hid) hid.hidden = false; if (!body.querySelector(".li[hidden]")) m.hidden = true; }); }
+    }
+    function finish() {
+      var s = st(id), first = !s.learn; s.learn = 1; var rev = false;
+      if (first) gain(5, "إتمام وضع التعلّم");
+      else if (s.rev !== today()) { s.rev = today(); gain(2, "مراجعة درس سابق"); rev = true; }
+      save();
+      body.innerHTML = '<div class="card res"><div class="big">✅</div><h3>أحسنت! أتممتَ وضع التعلّم</h3><p>جاهز للتحدّي؟ اختبر فهمك بأسئلة متنوّعة واكسب عملات دُرّة.</p><div class="row"><button class="btn gold" type="button" id="gc">🎯 ابدأ التحدّي</button><button class="btn ghost" type="button" id="gr">راجع من البداية</button></div></div>';
+      $("#gc").addEventListener("click", function () { go("lesson=" + id + "&m=ch"); }); $("#gr").addEventListener("click", function () { i = 0; draw(); });
+    }
+    var g = data.goals ? '<div class="card"><h3>أهداف الدرس</h3><ul style="margin:6px 0 0;padding-inline-start:20px">' + data.goals.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + '</ul><div class="row"><button class="btn" type="button" id="st">ابدأ التعلّم ‹</button></div></div>' : "";
+    if (g) { body.innerHTML = g; $("#st").addEventListener("click", draw); } else draw();
+  }
+
+  /* ---- محرّك الأسئلة ---- */
+  function quiz(root, qs, o, done) {
+    var i = 0, score = 0, mist = [], res = [];
+    function head() { return '<div class="qtop"><span>سؤال ' + toAr(i + 1) + " من " + toAr(qs.length) + "</span><span>" + (o.instant ? "تحدّي" : "إتقان") + '</span></div><div class="bar"><i style="width:' + Math.round(i / qs.length * 100) + '%"></i></div><div style="height:10px"></div>'; }
+    function next(ok, partial) {
+      var v = partial != null ? partial : (ok ? 1 : 0); score += v; if (v < 1) mist.push(i); res.push(v);
+      i++; if (i >= qs.length) done({ score: score, total: qs.length, mist: mist, res: res }); else show();
+    }
+    function show() {
+      var q = qs[i].q0, ty = q.t; window.scrollTo(0, 0);
+      var box = '<div class="q">' + head() + '<div class="qq">' + esc(q.q) + "</div><div id=\"qa\"></div><div id=\"fb\"></div></div>";
+      root.innerHTML = box; var qa = $("#qa", root), fb = $("#fb", root);
+      function feedback(ok, extra) {
+        if (!o.instant) { next(ok); return; }
+        fb.innerHTML = '<div class="fb ' + (ok ? "ok" : "no") + '">' + (ok ? "✅ إجابة صحيحة. " : "❌ " + (extra || "") + " ") + esc(q.why || "") + '</div><div class="row"><button class="btn" type="button" id="nq">' + (i === qs.length - 1 ? "النتيجة ‹" : "التالي ‹") + "</button></div>";
+        $("#nq", root).addEventListener("click", function () { next(ok); });
+      }
+      if (ty === "mc" || ty === "fill" || ty === "tf") {
+        var opts = ty === "tf" ? [{ t: "صحيحة", v: true }, { t: "خاطئة", v: false }] : shuffle(q.o.map(function (t, k) { return { t: t, v: k === q.a }; }));
+        qa.innerHTML = opts.map(function (x, k) { return '<button class="opt" type="button" data-k="' + k + '">' + esc(x.t) + "</button>"; }).join("");
+        var locked = false;
+        qa.querySelectorAll(".opt").forEach(function (b) { b.addEventListener("click", function () {
+          if (locked) return; locked = true; var x = opts[+b.dataset.k], ok = ty === "tf" ? x.v === q.a : x.v;
+          if (o.instant) { b.classList.add(ok ? "ok" : "no"); if (!ok) { var right = ty === "tf" ? (q.a ? 0 : 1) : opts.map(function (y) { return y.v; }).indexOf(true); qa.querySelectorAll(".opt")[right].classList.add("ok"); } }
+          else b.classList.add("sel");
+          feedback(ok, "الجواب الصحيح: " + (ty === "tf" ? (q.a ? "صحيحة" : "خاطئة") : q.o[q.a]) + ".");
+        }); });
+      } else if (ty === "match") {
+        var L = q.pairs.map(function (p, k) { return { t: p[0], k: k }; }), Rr = shuffle(q.pairs.map(function (p, k) { return { t: p[1], k: k }; })), sel = null, got = 0, err = 0;
+        qa.innerHTML = '<div class="mt"><div id="ml">' + L.map(function (x) { return '<button class="mi" type="button" style="width:100%;margin-bottom:8px" data-k="' + x.k + '">' + esc(x.t) + "</button>"; }).join("") + '</div><div id="mr">' + Rr.map(function (x) { return '<button class="mi" type="button" style="width:100%;margin-bottom:8px" data-k="' + x.k + '">' + esc(x.t) + "</button>"; }).join("") + "</div></div>";
+        qa.querySelectorAll("#ml .mi").forEach(function (b) { b.addEventListener("click", function () { qa.querySelectorAll("#ml .mi").forEach(function (z) { z.classList.remove("sel"); }); b.classList.add("sel"); sel = b; }); });
+        qa.querySelectorAll("#mr .mi").forEach(function (b) { b.addEventListener("click", function () {
+          if (!sel) return; if (sel.dataset.k === b.dataset.k) { sel.classList.remove("sel"); sel.classList.add("done"); b.classList.add("done"); sel = null; got++;
+            if (got === q.pairs.length) { var v = err === 0 ? 1 : err <= 2 ? 0.5 : 0; if (o.instant) { fb.innerHTML = '<div class="fb ' + (v === 1 ? "ok" : "no") + '">' + (v === 1 ? "✅ أحسنت! وصلتَ كل الأزواج بلا خطأ." : "أخطأتَ " + toAr(err) + " مرّات؛ راجع الأزواج وأعد المحاولة لاحقاً.") + '</div><div class="row"><button class="btn" type="button" id="nq">' + (i === qs.length - 1 ? "النتيجة ‹" : "التالي ‹") + "</button></div>"; $("#nq", root).addEventListener("click", function () { next(v === 1, v); }); } else next(v === 1, v); }
+          } else { err++; b.classList.add("bad"); setTimeout(function () { b.classList.remove("bad"); }, 450); }
+        }); });
+      }
+    }
+    show();
+  }
+  function prep(arr, lid, mode) { return arr.map(function (q, k) { return { q0: q, id: lid + ":" + mode + ":" + k }; }); }
+  function recordMistakes(qs, mist) { mist.forEach(function (k) { var q = qs[k], m = S.mis[q.id] || (S.mis[q.id] = { n: 0, q: q.q0.q, l: q.id.split(":")[0] }); m.n++; }); }
+
+  /* ---- وضع التحدّي ---- */
+  function challenge(body, id, data) {
+    var qs = shuffle(prep(data.ch, id, "ch"));
+    body.innerHTML = '<div class="card res"><div class="big">🎯</div><h3>وضع التحدّي</h3><p>' + toAr(qs.length) + ' أسئلة متنوّعة مع تغذية راجعة فورية. انجح بنسبة ٧٠٪ فأكثر لتكسب ١٠ دُرّات.</p><div class="row"><button class="btn gold" type="button" id="go">ابدأ التحدّي</button></div></div>';
+    $("#go").addEventListener("click", function () {
+      quiz(body, qs, { instant: true }, function (r) {
+        recordMistakes(qs, r.mist);
+        var pct = Math.round(r.score / r.total * 100), s = st(id), msg = "", first = !s.chDone;
+        s.chBest = Math.max(s.chBest || 0, pct); if (pct >= 70) { if (first) { s.chDone = 1; gain(10, "نجاح في التحدّي"); msg = ""; } else msg = "<p>سبق أن ربحتَ مكافأة هذا التحدّي.</p>"; } save();
+        body.innerHTML = '<div class="card res"><div class="big">' + toAr(pct) + "٪</div><h3>" + (pct >= 70 ? "أحسنت! نجحتَ في التحدّي 🎉" : "قريب جداً! حاول مرة أخرى 💪") + "</h3><p>" + toAr(Math.round(r.score * 10) / 10) + " من " + toAr(r.total) + " صحيحة</p>" + msg + '<div class="row"><button class="btn ghost" type="button" id="ag">أعد التحدّي</button><button class="btn gold" type="button" id="gm">🏆 إلى وضع الإتقان</button></div></div>';
+        $("#ag").addEventListener("click", function () { challenge(body, id, data); }); $("#gm").addEventListener("click", function () { go("lesson=" + id + "&m=ms"); });
+      });
+    });
+  }
+
+  /* ---- وضع الإتقان ---- */
+  function level(p) { return p >= 90 ? "متقن 🌟" : p >= 75 ? "جيد جداً 👍" : p >= 60 ? "جيد 🙂" : "يحتاج إلى مراجعة 📚"; }
+  function mastery(body, id, data) {
+    var qs = shuffle(prep(data.ms, id, "ms")), s0 = st(id);
+    body.innerHTML = '<div class="card res"><div class="big">🏆</div><h3>وضع الإتقان</h3><p>اختبار شامل للدرس (' + toAr(qs.length) + ' أسئلة) بتصحيح تلقائي بعد الانتهاء، ثم مراجعة أخطائك.' + (s0.msBest ? "<br>أفضل نتيجة لك: " + toAr(s0.msBest) + "٪" : "") + '</p><div class="row"><button class="btn gold" type="button" id="go">ابدأ الاختبار</button></div></div>';
+    $("#go").addEventListener("click", function () {
+      var answers = [];
+      quiz(body, qs, { instant: false }, function (r) {
+        recordMistakes(qs, r.mist);
+        var pct = Math.round(r.score / r.total * 100), s = st(id), prev = s.msBest || 0, g = [];
+        s.msBest = Math.max(prev, pct); s.msTries = (s.msTries || 0) + 1;
+        if (pct >= 70 && !s.m70) { s.m70 = 1; gain(15, "إتقان الدرس (٧٠٪+)"); g.push("+١٥"); }
+        if (pct >= 90 && !s.m90) { s.m90 = 1; gain(10, "تفوّق في الإتقان (٩٠٪+)"); g.push("+١٠"); }
+        var u = D.terms[0].units.filter(function (x) { return x.id === lessonMeta(id).unit; })[0];
+        if (u && !S.unitDone[u.id] && u.lessons.every(function (l) { return (S.L[l.id] || {}).msBest >= 70; })) { S.unitDone[u.id] = 1; gain(50, "إنهاء وحدة: " + u.t); }
+        save();
+        var rev = r.mist.map(function (k) { var q = qs[k].q0, ans = q.t === "tf" ? (q.a ? "صحيحة" : "خاطئة") : q.t === "match" ? q.pairs.map(function (p) { return p[0] + " ← " + p[1]; }).join("، ") : q.o[q.a];
+          return '<div class="rev"><b>' + esc(q.q) + "</b>✔ " + esc(ans) + (q.why ? "<br><small>" + esc(q.why) + "</small>" : "") + "</div>"; }).join("");
+        body.innerHTML = '<div class="card res"><div class="big">' + toAr(pct) + "٪</div><h3>" + level(pct) + "</h3><p>مستوى الإتقان لهذا الدرس: " + toAr(s.msBest) + "٪ (أفضل نتيجة)</p>" + (r.mist.length ? '<h3 style="margin-top:8px">راجع أخطاءك</h3><div style="text-align:start">' + rev + "</div>" : "<p>🌟 لا أخطاء! إجابات كاملة.</p>") + '<div class="row"><button class="btn ghost" type="button" id="ag">أعد الاختبار</button><button class="btn" type="button" id="bk">العودة للوحدة</button></div></div>';
+        $("#ag").addEventListener("click", function () { mastery(body, id, data); }); $("#bk").addEventListener("click", function () { go("unit=" + lessonMeta(id).unit); });
+      });
+    });
+  }
+
+  /* ---------------- الكتب ---------------- */
+  function vBooks(app) {
+    app.innerHTML = top("الكتب المدرسية") + D.terms.map(function (t) { return '<a class="card book" href="' + esc(t.book) + '" target="_blank" rel="noopener"><span class="bi">📕</span><span><b>كتاب التربية الإسلامية — ' + t.name + '</b><small>الصف العاشر • يُفتح على Google Drive (يحتاج إنترنت)</small></span></a>'; }).join("") + '<p class="empty">الكتب روابطُ خارجية فلا تُخزَّن في الجهاز، أمّا الدروس التفاعلية فتعمل بلا إنترنت.</p>';
+    bindTop(app);
+  }
+
+  /* ---------------- المتجر ---------------- */
+  var preview = null;
+  function vStore(app) {
+    var tabs = [["colors", "🎨 الألوان"], ["bg", "🖼️ الخلفيات"], ["profile", "👤 الملف"], ["ach", "🏅 الإنجازات"]];
+    var h = top("متجر دُرّة").replace('data-g2="store"', 'data-g2="store"');
+    h += '<div class="card store-h"><img src="images/durra.webp" alt="دُرّة"><div><b style="font-size:1.4rem">' + toAr(S.coins) + ' دُرّة</b><br><small style="color:var(--mut)">ربحتَ ' + toAr(S.earned) + " • أنفقتَ " + toAr(S.spent) + '</small></div></div>';
+    h += '<div class="tabs" style="flex-wrap:wrap">' + tabs.map(function (t) { return '<button class="tab" type="button" data-s="' + t[0] + '" aria-pressed="' + (R.tab === t[0]) + '" style="flex:1 1 40%">' + t[1] + "</button>"; }).join("") + "</div>";
+    if (R.tab === "colors") {
+      h += THEMES.map(function (t) { var own = S.owned.indexOf(t.id) >= 0, act = S.theme === t.id;
+        return '<div class="sw"><span class="dots2"><i style="background:' + t.v.pri + '"></i><i style="background:' + t.v.gold + '"></i><i style="background:' + t.v.bg + ';border:1px solid #0002"></i></span><span class="tx"><b>' + t.n + "</b><small>" + (act ? "مفعّل الآن ✓" : own ? "مملوك" : toAr(t.price) + " دُرّة") + '</small></span><button class="btn ghost" type="button" data-p="' + t.id + '">معاينة</button>' + (own ? (act ? "" : '<button class="btn" type="button" data-a="' + t.id + '">تفعيل</button>') : '<button class="btn gold" type="button" data-b="' + t.id + '">شراء</button>') + "</div>"; }).join("");
+      h += '<div class="row"><button class="btn ghost" type="button" id="rst">↺ العودة إلى الألوان الأساسية</button></div>';
+    } else h += '<div class="card empty">🔜 هذا القسم قيد التجهيز في المرحلة القادمة (' + (R.tab === "bg" ? "خلفيات إسلامية هندسية وزمردية وداكنة وهادئة" : R.tab === "profile" ? "إطارات وبطاقات وألوان للملف الشخصي" : "تصاميم لواجهة الإنجازات") + ").<br>اجمع عملات دُرّة من الدروس لتكون جاهزاً.</div>";
+    app.innerHTML = h; bindTop(app);
+    app.querySelectorAll("[data-s]").forEach(function (b) { b.addEventListener("click", function () { R.tab = b.dataset.s; applyTheme(S.theme); preview = null; render(); }); });
+    app.querySelectorAll("[data-p]").forEach(function (b) { b.addEventListener("click", function () { startPreview(b.dataset.p); }); });
+    app.querySelectorAll("[data-a]").forEach(function (b) { b.addEventListener("click", function () { S.theme = b.dataset.a; save(); applyTheme(S.theme); toast("تمّ تفعيل اللون ✓"); render(); }); });
+    app.querySelectorAll("[data-b]").forEach(function (b) { b.addEventListener("click", function () { buy(b.dataset.b); }); });
+    var r = $("#rst"); if (r) r.addEventListener("click", function () { S.theme = "emerald"; save(); applyTheme("emerald"); toast("عدتَ إلى الألوان الأساسية"); render(); });
+  }
+  function startPreview(id) {
+    var t = themeById(id); applyTheme(id); preview = id; var o = $(".pbar"); if (o) o.remove(); var own = S.owned.indexOf(id) >= 0;
+    var d = document.createElement("div"); d.className = "pbar";
+    d.innerHTML = "<span>معاينة: " + t.n + "</span>" + (own ? '<button class="btn" type="button" id="pa">تفعيل</button>' : '<button class="btn gold" type="button" id="pb">شراء بـ ' + toAr(t.price) + " دُرّة</button>") + '<button class="btn ghost" type="button" id="pc">إلغاء المعاينة</button>';
+    document.body.appendChild(d);
+    var pa = $("#pa"); if (pa) pa.addEventListener("click", function () { S.theme = id; save(); d.remove(); render(); toast("تمّ تفعيل اللون ✓"); });
+    var pb = $("#pb"); if (pb) pb.addEventListener("click", function () { d.remove(); buy(id); });
+    $("#pc").addEventListener("click", function () { applyTheme(S.theme); d.remove(); preview = null; });
+  }
+  function buy(id) {
+    var t = themeById(id); if (S.owned.indexOf(id) >= 0) return;
+    if (S.coins < t.price) { toast("رصيدك لا يكفي — تحتاج " + toAr(t.price - S.coins) + " دُرّة إضافية"); applyTheme(S.theme); return; }
+    S.coins -= t.price; S.spent += t.price; S.owned.push(id); S.theme = id; S.log.push({ d: Date.now(), t: "شراء لون: " + t.n, a: -t.price }); save(); applyTheme(id);
+    toast("تمّ شراء «" + esc(t.n) + "» وتفعيله 🎉"); render();
+  }
+
+  /* ---------------- تقدّمي ---------------- */
+  function vProgress(app) {
+    var mastered = ALL.filter(function (l) { return (S.L[l.id] || {}).msBest >= 70; }).length, learned = ALL.filter(function (l) { return (S.L[l.id] || {}).learn; }).length;
+    var tried = ALL.filter(function (l) { return (S.L[l.id] || {}).msBest; }), avg = tried.length ? Math.round(tried.reduce(function (a, l) { return a + S.L[l.id].msBest; }, 0) / tried.length) : 0;
+    var h = top("تقدّمي").replace('data-back', 'data-back');
+    h += '<div class="stat"><div class="card"><b>' + toAr(overallPct()) + '٪</b><small>التقدّم الكلّي</small></div><div class="card"><b>' + toAr(learned) + "/" + toAr(ALL.length) + "</b><small>دروس أتممتُ تعلّمها</small></div><div class=\"card\"><b>" + toAr(mastered) + '</b><small>دروس متقنة (٧٠٪+)</small></div><div class="card"><b>' + toAr(avg) + "٪</b><small>متوسط نتائج الإتقان</small></div></div>";
+    h += '<div class="card" style="margin-top:12px"><h3>الوحدات</h3>' + D.terms[0].units.map(function (u) { var p = unitPct(u); return "<p style=\"margin:8px 0 0\"><b>" + toAr(u.id) + ". " + esc(u.t) + '</b> <small style="color:var(--mut)">' + toAr(p) + '٪</small><span class="bar"><i style="width:' + p + '%"></i></span></p>'; }).join("") + "</div>";
+    var ms = Object.keys(S.mis).map(function (k) { return S.mis[k]; }).sort(function (a, b) { return b.n - a.n; }).slice(0, 6);
+    h += '<div class="card"><h3>الأخطاء المتكرّرة</h3>' + (ms.length ? ms.map(function (m) { return '<div class="rev"><b>' + esc(m.q) + "</b><small>أخطأتَ فيه " + toAr(m.n) + " مرّات</small></div>"; }).join("") : '<p class="empty">لا أخطاء مسجّلة بعد.</p>') + "</div>";
+    h += '<div class="card"><h3>دُرّة: الأرباح والمشتريات</h3><p>الرصيد: <b>' + toAr(S.coins) + "</b> • المكتسب: " + toAr(S.earned) + " • المصروف: " + toAr(S.spent) + "</p>" + (S.log.length ? S.log.slice(-8).reverse().map(function (x) { return '<div class="rev"><b>' + (x.a > 0 ? "+" : "") + toAr(x.a) + " دُرّة</b><small>" + esc(x.t) + "</small></div>"; }).join("") : '<p class="empty">لم تكسب عملات بعد، ابدأ درساً!</p>') + "</div>";
+    h += '<div class="card"><h3>المفتوح في المتجر</h3><p>' + S.owned.map(function (id) { return themeById(id).n; }).join(" • ") + "</p></div>";
+    app.innerHTML = h; bindTop(app);
+  }
+
+  /* ---------------- الإعدادات ---------------- */
+  var KX = null;
+  function vSettings(app) {
+    app.innerHTML = top("الإعدادات") + '<div class="card"><h3>الجولة التعريفية</h3><p>أعد جولة كينيكس لتتعرّف على أقسام التطبيق.</p><div id="kxr"></div></div><div class="card"><h3>بوابة الصحابة التعليمية</h3><a class="btn" href="../../index.html">🏠 العودة إلى البوابة</a></div><div class="card"><h3>بياناتي</h3><p>تُحفظ عملاتك وتقدّمك ومشترياتك في هذا الجهاز فقط.</p><button class="btn ghost" type="button" id="wipe" style="color:var(--bad)">🗑️ حذف تقدّمي في هذا التطبيق</button></div><div class="card"><h3>عن التطبيق</h3><p>التربية الإسلامية للصف العاشر — محتوى الكتاب المدرسي (الجزء الأول، الوحدة الأولى حالياً)، وتُضاف بقية الوحدات تباعاً. يعمل بلا إنترنت ويُحدَّث تلقائياً.</p></div>';
+    bindTop(app); if (KX) SahabaIntro.replay(KX, $("#kxr"));
+    $("#wipe").addEventListener("click", function () { if (confirm("سيُحذف تقدّمك وعملاتك ومشترياتك من هذا الجهاز. هل أنت متأكد؟")) { try { localStorage.removeItem(KEY); } catch (e) {} location.hash = "home"; location.reload(); } });
+  }
+
+  /* ---------------- البدء + الغلاف + الجولة ---------------- */
+  applyTheme(S.theme);
+  KX = { id: APPID, kinex: "../../shared/kinex.jpg", steps: [
+    { t: "أهلاً بك، أنا كينيكس", x: "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق التربية الإسلامية للصف العاشر. سأعرّفك عليه في دقيقة، وبعدها أبقى معك في كل درس حتى تتفوّق بإذن الله.", s: null, i: 1 },
+    { t: "💎 عملة دُرّة", x: "كلّما أتممتَ درساً أو أتقنتَ اختباراً ربحتَ عملات دُرّة تُحفظ في محفظتك. اضغط عليها لتفتح المتجر.", s: ".wallet" },
+    { t: "📚 الفصلان والوحدات", x: "اختر الفصل الأول أو الثاني، ثم الوحدة التي تريدها. الشريط الأخضر يريك تقدّمك في كل وحدة.", s: ".units" },
+    { t: "🎯 ثلاثة أوضاع لكل درس", x: "في كل درس تتعلّم أولاً بشرح تفاعلي وبطاقات مراجعة، ثم تتحدّى نفسك بأسئلة متنوّعة، ثم تُثبت إتقانك باختبار شامل يصحّح نفسه ويريك أخطاءك.", s: null },
+    { t: "📕 الكتب المدرسية", x: "من هنا تفتح كتاب كل فصل على Google Drive لتراجع منه متى شئت.", s: "#nav [data-g=books]" },
+    { t: "💎 متجر دُرّة", x: "اشترِ بعملاتك ألواناً جديدة لتطبيقك، وعاين اللون قبل أن تشتريه، ويمكنك العودة إلى الألوان الأساسية في أي وقت.", s: "#nav [data-g=store]" },
+    { t: "📊 تقدّمي", x: "هنا ترى نسبة إتقانك ودروسك وأخطاءك المتكرّرة وأرباحك ومشترياتك.", s: "#nav [data-g=progress]" },
+    { t: "أنا معك دائماً 🚀", x: "ابدأ اليوم بدرس واحد وأنا معك. وللعودة إلى بوابة الصحابة التعليمية اضغط زرّ 🏠 أعلى الصفحة. بالتوفيق دائماً! ✨", s: null }],
+    cover: "../../shared/covers/islamic.webp", ready: function () { return R.v === "home" && !document.getElementById("shc"); },
+    userName: function () { return userName(); } };
+  SahabaIntro.run(KX);
+  publish(); route();
+})();
+</script>
+<script src="../../shared/update-notify.js" data-app="التربية الإسلامية" data-icon="icon-192.png" defer></script>
+</body>
+</html>

@@ -19,6 +19,7 @@ SKIP_EXT = {".md", ".py", ".txt"}
 EXTRAS = {
     "english/10": ["../../shared/update-notify.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/english.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf"],
     "science/10": ["../../shared/update-notify.js"],
+    "islamic/10": ["../../shared/update-notify.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/islamic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2"],
 }
 
 
@@ -41,6 +42,6 @@ def gen(app: str) -> None:
 
 
 if __name__ == "__main__":
-    apps = sys.argv[1:] or [str(p.parent.relative_to(ROOT)) for p in sorted(ROOT.glob("*/*/sw.js")) if (p.parent / "index.html").is_file() and p.parent.parent.name in ("english", "science")]
+    apps = sys.argv[1:] or [str(p.parent.relative_to(ROOT)) for p in sorted(ROOT.glob("*/*/sw.js")) if (p.parent / "index.html").is_file() and p.parent.parent.name in ("english", "science", "islamic")]
     for a in apps:
         gen(a)
