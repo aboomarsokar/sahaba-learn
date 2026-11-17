@@ -41,7 +41,9 @@ def rep(s: str, a: str, b: str) -> str:
     return s.replace(a, b)
 
 
-HEAD = r"""<script>
+HEAD = r"""<script>/* تشخيص: افتح الصفحة بإضافة ?debug=1 فتظهر أيّ أخطاءٍ برمجية أسفل الشاشة */
+if(/[?&]debug=1/.test(location.search))addEventListener('error',function(e){try{var d=document.getElementById('__err');if(!d){d=document.createElement('pre');d.id='__err';d.style.cssText='position:fixed;z-index:2147483647;left:0;right:0;bottom:0;margin:0;background:#400;color:#fff;font:11px/1.4 monospace;padding:8px;direction:ltr;text-align:left;max-height:45vh;overflow:auto;white-space:pre-wrap';(document.body||document.documentElement).appendChild(d)}var t=e.target&&e.target!==window?('LOAD FAIL '+(e.target.src||e.target.href||e.target.tagName)):((e.message||'')+' @'+String(e.filename||'').split('/').pop()+':'+e.lineno);d.textContent+=t+'\n'}catch(x){}},true);</script>
+<script>
 /* تطبيق مستقلّ: التقدّم يُحفظ باسمٍ خاصّ، ويُستورد مرّةً واحدة ما أنجزه الطالب في تطبيق العلوم القديم لهذه المادة فقط */
 (function(K,P){
  var G=Storage.prototype.getItem,S=Storage.prototype.setItem,R=Storage.prototype.removeItem;
@@ -87,7 +89,7 @@ LOCK = r"""
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). الملفّات الثقيلة من science/10. */
 const P = "__PRE__";
-const V = P + "v7";
+const V = P + "v8";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../science/10/icons/icon-192.png", "../../science/10/icons/icon-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -96,8 +98,8 @@ self.addEventListener("fetch", e => {
   if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;   /* الروابط الخارجية (Drive) تمرّ كما هي */
   if (/\.mp4$/.test(r.url)) { e.respondWith(videoFromCache(r).catch(() => fetch(r))); return; }
   const isDoc = r.mode === "navigate" || r.destination === "document";
-  if (isDoc) {                                                     /* الصفحة: النسخة المحفوظة فوراً ثم تحديثها في الخلفية (لا انتظار للشبكة) */
-    e.respondWith(caches.match(r, { ignoreSearch: true }).then(m => { const net = fetch(r).then(x => { if (x.ok) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }).catch(() => m || caches.match("./index.html")); return m || net; }));
+  if (isDoc) {                                                     /* الصفحة: الشبكة أولاً بمهلة 2.5 ثانية ثم النسخة المحفوظة (تحديثٌ سليم وبلا انتظارٍ طويل) */
+    e.respondWith((async () => { const hit = await caches.match(r, { ignoreSearch: true }), cached = hit && !hit.redirected ? hit : null; const net = fetch(r).then(x => { if (x.ok && !x.redirected) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }); if (!cached) return net.catch(() => caches.match("./index.html")); return Promise.race([net.catch(() => cached), new Promise(res => setTimeout(() => res(cached), 2500))]); })());
     return;
   }
   /* بقية الملفات: نعرض المحفوظ فوراً ونحدّثه في الخلفية */
