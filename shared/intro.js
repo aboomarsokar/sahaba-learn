@@ -45,8 +45,12 @@
     if (!o.cover || ses("sahaba-cover:" + o.id) === "1") { done(); return; }
     css();
     var c = D.createElement("div"); c.id = "shc"; c.setAttribute("role", "button"); c.setAttribute("tabindex", "0"); c.setAttribute("aria-label", "ابدأ الآن");
-    var im = D.createElement("img"); im.alt = ""; im.src = o.cover; im.draggable = false; c.appendChild(im);
+    var im = D.createElement("img"); im.alt = ""; im.draggable = false; c.appendChild(im);
     var fin = false;
+    /* إن تعذّر تحميل الصورة لا نترك شاشةً فارغة: ندخل التطبيق مباشرةً */
+    im.onerror = function () { if (!fin) go(); };
+    setTimeout(function () { if (!fin && !(im.complete && im.naturalWidth)) go(); }, 6000);
+    im.src = o.cover;
     function go() { if (fin) return; fin = true; ses("sahaba-cover:" + o.id, "1"); c.classList.add("out"); setTimeout(function () { if (c.parentNode) c.parentNode.removeChild(c); }, 360); try { o.onStart && o.onStart(); } catch (e) {} done(); }
     c.addEventListener("click", go);
     c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") go(); });
