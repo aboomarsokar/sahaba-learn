@@ -4,7 +4,7 @@
 window.ARA = {
   links: {
     book: "",   /* رابط «خماسي بالكتاب المدرسي» (Drive) */
-    pack: ""    /* رابط «بالرزمة التعليمية» (Drive) */
+    pack: "https://drive.google.com/file/d/1m7I9fHj7lgIxjzhHMVRnIYxmLeYx8rgA/view?usp=drivesdk"    /* رابط «بالرزمة التعليمية» (Drive) */
   },
   semesters: [
     { id: 1, name: "الفصل الأول", units: [1, 2, 3, 4].map(function (i) { return mk(i, i === 2 || i === 4); }) },
