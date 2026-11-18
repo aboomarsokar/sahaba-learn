@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>اللغة العربية — الصف العاشر</title>
-<meta name="theme-color" content="#1a0509">
+<meta name="theme-color" content="#0d0904">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -85,6 +85,14 @@ h1,h2,h3{margin:0;font-weight:700}
 .tx{line-height:2.1}.tx p{margin:0 0 10px}.tx-h{color:var(--g);font-size:1.05rem;margin:14px 0 6px}.tx-b{position:relative;padding-inline-start:16px;margin-bottom:4px}.tx-b::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--g)}.tx-q{margin:0 0 10px;padding:8px 10px;border-radius:12px;background:rgba(127,127,127,.12)}
 .cells{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 10px}.cell{display:flex;flex-direction:column;gap:4px;min-height:96px;padding:10px;border:1px solid var(--cardb);border-radius:16px;background:var(--card);animation:pop .25s ease}.cell b{color:var(--g)}.cell span{font-size:.92rem;line-height:1.7}@keyframes pop{from{transform:scale(.9);opacity:0}}
 .rv-b{margin-top:8px!important}.btn:disabled{opacity:.55}
+:root[data-acc=gold]{--gold:linear-gradient(135deg,#f8e39a 0%,#e3b94d 38%,#c89622 62%,#8f6410 100%);--g:#e3b94d;--ongold:#2b1d04;--ink:#f6ecd2;--mut:#c2b284;--cardb:rgba(240,200,100,.26);--solid:#241b0e}
+:root[data-acc=gold][data-mode=light]{--ink:#3a2a08;--mut:#7d6a3e;--cardb:rgba(184,137,31,.32);--solid:#fffaf0;--g:#b8891f}
+:root[data-acc=gold] #intro{background:linear-gradient(120deg,#f6dc8a,#d9a92f,#fbeab0,#c08f1d,#f1d070);background-size:300% 300%}
+:root[data-acc=gold] .ibox{background:rgba(255,250,235,.95);color:#3a2a08}:root[data-acc=gold] .ibox h1,:root[data-acc=gold] .fld{color:#7a5a10}:root[data-acc=gold] .ibox p{color:#7d6a3e}
+:root[data-acc=gold] .in,:root[data-acc=gold] .sec button{border-color:#ecdca8;color:#3a2a08}:root[data-acc=gold] .sec button.on{border-color:#a87a1a;color:#2b1d04}
+:root[data-acc=gold] .hikma{background:#fbf1cf;border-color:#c89622;color:#3a2a08}:root[data-acc=gold] .hikma small{color:#7d6a3e}
+:root[data-acc=gold] .btn{color:#2b1d04;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 16px rgba(168,122,26,.4)}
+:root[data-acc=gold] .toast{background:#2a2008}
 /* الاختبارات */
 .qx{display:flex;align-items:center;gap:12px;width:100%;text-align:right;padding:13px 14px;margin-bottom:10px}
 .qx .n{flex:none;width:42px;height:42px;border-radius:14px;background:var(--gold);color:var(--ongold);display:grid;place-items:center;font-weight:700}
@@ -145,19 +153,20 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   };
   function ic(n) { var s = D.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("viewBox", "0 0 24 24"); var p = D.createElementNS("http://www.w3.org/2000/svg", "path"); p.setAttribute("d", IC[n]); s.appendChild(p); return s; }
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
-  var S = load(); S.mem = S.mem || {}; S.q = S.q || {}; S.mode = S.mode || "dark"; S.bgd = S.bgd || 0; S.bgl = S.bgl || 0; S.fs = S.fs || 16;
+  var S = load(); S.acc = S.acc || "gold"; S.mem = S.mem || {}; S.q = S.q || {}; S.mode = S.mode || "dark"; S.bgd = S.bgd || 0; S.bgl = S.bgl || 0; S.fs = S.fs || 16;
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast("تعذّر الحفظ على هذا الجهاز"); } }
   function toast(m) { var t = h("div", { cls: "toast", t: m }); D.body.appendChild(t); setTimeout(function () { t.remove(); }, 2600); }
   var BGD = [["#3b0a1c", "#1a0509"], ["#4d0f2f", "#220717"], ["#2b0a1f", "#12040d"], ["#5a1020", "#240709"], ["#2d3036", "#121316"]];
   var BGL = [["#fff0f5", "#fbcfe0"], ["#ffe9ec", "#f8c3cb"], ["#fdeef7", "#f1cce3"], ["#fff3ee", "#fbd5c6"], ["#f6eef4", "#e6d0e0"]];
   function applyLook() {
     var r = D.documentElement, c = (S.mode === "dark" ? BGD : BGL)[S.mode === "dark" ? S.bgd : S.bgl];
-    r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
+    if (S.acc === "gold") { if (S.mode === "dark" && !S.bgd) c = ["#1f1608", "#0d0904"]; if (S.mode === "light" && !S.bgl) c = ["#fff8e6", "#f1dfae"]; }
+    r.dataset.acc = S.acc; r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
     var m = $("meta[name=theme-color]"); if (m) m.content = c[1];
   }
   applyLook();
 
-  var AVATAR = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb3c8"/><stop offset="1" stop-color="#d81b60"/></linearGradient></defs><rect width="100" height="100" fill="url(#g)"/><circle cx="50" cy="40" r="17" fill="#ffe2b8" stroke="#7a0f33" stroke-width="2"/><path d="M30 36q20-26 40 0z" fill="#3b0a1c"/><path d="M26 38h48" stroke="#3b0a1c" stroke-width="5" stroke-linecap="round"/><path d="M74 38v14" stroke="#ffd166" stroke-width="2.5"/><circle cx="74" cy="54" r="3" fill="#ffd166"/><circle cx="44" cy="42" r="2" fill="#3a2a08"/><circle cx="56" cy="42" r="2" fill="#3a2a08"/><path d="M44 49q6 5 12 0" stroke="#3a2a08" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 100q4-30 30-30t30 30z" fill="#3b0a1c"/><path d="M34 74l16 10 16-10" fill="#fff0f5" stroke="#7a0f33" stroke-width="1.5"/><g transform="translate(30 80) rotate(-6)"><rect width="40" height="16" rx="2" fill="#a5123f" stroke="#fff0f5" stroke-width="1.5"/><path d="M4 5h32M4 10h24" stroke="#fff0f5" stroke-width="1.5"/></g></svg>';
+  var AVATAR = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc8a"/><stop offset="1" stop-color="#c8921b"/></linearGradient></defs><rect width="100" height="100" fill="url(#g)"/><circle cx="50" cy="40" r="17" fill="#ffe2b8" stroke="#7a5a10" stroke-width="2"/><path d="M30 36q20-26 40 0z" fill="#2b1d04"/><path d="M26 38h48" stroke="#2b1d04" stroke-width="5" stroke-linecap="round"/><path d="M74 38v14" stroke="#ffd166" stroke-width="2.5"/><circle cx="74" cy="54" r="3" fill="#ffd166"/><circle cx="44" cy="42" r="2" fill="#3a2a08"/><circle cx="56" cy="42" r="2" fill="#3a2a08"/><path d="M44 49q6 5 12 0" stroke="#3a2a08" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 100q4-30 30-30t30 30z" fill="#2b1d04"/><path d="M34 74l16 10 16-10" fill="#fff7dc" stroke="#7a5a10" stroke-width="1.5"/><g transform="translate(30 80) rotate(-6)"><rect width="40" height="16" rx="2" fill="#9c6f12" stroke="#fff7dc" stroke-width="1.5"/><path d="M4 5h32M4 10h24" stroke="#fff7dc" stroke-width="1.5"/></g></svg>';
   function avatarEl() {
     var b = h("button", { cls: "av", "aria-label": "تغيير الصورة الشخصية", on: { click: pickPhoto } });
     if (S.photo) b.appendChild(h("img", { src: S.photo, alt: "" })); else b.innerHTML = AVATAR;
@@ -378,6 +387,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       h("div", { cls: "card" }, [h("h3", { t: "الوضع" }), h("div", { style: "height:8px" }), seg([["light", "فاتح"], ["dark", "داكن"]], S.mode, upd(function (v) { S.mode = v; })),
         h("div", { cls: "lbl", t: "لون الخلفية للوضع الفاتح" }), sw(BGL, S.bgl, upd(function (v) { S.bgl = v; S.mode = "light"; })),
         h("div", { cls: "lbl", t: "لون الخلفية للوضع الداكن" }), sw(BGD, S.bgd, upd(function (v) { S.bgd = v; S.mode = "dark"; }))]),
+      h("div", { cls: "card" }, [h("h3", { t: "لون التطبيق" }), h("div", { style: "height:8px" }), seg([["gold", "ذهبي"], ["rose", "وردي"]], S.acc, upd(function (v) { S.acc = v; }))]),
       h("div", { cls: "card" }, [h("h3", { t: "حجم الخط" }), h("div", { style: "height:8px" }), seg([[14, "صغير"], [16, "متوسط"], [19, "كبير"]], S.fs, upd(function (v) { S.fs = v; }))]),
       h("div", { cls: "card" }, [mi("dl", "تنزيل التطبيق", installApp), mi("share", "مشاركة التطبيق", shareApp), mi("pen", "تعديل الاسم والشعبة", function () { stepName(true); }),
         mi("trash", "حذف بياناتي من هذا الجهاز", function () { if (confirm("سيُحذف اسمك وصورتك ومحفوظاتك ونتائجك من هذا الجهاز. متأكد؟")) { try { localStorage.removeItem(KEY); } catch (e) {} location.hash = ""; location.reload(); } })]));
