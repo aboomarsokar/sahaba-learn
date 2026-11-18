@@ -1,7 +1,5 @@
 {
 "files": [
-"./app.css",
-"./app.js",
 "./data/curriculum.js",
 "./data/dict.js",
 "./data/quiz.js",
