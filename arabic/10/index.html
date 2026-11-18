@@ -254,7 +254,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function home() {
     var first = S.name.split(" ")[0];
     var head = h("div", { cls: "top" }, [avatarEl(), h("div", { cls: "hi", style: "flex:1" }, [h("b", null, ["مرحباً، ", h("em", { t: first })]), h("small", { t: "ماذا تحب أن تبدأ؟ · " + S.sec })]), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
-    var sems = ARA.semesters.map(function (s) { return h("button", { cls: "card sem", on: { click: function () { location.hash = "sem/" + s.id; } } }, [h("div", { cls: "rn", t: ROM[s.id] }), h("div", null, [h("b", { t: s.name }), h("small", { t: "الوحدات " + (s.id === 1 ? "1 – 5" : "6 – 10") })])]); });
+    var sems = ARA.semesters.map(function (s) { return h("button", { cls: "card sem", on: { click: function () { location.hash = "sem/" + s.id; } } }, [h("div", { cls: "rn", t: ROM[s.id] }), h("div", null, [h("b", { t: s.name }), h("small", { t: s.units.length + " وحدات" })])]); });
     function pent(icon, t, hash) { return h("button", { cls: "pent", on: { click: function () { location.hash = hash; } } }, [h("span", null, [ic(icon), D.createTextNode(t), h("small", { t: "افتح" })])]); }
     app.replaceChildren.apply(app, [head].concat(sems, [h("div", { cls: "pents" }, [pent("doc", "الرزمة التعليمية", "pack"), pent("book", "الكتب المدرسية", "books")])]));
     nav("home");
@@ -264,7 +264,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     tab = tab || "units";
     var tabs = h("div", { cls: "tabs" }, [["units", "الوحدات"], ["book", "الكتاب المدرسي"], ["pack", "الرزمة التعليمية"]].map(function (g) { return h("button", { t: g[1], cls: g[0] === tab ? "on" : "", on: { click: function () { semPage(id, g[0]); } } }); }));
     var body;
-    if (tab === "units") body = sem.units.map(function (u, i) { return h("button", { cls: "card unit", on: { click: function () { location.hash = "unit/" + u.id; } } }, [h("div", { cls: "n", t: String(i + 1 + (sem.id === 2 ? 5 : 0)) }), h("b", { t: u.n }), h("span", { t: "‹" })]); });
+    if (tab === "units") body = sem.units.map(function (u, i) { return h("button", { cls: "card unit", on: { click: function () { location.hash = "unit/" + u.id; } } }, [h("div", { cls: "n", t: String(i + 1) }), h("b", { t: u.n }), h("span", { t: "‹" })]); });
     else body = [h("div", { cls: "card lnk" }, [h("div", null, [h("b", { t: tab === "book" ? "كتاب اللغة العربية — " + sem.name : "الرزمة التعليمية — " + sem.name }), h("small", { t: tab === "book" ? "الصف العاشر" : "الفصلان الأول والثاني" })]), h("button", { cls: "gl", t: "افتح على Drive", on: { click: function () { openLink(tab === "book" ? ARA.links[sem.book] : ARA.links.pack); } } })])];
     app.replaceChildren.apply(app, [top(sem.name, true), tabs].concat(body));
     nav("sub");
