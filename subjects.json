@@ -185,7 +185,12 @@
       "color": "#a3243b",
       "icon": "book",
       "banner": "shared/subjects/arabic.webp",
-      "grades": {}
+      "grades": {
+        "10": {
+          "dir": "arabic/10",
+          "note": "مطالعة وقصائد وقواعد وقاموس معجمي"
+        }
+      }
     },
     {
       "id": "islamic",

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>اللغة العربية — الصف العاشر</title>
+<meta name="theme-color" content="#b8891f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<style>
+@font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"Ruqaa";src:url("../../shared/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
+:root{--pri:#b8891f;--pri2:#7a5a10;--bg:#fff7dc;--card:#fff;--ink:#3a2a08;--mut:#7d6a3e;--gold:#e0b84a;--bd:#ecdca8;--onpri:#fff;--soft:#fbf1cf;--fs:16px}
+:root[data-theme=green]{--pri:#0e7a55;--pri2:#0a5c40;--bg:#f1f7ee;--ink:#0b3b2c;--mut:#5f7a6e;--bd:#cfe3d4;--soft:#e2f0e6}
+:root[data-theme=blue]{--pri:#1e5fa8;--pri2:#123f75;--bg:#eef4fb;--ink:#12263f;--mut:#58708f;--bd:#cddcee;--soft:#dfeaf7}
+:root[data-theme=rose]{--pri:#a3243b;--pri2:#74142a;--bg:#fbf0f1;--ink:#3b1018;--mut:#85535c;--bd:#ecccd1;--soft:#f6dde0}
+:root[data-theme=dark]{--pri:#e0b84a;--pri2:#f1d27a;--bg:#14110a;--card:#201b10;--ink:#f3ead0;--mut:#b9a97a;--bd:#3a3220;--soft:#2a2314;--onpri:#1b1405}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:var(--fs)}
+body{margin:0;font-family:"Plex Arabic",system-ui,Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;min-height:100vh;transition:background .25s,color .25s}
+[hidden]{display:none!important}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
+/* ===== مدخل ذهبي متحرّك ===== */
+#intro{position:fixed;inset:0;z-index:50;overflow:auto;display:grid;place-items:center;padding:18px;background:linear-gradient(120deg,#f6dc8a,#d9a92f,#f9e7a6,#c8921b);background-size:300% 300%;animation:gold 12s ease infinite}
+@keyframes gold{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+#intro::before{content:"";position:fixed;inset:-50%;opacity:.28;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' fill='none' stroke='%237a5a10' stroke-width='3' stroke-linejoin='round'><path d='M14 30h30a8 8 0 0 1 8 8v36a8 8 0 0 0-8-8H14zM90 30H60a8 8 0 0 0-8 8v36a8 8 0 0 1 8-8h30z' transform='translate(4 6)'/><rect x='92' y='96' width='42' height='52' rx='4' transform='rotate(-12 113 122)'/><path d='M100 110h26M100 122h26M100 134h18' transform='rotate(-12 113 122)'/><path d='M20 112l22-22 10 10-22 22-14 4z'/></svg>");background-size:160px;animation:drift 40s linear infinite;transform:rotate(-8deg)}
+@keyframes drift{to{background-position:320px 160px}}
+.ibox{position:relative;width:100%;max-width:420px;background:rgba(255,252,240,.94);border:2px solid #fff;border-radius:26px;padding:22px 20px;box-shadow:0 14px 40px rgba(90,60,0,.3);text-align:center}
+.ibox h1{font-size:1.7rem;line-height:1.4}
+.ibox p{margin:6px 0 14px;color:var(--mut)}
+.fld{display:block;text-align:right;margin:12px 0 4px;font-weight:700;color:var(--pri2)}
+.in{width:100%;border:2px solid var(--bd);border-radius:14px;background:#fff;color:#3a2a08;padding:11px 14px;outline:none}
+.in:focus{border-color:var(--pri)}
+.sec{display:flex;gap:8px}.sec button{flex:1;border:2px solid var(--bd);background:#fff;color:#3a2a08;border-radius:14px;padding:10px 4px;font-weight:700}
+.sec button.on{background:var(--pri);border-color:var(--pri2);color:#fff}
+.btn{display:block;width:100%;margin-top:18px;border:0;border-radius:16px;padding:13px;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--onpri);font-weight:700;font-size:1.1rem;box-shadow:0 5px 14px rgba(0,0,0,.2)}
+.btn:disabled{opacity:.45}
+.err{color:#b3261e;min-height:1.4em;font-size:.9rem}
+.hikma{margin:14px 0 4px;padding:16px;border-radius:18px;background:var(--soft);border:1.5px dashed var(--pri);font-size:1.25rem;line-height:2;font-family:"Ruqaa","Plex Arabic",serif;color:#3a2a08}
+.hikma small{display:block;font-family:"Plex Arabic",sans-serif;font-size:.85rem;color:var(--mut)}
+.lamp{font-size:2.6rem;animation:fl 2.4s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-6px)}}
+/* ===== التطبيق ===== */
+#app{max-width:640px;margin:0 auto;padding:12px 14px calc(96px + env(safe-area-inset-bottom,0px))}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.top h1{flex:1;font-size:1.3rem;line-height:1.3}
+.ib{flex:none;width:44px;height:44px;border-radius:14px;border:1.5px solid var(--bd);background:var(--card);display:grid;place-items:center;font-size:1.3rem;color:var(--ink)}
+.av{flex:none;width:58px;height:58px;border-radius:50%;border:3px solid var(--gold);background:var(--soft);overflow:hidden;padding:0;position:relative;box-shadow:0 3px 10px rgba(0,0,0,.15)}
+.av img,.av svg{width:100%;height:100%;object-fit:cover;display:block}
+.av i{position:absolute;bottom:0;inset-inline:0;background:rgba(0,0,0,.55);color:#fff;font-size:.6rem;font-style:normal;text-align:center;line-height:1.5}
+.hello{border:0;background:linear-gradient(135deg,var(--pri),var(--pri2));color:var(--onpri);border-radius:20px;padding:14px 16px;margin-bottom:12px}
+.hello b{display:block;font-size:1.15rem}.hello small{opacity:.9}
+.card{background:var(--card);border:1.5px solid var(--bd);border-radius:20px;padding:14px;margin-bottom:12px;box-shadow:0 3px 12px rgba(0,0,0,.05)}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{flex:1;border:2px solid var(--bd);background:var(--card);border-radius:16px;padding:11px 6px;font-weight:700}
+.tabs button.on{background:var(--pri);color:var(--onpri);border-color:var(--pri2)}
+.unit{display:flex;align-items:center;gap:12px;width:100%;text-align:right;border:1.5px solid var(--bd);background:var(--card);border-radius:18px;padding:14px;margin-bottom:10px}
+.unit .n{flex:none;width:42px;height:42px;border-radius:50%;background:var(--soft);color:var(--pri2);display:grid;place-items:center;font-weight:700;border:2px solid var(--gold)}
+.unit b{flex:1}.unit span{color:var(--mut)}
+.read{white-space:pre-wrap;line-height:2.1;font-size:1.05rem}
+.empty{color:var(--mut);text-align:center;padding:18px 6px}
+.poem{font-family:"Ruqaa","Plex Arabic",serif;font-size:1.25rem;text-align:center}
+#nav{position:fixed;inset-inline:0;bottom:0;z-index:20;display:flex;gap:8px;padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1.5px solid var(--bd)}
+#nav button{flex:1;border:2px solid var(--gold);background:var(--soft);border-radius:16px;padding:9px 6px;font-weight:700;color:var(--ink);line-height:1.4;font-size:.95rem}
+#nav button:active{background:var(--gold)}
+/* درج الإعدادات */
+#veil{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:60}
+#drawer{position:fixed;top:0;bottom:0;inset-inline-start:0;width:min(86vw,340px);background:var(--bg);z-index:61;padding:16px 14px;overflow:auto;box-shadow:0 0 30px rgba(0,0,0,.4);animation:dr .22s ease}
+@keyframes dr{from{transform:translateX(100%)}}
+#drawer h2{margin-bottom:10px}
+.mi{display:flex;align-items:center;gap:12px;width:100%;text-align:right;border:1.5px solid var(--bd);background:var(--card);border-radius:16px;padding:12px 14px;margin-bottom:8px}
+.mi span:first-child{font-size:1.3rem}
+.sw{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0}.sw button{width:46px;height:46px;border-radius:50%;border:3px solid var(--bd)}
+.sw button.on{border-color:var(--ink)}
+.q{width:100%;margin-bottom:10px}
+.w{display:flex;gap:10px;justify-content:space-between;border-bottom:1px dashed var(--bd);padding:8px 2px}.w b{color:var(--pri2)}
+.chk{display:flex;align-items:center;gap:12px;border:1.5px solid var(--bd);background:var(--card);border-radius:16px;padding:12px;margin-bottom:8px;width:100%;text-align:right}
+.chk .b{flex:none;width:28px;height:28px;border-radius:8px;border:2px solid var(--pri);display:grid;place-items:center;font-weight:700}
+.chk.on .b{background:var(--pri);color:var(--onpri)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(90px + env(safe-area-inset-bottom,0px));background:#2a2008;color:#fff;border-radius:999px;padding:9px 18px;z-index:90;max-width:90vw;text-align:center}
+</style>
+</head>
+<body>
+<section id="intro" hidden></section>
+<main id="app" hidden></main>
+<nav id="nav" hidden aria-label="التنقّل"></nav>
+<script src="data/curriculum.js"></script>
+<script src="data/dict.js"></script>
+<script src="data/wisdom.js"></script>
+<script>
+(function () {
+  "use strict";
+  var KEY = "ara10:st", D = document;
+  function $(s, r) { return (r || D).querySelector(s); }
+  function h(tag, attrs, kids) {
+    var e = D.createElement(tag);
+    for (var k in (attrs || {})) { if (k === "t") e.textContent = attrs[k]; else if (k === "on") for (var ev in attrs.on) e.addEventListener(ev, attrs.on[ev]); else if (k === "cls") e.className = attrs[k]; else e.setAttribute(k, attrs[k]); }
+    (kids || []).forEach(function (c) { if (c) e.appendChild(typeof c === "string" ? D.createTextNode(c) : c); });
+    return e;
+  }
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  var S = load(); S.mem = S.mem || {}; S.theme = S.theme || "gold"; S.fs = S.fs || 16;
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast("تعذّر الحفظ على هذا الجهاز"); } }
+  function toast(m) { var t = h("div", { cls: "toast", t: m }); D.body.appendChild(t); setTimeout(function () { t.remove(); }, 2400); }
+  function applyLook() { D.documentElement.dataset.theme = S.theme === "gold" ? "" : S.theme; D.documentElement.style.setProperty("--fs", S.fs + "px"); }
+  applyLook();
+
+  var AVATAR = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6dc8a"/><stop offset="1" stop-color="#c8921b"/></linearGradient></defs><rect width="100" height="100" fill="url(#g)"/><circle cx="50" cy="40" r="17" fill="#ffe2b8" stroke="#7a5a10" stroke-width="2"/><path d="M30 36q20-26 40 0z" fill="#12263f"/><path d="M26 38h48" stroke="#12263f" stroke-width="5" stroke-linecap="round"/><path d="M74 38v14" stroke="#e0b84a" stroke-width="2.5"/><circle cx="74" cy="54" r="3" fill="#e0b84a"/><circle cx="44" cy="42" r="2" fill="#3a2a08"/><circle cx="56" cy="42" r="2" fill="#3a2a08"/><path d="M44 49q6 5 12 0" stroke="#3a2a08" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 100q4-30 30-30t30 30z" fill="#12263f"/><path d="M34 74l16 10 16-10" fill="#fff7dc" stroke="#7a5a10" stroke-width="1.5"/><g transform="translate(30 80) rotate(-6)"><rect width="40" height="16" rx="2" fill="#a3243b" stroke="#fff7dc" stroke-width="1.5"/><path d="M4 5h32M4 10h24" stroke="#fff7dc" stroke-width="1.5"/></g></svg>';
+  function avatarEl(cb) {
+    var b = h("button", { cls: "av", "aria-label": "تغيير الصورة الشخصية", on: { click: pickPhoto } });
+    if (S.photo) b.appendChild(h("img", { src: S.photo, alt: "" })); else b.innerHTML = AVATAR;
+    b.appendChild(h("i", { t: "تغيير" })); return b;
+  }
+  function pickPhoto() {
+    var f = h("input", { type: "file", accept: "image/*" });
+    f.addEventListener("change", function () {
+      var file = f.files[0]; if (!file) return;
+      var img = new Image(), url = URL.createObjectURL(file);
+      img.onload = function () {
+        var c = D.createElement("canvas"), s = Math.min(img.width, img.height); c.width = c.height = 160;
+        c.getContext("2d").drawImage(img, (img.width - s) / 2, (img.height - s) / 2, s, s, 0, 0, 160, 160);
+        S.photo = c.toDataURL("image/jpeg", .8); save(); URL.revokeObjectURL(url); route();
+      };
+      img.src = url;
+    });
+    f.click();
+  }
+
+  /* ===== المدخل ===== */
+  function wisdomToday() { var d = new Date(), n = Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 864e5); return WISDOM[(n + d.getFullYear()) % WISDOM.length]; }
+  function showIntro(edit) {
+    var box = $("#intro"); box.hidden = false; $("#app").hidden = true; $("#nav").hidden = true; box.innerHTML = "";
+    var name = h("input", { cls: "in", placeholder: "الاسم الثلاثي", autocomplete: "name", value: S.name || "" }), sec = S.sec || "", err = h("div", { cls: "err" });
+    var btns = ["عاشر ١", "عاشر ٢", "عاشر ٣"].map(function (s) {
+      var b = h("button", { type: "button", t: s, on: { click: function () { sec = s; btns.forEach(function (x) { x.classList.toggle("on", x === b); }); } } });
+      if (s === sec) b.className = "on"; return b;
+    });
+    var next = h("button", { cls: "btn", t: "التالي", on: { click: function () {
+      var parts = name.value.trim().split(/\s+/).filter(Boolean);
+      if (parts.length < 3) { err.textContent = "اكتب اسمك ثلاثياً (ثلاث كلمات)."; return; }
+      if (!sec) { err.textContent = "اختر الشعبة."; return; }
+      S.name = parts.join(" "); S.sec = sec; save(); if (edit) { box.hidden = true; route(); } else step2();
+    } } });
+    box.appendChild(h("div", { cls: "ibox" }, [h("div", { cls: "lamp", t: "📖" }), h("h1", { t: "اللغة العربية" }), h("p", { t: "الصف العاشر — مرحباً بك" }),
+      h("label", { cls: "fld", t: "اسمك الثلاثي" }), name, h("label", { cls: "fld", t: "الشعبة" }), h("div", { cls: "sec" }, btns), err, next]));
+  }
+  function step2() {
+    var box = $("#intro"), w = wisdomToday(); box.innerHTML = "";
+    box.appendChild(h("div", { cls: "ibox" }, [h("div", { cls: "lamp", t: "💡" }), h("h1", { t: "حكمة اليوم" }),
+      h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })]),
+      h("button", { cls: "btn", t: "ابدأ يا بطل 🚀", on: { click: function () { S.done = 1; save(); box.hidden = true; location.hash = "home"; route(); } } })]));
+  }
+
+  /* ===== القائمة والإعدادات ===== */
+  var deferred = null;
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferred = e; });
+  function installApp() {
+    if (deferred) { deferred.prompt(); deferred = null; }
+    else if (matchMedia("(display-mode: standalone)").matches) toast("التطبيق مثبّت بالفعل");
+    else toast("من قائمة المتصفح اختر «إضافة إلى الشاشة الرئيسية»");
+  }
+  function shareApp() {
+    var u = location.href.split("#")[0], d = { title: "اللغة العربية — الصف العاشر", text: "تطبيق اللغة العربية للصف العاشر", url: u };
+    if (navigator.share) navigator.share(d).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(u).then(function () { toast("نُسخ رابط التطبيق"); }, function () { toast(u); });
+    else toast(u);
+  }
+  function closeMenu() { var a = $("#veil"), b = $("#drawer"); if (a) a.remove(); if (b) b.remove(); }
+  function sheet(title, kids) {
+    closeMenu(); var d = h("aside", { id: "drawer" }, [h("h2", { t: title })].concat(kids));
+    D.body.appendChild(h("div", { id: "veil", on: { click: closeMenu } })); D.body.appendChild(d);
+  }
+  function mi(icon, text, fn) { return h("button", { cls: "mi", on: { click: fn } }, [h("span", { t: icon }), h("span", { t: text })]); }
+  function openMenu() {
+    sheet("الإعدادات", [
+      mi("🎨", "تغيير اللون", colorSheet),
+      mi("🔠", "حجم الخط", fontSheet),
+      mi("⬇️", "تنزيل التطبيق", function () { closeMenu(); installApp(); }),
+      mi("📤", "مشاركة التطبيق", function () { closeMenu(); shareApp(); }),
+      mi("📚", "القاموس المعجمي", function () { closeMenu(); location.hash = "dict"; }),
+      mi("⭐", "المحفوظات", function () { closeMenu(); location.hash = "mem"; }),
+      mi("💡", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })])]); }),
+      mi("✏️", "تعديل الاسم والشعبة", function () { closeMenu(); showIntro(true); }),
+      mi("🗑️", "حذف بياناتي من هذا الجهاز", function () { if (confirm("سيُحذف اسمك وصورتك ومحفوظاتك من هذا الجهاز. متأكد؟")) { try { localStorage.removeItem(KEY); } catch (e) {} location.hash = ""; location.reload(); } })
+    ]);
+  }
+  function colorSheet() {
+    var C = { gold: "#b8891f", green: "#0e7a55", blue: "#1e5fa8", rose: "#a3243b", dark: "#201b10" }, L = { gold: "ذهبي", green: "أخضر", blue: "أزرق", rose: "وردي", dark: "ليلي" };
+    var row = h("div", { cls: "sw" }, Object.keys(C).map(function (k) { return h("button", { "aria-label": L[k], title: L[k], style: "background:" + C[k], cls: S.theme === k ? "on" : "", on: { click: function () { S.theme = k; save(); applyLook(); colorSheet(); } } }); }));
+    sheet("تغيير اللون", [row]);
+  }
+  function fontSheet() {
+    var v = h("b", { t: S.fs + "px" });
+    function set(n) { S.fs = Math.max(13, Math.min(22, n)); save(); applyLook(); v.textContent = S.fs + "px"; }
+    sheet("حجم الخط", [h("div", { cls: "sw" }, [h("button", { t: "−", on: { click: function () { set(S.fs - 1); } }, style: "background:var(--card);font-size:1.4rem" }), v, h("button", { t: "+", on: { click: function () { set(S.fs + 1); } }, style: "background:var(--card);font-size:1.4rem" })])]);
+  }
+
+  /* ===== الصفحات ===== */
+  var app = $("#app");
+  function top(title, back) {
+    return h("div", { cls: "top" }, [back ? h("button", { cls: "ib", "aria-label": "رجوع", t: "→", on: { click: function () { history.length > 1 ? history.back() : (location.hash = "home"); } } }) : avatarEl(), h("h1", { t: title }), h("button", { cls: "ib", "aria-label": "القائمة", t: "☰", on: { click: openMenu } })]);
+  }
+  function findUnit(id) { var r = null; ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { if (u.id === id) r = u; }); }); return r; }
+  function home() {
+    S.tab = S.tab || 1; var sem = ARA.semesters.filter(function (s) { return s.id === S.tab; })[0] || ARA.semesters[0];
+    var first = S.name.split(" ")[0];
+    var list = sem.units.map(function (u, i) { return h("button", { cls: "unit", on: { click: function () { location.hash = "unit/" + u.id; } } }, [h("div", { cls: "n", t: String(i + 1 + (sem.id - 1) * 4) }), h("b", { t: u.n }), h("span", { t: "‹" })]); });
+    app.replaceChildren(top("اللغة العربية"), h("div", { cls: "hello" }, [h("b", { t: "أهلاً يا " + first + " 👋" }), h("small", { t: S.sec })]),
+      h("div", { cls: "tabs" }, ARA.semesters.map(function (s) { return h("button", { t: s.name, cls: s.id === sem.id ? "on" : "", on: { click: function () { S.tab = s.id; save(); home(); } } }); })), h("div", null, list));
+    nav(true);
+  }
+  function unit(id, tab) {
+    var u = findUnit(id); if (!u) return home();
+    var tabs = [["read", "المطالعة", u.read], ["poem", "القصيدة", u.poem], ["gram", "القواعد", u.gram]].filter(function (t) { return t[2]; });
+    tab = tab || "read"; var cur = tabs.filter(function (t) { return t[0] === tab; })[0] || tabs[0];
+    var body = cur[2];
+    app.replaceChildren(top(u.n, true), h("div", { cls: "tabs" }, tabs.map(function (t) { return h("button", { t: t[1], cls: t[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, t[0]); } } }); })),
+      h("div", { cls: "card" }, [h("h2", { t: body.t, style: "margin-bottom:8px" }), body.x ? h("div", { cls: "read" + (cur[0] === "poem" ? " poem" : ""), t: body.x }) : h("div", { cls: "empty", t: "سيُضاف المحتوى من الكتاب المدرسي قريباً." })]));
+    nav(false);
+  }
+  function dict() {
+    var grp = S.dg || 1, q = h("input", { cls: "in q", placeholder: "ابحث عن كلمة…", type: "search" }), out = h("div", { cls: "card" });
+    function draw() { var s = q.value.trim(), items = DICT[grp].filter(function (w) { return !s || w[0].indexOf(s) >= 0 || w[1].indexOf(s) >= 0; }); out.replaceChildren.apply(out, items.length ? items.map(function (w) { return h("div", { cls: "w" }, [h("b", { t: w[0] }), h("span", { t: w[1] })]); }) : [h("div", { cls: "empty", t: "لا نتائج." })]); }
+    q.addEventListener("input", draw);
+    app.replaceChildren(top("القاموس المعجمي", true), h("div", { cls: "tabs" }, [[1, "المجموعة الأولى (الفصل الأول)"], [2, "المجموعة الثانية (الفصل الثاني)"]].map(function (g) { return h("button", { t: g[1], cls: g[0] === grp ? "on" : "", on: { click: function () { S.dg = g[0]; save(); dict(); } } }); })), q, out);
+    draw(); nav(false);
+  }
+  function mem() {
+    var items = [];
+    ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { if (u.poem) items.push([u, s]); }); });
+    var done = items.filter(function (i) { return S.mem[i[0].id]; }).length;
+    app.replaceChildren(top("المحفوظات", true), h("div", { cls: "hello" }, [h("b", { t: "حفظتَ " + done + " من " + items.length }), h("small", { t: "اضغط على القصيدة لتعليمها «محفوظة»" })]),
+      h("div", null, items.map(function (i) { var on = !!S.mem[i[0].id]; return h("button", { cls: "chk" + (on ? " on" : ""), on: { click: function () { S.mem[i[0].id] = !on; save(); mem(); } } }, [h("span", { cls: "b", t: on ? "✓" : "" }), h("span", { t: i[1].name + " — " + i[0].n + ": " + i[0].poem.t })]); })));
+    nav(false);
+  }
+  function nav(show) {
+    var n = $("#nav"); n.hidden = !show; if (!show) return; n.replaceChildren(
+      h("button", { t: "📘 خماسي بالكتاب المدرسي", on: { click: function () { openLink(ARA.links.book); } } }),
+      h("button", { t: "📦 بالرزمة التعليمية", on: { click: function () { openLink(ARA.links.pack); } } }));
+  }
+  function openLink(u) { if (u) window.open(u, "_blank", "noopener"); else toast("الرابط غير مضاف بعد"); }
+
+  function route() {
+    closeMenu();
+    if (!S.done || !S.name) { return showIntro(false); }
+    $("#intro").hidden = true; app.hidden = false;
+    var p = (location.hash || "#home").slice(1).split("/");
+    if (p[0] === "unit") unit(p[1]); else if (p[0] === "dict") dict(); else if (p[0] === "mem") mem(); else home();
+    scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+  route();
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
+})();
+</script>
+</body>
+</html>
