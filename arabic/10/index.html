@@ -137,8 +137,10 @@ h1,h2,h3{margin:0;font-weight:700}
 .env-seal{position:absolute;left:50%;top:88px;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9b9b,#a31515);z-index:4;box-shadow:0 2px 6px rgba(0,0,0,.5);transition:opacity .3s}.env.open .env-seal{opacity:0}
 .letter{margin-top:6px;padding:16px;border-radius:18px;background:#fffaf0;color:#3a2a08;box-shadow:0 10px 26px rgba(0,0,0,.35);animation:fin .6s both}
 .letter h3{color:#7a5a10;text-align:center;margin-bottom:8px}.letter textarea{width:100%;min-height:130px;border:2px solid #ecdca8;border-radius:12px;padding:10px;font:inherit;color:#3a2a08;background:#fff;resize:vertical;outline:none}.letter textarea:focus{border-color:#c89622}
-.lt .w{display:inline-block;opacity:0;animation:wIn .45s forwards,wGlow 1s forwards}
-@keyframes wIn{to{opacity:1}}@keyframes wGlow{0%{text-shadow:none}40%{color:#ffe28a;text-shadow:0 0 12px #f0c64a,0 0 2px #fff}100%{text-shadow:none}}
+.lt .w{display:inline;border-radius:6px;padding:0 2px;animation:wMark 1.1s forwards}
+@keyframes wMark{0%{background:transparent}22%{background:#ffd166;color:#1a1204;box-shadow:0 0 14px #f0c64a}100%{background:rgba(227,185,77,.24);color:inherit;box-shadow:none}}
+.tl{display:flex;align-items:baseline;gap:10px;margin:7px 0;padding:6px 8px;border-radius:12px;background:rgba(127,127,127,.08);animation:tin .5s both}.tl b{flex:none;padding:2px 12px;border-radius:9px;color:#1a1204;background:var(--tc);font-size:1.05rem;box-shadow:0 0 10px var(--tc)}.tl span{line-height:1.8}
+@keyframes tin{from{opacity:0;transform:translateX(16px)}to{opacity:1;transform:none}}
 .pcard h2{font-size:1.15rem;color:var(--g);margin-bottom:8px}.pcard .lt{font-size:1.1rem;line-height:2.1}
 .cmp{display:grid;gap:10px}.cmp .cb{padding:12px;border-radius:14px;border:1px solid var(--cardb);background:var(--card)}.cmp .cb h4{margin:0 0 6px;color:var(--g)}
 
@@ -436,9 +438,15 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     [["top:-12px;left:-12px"], ["top:-12px;right:-12px"], ["bottom:-12px;left:-12px"], ["bottom:-12px;right:-12px"], ["top:-14px;left:calc(50% - 15px)"], ["bottom:-14px;left:calc(50% - 15px)"], ["top:calc(50% - 15px);left:-14px"], ["top:calc(50% - 15px);right:-14px"]].forEach(function (g) { b.appendChild(gemEl(g[0], 30)); });
     return b;
   }
-  function wordsEl(text, base) { /* ظهور تدريجي ثم وهج مضيء على الكلمات بالتتابع */
-    var box = h("div", { cls: "lt" }), ws = String(text).split(/(\s+)/), k = 0, step = Math.min(.06, 3.2 / Math.max(10, ws.length / 2));
-    ws.forEach(function (w) { if (!w.trim()) { box.appendChild(D.createTextNode(w)); return; } var d = (base || 0) + k * step, g = d + 0.5 + k * step * .6; box.appendChild(h("span", { cls: "w", t: w, style: "animation-delay:" + d.toFixed(2) + "s," + g.toFixed(2) + "s" })); k++; });
+  function wordsEl(text, base) { /* تعليم بطيء يبدأ من أول كلمة ويمضي حتى آخر كلمة ويبقى العلام */
+    var box = h("div", { cls: "lt" }), ws = String(text).split(/(\s+)/), n = ws.filter(function (w) { return w.trim(); }).length, step = Math.min(.26, 22 / Math.max(n, 1)), k = 0;
+    ws.forEach(function (w) { if (!w.trim()) { box.appendChild(D.createTextNode(w)); return; } box.appendChild(h("span", { cls: "w", t: w, style: "animation-delay:" + ((base || 0) + .6 + k * step).toFixed(2) + "s" })); k++; });
+    return box;
+  }
+  var TC = ["#ffd166", "#4dd0e1", "#ff8fab", "#8ee07e", "#c5a3ff", "#ffab70", "#7fb2ef", "#f6e27a", "#7be0c3", "#ff9b9b", "#b6e36b"];
+  function toolsEl(pt) { /* الأدوات في بطاقة واحدة: لكل أداة لون وسطر مستقل */
+    var box = h("div", null, pt.x ? [wordsEl(pt.x, 0)] : []);
+    pt.tools.forEach(function (tl, k) { box.appendChild(h("div", { cls: "tl", style: "--tc:" + TC[k % TC.length] + ";animation-delay:" + (.4 + k * .35).toFixed(2) + "s" }, [h("b", { t: tl[0] }), tl[1] ? h("span", { t: tl[1] }) : null])); });
     return box;
   }
   var RC = { a: "ra", b: "rb", c: "rc", d: "rd" };
@@ -479,7 +487,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       kids.push(h("div", { cls: "row2" }, [nbtn("‹ السابق", function () { go(st - 1); }, true)]));
     } else if (st <= E + 1 + P) {
       var pi = st - E - 2, pt = jr.parts[pi];
-      kids.push(stage([h("div", { cls: "kind", t: "المرحلة ٤: لنتعلم معاً — الجزء " + (pi + 1) + " من " + P }), h("div", { cls: "card pcard" }, [h("h2", { t: pt.t }), wordsEl(pt.x, 0.15)])]));
+      kids.push(stage([h("div", { cls: "kind", t: "المرحلة ٤: لنتعلم معاً — الجزء " + (pi + 1) + " من " + P }), h("div", { cls: "card pcard" }, [h("h2", { t: pt.t }), pt.tools ? toolsEl(pt) : wordsEl(pt.x, 0.15)])]));
       kids.push(nav(pi === P - 1 ? "قارن استنتاجك ›" : "التالي ›"));
     } else {
       var mine = jconc(key);
