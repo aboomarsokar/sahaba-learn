@@ -268,7 +268,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       if (!l.trim()) return;
       if (l.indexOf("## ") === 0) box.appendChild(h("h3", { cls: "tx-h", t: l.slice(3) }));
       else if (l.indexOf("• ") === 0) box.appendChild(h("div", { cls: "tx-b", t: l.slice(2) }));
-      else box.appendChild(h("p", { t: l }));
+      else box.appendChild(h("p", { t: l.replace(/ {2,}/g, "   ⁂   ") }));
     });
     return box;
   }
@@ -325,7 +325,11 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       else box.push(qsCard(u, i, function () { setSt(0); }));
       return box;
     }
-    box.push(h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" }), i.x ? renderText(i.x, i.k === "poem") : h("div", { cls: "empty", t: "نص الدرس في الكتاب المدرسي" + (u.pg ? " (الوحدة من صفحة " + u.pg + ")" : "") })]));
+    var inner = [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" })];
+    if (i.x) inner.push(renderText(i.x, i.k === "poem"));
+    else if (i.ex.length) { inner.push(h("h3", { cls: "tx-h", t: "تدريبات الكتاب" })); i.ex.forEach(function (q) { inner.push(h("p", { cls: "tx-q", t: q })); }); }
+    else inner.push(h("div", { cls: "empty", t: "نص الدرس في الكتاب المدرسي" + (u.pg ? " (الوحدة من صفحة " + u.pg + ")" : "") }));
+    box.push(h("div", { cls: "card" }, inner));
     return box;
   }
   function unit(id, tab) {
