@@ -81,6 +81,8 @@ h1,h2,h3{margin:0;font-weight:700}
 .sg{display:flex;padding:5px;border-radius:16px;background:rgba(0,0,0,.2);gap:4px}.sg button{flex:1;border:0;background:transparent;border-radius:12px;padding:9px 4px;font-weight:700}.sg button.on{background:var(--gold);color:var(--ongold)}
 .sw{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:8px 0 14px}.sw button{aspect-ratio:1;border-radius:16px;border:2px solid transparent;box-shadow:0 3px 8px rgba(0,0,0,.25)}.sw button.on{border-color:var(--g);outline:2px solid rgba(255,134,171,.4)}
 .lbl{color:var(--mut);margin:10px 0 2px}
+.tabs.sc{overflow-x:auto;-webkit-overflow-scrolling:touch}.tabs.sc button{flex:none;padding:9px 14px;white-space:nowrap}
+.tx{line-height:2.1}.tx p{margin:0 0 10px}.tx-h{color:var(--g);font-size:1.05rem;margin:14px 0 6px}.tx-b{position:relative;padding-inline-start:16px;margin-bottom:4px}.tx-b::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--g)}.tx-q{margin:0 0 10px;padding:8px 10px;border-radius:12px;background:rgba(127,127,127,.12)}
 /* الاختبارات */
 .qx{display:flex;align-items:center;gap:12px;width:100%;text-align:right;padding:13px 14px;margin-bottom:10px}
 .qx .n{flex:none;width:42px;height:42px;border-radius:14px;background:var(--gold);color:var(--ongold);display:grid;place-items:center;font-weight:700}
@@ -252,20 +254,42 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     nav("sub");
   }
   var KIND = { read: "مطالعة", poem: "نص شعري", gram: "قواعد لغوية", rhet: "بلاغة", aruz: "عروض", expr: "تعبير", imla: "إملاء" };
+  /* يعرض نص الدرس: فقرات، «## » عنوان، «• » نقطة */
+  function renderText(x, poem) {
+    var box = h("div", { cls: "tx" + (poem ? " poem" : "") });
+    String(x).split("\n").forEach(function (l) {
+      if (!l.trim()) return;
+      if (l.indexOf("## ") === 0) box.appendChild(h("h3", { cls: "tx-h", t: l.slice(3) }));
+      else if (l.indexOf("• ") === 0) box.appendChild(h("div", { cls: "tx-b", t: l.slice(2) }));
+      else box.appendChild(h("p", { t: l }));
+    });
+    return box;
+  }
+  var TABS = [["read", "المطالعة", ["read"]], ["poem", "القصيدة", ["poem"]], ["gram", "القواعد", ["gram"]], ["rhet", "البلاغة", ["rhet"]], ["aruz", "العروض", ["aruz"]], ["imla", "الإملاء", ["imla"]], ["expr", "التعبير", ["expr"]]];
   function unit(id, tab) {
     var u = findUnit(id); if (!u) return home(); var sem = semOf(id);
     S.last = id; save();
-    var groups = [["read", "المطالعة", ["read"]], ["poem", "القصيدة", ["poem"]], ["gram", "القواعد", ["gram", "rhet", "aruz", "imla", "expr"]]].map(function (g) {
-      return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })];
-    }).filter(function (g) { return g[2].length; });
-    var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0];
-    var cards = cur ? cur[2].map(function (i) {
-      var key = u.id + "|" + i.t, qs = lessonQs(key), btns = [h("button", { cls: "btn", t: "📖 افتح الكتاب", on: { click: function () { openLink(ARA.links[sem.book]); } } })];
-      if (qs.length) btns.push(h("button", { cls: "btn alt", t: "✍️ اختبار الدرس (" + qs.length + ")", on: { click: function () { location.hash = "lq/" + encodeURIComponent(key); } } }));
-      return h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" }),
-        i.x ? h("div", { cls: "read" + (i.k === "poem" ? " poem" : ""), t: i.x }) : h("div", { cls: "empty", t: "نص الدرس في الكتاب المدرسي" + (u.pg ? " (الوحدة من صفحة " + u.pg + ")" : "") }), h("div", { cls: "row2" }, btns)]);
-    }) : [h("div", { cls: "empty", t: "سيُضاف المحتوى قريباً." })];
-    app.replaceChildren.apply(app, [top(u.n, true), groups.length ? h("div", { cls: "tabs" }, groups.map(function (g) { return h("button", { t: g[1], cls: cur && g[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, g[0]); } } }); })) : null].filter(Boolean).concat(cards));
+    var groups = TABS.map(function (g) { return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })]; }).filter(function (g) { return g[2].length; });
+    var hasQ = u.items.some(function (i) { return i.ex.length || lessonQs(u.id + "|" + i.t).length; });
+    if (hasQ) groups.push(["qs", "الأسئلة", []]);
+    var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0], cards = [];
+    function bookBtn() { return h("button", { cls: "btn alt", t: "📖 افتح الكتاب على Drive", on: { click: function () { openLink(ARA.links[sem.book]); } } }); }
+    if (cur && cur[0] === "qs") {
+      u.items.forEach(function (i) {
+        var key = u.id + "|" + i.t, qs = lessonQs(key);
+        if (!i.ex.length && !qs.length) return;
+        var kids = [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" })];
+        if (qs.length) kids.push(h("button", { cls: "btn", style: "margin-top:0", t: "✍️ اختبار تفاعلي (" + qs.length + " سؤالاً)", on: { click: function () { location.hash = "lq/" + encodeURIComponent(key); } } }));
+        if (i.ex.length) { kids.push(h("h3", { cls: "tx-h", t: "أسئلة الكتاب" })); i.ex.forEach(function (q) { kids.push(h("p", { cls: "tx-q", t: q })); }); }
+        cards.push(h("div", { cls: "card" }, kids));
+      });
+    } else if (cur) {
+      cur[2].forEach(function (i) {
+        cards.push(h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" }),
+          i.x ? renderText(i.x, i.k === "poem") : h("div", { cls: "empty", t: "نص الدرس في الكتاب المدرسي" + (u.pg ? " (الوحدة من صفحة " + u.pg + ")" : "") }), bookBtn()]));
+      });
+    } else cards.push(h("div", { cls: "empty", t: "سيُضاف المحتوى قريباً." }));
+    app.replaceChildren.apply(app, [top(u.n, true), groups.length ? h("div", { cls: "tabs sc" }, groups.map(function (g) { return h("button", { t: g[1], cls: cur && g[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, g[0]); } } }); })) : null].filter(Boolean).concat(cards));
     nav("sub");
   }
   function linksPage(title, rows) {
