@@ -98,6 +98,7 @@ h1,h2,h3{margin:0;font-weight:700}
 <main id="app" hidden></main>
 <button id="resume" hidden></button>
 <nav id="nav" hidden aria-label="التنقّل"></nav>
+<script src="../../shared/intro.js"></script>
 <script src="data/curriculum.js"></script>
 <script src="data/dict.js"></script>
 <script src="data/wisdom.js"></script>
@@ -203,7 +204,7 @@ h1,h2,h3{margin:0;font-weight:700}
     sheet("اللغة العربية", [
       h("div", { cls: "dg", t: "التطبيق" }), mi("gear", "الإعدادات", go("settings")), mi("dl", "تنزيل التطبيق", function () { closeMenu(); installApp(); }), mi("share", "مشاركة التطبيق", function () { closeMenu(); shareApp(); }),
       h("div", { cls: "dg", t: "دراستي" }), mi("dict", "القاموس المعجمي", go("dict")), mi("star", "المحفوظات", go("mem")), mi("book", "الكتب المدرسية", go("books")), mi("doc", "الرزمة التعليمية", go("pack")),
-      h("div", { cls: "dg", t: "المزيد" }), mi("bulb", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "card", style: "font-family:Ruqaa,serif;font-size:1.25rem;line-height:2" }, [D.createTextNode(w[0]), h("div", { cls: "kind", t: "— " + w[1] })])]); }), mi("pen", "تعديل الاسم والشعبة", function () { closeMenu(); showIntro(true); })
+      h("div", { cls: "dg", t: "المزيد" }), mi("bulb", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "card", style: "font-family:Ruqaa,serif;font-size:1.25rem;line-height:2" }, [D.createTextNode(w[0]), h("div", { cls: "kind", t: "— " + w[1] })])]); }), mi("pen", "تعديل الاسم والشعبة", function () { closeMenu(); showIntro(true); }), mi("bulb", "أعد جولة كينيكس", replayTour)
     ]);
   }
 
@@ -290,6 +291,22 @@ h1,h2,h3{margin:0;font-weight:700}
     if (!r.hidden) { r.replaceChildren(ic("back"), D.createTextNode("أكمل من حيث وصلت")); r.onclick = function () { location.hash = "unit/" + S.last; }; }
   }
 
+  /* ===== جولة كينيكس (تبدأ بعد المدخل عند أول استعمال) ===== */
+  var KX = { id: "ara10", kinex: "../../shared/kinex.jpg", userName: function () { return (S.name || "").split(" ")[0]; },
+    ready: function () { return !!S.done && $("#intro").hidden && (location.hash || "#home") === "#home" && !!$(".sem"); },
+    steps: [
+      { t: "أهلاً بك، أنا كينيكس", x: "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق اللغة العربية للصف العاشر. سأعرّفك عليه في دقيقة.", s: null, i: 1 },
+      { t: "🖼️ صورتك الشخصية", x: "اضغط على صورتك لتغييرها بصورة من جهازك.", s: ".av" },
+      { t: "📚 الفصلان والوحدات", x: "اختر الفصل الأول أو الثاني ثم الوحدة، وفي كل وحدة تجد المطالعة والقصيدة والقواعد.", s: ".sem" },
+      { t: "📘 الكتب والرزمة", x: "من هنا تفتح الكتب المدرسية والرزمة التعليمية على Google Drive.", s: ".pents" },
+      { t: "📖 القاموس", x: "كلمات الكتاب ومعانيها في مجموعتين: الأولى للفصل الأول والثانية للفصل الثاني، مع بحث سريع.", s: "#nav .ni:nth-child(2)" },
+      { t: "⭐ المحفوظات", x: "علّم القصائد التي حفظتَها لتتابع تقدّمك.", s: "#nav .ni:nth-child(3)" },
+      { t: "⚙️ الإعدادات", x: "غيّر الوضع بين الفاتح والداكن، ولون الخلفية، وحجم الخط.", s: "#nav .ni:nth-child(4)" },
+      { t: "☰ القائمة", x: "فيها تنزيل التطبيق ومشاركته وحكمة اليوم، وإعادة هذه الجولة متى شئت.", s: ".top .ib[aria-label=\"القائمة\"]" },
+      { t: "بالتوفيق يا بطل 🚀", x: "ابدأ اليوم بدرس واحد وأنا معك. بالتوفيق دائماً! ✨", s: null }
+    ] };
+  function replayTour() { closeMenu(); location.hash = "home"; setTimeout(function () { SahabaIntro.tour(KX); }, 400); }
+
   function route() {
     closeMenu();
     if (!S.done || !S.name) { return showIntro(false); }
@@ -303,6 +320,7 @@ h1,h2,h3{margin:0;font-weight:700}
   }
   window.addEventListener("hashchange", route);
   route();
+  SahabaIntro.run(KX);
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
 })();
 </script>

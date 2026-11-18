@@ -19,7 +19,7 @@ SKIP_EXT = {".md", ".py", ".txt"}
 EXTRAS = {
     "english/10": ["../../shared/update-notify.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/english.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf"],
     "science/10": ["../../shared/update-notify.js"],
-    "arabic/10": ["../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2"],
+    "arabic/10": ["../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2"],
     "islamic/10": ["../../shared/update-notify.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/islamic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2"],
 }
 
