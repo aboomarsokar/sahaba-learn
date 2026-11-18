@@ -98,6 +98,51 @@ h1,h2,h3{margin:0;font-weight:700}
 .row2 .btn:disabled{opacity:.4}
 :root[data-acc=gold] .btn.alt,.btn.alt{color:var(--g)}
 :root[data-acc=gold] .btn.alt{background:transparent;box-shadow:none}
+
+/* برواز الاختبارات المرصّع */
+.lux{position:relative;margin:18px auto 6px;width:min(88vw,380px);padding:3px;border-radius:26px;background:linear-gradient(110deg,#f6e7a8,#d9a93a 18%,#ffffff 34%,#c9ccd2 46%,#e3b94d 60%,#ffffff 76%,#b8891f);background-size:300% 100%;animation:lux 7s linear infinite;box-shadow:0 12px 32px rgba(0,0,0,.45),0 0 26px rgba(227,185,77,.35);border:0;display:block;text-align:center}
+@keyframes lux{to{background-position:-300% 0}}
+.lux-in{position:relative;border-radius:23px;padding:30px 18px 26px;background:radial-gradient(120% 140% at 50% 0%,#3d2c0d,#150e04 72%);color:#fdf3d0;overflow:hidden}
+.lux-in::before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.4);border-radius:17px;box-shadow:inset 0 0 14px rgba(227,185,77,.25)}
+.lux-in::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.18) 50%,transparent 60%);transform:translateX(-100%);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{to{transform:translateX(100%)}}
+.lux-in svg.qi{width:34px;height:34px;stroke:#f6e7a8;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;position:relative}
+.lux-in b{display:block;position:relative;font-family:"Ruqaa","Plex Arabic",serif;font-size:1.9rem;line-height:1.4;background:linear-gradient(180deg,#fff7d6,#e3b94d 55%,#a87a1a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lux-in small{position:relative;color:#d9c48a}
+.gem{position:absolute;width:22px;height:22px;z-index:2;filter:drop-shadow(0 0 5px rgba(255,255,255,.8));animation:spark 2.6s ease-in-out infinite}.gem:nth-of-type(2n){animation-delay:.9s}.gem:nth-of-type(3n){animation-delay:1.6s}
+@keyframes spark{50%{transform:scale(1.3) rotate(10deg);filter:drop-shadow(0 0 9px #fff) brightness(1.5)}}
+/* زخارف بطاقتي الفصلين */
+.sem{position:relative;overflow:hidden;border:1.5px solid transparent;background:linear-gradient(var(--solid),var(--solid)) padding-box,linear-gradient(120deg,#f6e7a8,#c89622,#fff3c4,#a87a1a) border-box}
+.sem::before{content:"";position:absolute;inset:0;opacity:.09;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' fill='none' stroke='%23e3b94d' stroke-width='1.4'><path d='M35 4l7 17 17-7-7 17 17 7-17 7 7 17-17-7-7 17-7-17-17 7 7-17-17-7 17-7-7-17 17 7z'/><circle cx='35' cy='35' r='6'/></svg>");background-size:70px;pointer-events:none}
+.sem>*{position:relative}
+.orn{position:absolute;width:46px;height:46px;pointer-events:none;opacity:.95}.orn.tl{top:2px;left:2px}.orn.tr{top:2px;right:2px;transform:scaleX(-1)}.orn.bl{bottom:2px;left:2px;transform:scaleY(-1)}.orn.br{bottom:2px;right:2px;transform:scale(-1,-1)}
+/* بطاقات القواعد */
+.rcard{position:relative;display:block;width:100%;text-align:right;margin-bottom:14px;padding:3px;border:0;border-radius:22px;background:linear-gradient(120deg,#f6e7a8,#c89622,#fff3c4,#a87a1a);box-shadow:0 8px 22px rgba(0,0,0,.35)}
+.rcard>div{position:relative;border-radius:19px;padding:18px 16px 16px;background:radial-gradient(130% 150% at 100% 0%,#3a2a0c,#150e04 75%);color:#fdf3d0;overflow:hidden}
+.rcard .kd{color:#e3b94d;font-size:.85rem}.rcard h3{font-family:"Ruqaa","Plex Arabic",serif;font-size:1.6rem;background:linear-gradient(180deg,#fff7d6,#e3b94d 60%,#a87a1a);-webkit-background-clip:text;background-clip:text;color:transparent;margin:2px 0 6px}
+.rcard p{margin:0 0 10px;color:#e6d7a6;line-height:1.8}.rcard .go{display:inline-block;padding:7px 16px;border-radius:999px;background:linear-gradient(135deg,#f8e39a,#c89622);color:#2b1d04;font-weight:700}
+.rcard .done{float:left;color:#7be0a0;font-weight:700}
+/* الرحلة التفاعلية */
+.jx{font-size:1.25rem;line-height:2.3;text-align:center;padding:8px 4px}
+.jx .sg1{transition:background .3s}.sg1.c{border-radius:8px;padding:1px 5px;margin:0 1px;animation:lit .8s both}
+.sg1.ra{--rc:#ffd166}.sg1.rb{--rc:#4dd0e1}.sg1.rc{--rc:#ff8fab}.sg1.rd{--rc:#8ee07e}
+@keyframes lit{from{color:inherit;background:transparent;box-shadow:none}to{color:#1a1204;background:var(--rc);box-shadow:0 0 14px var(--rc),0 0 2px #fff}}
+.lg{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:6px 0 12px}.lg span{padding:3px 12px;border-radius:999px;font-size:.88rem;font-weight:700;color:#1a1204;background:var(--rc)}.lg .ra{--rc:#ffd166}.lg .rb{--rc:#4dd0e1}.lg .rc{--rc:#ff8fab}.lg .rd{--rc:#8ee07e}
+.late{animation:fin .5s both}
+.msg{margin:14px 0;padding:14px;border-radius:16px;text-align:center;font-weight:700;color:var(--g);border:1px dashed var(--g);background:rgba(227,185,77,.08)}
+.env{position:relative;width:min(78vw,280px);height:170px;margin:22px auto 8px;perspective:700px;cursor:pointer}
+.env-b{position:absolute;left:0;right:0;top:34px;bottom:0;border-radius:10px;background:linear-gradient(160deg,#ecc96a,#b8891f);box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.env-l{position:absolute;left:14px;right:14px;top:42px;height:110px;border-radius:6px;background:#fffaf0;transition:transform .8s .35s ease;z-index:1}
+.env-f{position:absolute;left:0;right:0;top:34px;height:96px;background:linear-gradient(#f6dc8a,#c9962f);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .65s ease;z-index:3}
+.env-fr{position:absolute;left:0;right:0;top:34px;bottom:0;border-radius:10px;z-index:2;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);background:linear-gradient(160deg,#f1d27a,#b8891f)}
+.env.open .env-f{transform:rotateX(180deg);z-index:0}.env.open .env-l{transform:translateY(-46px)}
+.env-seal{position:absolute;left:50%;top:88px;transform:translateX(-50%);width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff9b9b,#a31515);z-index:4;box-shadow:0 2px 6px rgba(0,0,0,.5);transition:opacity .3s}.env.open .env-seal{opacity:0}
+.letter{margin-top:6px;padding:16px;border-radius:18px;background:#fffaf0;color:#3a2a08;box-shadow:0 10px 26px rgba(0,0,0,.35);animation:fin .6s both}
+.letter h3{color:#7a5a10;text-align:center;margin-bottom:8px}.letter textarea{width:100%;min-height:130px;border:2px solid #ecdca8;border-radius:12px;padding:10px;font:inherit;color:#3a2a08;background:#fff;resize:vertical;outline:none}.letter textarea:focus{border-color:#c89622}
+.lt .w{display:inline-block;opacity:0;animation:wIn .45s forwards,wGlow 1s forwards}
+@keyframes wIn{to{opacity:1}}@keyframes wGlow{0%{text-shadow:none}40%{color:#ffe28a;text-shadow:0 0 12px #f0c64a,0 0 2px #fff}100%{text-shadow:none}}
+.pcard h2{font-size:1.15rem;color:var(--g);margin-bottom:8px}.pcard .lt{font-size:1.1rem;line-height:2.1}
+.cmp{display:grid;gap:10px}.cmp .cb{padding:12px;border-radius:14px;border:1px solid var(--cardb);background:var(--card)}.cmp .cb h4{margin:0 0 6px;color:var(--g)}
 /* الاختبارات */
 .qx{display:flex;align-items:center;gap:12px;width:100%;text-align:right;padding:13px 14px;margin-bottom:10px}
 .qx .n{flex:none;width:42px;height:42px;border-radius:14px;background:var(--gold);color:var(--ongold);display:grid;place-items:center;font-weight:700}
@@ -259,9 +304,9 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function home() {
     var first = S.name.split(" ")[0];
     var head = h("div", { cls: "top" }, [avatarEl(), h("div", { cls: "hi", style: "flex:1" }, [h("b", null, ["مرحباً، ", h("em", { t: first })]), h("small", { t: "ماذا تحب أن تبدأ؟ · " + S.sec })]), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
-    var sems = ARA.semesters.map(function (s) { return h("button", { cls: "card sem", on: { click: function () { location.hash = "sem/" + s.id; } } }, [h("div", { cls: "rn", t: ROM[s.id] }), h("div", null, [h("b", { t: s.name }), h("small", { t: s.units.length + " وحدات" })])]); });
+    var sems = ARA.semesters.map(function (s) { return h("button", { cls: "card sem", on: { click: function () { location.hash = "sem/" + s.id; } } }, ornEls().concat([h("div", { cls: "rn", t: ROM[s.id] }), h("div", null, [h("b", { t: s.name }), h("small", { t: s.units.length + " وحدات" })])])); });
     function pent(icon, t, hash) { return h("button", { cls: "pent", on: { click: function () { location.hash = hash; } } }, [h("span", null, [ic(icon), D.createTextNode(t), h("small", { t: "افتح" })])]); }
-    app.replaceChildren.apply(app, [head].concat(sems, [h("div", { cls: "pents", style: "justify-content:center" }, [h("div", { style: "display:flex;width:min(62vw,240px)" }, [pent("quiz", "الاختبارات", "quizzes")])])]));
+    app.replaceChildren.apply(app, [head].concat(sems, [luxQuiz()]));
     nav("home");
   }
   function semPage(id, tab) {
@@ -288,6 +333,77 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   }
   var TABS = [["read", "المطالعة", ["read"]], ["poem", "القصيدة", ["poem"]], ["gram", "القواعد", ["gram"]], ["rhet", "البلاغة", ["rhet"]], ["aruz", "العروض", ["aruz"]], ["imla", "الإملاء", ["imla"]], ["expr", "التعبير", ["expr"]]];
   /* ===== عرض الدرس: مطالعة مقسّمة وقواعد/بلاغة/تعبير بشرح تدريجي ===== */
+
+  /* ===== عناصر زخرفية ===== */
+  function gemEl(style) { var s = h("span", { cls: "gem", style: style }); s.innerHTML = '<svg viewBox="0 0 24 24" width="100%" height="100%"><defs><linearGradient id="gm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#cfe9ff"/><stop offset="1" stop-color="#8fb8e8"/></linearGradient></defs><polygon points="12,1 22,9 12,23 2,9" fill="url(#gm)" stroke="#e8f3ff" stroke-width=".8"/><polygon points="12,1 17,9 12,23 7,9" fill="#fff" opacity=".55"/><path d="M2 9h20M7 9l5-8 5 8" fill="none" stroke="#9cc3ee" stroke-width=".7"/></svg>'; return s; }
+  var ORN = '<svg viewBox="0 0 60 60" fill="none" stroke="#e3b94d" stroke-width="1.5" stroke-linecap="round"><path d="M3 44C3 22 22 3 44 3"/><path d="M3 31C3 16 16 3 31 3" stroke-width="1"/><circle cx="7" cy="7" r="3" fill="#e3b94d"/><path d="M11 36q-7-9 2-16M36 11q-9-7-16 2" stroke-width="1.2"/><circle cx="46" cy="13" r="2" fill="#fff3c4" stroke="none"/><circle cx="13" cy="46" r="2" fill="#fff3c4" stroke="none"/></svg>';
+  function ornEls() { return ["tl", "tr", "bl", "br"].map(function (c) { var s = h("span", { cls: "orn " + c }); s.innerHTML = ORN; return s; }); }
+  function luxQuiz() {
+    var b = h("button", { cls: "lux", "aria-label": "الاختبارات", on: { click: function () { location.hash = "quizzes"; } } });
+    var inn = h("div", { cls: "lux-in" }, [ic("quiz"), h("b", { t: "الاختبارات" }), h("small", { t: "اختبر نفسك في الفصلين" })]); inn.firstChild.setAttribute("class", "qi");
+    b.appendChild(inn);
+    [["top:-8px;left:-8px"], ["top:-8px;right:-8px"], ["bottom:-8px;left:-8px"], ["bottom:-8px;right:-8px"], ["top:-10px;left:calc(50% - 11px)"], ["bottom:-10px;left:calc(50% - 11px)"], ["top:calc(50% - 11px);left:-10px"], ["top:calc(50% - 11px);right:-10px"]].forEach(function (g) { b.appendChild(gemEl(g[0])); });
+    return b;
+  }
+  function wordsEl(text, base) { /* ظهور تدريجي ثم وهج مضيء على الكلمات بالتتابع */
+    var box = h("div", { cls: "lt" }), ws = String(text).split(/(\s+)/), k = 0, step = Math.min(.06, 3.2 / Math.max(10, ws.length / 2));
+    ws.forEach(function (w) { if (!w.trim()) { box.appendChild(D.createTextNode(w)); return; } var d = (base || 0) + k * step, g = d + 0.5 + k * step * .6; box.appendChild(h("span", { cls: "w", t: w, style: "animation-delay:" + d.toFixed(2) + "s," + g.toFixed(2) + "s" })); k++; });
+    return box;
+  }
+  var RC = { a: "ra", b: "rb", c: "rc", d: "rd" };
+  function exampleEl(ex, roles) {
+    var line = h("div", { cls: "jx" }), n = 0, used = {};
+    ex.w.forEach(function (sg) { var r = sg[1] && RC[sg[1]] ? sg[1] : ""; if (r) { used[r] = 1; n++; line.appendChild(h("span", { cls: "sg1 c " + RC[r], t: sg[0], style: "animation-delay:" + (0.6 + (n - 1) * 0.8).toFixed(1) + "s" })); } else line.appendChild(h("span", { cls: "sg1", t: sg[0] })); });
+    var lg = h("div", { cls: "lg" }, Object.keys(used).map(function (r) { return h("span", { cls: RC[r], t: roles[r] || "" }); }));
+    return { box: h("div", null, [line, lg]), delay: 0.6 + n * 0.8 + 0.4 };
+  }
+  var JS = {};
+  function jconc(key) { return (S.jc || {})[key] || ""; }
+  function journey(key) {
+    var found = null; ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { u.items.forEach(function (i) { if (u.id + "|" + i.t === key) found = [u, i]; }); }); });
+    if (!found || !found[1].jr) return home();
+    var u = found[0], i = found[1], jr = i.jr, E = jr.examples.length, P = jr.parts.length, st = JS[key] || 0, kids = [];
+    var total = 1 + E + 1 + P + 1;   /* تعريف + أمثلة + استنتاج + أجزاء + مقارنة */
+    function go(v) { var el = $("#app .stage"); if (el) el.classList.add("fo"); setTimeout(function () { JS[key] = v; journey(key); scrollTo(0, 0); }, 170); }
+    function stage(k) { return h("div", { cls: "stage fi" }, k); }
+    function nav(nextLabel, nextFn, hideNext) { return h("div", { cls: "row2" }, [st > 0 ? nbtn("‹ السابق", function () { go(st - 1); }, true) : null, hideNext ? null : nbtn(nextLabel || "التالي ›", nextFn || function () { go(st + 1); })]); }
+    kids.push(h("div", { cls: "qbar" }, [h("i", { style: "width:" + (st / (total - 1) * 100) + "%" })]));
+    if (st === 0) {
+      kids.push(stage([h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] + " — المرحلة ١: التعريف" }), h("h2", { t: i.rule ? i.rule.n : i.t, style: "font-size:1.5rem;margin:4px 0" }), h("p", { t: jr.concept, style: "margin:8px 0" }), i.rule ? h("div", { cls: "msg", t: i.rule.d }) : null])]));
+      kids.push(nav("انتقل إلى الأمثلة ›"));
+    } else if (st <= E) {
+      var ex = jr.examples[st - 1], r = exampleEl(ex, jr.roles || {}), last = st === E;
+      var parts = [h("div", { cls: "kind", t: "المرحلة ٢: الأمثلة — المثال " + st + " من " + E }), h("div", { cls: "card" }, [r.box, ex.note ? h("div", { cls: "msg late", style: "animation-delay:" + r.delay.toFixed(1) + "s", t: ex.note }) : null])];
+      if (last) parts.push(h("div", { cls: "msg late", style: "animation-delay:" + (r.delay + 1).toFixed(1) + "s", t: "تمعّن في الأمثلة جيداً حتى تتمكن من تسجيل استنتاجك" }));
+      kids.push(stage(parts)); kids.push(nav(last ? "التالي ›" : "المثال التالي ›"));
+    } else if (st === E + 1) {
+      var saved = jconc(key), hint = h("div", { cls: "empty", t: saved ? "" : "اضغط على الظرف لتفتحه" }), env = h("div", { cls: "env" + (saved ? " open" : "") }, [h("div", { cls: "env-b" }), h("div", { cls: "env-l" }), h("div", { cls: "env-f" }), h("div", { cls: "env-fr" }), h("div", { cls: "env-seal" })]), holder = h("div");
+      var ta = h("textarea", { placeholder: "اكتب استنتاجك بأسلوبك…", maxlength: "700" }); ta.value = saved;
+      var after = h("div"), saveBtn = nbtn("احفظ الاستنتاج", function () { var v = ta.value.trim(); if (!v) { toast("اكتب استنتاجك أولاً"); return; } S.jc = S.jc || {}; S.jc[key] = v; save(); toast("حُفظ استنتاجك ✓"); showAfter(); }, false);
+      function showAfter() { after.replaceChildren(h("div", { cls: "msg late", t: "لنتعلم معاً" }), nbtn("التالي ›", function () { go(st + 1); })); }
+      function openLetter() { env.classList.add("open"); hint.textContent = ""; holder.replaceChildren(h("div", { cls: "letter" }, [h("h3", { t: "ضع استنتاجك من هذه الأمثلة" }), ta, saveBtn])); }
+      env.addEventListener("click", function () { if (!env.classList.contains("open") || !holder.firstChild) openLetter(); });
+      kids.push(stage([h("div", { cls: "kind", t: "المرحلة ٣: استنتج بنفسك" }), env, hint, holder, after]));
+      if (saved) { openLetter(); showAfter(); }
+      kids.push(h("div", { cls: "row2" }, [nbtn("‹ السابق", function () { go(st - 1); }, true)]));
+    } else if (st <= E + 1 + P) {
+      var pi = st - E - 2, pt = jr.parts[pi];
+      kids.push(stage([h("div", { cls: "kind", t: "المرحلة ٤: لنتعلم معاً — الجزء " + (pi + 1) + " من " + P }), h("div", { cls: "card pcard" }, [h("h2", { t: pt.t }), wordsEl(pt.x, 0.15)])]));
+      kids.push(nav(pi === P - 1 ? "قارن استنتاجك ›" : "التالي ›"));
+    } else {
+      var mine = jconc(key);
+      kids.push(stage([h("div", { cls: "kind", t: "قارن استنتاجك بالشرح العلمي" }), h("div", { cls: "cmp" }, [h("div", { cls: "cb" }, [h("h4", { t: "استنتاجك" }), h("div", { t: mine || "لم تكتب استنتاجاً — يمكنك العودة وكتابته." })]), h("div", { cls: "cb" }, [h("h4", { t: "الخلاصة العلمية" }), h("div", { t: i.rule ? i.rule.d : jr.concept }), h("div", { cls: "tx-b", t: jr.parts.map(function (x) { return x.t; }).join(" · "), style: "margin-top:6px;color:var(--mut)" })])]),
+        h("button", { cls: "btn", t: "✍️ اختبر نفسك", on: { click: function () { location.hash = "lq/" + encodeURIComponent(key); } } })]));
+      kids.push(h("div", { cls: "row2" }, [nbtn("‹ السابق", function () { go(st - 1); }, true), nbtn("إعادة الرحلة", function () { go(0); }, true)]));
+    }
+    app.replaceChildren.apply(app, [top(i.rule ? i.rule.n : i.t, true)].concat(kids)); nav2();
+  }
+  function nav2() { nav("sub"); }
+  function ruleCard(u, i) {
+    var key = u.id + "|" + i.t, done = !!jconc(key);
+    return h("button", { cls: "rcard", on: { click: function () { JS[key] = 0; location.hash = "jr/" + encodeURIComponent(key); } } }, [h("div", null, [h("span", { cls: "done", t: done ? "✓ كتبتَ استنتاجك" : "" }), h("div", { cls: "kd", t: KIND[i.k] }), h("h3", { t: i.rule ? i.rule.n : i.t }), h("p", { t: i.jr.concept }), h("span", { cls: "go", t: "ابدأ الرحلة ›" })])]);
+  }
+
   var ST = {};
   function nbtn(label, fn, alt) { return h("button", { cls: "btn" + (alt ? " alt" : ""), t: label, on: { click: fn } }); }
   function reveal(label, cells) {
@@ -303,8 +419,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function qsCard(u, i, goBack) {
     var key = u.id + "|" + i.t, qs = lessonQs(key), kids = [h("h2", { t: "أسئلة الدرس", style: "margin-bottom:8px" })];
     if (qs.length) kids.push(h("button", { cls: "btn", style: "margin-top:0", t: "✍️ اختبر نفسك (" + qs.length + " سؤالاً)", on: { click: function () { location.hash = "lq/" + encodeURIComponent(key); } } }));
-    if (i.ex.length) { kids.push(h("h3", { cls: "tx-h", t: "أسئلة هذا الدرس من الكتاب والرزمة" })); i.ex.forEach(function (q) { kids.push(h("p", { cls: "tx-q", t: q })); }); }
-    if (!qs.length && !i.ex.length) kids.push(h("div", { cls: "empty", t: "ستُضاف أسئلة هذا الدرس قريباً." }));
+    if (!qs.length) kids.push(h("div", { cls: "empty", t: "ستُضاف أسئلة هذا الدرس قريباً." }));
     if (goBack) kids.push(h("button", { cls: "btn alt", t: "إعادة الدرس", on: { click: goBack } }));
     return h("div", { cls: "card" }, kids);
   }
@@ -345,7 +460,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     }
     var inner = [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" })];
     if (i.x) inner.push(renderText(i.x, i.k === "poem"));
-    else if (i.ex.length) { inner.push(h("h3", { cls: "tx-h", t: "تدريبات الكتاب" })); i.ex.forEach(function (q) { inner.push(h("p", { cls: "tx-q", t: q })); }); }
+    else if (i.ex.length) inner.push(h("div", { cls: "empty", t: "تدريبات هذا الدرس في الكتاب المدرسي — افتح الكتاب من صفحة الفصل." }));
     else inner.push(h("div", { cls: "empty", t: "نص الدرس في الكتاب المدرسي" + (u.pg ? " (الوحدة من صفحة " + u.pg + ")" : "") }));
     box.push(h("div", { cls: "card" }, inner));
     return box;
@@ -358,10 +473,10 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0], cards = [];
     function bookBtn() { return h("button", { cls: "btn alt", t: "📖 افتح الكتاب على Drive", on: { click: function () { openLink(ARA.links[sem.book]); } } }); }
     if (cur[0] === "qs") {
-      u.items.forEach(function (i) { if (i.ex.length || lessonQs(u.id + "|" + i.t).length) cards.push(h("div", null, [h("div", { cls: "lbl", t: KIND[i.k] + " — " + i.t }), qsCard(u, i, null)])); });
+      u.items.forEach(function (i) { if (lessonQs(u.id + "|" + i.t).length) cards.push(h("div", null, [h("div", { cls: "lbl", t: KIND[i.k] + " — " + i.t }), qsCard(u, i, null)])); });
       if (!cards.length) cards.push(h("div", { cls: "empty", t: "ستُضاف أسئلة دروس هذه الوحدة قريباً." }), bookBtn());
     } else {
-      cur[2].forEach(function (i) { cards.push(h("div", null, lessonView(u, i, function () { unit(id, cur[0]); }))); });
+      cur[2].forEach(function (i) { if (i.jr) cards.push(ruleCard(u, i)); else cards.push(h("div", null, lessonView(u, i, function () { unit(id, cur[0]); }))); });
       if (!cur[2].length) cards.push(h("div", { cls: "card" }, [h("div", { cls: "empty", t: "لا يوجد درس «" + cur[1] + "» في هذه الوحدة حسب فهرس الكتاب." })]));
       if (!cur[2].some(function (i) { return i.x; })) cards.push(bookBtn());
     }
@@ -502,7 +617,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     var p = (location.hash || "#home").slice(1).split("/");
     if (p[0] === "unit") unit(p[1]); else if (p[0] === "sem") semPage(p[1], p[2]); else if (p[0] === "dict") dict(); else if (p[0] === "mem") mem(); else if (p[0] === "settings") settings(); else if (p[0] === "quizzes") quizzes();
     else if (p[0] === "exam") { var s = +p[1], n = +p[2]; runQuiz("اختبار " + (n + 1) + " — " + ARA.semesters[s - 1].name, examQs(s, n), "ex" + s + n, "quizzes"); }
-    else if (p[0] === "lq") { var key = decodeURIComponent(p[1]), qs = lessonQs(key).map(function (q, j) { return build(q, "lq" + key + j); }); runQuiz("اختبار الدرس", shuf(qs, rng("lqs" + key)), null, "unit/" + key.split("|")[0]); }
+    else if (p[0] === "jr") journey(decodeURIComponent(p[1])); else if (p[0] === "lq") { var key = decodeURIComponent(p[1]), qs = lessonQs(key).map(function (q, j) { return build(q, "lq" + key + j); }); runQuiz("اختبار الدرس", shuf(qs, rng("lqs" + key)), null, "unit/" + key.split("|")[0]); }
     else if (p[0] === "books") linksPage("الكتب المدرسية", [["الفصل الأول", "كتاب اللغة العربية — الصف العاشر (الجزء الأول)", ARA.links.book1], ["الفصل الثاني", "كتاب اللغة العربية — الصف العاشر (الجزء الثاني)", ARA.links.book2]]);
     else if (p[0] === "pack") linksPage("الرزمة التعليمية", [["الفصلان الأول والثاني", "الرزمة التعليمية — الصف العاشر", ARA.links.pack]]);
     else home();
