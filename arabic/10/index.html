@@ -206,18 +206,25 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
   function home() {
     S.tab = S.tab || 1; var sem = ARA.semesters.filter(function (s) { return s.id === S.tab; })[0] || ARA.semesters[0];
     var first = S.name.split(" ")[0];
-    var list = sem.units.map(function (u, i) { return h("button", { cls: "unit", on: { click: function () { location.hash = "unit/" + u.id; } } }, [h("div", { cls: "n", t: String(i + 1 + (sem.id - 1) * 4) }), h("b", { t: u.n }), h("span", { t: "‹" })]); });
+    var list = sem.units.map(function (u, i) { return h("button", { cls: "unit", on: { click: function () { location.hash = "unit/" + u.id; } } }, [h("div", { cls: "n", t: String(i + 1) }), h("b", { t: u.n }), h("span", { t: "‹" })]); });
     app.replaceChildren(top("اللغة العربية"), h("div", { cls: "hello" }, [h("b", { t: "أهلاً يا " + first + " 👋" }), h("small", { t: S.sec })]),
       h("div", { cls: "tabs" }, ARA.semesters.map(function (s) { return h("button", { t: s.name, cls: s.id === sem.id ? "on" : "", on: { click: function () { S.tab = s.id; save(); home(); } } }); })), h("div", null, list));
     nav(true);
   }
+  var KIND = { read: "مطالعة", poem: "نص شعري", gram: "قواعد لغوية", rhet: "بلاغة", aruz: "عروض", expr: "تعبير", imla: "إملاء" };
+  function semOf(id) { var r = null; ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { if (u.id === id) r = s; }); }); return r; }
   function unit(id, tab) {
-    var u = findUnit(id); if (!u) return home();
-    var tabs = [["read", "المطالعة", u.read], ["poem", "القصيدة", u.poem], ["gram", "القواعد", u.gram]].filter(function (t) { return t[2]; });
-    tab = tab || "read"; var cur = tabs.filter(function (t) { return t[0] === tab; })[0] || tabs[0];
-    var body = cur[2];
-    app.replaceChildren(top(u.n, true), h("div", { cls: "tabs" }, tabs.map(function (t) { return h("button", { t: t[1], cls: t[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, t[0]); } } }); })),
-      h("div", { cls: "card" }, [h("h2", { t: body.t, style: "margin-bottom:8px" }), body.x ? h("div", { cls: "read" + (cur[0] === "poem" ? " poem" : ""), t: body.x }) : h("div", { cls: "empty", t: "سيُضاف المحتوى من الكتاب المدرسي قريباً." })]));
+    var u = findUnit(id); if (!u) return home(); var sem = semOf(id);
+    var groups = [["read", "المطالعة", ["read"]], ["poem", "القصيدة", ["poem"]], ["gram", "القواعد", ["gram", "rhet", "aruz", "imla", "expr"]]].map(function (g) {
+      return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })];
+    }).filter(function (g) { return g[2].length; });
+    var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0];
+    var cards = cur ? cur[2].map(function (i) {
+      return h("div", { cls: "card" }, [h("small", { t: KIND[i.k], style: "color:var(--mut)" }), h("h2", { t: i.t, style: "margin-bottom:8px" }),
+        i.x ? h("div", { cls: "read" + (i.k === "poem" ? " poem" : ""), t: i.x }) : h("div", { cls: "empty", t: "نص الدرس في الكتاب المدرسي" }),
+        h("button", { cls: "btn", style: "margin-top:8px", t: "📖 افتح الكتاب" + (u.pg ? " (الوحدة من صفحة " + u.pg + ")" : ""), on: { click: function () { openLink(ARA.links[sem.book]); } } })]);
+    }) : [h("div", { cls: "empty", t: "سيُضاف المحتوى قريباً." })];
+    app.replaceChildren.apply(app, [top(u.n, true), groups.length ? h("div", { cls: "tabs" }, groups.map(function (g) { return h("button", { t: g[1], cls: cur && g[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, g[0]); } } }); })) : null].filter(Boolean).concat(cards));
     nav(false);
   }
   function dict() {
@@ -229,10 +236,10 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
   }
   function mem() {
     var items = [];
-    ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { if (u.poem) items.push([u, s]); }); });
-    var done = items.filter(function (i) { return S.mem[i[0].id]; }).length;
+    ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { u.items.forEach(function (i, n) { if (i.k === "poem") items.push([u.id + ":" + n, s, u, i]); }); }); });
+    var done = items.filter(function (i) { return S.mem[i[0]]; }).length;
     app.replaceChildren(top("المحفوظات", true), h("div", { cls: "hello" }, [h("b", { t: "حفظتَ " + done + " من " + items.length }), h("small", { t: "اضغط على القصيدة لتعليمها «محفوظة»" })]),
-      h("div", null, items.map(function (i) { var on = !!S.mem[i[0].id]; return h("button", { cls: "chk" + (on ? " on" : ""), on: { click: function () { S.mem[i[0].id] = !on; save(); mem(); } } }, [h("span", { cls: "b", t: on ? "✓" : "" }), h("span", { t: i[1].name + " — " + i[0].n + ": " + i[0].poem.t })]); })));
+      h("div", null, items.map(function (i) { var on = !!S.mem[i[0]]; return h("button", { cls: "chk" + (on ? " on" : ""), on: { click: function () { S.mem[i[0]] = !on; save(); mem(); } } }, [h("span", { cls: "b", t: on ? "✓" : "" }), h("span", { t: i[1].name + " — " + i[3].t })]); })));
     nav(false);
   }
   function nav(show) {
