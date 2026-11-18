@@ -237,9 +237,10 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
   }
   function nav(show) {
     var n = $("#nav"); n.hidden = !show; if (!show) return; n.replaceChildren(
-      h("button", { t: "📘 خماسي بالكتاب المدرسي", on: { click: function () { openLink(ARA.links.book); } } }),
+      h("button", { t: "📘 خماسي بالكتاب المدرسي", on: { click: bookSheet } }),
       h("button", { t: "📦 بالرزمة التعليمية", on: { click: function () { openLink(ARA.links.pack); } } }));
   }
+  function bookSheet() { sheet("الكتاب المدرسي", [mi("📗", "الجزء الأول (الفصل الأول)", function () { closeMenu(); openLink(ARA.links.book1); }), mi("📘", "الجزء الثاني (الفصل الثاني)", function () { closeMenu(); openLink(ARA.links.book2); })]); }
   function openLink(u) { if (u) window.open(u, "_blank", "noopener"); else toast("الرابط غير مضاف بعد"); }
 
   function route() {

@@ -3,7 +3,8 @@
    النصوص أدناه مؤقّتة إلى أن تُضاف من الكتاب المدرسي. */
 window.ARA = {
   links: {
-    book: "",   /* رابط «خماسي بالكتاب المدرسي» (Drive) */
+    book1: "https://drive.google.com/file/d/1okHq7YcXuWwdOk__9LtuYPFbfl9V7KQy/view?usp=drivesdk",   /* الكتاب المدرسي: الجزء الأول (Drive) */
+    book2: "https://drive.google.com/file/d/1GXuo7btJUtPVfVgET4Aad-hBByKgXH3D/view?usp=drivesdk",   /* الجزء الثاني */
     pack: "https://drive.google.com/file/d/1m7I9fHj7lgIxjzhHMVRnIYxmLeYx8rgA/view?usp=drivesdk"    /* رابط «بالرزمة التعليمية» (Drive) */
   },
   semesters: [
