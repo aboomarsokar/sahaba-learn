@@ -344,7 +344,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function unit(id, tab) {
     var u = findUnit(id); if (!u) return home(); var sem = semOf(id);
     S.last = id; save();
-    var groups = TABS.map(function (g) { return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })]; }).filter(function (g) { return g[2].length; });
+    var groups = TABS.map(function (g) { return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })]; });
     groups.push(["qs", "أسئلة الدرس", []]);
     var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0], cards = [];
     function bookBtn() { return h("button", { cls: "btn alt", t: "📖 افتح الكتاب على Drive", on: { click: function () { openLink(ARA.links[sem.book]); } } }); }
@@ -353,6 +353,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       if (!cards.length) cards.push(h("div", { cls: "empty", t: "ستُضاف أسئلة دروس هذه الوحدة قريباً." }), bookBtn());
     } else {
       cur[2].forEach(function (i) { cards.push(h("div", null, lessonView(u, i, function () { unit(id, cur[0]); }))); });
+      if (!cur[2].length) cards.push(h("div", { cls: "card" }, [h("div", { cls: "empty", t: "لا يوجد درس «" + cur[1] + "» في هذه الوحدة حسب فهرس الكتاب." })]));
       if (!cur[2].some(function (i) { return i.x; })) cards.push(bookBtn());
     }
     app.replaceChildren.apply(app, [top(u.n, true), h("div", { cls: "tabs sc" }, groups.map(function (g) { return h("button", { t: g[1], cls: g[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, g[0]); } } }); }))].concat(cards));
