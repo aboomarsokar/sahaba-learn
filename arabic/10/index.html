@@ -83,7 +83,6 @@ h1,h2,h3{margin:0;font-weight:700}
 .lbl{color:var(--mut);margin:10px 0 2px}
 .tabs.sc{overflow-x:auto;-webkit-overflow-scrolling:touch}.tabs.sc button{flex:none;padding:9px 14px;white-space:nowrap}
 .tx{line-height:2.1}.tx p{margin:0 0 10px}.tx-h{color:var(--g);font-size:1.05rem;margin:14px 0 6px}.tx-b{position:relative;padding-inline-start:16px;margin-bottom:4px}.tx-b::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--g)}.tx-q{margin:0 0 10px;padding:8px 10px;border-radius:12px;background:rgba(127,127,127,.12)}
-.cells{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 10px}.cell{display:flex;flex-direction:column;gap:4px;min-height:96px;padding:10px;border:1px solid var(--cardb);border-radius:16px;background:var(--card);animation:pop .25s ease}.cell b{color:var(--g)}.cell span{font-size:.92rem;line-height:1.7}@keyframes pop{from{transform:scale(.9);opacity:0}}
 .rv-b{margin-top:8px!important}.btn:disabled{opacity:.55}
 :root[data-acc=gold]{--gold:linear-gradient(135deg,#f8e39a 0%,#e3b94d 38%,#c89622 62%,#8f6410 100%);--g:#e3b94d;--ongold:#2b1d04;--ink:#f6ecd2;--mut:#c2b284;--cardb:rgba(240,200,100,.26);--solid:#241b0e}
 :root[data-acc=gold][data-mode=light]{--ink:#3a2a08;--mut:#7d6a3e;--cardb:rgba(184,137,31,.32);--solid:#fffaf0;--g:#b8891f}
@@ -93,6 +92,12 @@ h1,h2,h3{margin:0;font-weight:700}
 :root[data-acc=gold] .hikma{background:#fbf1cf;border-color:#c89622;color:#3a2a08}:root[data-acc=gold] .hikma small{color:#7d6a3e}
 :root[data-acc=gold] .btn{color:#2b1d04;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 16px rgba(168,122,26,.4)}
 :root[data-acc=gold] .toast{background:#2a2008}
+.stage{transition:opacity .17s ease}.stage.fo{opacity:0}.fi{animation:fin .28s ease}@keyframes fin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.rv-p{margin:6px 0 10px;padding:10px;border:1px dashed var(--cardb);border-radius:18px}.rv-n{align-items:center}.rv-n .cnt{flex:none;color:var(--mut);padding:0 6px}.rv-n .btn{padding:9px 6px}
+.cell{display:flex;flex-direction:column;gap:6px;min-height:110px;justify-content:center;padding:14px;border:1px solid var(--cardb);border-radius:16px;background:var(--card);text-align:center}.cell b{color:var(--g);font-size:1.05rem}.cell span{line-height:1.8}
+.row2 .btn:disabled{opacity:.4}
+:root[data-acc=gold] .btn.alt,.btn.alt{color:var(--g)}
+:root[data-acc=gold] .btn.alt{background:transparent;box-shadow:none}
 /* الاختبارات */
 .qx{display:flex;align-items:center;gap:12px;width:100%;text-align:right;padding:13px 14px;margin-bottom:10px}
 .qx .n{flex:none;width:42px;height:42px;border-radius:14px;background:var(--gold);color:var(--ongold);display:grid;place-items:center;font-weight:700}
@@ -284,14 +289,16 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   var TABS = [["read", "المطالعة", ["read"]], ["poem", "القصيدة", ["poem"]], ["gram", "القواعد", ["gram"]], ["rhet", "البلاغة", ["rhet"]], ["aruz", "العروض", ["aruz"]], ["imla", "الإملاء", ["imla"]], ["expr", "التعبير", ["expr"]]];
   /* ===== عرض الدرس: مطالعة مقسّمة وقواعد/بلاغة/تعبير بشرح تدريجي ===== */
   var ST = {};
+  function nbtn(label, fn, alt) { return h("button", { cls: "btn" + (alt ? " alt" : ""), t: label, on: { click: fn } }); }
   function reveal(label, cells) {
-    var n = 0, grid = h("div", { cls: "cells" }), b = h("button", { cls: "btn alt rv-b", t: label });
+    var b = h("button", { cls: "btn alt rv-b", t: label });
     if (!cells.length) { b.disabled = true; b.textContent = label + " (لا يوجد في هذا القسم)"; return h("div", null, [b]); }
-    b.addEventListener("click", function () {
-      var c = cells[n++]; grid.appendChild(h("div", { cls: "cell" }, [h("b", { t: c[0] }), h("span", { t: c[1] || "" })]));
-      if (n >= cells.length) { b.disabled = true; b.textContent = "تم عرض الكل ✓"; } else b.textContent = "أظهر التالي (" + n + "/" + cells.length + ")";
-    });
-    return h("div", null, [b, grid]);
+    var i = 0, stage = h("div", { cls: "stage" }), cnt = h("span", { cls: "cnt" }), prev = nbtn("‹ السابق", function () { go(i - 1); }, true), next = nbtn("التالي ›", function () { go(i + 1); }), nav = h("div", { cls: "row2 rv-n" }, [prev, cnt, next]), panel = h("div", { cls: "rv-p" }, [stage, nav]);
+    panel.hidden = true;
+    function draw() { var c = cells[i]; stage.replaceChildren(h("div", { cls: "cell fi" }, [h("b", { t: c[0] }), h("span", { t: c[1] || "" })])); cnt.textContent = (i + 1) + " / " + cells.length; prev.disabled = i === 0; next.disabled = i === cells.length - 1; }
+    function go(k) { if (k < 0 || k >= cells.length) return; stage.classList.add("fo"); setTimeout(function () { i = k; draw(); stage.classList.remove("fo"); }, 170); }
+    b.addEventListener("click", function () { panel.hidden = !panel.hidden; if (!panel.hidden) { i = 0; draw(); } });
+    return h("div", null, [b, panel]);
   }
   function qsCard(u, i, goBack) {
     var key = u.id + "|" + i.t, qs = lessonQs(key), kids = [h("h2", { t: "أسئلة الدرس", style: "margin-bottom:8px" })];
@@ -309,29 +316,31 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   }
   function lessonView(u, i, rerender) {
     var key = u.id + "|" + i.t, st = ST[key] || 0, box = [];
-    function setSt(v) { ST[key] = v; rerender(); scrollTo(0, 0); }
-    if (i.sec) {                                    /* مطالعة: أقسام */
+    function setSt(v) { var el = $("#app .stage"); if (el) el.classList.add("fo"); setTimeout(function () { ST[key] = v; rerender(); scrollTo(0, 0); }, 170); }
+    function navRow(total, nextLabel) { /* السابق / التالي */
+      return h("div", { cls: "row2" }, [st > 0 ? nbtn("‹ السابق", function () { setSt(st - 1); }, true) : null, st < total ? nbtn(nextLabel || "التالي ›", function () { setSt(st + 1); }) : null]);
+    }
+    function stage(kids) { return h("div", { cls: "stage fi" }, kids); }
+    if (i.sec) {                                    /* مطالعة/قصيدة: قسم واحد في كل مرة */
       var n = i.sec.length;
       if (st < n) {
         var c = i.sec[st];
-        box.push(h("div", { cls: "kind", t: "القسم " + (st + 1) + " من " + n + " — اقرأ هذا الجزء من المطالعة ثم انتقل إلى القسم التالي" }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (st / n * 100) + "%" })]));
-        box.push(h("div", { cls: "card" }, [h("h2", { t: c.t, style: "margin-bottom:8px" }), renderText(c.x, false)]));
-        box.push(reveal("أظهر المفردات والمضادات", c.vocab || []), reveal("أظهر الأساليب والصور الجمالية", c.styles || []));
-        box.push(reveal("أظهر الاستعارات المكنية", c.mc || []), reveal("أظهر المادة المعجمية لبعض الكلمات", c.lex || []));
-        box.push(h("button", { cls: "btn", t: st === n - 1 ? "انتهيتُ من المطالعة — التالي" : "التالي ‹ القسم " + (st + 2), on: { click: function () { setSt(st + 1); } } }));
+        box.push(h("div", { cls: "kind", t: "القسم " + (st + 1) + " من " + n + " — اقرأ هذا الجزء ثم انتقل إلى القسم التالي" }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (st / n * 100) + "%" })]));
+        box.push(stage([h("div", { cls: "card" }, [h("h2", { t: c.t, style: "margin-bottom:8px" }), renderText(c.x, false)]),
+          reveal("أظهر المفردات والمضادات", c.vocab || []), reveal("أظهر الأساليب والصور الجمالية", c.styles || []), reveal("أظهر الاستعارات المكنية", c.mc || []), reveal("أظهر المادة المعجمية لبعض الكلمات", c.lex || [])]));
+        box.push(navRow(n + 1, st === n - 1 ? "انتهيت — اختبر نفسك ›" : "التالي ›"));
       } else if (st === n) {
-        box.push(h("div", { cls: "card qres" }, [h("div", { cls: "big", t: "اختبر نفسك" }), h("p", { t: "أحسنت! أنهيتَ أقسام المطالعة. اضغط «التالي» لتصل إلى أسئلة هذه المطالعة من الكتاب." }), h("button", { cls: "btn", t: "التالي ‹", on: { click: function () { setSt(n + 1); } } })]));
-      } else box.push(qsCard(u, i, function () { setSt(0); }));
+        box.push(stage([h("div", { cls: "card qres" }, [h("div", { cls: "big", t: "اختبر نفسك" }), h("p", { t: "أحسنت! أنهيتَ أقسام الدرس. اضغط «التالي» لتصل إلى أسئلة هذا الدرس من الكتاب والرزمة." })])]));
+        box.push(navRow(n + 1));
+      } else { box.push(stage([qsCard(u, i, null)])); box.push(navRow(n + 1)); }
       return box;
     }
-    if (i.rule) {                                   /* قاعدة/بلاغة/تعبير: تعريف ثم شرح تدريجي */
-      var bl = blocks(i.x), total = bl.length;
-      box.push(h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.rule.n }), h("div", { cls: "tx", style: "margin-top:8px" }, [h("p", { t: i.rule.d })])]));
-      if (st === 0) { box.push(h("button", { cls: "btn", t: "التالي ‹ شرح الدرس", on: { click: function () { setSt(1); } } })); return box; }
-      var shown = Math.min(st, total);
-      for (var k = 0; k < shown; k++) box.push(h("div", { cls: "card" }, [renderText(bl[k], false)]));
-      if (st <= total) box.push(h("button", { cls: "btn", t: st < total ? "التالي ‹ (" + st + "/" + total + ")" : "انتهى الشرح — اختبر نفسك", on: { click: function () { setSt(st + 1); } } }));
-      else box.push(qsCard(u, i, function () { setSt(0); }));
+    if (i.rule) {                                   /* قاعدة/بلاغة/تعبير: تعريف ثم شرح (مربع واحد في كل مرة) */
+      var bl = blocks(i.x), total = bl.length + 1;
+      if (st === 0) box.push(stage([h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.rule.n }), h("div", { cls: "tx", style: "margin-top:8px" }, [h("p", { t: i.rule.d })])])]));
+      else if (st <= bl.length) box.push(stage([h("div", { cls: "kind", t: "الشرح " + st + " / " + bl.length }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (st / bl.length * 100) + "%" })]), h("div", { cls: "card" }, [renderText(bl[st - 1], false)])]));
+      else box.push(stage([qsCard(u, i, null)]));
+      box.push(navRow(total, st === 0 ? "التالي › شرح الدرس" : st === bl.length ? "انتهى الشرح — اختبر نفسك ›" : "التالي ›"));
       return box;
     }
     var inner = [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" })];
