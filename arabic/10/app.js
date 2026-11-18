@@ -1,0 +1,289 @@
+(function () {
+  "use strict";
+  var KEY = "ara10:st", D = document;
+  function $(s, r) { return (r || D).querySelector(s); }
+  function h(tag, attrs, kids) {
+    var e = D.createElement(tag);
+    for (var k in (attrs || {})) { if (k === "t") e.textContent = attrs[k]; else if (k === "on") for (var ev in attrs.on) e.addEventListener(ev, attrs.on[ev]); else if (k === "cls") e.className = attrs[k]; else e.setAttribute(k, attrs[k]); }
+    (kids || []).forEach(function (c) { if (c) e.appendChild(typeof c === "string" ? D.createTextNode(c) : c); });
+    return e;
+  }
+  var IC = {
+    home: "M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10", gear: "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z",
+    book: "M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19a2 2 0 0 1 2-2h13", dict: "M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z", star: "M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z",
+    doc: "M6 3h8l5 5v13H6zM14 3v5h5M9 13h7M9 17h7", dl: "M12 3v12M7 11l5 5 5-5M4 20h16", share: "M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13", pen: "M4 20l4-1 11-11-3-3L5 16zM14 6l3 3", bulb: "M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5V15h8v-1.5A6 6 0 0 0 12 3z",
+    trash: "M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3", x: "M5 5l14 14M19 5L5 19", menu: "M4 7h16M4 12h16M4 17h16", back: "M9 5l7 7-7 7", quiz: "M9 11l3 3 8-8M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h9"
+  };
+  function ic(n) { var s = D.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("viewBox", "0 0 24 24"); var p = D.createElementNS("http://www.w3.org/2000/svg", "path"); p.setAttribute("d", IC[n]); s.appendChild(p); return s; }
+  function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
+  var S = load(); S.mem = S.mem || {}; S.q = S.q || {}; S.mode = S.mode || "dark"; S.bgd = S.bgd || 0; S.bgl = S.bgl || 0; S.fs = S.fs || 16;
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast("تعذّر الحفظ على هذا الجهاز"); } }
+  function toast(m) { var t = h("div", { cls: "toast", t: m }); D.body.appendChild(t); setTimeout(function () { t.remove(); }, 2600); }
+  var BGD = [["#3b0a1c", "#1a0509"], ["#4d0f2f", "#220717"], ["#2b0a1f", "#12040d"], ["#5a1020", "#240709"], ["#2d3036", "#121316"]];
+  var BGL = [["#fff0f5", "#fbcfe0"], ["#ffe9ec", "#f8c3cb"], ["#fdeef7", "#f1cce3"], ["#fff3ee", "#fbd5c6"], ["#f6eef4", "#e6d0e0"]];
+  function applyLook() {
+    var r = D.documentElement, c = (S.mode === "dark" ? BGD : BGL)[S.mode === "dark" ? S.bgd : S.bgl];
+    r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
+    var m = $("meta[name=theme-color]"); if (m) m.content = c[1];
+  }
+  applyLook();
+
+  var AVATAR = '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb3c8"/><stop offset="1" stop-color="#d81b60"/></linearGradient></defs><rect width="100" height="100" fill="url(#g)"/><circle cx="50" cy="40" r="17" fill="#ffe2b8" stroke="#7a0f33" stroke-width="2"/><path d="M30 36q20-26 40 0z" fill="#3b0a1c"/><path d="M26 38h48" stroke="#3b0a1c" stroke-width="5" stroke-linecap="round"/><path d="M74 38v14" stroke="#ffd166" stroke-width="2.5"/><circle cx="74" cy="54" r="3" fill="#ffd166"/><circle cx="44" cy="42" r="2" fill="#3a2a08"/><circle cx="56" cy="42" r="2" fill="#3a2a08"/><path d="M44 49q6 5 12 0" stroke="#3a2a08" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M20 100q4-30 30-30t30 30z" fill="#3b0a1c"/><path d="M34 74l16 10 16-10" fill="#fff0f5" stroke="#7a0f33" stroke-width="1.5"/><g transform="translate(30 80) rotate(-6)"><rect width="40" height="16" rx="2" fill="#a5123f" stroke="#fff0f5" stroke-width="1.5"/><path d="M4 5h32M4 10h24" stroke="#fff0f5" stroke-width="1.5"/></g></svg>';
+  function avatarEl() {
+    var b = h("button", { cls: "av", "aria-label": "تغيير الصورة الشخصية", on: { click: pickPhoto } });
+    if (S.photo) b.appendChild(h("img", { src: S.photo, alt: "" })); else b.innerHTML = AVATAR;
+    b.appendChild(h("i", { t: "تغيير" })); return b;
+  }
+  function pickPhoto() {
+    var f = h("input", { type: "file", accept: "image/*" });
+    f.addEventListener("change", function () {
+      var file = f.files[0]; if (!file) return;
+      var img = new Image(), url = URL.createObjectURL(file);
+      img.onload = function () {
+        var c = D.createElement("canvas"), s = Math.min(img.width, img.height); c.width = c.height = 160;
+        c.getContext("2d").drawImage(img, (img.width - s) / 2, (img.height - s) / 2, s, s, 0, 0, 160, 160);
+        S.photo = c.toDataURL("image/jpeg", .8); save(); URL.revokeObjectURL(url); route();
+      };
+      img.src = url;
+    });
+    f.click();
+  }
+
+  /* ===== المدخل: الحكمة ← الاسم والشعبة ← الرئيسية ===== */
+  function wisdomToday() { var d = new Date(), n = Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 864e5); return WISDOM[(n + d.getFullYear()) % WISDOM.length]; }
+  function hideShell() { $("#app").hidden = true; $("#nav").hidden = true; $("#resume").hidden = true; }
+  function stepWisdom() {
+    var box = $("#intro"), w = wisdomToday(); box.hidden = false; hideShell(); box.innerHTML = "";
+    box.appendChild(h("div", { cls: "ibox" }, [h("div", { cls: "lamp", t: "💡" }), h("h1", { t: "حكمة اليوم" }),
+      h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })]),
+      h("button", { cls: "btn", t: "ابدأ يا بطل 🚀", on: { click: function () { stepName(false); } } })]));
+  }
+  function stepName(edit) {
+    var box = $("#intro"); box.hidden = false; hideShell(); box.innerHTML = "";
+    var name = h("input", { cls: "in", placeholder: "الاسم الثلاثي", autocomplete: "name", value: S.name || "" }), sec = S.sec || "", err = h("div", { cls: "err" });
+    var btns = ["عاشر ١", "عاشر ٢", "عاشر ٣"].map(function (s) {
+      var b = h("button", { type: "button", t: s, on: { click: function () { sec = s; btns.forEach(function (x) { x.classList.toggle("on", x === b); }); } } });
+      if (s === sec) b.className = "on"; return b;
+    });
+    var next = h("button", { cls: "btn", t: edit ? "حفظ" : "ادخل", on: { click: function () {
+      var parts = name.value.trim().split(/\s+/).filter(Boolean);
+      if (parts.length < 3) { err.textContent = "اكتب اسمك ثلاثياً (ثلاث كلمات)."; return; }
+      if (!sec) { err.textContent = "اختر الشعبة."; return; }
+      S.name = parts.join(" "); S.sec = sec; S.done = 1; save(); box.hidden = true; if (!edit) location.hash = "home"; route();
+    } } });
+    box.appendChild(h("div", { cls: "ibox" }, [h("div", { cls: "lamp", t: "📖" }), h("h1", { t: "اللغة العربية" }), h("p", { t: "الصف العاشر — اكتب بياناتك" }),
+      h("label", { cls: "fld", t: "اسمك الثلاثي" }), name, h("label", { cls: "fld", t: "الشعبة" }), h("div", { cls: "sec" }, btns), err, next]));
+  }
+
+  /* ===== التثبيت والمشاركة ===== */
+  function installApp() {
+    if (window.__dp) { var p = window.__dp; window.__dp = null; p.prompt(); if (p.userChoice) p.userChoice.then(function (r) { if (r && r.outcome === "accepted") toast("جارٍ تنزيل التطبيق ✓"); }); return; }
+    if (matchMedia("(display-mode: standalone)").matches || navigator.standalone) { toast("التطبيق مثبّت بالفعل"); return; }
+    var ios = /iphone|ipad|ipod/i.test(navigator.userAgent);
+    sheet("تنزيل التطبيق", [h("div", { cls: "card" }, [h("div", { cls: "read", t: ios ? "في سفاري: اضغط زرّ المشاركة ⬆️ ثم «إضافة إلى الشاشة الرئيسية»." : "من قائمة المتصفح (⋮) اختر «تثبيت التطبيق» أو «إضافة إلى الشاشة الرئيسية».\n\nإن لم يظهر الخيار فافتح الصفحة في متصفح Chrome عبر رابط الموقع نفسه." })])]);
+  }
+  function shareApp() {
+    var u = location.href.split("#")[0], d = { title: "اللغة العربية — الصف العاشر", text: "تطبيق اللغة العربية للصف العاشر", url: u };
+    if (navigator.share) navigator.share(d).catch(function () {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(u).then(function () { toast("نُسخ رابط التطبيق"); }, function () { toast(u); });
+    else toast(u);
+  }
+  function closeMenu() { var a = $("#veil"), b = $("#drawer"); if (a) a.remove(); if (b) b.remove(); }
+  function sheet(title, kids) {
+    closeMenu(); var d = h("aside", { id: "drawer" }, [h("div", { cls: "dh" }, [h("h2", { t: title }), h("button", { cls: "ib", "aria-label": "إغلاق", on: { click: closeMenu } }, [ic("x")])])].concat(kids));
+    D.body.appendChild(h("div", { id: "veil", on: { click: closeMenu } })); D.body.appendChild(d);
+  }
+  function mi(icon, text, fn) { return h("button", { cls: "mi", on: { click: fn } }, [ic(icon), h("span", { t: text })]); }
+  function go(hash) { return function () { closeMenu(); location.hash = hash; }; }
+  function openMenu() {
+    sheet("اللغة العربية", [
+      h("div", { cls: "dg", t: "التطبيق" }), mi("gear", "الإعدادات", go("settings")), mi("dl", "تنزيل التطبيق", function () { closeMenu(); installApp(); }), mi("share", "مشاركة التطبيق", function () { closeMenu(); shareApp(); }),
+      h("div", { cls: "dg", t: "دراستي" }), mi("quiz", "الاختبارات", go("quizzes")), mi("dict", "القاموس المعجمي", go("dict")), mi("star", "المحفوظات", go("mem")), mi("book", "الكتب المدرسية", go("books")), mi("doc", "الرزمة التعليمية", go("pack")),
+      h("div", { cls: "dg", t: "المزيد" }), mi("bulb", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })])]); }),
+      mi("pen", "تعديل الاسم والشعبة", function () { closeMenu(); stepName(true); }), mi("bulb", "أعد جولة كينيكس", replayTour)
+    ]);
+  }
+
+  /* ===== الصفحات ===== */
+  var app = $("#app");
+  function top(title, back) {
+    return h("div", { cls: "top" }, [back ? h("button", { cls: "ib", "aria-label": "رجوع", on: { click: function () { history.length > 1 ? history.back() : (location.hash = "home"); } } }, [ic("back")]) : null, h("h1", { t: title }), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
+  }
+  function findUnit(id) { var r = null; ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { if (u.id === id) r = u; }); }); return r; }
+  function semOf(id) { var r = null; ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { if (u.id === id) r = s; }); }); return r; }
+  function openLink(u) { if (u) window.open(u, "_blank", "noopener"); else toast("الرابط غير مضاف بعد"); }
+  var ROM = ["", "I", "II"];
+  function home() {
+    var first = S.name.split(" ")[0];
+    var head = h("div", { cls: "top" }, [avatarEl(), h("div", { cls: "hi", style: "flex:1" }, [h("b", null, ["مرحباً، ", h("em", { t: first })]), h("small", { t: "ماذا تحب أن تبدأ؟ · " + S.sec })]), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
+    var sems = ARA.semesters.map(function (s) { return h("button", { cls: "card sem", on: { click: function () { location.hash = "sem/" + s.id; } } }, [h("div", { cls: "rn", t: ROM[s.id] }), h("div", null, [h("b", { t: s.name }), h("small", { t: "الوحدات " + (s.id === 1 ? "1 – 5" : "6 – 10") })])]); });
+    function pent(icon, t, hash) { return h("button", { cls: "pent", on: { click: function () { location.hash = hash; } } }, [h("span", null, [ic(icon), D.createTextNode(t), h("small", { t: "افتح" })])]); }
+    app.replaceChildren.apply(app, [head].concat(sems, [h("div", { cls: "pents" }, [pent("doc", "الرزمة التعليمية", "pack"), pent("book", "الكتب المدرسية", "books")])]));
+    nav("home");
+  }
+  function semPage(id) {
+    var sem = ARA.semesters.filter(function (s) { return s.id === +id; })[0]; if (!sem) return home();
+    app.replaceChildren.apply(app, [top(sem.name, true)].concat(sem.units.map(function (u, i) { return h("button", { cls: "card unit", on: { click: function () { location.hash = "unit/" + u.id; } } }, [h("div", { cls: "n", t: String(i + 1 + (sem.id === 2 ? 5 : 0)) }), h("b", { t: u.n }), h("span", { t: "‹" })]); })));
+    nav("sub");
+  }
+  var KIND = { read: "مطالعة", poem: "نص شعري", gram: "قواعد لغوية", rhet: "بلاغة", aruz: "عروض", expr: "تعبير", imla: "إملاء" };
+  function unit(id, tab) {
+    var u = findUnit(id); if (!u) return home(); var sem = semOf(id);
+    S.last = id; save();
+    var groups = [["read", "المطالعة", ["read"]], ["poem", "القصيدة", ["poem"]], ["gram", "القواعد", ["gram", "rhet", "aruz", "imla", "expr"]]].map(function (g) {
+      return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })];
+    }).filter(function (g) { return g[2].length; });
+    var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0];
+    var cards = cur ? cur[2].map(function (i) {
+      var key = u.id + "|" + i.t, qs = lessonQs(key), btns = [h("button", { cls: "btn", t: "📖 افتح الكتاب", on: { click: function () { openLink(ARA.links[sem.book]); } } })];
+      if (qs.length) btns.push(h("button", { cls: "btn alt", t: "✍️ اختبار الدرس (" + qs.length + ")", on: { click: function () { location.hash = "lq/" + encodeURIComponent(key); } } }));
+      return h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" }),
+        i.x ? h("div", { cls: "read" + (i.k === "poem" ? " poem" : ""), t: i.x }) : h("div", { cls: "empty", t: "نص الدرس في الكتاب المدرسي" + (u.pg ? " (الوحدة من صفحة " + u.pg + ")" : "") }), h("div", { cls: "row2" }, btns)]);
+    }) : [h("div", { cls: "empty", t: "سيُضاف المحتوى قريباً." })];
+    app.replaceChildren.apply(app, [top(u.n, true), groups.length ? h("div", { cls: "tabs" }, groups.map(function (g) { return h("button", { t: g[1], cls: cur && g[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, g[0]); } } }); })) : null].filter(Boolean).concat(cards));
+    nav("sub");
+  }
+  function linksPage(title, rows) {
+    app.replaceChildren.apply(app, [top(title, true)].concat(rows.map(function (r) {
+      return h("div", { cls: "card lnk" }, [h("div", null, [h("b", { t: r[0] }), h("small", { t: r[1] })]), h("button", { cls: "gl", t: "افتح على Drive", on: { click: function () { openLink(r[2]); } } })]);
+    })));
+    nav("sub");
+  }
+  function dict() {
+    var grp = S.dg || 1, q = h("input", { cls: "in2", placeholder: "ابحث عن كلمة…", type: "search" }), out = h("div", { cls: "card" });
+    function draw() { var s = q.value.trim(), items = DICT[grp].filter(function (w) { return !s || w[0].indexOf(s) >= 0 || w[1].indexOf(s) >= 0; }); out.replaceChildren.apply(out, items.length ? items.map(function (w) { return h("div", { cls: "w" }, [h("b", { t: w[0] }), h("span", { t: w[1] })]); }) : [h("div", { cls: "empty", t: "لا نتائج." })]); }
+    q.addEventListener("input", draw);
+    app.replaceChildren(top("القاموس المعجمي"), h("div", { cls: "tabs" }, [[1, "المجموعة الأولى · الفصل الأول"], [2, "المجموعة الثانية · الفصل الثاني"]].map(function (g) { return h("button", { t: g[1], cls: g[0] === grp ? "on" : "", on: { click: function () { S.dg = g[0]; save(); dict(); } } }); })), q, out);
+    draw(); nav("dict");
+  }
+  function mem() {
+    var items = [];
+    ARA.semesters.forEach(function (s) { s.units.forEach(function (u) { u.items.forEach(function (i, n) { if (i.k === "poem") items.push([u.id + ":" + n, s, u, i]); }); }); });
+    var done = items.filter(function (i) { return S.mem[i[0]]; }).length;
+    app.replaceChildren(top("المحفوظات"), h("div", { cls: "card" }, [h("b", { t: "حفظتَ " + done + " من " + items.length }), h("div", { cls: "empty", style: "padding:0;text-align:right", t: "اضغط على القصيدة لتعليمها «محفوظة»" })]),
+      h("div", null, items.map(function (i) { var on = !!S.mem[i[0]]; return h("button", { cls: "card chk" + (on ? " on" : ""), on: { click: function () { S.mem[i[0]] = !on; save(); mem(); } } }, [h("span", { cls: "b", t: on ? "✓" : "" }), h("span", { t: i[1].name + " — " + i[3].t })]); })));
+    nav("mem");
+  }
+  function settings() {
+    function seg(opts, cur, fn) { return h("div", { cls: "sg" }, opts.map(function (o) { return h("button", { t: o[1], cls: o[0] === cur ? "on" : "", on: { click: function () { fn(o[0]); } } }); })); }
+    function sw(list, cur, fn) { return h("div", { cls: "sw" }, list.map(function (c, i) { return h("button", { "aria-label": "لون " + (i + 1), style: "background:linear-gradient(135deg," + c[0] + "," + c[1] + ")", cls: i === cur ? "on" : "", on: { click: function () { fn(i); } } }); })); }
+    function upd(f) { return function (v) { f(v); save(); applyLook(); settings(); }; }
+    app.replaceChildren(top("الإعدادات"),
+      h("div", { cls: "card" }, [h("h3", { t: "الوضع" }), h("div", { style: "height:8px" }), seg([["light", "فاتح"], ["dark", "داكن"]], S.mode, upd(function (v) { S.mode = v; })),
+        h("div", { cls: "lbl", t: "لون الخلفية للوضع الفاتح" }), sw(BGL, S.bgl, upd(function (v) { S.bgl = v; S.mode = "light"; })),
+        h("div", { cls: "lbl", t: "لون الخلفية للوضع الداكن" }), sw(BGD, S.bgd, upd(function (v) { S.bgd = v; S.mode = "dark"; }))]),
+      h("div", { cls: "card" }, [h("h3", { t: "حجم الخط" }), h("div", { style: "height:8px" }), seg([[14, "صغير"], [16, "متوسط"], [19, "كبير"]], S.fs, upd(function (v) { S.fs = v; }))]),
+      h("div", { cls: "card" }, [mi("dl", "تنزيل التطبيق", installApp), mi("share", "مشاركة التطبيق", shareApp), mi("pen", "تعديل الاسم والشعبة", function () { stepName(true); }),
+        mi("trash", "حذف بياناتي من هذا الجهاز", function () { if (confirm("سيُحذف اسمك وصورتك ومحفوظاتك ونتائجك من هذا الجهاز. متأكد؟")) { try { localStorage.removeItem(KEY); } catch (e) {} location.hash = ""; location.reload(); } })]));
+    nav("settings");
+  }
+
+  /* ===== الاختبارات ===== */
+  function rng(seed) { var a = 0; for (var i = 0; i < seed.length; i++) a = (a * 31 + seed.charCodeAt(i)) | 0; return function () { a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+  function shuf(arr, r) { var a = arr.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  /* سؤال: {t, q, o:[..], a:index, c:تصنيف, k:مفتاح الدرس} — الخيارات تُخلط بثبات حسب المعرّف */
+  function build(q, id) { var r = rng(id), opts = shuf([q.ans].concat(q.wr), r); return { t: q.t, q: q.q, o: opts, a: opts.indexOf(q.ans), c: q.c, k: q.k }; }
+  function vocabQs(sem) {
+    var all = DICT[sem], r = rng("v" + sem), out = [];
+    all.forEach(function (w, i) {
+      var others = shuf(all.filter(function (x) { return x !== w; }), r).slice(0, 3);
+      if (i % 2 === 0) out.push({ sem: sem, c: "v", k: w[2] || "", t: "mc", q: "ما معنى «" + w[0] + "» في الكتاب؟", ans: w[1], wr: others.map(function (x) { return x[1]; }) });
+      else out.push({ sem: sem, c: "v", k: w[2] || "", t: "fill", q: "الكلمة التي معناها «" + w[1] + "» هي: ____", ans: w[0], wr: others.map(function (x) { return x[0]; }) });
+    });
+    return out;
+  }
+  function allQs(sem) {
+    var g = QUIZ.filter(function (x) { return x[0] === sem; }).map(function (x) { return { sem: x[0], c: x[1], k: x[2], t: x[3], q: x[4], ans: x[5], wr: x[6] }; });
+    return vocabQs(sem).concat(g);
+  }
+  function lessonQs(key) { var out = []; [1, 2].forEach(function (s) { allQs(s).forEach(function (q) { if (q.k === key) out.push(q); }); }); return out; }
+  var EX = { 1: 3, 2: 2 };
+  function examQs(sem, n) {
+    var by = {}, order = [];
+    allQs(sem).forEach(function (q) { if (!by[q.c]) { by[q.c] = []; order.push(q.c); } by[q.c].push(q); });
+    var L = [], more = true, i = 0;
+    while (more) { more = false; order.forEach(function (c) { if (by[c][i]) { L.push(by[c][i]); more = true; } }); i++; }
+    var mine = L.filter(function (_, j) { return j % EX[sem] === n; }).slice(0, 20), id = "ex" + sem + n;
+    return shuf(mine, rng(id)).map(function (q, j) { return build(q, id + j); });
+  }
+  function quizzes() {
+    var rows = [];
+    ARA.semesters.forEach(function (s) {
+      rows.push(h("div", { cls: "lbl", t: s.name }));
+      for (var n = 0; n < EX[s.id]; n++) (function (n) {
+        var id = "ex" + s.id + n, best = S.q[id];
+        rows.push(h("button", { cls: "card qx", on: { click: function () { location.hash = "exam/" + s.id + "/" + n; } } }, [h("div", { cls: "n", t: String(n + 1) }), h("div", null, [h("b", { t: "اختبار " + (n + 1) + " — " + s.name }), h("small", { t: "20 سؤالاً من المفردات والقواعد والبلاغة والعروض" })]), h("span", { cls: "sc", t: best != null ? best + "/20" : "" })]));
+      })(n);
+    });
+    app.replaceChildren.apply(app, [top("الاختبارات")].concat(rows)); nav("quizzes");
+  }
+  function runQuiz(title, qs, id, back) {
+    var i = 0, score = 0, wrong = [];
+    function show() {
+      if (i >= qs.length) return end();
+      var q = qs[i], answered = false, opts = q.o.map(function (o, j) {
+        var b = h("button", { cls: "qo", t: o, on: { click: function () {
+          if (answered) return; answered = true; if (j === q.a) { score++; b.classList.add("ok"); } else { b.classList.add("no"); opts[q.a].classList.add("ok"); wrong.push(q); }
+          nextBtn.hidden = false;
+        } } }); return b;
+      });
+      var nextBtn = h("button", { cls: "btn", t: i === qs.length - 1 ? "إنهاء" : "التالي", hidden: "", on: { click: function () { i++; show(); } } });
+      nextBtn.hidden = true;
+      app.replaceChildren(top(title, true), h("div", { cls: "kind", t: (q.t === "fill" ? "أكمل الفراغ" : "اختر الإجابة الصحيحة") + " · " + (i + 1) + " / " + qs.length }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (i / qs.length * 100) + "%" })]), h("div", { cls: "card" }, [h("div", { cls: "qq", t: q.q })]), h("div", null, opts), nextBtn);
+      nav("sub");
+    }
+    function end() {
+      if (id) { S.q[id] = Math.max(S.q[id] || 0, score); save(); }
+      var pct = Math.round(score / qs.length * 100), msg = pct >= 90 ? "ممتاز! 🌟" : pct >= 70 ? "أحسنت 👏" : pct >= 50 ? "جيد، راجع أخطاءك" : "حاول مرة أخرى 💪";
+      app.replaceChildren.apply(app, [top(title, true), h("div", { cls: "card qres" }, [h("div", { cls: "big", t: score + " / " + qs.length }), h("div", { t: msg })])].concat(
+        wrong.length ? [h("div", { cls: "card" }, [h("h3", { t: "مراجعة الأخطاء", style: "margin-bottom:6px" })].concat(wrong.map(function (q) { return h("div", { cls: "rv" }, [D.createTextNode(q.q + "  "), h("b", { t: "← " + q.o[q.a] })]); })))] : [],
+        [h("button", { cls: "btn", t: "إعادة المحاولة", on: { click: function () { i = 0; score = 0; wrong = []; show(); } } }), h("button", { cls: "btn alt", t: "رجوع", on: { click: function () { location.hash = back; } } })]));
+      nav("sub");
+    }
+    show();
+  }
+
+  /* ===== جولة كينيكس (بعد المدخل عند أول استعمال) ===== */
+  var KX = { id: "ara10", cover: "../../shared/covers/arabic.webp", kinex: "../../shared/kinex.jpg", userName: function () { return (S.name || "").split(" ")[0]; },
+    ready: function () { return !!S.done && $("#intro").hidden && (location.hash || "#home") === "#home" && !!$(".sem"); },
+    steps: [
+      { t: "أهلاً بك، أنا كينيكس", x: "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق اللغة العربية للصف العاشر. سأعرّفك عليه في دقيقة.", s: null, i: 1 },
+      { t: "🖼️ صورتك الشخصية", x: "اضغط على صورتك لتغييرها بصورة من جهازك.", s: ".av" },
+      { t: "📚 الفصلان والوحدات", x: "اختر الفصل الأول أو الثاني ثم الوحدة، وفي كل وحدة المطالعة والقصيدة والقواعد، وبعد كل درس اختبار قصير.", s: ".sem" },
+      { t: "📘 الكتب والرزمة", x: "من هنا تفتح الكتب المدرسية والرزمة التعليمية على Google Drive.", s: ".pents" },
+      { t: "✍️ الاختبارات", x: "اختبارات من 20 سؤالاً لكل فصل، بأنواع مختلفة: اختر وأكمل الفراغ.", s: "#nav .ni:nth-child(2)" },
+      { t: "📖 القاموس", x: "كلمات الكتاب ومعانيها، مع بحث سريع.", s: "#nav .ni:nth-child(3)" },
+      { t: "⚙️ الإعدادات", x: "غيّر الوضع بين الفاتح والداكن، ولون الخلفية، وحجم الخط.", s: "#nav .ni:nth-child(5)" },
+      { t: "☰ القائمة", x: "فيها تنزيل التطبيق ومشاركته وحكمة اليوم، وإعادة هذه الجولة متى شئت.", s: ".top .ib[aria-label=\"القائمة\"]" },
+      { t: "بالتوفيق يا بطل 🚀", x: "ابدأ اليوم بدرس واحد وأنا معك. بالتوفيق دائماً! ✨", s: null }
+    ] };
+  function replayTour() { closeMenu(); location.hash = "home"; setTimeout(function () { SahabaIntro.tour(KX); }, 400); }
+
+  function nav(active) {
+    var n = $("#nav"); n.hidden = false;
+    n.replaceChildren.apply(n, [["home", "الرئيسية", "home"], ["quizzes", "الاختبارات", "quiz"], ["dict", "القاموس", "dict"], ["mem", "المحفوظات", "star"], ["settings", "الإعدادات", "gear"]].map(function (t) {
+      return h("button", { cls: "ni" + (t[0] === active ? " on" : ""), on: { click: function () { location.hash = t[0]; } } }, [ic(t[2]), h("span", { t: t[1] })]);
+    }));
+    var r = $("#resume"), u = S.last && findUnit(S.last);
+    r.hidden = !(active === "home" && u);
+    if (!r.hidden) { r.replaceChildren(ic("back"), D.createTextNode("أكمل من حيث وصلت")); r.onclick = function () { location.hash = "unit/" + S.last; }; }
+  }
+
+  function route() {
+    closeMenu();
+    if (!S.done || !S.name) { return stepWisdom(); }
+    $("#intro").hidden = true; app.hidden = false;
+    var p = (location.hash || "#home").slice(1).split("/");
+    if (p[0] === "unit") unit(p[1]); else if (p[0] === "sem") semPage(p[1]); else if (p[0] === "dict") dict(); else if (p[0] === "mem") mem(); else if (p[0] === "settings") settings(); else if (p[0] === "quizzes") quizzes();
+    else if (p[0] === "exam") { var s = +p[1], n = +p[2]; runQuiz("اختبار " + (n + 1) + " — " + ARA.semesters[s - 1].name, examQs(s, n), "ex" + s + n, "quizzes"); }
+    else if (p[0] === "lq") { var key = decodeURIComponent(p[1]), qs = lessonQs(key).map(function (q, j) { return build(q, "lq" + key + j); }); runQuiz("اختبار الدرس", shuf(qs, rng("lqs" + key)), null, "unit/" + key.split("|")[0]); }
+    else if (p[0] === "books") linksPage("الكتب المدرسية", [["الفصل الأول", "كتاب اللغة العربية — الصف العاشر (الجزء الأول)", ARA.links.book1], ["الفصل الثاني", "كتاب اللغة العربية — الصف العاشر (الجزء الثاني)", ARA.links.book2]]);
+    else if (p[0] === "pack") linksPage("الرزمة التعليمية", [["الفصلان الأول والثاني", "الرزمة التعليمية — الصف العاشر", ARA.links.pack]]);
+    else home();
+    scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", route);
+  route();
+  SahabaIntro.run(KX);
+  if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
+})();
