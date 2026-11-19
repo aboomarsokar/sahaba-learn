@@ -47,6 +47,7 @@
 
   /* ===== الغلاف ===== */
   function cover(o, done) {
+    done(); return;   /* الغلاف مُلغى: يدخل الطالب التطبيق مباشرةً (تبقى جولة كينيكس لأوّل استعمال) */
     if (!o.cover || ses("sahaba-cover:" + o.id) === "1") { done(); return; }
     css();
     var c = D.createElement("div"); c.id = "shc"; c.setAttribute("aria-label", "ابدأ الآن");
