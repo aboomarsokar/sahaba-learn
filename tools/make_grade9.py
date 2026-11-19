@@ -238,7 +238,8 @@ def english() -> None:
     shell("english", "اللغة الإنجليزية", "eng9")
 
 
-SUBJECTS = {"arabic": arabic, "islamic": islamic, "math": math, "english": english}
+# arabic/9 صار بمحتوى حقيقي (من الكتاب والرزمة): أُوقف توليده حتى لا يُمحى. للتجديد من الصفر استعمل arabic() يدوياً.
+SUBJECTS = {"islamic": islamic, "math": math, "english": english}
 
 
 def main(names):
