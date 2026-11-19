@@ -1,18 +1,1 @@
-{
-"files": [
-"./data/curriculum.js",
-"./data/dict.js",
-"./data/quiz.js",
-"./data/wisdom.js",
-"./icon-192.png",
-"./icon-512.png",
-"./index.html",
-"./manifest.webmanifest",
-"../../shared/intro.js",
-"../../shared/kinex.jpg",
-"../../shared/covers/arabic.webp",
-"../../shared/fonts/IBMPlexSansArabic-Regular.ttf",
-"../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
-"../../shared/fonts/aref-ruqaa-arabic-700.woff2"
-]
-}
+{"files": ["./data/curriculum.js", "./data/dict.js", "./data/quiz.js", "./data/wisdom.js", "./icon-192.png", "./icon-512.png", "./index.html", "./manifest.webmanifest", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/arabic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2"]}

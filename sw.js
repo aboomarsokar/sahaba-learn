@@ -12,7 +12,7 @@ self.addEventListener("fetch", e => {
   if (r.method !== "GET" || u.origin !== self.location.origin) return;
   if (r.cache === "no-store") return;                              /* فحص التحديث: يذهب إلى الشبكة مباشرةً */
   const rel = u.pathname.slice(base.length);
-  if (!(rel === "" || rel === "index.html" || rel === "subjects.json" || rel === "manifest.webmanifest" || rel === "shared/intro.js" || rel === "shared/update-notify.js" || rel === "shared/kinex.jpg" || rel.startsWith("shared/covers/") || rel.startsWith("shared/icons/") || rel.startsWith("shared/grades/") || rel.startsWith("shared/subjects/") || rel === "shared/logo.webp" || rel.startsWith("shared/fonts/"))) return;   /* غير ملفات البوابة: تمرّ كما هي */
+  if (!(rel === "" || rel === "index.html" || rel === "subjects.json" || rel === "manifest.webmanifest" || rel === "shared/intro.js" || rel === "shared/update-notify.js" || rel === "shared/durra.js" || rel === "shared/kinex.jpg" || rel.startsWith("shared/covers/") || rel.startsWith("shared/icons/") || rel.startsWith("shared/grades/") || rel.startsWith("shared/subjects/") || rel === "shared/logo.webp" || rel.startsWith("shared/fonts/"))) return;   /* غير ملفات البوابة: تمرّ كما هي */
   /* الشبكة أولاً بمهلة 2.5 ثانية ثم النسخة المحفوظة */
   e.respondWith((async () => { const hit = await caches.match(r, { ignoreSearch: true }), cached = hit && !hit.redirected ? hit : null; const net = fetch(r).then(x => { if (x.ok && !x.redirected) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }); if (!cached) return net.catch(() => caches.match("./index.html")); return Promise.race([net.catch(() => cached), new Promise(res => setTimeout(() => res(cached), 2500))]); })());
 });

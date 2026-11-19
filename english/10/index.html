@@ -940,7 +940,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 <!-- ===== الواجهة الرئيسية ===== -->
 <main id="home" class="page" data-screen="home" hidden>
   <div class="topbar">
-    <div class="tb-l"><button class="icon-btn" type="button" data-open-menu aria-label="القائمة"><svg><use href="#i-menu"/></svg></button>
+    <div class="tb-l"><button class="icon-btn" type="button" data-open-menu aria-label="القائمة"><svg><use href="#i-menu"/></svg></button><span data-drchip></span>
       <button class="icon-btn" type="button" aria-label="الرجوع إلى بوابة الصحابة التعليمية" onclick="location.href='../../index.html'"><svg><use href="#i-home"/></svg></button>
       <button class="icon-btn" type="button" data-go="updates" aria-label="الإشعارات"><svg><use href="#i-bell"/></svg><i class="dot" data-dot hidden></i></button></div>
     <div class="hello">
@@ -1222,10 +1222,9 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
         <button type="button" data-mode-btn="light"><svg><use href="#i-sun"/></svg><span data-t="light">فاتح</span></button>
         <button type="button" data-mode-btn="dark"><svg><use href="#i-moon"/></svg><span data-t="dark">داكن</span></button>
       </div>
-      <p class="sw-label" data-t="bgLight">لون الخلفية للوضع الفاتح</p>
-      <div class="swatches" id="swLight"></div>
-      <p class="sw-label" data-t="bgDark">لون الخلفية للوضع الداكن</p>
-      <div class="swatches" id="swDark"></div>
+      <p class="sw-label">الألوان والخلفيات والإطارات كلّها تُشترى بالدُّرّات من المتجر وتظهر في كل المواد.</p>
+      <button class="btn" type="button" id="drStore">🪙 افتح متجر دُرّة</button>
+      <div id="swLight" hidden></div><div id="swDark" hidden></div>
     </section>
     <section class="card set">
       <h3 data-t="fontSize">حجم الخط</h3>
@@ -1352,7 +1351,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   <button class="menu-item" type="button" onclick="location.href='../../index.html'"><svg><use href="#i-home"/></svg><span>بوابة الصحابة التعليمية</span></button>
   <p class="mgrp" data-t="menuAcc">التطبيق</p>
   <button class="menu-item" type="button" data-go="settings"><svg><use href="#i-gear"/></svg><span data-t="settings">الإعدادات</span></button>
-  <button class="menu-item" type="button" data-go="settings" data-scroll="swLight"><svg><use href="#i-sun"/></svg><span data-t="bgColor">لون الخلفية</span></button>
+  <button class="menu-item" type="button" id="menuStore"><svg><use href="#i-sun"/></svg><span>متجر دُرّة 🪙</span></button>
   <button class="menu-item" type="button" id="install"><svg><use href="#i-down"/></svg><span data-t="install">تنزيل التطبيق</span></button>
   <p class="mgrp" data-t="menuStudy">دراستي</p>
   <button class="menu-item" type="button" data-go="dict"><svg><use href="#i-dict"/></svg><span data-t="dict">قاموسي الخاص</span></button>
@@ -1369,6 +1368,8 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+<script src="../../shared/durra.js"></script>
+<script>Durra.init({dir:"english/10",frames:".avatar,.av",vars:function(t){var r=document.documentElement;if(r.dataset.mode==="dark"&&!t.dark)return{};var v=t.v;return {"--bg1":v.bg2,"--bg2":v.bg,"--bg3":t.dark?v.soft:"#ffffff","--gold":v.gold,"--gold2":v.gold2,"--g3":v.pri2,"--btn1":v.gold2,"--btn2":v.gold,"--btnText":"#ffffff","--text":v.ink,"--muted":v.mut,"--word":v.pri,"--cardBd":v.bd,"--fieldBd":v.bd};}});</script>
 <script src="data/lessons.js"></script>
 <script src="data/practice.js"></script>
 <script src="data/rulecards.js"></script>
@@ -1538,10 +1539,11 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   var mq=window.matchMedia('(prefers-color-scheme: light)');
   function mode(){return set.mode||'light'}
   function applyTheme(){
-    var m=mode(),p=(m==='light'?LIGHT:DARK)[(m==='light'?set.light:set.dark)||0],r=document.documentElement;
+    var m=mode(),p=(m==='light'?LIGHT:DARK)[0],r=document.documentElement;
     r.dataset.mode=m;r.style.setProperty('--bg1',p[1]);r.style.setProperty('--bg2',p[2]);r.style.setProperty('--bg3',p[3]);
     r.dataset.fs=set.fs||'m';
     document.querySelector('meta[name=theme-color]').content=p[1];
+    if(window.Durra)Durra.apply();
     document.querySelectorAll('[data-mode-btn]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.modeBtn===m)});
     document.querySelectorAll('[data-fs-btn]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.fsBtn===(set.fs||'m'))});
     [['swLight','light'],['swDark','dark']].forEach(function(x){
@@ -1556,7 +1558,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
       $(id).appendChild(b);
     });
   }
-  swatches('swLight',LIGHT,'light');swatches('swDark',DARK,'dark');
+  ['drStore','menuStore'].forEach(function(id){var b=$(id);if(b)b.addEventListener('click',function(){closeMenu&&closeMenu();Durra.store()})});
   document.querySelectorAll('[data-mode-btn]').forEach(function(b){b.addEventListener('click',function(){set.mode=b.dataset.modeBtn;save(K.set,set);applyTheme()})});
   document.querySelectorAll('[data-fs-btn]').forEach(function(b){b.addEventListener('click',function(){set.fs=b.dataset.fsBtn;save(K.set,set);applyTheme()})});
   document.querySelectorAll('[data-lang-btn]').forEach(function(b){b.addEventListener('click',function(){set.lang=b.dataset.langBtn;save(K.set,set);applyLang();show()})});
@@ -1583,6 +1585,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   if('speechSynthesis' in window){voices();if(speechSynthesis.addEventListener)speechSynthesis.addEventListener('voiceschanged',fillVoices)}
   mq.addEventListener&&mq.addEventListener('change',function(){if(!set.mode)applyTheme()});
   applyTheme();applyLang();
+  document.querySelectorAll('[data-drchip]').forEach(function(x){x.replaceWith(Durra.chip())});
 
   $('voiceTest').addEventListener('click',function(){speak([['Hello! Welcome to LEXORA.','en'],['أهلاً بك في ليكسورا','ar']])});
   /* ===== الصوت ===== */

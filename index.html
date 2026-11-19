@@ -273,6 +273,7 @@ var ICONS = {
   book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5C7 4.5 9.5 4.5 12 6c2.5-1.5 5-1.5 8-.5V19c-3-1-5.5-1-8 .5-2.5-1.5-5-1.5-8-.5z"/><path d="M12 6v13.5"/></svg>'
 };
 var MI = {
+  gem: '<path d="M6 3h12l4 6-10 12L2 9z"/><path d="M2 9h20M9 3l3 6 3-6M12 21L9 9M12 21l3-12"/>',
   user: '<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>',
   book: '<path d="M4 5.5C7 4.5 9.5 4.5 12 6c2.5-1.5 5-1.5 8-.5V19c-3-1-5.5-1-8 .5-2.5-1.5-5-1.5-8-.5z"/><path d="M12 6v13.5"/>',
   chart: '<path d="M5 20V10M12 20V4M19 20v-7"/>',
@@ -289,6 +290,7 @@ var MENU = [
   ["profile","الملف الشخصي","الاسم والصورة والصف الدراسي","user"],
   ["subjects","موادي التعليمية","الوصول إلى التطبيقات والمواد","book"],
   ["progress","إنجازاتي وتقدمي","نسب الإنجاز والوحدات المكتملة","chart"],
+  ["store","متجر دُرّة","ألوان وإطارات وألقاب بدُرّاتك","gem"],
   ["certs","شهاداتي","الشهادات التعليمية والإنجازات","medal"],
   ["notifs","الإشعارات","التنبيهات والتحديثات","bell"],
   ["about","عن المنصة","التعريف بالبوابة وإصدارها","info"],
@@ -343,6 +345,7 @@ function menuGo(k){
   closeMenu();
   if (k === "install") return installApp();
   if (k === "profile") return editProfile();
+  if (k === "store") return Durra.store();
   if (k === "subjects") return show(current && gradeById(current) ? "subjects" : "grades");
   if (k === "logout") {
     if (!confirm("هل تريد تسجيل الخروج؟ سيُمسح اسمك وصورتك من هذا الجهاز، وتبقى إنجازاتك في تطبيقاتك.")) return;
@@ -377,6 +380,7 @@ var photoData = null;
 function drawMe(){
   if (!profile) return;
   $("meName").textContent = "أهلاً، " + profile.first;
+  try{ var bd = Durra.badge(), sm = $("meName").parentNode.querySelector("small"); if (sm) sm.textContent = (bd.title || "بوابة الصحابة التعليمية") + (bd.stk ? "  " + bd.stk : ""); }catch(e){}
   $("meAv").innerHTML = profile.photo ? '<img alt="" src="'+profile.photo+'">' : esc((profile.first || "?").charAt(0));
 }
 function setPhoto(d){
@@ -534,7 +538,13 @@ try{if(!localStorage.getItem("sahaba-purge-sci-1")){(function(){try{var pre=["ph
 if(window.caches)caches.keys().then(function(ks){ks.forEach(function(k){if(/^(phy10-|che10-|bio10-|pcb-)/.test(k))caches.delete(k)})});
 if(navigator.serviceWorker)navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){if(/\/(physics|chemistry|biology|science)\/10\//.test(r.scope))r.unregister()})});
 try{indexedDB.deleteDatabase("pcbflags")}catch(e){}}catch(e){}})();localStorage.setItem("sahaba-purge-sci-1","1")}}catch(e){}</script>
+<script src="shared/durra.js"></script>
 <script src="shared/intro.js"></script>
+<script>
+/* دُرّة: المظهر والمحفظة المشتركة */
+Durra.init({dir:"portal", frames:".me .av", vars:function(t){var v=t.v;return {"--bg":v.bg,"--surface":v.card,"--surface2":v.soft,"--line":v.bd,"--ink":v.ink,"--muted":v.mut,"--gold":v.gold,"--gold2":v.gold2,"--onGold":v.onpri,"--deep":v.pri};}});
+(function(){document.querySelectorAll(".topbar").forEach(function(tb){var c=Durra.chip();c.style.marginInlineStart="auto";tb.appendChild(c);}); Durra.onChange(function(){try{drawMe()}catch(e){}});})();
+</script>
 <script src="shared/update-notify.js" data-app="بوابة الصحابة التعليمية" data-icon="shared/icons/portal-192.png" defer></script>
 <script>
 var KX = {id:"portal", kinex:"shared/kinex.jpg", steps:[{"t": "أهلاً بك، أنا كينيكس", "x": "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، بوابتك نحو العلم والمعرفة والتميّز. سأريك البوابة في دقيقة، وبعدها أبقى معك في كل مادة.", "s": null, "i": 1}, {"t": "🏫 المراحل الدراسية", "x": "اختر مرحلتك: الابتدائية أو الإعدادية أو الثانوية.", "s": ["#tabs"]}, {"t": "🎓 صفّك", "x": "اضغط على صفّك فتظهر موادّه. وما لم يجهز بعد يظهر عليه «قريباً»، وسيُضاف تباعاً بإذن الله.", "s": ["#banners .gb"]}, {"t": "☰ القائمة", "x": "من هنا تصل إلى ملفك الشخصي وموادك وإنجازاتك وتقدمك وشهاداتك والإشعارات والإعدادات.", "s": ["#menuBtn"]}, {"t": "أنا معك دائماً 🚀", "x": "ستجدني في كل تطبيق: أعرّفك عليه بجولة قصيرة، وأساعدك على الفهم في الأسئلة. وإذا أردت إعادة هذه الجولة فستجد زرّها في الإعدادات. بالتوفيق دائماً! ✨", "s": null}],

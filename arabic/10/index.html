@@ -167,6 +167,12 @@ h1,h2,h3{margin:0;font-weight:700}
 :root[data-acc=sahaba] .sem::before{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='70' height='70' fill='none' stroke='%235cc6d0' stroke-width='1.4'><path d='M35 4l7 17 17-7-7 17 17 7-17 7 7 17-17-7-7 17-7-17-17 7 7-17-17-7 17-7-7-17 17 7z'/><circle cx='35' cy='35' r='6'/></svg>")}
 :root[data-acc=sahaba]{--gold:linear-gradient(135deg,#a85a14,#8B4200 70%,#6a3200);--g:#c58a4a;--ongold:#fff;--solid:#0b2c21}:root[data-acc=sahaba] #intro{background:linear-gradient(160deg,#FAF6EB,#E2ECE1)}:root[data-acc=sahaba] .btn{color:#fff}
 :root[data-acc=sahaba][data-mode=light]{--ink:#113D2E;--mut:#5f7a6e;--g:#8B4200;--solid:#FEFEFE;--cardb:rgba(17,61,46,.16)}
+/* الرئيسية */
+.hrs{display:flex;align-items:center;gap:12px;width:100%;padding:14px;border:0;border-radius:20px;background:var(--gold);color:var(--ongold);box-shadow:0 8px 20px rgba(0,0,0,.18);margin-bottom:12px}.hrs .ico{flex:none;width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:1.3rem}.hrs b{display:block;font-size:1.1rem}.hrs small{opacity:.9}.hrs .go{flex:none;background:rgba(255,255,255,.9);color:#113D2E;border-radius:999px;padding:6px 16px;font-weight:700}
+.hstats{background:var(--card);border:1px solid var(--cardb);border-radius:18px;padding:14px;margin-bottom:12px}.hbar{height:9px;border-radius:9px;background:rgba(127,127,127,.2);overflow:hidden;margin-bottom:12px}.hbar i{display:block;height:100%;border-radius:9px;background:var(--gold)}.hrow{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}.hst b{display:block;font-size:1.15rem;color:var(--g)}.hst small{color:var(--mut);font-size:.72rem}
+.hh{font-weight:700;margin:14px 2px 8px}.semrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.semrow .sem{flex-direction:column;text-align:center;padding:12px 8px;gap:8px}.semrow .sem .rn{width:46px;height:46px;font-size:1.3rem;border-radius:14px}.semrow .sem b{font-size:1.05rem}.semrow .sem .gem,.semrow .sem .orn{display:none}
+.htools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.htl{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:84px;border-radius:16px;border:1px solid var(--cardb);background:var(--card);color:var(--ink);font:600 .82rem inherit;padding:8px 4px;text-align:center}.htl svg{width:26px;height:26px;stroke:var(--g);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.hwis{margin:14px 0 8px;padding:14px;border-radius:18px;background:var(--card);border:1px dashed var(--cardb);text-align:center}.hwis p{margin:6px 0;font:700 1.15rem "Ruqaa","Plex Arabic",serif;color:var(--ink);line-height:1.9}.hwis small{color:var(--mut)}
 /* هوية «الصحابة» النظيفة (الوضع الفاتح): خلفية كريمية وبطاقات بيضاء بحدود رقيقة وأخضر غامق، بلا أطر ملتفّة ولا جواهر */
 :root[data-acc=sahaba][data-mode=light]{--card:#fff;--cardb:#e9dfc8;--ink:#1a3a2b;--mut:#6f6a58;--g:#0e6b3c;--gold:linear-gradient(135deg,#1a8350,#0e6b3c);--ongold:#fff;--solid:#fff}
 :root[data-acc=sahaba][data-mode=light] .btn{color:#fff;box-shadow:0 2px 6px rgba(14,107,60,.25)}
@@ -330,6 +336,8 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
 <script src="../../shared/intro.js"></script>
 <script src="data/curriculum.js"></script>
 <script src="data/dict.js"></script>
+<script src="../../shared/durra.js"></script>
+<script>Durra.init({dir:"arabic/10",frames:".av",vars:function(t){var r=document.documentElement;if(r.dataset.mode==="dark"&&!t.dark)return{};var v=t.v;return {"--bg1":v.bg,"--bg2":v.bg2,"--ink":v.ink,"--mut":v.mut,"--card":t.dark?"rgba(255,255,255,.07)":"rgba(255,255,255,.82)","--cardb":v.pri+"29","--solid":v.card,"--g":v.gold,"--gold":"linear-gradient(135deg,"+v.gold2+","+v.gold+" 70%,"+v.pri2+")","--ongold":"#fff"};}});</script>
 <script src="data/wisdom.js"></script>
 <script src="data/quiz.js"></script>
 <script>
@@ -362,8 +370,9 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function applyLook() {
     var r = D.documentElement, c = bgs(S.mode === "dark")[S.mode === "dark" ? S.bgd : S.bgl];
     if (S.acc === "gold") { if (S.mode === "dark" && !S.bgd) c = ["#1f1608", "#0d0904"]; if (S.mode === "light" && !S.bgl) c = ["#fff8e6", "#f1dfae"]; }
-    r.dataset.acc = S.acc; r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
+    S.acc = "sahaba"; r.dataset.acc = S.acc; r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
     var m = $("meta[name=theme-color]"); if (m) m.content = c[1];
+    if (window.Durra) Durra.apply();
   }
   applyLook();
 
@@ -489,7 +498,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     sheet("اللغة العربية", [
       h("div", { cls: "dg", t: "التطبيق" }), mi("gear", "الإعدادات", go("settings")), mi("dl", "تنزيل التطبيق", function () { closeMenu(); installApp(); }), mi("share", "مشاركة التطبيق", function () { closeMenu(); shareApp(); }),
       h("div", { cls: "dg", t: "دراستي" }), mi("quiz", "الاختبارات", go("quizzes")), mi("dict", "القاموس المعجمي", go("dict")), mi("star", "المحفوظات", go("mem")), mi("book", "الكتب المدرسية", go("books")), mi("doc", "الرزمة التعليمية", go("pack")),
-      h("div", { cls: "dg", t: "المزيد" }), mi("bulb", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })])]); }),
+      h("div", { cls: "dg", t: "المزيد" }), mi("star", "متجر دُرّة", function () { closeMenu(); Durra.store(); }), mi("bulb", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })])]); }),
       mi("pen", "تعديل الاسم والشعبة", function () { closeMenu(); stepName(true); }), mi("bulb", "أعد جولة كينيكس", replayTour)
     ]);
   }
@@ -505,10 +514,33 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   var ROM = ["", "I", "II"];
   function home() {
     var first = S.name.split(" ")[0];
-    var head = h("div", { cls: "top" }, [avatarEl(), h("div", { cls: "hi", style: "flex:1" }, [h("b", null, ["مرحباً، ", h("em", { t: first })]), h("small", { t: "ماذا تحب أن تبدأ؟ · " + S.sec })]), h("a", { cls: "ib", href: "../../index.html", "aria-label": "بوابة الصحابة التعليمية", style: "display:grid;place-items:center;text-decoration:none", t: "" }, [ic("home")]), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
+    var head = h("div", { cls: "top" }, [avatarEl(), h("div", { cls: "hi", style: "flex:1" }, [h("b", null, ["مرحباً، ", h("em", { t: first })]), h("small", { t: "ماذا تحب أن تبدأ؟ · " + S.sec })]), h("a", { cls: "ib", href: "../../index.html", "aria-label": "بوابة الصحابة التعليمية", style: "display:grid;place-items:center;text-decoration:none", t: "" }, [ic("home")]), (window.Durra ? Durra.chip() : null), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
     var sems = ARA.semesters.map(function (s) { return h("button", { cls: "sem rope", on: { click: function () { location.hash = "sem/" + s.id; } } }, ornEls().concat([gemEl("top:6px;left:50%;margin-left:-9px", 18), h("div", { cls: "rn", t: ROM[s.id] }), h("div", null, [h("b", { t: s.name }), h("small", { t: s.units.length + " وحدات" })])])); });
     function pent(icon, t, hash) { return h("button", { cls: "pent", on: { click: function () { location.hash = hash; } } }, [h("span", null, [ic(icon), D.createTextNode(t), h("small", { t: "افتح" })])]); }
-    app.replaceChildren.apply(app, [head].concat(sems, [luxQuiz()]));
+    var all = [], items = [], exTotal = 0;
+    ARA.semesters.forEach(function (sm) { exTotal += EX[sm.id] || 0; sm.units.forEach(function (u) { all.push([sm, u]); u.items.forEach(function (it, n) { if (it.k === "poem") items.push(u.id + ":" + n); }); }); });
+    var seen = all.filter(function (x) { return S.seen && S.seen[x[1].id]; }).length, memd = items.filter(function (k) { return S.mem[k]; }).length;
+    var exd = Object.keys(S.q || {}).filter(function (k) { return /^ex\d/.test(k) && S.q[k] > 0; }).length;
+    var totalAll = all.length + items.length + exTotal, doneAll = seen + memd + Math.min(exd, exTotal), pct = totalAll ? Math.round(doneAll * 100 / totalAll) : 0;
+    /* أيام المواظبة */
+    var iso = function (d) { return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate(); }, today = iso(new Date());
+    S.days = S.days || []; if (S.days.indexOf(today) < 0) { S.days.push(today); S.days = S.days.slice(-90); save(); }
+    var streak = 0, dd = new Date(); while (S.days.indexOf(iso(dd)) >= 0) { streak++; dd.setDate(dd.getDate() - 1); }
+    /* تابع من حيث وصلت */
+    var lu = S.last && findUnit(S.last), ls = lu && semOf(S.last), nextU = null;
+    if (!lu) { nextU = all[0]; }
+    var tgt = lu ? lu : nextU[1], tgtSem = lu ? ls : nextU[0];
+    var resume = h("button", { cls: "hrs", on: { click: function () { location.hash = "unit/" + tgt.id; } } }, [h("div", { cls: "ico", t: lu ? "▶" : "★" }), h("div", { style: "flex:1;text-align:right" }, [h("small", { t: lu ? "تابع من حيث وصلت" : "ابدأ رحلتك" }), h("b", { t: tgt.n }), h("small", { t: tgtSem.name })]), h("span", { cls: "go", t: lu ? "أكمل" : "ابدأ" })]);
+    /* شريط الإنجاز */
+    var stat = function (v, l) { return h("div", { cls: "hst" }, [h("b", { t: v }), h("small", { t: l })]); };
+    var stats = h("section", { cls: "hstats" }, [h("div", { cls: "hbar" }, [h("i", { style: "width:" + pct + "%" })]), h("div", { cls: "hrow" }, [stat(pct + "٪", "التقدّم الكلي"), stat(seen + "/" + all.length, "وحدات فتحتها"), stat(memd + "/" + items.length, "محفوظات"), stat(String(streak), streak === 1 ? "يوم متتالٍ" : "أيام متتالية")])]);
+    /* أدواتي */
+    var tool = function (icn, t, hash) { return h("button", { cls: "htl", on: { click: function () { location.hash = hash; } } }, [ic(icn), h("span", { t: t })]); };
+    var tools = h("section", null, [h("div", { cls: "hh", t: "أدواتي" }), h("div", { cls: "htools" }, [tool("quiz", "الاختبارات", "quizzes"), tool("dict", "القاموس", "dict"), tool("star", "المحفوظات", "mem"), tool("book", "الكتب المدرسية", "books"), tool("doc", "الرزمة التعليمية", "pack"), tool("gear", "الإعدادات", "settings")])]);
+    /* حكمة اليوم */
+    var wd = wisdomToday(), wis = h("section", { cls: "hwis" }, [h("small", { t: "💡 حكمة اليوم" }), h("p", { t: wd[0] }), h("small", { t: "— " + wd[1] })]);
+    var semBox = h("div", { cls: "semrow" }, sems);
+    app.replaceChildren(head, resume, stats, h("div", { cls: "hh", t: "الفصول الدراسية" }), semBox, tools, wis);
     nav("home");
   }
   function semPage(id, tab) {
@@ -685,7 +717,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   }
   function unit(id, tab) {
     var u = findUnit(id); if (!u) return home(); var sem = semOf(id);
-    S.last = id; save();
+    S.last = id; S.seen = S.seen || {}; S.seen[id] = 1; save();
     var groups = TABS.map(function (g) { return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })]; });
     groups.push(["qs", "أسئلة الدرس", []]);
     var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0], cards = [];
@@ -728,9 +760,8 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     function upd(f) { return function (v) { f(v); save(); applyLook(); settings(); }; }
     app.replaceChildren(top("الإعدادات"),
       h("div", { cls: "card" }, [h("h3", { t: "الوضع" }), h("div", { style: "height:8px" }), seg([["light", "فاتح"], ["dark", "داكن"]], S.mode, upd(function (v) { S.mode = v; })),
-        h("div", { cls: "lbl", t: "لون الخلفية للوضع الفاتح" }), sw(bgs(false), S.bgl, upd(function (v) { S.bgl = v; S.mode = "light"; })),
-        h("div", { cls: "lbl", t: "لون الخلفية للوضع الداكن" }), sw(bgs(true), S.bgd, upd(function (v) { S.bgd = v; S.mode = "dark"; }))]),
-      h("div", { cls: "card" }, [h("h3", { t: "لون التطبيق" }), h("div", { style: "height:8px" }), seg([["sahaba", "الصحابة"], ["teal", "فيروزي"], ["gold", "ذهبي"], ["rose", "وردي"]], S.acc, upd(function (v) { S.acc = v; }))]),
+        ]),
+      h("div", { cls: "card" }, [h("h3", { t: "الألوان والإطارات والخلفيات" }), h("div", { cls: "empty", style: "padding:0 0 8px;text-align:right", t: "كلّها تُشترى بالدُّرّات من المتجر، وتظهر في كل المواد." }), h("button", { cls: "btn", t: "🪙 افتح متجر دُرّة", on: { click: function () { Durra.store(); } } })]),
       h("div", { cls: "card" }, [h("h3", { t: "سرعة الخط الملوّن في الشرح" }), h("div", { style: "height:8px" }), seg([["slow", "بطيء"], ["mid", "عادي"], ["fast", "أسرع"]], S.rs || "mid", upd(function (v) { S.rs = v; }))]),
       h("div", { cls: "card" }, [h("h3", { t: "حجم الخط" }), h("div", { style: "height:8px" }), seg([[14, "صغير"], [16, "متوسط"], [19, "كبير"]], S.fs, upd(function (v) { S.fs = v; }))]),
       h("div", { cls: "card" }, [mi("dl", "تنزيل التطبيق", installApp), mi("share", "مشاركة التطبيق", shareApp), mi("pen", "تعديل الاسم والشعبة", function () { stepName(true); }),
@@ -825,7 +856,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       return h("button", { cls: "ni" + (t[0] === active ? " on" : ""), on: { click: function () { location.hash = t[0]; } } }, [ic(t[2]), h("span", { t: t[1] })]);
     }));
     var r = $("#resume"), u = S.last && findUnit(S.last);
-    r.hidden = !(active === "home" && u);
+    r.hidden = true;
     if (!r.hidden) { r.replaceChildren(ic("back"), D.createTextNode("أكمل من حيث وصلت")); r.onclick = function () { location.hash = "unit/" + S.last; }; }
   }
 

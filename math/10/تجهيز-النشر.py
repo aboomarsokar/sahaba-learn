@@ -12,7 +12,7 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE / 'نشر'
 src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encoding='utf-8')
 upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
-ver = hashlib.sha256(('r5' + src + upd + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
+ver = hashlib.sha256(('r6' + src + upd + (HERE.parent.parent / 'shared' / 'durra.js').read_text(encoding='utf-8') + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 
 head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#FAF6EB">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
@@ -31,6 +31,10 @@ us.forEach(function(u,i){var rows=u.filter(function(r){return r[3]&&!L[r[3]].dec
 localStorage.setItem("sahaba-ach:math/10",JSON.stringify({pct:tot?Math.round(sum/tot*100):0,units:{done:done,total:4},certs:certs,badges:bd,updated:new Date().toISOString()}))}catch(e){}}
 pub();var _r=window.render;if(typeof _r==="function")window.render=function(){_r.apply(this,arguments);pub()};addEventListener("pageshow",pub)})();"""
 reg += '<script>' + PUB + '</script>'
+# دُرّة: المحفظة والمتجر المشتركان (مضمَّنان لتعمل الصفحة وحدها بلا إنترنت)
+durra = (HERE.parent.parent / 'shared' / 'durra.js').read_text(encoding='utf-8')
+reg += ('<script>' + durra.replace('</script', '<\\/script') + '</script><script>Durra.init({dir:"math/10",frames:".logo",vars:function(t){var v=t.v;return {"--bg":v.bg,"--tx":v.ink,"--bd":v.bd,"--card":v.card};}});'
+        'document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".hero");if(h){var c=Durra.chip();c.style.cssText+=";position:absolute;top:10px;left:10px";h.style.position="relative";h.appendChild(c)}})</script>')
 # غلاف المادة + جولة كينيكس (مشتركان في shared/): الصورتان تُنسخان إلى «نشر» لتعملا بلا إنترنت
 intro = (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')
 STEPS = [

@@ -74,7 +74,7 @@ libGo=function(k){libKind=k?"packs":"books";libSubj=PCB_ACTIVE_SUBJECT;nav("libi
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). */
 const P = "__PRE__";
-const V = P + "v8";
+const V = P + "v11";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -242,7 +242,7 @@ def patch(out: Path, k: int, d: str, name: str, store: str, pre: str) -> None:
     files = ["./index.html", "./manifest.webmanifest"]
     for sub in ("lessons", "lib", "images", "videos"):
         files += [f"./{sub}/{p.name}" for p in sorted((out / sub).glob("*")) if p.is_file()] if (out / sub).exists() else []
-    files += ["../../shared/update-notify.js", "../../shared/intro.js", "../../shared/kinex.jpg", f"../../shared/covers/{d}.webp"]
+    files += ["../../shared/update-notify.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", f"../../shared/covers/{d}.webp"]
     (out / "precache.json").write_text(json.dumps({"files": files}, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     total = sum((out / f).stat().st_size for f in files if (out / f).is_file())
     print(f"   {d}/10: {len(files)} ملفاً في قائمة التخزين، {total / 1048576:.1f} م.ب")
@@ -281,6 +281,7 @@ def inject_tools(out: Path, d: str) -> None:
     if a >= 0:                       # أعد الحقن بأحدث نسخة
         b = s.index("</script>", a) + len("</script>")
         s = s[:a] + s[b:].lstrip("\n")
+    s = s.replace('<div class="mi" onclick="bgPick()"><span>🎨 لون الخلفية</span></div>', '<div class="mi" onclick="Durra.store()"><span>🪙 متجر دُرّة</span></div>')   # لا ألوان مجانية: كلّها من المتجر
     js = (ROOT / "tools" / "sci_tools.js").read_text(encoding="utf-8").replace("__DIR__", f"{d}/10")
     s = rep(s, "</body>", js + "</body>")
     f.write_text(s, encoding="utf-8")
