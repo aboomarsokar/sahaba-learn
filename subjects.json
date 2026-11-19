@@ -158,12 +158,7 @@
       "name": "العلوم العامة",
       "color": "#2e7d32",
       "icon": "science",
-      "grades": {
-        "10": {
-          "dir": "science/10",
-          "note": "فيزياء · كيمياء · أحياء — دروس تفاعلية ومختبر"
-        }
-      },
+      "grades": {},
       "banner": "shared/subjects/science.webp"
     },
     {
@@ -206,12 +201,7 @@
       "color": "#1e3fa8",
       "icon": "science",
       "banner": "shared/subjects/physics.webp",
-      "grades": {
-        "10": {
-          "dir": "physics/10",
-          "note": "تطبيق مستقل: كتب ورزم واختبارات وتقدّم خاص"
-        }
-      }
+      "grades": {}
     },
     {
       "id": "chemistry",
@@ -219,12 +209,7 @@
       "color": "#a31515",
       "icon": "science",
       "banner": "shared/subjects/chemistry.webp",
-      "grades": {
-        "10": {
-          "dir": "chemistry/10",
-          "note": "تطبيق مستقل: كتب ورزم واختبارات وتقدّم خاص"
-        }
-      }
+      "grades": {}
     },
     {
       "id": "biology",
@@ -232,12 +217,7 @@
       "color": "#d4570f",
       "icon": "science",
       "banner": "shared/subjects/biology.webp",
-      "grades": {
-        "10": {
-          "dir": "biology/10",
-          "note": "تطبيق مستقل: كتب ورزم واختبارات وتقدّم خاص"
-        }
-      }
+      "grades": {}
     }
   ],
   "version": "1.0.0",
