@@ -173,6 +173,28 @@ h1,h2,h3{margin:0;font-weight:700}
 .hh{font-weight:700;margin:14px 2px 8px}.semrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.semrow .sem{flex-direction:column;text-align:center;padding:12px 8px;gap:8px}.semrow .sem .rn{width:46px;height:46px;font-size:1.3rem;border-radius:14px}.semrow .sem b{font-size:1.05rem}.semrow .sem .gem,.semrow .sem .orn{display:none}
 .htools{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.htl{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:84px;border-radius:16px;border:1px solid var(--cardb);background:var(--card);color:var(--ink);font:600 .82rem inherit;padding:8px 4px;text-align:center}.htl svg{width:26px;height:26px;stroke:var(--g);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .hwis{margin:14px 0 8px;padding:14px;border-radius:18px;background:var(--card);border:1px dashed var(--cardb);text-align:center}.hwis p{margin:6px 0;font:700 1.15rem "Ruqaa","Plex Arabic",serif;color:var(--ink);line-height:1.9}.hwis small{color:var(--mut)}
+/* هوية «الصحابة» النظيفة (الوضع الفاتح): خلفية كريمية وبطاقات بيضاء بحدود رقيقة وأخضر غامق، بلا أطر ملتفّة ولا جواهر */
+:root[data-acc=sahaba][data-mode=light]{--card:#fff;--cardb:#e9dfc8;--ink:#1a3a2b;--mut:#6f6a58;--g:#0e6b3c;--gold:linear-gradient(135deg,#1a8350,#0e6b3c);--ongold:#fff;--solid:#fff}
+:root[data-acc=sahaba][data-mode=light] .btn{color:#fff;box-shadow:0 2px 6px rgba(14,107,60,.25)}
+:root[data-acc=sahaba][data-mode=light] .card,:root[data-acc=sahaba][data-mode=light] .mi,:root[data-acc=sahaba][data-mode=light] .cell,:root[data-acc=sahaba][data-mode=light] .qo,:root[data-acc=sahaba][data-mode=light] .rv-p,:root[data-acc=sahaba][data-mode=light] .tabs{background:#fff;border-color:#e9dfc8;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+:root[data-acc=sahaba][data-mode=light] .card::before,:root[data-acc=sahaba][data-mode=light] .tabs::before,:root[data-acc=sahaba][data-mode=light] .mi::before,:root[data-acc=sahaba][data-mode=light] .qo::before,:root[data-acc=sahaba][data-mode=light] .cell::before,:root[data-acc=sahaba][data-mode=light] .rv-p::before{display:none}
+:root[data-acc=sahaba][data-mode=light] .rope{background:#fff;color:var(--ink);border:1px solid #e9dfc8;border-radius:18px;box-shadow:none;outline:none;animation:none;margin-bottom:12px}
+:root[data-acc=sahaba][data-mode=light] .unit.rope,:root[data-acc=sahaba][data-mode=light] .sem.rope{outline:none;box-shadow:none;animation:none;margin-bottom:12px}
+:root[data-acc=sahaba][data-mode=light] .rope::after,:root[data-acc=sahaba][data-mode=light] .sem::before,:root[data-acc=sahaba][data-mode=light] .gem,:root[data-acc=sahaba][data-mode=light] .orn{display:none}
+:root[data-acc=sahaba][data-mode=light] .rope small,:root[data-acc=sahaba][data-mode=light] .unit>span{color:var(--mut)}
+:root[data-acc=sahaba][data-mode=light] .sem .rn,:root[data-acc=sahaba][data-mode=light] .unit .n{background:#e3efe6;color:#0e6b3c;border:1px solid #b5d4be;box-shadow:none}
+:root[data-acc=sahaba][data-mode=light] .lux{background:#fff;border:1px solid #e9dfc8;box-shadow:none;animation:none;padding:0;margin-top:20px}
+:root[data-acc=sahaba][data-mode=light] .lux-in{background:#fff;color:var(--ink)}:root[data-acc=sahaba][data-mode=light] .lux-in::before,:root[data-acc=sahaba][data-mode=light] .lux-in::after{display:none}
+:root[data-acc=sahaba][data-mode=light] .lux-in b,:root[data-acc=sahaba][data-mode=light] .rcard h3{background:none;-webkit-text-fill-color:#134e3a;color:#134e3a}
+:root[data-acc=sahaba][data-mode=light] .lux-in svg.qi{stroke:#0e6b3c}:root[data-acc=sahaba][data-mode=light] .lux-in small{color:var(--mut)}
+:root[data-acc=sahaba][data-mode=light] .rcard .kd{color:#0e6b3c}:root[data-acc=sahaba][data-mode=light] .rcard p{color:var(--mut)}:root[data-acc=sahaba][data-mode=light] .rcard .go{background:linear-gradient(135deg,#1a8350,#0e6b3c);color:#fff}
+:root[data-acc=sahaba][data-mode=light] .tabs button.on{background:var(--gold);color:#fff;box-shadow:none}
+:root[data-acc=sahaba][data-mode=light] .ni.on{background:#e3efe6}:root[data-acc=sahaba][data-mode=light] .av{box-shadow:0 0 0 3px #e3efe6}
+:root[data-acc=sahaba][data-mode=light] .pent{background:#b5d4be}
+:root[data-acc=sahaba][data-mode=light] body::before{opacity:.025}
+:root[data-acc=sahaba][data-mode=light] .lt .w{background-image:linear-gradient(90deg,rgba(14,107,60,.22),rgba(14,107,60,.22))}
+:root[data-acc=sahaba][data-mode=light] .msg{background:#e3efe6}
+
 .gem{display:none!important}
 
 /* برواز الاختبارات المرصّع */

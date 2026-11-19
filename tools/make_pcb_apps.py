@@ -7,6 +7,7 @@
   1) يفكّ الصور والدروس والمكتبات والفيديوهات المدمجة إلى ملفّات تُحمَّل عند الحاجة (tools/unpack_pcb.py).
   2) يحذف بياناتِ المادتين الأخريين فعلياً: دروسها التفاعلية ومكتباتها وصورها.
   3) يربطه بالبوابة: غلاف المادة، دخولٌ من ملف البوابة بلا تسجيل، زرّ العودة للبوابة، نشر الإنجازات، تحديثٌ تلقائي، عمل بلا إنترنت.
+  4) يضيف مستوى «الفصل الأول والثاني» (tools/pcb_semesters.py) والهوية الموحَّدة (tools/pcb_identity.py).
 المخرجات مولَّدة: لا تُعدَّل يدوياً؛ أعد التوليد من ملف المصدر.
 """
 import subprocess
@@ -73,7 +74,7 @@ libGo=function(k){libKind=k?"packs":"books";libSubj=PCB_ACTIVE_SUBJECT;nav("libi
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). */
 const P = "__PRE__";
-const V = P + "v9";
+const V = P + "v11";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -264,6 +265,10 @@ def build(src: Path) -> None:
     print(f"   حُذف من المادتين الأخريين: {st['lessons']} درساً، {st['libs']} مكتبة، {st['images']} صورة")
     patch(out, k, d, name, store, pre)
     inject_tools(out, d)
+    # مستوى الفصل الأول/الثاني (tools/pcb_semesters.py)
+    subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'pcb_semesters.py'), d], check=True)
+    # الهوية البصرية الموحَّدة مع تطبيق العربية (tools/pcb_identity.py)
+    subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'pcb_identity.py'), d], check=True)
     # ضغط صور التطبيق بأمان (يتجاوز ما لا يوفّر ≥12% مع حفظ الجودة)
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'optimize_assets.py'), '--apply', f'{d}/10'], check=True)
 
