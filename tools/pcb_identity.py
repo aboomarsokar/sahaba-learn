@@ -45,6 +45,11 @@ body.sp{background:linear-gradient(160deg,#FAF6EB,#E2ECE1)}
 .sch-cta,.sch-cta a,.tchb,a.sch-cta{background:#0e6b3c!important;color:#fff!important;box-shadow:none!important}
 #go.btn.w{background:linear-gradient(135deg,#1a8350,#0e6b3c)!important;color:#fff!important;border:0;text-shadow:none}
 .lvk{background:#e3efe6;color:#0e6b3c}
+.ban{border-bottom:4px solid #E3B94D!important}
+.tab.on{box-shadow:0 3px 0 #E3B94D}
+.nv div.on{box-shadow:inset 0 3px 0 #E3B94D}
+.sch-av,.sch-q{border-color:#E3B94D!important}
+.ui .ib{border:1px solid #E3B94D}
 </style>
 """
 
@@ -52,8 +57,13 @@ body.sp{background:linear-gradient(160deg,#FAF6EB,#E2ECE1)}
 def patch(d: Path) -> str:
     f = d / "index.html"
     s = f.read_text(encoding="utf-8")
-    if MARK in s:
-        return "تم سابقاً"
+    if MARK in s:                       # حدّث الكتلة القديمة بالجديدة
+        a = s.index(MARK)
+        b = s.index("</style>", a) + len("</style>\n")
+        if s[a:b] == CSS:
+            return "تم سابقاً"
+        f.write_text(s[:a] + CSS + s[b:], encoding="utf-8")
+        return "حُدّث"
     assert s.count("</body>") >= 1
     i = s.rindex("</body>")
     f.write_text(s[:i] + CSS + s[i:], encoding="utf-8")
