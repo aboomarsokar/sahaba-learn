@@ -210,7 +210,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
       units.forEach(function (u) { if (u.lessons.every(function (l) { return (S.L[l.id] || {}).msBest >= 70; })) done++; });
       var badges = []; ALL.forEach(function (l) { var s = S.L[l.id]; if (s && s.msBest >= 90) badges.push({ i: "🏅", t: l.t }); });
       var certs = []; units.forEach(function (u) { if (S.unitDone[u.id]) certs.push({ t: "إتمام وحدة: " + u.t, d: "" }); });
-      localStorage.setItem("sahaba-ach:islamic/10", JSON.stringify({ pct: overallPct(), units: { done: done, total: units.length }, certs: certs, badges: badges, extra: ["💎 رصيد دُرّة: " + S.coins, "🛍️ عناصر مفتوحة: " + (S.owned.length + S.own.bg.length + S.own.card.length + S.own.frame.length + S.own.ach.length - 5)], updated: new Date().toISOString() }));
+      localStorage.setItem("sahaba-ach:islamic/10", JSON.stringify({ pct: overallPct(), units: { done: done, total: units.length }, certs: certs, badges: badges, updated: new Date().toISOString() }));
     } catch (e) {}
   }
 

@@ -12,25 +12,13 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE / 'نشر'
 src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encoding='utf-8')
 upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
-ver = hashlib.sha256(('r5' + src + upd + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
+ver = hashlib.sha256(('r3' + src + upd + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 
 head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f8a9e">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
         '<meta name="apple-mobile-web-app-capable" content="yes">')
 reg = ("<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))</script>")
 reg += '<script data-app="الرياضيات" data-icon="icon-192.png">' + upd.replace('</script', '<\\/script') + '</script>'
-# ملخّص الإنجازات للبوابة (إنجازاتي وشهاداتي): يُحسب من تقدّم الدروس المحفوظ في هذا الجهاز
-PUB = r"""(function(){function pub(){try{
-var us=[U1,U2,U3,U4],tot=0,sum=0,done=0,certs=[],bd=[],nm=["الأولى","الثانية","الثالثة","الرابعة"];
-us.forEach(function(u,i){var rows=u.filter(function(r){return r[3]&&!L[r[3]].deck}),ok=true;
- rows.forEach(function(r){var c=L[r[3]],p=0;
-  if(c.quiz){var s=null;try{s=JSON.parse(localStorage.getItem(c.key))}catch(e){}p=s&&s.best!=null?Math.min(1,s.best/c.quiz):0}
-  else p=c.req.length?prog(r[3])/c.req.length:0;
-  var fin=c.quiz?p>=.6:p>=1;tot++;sum+=Math.min(1,p);if(!fin)ok=false;else bd.push({i:"✅",t:r[1]})});
- if(rows.length&&ok){done++;certs.push({t:"إتمام الوحدة "+nm[i]+" — رياضيات العاشر",d:""})}});
-localStorage.setItem("sahaba-ach:math/10",JSON.stringify({pct:tot?Math.round(sum/tot*100):0,units:{done:done,total:4},certs:certs,badges:bd,updated:new Date().toISOString()}))}catch(e){}}
-pub();var _r=window.render;if(typeof _r==="function")window.render=function(){_r.apply(this,arguments);pub()};addEventListener("pageshow",pub)})();"""
-reg += '<script>' + PUB + '</script>'
 # غلاف المادة + جولة كينيكس (مشتركان في shared/): الصورتان تُنسخان إلى «نشر» لتعملا بلا إنترنت
 intro = (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')
 STEPS = [
