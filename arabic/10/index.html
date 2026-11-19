@@ -118,6 +118,15 @@ h1,h2,h3{margin:0;font-weight:700}
 :root[data-acc=teal] .lux-in{background:radial-gradient(120% 140% at 50% 0%,#14505d,#06171c 72%);color:#e4f4f6}
 :root[data-acc=teal] .lux-in svg.qi{stroke:#bff0f4}:root[data-acc=teal] .lux-in small{color:#9fcfd6}:root[data-acc=teal] .lux-in::before{box-shadow:inset 0 0 14px rgba(92,198,208,.3)}
 :root[data-acc=teal] .lux{box-shadow:0 14px 34px rgba(0,0,0,.55),0 0 0 1.5px rgba(255,255,255,.45),0 0 30px rgba(92,198,208,.45)}
+:root[data-acc=teal] .lt .w{background-image:linear-gradient(90deg,rgba(80,205,220,.5),rgba(40,160,180,.5))}
+:root[data-acc=teal] .msg{background:rgba(92,198,208,.1)}
+:root[data-acc=teal] .tabs button.on{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 0 1.5px rgba(170,235,242,.7)}
+:root[data-acc=teal] .env-f{background:linear-gradient(#8fdde4,#2a97a8 70%,#17657a)}
+:root[data-acc=teal] .env-b{background:linear-gradient(180deg,#2a8fa0,#14596a)}
+:root[data-acc=teal] .env-fr{background:linear-gradient(160deg,#6cc9d3,#2a97a8 55%,#17657a)}
+:root[data-acc=teal] .env-l{background:repeating-linear-gradient(180deg,#fbfeff 0 17px,#d9eef2 17px 18px)}
+:root[data-acc=teal] .card::before,:root[data-acc=teal] .tabs::before,:root[data-acc=teal] .mi::before,:root[data-acc=teal] .qo::before,:root[data-acc=teal] .cell::before,:root[data-acc=teal] .rv-p::before{background:linear-gradient(135deg,rgba(190,242,248,.75),rgba(31,125,145,.22) 40%,rgba(190,242,248,.55) 70%,rgba(31,125,145,.3))}
+:root[data-acc=teal] .letter{border-left-color:#2a97a8;border-right-color:#2a97a8;background:repeating-linear-gradient(180deg,#fbfeff 0 30px,#d9eef2 30px 31px);color:#0c3a44}:root[data-acc=teal] .letter h3{color:#145a69}:root[data-acc=teal] .letter textarea{border-color:#bfe3e8;color:#0c3a44}:root[data-acc=teal] .letter textarea:focus{border-color:#2a97a8}
 :root[data-acc=teal] .ni.on{background:rgba(92,198,208,.2)}:root[data-acc=teal] .av{box-shadow:0 0 0 3px rgba(92,198,208,.2),0 6px 14px rgba(0,0,0,.35)}
 :root[data-acc=teal] .avg button.on{box-shadow:0 0 0 3px rgba(92,198,208,.45)}
 :root[data-acc=teal] .sem .rn{box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 6px 14px rgba(20,100,120,.5)}
@@ -289,10 +298,12 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function toast(m) { var t = h("div", { cls: "toast", t: m }); D.body.appendChild(t); setTimeout(function () { t.remove(); }, 2600); }
   var BGD = [["#3b0a1c", "#1a0509"], ["#4d0f2f", "#220717"], ["#2b0a1f", "#12040d"], ["#5a1020", "#240709"], ["#2d3036", "#121316"]];
   var BGL = [["#fff0f5", "#fbcfe0"], ["#ffe9ec", "#f8c3cb"], ["#fdeef7", "#f1cce3"], ["#fff3ee", "#fbd5c6"], ["#f6eef4", "#e6d0e0"]];
+  var BGDT = [["#0f3a43", "#061519"], ["#0c3350", "#050f1c"], ["#103a33", "#06140f"], ["#182f4a", "#08111c"], ["#2d3036", "#121316"]];
+  var BGLT = [["#eaf8f9", "#c9e9ed"], ["#e8f4fb", "#c4def0"], ["#eaf7f1", "#c7e8d8"], ["#f1f7fb", "#d5e3ee"], ["#f3f3f5", "#dcdde2"]];
+  function bgs(dark) { return S.acc === "teal" ? (dark ? BGDT : BGLT) : (dark ? BGD : BGL); }
   function applyLook() {
-    var r = D.documentElement, c = (S.mode === "dark" ? BGD : BGL)[S.mode === "dark" ? S.bgd : S.bgl];
+    var r = D.documentElement, c = bgs(S.mode === "dark")[S.mode === "dark" ? S.bgd : S.bgl];
     if (S.acc === "gold") { if (S.mode === "dark" && !S.bgd) c = ["#1f1608", "#0d0904"]; if (S.mode === "light" && !S.bgl) c = ["#fff8e6", "#f1dfae"]; }
-    if (S.acc === "teal") { if (S.mode === "dark" && !S.bgd) c = ["#0f3a43", "#061519"]; if (S.mode === "light" && !S.bgl) c = ["#eaf8f9", "#c9e9ed"]; }
     r.dataset.acc = S.acc; r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
     var m = $("meta[name=theme-color]"); if (m) m.content = c[1];
   }
@@ -659,10 +670,10 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     function upd(f) { return function (v) { f(v); save(); applyLook(); settings(); }; }
     app.replaceChildren(top("الإعدادات"),
       h("div", { cls: "card" }, [h("h3", { t: "الوضع" }), h("div", { style: "height:8px" }), seg([["light", "فاتح"], ["dark", "داكن"]], S.mode, upd(function (v) { S.mode = v; })),
-        h("div", { cls: "lbl", t: "لون الخلفية للوضع الفاتح" }), sw(BGL, S.bgl, upd(function (v) { S.bgl = v; S.mode = "light"; })),
-        h("div", { cls: "lbl", t: "لون الخلفية للوضع الداكن" }), sw(BGD, S.bgd, upd(function (v) { S.bgd = v; S.mode = "dark"; }))]),
+        h("div", { cls: "lbl", t: "لون الخلفية للوضع الفاتح" }), sw(bgs(false), S.bgl, upd(function (v) { S.bgl = v; S.mode = "light"; })),
+        h("div", { cls: "lbl", t: "لون الخلفية للوضع الداكن" }), sw(bgs(true), S.bgd, upd(function (v) { S.bgd = v; S.mode = "dark"; }))]),
       h("div", { cls: "card" }, [h("h3", { t: "لون التطبيق" }), h("div", { style: "height:8px" }), seg([["teal", "فيروزي"], ["gold", "ذهبي"], ["rose", "وردي"]], S.acc, upd(function (v) { S.acc = v; }))]),
-      h("div", { cls: "card" }, [h("h3", { t: "سرعة الخط الذهبي في الشرح" }), h("div", { style: "height:8px" }), seg([["slow", "بطيء"], ["mid", "عادي"], ["fast", "أسرع"]], S.rs || "mid", upd(function (v) { S.rs = v; }))]),
+      h("div", { cls: "card" }, [h("h3", { t: "سرعة الخط الملوّن في الشرح" }), h("div", { style: "height:8px" }), seg([["slow", "بطيء"], ["mid", "عادي"], ["fast", "أسرع"]], S.rs || "mid", upd(function (v) { S.rs = v; }))]),
       h("div", { cls: "card" }, [h("h3", { t: "حجم الخط" }), h("div", { style: "height:8px" }), seg([[14, "صغير"], [16, "متوسط"], [19, "كبير"]], S.fs, upd(function (v) { S.fs = v; }))]),
       h("div", { cls: "card" }, [mi("dl", "تنزيل التطبيق", installApp), mi("share", "مشاركة التطبيق", shareApp), mi("pen", "تعديل الاسم والشعبة", function () { stepName(true); }),
         mi("trash", "حذف بياناتي من هذا الجهاز", function () { if (confirm("سيُحذف اسمك وصورتك ومحفوظاتك ونتائجك من هذا الجهاز. متأكد؟")) { try { localStorage.removeItem(KEY); } catch (e) {} location.hash = ""; location.reload(); } })]));
