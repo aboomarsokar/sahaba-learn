@@ -2053,6 +2053,7 @@ body.sp{background:linear-gradient(160deg,#FAF6EB,#E2ECE1)}
 .lvk{background:#e3efe6;color:#0e6b3c}
 </style>
 <script src="../../shared/durra.js"></script>
+<script src="../../shared/durra.js"></script>
 <script>/* أدوات الطالب: بحث، مفضّلتي، ملاحظاتي، آلة حاسبة (تُحقن في تطبيقات الفيزياء/الكيمياء/الأحياء من make_pcb_apps.py ولا تُعدَّل يدوياً) */
 (function(){
 Durra.init({dir:"physics/10",frames:".pcb-logo",vars:function(t){var d=document.documentElement.getAttribute("data-theme"),dk=d==="dark"||(d!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches);if(dk)return{};var v=t.v;return {"--bg":v.bg,"--card":v.card,"--text":v.ink,"--ink":v.ink,"--muted":v.mut,"--bd":v.bd,"--pri":v.pri,"--c1b":v.soft}}});
@@ -2115,7 +2116,7 @@ function home(){if(window.V!="home")return;var h=document.querySelector("#app .p
  homeCss();h.dataset.sc=1;
  var T=function(i,t,f){return'<button onclick="'+f+'"><span>'+i+'</span>'+t+'</button>'},R=function(i,t,sm,f){return'<button onclick="'+f+'"><span>'+i+'</span><div><b>'+t+'</b><small>'+sm+'</small></div><i>‹</i></button>'};
  h.innerHTML=hd.outerHTML+'<div class="sch-hello">'+esc(hello)+'</div><section class="sch-hero"><div class="t"><div class="ic">'+ico+'</div><div><h2>'+esc(name)+'</h2><p>'+esc(desc)+'</p></div></div><div class="spr"><i><u style="width:'+pct+'%"></u></i><b>'+pct+'%</b></div><div style="font-size:.78rem;opacity:.9;margin-top:4px">'+esc(dn)+'</div></section>'
- +'<div class="sch-cta"><button class="a" onclick="op(PCB_ACTIVE_SUBJECT)">📖 الوحدات والدروس</button><button class="b" onclick="startQ()">📝 اختبر نفسك</button></div>'
+ +(window.semCards?'<div class="sch-h">الفصلان</div><div class="sch-sem" style="display:flex;flex-direction:column;gap:10px">'+semCards()+'<div class="ui" style="--cb:#e3efe6" onclick="startQ()"><div class="ib">📝</div><div class="x"><b>الاختبارات</b><small>اختبر نفسك في المادة</small></div><span>‹</span></div></div>':'<div class="sch-cta"><button class="a" onclick="op(PCB_ACTIVE_SUBJECT)">📖 الوحدات والدروس</button><button class="b" onclick="startQ()">📝 اختبر نفسك</button></div>')
  +'<div class="sch-h">أدواتي</div><div class="sch-tools">'+T("🔍","بحث","__sciSearch()")+T("🧮","الحاسبة","__sciCalc()")+(bio?T("📊","سجل التقدم","rpt()"):T("📐","القوانين","__sciLaws()"))+T("⭐","مفضّلتي","__sciFavs()")+T("📝","ملاحظاتي","__sciNotes()")+(bio?T("⚙️","الإعدادات","mn(true)"):T("📊","سجل التقدم","rpt()"))+'</div>'
  +'<div class="sch-h">المصادر</div><div class="sch-res">'+R("🖼️","الصور التوضيحية","رسومات ومخططات تعليمية","nav(&#39;gal&#39;)")+R("📚","الكتب المدرسية","يحتاج إنترنت","libGo(0)")+R("📦","الرزم المدرسية","تحتاج إنترنت","libGo(1)")+'</div>'
  +'<div class="sch-off">✓ يعمل دون إنترنت بعد أول فتح</div>';try{var tp=h.querySelector('.pcb-top > span');if(tp&&!tp.querySelector('.dr-chip'))tp.insertBefore(Durra.chip(),tp.firstChild)}catch(x){}}
