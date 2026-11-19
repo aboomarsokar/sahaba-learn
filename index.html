@@ -458,7 +458,7 @@ function drawSubjects(){
   }).join("");
   $("subjects").querySelectorAll("[data-soon]").forEach(function(b){ b.addEventListener("click", function(){
     var sid = b.getAttribute("data-sid");
-    if (sid === "arabic" || sid === "islamic") {   /* غلاف المادة ثم «ابدأ الآن» ← رسالة قريباً */
+    if (["arabic","islamic","physics","chemistry","biology"].indexOf(sid) >= 0) {   /* غلاف المادة ثم «ابدأ الآن» ← رسالة قريباً */
       try{ sessionStorage.removeItem("sahaba-cover:soon-"+sid); }catch(e){}
       SahabaIntro.cover({id:"soon-"+sid, cover:"shared/covers/"+sid+".webp", onStart:function(){ toast("سيُضاف قريباً"); }}, function(){});
     } else toast("سيُضاف قريباً");
@@ -479,7 +479,8 @@ function drawProgress(){
       var d = readAch(s.grades[current].dir) || {}, pct = Math.max(0, Math.min(100, d.pct || 0)), u = d.units;
       return '<div class="panel ach" style="--c:'+esc(s.color||"#E6C168")+'"><div class="hd"><span class="ic">'+(ICONS[s.icon]||ICONS.book)+'</span><b>'+esc(s.name)+'</b><span>'+pct+'%</span></div>'
         + '<div class="pbar"><i style="width:'+pct+'%"></i></div>'
-        + '<small style="color:var(--muted)">'+(u ? 'الوحدات المكتملة: '+u.done+' من '+u.total : (pct ? 'نسبة الإنجاز '+pct+'%' : 'لم تبدأ بعد'))+'</small></div>';
+        + '<small style="color:var(--muted)">'+(u ? 'الوحدات المكتملة: '+u.done+' من '+u.total : (pct ? 'نسبة الإنجاز '+pct+'%' : 'لم تبدأ بعد'))+'</small>'
+        + ((d.extra && d.extra.length) ? '<div class="chips" style="margin-top:8px">'+d.extra.map(function(x){ return '<span class="chip">'+esc(x)+'</span>'; }).join("")+'</div>' : '') + '</div>';
     }).join("") || '<div class="empty">لا مواد جاهزة لهذا الصف بعد.</div>');
 }
 function drawCerts(){
@@ -534,6 +535,11 @@ fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); })
   steps.json = true; progress();
 });
 </script>
+<script>/* تنظيف مرّةً واحدة: حُذفت تطبيقات الفيزياء والكيمياء والأحياء القديمة، فيُمسح تقدّمها وذاكرتها من الجهاز */
+try{if(!localStorage.getItem("sahaba-purge-sci-1")){(function(){try{var pre=["phy10:","che10:","bio10:","pcb"];Object.keys(localStorage).forEach(function(k){if(pre.some(function(p){return k.indexOf(p)===0})||/^sahaba-ach:(physics|chemistry|biology|science)\//.test(k))localStorage.removeItem(k)});
+if(window.caches)caches.keys().then(function(ks){ks.forEach(function(k){if(/^(phy10-|che10-|bio10-|pcb-)/.test(k))caches.delete(k)})});
+if(navigator.serviceWorker)navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){if(/\/(physics|chemistry|biology|science)\/10\//.test(r.scope))r.unregister()})});
+try{indexedDB.deleteDatabase("pcbflags")}catch(e){}}catch(e){}})();localStorage.setItem("sahaba-purge-sci-1","1")}}catch(e){}</script>
 <script src="shared/intro.js"></script>
 <script src="shared/update-notify.js" data-app="بوابة الصحابة التعليمية" data-icon="shared/icons/portal-192.png" defer></script>
 <script>
