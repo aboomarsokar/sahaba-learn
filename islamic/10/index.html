@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>التربية الإسلامية — الصف العاشر</title>
-<meta name="theme-color" content="#0e7a55">
+<meta name="theme-color" content="#FAF6EB">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -12,7 +12,7 @@
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
 @font-face{font-family:"Ruqaa";src:url("../../shared/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
-:root{--pri:#0e7a55;--pri2:#0a5c40;--bg:#f6f1e3;--card:#ffffff;--ink:#0b3b2c;--mut:#5f7a6e;--gold:#c8a24a;--bd:#e4dcc4;--onpri:#ffffff;--ok:#1f9d5c;--bad:#c9443b;--soft:#eaf3ee}
+:root{--pri:#113D2E;--pri2:#0b2c21;--bg:#FAF6EB;--card:#ffffff;--ink:#113D2E;--mut:#5f7a6e;--gold:#8B4200;--bd:#EEE4DB;--onpri:#ffffff;--ok:#1f9d5c;--bad:#c9443b;--soft:#E2ECE1}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0}
 body{font-family:"Plex Arabic",system-ui,Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;min-height:100vh;transition:background .25s,color .25s}
@@ -58,7 +58,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
 .blk h3{font-size:1.25rem;margin-bottom:8px}
 .blk p{margin:0 0 10px;font-size:1.02rem}
 .def{background:var(--soft);border-inline-start:5px solid var(--gold);border-radius:12px;padding:10px 12px;font-weight:700;margin-top:6px}
-.verse{font-family:"Noto Naskh Arabic","Traditional Arabic","Amiri",serif;font-size:1.45rem;line-height:2.4;text-align:justify;background:linear-gradient(180deg,#fffdf4,var(--card));border:1.5px solid var(--gold);border-radius:18px;padding:14px;color:#0b3b2c}
+.verse{font-family:"Noto Naskh Arabic","Traditional Arabic","Amiri",serif;font-size:1.45rem;line-height:2.4;text-align:justify;background:linear-gradient(180deg,#fffaf0,var(--card));border:1.5px solid var(--gold);border-radius:18px;padding:14px;color:#113D2E}
 .vref{font-size:.82rem;color:var(--mut);margin:6px 2px}
 .meaning{margin-top:8px;background:var(--soft);border-radius:14px;padding:10px 12px;font-size:.98rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:14px;border:0;background:var(--pri);color:var(--onpri);font-weight:700}
@@ -132,7 +132,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
 
   /* ---------------- الألوان (المتجر) ---------------- */
   var THEMES = [
-    { id: "emerald", n: "الزمردي (الأساسي)", price: 0, v: { pri: "#0e7a55", pri2: "#0a5c40", bg: "#f6f1e3", card: "#ffffff", ink: "#0b3b2c", mut: "#5f7a6e", gold: "#c8a24a", bd: "#e4dcc4", onpri: "#ffffff", soft: "#eaf3ee" } },
+    { id: "emerald", n: "الزمردي (الأساسي)", price: 0, v: { pri: "#113D2E", pri2: "#0b2c21", bg: "#FAF6EB", card: "#ffffff", ink: "#113D2E", mut: "#5f7a6e", gold: "#8B4200", bd: "#EEE4DB", onpri: "#ffffff", soft: "#E2ECE1" } },
     { id: "royalemerald", n: "الزمردي الملكي", price: 60, v: { pri: "#0b8a5e", pri2: "#064e36", bg: "#f2efe0", card: "#fffdf6", ink: "#073b2a", mut: "#5b7568", gold: "#d4af37", bd: "#e0d7b4", onpri: "#ffffff", soft: "#e6f2ea" } },
     { id: "royalblue", n: "الأزرق الملكي", price: 60, v: { pri: "#1d3f8a", pri2: "#122a63", bg: "#eef2f9", card: "#ffffff", ink: "#12234a", mut: "#5d6b8a", gold: "#aab6cc", bd: "#d3dbe9", onpri: "#ffffff", soft: "#e4ebf7" } },
     { id: "purple", n: "البنفسجي الراقي", price: 80, v: { pri: "#6b3fa0", pri2: "#4a2a73", bg: "#faf7ff", card: "#ffffff", ink: "#2c1a47", mut: "#74658c", gold: "#b79be0", bd: "#e4daf2", onpri: "#ffffff", soft: "#f0e9fa" } },
@@ -155,10 +155,10 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
       { id: "base", n: "الزمردية (الأساسية)", price: 0, bg: "linear-gradient(135deg,var(--pri),var(--pri2))", fg: "var(--onpri)", bd: "0" },
       { id: "gold", n: "الذهبية", price: 60, bg: "linear-gradient(135deg,#f0d98a,#b8902f)", fg: "#2b1d00", bd: "0" },
       { id: "royal", n: "الملكية الزرقاء", price: 70, bg: "linear-gradient(135deg,#2a4fae,#122a63)", fg: "#ffffff", bd: "0" },
-      { id: "pearl", n: "اللؤلؤية", price: 50, bg: "linear-gradient(135deg,#fffdf6,#efe6cc)", fg: "#0b3b2c", bd: "2px solid #c8a24a" }
+      { id: "pearl", n: "اللؤلؤية", price: 50, bg: "linear-gradient(135deg,#fffdf6,#efe6cc)", fg: "#0b3b2c", bd: "2px solid #8B4200" }
     ],
     frame: [
-      { id: "plain", n: "بسيط (الأساسي)", price: 0, col: "#c8a24a", glow: "none" },
+      { id: "plain", n: "بسيط (الأساسي)", price: 0, col: "#8B4200", glow: "none" },
       { id: "silver", n: "فضّي", price: 40, col: "#cfd6e4", glow: "0 0 0 3px rgba(207,214,228,.45)" },
       { id: "emeraldglow", n: "زمردي مضيء", price: 50, col: "#3ddc97", glow: "0 0 14px 3px rgba(61,220,151,.55)" },
       { id: "royal", n: "ذهبي مزدوج", price: 70, col: "#f2d675", glow: "0 0 0 3px #b8902f,0 0 0 6px rgba(242,214,117,.5)" }
