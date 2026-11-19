@@ -785,10 +785,10 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 .btns{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
 
 /* ---- القائمة الجانبية ---- */
-.scrim{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim{position:fixed;inset:0;z-index:41;background:rgba(0,0,0,.45);opacity:0;pointer-events:none;transition:opacity .25s}
 .scrim.on{opacity:1;pointer-events:auto}
 .drawer{
-  position:fixed;z-index:21;top:0;bottom:0;inset-inline-start:0;width:min(86vw,340px);
+  position:fixed;z-index:42;top:0;bottom:0;inset-inline-start:0;width:min(86vw,340px);
   background:var(--bg1);color:var(--text);border-inline-end:1px solid var(--cardBd);
   box-shadow:0 0 40px rgba(0,0,0,.4);overflow-y:auto;
   padding:calc(1rem + env(safe-area-inset-top,0px)) 16px calc(1.5rem + env(safe-area-inset-bottom,0px));
