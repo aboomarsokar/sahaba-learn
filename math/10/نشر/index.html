@@ -257,4 +257,13 @@ render();
     document.addEventListener('visibilitychange', function () { if (!document.hidden) check(); });
   });
 })();
-</script></body></html>
+</script><script>(function(){function pub(){try{
+var us=[U1,U2,U3,U4],tot=0,sum=0,done=0,certs=[],bd=[],nm=["الأولى","الثانية","الثالثة","الرابعة"];
+us.forEach(function(u,i){var rows=u.filter(function(r){return r[3]&&!L[r[3]].deck}),ok=true;
+ rows.forEach(function(r){var c=L[r[3]],p=0;
+  if(c.quiz){var s=null;try{s=JSON.parse(localStorage.getItem(c.key))}catch(e){}p=s&&s.best!=null?Math.min(1,s.best/c.quiz):0}
+  else p=c.req.length?prog(r[3])/c.req.length:0;
+  var fin=c.quiz?p>=.6:p>=1;tot++;sum+=Math.min(1,p);if(!fin)ok=false;else bd.push({i:"✅",t:r[1]})});
+ if(rows.length&&ok){done++;certs.push({t:"إتمام الوحدة "+nm[i]+" — رياضيات العاشر",d:""})}});
+localStorage.setItem("sahaba-ach:math/10",JSON.stringify({pct:tot?Math.round(sum/tot*100):0,units:{done:done,total:4},certs:certs,badges:bd,updated:new Date().toISOString()}))}catch(e){}}
+pub();var _r=window.render;if(typeof _r==="function")window.render=function(){_r.apply(this,arguments);pub()};addEventListener("pageshow",pub)})();</script></body></html>

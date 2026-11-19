@@ -1431,12 +1431,19 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   function rnd(a){return a[Math.floor(Math.random()*a.length)]}
 
   var profile=load(K.profile,null);
+  /* الدخول إلى البوابة يكفي: الاسم والصورة من ملف الطالب في البوابة، ولا شاشة تسجيل هنا */
+  (function(){var pp=load('sahaba-portal-profile',null);if(pp&&pp.first){profile=Object.assign({avatar:1,section:''},profile||{},{name:pp.first,photo:pp.photo||''});save(K.profile,profile)}})();
+  function pimg(){return profile.photo?profile.photo:src(profile.avatar||1)}
   var set=load(K.set,{});
   if(set.speak==null)set.speak=true;if(set.rec==null)set.rec=true;if(set.fx==null)set.fx=true;if(set.nUpd==null)set.nUpd=true;if(set.nPlan==null)set.nPlan=true;
   /* التقدّم: يملؤه محتوى الدروس والاختبارات حين يُضاف */
   var prog=load(K.prog,{});
   ['lessons'].forEach(function(k){prog[k]=prog[k]||{}});['tests','saved','history','certs','days'].forEach(function(k){prog[k]=prog[k]||[]});prog.xp=prog.xp||0;
-  function saveProg(){save(K.prog,prog)}
+  function saveProg(){save(K.prog,prog);pubAch()}
+  /* ملخّص الإنجازات للبوابة (إنجازاتي وشهاداتي) */
+  function pubAch(){try{var done=0,tot=LESSONS_PER_UNIT.length;for(var n=1;n<=tot;n++)if(unitDone(n))done++;
+    var certs=[];Object.keys(prog.lessons).forEach(function(k){var r=prog.lessons[k];if(r&&r.done){var L=findLesson(k);certs.push({t:'LEXORA — '+(L?(L.titleAr||L.title):k),d:''})}});
+    localStorage.setItem('sahaba-ach:english/10',JSON.stringify({pct:pct(),units:{done:done,total:tot},certs:certs,badges:[],updated:new Date().toISOString()}))}catch(e){}}
   /* ترتيب الأقسام الجديد: 0 مفردات، 1 قواعد، 2 قراءة، 3 (مخفي)، 4 ورقة عمل. التقدّم القديم يُرحَّل مرّة واحدة */
   if(!prog.v3){Object.keys(prog.lessons).forEach(function(k){var r=prog.lessons[k],o=(r.st||[]).slice();
       r.st=r.done?[true,true,true,true,true]:[!!o[0],!!(o[2]&&o[3]),!!o[1],!!(o[2]&&o[3]),false];r.cur=0;r.sub=null});
@@ -1778,7 +1785,8 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   /* ===== الواجهة الرئيسية ===== */
   renders.home=function(){
     if(!profile)return;
-    $('meImg').src=src(profile.avatar);$('meName').textContent=profile.name;
+    pubAch();
+    $('meImg').src=pimg();$('meName').textContent=profile.name;
     $('tp1').style.width=termPct(1)+'%';$('tp2').style.width=termPct(2)+'%';
   };
   document.querySelectorAll('[data-term-open]').forEach(function(b){b.addEventListener('click',function(){set.term=+b.dataset.termOpen;save(K.set,set);go('units')})});
@@ -1906,7 +1914,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   function setRing(id,p){$(id).style.setProperty('--p',p)}
   renders.me=function(){
     if(!profile)return;
-    $('pImg').src=src(profile.avatar);$('pName').textContent=profile.name;
+    $('pImg').src=pimg();$('pName').textContent=profile.name;
     $('pClass').textContent=T('الصف العاشر','Grade 10')+(profile.section?T(' — شعبة ',' — Section ')+profile.section:'');
     var L=levelInfo();$('lvN').textContent=L.level;$('lvBar').style.width=L.frac*100+'%';
     $('lvName').textContent=T('المستوى ','Level ')+L.level+T(' من 100',' of 100');
