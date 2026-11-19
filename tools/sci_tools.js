@@ -1,5 +1,7 @@
+<script src="../../shared/durra.js"></script>
 <script>/* أدوات الطالب: بحث، مفضّلتي، ملاحظاتي، آلة حاسبة (تُحقن في تطبيقات الفيزياء/الكيمياء/الأحياء من make_pcb_apps.py ولا تُعدَّل يدوياً) */
 (function(){
+Durra.init({dir:"__DIR__",frames:".pcb-logo",vars:function(t){var d=document.documentElement.getAttribute("data-theme"),dk=d==="dark"||(d!=="light"&&window.matchMedia&&matchMedia("(prefers-color-scheme:dark)").matches);if(dk)return{};var v=t.v;return {"--bg":v.bg,"--card":v.card,"--text":v.ink,"--ink":v.ink,"--muted":v.mut,"--bd":v.bd,"--pri":v.pri,"--c1b":v.soft}}});
 var DIR="__DIR__",$=function(i){return document.getElementById(i)};
 function ls(k,d){try{var v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}}
 function ss(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
@@ -62,7 +64,7 @@ function home(){if(window.V!="home")return;var h=document.querySelector("#app .p
  +'<div class="sch-cta"><button class="a" onclick="op(PCB_ACTIVE_SUBJECT)">📖 الوحدات والدروس</button><button class="b" onclick="startQ()">📝 اختبر نفسك</button></div>'
  +'<div class="sch-h">أدواتي</div><div class="sch-tools">'+T("🔍","بحث","__sciSearch()")+T("🧮","الحاسبة","__sciCalc()")+(bio?T("📊","سجل التقدم","rpt()"):T("📐","القوانين","__sciLaws()"))+T("⭐","مفضّلتي","__sciFavs()")+T("📝","ملاحظاتي","__sciNotes()")+(bio?T("⚙️","الإعدادات","mn(true)"):T("📊","سجل التقدم","rpt()"))+'</div>'
  +'<div class="sch-h">المصادر</div><div class="sch-res">'+R("🖼️","الصور التوضيحية","رسومات ومخططات تعليمية","nav(&#39;gal&#39;)")+R("📚","الكتب المدرسية","يحتاج إنترنت","libGo(0)")+R("📦","الرزم المدرسية","تحتاج إنترنت","libGo(1)")+'</div>'
- +'<div class="sch-off">✓ يعمل دون إنترنت بعد أول فتح</div>'}
+ +'<div class="sch-off">✓ يعمل دون إنترنت بعد أول فتح</div>';try{var tp=h.querySelector('.pcb-top > span');if(tp&&!tp.querySelector('.dr-chip'))tp.insertBefore(Durra.chip(),tp.firstChild)}catch(x){}}
 var _d=window.draw;window.draw=draw=function(){_d.apply(this,arguments);try{home();bar()}catch(e){}};
 try{home();bar()}catch(e){}
 })();</script>
