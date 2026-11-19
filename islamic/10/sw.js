@@ -1,6 +1,6 @@
 /* عامل خدمة التربية الإسلامية (العاشر): يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (isl10-). */
 const P = "isl10-";
-const V = P + "v9";
+const V = P + "v10";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./images/durra.webp",
   "./data/curriculum.js", "./data/u1.js", "./data/u2.js", "./data/u3.js", "./data/u4.js", "./data/u5.js", "./data/u6.js", "./data/u7.js", "./data/u8.js", "./data/u9.js", "./data/u10.js", "./data/u11.js", "./data/u12.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });

@@ -533,9 +533,9 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
     { t: "💎 متجر دُرّة", x: "اشترِ بعملاتك ألواناً جديدة لتطبيقك، وعاين اللون قبل أن تشتريه، ويمكنك العودة إلى الألوان الأساسية في أي وقت.", s: "#nav [data-g=store]" },
     { t: "📊 تقدّمي", x: "هنا ترى نسبة إتقانك ودروسك وأخطاءك المتكرّرة وأرباحك ومشترياتك.", s: "#nav [data-g=progress]" },
     { t: "أنا معك دائماً 🚀", x: "ابدأ اليوم بدرس واحد وأنا معك. وللعودة إلى بوابة الصحابة التعليمية اضغط زرّ 🏠 أعلى الصفحة. بالتوفيق دائماً! ✨", s: null }],
-    cover: "../../shared/covers/islamic.webp", ready: function () { return R.v === "home" && !document.getElementById("shc"); },
+    ready: function () { return R.v === "home" && !document.getElementById("shc"); },
     userName: function () { return userName(); } };
-  SahabaIntro.run(KX);
+  (window.SahabaWisdom?SahabaWisdom.gate("islamic",function(){SahabaIntro.run(KX)}):SahabaIntro.run(KX));
   publish(); route();
 })();
 </script>

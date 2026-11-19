@@ -70,6 +70,7 @@ function setTab(t) { tab = t; route(); }
 function route() { var m = /^#sem(\d)$/.exec(location.hash || ""); if (m && CFG.sems[+m[1] - 1]) sem(+m[1] - 1); else home(); }
 addEventListener("hashchange", function () { tab = "units"; route(); });
 route();
+if (window.SahabaWisdom) window.SahabaWisdom.gate(CFG.id, function () {});
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(function () {});
 </script>
 </body>

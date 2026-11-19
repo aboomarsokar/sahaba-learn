@@ -878,7 +878,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   }
 
   /* ===== جولة كينيكس (بعد المدخل عند أول استعمال) ===== */
-  var KX = { id: "ara9", cover: "../../shared/covers/arabic.webp", kinex: "../../shared/kinex.jpg", userName: function () { return (S.name || "").split(" ")[0]; },
+  var KX = { id: "ara9", kinex: "../../shared/kinex.jpg", userName: function () { return (S.name || "").split(" ")[0]; },
     ready: function () { return !!S.done && $("#intro").hidden && (location.hash || "#home") === "#home" && !!$(".sem"); },
     steps: [
       { t: "أهلاً بك، أنا كينيكس", x: "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق اللغة العربية للصف التاسع. سأعرّفك عليه في دقيقة.", s: null, i: 1 },
@@ -919,7 +919,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   }
   window.addEventListener("hashchange", route);
   route();
-  SahabaIntro.run(KX);
+  (window.SahabaWisdom?SahabaWisdom.gate("arabic",function(){SahabaIntro.run(KX)}):SahabaIntro.run(KX));
   if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js").catch(function () {});
 })();
 </script>

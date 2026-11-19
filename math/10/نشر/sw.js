@@ -1,4 +1,4 @@
-const V='math10-cb32ddef55',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./cover.webp','./kinex.jpg','./lessons.js'];
+const V='math10-b85ce65413',FILES=['./','./index.html','./manifest.json','./icon-192.png','./icon-512.png','./cover.webp','./kinex.jpg','./lessons.js'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(FILES)).then(()=>self.skipWaiting()))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x.startsWith('math10-')&&x!==V).map(x=>caches.delete(x)))).then(()=>self.clients.claim()))});
 // من الذاكرة أولاً (يعمل بلا إنترنت)، وتُحدَّث النسخة في الخلفية كلّما وُجد اتصال
