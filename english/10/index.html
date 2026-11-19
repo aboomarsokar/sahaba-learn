@@ -5,7 +5,7 @@
 if(/[?&]debug=1/.test(location.search))addEventListener('error',function(e){try{var d=document.getElementById('__err');if(!d){d=document.createElement('pre');d.id='__err';d.style.cssText='position:fixed;z-index:2147483647;left:0;right:0;bottom:0;margin:0;background:#400;color:#fff;font:11px/1.4 monospace;padding:8px;direction:ltr;text-align:left;max-height:45vh;overflow:auto;white-space:pre-wrap';(document.body||document.documentElement).appendChild(d)}var t=e.target&&e.target!==window?('LOAD FAIL '+(e.target.src||e.target.href||e.target.tagName)):((e.message||'')+' @'+String(e.filename||'').split('/').pop()+':'+e.lineno);d.textContent+=t+'\n'}catch(x){}},true);</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#1b0b3a">
+<meta name="theme-color" content="#FAF6EB">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -33,11 +33,12 @@ if(/[?&]debug=1/.test(location.search))addEventListener('error',function(e){try{
   color-scheme:dark;
 }
 :root[data-mode="light"]{
-  --gold:#b8800f; --gold2:#d9a53a; --g3:#8a5a08;
-  --text:#1d1433; --muted:#4b3f66;
-  --card:rgba(255,255,255,.65); --cardBd:rgba(40,20,80,.12); --panel:rgba(255,255,255,.45);
-  --field:rgba(255,255,255,.8); --fieldBd:rgba(40,20,80,.2);
-  --word:#3b1a78; --shadow:rgba(60,30,110,.15);
+  --gold:#8B4200; --gold2:#a85a14; --g3:#6a3200;
+  --btn1:#a85a14; --btn2:#8B4200; --btnText:#fff;
+  --text:#113D2E; --muted:#5f7a6e;
+  --card:rgba(255,255,255,.65); --cardBd:rgba(17,61,46,.14); --panel:rgba(255,255,255,.45);
+  --field:rgba(255,255,255,.8); --fieldBd:rgba(17,61,46,.22);
+  --word:#113D2E; --shadow:rgba(17,61,46,.15);
   color-scheme:light;
 }
 :root[data-fs="s"]{font-size:14px} :root[data-fs="m"]{font-size:16px} :root[data-fs="l"]{font-size:18.5px}
@@ -1382,8 +1383,6 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 <script src="data/summaries-u8.js"></script>
 <script src="data/summaries-u9.js"></script>
 <script src="data/summaries-u10.js"></script>
-<script src="data/audio-norm.js"></script>
-<script src="data/audio-manifest.js"></script>
 <script>
 (function(){
   var VERSION='1.0.0';
@@ -1412,10 +1411,10 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     'Union Jack','Global Language','ABC','Success','Better Tomorrow','Listen & Learn','Knowledge','Be Excellent','Phone Box','Speak English',
     'Study Hard','Set Goals','Tower Bridge','Think in English','English Book','Achieve More','Expand Your Mind','Keep Learning','Improve Yourself','English Forever'];
   /* كلّ لون: [الاسم، الطرف، الوسط، التوهّج] */
-  var DARK=[['بنفسجي','#1b0b3a','#3b1a78','#6a2fb8'],['كحلي','#0a1430','#16306b','#2f5fbf'],['زمرّدي','#062a20','#0f5040','#1f8a68'],
+  var DARK=[['أخضر الصحابة','#0b2c21','#113D2E','#2c5044'],['بنفسجي','#1b0b3a','#3b1a78','#6a2fb8'],['كحلي','#0a1430','#16306b','#2f5fbf'],['زمرّدي','#062a20','#0f5040','#1f8a68'],
     ['فيروزي','#052a30','#0c4c56','#178a96'],['عنّابي','#2a0812','#5a1428','#9c2a48'],['برقوقي','#260826','#521852','#8e2f8e'],
     ['فحمي','#121216','#26262e','#4a4a58'],['بنّي','#22140a','#4a2c16','#8a5a2e'],['نيلي','#0f0e33','#25217a','#4a43c4'],['زيتي','#141f0a','#2e4416','#5a7f2a']];
-  var LIGHT=[['لافندر','#e6dcf8','#f4effd','#ffffff'],['سماوي','#d8e8f8','#eef5fd','#ffffff'],['نعناعي','#d6f0e3','#eefaf3','#ffffff'],
+  var LIGHT=[['كريمي الصحابة','#F4EDE5','#FAF6EB','#ffffff'],['لافندر','#e6dcf8','#f4effd','#ffffff'],['سماوي','#d8e8f8','#eef5fd','#ffffff'],['نعناعي','#d6f0e3','#eefaf3','#ffffff'],
     ['خوخي','#fbe0cf','#fdf1e8','#ffffff'],['وردي','#f8d9e4','#fdeef3','#ffffff'],['كريمي','#f5ecd0','#fcf8ea','#ffffff'],
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
@@ -1485,6 +1484,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   (function(){var pp=load('sahaba-portal-profile',null);if(pp&&pp.first){profile=Object.assign({avatar:1,section:''},profile||{},{name:pp.first,photo:pp.photo||''});save(K.profile,profile)}})();
   function pimg(){return profile.photo?profile.photo:src(profile.avatar||1)}
   var set=load(K.set,{});
+  if(!set.idv){set.idv=1;set.mode='light';set.light=0;set.dark=0;save(K.set,set)}
   if(set.speak==null)set.speak=true;if(set.rec==null)set.rec=true;if(set.fx==null)set.fx=true;if(set.nUpd==null)set.nUpd=true;if(set.nPlan==null)set.nPlan=true;
   /* التقدّم: يملؤه محتوى الدروس والاختبارات حين يُضاف */
   var prog=load(K.prog,{});
@@ -1536,7 +1536,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
   /* ===== المظهر ===== */
   var mq=window.matchMedia('(prefers-color-scheme: light)');
-  function mode(){return set.mode||(mq.matches?'light':'dark')}
+  function mode(){return set.mode||'light'}
   function applyTheme(){
     var m=mode(),p=(m==='light'?LIGHT:DARK)[(m==='light'?set.light:set.dark)||0],r=document.documentElement;
     r.dataset.mode=m;r.style.setProperty('--bg1',p[1]);r.style.setProperty('--bg2',p[2]);r.style.setProperty('--bg3',p[3]);
@@ -1610,7 +1610,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   /* أوّل لمسة تفتح الصوت (iOS يمنع التشغيل التلقائي قبلها)، ثم نعيد استعمال العنصر نفسه */
   function unlockAudio(){if(auOk)return;auOk=true;try{AU.src=silentWav();var pr=AU.play();if(pr&&pr.catch)pr.catch(function(){auOk=false})}catch(e){auOk=false}}
   document.addEventListener('pointerdown',function f(){unlockAudio();document.removeEventListener('pointerdown',f)},{passive:true});
-  function recFile(text,lang){if(set.rec===false)return null;var m=AUDIO[lang];return m&&m[lexNorm(text,lang)]||null}
+  function recFile(){return null}
   function stopVoice(){playTok++;try{AU.pause()}catch(e){}try{if('speechSynthesis' in window)speechSynthesis.cancel()}catch(e){}}
   function playFile(url,cb,rate){
     var done=false;function fin(ok){if(done)return;done=true;AU.onended=AU.onerror=null;cb(ok)}
@@ -1631,7 +1631,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     u.onend=go;u.onerror=go;speechSynthesis.speak(u);
   }
   /* text: نصّ واحد، أو قائمة [[نصّ، لغة]…] تُقرأ بالتتابع. hooks: part(i) عند بدء كلّ جزء، done() عند الانتهاء، rate للسرعة */
-  function speak(){}   /* النطق متوقّف مؤقتاً */
+  function speak(text,lang,hooks){return speakOff(text,lang,hooks)}   /* صوت الجهاز: رجل تلقائياً */
   function speakOff(text,lang,hooks){
     hooks=hooks||{};
     if(!set.speak){toast(T('النطق متوقّف من الإعدادات','Pronunciation is off in Settings'));return}

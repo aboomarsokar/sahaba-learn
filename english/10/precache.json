@@ -1,7 +1,5 @@
 {
 "files": [
-"./data/audio-manifest.js",
-"./data/audio-norm.js",
 "./data/highlights.js",
 "./data/lessons.js",
 "./data/practice.js",

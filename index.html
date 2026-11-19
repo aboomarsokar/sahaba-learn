@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>بوابة الصحابة التعليمية</title>
 <meta name="description" content="بوابة الصحابة التعليمية: بوابتك نحو العلم والمعرفة والتميّز. دروس تفاعلية وأنشطة واختبارات تعمل على الجوال والحاسوب وتبقى متاحةً بلا إنترنت.">
-<meta name="theme-color" content="#123C46">
+<meta name="theme-color" content="#FAF6EB">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="shared/icons/portal-192.png">
 <link rel="apple-touch-icon" href="shared/icons/portal-180.png">
@@ -15,9 +15,9 @@
 @font-face{font-family:"Ruqaa";src:url("shared/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
 /* لون الخلفية #123C46 في الوضعين الفاتح والداكن، بلا رموز ولا زخارف على الخلفية */
 :root{
-  color-scheme:dark;
-  --bg:#123C46;--surface:rgba(255,255,255,.07);--surface2:rgba(255,255,255,.12);--line:rgba(255,255,255,.16);
-  --ink:#f6f3ea;--muted:#aebfc3;--gold:#E6C168;--gold2:#f3d98f;--onGold:#123C46;--soon:#8ea3a8;--deep:#0d2f38;
+  color-scheme:light;
+  --bg:#FAF6EB;--surface:#fff;--surface2:#EEE4DB;--line:rgba(17,61,46,.14);
+  --ink:#113D2E;--muted:#5f7a6e;--gold:#8B4200;--gold2:#a85a14;--onGold:#fff;--soon:#8a9a92;--deep:#113D2E;
   --shadow:0 10px 30px rgba(0,0,0,.28);
 }
 :root[data-fs="s"]{font-size:14px}:root[data-fs="m"]{font-size:16px}:root[data-fs="l"]{font-size:18.5px}
@@ -34,16 +34,16 @@ button{font:inherit;color:inherit}
 .basmala{display:flex;align-items:center;gap:14px;width:min(100%,430px);margin-bottom:22px}
 .basmala i{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--gold));border-radius:2px}
 .basmala i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
-.basmala b{font:700 clamp(1.7rem,7.2vw,2.3rem)/1.5 "Ruqaa","Plex Arabic",serif;color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.25),0 0 22px rgba(230,193,104,.35);white-space:nowrap}
-.logo-frame{position:relative;width:min(62vw,250px);aspect-ratio:1;border-radius:50%;padding:9px;background:linear-gradient(145deg,#f3d98f,#c9962f 45%,#f3d98f);box-shadow:0 0 0 3px rgba(230,193,104,.35),0 18px 44px rgba(0,0,0,.4),0 0 60px rgba(230,193,104,.22)}
-.logo-frame::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(230,193,104,.55)}
-.logo-frame img{width:100%;height:100%;display:block;border-radius:50%;background:#fff;border:5px solid #123C46}
-#scr-splash h1{margin:30px 0 6px;font-size:clamp(1.7rem,7.4vw,2.3rem);font-weight:700;color:#fff}
+.basmala b{font:700 clamp(1.7rem,7.2vw,2.3rem)/1.5 "Ruqaa","Plex Arabic",serif;color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.25),0 0 22px rgba(139,66,0,.35);white-space:nowrap}
+.logo-frame{position:relative;width:min(62vw,250px);aspect-ratio:1;border-radius:50%;padding:9px;background:linear-gradient(145deg,#c58a4a,#8B4200 45%,#c58a4a);box-shadow:0 0 0 3px rgba(139,66,0,.35),0 18px 44px rgba(0,0,0,.4),0 0 60px rgba(139,66,0,.22)}
+.logo-frame::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(139,66,0,.55)}
+.logo-frame img{width:100%;height:100%;display:block;border-radius:50%;background:#fff;border:5px solid #fff}
+#scr-splash h1{margin:30px 0 6px;font-size:clamp(1.7rem,7.4vw,2.3rem);font-weight:700;color:var(--ink)}
 .tag{margin:0;color:var(--gold);font-size:clamp(1rem,4.2vw,1.15rem)}
-.go-btn{margin-top:40px;width:min(100%,320px);padding:15px 20px;border-radius:18px;border:2px solid rgba(255,255,255,.35);background:linear-gradient(180deg,#f0cf7e,var(--gold));color:var(--onGold);font-weight:700;font-size:1.35rem;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.go-btn{margin-top:40px;width:min(100%,320px);padding:15px 20px;border-radius:18px;border:2px solid rgba(255,255,255,.35);background:linear-gradient(180deg,#a85a14,var(--gold));color:var(--onGold);font-weight:700;font-size:1.35rem;cursor:pointer;box-shadow:0 10px 24px rgba(0,0,0,.3)}
 .go-btn:active{transform:scale(.98)}
 .loading{margin-top:30px;width:min(100%,320px);display:flex;flex-direction:column;align-items:center;gap:8px}
-.loading .bar{width:100%;height:5px;border-radius:9px;background:rgba(255,255,255,.14);overflow:hidden}
+.loading .bar{width:100%;height:5px;border-radius:9px;background:rgba(17,61,46,.1);overflow:hidden}
 .loading .bar i{display:block;height:100%;width:0;background:var(--gold);border-radius:9px;transition:width .35s}
 .loading small{color:var(--muted);font-size:.82rem}
 
@@ -63,7 +63,7 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 /* مراحل الصفوف: ثلاث خانات */
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 16px}
 .tab{padding:12px 6px;border-radius:14px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:1rem;text-align:center}
-.tab[aria-pressed="true"]{background:linear-gradient(180deg,#f0cf7e,var(--gold));color:var(--onGold);border-color:transparent;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.tab[aria-pressed="true"]{background:linear-gradient(180deg,#a85a14,var(--gold));color:var(--onGold);border-color:transparent;box-shadow:0 6px 16px rgba(0,0,0,.25)}
 .banners{display:flex;flex-direction:column;gap:26px;margin-bottom:34px}
 /* لافتات الصفوف والمواد: إطار ذهبي رفيع بزوايا مشطوبة، ظلّ واحد ناعم، وخلفية متحرّكة خفيفة (تُوقَف مع «تقليل الحركة») */
 .gb{--n:16px;--m:calc(var(--n) - 3px);position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;
@@ -72,33 +72,20 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 @keyframes gbin{from{opacity:0;transform:translateY(16px)}to{opacity:1}}
 .gbf{position:relative;display:block;padding:3px;overflow:hidden;
  clip-path:polygon(var(--n) 0,calc(100% - var(--n)) 0,100% var(--n),100% calc(100% - var(--n)),calc(100% - var(--n)) 100%,var(--n) 100%,0 calc(100% - var(--n)),0 var(--n))}
-.gbr{position:absolute;inset:0;z-index:0;background:linear-gradient(110deg,#fff3b8,#d9a936 22%,#8a5f12 42%,#f6d77a 62%,#fff3b8 80%,#d9a936);background-size:300% 100%;animation:gpan 14s linear infinite}
-@keyframes gpan{to{background-position:-300% 0}}
+.gbr{position:absolute;inset:0;z-index:0;background:linear-gradient(110deg,#fff3b8,#d9a936 22%,#8a5f12 42%,#f6d77a 62%,#fff3b8 80%,#d9a936);background-size:300% 100%}
 .gb img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover;display:block;
  clip-path:polygon(var(--m) 0,calc(100% - var(--m)) 0,100% var(--m),100% calc(100% - var(--m)),calc(100% - var(--m)) 100%,var(--m) 100%,0 calc(100% - var(--m)),0 var(--m))}
-/* خلفية متحرّكة فوق الصورة: ضوءٌ ذهبيّ يمرّ ببطء + غبارٌ لامعٌ يصعد */
-.gbf::before{content:"";position:absolute;inset:3px;z-index:2;pointer-events:none;mix-blend-mode:screen;opacity:.7;
- background:radial-gradient(circle at 20% 80%,#ffe9a0 0 1.5px,transparent 2.5px),radial-gradient(circle at 55% 65%,#fff 0 1px,transparent 2px),radial-gradient(circle at 80% 85%,#ffe9a0 0 2px,transparent 3px),radial-gradient(circle at 35% 40%,#fff 0 1px,transparent 2px),radial-gradient(circle at 90% 30%,#ffe9a0 0 1.5px,transparent 2.5px);
- background-size:140px 120px;animation:gdust 9s linear infinite}
-@keyframes gdust{from{background-position:0 0}to{background-position:-40px -120px}}
-.gbf::after{content:"";position:absolute;inset:3px;z-index:2;pointer-events:none;background:linear-gradient(105deg,transparent 40%,rgba(255,236,170,.28) 50%,transparent 60%) 120% 0/250% 100% no-repeat;animation:gshine 8s ease-in-out infinite;animation-delay:calc(var(--i,0)*1.3s)}
-@keyframes gshine{0%{background-position:120% 0}45%,100%{background-position:-60% 0}}
-/* زخرفة الزوايا: معيّنٌ ذهبيّ صغير؛ والجوهرة على اللافتة الأولى فقط */
-.gm{position:absolute;z-index:3;width:9px;height:9px;background:linear-gradient(135deg,#fff3b8,#c9962f);border:1px solid #6b4509;transform:rotate(45deg);box-shadow:0 0 5px rgba(255,230,150,.7)}
-.gm.a{top:5px;left:5px}.gm.b{top:5px;right:5px}.gm.c{bottom:5px;left:5px}.gm.d{bottom:5px;right:5px}
-.gb:first-child .gm{display:none}
-.gb:first-child .gbf::before{opacity:.9}
-.gb .rd{position:absolute;z-index:4;top:12px;left:14px;background:linear-gradient(180deg,#f6dc8a,var(--gold));color:var(--onGold);font-weight:700;font-size:.78rem;padding:2px 11px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.gb .rd{position:absolute;z-index:4;top:12px;left:14px;background:linear-gradient(180deg,#a85a14,var(--gold));color:var(--onGold);font-weight:700;font-size:.78rem;padding:2px 11px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
 .gb .rd.soon{background:rgba(0,0,0,.55);color:#f6dc8a;border:1px solid rgba(246,220,138,.6)}
 .gb[data-soon] img{filter:saturate(.55) brightness(.85)}
-@media (prefers-reduced-motion:reduce){.gb,.gbr,.gbf::before,.gbf::after{animation:none!important;opacity:1}}
+@media (prefers-reduced-motion:reduce){.gb{animation:none!important;opacity:1}}
 .gb:focus-visible,.tab:focus-visible,.ib:focus-visible,.mi:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
 /* المواد */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:40px}
 #subjects:has(.gb){grid-template-columns:1fr;gap:26px}
 a.gb{text-decoration:none}
-.toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#0d2f38;border:1px solid var(--gold);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:.2s;z-index:60}
+.toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#113D2E;border:1px solid var(--gold);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:.2s;z-index:60}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 button.card.soon{width:100%;cursor:pointer;color:inherit;font:inherit}
 .card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:inherit;box-shadow:var(--shadow);position:relative;transition:transform .15s,border-color .15s}
@@ -111,7 +98,7 @@ a.card:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 .card .go{margin-top:auto;font-weight:700;color:var(--c);font-size:.95rem}
 .card.soon{box-shadow:none;background:transparent;border-style:dashed;--c:var(--soon)}
 .card.soon h3{color:var(--muted)}
-.badge{position:absolute;top:16px;left:16px;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(230,193,104,.18);color:var(--gold)}
+.badge{position:absolute;top:16px;left:16px;font-size:.78rem;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(139,66,0,.18);color:var(--gold)}
 .card.soon .badge{background:transparent;border:1px solid var(--line);color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:.85rem}
 .err,.empty{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;color:var(--muted)}
@@ -119,7 +106,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 /* ===== القائمة الجانبية ☰ ===== */
 .scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.2s;z-index:50}
 .scrim.on{opacity:1;pointer-events:auto}
-.drawer{position:fixed;top:0;bottom:0;right:0;width:min(88vw,380px);background:#0e323b;border-left:1px solid var(--line);z-index:51;transform:translateX(105%);transition:transform .25s;padding:16px 14px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);overflow-y:auto}
+.drawer{position:fixed;top:0;bottom:0;right:0;width:min(88vw,380px);background:#FEFEFE;border-left:1px solid var(--line);z-index:51;transform:translateX(105%);transition:transform .25s;padding:16px 14px calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:8px;box-shadow:var(--shadow);overflow-y:auto}
 .drawer.on{transform:none}
 .drawer .head{display:flex;align-items:center;justify-content:space-between;padding:4px 4px 12px;border-bottom:1px solid var(--line);margin-bottom:6px}
 .drawer .head b{font-size:1.15rem}
@@ -132,7 +119,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 .mi .tx small{display:block;color:var(--muted);font-size:.82rem}
 .mi .ch{width:20px;height:20px;color:var(--muted);flex:none;transform:scaleX(-1)}
 .mi .n{background:#ff5a5f;color:#fff;border-radius:999px;font-size:.72rem;padding:0 8px;font-weight:700;flex:none}
-.mi.out{margin-top:8px;border-top:1px solid var(--line);border-radius:0;padding-top:16px;color:#ff9a9a;font-weight:700}
+.mi.out{margin-top:8px;border-top:1px solid var(--line);border-radius:0;padding-top:16px;color:#c9443b;font-weight:700}
 .mi.out svg{width:22px;height:22px}
 
 /* ===== النماذج والصفحات ===== */
@@ -142,10 +129,10 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 .field input[type=text]{font:inherit;color:var(--ink);background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:13px 14px;width:100%}
 .field input[type=text]:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .photo{display:flex;align-items:center;gap:14px;margin-bottom:18px}
-.photo .pv{width:76px;height:76px;border-radius:50%;background:rgba(255,255,255,.1);border:2px dashed var(--line);display:grid;place-items:center;overflow:hidden;color:var(--muted);flex:none;font-size:.78rem;text-align:center}
+.photo .pv{width:76px;height:76px;border-radius:50%;background:rgba(17,61,46,.06);border:2px dashed var(--line);display:grid;place-items:center;overflow:hidden;color:var(--muted);flex:none;font-size:.78rem;text-align:center}
 .photo .pv img{width:100%;height:100%;object-fit:cover}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:14px;border:1px solid var(--line);background:var(--surface2);cursor:pointer;font-weight:700}
-.btn.gold{background:linear-gradient(180deg,#f0cf7e,var(--gold));color:var(--onGold);border-color:transparent}
+.btn.gold{background:linear-gradient(180deg,#a85a14,var(--gold));color:var(--onGold);border-color:transparent}
 .ntf{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);margin-bottom:10px}
 .ntf .ni{font-size:1.5rem;line-height:1}
 .ntf b{display:block}
@@ -155,12 +142,12 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 .ach .hd .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 22%,transparent);color:var(--c)}
 .ach .hd .ic svg{width:24px;height:24px}
 .ach .hd b{font-size:1.1rem;flex:1}
-.pbar{height:8px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden;margin-bottom:8px}
+.pbar{height:8px;border-radius:9px;background:rgba(17,61,46,.1);overflow:hidden;margin-bottom:8px}
 .pbar i{display:block;height:100%;background:var(--c,var(--gold));border-radius:9px}
 .sub-h{font-size:.9rem;color:var(--muted);margin:10px 0 6px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.07);font-size:.88rem}
-.chip.cert{border-color:rgba(230,193,104,.6)}
+.chip{padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(17,61,46,.05);font-size:.88rem}
+.chip.cert{border-color:rgba(139,66,0,.6)}
 .sum{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:16px}
 .sum .panel{text-align:center;padding:14px}
 .sum b{display:block;font-size:1.7rem;color:var(--gold)}
@@ -169,7 +156,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 .seg button{padding:11px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700}
 .seg button[aria-pressed="true"]{background:var(--gold);color:var(--onGold);border-color:transparent}
 .about{text-align:center}
-.about img{width:110px;height:110px;border-radius:50%;background:#fff;padding:4px;box-shadow:0 0 0 3px rgba(230,193,104,.6)}
+.about img{width:110px;height:110px;border-radius:50%;background:#fff;padding:4px;box-shadow:0 0 0 3px rgba(139,66,0,.6)}
 .about h3{margin:14px 0 4px;font-size:1.3rem}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;text-align:start;margin-top:16px;font-size:.95rem}
 .kv dt{color:var(--muted)}.kv dd{margin:0;font-weight:700}
@@ -435,7 +422,7 @@ function drawTabs(){
 function drawBanners(){
   var gs = data.grades.filter(function(g){ return g.stage === stage; });
   $("banners").innerHTML = gs.map(function(g, idx){
-    var inner = g.img ? '<span class="gbf"><span class="gbr"></span><img src="'+esc(g.img)+'" alt="'+esc(g.name)+'" loading="lazy"><i class="gm a"></i><i class="gm b"></i><i class="gm c"></i><i class="gm d"></i></span>' : '<span class="empty" style="display:block;padding:28px;text-align:center">'+esc(g.name)+'</span>';
+    var inner = g.img ? '<span class="gbf"><span class="gbr"></span><img src="'+esc(g.img)+'" alt="'+esc(g.name)+'" loading="lazy"></span>' : '<span class="empty" style="display:block;padding:28px;text-align:center">'+esc(g.name)+'</span>';
     return '<button type="button" class="gb" style="--i:'+idx+'" data-g="'+esc(g.id)+'" aria-label="'+esc(g.name)+'">'+inner+(hasReady(g.id) ? '<span class="rd">مواد جاهزة</span>' : '')+'</button>';
   }).join("");
   $("banners").querySelectorAll(".gb").forEach(function(b){ b.addEventListener("click", function(){ current = b.dataset.g; lsSet(K.grade, current); show("subjects"); }); });
@@ -450,12 +437,12 @@ function drawSubjects(){
     var e = s.grades && s.grades[current];
     var icon = ICONS[s.icon] || ICONS.book;
     if (s.banner) {   /* مادةٌ لها مستطيلها (صورة) */
-      var img = '<span class="gbf"><span class="gbr"></span><img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy"><i class="gm a"></i><i class="gm b"></i><i class="gm c"></i><i class="gm d"></i></span>';
+      var img = '<span class="gbf"><span class="gbr"></span><img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy"></span>';
       return e ? '<a class="gb" style="--i:'+idx+'" href="'+esc(e.dir)+'/" aria-label="'+esc(s.name)+'">'+img+'<span class="rd">جاهز</span></a>'
                : '<button type="button" class="gb" style="--i:'+idx+'" data-soon data-sid="'+esc(s.id)+'" aria-label="'+esc(s.name)+'">'+img+'<span class="rd soon">قريباً</span></button>';
     }
     if (e) {
-      return '<a class="card" style="--c:'+esc(s.color||"#E6C168")+'" href="'+esc(e.dir)+'/">'
+      return '<a class="card" style="--c:'+esc(s.color||"#8B4200")+'" href="'+esc(e.dir)+'/">'
         + '<span class="badge">جاهز</span><span class="ic">'+icon+'</span>'
         + '<h3>'+esc(s.name)+'</h3>' + (e.note ? '<p>'+esc(e.note)+'</p>' : '')
         + '<span class="go">ادخل ‹</span></a>';
@@ -484,7 +471,7 @@ function drawProgress(){
   $("progBody").innerHTML = (g ? '<p style="color:var(--muted);margin:4px 0 14px">'+esc(g.name)+'</p>' : '')
     + (list.map(function(s){
       var d = readAch(s.grades[current].dir) || {}, pct = Math.max(0, Math.min(100, d.pct || 0)), u = d.units;
-      return '<div class="panel ach" style="--c:'+esc(s.color||"#E6C168")+'"><div class="hd"><span class="ic">'+(ICONS[s.icon]||ICONS.book)+'</span><b>'+esc(s.name)+'</b><span>'+pct+'%</span></div>'
+      return '<div class="panel ach" style="--c:'+esc(s.color||"#8B4200")+'"><div class="hd"><span class="ic">'+(ICONS[s.icon]||ICONS.book)+'</span><b>'+esc(s.name)+'</b><span>'+pct+'%</span></div>'
         + '<div class="pbar"><i style="width:'+pct+'%"></i></div>'
         + '<small style="color:var(--muted)">'+(u ? 'الوحدات المكتملة: '+u.done+' من '+u.total : (pct ? 'نسبة الإنجاز '+pct+'%' : 'لم تبدأ بعد'))+'</small>'
         + ((d.extra && d.extra.length) ? '<div class="chips" style="margin-top:8px">'+d.extra.map(function(x){ return '<span class="chip">'+esc(x)+'</span>'; }).join("")+'</div>' : '') + '</div>';
@@ -495,7 +482,7 @@ function drawCerts(){
   var cards = list.map(function(s){
     var d = readAch(s.grades[current].dir) || {}, certs = d.certs || [], bd = d.badges || [];
     tc += certs.length; tb += bd.length;
-    return '<div class="panel ach" style="--c:'+esc(s.color||"#E6C168")+'"><div class="hd"><span class="ic">'+(ICONS[s.icon]||ICONS.book)+'</span><b>'+esc(s.name)+'</b></div>'
+    return '<div class="panel ach" style="--c:'+esc(s.color||"#8B4200")+'"><div class="hd"><span class="ic">'+(ICONS[s.icon]||ICONS.book)+'</span><b>'+esc(s.name)+'</b></div>'
       + '<div class="sub-h">الشهادات ('+certs.length+')</div>'
       + (certs.length ? '<div class="chips">'+certs.map(function(c){ return '<span class="chip cert">🏆 '+esc(c.t)+(c.d ? ' · '+esc(c.d) : '')+'</span>'; }).join("")+'</div>' : '<small style="color:var(--muted)">لم تحصل على شهادة بعد</small>')
       + '<div class="sub-h">الأوسمة ('+bd.length+')</div>'

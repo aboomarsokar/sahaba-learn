@@ -1,37 +1,16 @@
 /* عامل خدمة LEXORA: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (lex10-). */
 const P = "lex10-";
-const V = P + "v31";
+const V = P + "v33";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png",
   "./images/logo.jpg", "./images/certificate.jpg", "./data/lessons.js", "./data/practice.js", "./data/rulecards.js", "./data/highlights.js", "./data/summaries-u1.js", "./data/summaries-u2.js", "./data/summaries-u3.js", "./data/summaries-u4.js", "./data/summaries-u5.js", "./data/summaries-u6.js", "./data/summaries-u7.js", "./data/summaries-u8.js", "./data/summaries-u9.js", "./data/summaries-u10.js",
-  "./data/audio-norm.js", "./data/audio-manifest.js", "./fonts/aref-ruqaa-arabic-700.woff2", "./fonts/cinzel-latin-700.woff2"];
+  "./fonts/aref-ruqaa-arabic-700.woff2", "./fonts/cinzel-latin-700.woff2"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
-
-/* الصوت: المتصفّح يطلبه بنطاقات (Range) ويحتاج ردّ 206، فنخدمه من الذاكرة بالطريقة نفسها. يُحفظ كلّ مقطع بعد أوّل تشغيل. */
-async function audioResponse(r) {
-  const c = await caches.open(V);
-  let full = await c.match(r.url);
-  if (!full) {
-    full = await fetch(r.url);
-    if (full.ok) c.put(r.url, full.clone());
-  }
-  const range = r.headers.get("range");
-  if (!range || !full.ok) return full;
-  const buf = await full.arrayBuffer(), m = /bytes=(\d*)-(\d*)/.exec(range);
-  const start = m && m[1] ? +m[1] : 0, end = m && m[2] ? Math.min(+m[2], buf.byteLength - 1) : buf.byteLength - 1;
-  return new Response(buf.slice(start, end + 1), { status: 206, headers: {
-    "Content-Type": "audio/mpeg", "Accept-Ranges": "bytes",
-    "Content-Range": `bytes ${start}-${end}/${buf.byteLength}`, "Content-Length": String(end - start + 1) } });
-}
 
 self.addEventListener("fetch", e => {
   const r = e.request;
   if (r.method !== "GET" || !r.url.startsWith(self.location.origin)) return;   /* الروابط الخارجية (Drive) تمرّ كما هي */
   if (r.cache === "no-store") return;                              /* فحص التحديث: يذهب إلى الشبكة مباشرةً */
-  if (/\/audio\/(en|ar)\/[^/]+\.mp3$/.test(r.url)) {
-    e.respondWith(audioResponse(r).catch(() => fetch(r)));
-    return;
-  }
   const isDoc = r.mode === "navigate" || r.destination === "document";
   if (isDoc) {                                                     /* الصفحة: الشبكة أولاً بمهلة 2.5 ثانية ثم النسخة المحفوظة (تحديثٌ سليم وبلا انتظارٍ طويل) */
     e.respondWith((async () => { const hit = await caches.match(r, { ignoreSearch: true }), cached = hit && !hit.redirected ? hit : null; const net = fetch(r).then(x => { if (x.ok && !x.redirected) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }); if (!cached) return net.catch(() => caches.match("./index.html")); return Promise.race([net.catch(() => cached), new Promise(res => setTimeout(() => res(cached), 2500))]); })());

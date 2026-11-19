@@ -206,7 +206,12 @@
       "color": "#1e3fa8",
       "icon": "science",
       "banner": "shared/subjects/physics.webp",
-      "grades": {}
+      "grades": {
+        "10": {
+          "dir": "physics/10",
+          "note": "القياس والمتجهات والحركة وقوانين نيوتن والموائع"
+        }
+      }
     },
     {
       "id": "chemistry",
@@ -214,7 +219,12 @@
       "color": "#a31515",
       "icon": "science",
       "banner": "shared/subjects/chemistry.webp",
-      "grades": {}
+      "grades": {
+        "10": {
+          "dir": "chemistry/10",
+          "note": "العناصر والاتحاد الكيميائي والمول والهيدروكربونات"
+        }
+      }
     },
     {
       "id": "biology",
@@ -222,7 +232,12 @@
       "color": "#d4570f",
       "icon": "science",
       "banner": "shared/subjects/biology.webp",
-      "grades": {}
+      "grades": {
+        "10": {
+          "dir": "biology/10",
+          "note": "الخلية والتكاثر والوراثة وأجهزة الجسم"
+        }
+      }
     }
   ],
   "version": "1.0.0",

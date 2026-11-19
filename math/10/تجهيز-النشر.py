@@ -14,7 +14,7 @@ src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encodin
 upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
 ver = hashlib.sha256(('r5' + src + upd + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 
-head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#1f8a9e">'
+head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#FAF6EB">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
         '<meta name="apple-mobile-web-app-capable" content="yes">')
 reg = ("<script>if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))</script>")
@@ -76,7 +76,7 @@ OUT.mkdir(exist_ok=True)
 (OUT / 'manifest.json').write_text(json.dumps({
     'name': 'رياضيات الصف العاشر — مدرسة التابعين الشرعية (أ)', 'short_name': 'رياضيات العاشر',
     'lang': 'ar', 'dir': 'rtl', 'start_url': './index.html', 'scope': './', 'display': 'standalone',
-    'background_color': '#f2f8fb', 'theme_color': '#1f8a9e',
+    'background_color': '#FAF6EB', 'theme_color': '#FAF6EB',
     'icons': [{'src': 'icon-192.png', 'sizes': '192x192', 'type': 'image/png', 'purpose': 'any maskable'},
               {'src': 'icon-512.png', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'any maskable'}]},
     ensure_ascii=False, indent=2), encoding='utf-8')
