@@ -73,7 +73,7 @@ libGo=function(k){libKind=k?"packs":"books";libSubj=PCB_ACTIVE_SUBJECT;nav("libi
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). */
 const P = "__PRE__";
-const V = P + "v3";
+const V = P + "v4";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -263,12 +263,30 @@ def build(src: Path) -> None:
     st = prune(out, k)
     print(f"   حُذف من المادتين الأخريين: {st['lessons']} درساً، {st['libs']} مكتبة، {st['images']} صورة")
     patch(out, k, d, name, store, pre)
+    inject_tools(out, d)
     # ضغط صور التطبيق بأمان (يتجاوز ما لا يوفّر ≥12% مع حفظ الجودة)
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'optimize_assets.py'), '--apply', f'{d}/10'], check=True)
+
+
+def inject_tools(out: Path, d: str) -> None:
+    """أدوات الطالب (بحث/مفضّلة/ملاحظات/حاسبة) من tools/sci_tools.js؛ آمنة للتكرار."""
+    f = out / "index.html"
+    s = f.read_text(encoding="utf-8")
+    a = s.find("<script>/* أدوات الطالب:")
+    if a >= 0:                       # أعد الحقن بأحدث نسخة
+        b = s.index("</script>", a) + len("</script>")
+        s = s[:a] + s[b:].lstrip("\n")
+    js = (ROOT / "tools" / "sci_tools.js").read_text(encoding="utf-8").replace("__DIR__", f"{d}/10")
+    s = rep(s, "</body>", js + "</body>")
+    f.write_text(s, encoding="utf-8")
 
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         sys.exit(__doc__)
+    if sys.argv[1] == "--tools-only":
+        for _d in ("physics", "chemistry", "biology"):
+            inject_tools(ROOT / _d / "10", _d)
+        sys.exit(0)
     for a in sys.argv[1:]:
         build(Path(a))
