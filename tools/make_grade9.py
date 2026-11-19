@@ -160,6 +160,7 @@ h1{font-size:1.2rem;margin:0}.hd{display:flex;align-items:center;gap:10px;margin
 </head>
 <body>
 <div id="app"></div>
+<script src="../../shared/wisdom.js"></script>
 <script>
 var CFG = __CFG__;
 var $ = function (s) { return document.querySelector(s); };
@@ -179,6 +180,8 @@ function lnk(url, label, sub, ic) {
 function home() {
   var h = hdr() + CFG.sems.map(function (s, i) { return '<a class="row" href="#sem' + (i + 1) + '"><span class="chip">' + (i ? "II" : "I") + '</span><span><b>' + s.name + '</b><small>الوحدات قريباً • الكتاب' + (CFG.pack ? " والرزمة" : "") + '</small></span><span class="go">‹</span></a>'; }).join("");
   h += '<button class="q" type="button"><i>📝</i><b>الاختبارات</b><small>ستُضاف قريباً</small></button>';
+  var w = window.SahabaWisdom && window.SahabaWisdom.today(CFG.id);
+  if (w) h += '<div class="card" style="text-align:center;margin-top:12px"><small class="sub">💡 حكمة اليوم</small><p dir="auto" style="margin:8px 0;line-height:1.9">' + esc(w[0]) + '</p><small class="sub">— ' + esc(w[1]) + '</small></div>';
   $("#app").innerHTML = h;
 }
 function sem(i) {
@@ -203,7 +206,7 @@ SHELL_SW = """/* عامل خدمة __NAME__ (التاسع): يعمل بعد أو
 const P = "__PRE__-";
 const V = P + "v1";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png",
-  "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf"];
+  "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/wisdom.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 self.addEventListener("fetch", e => {
@@ -220,7 +223,7 @@ def shell(subject: str, name: str, pre: str) -> None:
     if d.exists():
         shutil.rmtree(d)
     d.mkdir(parents=True)
-    cfg = {"name": name, "pack": link(subject, "pack"),
+    cfg = {"id": subject, "name": name, "pack": link(subject, "pack"),
            "sems": [{"name": "الفصل الأول", "book": link(subject, "book1")}, {"name": "الفصل الثاني", "book": link(subject, "book2")}]}
     (d / "index.html").write_text(SHELL_HTML.replace("__NAME__", name).replace("__CFG__", json.dumps(cfg, ensure_ascii=False)), encoding="utf-8")
     (d / "sw.js").write_text(SHELL_SW.replace("__NAME__", name).replace("__PRE__", pre), encoding="utf-8")

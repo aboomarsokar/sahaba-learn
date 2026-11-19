@@ -83,7 +83,9 @@ h1,h2,h3{margin:0;font-weight:700}
 .lbl{color:var(--mut);margin:10px 0 2px}
 .tabs.sc{overflow-x:auto;-webkit-overflow-scrolling:touch}.tabs.sc button{flex:none;padding:9px 14px;white-space:nowrap}
 .tx{line-height:2.1}.tx p{margin:0 0 10px}.tx-h{color:var(--g);font-size:1.05rem;margin:14px 0 6px}.tx-b{position:relative;padding-inline-start:16px;margin-bottom:4px}.tx-b::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--g)}.tx-q{margin:0 0 10px;padding:8px 10px;border-radius:12px;background:rgba(127,127,127,.12)}
-.rv-b{margin-top:8px!important}.btn:disabled{opacity:.55}
+.rv-b{margin-top:8px!important}
+.rv-b{font-size:1.05rem!important;font-weight:700!important;color:var(--ink)!important;border-width:2px!important;padding:13px 12px!important;background:var(--card)!important;text-align:center}
+.rv-b::before{content:"👁️ ";font-size:1.1rem}.rv-b:disabled{opacity:1!important;color:var(--mut)!important;border-style:dashed!important;font-weight:400!important;font-size:.92rem!important}.rv-b:disabled::before{content:""}.btn:disabled{opacity:.55}
 :root[data-acc=gold]{--gold:linear-gradient(135deg,#f8e39a 0%,#e3b94d 38%,#c89622 62%,#8f6410 100%);--g:#e3b94d;--ongold:#2b1d04;--ink:#f6ecd2;--mut:#c2b284;--cardb:rgba(240,200,100,.26);--solid:#241b0e}
 :root[data-acc=gold][data-mode=light]{--ink:#3a2a08;--mut:#7d6a3e;--cardb:rgba(184,137,31,.32);--solid:#fffaf0;--g:#b8891f}
 :root[data-acc=gold] #intro{background:linear-gradient(120deg,#f6dc8a,#d9a92f,#fbeab0,#c08f1d,#f1d070);background-size:300% 300%}
@@ -338,6 +340,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
 <script src="data/dict.js"></script>
 <script src="../../shared/durra.js"></script>
 <script>Durra.init({dir:"arabic/9",frames:".av",vars:function(t){var r=document.documentElement;if(r.dataset.mode==="dark"&&!t.dark)return{};var v=t.v;return {"--bg1":v.bg,"--bg2":v.bg2,"--ink":v.ink,"--mut":v.mut,"--card":t.dark?"rgba(255,255,255,.07)":"rgba(255,255,255,.82)","--cardb":v.pri+"29","--solid":v.card,"--g":v.gold,"--gold":"linear-gradient(135deg,"+v.gold2+","+v.gold+" 70%,"+v.pri2+")","--ongold":"#fff"};}});</script>
+<script src="../../shared/wisdom.js"></script>
 <script src="data/wisdom.js"></script>
 <script src="data/quiz.js"></script>
 <script>
@@ -666,10 +669,8 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     b.addEventListener("click", function () { panel.hidden = !panel.hidden; if (!panel.hidden) { i = 0; draw(); } });
     return h("div", null, [b, panel]);
   }
-  function qsCard(u, i, goBack) {
-    var key = u.id + "|" + i.t, qs = lessonQs(key), kids = [h("h2", { t: "أسئلة الدرس", style: "margin-bottom:8px" })];
-    if (qs.length) kids.push(h("button", { cls: "btn", style: "margin-top:0", t: "✍️ اختبر نفسك (" + qs.length + " سؤالاً)", on: { click: function () { location.hash = "lq/" + encodeURIComponent(key); } } }));
-    if (!qs.length) kids.push(h("div", { cls: "empty", t: "ستُضاف أسئلة هذا الدرس قريباً." }));
+  function qsCard(u, i, goBack) {   /* اختبار الوحدة كاملة بدل أسئلة كلّ درس */
+    var kids = [h("h2", { t: "اختبار الوحدة", style: "margin-bottom:8px" }), h("p", { cls: "sub", t: "أسئلة متنوّعة من كلّ دروس الوحدة." }), h("button", { cls: "btn", style: "margin-top:0", t: "📝 ابدأ اختبار الوحدة", on: { click: function () { location.hash = "uq/" + encodeURIComponent(u.id); } } })];
     if (goBack) kids.push(h("button", { cls: "btn alt", t: "إعادة الدرس", on: { click: goBack } }));
     return h("div", { cls: "card" }, kids);
   }
@@ -693,9 +694,9 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
         box.push(h("div", { cls: "kind", t: "القسم " + (st + 1) + " من " + n + " — اقرأ هذا الجزء ثم انتقل إلى القسم التالي" }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (st / n * 100) + "%" })]));
         box.push(stage([h("div", { cls: "card" }, [h("h2", { t: c.t, style: "margin-bottom:8px" }), renderText(c.x, false)]),
           reveal("أظهر المفردات والمضادات", c.vocab || []), reveal("أظهر الأساليب والصور الجمالية", c.styles || []), reveal("أظهر الاستعارات المكنية", c.mc || []), reveal("أظهر المادة المعجمية لبعض الكلمات", c.lex || [])]));
-        box.push(navRow(n + 1, st === n - 1 ? "انتهيت — اختبر نفسك ›" : "التالي ›"));
+        box.push(navRow(n + 1, st === n - 1 ? "انتهيت ›" : "التالي ›"));
       } else if (st === n) {
-        box.push(stage([h("div", { cls: "card qres" }, [h("div", { cls: "big", t: "اختبر نفسك" }), h("p", { t: "أحسنت! أنهيتَ أقسام الدرس. اضغط «التالي» لتصل إلى أسئلة هذا الدرس من الكتاب والرزمة." })])]));
+        box.push(stage([h("div", { cls: "card qres" }, [h("div", { cls: "big", t: "أحسنت 🎉" }), h("p", { t: "أحسنت! أنهيتَ أقسام الدرس. اضغط «التالي» لتصل إلى اختبار الوحدة كاملة." })])]));
         box.push(navRow(n + 1));
       } else { box.push(stage([qsCard(u, i, null)])); box.push(navRow(n + 1)); }
       return box;
@@ -705,7 +706,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       if (st === 0) box.push(stage([h("div", { cls: "card" }, [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.rule.n }), h("div", { cls: "tx", style: "margin-top:8px" }, [h("p", { t: i.rule.d })])])]));
       else if (st <= bl.length) box.push(stage([h("div", { cls: "kind", t: "الشرح " + st + " / " + bl.length }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (st / bl.length * 100) + "%" })]), h("div", { cls: "card" }, [renderText(bl[st - 1], false)])]));
       else box.push(stage([qsCard(u, i, null)]));
-      box.push(navRow(total, st === 0 ? "التالي › شرح الدرس" : st === bl.length ? "انتهى الشرح — اختبر نفسك ›" : "التالي ›"));
+      box.push(navRow(total, st === 0 ? "التالي › شرح الدرس" : st === bl.length ? "انتهى الشرح ›" : "التالي ›"));
       return box;
     }
     var inner = [h("div", { cls: "kind", t: KIND[i.k] }), h("h2", { t: i.t, style: "margin-bottom:8px" })];
@@ -719,12 +720,13 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     var u = findUnit(id); if (!u) return home(); var sem = semOf(id);
     S.last = id; S.seen = S.seen || {}; S.seen[id] = 1; save();
     var groups = TABS.map(function (g) { return [g[0], g[1], u.items.filter(function (i) { return g[2].indexOf(i.k) >= 0; })]; });
-    groups.push(["qs", "أسئلة الدرس", []]);
+    groups.push(["qs", "اختبار الوحدة", []]);
     var cur = groups.filter(function (g) { return g[0] === tab; })[0] || groups[0], cards = [];
     function bookBtn() { return h("button", { cls: "btn alt", t: "📖 افتح الكتاب على Drive", on: { click: function () { openLink(ARA.links[sem.book]); } } }); }
     if (cur[0] === "qs") {
-      u.items.forEach(function (i) { if (lessonQs(u.id + "|" + i.t).length) cards.push(h("div", null, [h("div", { cls: "lbl", t: KIND[i.k] + " — " + i.t }), qsCard(u, i, null)])); });
-      if (!cards.length) cards.push(h("div", { cls: "empty", t: "ستُضاف أسئلة دروس هذه الوحدة قريباً." }), bookBtn());
+      var uqn = unitPool(u).length, best = S.q["uq" + u.id];
+      if (uqn < 5) cards.push(h("div", { cls: "empty", t: "ستُضاف أسئلة اختبار هذه الوحدة قريباً." }), bookBtn());
+      else cards.push(h("div", { cls: "card" }, [h("h2", { t: "اختبار الوحدة: " + u.n, style: "margin-bottom:8px" }), h("p", { cls: "sub", t: "حتى ١٥ سؤالاً متنوّعاً (اختيار وإكمال وصواب أم خطأ وفهم مفردات) تُسحب عشوائياً في كلّ مرة من دروس الوحدة." + (best != null ? " أفضل نتيجة لك: " + best : "") }), h("button", { cls: "btn", t: "📝 ابدأ اختبار الوحدة", on: { click: function () { location.hash = "uq/" + encodeURIComponent(u.id); } } })]));
     } else {
       cur[2].forEach(function (i) { if (i.jr) cards.push(ruleCard(u, i)); else cards.push(h("div", null, lessonView(u, i, function () { unit(id, cur[0]); }))); });
       if (!cur[2].length) cards.push(h("div", { cls: "card" }, [h("div", { cls: "empty", t: "لا يوجد درس «" + cur[1] + "» في هذه الوحدة حسب فهرس الكتاب." })]));
@@ -732,6 +734,39 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     }
     app.replaceChildren.apply(app, [top(u.n, true), h("div", { cls: "tabs sc" }, groups.map(function (g) { return h("button", { t: g[1], cls: g[0] === cur[0] ? "on" : "", on: { click: function () { unit(id, g[0]); } } }); }))].concat(cards));
     nav("sub");
+  }
+/*notes-v1*/
+  /* ===== اختبار الوحدة: أسئلة متنوّعة من دروس الوحدة (دون أسئلة رحلات «اختبر نفسك») ===== */
+  function unitPool(u) {
+    var out = [], pre = u.id + "|";
+    [1, 2].forEach(function (s) { allQs(s).forEach(function (q) { if (q.k && q.k.indexOf(pre) === 0 && String(q.c).indexOf("jr") !== 0) out.push(q); }); });
+    return out;
+  }
+  function tfOf(q) {
+    var stem, truth = Math.random() < 0.5, x = truth ? q.ans : q.wr[0];
+    if (!x) return null;
+    if (q.t === "fill" && q.q.indexOf("____") >= 0) stem = q.q.replace("____", x);
+    else if (/[:：]\s*$/.test(q.q)) stem = q.q.replace(/\s*[:：]\s*$/, " ") + x;
+    else return null;
+    return { t: "tf", q: "صواب أم خطأ؟  «" + stem + "»", o: ["صواب", "خطأ"], a: truth ? 0 : 1, c: q.c, k: q.k };
+  }
+  function unitQs(u) {
+    var pool = shuf(unitPool(u), Math.random), per = {}, ordered = [], i = 0, more = true;
+    pool.forEach(function (q) { (per[q.k] = per[q.k] || []).push(q); });
+    var keys = Object.keys(per);
+    while (more && ordered.length < 60) { more = false; keys.forEach(function (k) { if (per[k][i]) { ordered.push(per[k][i]); more = true; } }); i++; }
+    var out = [], tf = 0;
+    ordered.forEach(function (q) {
+      if (out.length >= 15) return;
+      var t = null; if (tf < 4 && out.length % 4 === 3) { t = tfOf(q); if (t) tf++; }
+      out.push(t || build(q, "uq" + u.id + out.length + Math.random()));
+    });
+    return shuf(out, Math.random);
+  }
+  function unitTest(id) {
+    var u = findUnit(id); if (!u) return home();
+    var qs = unitQs(u); if (qs.length < 5) { location.hash = "unit/" + id; return; }
+    runQuiz("اختبار الوحدة — " + u.n, qs, "uq" + id, "unit/" + id + "/qs");
   }
   function linksPage(title, rows) {
     app.replaceChildren.apply(app, [top(title, true)].concat(rows.map(function (r) {
@@ -806,6 +841,12 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
         rows.push(h("button", { cls: "card qx", on: { click: function () { location.hash = "exam/" + s.id + "/" + n; } } }, [h("div", { cls: "n", t: String(n + 1) }), h("div", null, [h("b", { t: "اختبار " + (n + 1) + " — " + s.name }), h("small", { t: "20 سؤالاً من المفردات والقواعد والبلاغة والعروض" })]), h("span", { cls: "sc", t: best != null ? best + "/20" : "" })]));
       })(n);
     });
+    ARA.semesters.forEach(function (s) {
+      var us = s.units.filter(function (u) { return unitPool(u).length >= 5; });
+      if (!us.length) return;
+      rows.push(h("div", { cls: "lbl", t: "اختبارات الوحدات — " + s.name }));
+      us.forEach(function (u) { var best = S.q["uq" + u.id]; rows.push(h("button", { cls: "card qx", on: { click: function () { location.hash = "uq/" + encodeURIComponent(u.id); } } }, [h("div", { cls: "n", t: "📝" }), h("div", null, [h("b", { t: u.n }), h("small", { t: "حتى ١٥ سؤالاً متنوّعاً من دروس الوحدة" })]), h("span", { cls: "sc", t: best != null ? String(best) : "" })])); });
+    });
     app.replaceChildren.apply(app, [top("الاختبارات")].concat(rows)); nav("quizzes");
   }
   function runQuiz(title, qs, id, back) {
@@ -820,7 +861,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       });
       var nextBtn = h("button", { cls: "btn", t: i === qs.length - 1 ? "إنهاء" : "التالي", hidden: "", on: { click: function () { i++; show(); } } });
       nextBtn.hidden = true;
-      app.replaceChildren(top(title, true), h("div", { cls: "kind", t: (q.t === "fill" ? "أكمل الفراغ" : "اختر الإجابة الصحيحة") + " · " + (i + 1) + " / " + qs.length }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (i / qs.length * 100) + "%" })]), h("div", { cls: "card" }, [h("div", { cls: "qq", t: q.q })]), h("div", null, opts), nextBtn);
+      app.replaceChildren(top(title, true), h("div", { cls: "kind", t: (q.t === "fill" ? "أكمل الفراغ" : q.t === "tf" ? "صواب أم خطأ" : "اختر الإجابة الصحيحة") + " · " + (i + 1) + " / " + qs.length }), h("div", { cls: "qbar" }, [h("i", { style: "width:" + (i / qs.length * 100) + "%" })]), h("div", { cls: "card" }, [h("div", { cls: "qq", t: q.q })]), h("div", null, opts), nextBtn);
       nav("sub");
     }
     function end() {
@@ -863,12 +904,12 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function route() {
     closeMenu();
     adoptPortal();
-    if (!S.done || !S.name) { return portalProfile() && S.sec ? (S.done = 1, save(), route()) : stepWisdom(); }
+    if (!S.done || !S.name) { return portalProfile() && S.sec ? (S.done = 1, save(), route()) : stepName(false); }
     $("#intro").hidden = true; app.hidden = false;
     var p = (location.hash || "#home").slice(1).split("/");
-    if (p[0] === "unit") unit(p[1]); else if (p[0] === "sem") semPage(p[1], p[2]); else if (p[0] === "dict") dict(); else if (p[0] === "mem") mem(); else if (p[0] === "settings") settings(); else if (p[0] === "quizzes") quizzes();
+    if (p[0] === "unit") unit(p[1], p[2]); else if (p[0] === "sem") semPage(p[1], p[2]); else if (p[0] === "dict") dict(); else if (p[0] === "mem") mem(); else if (p[0] === "settings") settings(); else if (p[0] === "quizzes") quizzes();
     else if (p[0] === "exam") { var s = +p[1], n = +p[2]; runQuiz("اختبار " + (n + 1) + " — " + ARA.semesters[s - 1].name, examQs(s, n), "ex" + s + n, "quizzes"); }
-    else if (p[0] === "jr") journey(decodeURIComponent(p[1])); else if (p[0] === "lq") { var key = decodeURIComponent(p[1]), qs = lessonQs(key).map(function (q, j) { return build(q, "lq" + key + j); }); runQuiz("اختبار الدرس", shuf(qs, rng("lqs" + key)), null, "unit/" + key.split("|")[0]); }
+    else if (p[0] === "jr") journey(decodeURIComponent(p[1])); else if (p[0] === "uq") unitTest(decodeURIComponent(p[1])); else if (p[0] === "lq") { var key = decodeURIComponent(p[1]), qs = lessonQs(key).map(function (q, j) { return build(q, "lq" + key + j); }); runQuiz("اختبار الدرس", shuf(qs, rng("lqs" + key)), null, "unit/" + key.split("|")[0]); }
     else if (p[0] === "books") linksPage("الكتب المدرسية", [["الفصل الأول", "كتاب اللغة العربية — الصف التاسع (الجزء الأول)", ARA.links.book1], ["الفصل الثاني", "كتاب اللغة العربية — الصف التاسع (الجزء الثاني)", ARA.links.book2]]);
     else if (p[0] === "pack") linksPage("الرزمة التعليمية", [["الفصلان الأول والثاني", "الرزمة التعليمية — الصف التاسع", ARA.links.pack]]);
     else home();

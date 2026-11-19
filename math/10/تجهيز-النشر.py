@@ -12,7 +12,7 @@ HERE = Path(__file__).resolve().parent
 OUT = HERE / 'نشر'
 src = (HERE / 'دروس-الرياضيات-العاشر.html').read_text(encoding='utf-8')
 upd = (HERE.parent.parent / 'shared' / 'update-notify.js').read_text(encoding='utf-8')   # إشعار التحديث المشترك بين التطبيقات
-ver = hashlib.sha256(('r6' + src + upd + (HERE.parent.parent / 'shared' / 'durra.js').read_text(encoding='utf-8') + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
+ver = hashlib.sha256(('r6' + src + upd + (HERE.parent.parent / 'shared' / 'durra.js').read_text(encoding='utf-8') + (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8') + (HERE.parent.parent / 'shared' / 'wisdom.js').read_text(encoding='utf-8')).encode()).hexdigest()[:10]
 
 head = ('<link rel="manifest" href="manifest.json"><meta name="theme-color" content="#FAF6EB">'
         '<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">'
@@ -35,6 +35,11 @@ reg += '<script>' + PUB + '</script>'
 durra = (HERE.parent.parent / 'shared' / 'durra.js').read_text(encoding='utf-8')
 reg += ('<script>' + durra.replace('</script', '<\\/script') + '</script><script>Durra.init({dir:"math/10",frames:".logo",vars:function(t){var v=t.v;return {"--bg":v.bg,"--tx":v.ink,"--bd":v.bd,"--card":v.card};}});'
         'document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".hero");if(h){var c=Durra.chip();c.style.cssText+=";position:absolute;top:10px;left:10px";h.style.position="relative";h.appendChild(c)}})</script>')
+# حكمة اليوم الخاصّة بالرياضيات (shared/wisdom.js مضمَّن) تظهر تحت الشعار
+wis = (HERE.parent.parent / 'shared' / 'wisdom.js').read_text(encoding='utf-8')
+reg += ('<script>' + wis.replace('</script', '<\\/script') + '</script><script>document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".hero"),w=SahabaWisdom.today("math");'
+        'if(h&&w){var d=document.createElement("div");d.style.cssText="margin:12px 14px;padding:14px;border-radius:18px;background:#fff;border:1px solid #e9dfc8;text-align:center;line-height:1.9";'
+        'd.innerHTML=\'<small style="color:#5f7a6e">💡 حكمة اليوم</small><p style="margin:6px 0;font-size:1.05rem">\'+w[0]+\'</p><small style="color:#5f7a6e">— \'+w[1]+\'</small>\';h.insertAdjacentElement("afterend",d)}})</script>')
 # غلاف المادة + جولة كينيكس (مشتركان في shared/): الصورتان تُنسخان إلى «نشر» لتعملا بلا إنترنت
 intro = (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')
 STEPS = [

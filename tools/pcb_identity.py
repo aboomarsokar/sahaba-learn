@@ -71,7 +71,7 @@ def patch(d: Path) -> str:
     pj = d / "precache.json"
     if pj.exists():
         j = json.loads(pj.read_text(encoding="utf-8"))
-        for x in ("../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf"):
+        for x in ("../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/wisdom.js"):
             if x not in j["files"]:
                 j["files"].append(x)
         pj.write_text(json.dumps(j, ensure_ascii=False, indent=1), encoding="utf-8")

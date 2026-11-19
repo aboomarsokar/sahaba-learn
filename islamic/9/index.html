@@ -103,6 +103,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
 </head>
 <body>
 <script src="../../shared/durra.js"></script>
+<script src="../../shared/wisdom.js"></script>
 <script src="../../shared/intro.js"></script>
 <main id="app"></main>
 <nav id="nav" aria-label="التنقّل"></nav>
@@ -243,10 +244,15 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
     return '<div class="card hello" style="' + (ex || "") + 'background:' + cd.bg + ";color:" + cd.fg + ";border:" + cd.bd + '"><div class="ring" style="--p:' + pct + ";--rc:" + fr.col + ";box-shadow:" + fr.glow + '"><span style="color:' + cd.fg + '">' + toAr(pct) + '٪</span></div><div><b>' + (nm ? "مرحباً يا " + esc(nm) : "مرحباً بك") + '</b><small style="opacity:.85">مستوى: ' + level(overallPct()) + " • " + toAr(S.coins) + " دُرّة</small></div></div>";
   }
   /* ---------------- الرئيسية ---------------- */
+  function wisdomCard() {   /* حكمة اليوم الخاصّة بالمادة */
+    var w = (window.SahabaWisdom && window.SahabaWisdom.today("islamic")) || null; if (!w) return "";
+    return '<div class="card" style="text-align:center"><small style="color:var(--mut)">💡 حكمة اليوم</small><p style="font-size:1.12rem;margin:8px 0;line-height:1.9">' + esc(w[0]) + '</p><small style="color:var(--mut)">— ' + esc(w[1]) + "</small></div>";
+  }
   function vHome(app) {
     var term = D.terms[R.term - 1], nm = userName(), pct = overallPct();
     var h = top("التربية الإسلامية • الصف التاسع");
     h += helloCard(pct, nm);
+    h += wisdomCard();
     h += '<div class="tabs">' + D.terms.map(function (t) { return '<button class="tab" type="button" data-t="' + t.id + '" aria-pressed="' + (t.id === R.term) + '">' + t.name + "</button>"; }).join("") + "</div>";
     h += '<a class="card book" href="' + esc(term.book) + '" target="_blank" rel="noopener"><span class="bi">📕</span><span><b>الكتاب المدرسي — ' + term.name + "</b><small>افتح الكتاب (يحتاج إنترنت)</small></span></a>";
     if (term.units.length) {

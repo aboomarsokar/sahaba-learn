@@ -284,7 +284,9 @@ def inject_tools(out: Path, d: str) -> None:
         s = s[:a] + s[b:].lstrip("\n")
     s = s.replace('<div class="mi" onclick="bgPick()"><span>🎨 لون الخلفية</span></div>', '<div class="mi" onclick="Durra.store()"><span>🪙 متجر دُرّة</span></div>')   # لا ألوان مجانية: كلّها من المتجر
     js = (ROOT / "tools" / "sci_tools.js").read_text(encoding="utf-8").replace("__DIR__", f"{d}/10")
-    s = rep(s, "</body>", js + "</body>")
+    wtag = '<script src="../../shared/wisdom.js"></script>\n'          # حكمة اليوم الخاصّة بالمادة
+    s = s.replace(wtag, "")
+    s = rep(s, "</body>", wtag + js + "</body>")
     f.write_text(s, encoding="utf-8")
 
 
