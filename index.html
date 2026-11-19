@@ -9,7 +9,8 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="shared/icons/portal-192.png">
 <link rel="apple-touch-icon" href="shared/icons/portal-180.png">
-<style>
+<script>try{var _r=document.referrer||"";if(_r.indexOf(location.origin)===0&&_r.replace(/[?#].*$/,"")!==location.href.replace(/[?#].*$/,"")||sessionStorage.getItem("sahaba-splash")==="1"||/[?&]back=1/.test(location.search)){document.documentElement.setAttribute("data-skip","1");sessionStorage.setItem("sahaba-splash","1")}}catch(e){}</script>
+<style>html[data-skip] #scr-splash{display:none!important}
 @font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Plex Arabic";src:url("shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
 @font-face{font-family:"Ruqaa";src:url("shared/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
@@ -528,7 +529,7 @@ fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); })
   stage = sid.indexOf(st) >= 0 ? st : (current ? gradeById(current).stage : (d.grades.filter(function(g){ return hasReady(g.id); })[0] || d.grades[0]).stage);
   drawMe();
   var seen = false; try{ seen = sessionStorage.getItem("sahaba-splash") === "1"; }catch(e){}
-  if (seen) show(profile ? "grades" : "name");   /* العودة من تطبيقٍ داخل الجلسة نفسها لا تُعيد الغلاف */
+  if (seen || document.documentElement.hasAttribute("data-skip")) show(!profile ? "name" : (current && gradeById(current) ? "subjects" : "grades"));   /* العودة من تطبيقٍ لا تُعيد الغلاف وتفتح موادّ الصف مباشرة */
 }).catch(function(){
   steps.json = true; progress();
 });
