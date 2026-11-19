@@ -37,7 +37,7 @@ reg += ('<script>' + durra.replace('</script', '<\\/script') + '</script><script
         'document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".hero");if(h){var c=Durra.chip();c.style.cssText+=";position:absolute;top:10px;left:10px";h.style.position="relative";h.appendChild(c)}})</script>')
 # حكمة اليوم الخاصّة بالرياضيات (shared/wisdom.js مضمَّن) تظهر تحت الشعار
 wis = (HERE.parent.parent / 'shared' / 'wisdom.js').read_text(encoding='utf-8')
-reg += ('<script>' + wis.replace('</script', '<\\/script') + '</script><script>document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".hero"),w=SahabaWisdom.today("math");'
+reg += ('<script>document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".hero"),w=SahabaWisdom.today("math");'
         'if(h&&w){var d=document.createElement("div");d.style.cssText="margin:12px 14px;padding:14px;border-radius:18px;background:#fff;border:1px solid #e9dfc8;text-align:center;line-height:1.9";'
         'd.innerHTML=\'<small style="color:#5f7a6e">💡 حكمة اليوم</small><p style="margin:6px 0;font-size:1.05rem">\'+w[0]+\'</p><small style="color:#5f7a6e">— \'+w[1]+\'</small>\';h.insertAdjacentElement("afterend",d)}})</script>')
 # غلاف المادة + جولة كينيكس (مشتركان في shared/): الصورتان تُنسخان إلى «نشر» لتعملا بلا إنترنت
@@ -51,10 +51,10 @@ STEPS = [
     {"t": "📶 بلا إنترنت", "x": "بعد أول فتحٍ مع الإنترنت تعمل الدروس بلا إنترنت، ويُحفظ تقدّمك على هذا الجهاز. وللعودة من أي درسٍ إلى هذه الصفحة اضغط زرّ 🏠 أو زرّ الرجوع.", "s": ".note"},
     {"t": "جاهز للانطلاق؟ 🚀", "x": "المذاكرة اليومية القليلة أفضل من الكثيرة المتقطّعة. ابدأ بدرسٍ واحد اليوم، وأنا معك في كل خطوة. وإذا أردت أن أعيد لك الجولة فستجد زرّها أسفل هذه الصفحة. بالتوفيق دائماً! ✨", "s": None},
 ]
-CFG = ('<script>(function(){var o={id:"math10",cover:"cover.webp",kinex:"kinex.jpg",steps:' + json.dumps(STEPS, ensure_ascii=False)
+CFG = ('<script>(function(){var o={id:"math10",kinex:"kinex.jpg",steps:' + json.dumps(STEPS, ensure_ascii=False)
        + ',ready:function(){var h=document.getElementById("hub");return h&&!h.hidden}};'
        + '(function(){var a=document.createElement("a");a.href="../../../index.html";a.textContent="🏠 الرجوع للبوابة";a.setAttribute("aria-label","الرجوع إلى بوابة الصحابة التعليمية");a.style.cssText="position:absolute;top:10px;right:10px;display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:999px;background:#123C46;color:#fff;text-decoration:none;font-weight:700;font-size:13px;box-shadow:0 3px 10px rgba(0,0,0,.25);z-index:5";function m(){var h=document.querySelector(".hero");if(h&&!h.querySelector("a[href$=\'index.html\']")){h.style.position="relative";h.appendChild(a)}}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",m);else m()})();'
-       + 'SahabaIntro.run(o);document.addEventListener("DOMContentLoaded",function(){SahabaIntro.replay(o,document.querySelector(".note"))});'
+       + '(window.SahabaWisdom?SahabaWisdom.gate("math",function(){SahabaIntro.run(o)}):SahabaIntro.run(o));document.addEventListener("DOMContentLoaded",function(){SahabaIntro.replay(o,document.querySelector(".note"))});'
        + 'if(document.readyState!=="loading")SahabaIntro.replay(o,document.querySelector(".note"))})()</script>')
 UPD_SW = '''
 /* إشعار التحديث وهو مغلق (أندرويد/كروم لتطبيقٍ مثبَّت على الشاشة الرئيسية): فحصٌ دوريّ لنسخة الصفحة */
@@ -77,7 +77,7 @@ html = src.replace('</head>', head + '</head>', 1)
 i = html.rindex('</body>')
 html = html[:i] + reg + html[i:]
 j = html.index('<body>') + len('<body>')   # الغلاف أوّلاً كي لا تُرى الصفحة قبله
-html = html[:j] + '<script>' + intro.replace('</script', '<\\/script') + '</script>' + CFG + html[j:]
+html = html[:j] + '<script>' + wis.replace('</script', '<\\/script') + '</script><script>' + intro.replace('</script', '<\\/script') + '</script>' + CFG + html[j:]
 
 OUT.mkdir(exist_ok=True)
 (OUT / 'index.html').write_text(html, encoding='utf-8')

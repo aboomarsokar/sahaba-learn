@@ -225,9 +225,9 @@ def patch(out: Path, k: int, d: str, name: str, store: str, pre: str) -> None:
     s = rep(s, """<div class="mi" onclick="lo()"><span>🚪 تسجيل الخروج / Log out</span></div>""", "")
     # الغلاف: صورةٌ فقط ثم «ابدأ الآن»
     assert s.count("<body>") == 1
-    kx = {"id": d + "10", "cover": f"../../shared/covers/{d}.webp", "kinex": "../../shared/kinex.jpg",
+    kx = {"id": d + "10", "kinex": "../../shared/kinex.jpg",
           "steps": json.loads(json.dumps(STEPS, ensure_ascii=False).replace("__SUB__", name))}
-    s = s.replace("<body>", '<body>\n<script src="../../shared/intro.js"></script>\n<script>var KX=' + json.dumps(kx, ensure_ascii=False) + ';KX.ready=function(){return typeof V!=="undefined"&&V==="home"&&!document.getElementById("shc")};SahabaIntro.run(KX)</script>', 1)
+    s = s.replace("<body>", '<body>\n<script src="../../shared/wisdom.js"></script>\n<script src="../../shared/intro.js"></script>\n<script>var KX=' + json.dumps(kx, ensure_ascii=False) + ';KX.ready=function(){return typeof V!=="undefined"&&V==="home"&&!document.getElementById("shc")};(window.SahabaWisdom?SahabaWisdom.gate("' + d + '",function(){SahabaIntro.run(KX)}):SahabaIntro.run(KX))</script>', 1)
     s = rep(s, 'onclick="tourStart()"><span>🎓', 'onclick="mn(false);SahabaIntro.tour(KX)"><span>🎓')
     # هوية الصحابة البصرية: كريمي وأخضر وبني (يبقى لون المادة المميِّز للتمييز بين الموادّ فقط)
     s = rep(s, ":root{--bg:#EFE3CC;--card:#FBF5E8;--text:#2A2016;--muted:#5C4B38;--bd:#C9B28C;--pri:#5A3E1A;--ink:#2A2016;--c1:#1565C0;--c1b:#E6D3AE;",
@@ -284,9 +284,7 @@ def inject_tools(out: Path, d: str) -> None:
         s = s[:a] + s[b:].lstrip("\n")
     s = s.replace('<div class="mi" onclick="bgPick()"><span>🎨 لون الخلفية</span></div>', '<div class="mi" onclick="Durra.store()"><span>🪙 متجر دُرّة</span></div>')   # لا ألوان مجانية: كلّها من المتجر
     js = (ROOT / "tools" / "sci_tools.js").read_text(encoding="utf-8").replace("__DIR__", f"{d}/10")
-    wtag = '<script src="../../shared/wisdom.js"></script>\n'          # حكمة اليوم الخاصّة بالمادة
-    s = s.replace(wtag, "")
-    s = rep(s, "</body>", wtag + js + "</body>")
+    s = rep(s, "</body>", js + "</body>")
     f.write_text(s, encoding="utf-8")
 
 
