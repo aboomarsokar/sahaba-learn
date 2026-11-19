@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>اللغة العربية — الصف العاشر</title>
-<meta name="theme-color" content="#0d0904">
+<meta name="theme-color" content="#FAF6EB">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -84,13 +84,13 @@ h1,h2,h3{margin:0;font-weight:700}
 .tabs.sc{overflow-x:auto;-webkit-overflow-scrolling:touch}.tabs.sc button{flex:none;padding:9px 14px;white-space:nowrap}
 .tx{line-height:2.1}.tx p{margin:0 0 10px}.tx-h{color:var(--g);font-size:1.05rem;margin:14px 0 6px}.tx-b{position:relative;padding-inline-start:16px;margin-bottom:4px}.tx-b::before{content:"•";position:absolute;inset-inline-start:2px;color:var(--g)}.tx-q{margin:0 0 10px;padding:8px 10px;border-radius:12px;background:rgba(127,127,127,.12)}
 .rv-b{margin-top:8px!important}.btn:disabled{opacity:.55}
-:root[data-acc=gold]{--gold:linear-gradient(135deg,#f8e39a 0%,#e3b94d 38%,#c89622 62%,#8f6410 100%);--g:#e3b94d;--ongold:#2b1d04;--ink:#f6ecd2;--mut:#c2b284;--cardb:rgba(240,200,100,.26);--solid:#241b0e}
-:root[data-acc=gold][data-mode=light]{--ink:#3a2a08;--mut:#7d6a3e;--cardb:rgba(184,137,31,.32);--solid:#fffaf0;--g:#b8891f}
+:root[data-acc=gold]{--gold:linear-gradient(135deg,#c58a4a 0%,#a85a14 40%,#8B4200 70%,#6a3200 100%);--g:#a85a14;--ongold:#fff;--ink:#f6ecd2;--mut:#c2b284;--cardb:rgba(240,200,100,.26);--solid:#241b0e}
+:root[data-acc=gold][data-mode=light]{--ink:#113D2E;--mut:#5f7a6e;--cardb:rgba(17,61,46,.16);--solid:#FEFEFE;--g:#8B4200}
 :root[data-acc=gold] #intro{background:linear-gradient(120deg,#f6dc8a,#d9a92f,#fbeab0,#c08f1d,#f1d070);background-size:300% 300%}
 :root[data-acc=gold] .ibox{background:rgba(255,250,235,.95);color:#3a2a08}:root[data-acc=gold] .ibox h1,:root[data-acc=gold] .fld{color:#7a5a10}:root[data-acc=gold] .ibox p{color:#7d6a3e}
 :root[data-acc=gold] .in,:root[data-acc=gold] .sec button{border-color:#ecdca8;color:#3a2a08}:root[data-acc=gold] .sec button.on{border-color:#a87a1a;color:#2b1d04}
 :root[data-acc=gold] .hikma{background:#fbf1cf;border-color:#c89622;color:#3a2a08}:root[data-acc=gold] .hikma small{color:#7d6a3e}
-:root[data-acc=gold] .btn{color:#2b1d04;box-shadow:inset 0 1px 0 rgba(255,255,255,.6),0 6px 16px rgba(168,122,26,.4)}
+:root[data-acc=gold] .btn{color:#fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 16px rgba(139,66,0,.35)}
 :root[data-acc=gold] .toast{background:#2a2008}
 .stage{transition:opacity .17s ease}.stage.fo{opacity:0}.fi{animation:fin .28s ease}@keyframes fin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .rv-p{margin:6px 0 10px;padding:10px;border:1px dashed var(--cardb);border-radius:18px}.rv-n{align-items:center}.rv-n .cnt{flex:none;color:var(--mut);padding:0 6px}.rv-n .btn{padding:9px 6px}
@@ -259,14 +259,14 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   };
   function ic(n) { var s = D.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("viewBox", "0 0 24 24"); var p = D.createElementNS("http://www.w3.org/2000/svg", "path"); p.setAttribute("d", IC[n]); s.appendChild(p); return s; }
   function load() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; } }
-  var S = load(); S.acc = S.acc || "gold"; S.mem = S.mem || {}; S.q = S.q || {}; S.mode = S.mode || "dark"; S.bgd = S.bgd || 0; S.bgl = S.bgl || 0; S.fs = S.fs || 16;
+  var S = load(); S.acc = S.acc || "gold"; S.mem = S.mem || {}; S.q = S.q || {}; S.mode = S.mode || "light"; if (!S.idv) { S.idv = 1; S.acc = "gold"; S.mode = "light"; S.bgl = 0; } S.bgd = S.bgd || 0; S.bgl = S.bgl || 0; S.fs = S.fs || 16;
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast("تعذّر الحفظ على هذا الجهاز"); } }
   function toast(m) { var t = h("div", { cls: "toast", t: m }); D.body.appendChild(t); setTimeout(function () { t.remove(); }, 2600); }
   var BGD = [["#3b0a1c", "#1a0509"], ["#4d0f2f", "#220717"], ["#2b0a1f", "#12040d"], ["#5a1020", "#240709"], ["#2d3036", "#121316"]];
   var BGL = [["#fff0f5", "#fbcfe0"], ["#ffe9ec", "#f8c3cb"], ["#fdeef7", "#f1cce3"], ["#fff3ee", "#fbd5c6"], ["#f6eef4", "#e6d0e0"]];
   function applyLook() {
     var r = D.documentElement, c = (S.mode === "dark" ? BGD : BGL)[S.mode === "dark" ? S.bgd : S.bgl];
-    if (S.acc === "gold") { if (S.mode === "dark" && !S.bgd) c = ["#1f1608", "#0d0904"]; if (S.mode === "light" && !S.bgl) c = ["#fff8e6", "#f1dfae"]; }
+    if (S.acc === "gold") { if (S.mode === "dark" && !S.bgd) c = ["#1f1608", "#0d0904"]; if (S.mode === "light" && !S.bgl) c = ["#FAF6EB", "#F4EDE5"]; }
     r.dataset.acc = S.acc; r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
     var m = $("meta[name=theme-color]"); if (m) m.content = c[1];
   }
