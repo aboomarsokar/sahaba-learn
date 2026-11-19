@@ -9,6 +9,7 @@
   3) يربطه بالبوابة: غلاف المادة، دخولٌ من ملف البوابة بلا تسجيل، زرّ العودة للبوابة، نشر الإنجازات، تحديثٌ تلقائي، عمل بلا إنترنت.
 المخرجات مولَّدة: لا تُعدَّل يدوياً؛ أعد التوليد من ملف المصدر.
 """
+import subprocess
 import json
 import re
 import shutil
@@ -72,7 +73,7 @@ libGo=function(k){libKind=k?"packs":"books";libSubj=PCB_ACTIVE_SUBJECT;nav("libi
 
 SW = r'''/* عامل خدمة __NAME__: يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (__PRE__). */
 const P = "__PRE__";
-const V = P + "v2";
+const V = P + "v3";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -226,11 +227,14 @@ def patch(out: Path, k: int, d: str, name: str, store: str, pre: str) -> None:
           "steps": json.loads(json.dumps(STEPS, ensure_ascii=False).replace("__SUB__", name))}
     s = s.replace("<body>", '<body>\n<script src="../../shared/intro.js"></script>\n<script>var KX=' + json.dumps(kx, ensure_ascii=False) + ';KX.ready=function(){return typeof V!=="undefined"&&V==="home"&&!document.getElementById("shc")};SahabaIntro.run(KX)</script>', 1)
     s = rep(s, 'onclick="tourStart()"><span>🎓', 'onclick="mn(false);SahabaIntro.tour(KX)"><span>🎓')
+    # هوية الصحابة البصرية: كريمي وأخضر وبني (يبقى لون المادة المميِّز للتمييز بين الموادّ فقط)
+    s = rep(s, ":root{--bg:#EFE3CC;--card:#FBF5E8;--text:#2A2016;--muted:#5C4B38;--bd:#C9B28C;--pri:#5A3E1A;--ink:#2A2016;--c1:#1565C0;--c1b:#E6D3AE;",
+            ":root{--bg:#FAF6EB;--card:#FFFFFF;--text:#113D2E;--muted:#5f7a6e;--bd:#EEE4DB;--pri:#113D2E;--ink:#113D2E;--c1:#1565C0;--c1b:#EEE4DB;")
     s = rep(s, "</body>", ACH.replace("__DIR__", d).replace("__NAME__", name) + '<script src="../../shared/update-notify.js" data-app="' + name + '" data-icon="../../shared/icons/portal-192.png" defer></script>\n</body>')
     (out / "index.html").write_text(s, encoding="utf-8")
     (out / "manifest.webmanifest").write_text(json.dumps({
         "name": f"{name} — الصف العاشر", "short_name": name, "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone",
-        "background_color": "#EFE3CC", "theme_color": "#EFE3CC",
+        "background_color": "#FAF6EB", "theme_color": "#FAF6EB",
         "icons": [{"src": "../../shared/icons/portal-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
                   {"src": "../../shared/icons/portal-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}]}, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "sw.js").write_text(SW.replace("__PRE__", pre).replace("__NAME__", name), encoding="utf-8")
@@ -259,6 +263,8 @@ def build(src: Path) -> None:
     st = prune(out, k)
     print(f"   حُذف من المادتين الأخريين: {st['lessons']} درساً، {st['libs']} مكتبة، {st['images']} صورة")
     patch(out, k, d, name, store, pre)
+    # ضغط صور التطبيق بأمان (يتجاوز ما لا يوفّر ≥12% مع حفظ الجودة)
+    subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'optimize_assets.py'), '--apply', f'{d}/10'], check=True)
 
 
 if __name__ == "__main__":

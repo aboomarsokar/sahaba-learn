@@ -21,12 +21,12 @@ if(/[?&]debug=1/.test(location.search))addEventListener('error',function(e){try{
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#EFE3CC" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#5A4636" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FAF6EB" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#5A4636" media="(prefers-color-scheme: dark)">
 <meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="PCB">
 <link rel="apple-touch-icon" href="../../shared/icons/portal-180.png"><link rel="icon" type="image/png" sizes="192x192" href="../../shared/icons/portal-192.png"><meta name="format-detection" content="telephone=no">
 <title>الكيمياء — الصف العاشر</title>
 <style>
-:root{--bg:#EFE3CC;--card:#FBF5E8;--text:#2A2016;--muted:#5C4B38;--bd:#C9B28C;--pri:#5A3E1A;--ink:#2A2016;--c1:#1565C0;--c1b:#E6D3AE;--c2:#D32F2F;--c2b:#F1D9D0;--c3:#2E7D32;--c3b:#dcebd9;
+:root{--bg:#FAF6EB;--card:#FFFFFF;--text:#113D2E;--muted:#5f7a6e;--bd:#EEE4DB;--pri:#113D2E;--ink:#113D2E;--c1:#1565C0;--c1b:#EEE4DB;--c2:#D32F2F;--c2b:#F1D9D0;--c3:#2E7D32;--c3b:#dcebd9;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#5A4636;--card:#6A5442;--text:#F6EEE2;--muted:#E6D3B8;--bd:#8A7058;--pri:#F0D9A8;--ink:#F6EEE2;--c1:#1565C0;--c1b:#7A624C;--c2:#D32F2F;--c2b:#6E4A3C;--c3:#2E7D32;--c3b:#2c4a3a}}
 :root[data-theme="dark"]{--bg:#5A4636;--card:#6A5442;--text:#F6EEE2;--muted:#E6D3B8;--bd:#8A7058;--pri:#F0D9A8;--ink:#F6EEE2;--c1:#1565C0;--c1b:#7A624C;--c2:#D32F2F;--c2b:#6E4A3C;--c3:#2E7D32;--c3b:#2c4a3a}
@@ -202,7 +202,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 </style>
 <script>/* خلفية التطبيق: نقش رموز علمية + اختيار اللون (15 فاتح / 15 غامق) */
 (function(){
-var LIGHT=[['بيج','#EFE3CC'],['كريمي','#F7EFD9'],['رملي','#E8D5B0'],['خوخي','#F6D5BE'],['وردي','#F3D3D8'],['أرجواني فاتح','#DCCFF2'],['سماوي','#CFE4F5'],['نعناعي','#CDEBDD'],['مريمية','#D5E1C3'],['ليموني','#F4F0B8'],['تركوازي فاتح','#C6EAEA'],['مشمشي','#F8DDB0'],['رمادي دافئ','#E4E1DC'],['وردي بنفسجي','#E9D5EC'],['زيتوني فاتح','#D9E2A0']];
+var LIGHT=[['بيج','#FAF6EB'],['كريمي','#F7EFD9'],['رملي','#E8D5B0'],['خوخي','#F6D5BE'],['وردي','#F3D3D8'],['أرجواني فاتح','#DCCFF2'],['سماوي','#CFE4F5'],['نعناعي','#CDEBDD'],['مريمية','#D5E1C3'],['ليموني','#F4F0B8'],['تركوازي فاتح','#C6EAEA'],['مشمشي','#F8DDB0'],['رمادي دافئ','#E4E1DC'],['وردي بنفسجي','#E9D5EC'],['زيتوني فاتح','#D9E2A0']];
 var DARK=[['سكني داكن','#5A4636'],['إسبريسو','#3A2A20'],['كحلي','#1F2F4D'],['غابة','#1F3D2B'],['زيتوني','#34470E'],['برقوقي','#442A55'],['فيروزي داكن','#1B4B4F'],['أردوازي','#2F3B4A'],['فحمي','#2B2B2E'],['عنّابي','#532030'],['نيلي','#2E2B5E'],['صنوبري','#1E3B35'],['صدئ','#5A3020'],['فولاذي','#36495A'],['منتصف الليل','#141C33']];
 var il=0,id=0;
 try{il=+localStorage.getItem('pcbBgL')||0;id=+localStorage.getItem('pcbBgD')||0}catch(e){}
