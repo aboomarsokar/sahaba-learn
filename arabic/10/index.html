@@ -341,21 +341,33 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
       h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })]),
       h("button", { cls: "btn", t: "ابدأ يا بطل 🚀", on: { click: function () { stepName(false); } } })]));
   }
+  /* تسجيلٌ واحد للموقع كلّه: الاسم من ملفّ البوابة المشترك (نفس النطاق) فلا يُطلب مرّتين */
+  var PK = "sahaba-portal-profile";
+  function portalProfile() { try { var p = JSON.parse(localStorage.getItem(PK) || "null"); return p && p.first && p.father && p.family ? p : null; } catch (e) { return null; } }
+  function adoptPortal() {
+    var p = portalProfile(); if (!p) return;
+    var n = [p.first, p.father, p.family].join(" ");
+    if (!S.name || S.name !== n) { S.name = n; if (!S.done) S.done = 0; save(); }
+  }
+  function writePortal(parts) {
+    try { var p = portalProfile() || { photo: null }; p.first = parts[0]; p.father = parts[1]; p.family = parts.slice(2).join(" "); localStorage.setItem(PK, JSON.stringify(p)); } catch (e) {}
+  }
   function stepName(edit) {
     var box = $("#intro"); box.hidden = false; hideShell(); box.innerHTML = "";
+    var fromPortal = !edit && !!portalProfile() && !!S.name;
     var name = h("input", { cls: "in", placeholder: "الاسم الثلاثي", autocomplete: "name", value: S.name || "" }), sec = S.sec || "", err = h("div", { cls: "err" });
     var btns = ["عاشر ١", "عاشر ٢", "عاشر ٣"].map(function (s) {
       var b = h("button", { type: "button", t: s, on: { click: function () { sec = s; btns.forEach(function (x) { x.classList.toggle("on", x === b); }); } } });
       if (s === sec) b.className = "on"; return b;
     });
     var next = h("button", { cls: "btn", t: edit ? "حفظ" : "ادخل", on: { click: function () {
-      var parts = name.value.trim().split(/\s+/).filter(Boolean);
+      var parts = (fromPortal ? S.name : name.value).trim().split(/\s+/).filter(Boolean);
       if (parts.length < 3) { err.textContent = "اكتب اسمك ثلاثياً (ثلاث كلمات)."; return; }
       if (!sec) { err.textContent = "اختر الشعبة."; return; }
-      S.name = parts.join(" "); S.sec = sec; S.done = 1; save(); box.hidden = true; if (!edit) location.hash = "home"; route();
+      S.name = parts.join(" "); S.sec = sec; S.done = 1; save(); writePortal(parts); box.hidden = true; if (!edit) location.hash = "home"; route();
     } } });
     box.appendChild(h("div", { cls: "ibox" }, [h("div", { cls: "lamp", t: "📖" }), h("h1", { t: "اللغة العربية" }), h("p", { t: "الصف العاشر — اكتب بياناتك" }),
-      h("label", { cls: "fld", t: "اسمك الثلاثي" }), name, h("label", { cls: "fld", t: "الشعبة" }), h("div", { cls: "sec" }, btns), err, next]));
+      fromPortal ? h("p", { t: "أهلاً " + S.name.split(" ")[0] + "! اخترنا اسمك من تسجيلك في البوابة." }) : h("label", { cls: "fld", t: "اسمك الثلاثي" }), fromPortal ? D.createTextNode("") : name, h("label", { cls: "fld", t: "الشعبة" }), h("div", { cls: "sec" }, btns), err, next]));
   }
 
   /* ===== التثبيت والمشاركة ===== */
@@ -724,7 +736,8 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
 
   function route() {
     closeMenu();
-    if (!S.done || !S.name) { return stepWisdom(); }
+    adoptPortal();
+    if (!S.done || !S.name) { return portalProfile() && S.sec ? (S.done = 1, save(), route()) : stepWisdom(); }
     $("#intro").hidden = true; app.hidden = false;
     var p = (location.hash || "#home").slice(1).split("/");
     if (p[0] === "unit") unit(p[1]); else if (p[0] === "sem") semPage(p[1], p[2]); else if (p[0] === "dict") dict(); else if (p[0] === "mem") mem(); else if (p[0] === "settings") settings(); else if (p[0] === "quizzes") quizzes();
