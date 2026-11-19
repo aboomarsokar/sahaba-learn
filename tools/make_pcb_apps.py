@@ -197,6 +197,7 @@ def prune(out: Path, k: int) -> dict:
 def patch(out: Path, k: int, d: str, name: str, store: str, pre: str) -> None:
     s = (out / "index.html").read_text(encoding="utf-8")
     s = re.sub(r"<title>.*?</title>", f"<title>{name} — الصف العاشر</title>", s, count=1, flags=re.S)
+    s = s.replace("(LV.u&&LVN[q.l]", "(LV&&LV.u&&LVN[q.l]")   # إصلاح: اختبارٌ عامّ بلا LV كان يتعطّل (LV=null)
     s = re.sub(r'<link rel="manifest" href="manifest-\w+\.webmanifest">', '<link rel="manifest" href="manifest.webmanifest">', s, count=1)
     s = s.replace('href="icons/apple-touch-icon.png"', 'href="../../shared/icons/portal-180.png"').replace('href="icons/icon-192.png"', 'href="../../shared/icons/portal-192.png"')
     s = re.sub(r'register\("\./sw-\w+\.js"\)', 'register("./sw.js")', s, count=1)
