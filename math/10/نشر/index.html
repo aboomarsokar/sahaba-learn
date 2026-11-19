@@ -126,7 +126,7 @@ button.ls{cursor:pointer}button.ls:active{background:#f3f8fc}
   function tour(o) {
     if (tourBusy || !o.steps || !o.steps.length) return; css(); tourBusy = true; cur = o; idx = 0;
     var t = D.createElement("div"); t.id = "kxt"; t.innerHTML = '<div class="full"></div><div class="hl" style="display:none"></div><div class="tb"></div>';
-    t.addEventListener("click", function (e) { var a = e.target && e.target.getAttribute && e.target.getAttribute("data-a"); if (!a) return; if (a === "n") { if (idx >= cur.steps.length - 1) end(); else { idx++; draw(); } } else if (a === "p") { if (idx > 0) { idx--; draw(); } } else end(); });
+    t.addEventListener("click", function (e) { var tg = e.target && e.target.closest ? e.target.closest("[data-a]") : null, a = tg && tg.getAttribute("data-a"); if (!a) return; if (a === "n") { if (idx >= cur.steps.length - 1) end(); else { idx++; draw(); } } else if (a === "p") { if (idx > 0) { idx--; draw(); } } else end(); });
     D.body.appendChild(t); draw();
     if (o.onStartTour) try { o.onStartTour(); } catch (e) {}
   }

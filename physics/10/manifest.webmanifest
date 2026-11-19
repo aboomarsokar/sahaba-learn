@@ -1,0 +1,25 @@
+{
+  "name": "الفيزياء — الصف العاشر",
+  "short_name": "الفيزياء",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EFE3CC",
+  "theme_color": "#EFE3CC",
+  "icons": [
+    {
+      "src": "../../shared/icons/portal-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../../shared/icons/portal-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
