@@ -65,7 +65,7 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 .tab{padding:12px 6px;border-radius:14px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:1rem;text-align:center}
 .tab[aria-pressed="true"]{background:linear-gradient(180deg,#f0cf7e,var(--gold));color:var(--onGold);border-color:transparent;box-shadow:0 6px 16px rgba(0,0,0,.25)}
 .banners{display:flex;flex-direction:column;gap:26px;margin-bottom:34px}
-/* لافتات الصفوف والمواد: إطار أسطوري من ذهب ملتفّ بزوايا مشطوبة وجواهر، وظل واضح وحركة */
+/* لافتات الصفوف والمواد: إطار أسطوري من ذهب ملتفّ بزوايا مشطوبة وظل واضح وحركة */
 .gb{--n:20px;--m:calc(var(--n) - 7px);position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;
  filter:drop-shadow(0 5px 0 rgba(0,0,0,.4)) drop-shadow(0 18px 14px rgba(0,0,0,.65)) drop-shadow(0 0 16px rgba(227,185,77,.32));
  animation:gbfloat 6.5s ease-in-out infinite;transition:transform .2s ease}
@@ -75,14 +75,8 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 .gbf{position:relative;display:block;padding:7px}
 .gbr{position:absolute;inset:0;z-index:0;clip-path:polygon(var(--n) 0,calc(100% - var(--n)) 0,100% var(--n),100% calc(100% - var(--n)),calc(100% - var(--n)) 100%,var(--n) 100%,0 calc(100% - var(--n)),0 var(--n));
  background:repeating-linear-gradient(55deg,#fff6c4 0 4px,#e0b043 4px 8px,#8a5f12 8px 12px,#f6d77a 12px 16px)}
-.gbr::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(255,255,255,.65) 50%,transparent 65%) 100% 0/300% 100% no-repeat;animation:gshine 5.5s ease-in-out infinite}
 .gb img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover;display:block;
  clip-path:polygon(var(--m) 0,calc(100% - var(--m)) 0,100% var(--m),100% calc(100% - var(--m)),calc(100% - var(--m)) 100%,var(--m) 100%,0 calc(100% - var(--m)),0 var(--m))}   /* كل المستطيلات بحجم واحد */
-.gbf::after{content:"";position:absolute;inset:7px;z-index:2;pointer-events:none;clip-path:polygon(var(--m) 0,calc(100% - var(--m)) 0,100% var(--m),100% calc(100% - var(--m)),calc(100% - var(--m)) 100%,var(--m) 100%,0 calc(100% - var(--m)),0 var(--m));background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.3) 50%,transparent 60%) 100% 0/300% 100% no-repeat;animation:gshine 5.5s ease-in-out infinite;animation-delay:.6s}
-@keyframes gshine{to{background-position:-100% 0}}
-.gm{position:absolute;z-index:3;width:30px;height:30px;background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><defs><radialGradient id='a' cx='.35' cy='.3' r='.9'><stop offset='0' stop-color='%23fff'/><stop offset='.5' stop-color='%23bfe6ff'/><stop offset='1' stop-color='%234f86c8'/></radialGradient></defs><circle cx='20' cy='20' r='19' fill='%23c9962f' stroke='%236b4509' stroke-width='1.5'/><polygon points='13,8 27,8 33,15 20,33 7,15' fill='url(%23a)' stroke='%23e6f4ff' stroke-width='.8'/><path d='M7 15h26M13 8l7 7 7-7M20 15v18' stroke='%23fff' stroke-width='.6' fill='none' opacity='.9'/></svg>") center/contain no-repeat;filter:drop-shadow(0 0 5px rgba(255,255,255,.8));animation:gtw 2.6s ease-in-out infinite}
-.gm.a{top:-5px;left:-5px}.gm.b{top:-5px;right:-5px;animation-delay:.6s}.gm.c{bottom:-5px;left:-5px;animation-delay:1.2s}.gm.d{bottom:-5px;right:-5px;animation-delay:1.8s}
-@keyframes gtw{50%{transform:scale(1.18) rotate(8deg);filter:drop-shadow(0 0 10px #fff) brightness(1.4)}}
 .gb .rd{position:absolute;top:10px;left:12px;background:var(--gold);color:var(--onGold);font-weight:700;font-size:.78rem;padding:2px 11px;border-radius:999px}
 .gb:focus-visible,.tab:focus-visible,.ib:focus-visible,.mi:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 
@@ -428,7 +422,7 @@ function drawTabs(){
 function drawBanners(){
   var gs = data.grades.filter(function(g){ return g.stage === stage; });
   $("banners").innerHTML = gs.map(function(g){
-    var inner = g.img ? '<span class="gbf"><span class="gbr"></span><img src="'+esc(g.img)+'" alt="'+esc(g.name)+'" loading="lazy"><i class="gm a"></i><i class="gm b"></i><i class="gm c"></i><i class="gm d"></i></span>' : '<span class="empty" style="display:block;padding:28px;text-align:center">'+esc(g.name)+'</span>';
+    var inner = g.img ? '<span class="gbf"><span class="gbr"></span><img src="'+esc(g.img)+'" alt="'+esc(g.name)+'" loading="lazy"></span>' : '<span class="empty" style="display:block;padding:28px;text-align:center">'+esc(g.name)+'</span>';
     return '<button type="button" class="gb" data-g="'+esc(g.id)+'" aria-label="'+esc(g.name)+'">'+inner+(hasReady(g.id) ? '<span class="rd">مواد جاهزة</span>' : '')+'</button>';
   }).join("");
   $("banners").querySelectorAll(".gb").forEach(function(b){ b.addEventListener("click", function(){ current = b.dataset.g; lsSet(K.grade, current); show("subjects"); }); });
@@ -443,7 +437,7 @@ function drawSubjects(){
     var e = s.grades && s.grades[current];
     var icon = ICONS[s.icon] || ICONS.book;
     if (s.banner) {   /* مادةٌ لها مستطيلها (صورة) */
-      var img = '<span class="gbf"><span class="gbr"></span><img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy"><i class="gm a"></i><i class="gm b"></i><i class="gm c"></i><i class="gm d"></i></span>';
+      var img = '<span class="gbf"><span class="gbr"></span><img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy"></span>';
       return e ? '<a class="gb" href="'+esc(e.dir)+'/" aria-label="'+esc(s.name)+'">'+img+'<span class="rd">جاهز</span></a>'
                : '<button type="button" class="gb" data-soon data-sid="'+esc(s.id)+'" aria-label="'+esc(s.name)+'">'+img+'<span class="rd soon">قريباً</span></button>';
     }
