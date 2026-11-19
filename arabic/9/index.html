@@ -788,7 +788,11 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     return vocabQs(sem).concat(g);
   }
   function lessonQs(key) { var out = []; [1, 2].forEach(function (s) { allQs(s).forEach(function (q) { if (q.k === key) out.push(q); }); }); return out; }
+<<<<<<< HEAD
   var EX = { 1: 5, 2: 5 };
+=======
+  var EX = { 1: 0, 2: 0 };
+>>>>>>> origin/main
   function examQs(sem, n) {
     var by = {}, order = [];
     allQs(sem).forEach(function (q) { if (!by[q.c]) { by[q.c] = []; order.push(q.c); } by[q.c].push(q); });
