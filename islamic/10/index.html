@@ -102,6 +102,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
 </style>
 </head>
 <body>
+<script src="../../shared/durra.js"></script>
 <script src="../../shared/intro.js"></script>
 <main id="app"></main>
 <nav id="nav" aria-label="التنقّل"></nav>
@@ -183,7 +184,9 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
   /* ---------------- الحالة والحفظ ---------------- */
   var S = { coins: 0, earned: 0, spent: 0, owned: ["emerald"], theme: "emerald", L: {}, mis: {}, log: [], unitDone: {}, own: { bg: ["plain"], card: ["base"], frame: ["plain"], ach: ["classic"] }, sel: { bg: "plain", card: "base", frame: "plain", ach: "classic" } };
   try { var sv = JSON.parse(localStorage.getItem(KEY) || "null"); if (sv) Object.keys(sv).forEach(function (k) { S[k] = sv[k]; }); } catch (e) {}
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} publish(); }
+  Durra.init({ dir: "islamic/10", noBg: true }); Durra.syncIn(S);   /* المحفظة والألوان والإطارات مشتركة بين كل المواد */
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} try { Durra.syncOut(S); } catch (e) {} publish(); }
+  document.addEventListener("visibilitychange", function () { if (!document.hidden) { try { Durra.syncIn(S); refreshWallet(); } catch (e) {} } });
   function userName() { try { var p = JSON.parse(localStorage.getItem("sahaba-portal-profile") || "null"); return p && p.first ? p.first : ""; } catch (e) { return ""; } }
 
   var ALL = [], UNITS = []; D.terms.forEach(function (t) { t.units.forEach(function (u) { UNITS.push(u); u.lessons.forEach(function (l) { l.unit = u.id; ALL.push(l); }); }); });

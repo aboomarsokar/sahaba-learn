@@ -19,6 +19,7 @@
 "./index.html",
 "./manifest.webmanifest",
 "../../shared/update-notify.js",
+"../../shared/durra.js",
 "../../shared/intro.js",
 "../../shared/kinex.jpg",
 "../../shared/covers/islamic.webp",

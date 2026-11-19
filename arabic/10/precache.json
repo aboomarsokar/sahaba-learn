@@ -8,6 +8,7 @@
 "./icon-512.png",
 "./index.html",
 "./manifest.webmanifest",
+"../../shared/durra.js",
 "../../shared/intro.js",
 "../../shared/kinex.jpg",
 "../../shared/covers/arabic.webp",

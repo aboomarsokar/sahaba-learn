@@ -543,7 +543,7 @@ try{indexedDB.deleteDatabase("pcbflags")}catch(e){}}catch(e){}})();localStorage.
 <script>
 /* دُرّة: المظهر والمحفظة المشتركة */
 Durra.init({dir:"portal", frames:".me .av", vars:function(t){var v=t.v;return {"--bg":v.bg,"--surface":v.card,"--surface2":v.soft,"--line":v.bd,"--ink":v.ink,"--muted":v.mut,"--gold":v.gold,"--gold2":v.gold2,"--onGold":v.onpri,"--deep":v.pri};}});
-(function(){var tb=document.querySelector(".topbar");if(tb){var c=Durra.chip();c.style.marginInlineStart="auto";tb.appendChild(c);} Durra.onChange(function(){try{drawMe()}catch(e){}});})();
+(function(){document.querySelectorAll(".topbar").forEach(function(tb){var c=Durra.chip();c.style.marginInlineStart="auto";tb.appendChild(c);}); Durra.onChange(function(){try{drawMe()}catch(e){}});})();
 </script>
 <script src="shared/update-notify.js" data-app="بوابة الصحابة التعليمية" data-icon="shared/icons/portal-192.png" defer></script>
 <script>

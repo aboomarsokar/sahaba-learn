@@ -314,6 +314,8 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
 <script src="../../shared/intro.js"></script>
 <script src="data/curriculum.js"></script>
 <script src="data/dict.js"></script>
+<script src="../../shared/durra.js"></script>
+<script>Durra.init({dir:"arabic/10",frames:".av",vars:function(t){var r=document.documentElement;if(r.dataset.mode==="dark"&&!t.dark)return{};var v=t.v;return {"--bg1":v.bg,"--bg2":v.bg2,"--ink":v.ink,"--mut":v.mut,"--card":t.dark?"rgba(255,255,255,.07)":"rgba(255,255,255,.82)","--cardb":v.pri+"29","--solid":v.card,"--g":v.gold,"--gold":"linear-gradient(135deg,"+v.gold2+","+v.gold+" 70%,"+v.pri2+")","--ongold":"#fff"};}});</script>
 <script src="data/wisdom.js"></script>
 <script src="data/quiz.js"></script>
 <script>
@@ -346,8 +348,9 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   function applyLook() {
     var r = D.documentElement, c = bgs(S.mode === "dark")[S.mode === "dark" ? S.bgd : S.bgl];
     if (S.acc === "gold") { if (S.mode === "dark" && !S.bgd) c = ["#1f1608", "#0d0904"]; if (S.mode === "light" && !S.bgl) c = ["#fff8e6", "#f1dfae"]; }
-    r.dataset.acc = S.acc; r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
+    S.acc = "sahaba"; r.dataset.acc = S.acc; r.dataset.mode = S.mode; r.style.setProperty("--bg1", c[0]); r.style.setProperty("--bg2", c[1]); r.style.setProperty("--fs", S.fs + "px");
     var m = $("meta[name=theme-color]"); if (m) m.content = c[1];
+    if (window.Durra) Durra.apply();
   }
   applyLook();
 
@@ -473,7 +476,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     sheet("اللغة العربية", [
       h("div", { cls: "dg", t: "التطبيق" }), mi("gear", "الإعدادات", go("settings")), mi("dl", "تنزيل التطبيق", function () { closeMenu(); installApp(); }), mi("share", "مشاركة التطبيق", function () { closeMenu(); shareApp(); }),
       h("div", { cls: "dg", t: "دراستي" }), mi("quiz", "الاختبارات", go("quizzes")), mi("dict", "القاموس المعجمي", go("dict")), mi("star", "المحفوظات", go("mem")), mi("book", "الكتب المدرسية", go("books")), mi("doc", "الرزمة التعليمية", go("pack")),
-      h("div", { cls: "dg", t: "المزيد" }), mi("bulb", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })])]); }),
+      h("div", { cls: "dg", t: "المزيد" }), mi("star", "متجر دُرّة", function () { closeMenu(); Durra.store(); }), mi("bulb", "حكمة اليوم", function () { var w = wisdomToday(); sheet("حكمة اليوم", [h("div", { cls: "hikma" }, [D.createTextNode(w[0]), h("small", { t: "— " + w[1] })])]); }),
       mi("pen", "تعديل الاسم والشعبة", function () { closeMenu(); stepName(true); }), mi("bulb", "أعد جولة كينيكس", replayTour)
     ]);
   }
@@ -489,7 +492,7 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
   var ROM = ["", "I", "II"];
   function home() {
     var first = S.name.split(" ")[0];
-    var head = h("div", { cls: "top" }, [avatarEl(), h("div", { cls: "hi", style: "flex:1" }, [h("b", null, ["مرحباً، ", h("em", { t: first })]), h("small", { t: "ماذا تحب أن تبدأ؟ · " + S.sec })]), h("a", { cls: "ib", href: "../../index.html", "aria-label": "بوابة الصحابة التعليمية", style: "display:grid;place-items:center;text-decoration:none", t: "" }, [ic("home")]), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
+    var head = h("div", { cls: "top" }, [avatarEl(), h("div", { cls: "hi", style: "flex:1" }, [h("b", null, ["مرحباً، ", h("em", { t: first })]), h("small", { t: "ماذا تحب أن تبدأ؟ · " + S.sec })]), h("a", { cls: "ib", href: "../../index.html", "aria-label": "بوابة الصحابة التعليمية", style: "display:grid;place-items:center;text-decoration:none", t: "" }, [ic("home")]), (window.Durra ? Durra.chip() : null), h("button", { cls: "ib", "aria-label": "القائمة", on: { click: openMenu } }, [ic("menu")])]);
     var sems = ARA.semesters.map(function (s) { return h("button", { cls: "sem rope", on: { click: function () { location.hash = "sem/" + s.id; } } }, ornEls().concat([gemEl("top:6px;left:50%;margin-left:-9px", 18), h("div", { cls: "rn", t: ROM[s.id] }), h("div", null, [h("b", { t: s.name }), h("small", { t: s.units.length + " وحدات" })])])); });
     function pent(icon, t, hash) { return h("button", { cls: "pent", on: { click: function () { location.hash = hash; } } }, [h("span", null, [ic(icon), D.createTextNode(t), h("small", { t: "افتح" })])]); }
     var all = [], items = [], exTotal = 0;
@@ -735,9 +738,8 @@ window.addEventListener("appinstalled", function () { window.__dp = null; });
     function upd(f) { return function (v) { f(v); save(); applyLook(); settings(); }; }
     app.replaceChildren(top("الإعدادات"),
       h("div", { cls: "card" }, [h("h3", { t: "الوضع" }), h("div", { style: "height:8px" }), seg([["light", "فاتح"], ["dark", "داكن"]], S.mode, upd(function (v) { S.mode = v; })),
-        h("div", { cls: "lbl", t: "لون الخلفية للوضع الفاتح" }), sw(bgs(false), S.bgl, upd(function (v) { S.bgl = v; S.mode = "light"; })),
-        h("div", { cls: "lbl", t: "لون الخلفية للوضع الداكن" }), sw(bgs(true), S.bgd, upd(function (v) { S.bgd = v; S.mode = "dark"; }))]),
-      h("div", { cls: "card" }, [h("h3", { t: "لون التطبيق" }), h("div", { style: "height:8px" }), seg([["sahaba", "الصحابة"], ["teal", "فيروزي"], ["gold", "ذهبي"], ["rose", "وردي"]], S.acc, upd(function (v) { S.acc = v; }))]),
+        ]),
+      h("div", { cls: "card" }, [h("h3", { t: "الألوان والإطارات والخلفيات" }), h("div", { cls: "empty", style: "padding:0 0 8px;text-align:right", t: "كلّها تُشترى بالدُّرّات من المتجر، وتظهر في كل المواد." }), h("button", { cls: "btn", t: "🪙 افتح متجر دُرّة", on: { click: function () { Durra.store(); } } })]),
       h("div", { cls: "card" }, [h("h3", { t: "سرعة الخط الملوّن في الشرح" }), h("div", { style: "height:8px" }), seg([["slow", "بطيء"], ["mid", "عادي"], ["fast", "أسرع"]], S.rs || "mid", upd(function (v) { S.rs = v; }))]),
       h("div", { cls: "card" }, [h("h3", { t: "حجم الخط" }), h("div", { style: "height:8px" }), seg([[14, "صغير"], [16, "متوسط"], [19, "كبير"]], S.fs, upd(function (v) { S.fs = v; }))]),
       h("div", { cls: "card" }, [mi("dl", "تنزيل التطبيق", installApp), mi("share", "مشاركة التطبيق", shareApp), mi("pen", "تعديل الاسم والشعبة", function () { stepName(true); }),

@@ -36,7 +36,7 @@
     { id: "s5", n: "🧠 عقل", price: 30 }, { id: "s6", n: "🏆 كأس", price: 50 }, { id: "s7", n: "🔥 شعلة", price: 25 }, { id: "s8", n: "💎 جوهرة", price: 70 }
   ];
   var KINDS = { theme: THEMES, bg: BG, frame: FRAMES, title: TITLES, stk: STICKERS };
-  var CFG = { dir: "", vars: null, frames: "", dark: false }, subs = [];
+  var CFG = { dir: "", vars: null, frames: "", noBg: false }, subs = [];
 
   function def() { return { bal: 0, earned: 0, spent: 0, own: { theme: ["emerald"], bg: ["plain"], frame: ["plain"], title: ["none"], stk: [] }, sel: { theme: "emerald", bg: "plain", frame: "plain", title: "none", stk: [] }, log: [], days: [], seen: {}, mig: {} }; }
   var W = def();
@@ -59,7 +59,7 @@
     if (CFG.vars) { try { var o = CFG.vars(t); Object.keys(o || {}).forEach(function (k) { st.setProperty(k, o[k]); }); } catch (e) {} }
     st.colorScheme = t.dark ? "dark" : "light";
     var m = D.querySelector("meta[name=theme-color]"); if (m) m.setAttribute("content", t.dark ? v.bg : v.bg);
-    var bgid = W.sel.bg, b = item("bg", bgid) || BG[0], ov = D.getElementById("drBg");
+    var bgid = CFG.noBg ? "plain" : W.sel.bg, b = item("bg", bgid) || BG[0], ov = D.getElementById("drBg");
     if (b.css === "none") { if (ov) ov.remove(); } else { if (!ov) { ov = D.createElement("div"); ov.id = "drBg"; ov.style.cssText = "position:fixed;inset:0;pointer-events:none;z-index:-1"; (D.body || R).appendChild(ov); } ov.style.backgroundImage = b.css; ov.style.backgroundSize = b.id === "geo" ? "64px 64px" : "cover"; }
     var f = item("frame", W.sel.frame) || FRAMES[0];
     if (CFG.frames) { try { D.querySelectorAll(CFG.frames).forEach(function (e) { e.style.borderColor = f.col; e.style.boxShadow = f.glow; }); } catch (e) {} }
@@ -131,7 +131,7 @@
   function syncOut(S) { W.bal = S.coins; W.earned = S.earned; W.spent = S.spent; W.own.theme = (S.owned || []).filter(function (x) { return item("theme", x); }); if (item("theme", S.theme)) W.sel.theme = S.theme; ["bg", "frame"].forEach(function (k) { if (S.own && S.own[k]) W.own[k] = S.own[k].slice(); if (S.sel && item(k, S.sel[k])) W.sel[k] = S.sel[k]; }); try { localStorage.setItem(KEY, JSON.stringify(W)); } catch (e) {} chips(); }
 
   function init(o) {
-    CFG = { dir: o.dir || "", vars: o.vars || null, frames: o.frames || "" };
+    CFG = { dir: o.dir || "", vars: o.vars || null, frames: o.frames || "", noBg: !!o.noBg };
     load();
     function go() { daily(); watchAll(); apply(); chips(); }
     if (D.readyState === "loading") D.addEventListener("DOMContentLoaded", go); else go();
@@ -139,5 +139,5 @@
     setInterval(function () { if (!D.hidden) watchAll(); }, 20000);
     window.addEventListener("storage", function (e) { if (e.key === KEY) { load(); apply(); chips(); } });
   }
-  g.Durra = { init: init, store: store, chip: chip, earn: earn, buy: buy, apply: apply, badge: badgeText, bal: function () { return W.bal; }, state: function () { load(); return W; }, syncIn: function (S) { load(); syncIn(S); }, syncOut: syncOut, onChange: function (f) { subs.push(f); }, ar: ar, THEMES: THEMES, FRAMES: FRAMES, TITLES: TITLES, STICKERS: STICKERS };
+  g.Durra = { watch: watchAll, init: init, store: store, chip: chip, earn: earn, buy: buy, apply: apply, badge: badgeText, bal: function () { return W.bal; }, state: function () { load(); return W; }, syncIn: function (S) { load(); syncIn(S); }, syncOut: syncOut, onChange: function (f) { subs.push(f); }, ar: ar, THEMES: THEMES, FRAMES: FRAMES, TITLES: TITLES, STICKERS: STICKERS };
 })(window);
