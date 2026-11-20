@@ -572,7 +572,7 @@ function bgLoadApps(d){
   if (!O || !O.supported || (c && c.saveData) || navigator.onLine === false) return;
   var mine = [], rest = [], seen = {};
   (d.subjects || []).forEach(function(s){ Object.keys(s.grades || {}).forEach(function(g){ var e = s.grades[g]; if (e && e.dir && !seen[e.dir]) { seen[e.dir] = 1; (g === current ? mine : rest).push(e.dir); } }); });
-  O.download(mine.concat(rest));
+  mine.concat(rest).reduce(function(p, dir){ return p.then(function(){ return O.ensure(dir); }).then(function(){ return new Promise(function(r){ setTimeout(r, 3000); }); }); }, Promise.resolve());
 }
 try{ profile = JSON.parse(lsGet(K.profile)); }catch(e){ profile = null; }
 fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(d){
