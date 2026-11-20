@@ -186,6 +186,14 @@
 "./images/hub/worksheet.webp",
 "./images/logo.jpg",
 "./index.html",
-"./manifest.webmanifest"
+"./manifest.webmanifest",
+"../../shared/update-notify.js",
+"../../shared/durra.js",
+"../../shared/intro.js",
+"../../shared/kinex.jpg",
+"../../shared/covers/english.webp",
+"../../shared/fonts/IBMPlexSansArabic-Regular.ttf",
+"../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
+"../../shared/wisdom.js"
 ]
 }
