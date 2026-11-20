@@ -1,6 +1,6 @@
 /* عامل خدمة الرياضيات (التاسع): يعمل بعد أول زيارة بلا إنترنت. يحذف ذاكرته وحدها (math9-). */
 const P = "math9-";
-const V = P + "v1";
+const V = P + "v3";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png",
   "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/wisdom.js"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });

@@ -1,8 +1,8 @@
 /* عامل خدمة البوابة: تعمل قائمة الصفوف والمواد بلا إنترنت بعد أوّل فتح. يحذف ذاكرته وحدها (portal-).
    لا يتدخّل في صفحات التطبيقات: لكلّ تطبيقٍ عامل خدمته وذاكرته. */
 const P = "portal-";
-const V = P + "v30";
-const CORE = ["./", "./index.html", "./manifest.webmanifest", "./shared/intro.js", "./shared/update-notify.js", "./shared/kinex.jpg", "./shared/covers/arabic.webp", "./shared/covers/islamic.webp", "./shared/covers/physics.webp", "./shared/covers/chemistry.webp", "./shared/covers/biology.webp", "./shared/icons/portal-192.png", "./shared/icons/portal-512.png", "./shared/icons/portal-180.png", "./subjects.json", "./shared/logo.webp", "./shared/fonts/IBMPlexSansArabic-Regular.ttf", "./shared/fonts/IBMPlexSansArabic-Bold.ttf", "./shared/fonts/aref-ruqaa-arabic-700.woff2",
+const V = P + "v32";
+const CORE = ["./", "./index.html", "./manifest.webmanifest", "./shared/intro.js", "./shared/update-notify.js", "./shared/offline.js", "./shared/kinex.jpg", "./shared/covers/arabic.webp", "./shared/covers/islamic.webp", "./shared/covers/physics.webp", "./shared/covers/chemistry.webp", "./shared/covers/biology.webp", "./shared/icons/portal-192.png", "./shared/icons/portal-512.png", "./shared/icons/portal-180.png", "./subjects.json", "./shared/logo.webp", "./shared/fonts/IBMPlexSansArabic-Regular.ttf", "./shared/fonts/IBMPlexSansArabic-Bold.ttf", "./shared/fonts/aref-ruqaa-arabic-700.woff2",
   "./shared/grades/g1.webp", "./shared/grades/g2.webp", "./shared/grades/g3.webp", "./shared/grades/g4.webp", "./shared/grades/g5.webp", "./shared/grades/g6.webp", "./shared/grades/g7.webp", "./shared/grades/g8.webp", "./shared/grades/g9.webp", "./shared/grades/g10.webp",
   "./shared/subjects/english.webp", "./shared/subjects/arabic.webp", "./shared/subjects/math.webp", "./shared/subjects/science.webp", "./shared/subjects/islamic.webp", "./shared/subjects/physics.webp", "./shared/subjects/chemistry.webp", "./shared/subjects/biology.webp"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
@@ -12,7 +12,7 @@ self.addEventListener("fetch", e => {
   if (r.method !== "GET" || u.origin !== self.location.origin) return;
   if (r.cache === "no-store") return;                              /* فحص التحديث: يذهب إلى الشبكة مباشرةً */
   const rel = u.pathname.slice(base.length);
-  if (!(rel === "" || rel === "index.html" || rel === "subjects.json" || rel === "manifest.webmanifest" || rel === "shared/intro.js" || rel === "shared/update-notify.js" || rel === "shared/durra.js" || rel === "shared/kinex.jpg" || rel.startsWith("shared/covers/") || rel.startsWith("shared/icons/") || rel.startsWith("shared/grades/") || rel.startsWith("shared/subjects/") || rel === "shared/logo.webp" || rel.startsWith("shared/fonts/"))) return;   /* غير ملفات البوابة: تمرّ كما هي */
+  if (!(rel === "" || rel === "index.html" || rel === "subjects.json" || rel === "manifest.webmanifest" || rel === "shared/intro.js" || rel === "shared/update-notify.js" || rel === "shared/offline.js" || rel === "shared/durra.js" || rel === "shared/kinex.jpg" || rel.startsWith("shared/covers/") || rel.startsWith("shared/icons/") || rel.startsWith("shared/grades/") || rel.startsWith("shared/subjects/") || rel === "shared/logo.webp" || rel.startsWith("shared/fonts/"))) return;   /* غير ملفات البوابة: تمرّ كما هي */
   /* الشبكة أولاً بمهلة 2.5 ثانية ثم النسخة المحفوظة */
   e.respondWith((async () => { const hit = await caches.match(r, { ignoreSearch: true }), cached = hit && !hit.redirected ? hit : null; const net = fetch(r).then(x => { if (x.ok && !x.redirected) { const c = x.clone(); caches.open(V).then(ch => ch.put(r, c)); } return x; }); if (!cached) return net.catch(() => caches.match("./index.html")); return Promise.race([net.catch(() => cached), new Promise(res => setTimeout(() => res(cached), 2500))]); })());
 });

@@ -14,6 +14,7 @@
 "../../shared/fonts/IBMPlexSansArabic-Regular.ttf",
 "../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
 "../../shared/fonts/aref-ruqaa-arabic-700.woff2",
-"../../shared/wisdom.js"
+"../../shared/wisdom.js",
+"../../shared/offline.js"
 ]
 }

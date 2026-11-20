@@ -19,37 +19,37 @@ CSS = MARK + r"""
 /* هوية «الصحابة» النظيفة (كما في تطبيق العربية) */
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
-:root{--c1:#0e6b3c;--c2:#0e6b3c;--c3:#0e6b3c}
-:root:not([data-theme="dark"]){--bd:#e9dfc8;--pri:#0e6b3c;--c1b:#e3efe6;--c2b:#e3efe6;--c3b:#e3efe6}
+:root{--c1:#00a152;--c2:#00a152;--c3:#00a152}
+:root:not([data-theme="dark"]){--bd:#e9dfc8;--pri:#00a152;--c1b:#d3f5de;--c2b:#d3f5de;--c3b:#d3f5de}
 body{font-family:"Plex Arabic","PCB Naskh","Noto Naskh Arabic",system-ui,sans-serif;font-weight:400}
 b,h1,h2,h3,h4,.hd,.tab,.btn,.ban b,.sc b{font-weight:700}
-.ban{background:linear-gradient(135deg,#1a8350,#0e6b3c)!important;animation:none!important;border:0!important;box-shadow:none!important;color:#fff}
+.ban{background:linear-gradient(135deg,#00c853,#00a152)!important;animation:none!important;border:0!important;box-shadow:none!important;color:#fff}
 .sc{background:var(--card)!important;color:var(--text)!important;border:1px solid var(--bd);box-shadow:none}
-.sc .cir{background:#e3efe6;color:#0e6b3c}.sc small{color:var(--muted);opacity:1}
-.btn:not(.o):not(.w){background:linear-gradient(135deg,#1a8350,#0e6b3c)!important;color:#fff!important;box-shadow:none}
-.btn.o{color:#0e6b3c;border-color:#0e6b3c}
-.tab{color:#0e6b3c!important;border:1px solid #b5d4be!important;background:var(--card)!important}
-.tab.on{background:#0e6b3c!important;color:#fff!important;border-color:#0e6b3c!important}
+.sc .cir{background:#d3f5de;color:#00a152}.sc small{color:var(--muted);opacity:1}
+.btn:not(.o):not(.w){background:linear-gradient(135deg,#00c853,#00a152)!important;color:#fff!important;box-shadow:none}
+.btn.o{color:#00a152;border-color:#00a152}
+.tab{color:#00a152!important;border:1px solid #7fe0a2!important;background:var(--card)!important}
+.tab.on{background:#00a152!important;color:#fff!important;border-color:#00a152!important}
 .card,.ui,.opt,.fm,.q4 div,.ic{border-width:1px;box-shadow:none}
-.card.rd{--k:#0e6b3c!important}
-.ui .ib,.ui .ib.im{background:#e3efe6}
-.pg i{background:#0e6b3c}
-.nv div.on{color:#0e6b3c}
-body.sp{background:linear-gradient(160deg,#FAF6EB,#E2ECE1)}
-.sp h1,.sp p,.sp .cl,.sp h2{color:#113D2E!important;text-shadow:none}
-.sp .chip{background:#e3efe6;color:#0e6b3c}
-.sp .btn.w{background:linear-gradient(135deg,#1a8350,#0e6b3c);color:#fff}
+.card.rd{--k:#00a152!important}
+.ui .ib,.ui .ib.im{background:#d3f5de}
+.pg i{background:#00a152}
+.nv div.on{color:#00a152}
+body.sp{background:linear-gradient(160deg,#FAF6EB,#d3f5de)}
+.sp h1,.sp p,.sp .cl,.sp h2{color:#0a5230!important;text-shadow:none}
+.sp .chip{background:#d3f5de;color:#00a152}
+.sp .btn.w{background:linear-gradient(135deg,#00c853,#00a152);color:#fff}
 .sp .cir{background:#fff;border:1px solid #e9dfc8}
-:root{--pcb-sub:#0e6b3c}
-.sch-hero{background:linear-gradient(135deg,#1a8350,#0e6b3c)!important;box-shadow:none!important}
-.sch-cta,.sch-cta a,.tchb,a.sch-cta{background:#0e6b3c!important;color:#fff!important;box-shadow:none!important}
-#go.btn.w{background:linear-gradient(135deg,#1a8350,#0e6b3c)!important;color:#fff!important;border:0;text-shadow:none}
-.lvk{background:#e3efe6;color:#0e6b3c}
-.ban{border-bottom:4px solid #E3B94D!important}
-.tab.on{box-shadow:0 3px 0 #E3B94D}
-.nv div.on{box-shadow:inset 0 3px 0 #E3B94D}
-.sch-av,.sch-q{border-color:#E3B94D!important}
-.ui .ib{border:1px solid #E3B94D}
+:root{--pcb-sub:#00a152}
+.sch-hero{background:linear-gradient(135deg,#00c853,#00a152)!important;box-shadow:none!important}
+.sch-cta,.sch-cta a,.tchb,a.sch-cta{background:#00a152!important;color:#fff!important;box-shadow:none!important}
+#go.btn.w{background:linear-gradient(135deg,#00c853,#00a152)!important;color:#fff!important;border:0;text-shadow:none}
+.lvk{background:#d3f5de;color:#00a152}
+.ban{border-bottom:4px solid #ffc107!important}
+.tab.on{box-shadow:0 3px 0 #ffc107}
+.nv div.on{box-shadow:inset 0 3px 0 #ffc107}
+.sch-av,.sch-q{border-color:#ffc107!important}
+.ui .ib{border:1px solid #ffc107}
 </style>
 """
 

@@ -137,11 +137,11 @@ SHELL_HTML = r"""<!doctype html>
 <style>
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
-:root{--bg:#FAF6EB;--card:#fff;--ink:#113D2E;--mut:#5f7a6e;--g:#0e6b3c;--y:#E3B94D;--bd:#e9dfc8}
+:root{--bg:#FAF6EB;--card:#fff;--ink:#0a5230;--mut:#4b7a5f;--g:#00a152;--y:#ffc107;--bd:#e9dfc8}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plex Arabic",system-ui,Tahoma,sans-serif;line-height:1.8;min-height:100vh}
 #app{max-width:640px;margin:0 auto;padding:16px 16px 40px}
 .top{display:flex;align-items:center;gap:10px;margin-bottom:16px}
-.av{width:52px;height:52px;border-radius:16px;background:#e3efe6;color:var(--g);border:1px solid var(--y);display:grid;place-items:center;font-weight:700;font-size:1.4rem;overflow:hidden;flex:none}.av img{width:100%;height:100%;object-fit:cover}
+.av{width:52px;height:52px;border-radius:16px;background:#d3f5de;color:var(--g);border:1px solid var(--y);display:grid;place-items:center;font-weight:700;font-size:1.4rem;overflow:hidden;flex:none}.av img{width:100%;height:100%;object-fit:cover}
 .hi{flex:1;min-width:0}.hi b{display:block;font-size:1.25rem}.hi small{color:var(--mut)}
 .ib{width:46px;height:46px;border-radius:14px;border:1px solid var(--bd);background:#fff;display:grid;place-items:center;text-decoration:none;font-size:1.3rem;color:var(--ink);cursor:pointer}
 .card,.row{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:12px}
@@ -149,11 +149,11 @@ SHELL_HTML = r"""<!doctype html>
 .chip{width:56px;height:56px;border-radius:16px;background:#fbf0c8;color:var(--g);border:1px solid var(--y);display:grid;place-items:center;font:700 1.5rem Georgia,serif;flex:none}
 .row b{display:block;font-size:1.15rem}.row small{color:var(--mut)}.row .go{margin-inline-start:auto;color:var(--mut)}
 .q{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:200px;width:100%;border:1px solid var(--y);border-radius:24px;background:#fff;color:var(--ink);font:inherit;cursor:default;margin-top:4px}
-.q i{font-style:normal;font-size:3.2rem}.q b{font-size:2.2rem;color:#134e3a}.q small{font-size:1rem;color:var(--mut)}
+.q i{font-style:normal;font-size:3.2rem}.q b{font-size:2.2rem;color:#0a5230}.q small{font-size:1rem;color:var(--mut)}
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
-.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:84px;border-radius:16px;border:1.5px solid #b5d4be;background:#fff;color:var(--g);font:700 1rem inherit;cursor:pointer}.tab i{font-style:normal;font-size:1.8rem}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:84px;border-radius:16px;border:1.5px solid #7fe0a2;background:#fff;color:var(--g);font:700 1rem inherit;cursor:pointer}.tab i{font-style:normal;font-size:1.8rem}
 .tab.on{background:var(--g);color:#fff;border-color:var(--g);box-shadow:0 3px 0 var(--y)}
-.btn{display:block;text-align:center;text-decoration:none;background:linear-gradient(135deg,#1a8350,var(--g));color:#fff;border-radius:14px;padding:12px;font-weight:700;margin-top:10px}
+.btn{display:block;text-align:center;text-decoration:none;background:linear-gradient(135deg,#00c853,var(--g));color:#fff;border-radius:14px;padding:12px;font-weight:700;margin-top:10px}
 .sub{color:var(--mut)}
 h1{font-size:1.2rem;margin:0}.hd{display:flex;align-items:center;gap:10px;margin-bottom:14px}.hd h1{flex:1}
 </style>
@@ -228,7 +228,7 @@ def shell(subject: str, name: str, pre: str) -> None:
            "sems": [{"name": "الفصل الأول", "book": link(subject, "book1")}, {"name": "الفصل الثاني", "book": link(subject, "book2")}]}
     (d / "index.html").write_text(SHELL_HTML.replace("__NAME__", name).replace("__CFG__", json.dumps(cfg, ensure_ascii=False)), encoding="utf-8")
     (d / "sw.js").write_text(SHELL_SW.replace("__NAME__", name).replace("__PRE__", pre), encoding="utf-8")
-    (d / "manifest.webmanifest").write_text(json.dumps({"name": f"{name} — الصف التاسع", "short_name": name, "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone", "background_color": "#FAF6EB", "theme_color": "#0e6b3c",
+    (d / "manifest.webmanifest").write_text(json.dumps({"name": f"{name} — الصف التاسع", "short_name": name, "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone", "background_color": "#FAF6EB", "theme_color": "#00a152",
         "icons": [{"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"}, {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}]}, ensure_ascii=False, indent=2), encoding="utf-8")
     for n in ("192", "512"):
         shutil.copyfile(ROOT / "shared" / "icons" / f"portal-{n}.png", d / f"icon-{n}.png")

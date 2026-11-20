@@ -153,6 +153,10 @@
         "9": {
           "dir": "math/9",
           "note": "الكتب والرزمة؛ والمحتوى قريباً"
+        },
+        "8": {
+          "dir": "math/8",
+          "note": "الأعداد والجبر والهندسة والإحصاء والمعادلات والقياس"
         }
       },
       "banner": "shared/subjects/math.webp"
@@ -162,7 +166,12 @@
       "name": "العلوم العامة",
       "color": "#2e7d32",
       "icon": "science",
-      "grades": {},
+      "grades": {
+        "8": {
+          "dir": "science/8",
+          "note": "الخلية والانقسام والطاقة والذرة والجدول الدوري والروابط والتفاعلات والأمواج والصوت وتصنيف الكائنات"
+        }
+      },
       "banner": "shared/subjects/science.webp"
     },
     {
@@ -173,11 +182,15 @@
       "grades": {
         "10": {
           "dir": "english/10",
-          "note": "LEXORA"
+          "note": "دروس ومفردات وقواعد وقراءة وتدريب"
         },
         "9": {
           "dir": "english/9",
           "note": "الرزمة؛ والمحتوى قريباً"
+        },
+        "8": {
+          "dir": "english/8",
+          "note": "12 وحدة من كتاب English for Palestine 8"
         }
       },
       "banner": "shared/subjects/english.webp"
@@ -196,6 +209,10 @@
         "9": {
           "dir": "arabic/9",
           "note": "الكتب والرزمة، والوحدات قريباً"
+        },
+        "8": {
+          "dir": "arabic/8",
+          "note": "الرزمة؛ والمحتوى قريباً"
         }
       }
     },

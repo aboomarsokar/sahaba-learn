@@ -204,10 +204,10 @@ js = """/* حِكَم يومية لكلّ مادة: تتبدّل كلّ يوم �
     try { if (sessionStorage.getItem(key)) { if (then) then(); return; } } catch (e) {}
     var w = pick(id), m = META[id] || META.arabic, d = document.createElement("div");
     d.id = "swgate"; d.setAttribute("dir", "rtl");
-    d.style.cssText = "position:fixed;inset:0;z-index:99999;background:linear-gradient(160deg,#FAF6EB,#E2ECE1);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:'Plex Arabic',system-ui,Tahoma,sans-serif;color:#113D2E;overflow:auto";
-    d.innerHTML = '<div style="font-size:3rem;line-height:1">' + m[1] + '</div><div style="font-weight:700;font-size:1.1rem;margin:8px 0 18px;color:#0e6b3c">' + m[0] + '</div>' +
-      '<div style="max-width:440px;width:100%%;background:#fff;border:1.5px solid #E3B94D;border-radius:22px;padding:22px 20px;box-shadow:0 6px 18px rgba(17,61,46,.08)"><small style="color:#5f7a6e">💡 حكمة اليوم</small><p dir="auto" style="font-size:1.3rem;line-height:2;margin:10px 0;font-weight:700">' + esc(w[0]) + '</p><small style="color:#5f7a6e">— ' + esc(w[1]) + '</small></div>' +
-      '<button id="swnext" type="button" style="margin-top:26px;min-width:220px;padding:14px 22px;border:0;border-radius:16px;background:linear-gradient(135deg,#1a8350,#0e6b3c);color:#fff;font:700 1.2rem inherit;font-family:inherit;cursor:pointer;box-shadow:0 2px 8px rgba(14,107,60,.3)">التالي ›</button>';
+    d.style.cssText = "position:fixed;inset:0;z-index:99999;background:linear-gradient(160deg,#FAF6EB,#d3f5de);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;font-family:'Plex Arabic',system-ui,Tahoma,sans-serif;color:#0a5230;overflow:auto";
+    d.innerHTML = '<div style="font-size:3rem;line-height:1">' + m[1] + '</div><div style="font-weight:700;font-size:1.1rem;margin:8px 0 18px;color:#00a152">' + m[0] + '</div>' +
+      '<div style="max-width:440px;width:100%%;background:#fff;border:1.5px solid #ffc107;border-radius:22px;padding:22px 20px;box-shadow:0 6px 18px rgba(17,61,46,.08)"><small style="color:#4b7a5f">💡 حكمة اليوم</small><p dir="auto" style="font-size:1.3rem;line-height:2;margin:10px 0;font-weight:700">' + esc(w[0]) + '</p><small style="color:#4b7a5f">— ' + esc(w[1]) + '</small></div>' +
+      '<button id="swnext" type="button" style="margin-top:26px;min-width:220px;padding:14px 22px;border:0;border-radius:16px;background:linear-gradient(135deg,#00c853,#00a152);color:#fff;font:700 1.2rem inherit;font-family:inherit;cursor:pointer;box-shadow:0 2px 8px rgba(14,107,60,.3)">التالي ›</button>';
     document.body.appendChild(d);
     document.getElementById("swnext").onclick = function () { try { sessionStorage.setItem(key, "1"); } catch (e) {} d.remove(); if (then) then(); };
   }
