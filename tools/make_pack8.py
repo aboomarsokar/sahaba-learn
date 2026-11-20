@@ -35,6 +35,10 @@ SUBJ = {
                  "theme": "sci", "key": "sci9:st", "wid": "science", "kxid": "science9", "student": "طالب العلوم", "packT": "رزمة العلوم والحياة", "widgets": False, "pack": LINKS.get("science9"), "pre": "sci9-",
                  "books": [["كتاب العلوم والحياة — الفصل الأول", LINKS.get("science9_b1")], ["كتاب العلوم والحياة — الفصل الثاني", LINKS.get("science9_b2")]],
                  "unitsHint": "خمس وحدات من رزمة العلوم والحياة: أجهزة الجسم، والكهرباء، والعناصر والتفاعلات، والضوء، والنبات الزهري. اضغط وحدة لترى دروسها."},
+    "math9": {"dir": "math/9", "grade": "9", "gradeName": "الصف التاسع", "gradeFor": "للصف التاسع", "name": "الرياضيات", "short": "الرياضيات", "hello": "مرحباً", "unitsTitle": "الوحدات الدراسية", "theme": "math",
+              "key": "math9:st", "wid": "math", "kxid": "math9", "student": "طالب الرياضيات", "packT": "رزمة الرياضيات", "pack": LINKS.get("math9"), "pre": "math9-",
+              "books": [["كتاب الرياضيات — الفصل الأول", LINKS.get("math9_b1")], ["كتاب الرياضيات — الفصل الثاني", LINKS.get("math9_b2")]],
+              "unitsHint": "أربع وحدات من رزمة الرياضيات: الأعداد الحقيقية والمستوى الديكارتي، والعلاقات والاقترانات والإحصاء، والمثلثات والمتباينات وكثيرات الحدود، والاقترانات والاحتمالات والدائرة. اضغط وحدة لترى دروسها."},
     "math": {"dir": "math/8", "name": "الرياضيات", "short": "الرياضيات", "hello": "مرحباً", "unitsTitle": "الوحدات الدراسية", "theme": "math", "key": "math8:st", "wid": "math",
              "kxid": "math8", "student": "طالب الرياضيات", "packT": "رزمة الرياضيات", "pack": LINKS["math"], "pre": "math8-",
              "unitsHint": "سبع وحدات: الأعداد، والجبر، والهندسة، والإحصاء، والمعادلات، والقياس. اضغط وحدة لترى دروسها."},
@@ -82,6 +86,26 @@ def science9_units() -> tuple:
     return units, bank
 
 
+def math9_units() -> list:
+    """وحدات رياضيات التاسع من tools/content9/math-<1a|1b|2a|2b|3a|3b|4a|4b>.json: كلّ وحدةٍ ملفّان يُدمجان، وتُبنى أسئلة الوحدة من «unit_quiz_pool» لكلٍّ منهما."""
+    C9 = ROOT / "tools" / "content9"
+    ICONS = {"1": ("frac", "#cfe2b0"), "2": ("alg", "#cfe2b0"), "3": ("tri", "#cfe2b0"), "4": ("cyl", "#cfe2b0")}
+    units = []
+    for n in "1234":
+        ps = [json.load(open(C9 / f"math-{n}{x}.json", encoding="utf-8")) for x in "ab" if (C9 / f"math-{n}{x}.json").exists()]
+        if not ps:
+            continue
+        u0 = ps[0]["units"][0]
+        pool, seen = [], set()
+        for p in ps:   # أسئلة الوحدة: من داخل الوحدة أو من جذر الملف (دون تكرار)
+            for q in p["units"][0].get("unit_quiz_pool", []) + p.get("unit_quiz_pool", []):
+                if q[1] not in seen:
+                    seen.add(q[1]); pool.append(q)
+        units.append({"title": u0["title"], "ic": ICONS[n][0], "color": ICONS[n][1], "uq": pool[:12],
+                      "lessons": [{"t": l["t"], "e": l["e"], "q": l["q"], "quiz": l["quiz"], "hints": l.get("hints", {})} for p in ps for l in p["units"][0]["lessons"]]})
+    return units
+
+
 def math_units() -> list:
     raw = []
     for part in "abcd":
@@ -124,7 +148,7 @@ self.addEventListener("message", e => { if (e.data && e.data.type === "precache"
 
 def build(sid: str) -> None:
     c = SUBJ[sid]
-    units = science_units() if sid == "science" else science9_units()[0] if sid == "science9" else math_units()
+    units = science_units() if sid == "science" else science9_units()[0] if sid == "science9" else math9_units() if sid == "math9" else math_units()
     cfg = {k: c.get(k, False) for k in ("widgets", "name", "hello", "unitsTitle", "unitsHint", "theme", "key", "wid", "kxid", "student", "packT", "dir", "gradeName", "gradeFor")}
     data = {"cfg": cfg, "units": units, "pack": c["pack"], "books": [b for b in c.get("books", []) if b[1]]}
     out = ROOT / c["dir"]
