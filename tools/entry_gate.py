@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MARK = "SahabaWisdom.gate("
 WTAG = '<script src="../../shared/wisdom.js"></script>'
 APPS = {  # المسار: (معرّف الحكمة، نمط الاستدعاء)
-    "arabic/10": ("arabic", "SahabaIntro.run(KX)"), "arabic/9": ("arabic", "SahabaIntro.run(KX)"),
+    "arabic/10": ("arabic", "SahabaIntro.run(KX)"), "arabic/9": ("arabic", "SahabaIntro.run(KX)"), "arabic/8": ("arabic", "SahabaIntro.run(KX)"),
     "islamic/10": ("islamic", "SahabaIntro.run(KX)"), "islamic/9": ("islamic", "SahabaIntro.run(KX)"),
     "english/10": ("english", "SahabaIntro.run(o)"),
     "english/8": ("english", "SahabaIntro.run(o)"),
