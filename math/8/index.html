@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>الرياضيات — الصف الثامن</title>
+<meta name="theme-color" content="#113D2E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="../../shared/icons/portal-192.png">
+<link rel="apple-touch-icon" href="../../shared/icons/portal-180.png">
+<style>
+@font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+:root{--hd:#113D2E;--hd2:#0b2c21;--bg:#FAF6EB;--card:#fff;--ink:#113D2E;--mut:#5f7a6e;--g:#0e6b3c;--y:#E3B94D;--bd:#e9dfc8;--ok:#1f9d55;--bad:#d63c3c}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Plex Arabic",system-ui,Tahoma,sans-serif;line-height:1.7;min-height:100vh}
+button{font:inherit;color:inherit;cursor:pointer}
+#app{max-width:520px;margin:0 auto;min-height:100vh;background:var(--bg);position:relative;padding-bottom:calc(86px + env(safe-area-inset-bottom))}
+/* الرأس */
+.hdr{background:var(--hd);color:#fff;padding:calc(12px + env(safe-area-inset-top)) 16px 40px;position:relative}
+.hdr .row1{display:flex;align-items:center;gap:12px}
+.av{width:54px;height:54px;border-radius:50%;background:#fff;border:3px solid var(--y);display:grid;place-items:center;overflow:hidden;flex:none;color:var(--g);font-weight:700;font-size:1.4rem}
+.av img{width:100%;height:100%;object-fit:cover}
+.hi{flex:1;min-width:0}.hi b{display:block;font-size:1.2rem;line-height:1.3}
+.pts{display:flex;align-items:center;gap:8px;flex-wrap:wrap;color:#f3dc92;font-size:.9rem;margin-top:0}
+.pts .dr-chip{padding:0 9px !important;font-size:.78rem !important}
+.portal{display:flex;align-items:center;gap:6px;color:var(--y);text-decoration:none;font-weight:700;font-size:.9rem;flex:none}
+.portal svg{width:24px;height:24px}
+.sheet{background:var(--bg);margin-top:-26px;border-radius:26px 26px 0 0;padding:12px 16px 0;position:relative}
+.search{display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--bd);border-radius:999px;padding:6px 14px;margin-bottom:6px}
+.search input{border:0;outline:0;background:transparent;flex:1;font:inherit;color:var(--ink);min-width:0}
+.search svg{width:20px;height:20px;color:var(--mut);flex:none}
+.sec{display:flex;align-items:center;gap:8px;font-size:1.15rem;font-weight:700;margin:4px 0 8px}
+.sec i{font-style:normal;color:var(--y)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;grid-auto-rows:clamp(92px,calc((100svh - 300px) / 4),132px)}
+.uc{border:0;border-radius:18px;padding:8px 8px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:0;box-shadow:0 3px 0 rgba(0,0,0,.08);color:#0e2a3a;text-align:center;position:relative;overflow:hidden}
+.uc svg{width:clamp(36px,6.5svh,52px);height:clamp(36px,6.5svh,52px);flex:none}
+.uc b{font-size:.92rem;line-height:1.25}
+.uc small{font-size:.72rem;opacity:.75}
+.uc .dn{position:absolute;top:6px;inset-inline-start:6px;background:#fff;border-radius:99px;font-size:.68rem;padding:0 7px;font-weight:700;color:var(--g)}
+#drToast{top:0 !important;bottom:auto !important;border-radius:0 0 14px 14px !important;font-size:.72rem !important;padding:3px 14px !important;opacity:.92}
+.card>svg{width:60px;height:60px;flex:none}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:14px;margin-bottom:12px}
+.cont{display:flex;align-items:center;gap:12px;width:100%;text-align:right}
+.cont .t{flex:1;min-width:0}.cont .t b{display:block;font-size:1.1rem}.cont .t small{color:var(--mut)}
+.bar{height:10px;background:#ece6d4;border-radius:99px;overflow:hidden;margin-top:6px}.bar i{display:block;height:100%;background:var(--y);border-radius:99px}
+.ring{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;flex:none;font-weight:700;color:var(--ink);background:conic-gradient(var(--y) calc(var(--p)*1%),#ece6d4 0)}
+.ring span{width:48px;height:48px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:.85rem}
+.daily{background:linear-gradient(135deg,#f6e3a1,#e3b94d);border:2px solid #cfa23a;border-radius:26px;padding:16px;display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.daily .tr{font-size:3rem;line-height:1}
+.daily b{font-size:1.3rem;display:block}.daily small{display:block;margin:2px 0 10px;color:#4a3a10}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--hd);color:#fff;border:0;border-radius:999px;padding:10px 20px;font-weight:700}
+.cta.alt{background:var(--g)}
+/* التنقّل */
+.nav{position:fixed;bottom:0;inset-inline:0;max-width:520px;margin:0 auto;background:#fff;border-top:1px solid var(--bd);border-radius:26px 26px 0 0;display:grid;grid-template-columns:repeat(var(--n,5),1fr);padding:8px 6px calc(8px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(17,61,46,.08);z-index:20}
+.nav a{display:flex;flex-direction:column;align-items:center;gap:2px;color:#8a8a8a;text-decoration:none;font-size:.82rem;font-weight:700;padding:4px 0}
+.nav a svg{width:28px;height:28px}
+.nav a.on{color:#b8902f}
+/* شاشات داخلية */
+.top{background:var(--hd);color:#fff;padding:calc(12px + env(safe-area-inset-top)) 16px 12px;display:flex;align-items:center;gap:12px}
+.top h1{font-size:1.15rem;margin:0;flex:1;line-height:1.4}
+.ib{width:42px;height:42px;border-radius:14px;border:0;background:rgba(255,255,255,.14);color:#fff;display:grid;place-items:center;text-decoration:none;font-size:1.3rem}
+.body{padding:16px}
+.row{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--bd);border-radius:18px;padding:12px;margin-bottom:10px;width:100%;text-align:right;text-decoration:none;color:inherit}
+.row .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;flex:none;font-weight:700;background:#fbf0c8;border:1px solid var(--y)}
+.row .ic svg{width:34px;height:34px}
+.row .tx{flex:1;min-width:0}.row .tx b{display:block}.row .tx small{color:var(--mut)}
+.row .go{color:var(--mut);font-size:1.3rem}
+.dots{display:flex;gap:4px;margin-top:2px}.dots i{width:9px;height:9px;border-radius:50%;background:#e0d9c4}.dots i.on{background:var(--ok)}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 0 12px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tb{flex:none;border:1.5px solid #b5d4be;background:#fff;color:var(--g);border-radius:999px;padding:6px 16px;font-weight:700}
+.tb.on{background:var(--g);color:#fff;border-color:var(--g);box-shadow:0 3px 0 var(--y)}
+.lc h3{margin:14px 0 6px;font-size:1.1rem;color:var(--g)}
+.lc p{margin:8px 0}.lc ul{margin:8px 0;padding-inline-start:20px}.lc li{margin:4px 0}
+.note{background:#fdf0d8;border-inline-start:5px solid #f08a00;border-radius:12px;padding:8px 12px;margin:10px 0}
+.exm{background:#e6f3ec;border-inline-start:5px solid var(--g);border-radius:12px;padding:8px 12px;margin:10px 0}
+.tbl{width:100%;border-collapse:collapse;margin:10px 0;font-size:.95rem}
+.tbl th,.tbl td{border:1px solid var(--bd);padding:6px 8px;text-align:center}.tbl th{background:#d7e8dc}
+.lv{display:flex;align-items:center;gap:12px;border-radius:18px;padding:12px;margin-bottom:10px;border:2px solid;background:#fff;width:100%;text-align:right}
+.lv i{font-style:normal;font-size:1.8rem}.lv b{display:block}.lv small{color:var(--mut)}
+.lv .st{margin-inline-start:auto;font-weight:700}
+/* الاختبار */
+.prog{height:8px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden}.prog i{display:block;height:100%;background:var(--y)}
+.q{font-size:1.2rem;font-weight:700;margin:6px 0 14px;line-height:1.7}
+.kk{display:inline-block;font-size:.75rem;background:#e6f3ec;color:var(--g);border-radius:99px;padding:0 10px;margin-bottom:6px}
+.op{display:block;width:100%;text-align:right;background:#fff;border:2px solid var(--bd);border-radius:16px;padding:12px 14px;margin-bottom:10px;font-size:1.02rem}
+.op.ok{border-color:var(--ok);background:#e5f6ec}.op.bad{border-color:var(--bad);background:#fde9e9}
+.hint{background:#fff6dc;border:1px solid var(--y);border-radius:14px;padding:10px 12px;margin:6px 0 12px}
+.res{text-align:center;padding:24px 8px}.res .big{font-size:3.4rem}.res h2{margin:6px 0}
+.stars{font-size:2.2rem;letter-spacing:4px}
+.stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}.stat div{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:12px;text-align:center}.stat b{display:block;font-size:1.5rem;color:var(--g)}
+.bd{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.bd div{background:#fff;border:1px solid var(--y);border-radius:14px;padding:10px 4px;text-align:center;font-size:.8rem;line-height:1.4}.bd i{display:block;font-style:normal;font-size:1.8rem}
+.wis{text-align:center}.wis small{color:var(--mut)}
+.btn{display:block;width:100%;text-align:center;border:0;background:linear-gradient(135deg,#1a8350,var(--g));color:#fff;border-radius:14px;padding:12px;font-weight:700;margin-top:10px;text-decoration:none}
+.btn.out{background:#fff;color:var(--g);border:1.5px solid var(--g)}
+.empty{color:var(--mut);text-align:center;padding:20px}
+/* عناصر تفاعلية */
+.ipb{height:7px;background:#ece6d4;border-radius:99px;overflow:hidden;margin:6px 0 2px}.ipb i{display:block;height:100%;width:0;background:var(--y);transition:width .35s}
+.ipt{display:block;color:var(--mut);font-size:.8rem;margin-bottom:6px}
+.pt{display:flex;align-items:flex-start;gap:10px;width:100%;text-align:right;background:#f4f8ee;border:2px solid #d7e6c4;border-radius:14px;padding:9px 12px;margin:6px 0;font-size:1rem;line-height:1.6}
+.pt::before{content:"";width:22px;height:22px;border-radius:50%;border:2px solid #9bbf86;flex:none;margin-top:2px;transition:.2s;display:grid;place-items:center;color:#fff;font-size:.8rem}
+.pt.done{background:#e5f6ec;border-color:var(--ok)}.pt.done::before{content:"✓";background:var(--ok);border-color:var(--ok)}
+.cl{display:inline-block;min-width:52px;border:0;border-radius:8px;background:var(--y);color:#3b2a08;padding:0 8px;font:inherit;font-weight:700;letter-spacing:2px;animation:pulse 1.6s infinite}
+.cl.rv{background:#d8f0e0;color:var(--g);letter-spacing:0;animation:none}
+@keyframes pulse{50%{box-shadow:0 0 0 5px rgba(227,185,77,.35)}}
+.ip{margin:10px 0}
+.nt,.ex2{display:block;width:100%;text-align:right;border-radius:14px;padding:10px 12px;margin:8px 0;font-size:1rem;line-height:1.6;border:2px dashed}
+.nt{background:#fdf0d8;border-color:#f08a00}.ex2{background:#e6f3ec;border-color:var(--g)}
+.nt .bd2,.ex2 .bd2{display:none}.nt.done .bd2,.ex2.done .bd2{display:block;margin-top:4px;font-weight:700}.nt.done .hd2,.ex2.done .hd2{display:none}
+.nt.done,.ex2.done{border-style:solid}
+.tbw{overflow-x:auto;margin:10px 0}.tbw .tbl{margin:0}.tbl td.mk{background:#e9efe0;color:transparent;cursor:pointer;user-select:none}.tbl td.mk.rv{background:none;color:inherit}
+.tbs{display:block;margin:6px auto 0;border:0;background:var(--y);color:#3b2a08;border-radius:99px;padding:4px 16px;font-weight:700;font-size:.85rem}
+/* الرياضيات */
+.t-math{--bg:#f6f0dd;--ink:#17402b;--mut:#5f7a63;--g:#1d5a3b;--bd:#e8e0c4}
+.mh{display:flex;align-items:center;gap:14px;padding:calc(18px + env(safe-area-inset-top)) 18px 4px}
+.mhi{flex:1}.mhi b{font-size:1.8rem;line-height:1.25;display:block}.mhi small{color:#6a8a5c;font-size:1rem}
+.mav{width:76px;height:76px;background:#1d4d35;color:#fff;border:6px solid #cfe3b0;font-size:2rem}
+.pc{margin:14px 16px;background:#e9f0d5;border-radius:22px;padding:16px;box-shadow:0 8px 20px rgba(23,64,43,.08)}
+.pct{display:flex;justify-content:space-between;align-items:center}.pct b{font-size:1.35rem}
+.chp{background:#cfe3b0;border-radius:99px;padding:2px 14px;font-weight:700;font-size:.9rem}
+.pcr{display:flex;justify-content:space-between;margin:10px 0 6px;font-size:.95rem}
+.bar.big{height:14px;background:#d5dcc0}.bar.big i{background:#1d5a3b}
+.pcs{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center}.chp2{background:#fffaf0;border-radius:99px;padding:3px 14px;font-weight:700;font-size:.92rem}.chp2.g{background:#cfe3b0}
+.sec2{display:flex;justify-content:space-between;align-items:center;padding:6px 18px 8px;font-size:1.3rem}.sec2 a{font-size:.95rem;color:#3d7a4f;text-decoration:none;font-weight:400}
+.mg{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 16px 10px}
+.mu{border:0;border-radius:22px;padding:14px 8px;text-align:center;text-decoration:none;color:var(--ink);box-shadow:0 8px 18px rgba(23,64,43,.09);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:124px;position:relative;font:inherit}
+.mu.a{background:#fffaf0}.mu.b{background:#cfe3b0}.mu.w{grid-column:1/-1}
+.mu svg{width:46px;height:46px}.mu b{font-size:1.1rem}.mu small{font-size:.85rem;opacity:.8}
+.mu .dn{position:absolute;top:8px;inset-inline-start:8px;background:#1d5a3b;color:#fff;border-radius:99px;font-size:.7rem;padding:0 8px}
+.t-math .nav{background:#fffaf0}.t-math .nav a.on{color:#1d4d35}
+/* الآلة الحاسبة */
+#calc{position:fixed;inset:0;background:rgba(17,40,28,.55);z-index:50;display:grid;place-items:end center}
+.cbox{width:100%;max-width:520px;background:#fffaf0;border-radius:26px 26px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));animation:slin .25s ease both}
+.cd{background:#e9f0d5;border-radius:16px;padding:10px 14px;text-align:left;direction:ltr;min-height:76px}.cd small{display:block;color:var(--mut);min-height:22px;word-break:break-all}.cd b{font-size:2rem;word-break:break-all}
+.ck{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px;direction:ltr}
+.ck button{border:0;border-radius:14px;padding:13px 0;font-size:1.25rem;font-weight:700;background:#fff;color:var(--ink);box-shadow:0 2px 0 #e0d8bc}.ck button.o{background:#cfe3b0}.ck button.eq{background:#1d5a3b;color:#fff;grid-column:span 2}.ck button.cx{background:#f6d8d0}
+.cclose{display:block;margin:10px auto 0;border:0;background:none;color:var(--mut);font-weight:700}
+/* درس البطاقات التفاعلية */
+.dots2{display:flex;gap:6px;justify-content:center;margin:2px 0 10px}.dots2 button{width:10px;height:10px;border-radius:50%;border:0;padding:0;background:#d9d2bd;transition:.2s}.dots2 button.on{width:26px;border-radius:99px;background:var(--y)}.dots2 button.dn{background:var(--ok)}
+.deck{position:relative;overflow:hidden;touch-action:pan-y}
+.dc{background:#fff;border:1px solid var(--bd);border-radius:24px;padding:16px;box-shadow:0 6px 0 rgba(17,61,46,.06);animation:slin .32s ease both}
+.dc.rev{animation-name:slinr}
+@keyframes slin{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:none}}
+@keyframes slinr{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:none}}
+.dc h3{margin:0 0 8px;font-size:1.15rem;color:var(--g);display:flex;align-items:center;gap:8px}.dc h3 em{font-style:normal;background:var(--y);color:#3b2a08;border-radius:99px;font-size:.75rem;padding:0 9px}
+.dc h3 svg{width:34px;height:34px;flex:none}
+.dc p{margin:8px 0}.dc ul{margin:8px 0;padding-inline-start:20px}.dc li{margin:4px 0}
+.fcs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.fc{display:grid;perspective:700px;border:0;background:none;padding:0;text-align:center}.fc.wide{grid-column:1/-1}
+.fc>span{grid-area:1/1;backface-visibility:hidden;transition:transform .45s;border-radius:16px;padding:10px 8px;display:flex;flex-direction:column;justify-content:center;gap:2px;min-height:78px}
+.ff{background:linear-gradient(135deg,#1a8350,#0e6b3c);color:#fff}.ff b{font-size:1rem}.ff small{opacity:.8;font-size:.72rem}
+.fb{background:#fff7da;border:1.5px solid var(--y);transform:rotateY(180deg);font-size:.88rem;line-height:1.55;color:var(--ink)}
+.fc.on .ff{transform:rotateY(180deg)}.fc.on .fb{transform:rotateY(360deg)}
+.chk{background:#eef7f1;border:1.5px dashed #7fb897;border-radius:18px;padding:12px;margin-top:14px}
+.ck-h{font-weight:700;color:var(--g);margin-bottom:4px}.ck-q{font-weight:700;margin-bottom:8px}
+.ck-o{display:block;width:100%;text-align:right;background:#fff;border:2px solid var(--bd);border-radius:12px;padding:8px 12px;margin-bottom:6px;font-size:.95rem}
+.ck-o.ok{border-color:var(--ok);background:#e5f6ec}.ck-o.bad{border-color:var(--bad);background:#fde9e9}
+.ck-f{font-size:.9rem;margin-top:4px}
+.dnav{display:flex;gap:10px;margin-top:12px}.dnav button{flex:1;border:0;border-radius:14px;padding:11px;font-weight:700;background:#fff;border:1.5px solid var(--g);color:var(--g)}.dnav button.pri{background:var(--g);color:#fff}.dnav button[disabled]{opacity:.35}
+.rq{display:flex;gap:10px;align-items:flex-start;background:#f7f2e1;border-radius:14px;padding:10px 12px;margin:8px 0;width:100%;text-align:right;border:0}.rq i{font-style:normal;width:24px;height:24px;border-radius:50%;border:2px solid var(--g);display:grid;place-items:center;flex:none;color:#fff;font-size:.85rem}.rq.on i{background:var(--ok);border-color:var(--ok)}.rq.on{opacity:.7}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script src="../../shared/durra.js"></script>
+<script src="../../shared/wisdom.js"></script>
+<script src="../../shared/intro.js"></script>
+<script>
+window.SCI={"cfg":{"name":"الرياضيات","hello":"مرحباً","unitsTitle":"الوحدات الدراسية","unitsHint":"سبع وحدات: الأعداد، والجبر، والهندسة، والإحصاء، والمعادلات، والقياس. اضغط وحدة لترى دروسها.","theme":"math","key":"math8:st","wid":"math","kxid":"math8","student":"طالب الرياضيات","packT":"رزمة الرياضيات","dir":"math/8"},"units":[{"title":"الأعداد النسبية","ic":"frac","color":"#cfe2b0","uq":[],"lessons":[{"t":"العدد النسبي","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"الجذر التربيعي والجذر التكعيبي لعدد نسبي","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"مقارنة الأعداد النسبية","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"جمع الأعداد النسبية وطرحها","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"ضرب الأعداد النسبية وقسمتها","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}}]},{"title":"الأعداد غير النسبية","ic":"root","color":"#cfe2b0","uq":[],"lessons":[{"t":"العدد غير النسبي","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"العمليات على الأعداد غير النسبية","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}}]},{"title":"المقادير الجبرية","ic":"alg","color":"#cfe2b0","uq":[],"lessons":[{"t":"جمع المقادير الجبرية وطرحها","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"ضرب المقادير الجبرية","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"تحليل المقادير الجبرية بإخراج العامل المشترك","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"تحليل العبارة التربيعية","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"تحليل الفرق بين مربعين","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"قسمة المقادير الجبرية","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}}]},{"title":"فيثاغورس والتطابق والتشابه","ic":"tri","color":"#cfe2b0","uq":[],"lessons":[{"t":"نظرية فيثاغورس","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"عكس نظرية فيثاغورس","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"تطابق المثلثات","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"تشابه المثلثات","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}}]},{"title":"الإحصاء","ic":"stat","color":"#cfe2b0","uq":[],"lessons":[{"t":"تمثيل البيانات بطريقة القطاعات الدائرية","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"مقاييس التشتت","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}}]},{"title":"المعادلات","ic":"eq","color":"#cfe2b0","uq":[],"lessons":[{"t":"حل المعادلة التربيعية بالتحليل","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"حل المعادلة التربيعية بإكمال المربع","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"حل المعادلة التربيعية بالقانون العام","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"تحليل الفرق بين مكعبين ومجموع مكعبين","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"حل معادلتين خطيتين بمتغيرين","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}}]},{"title":"القياس والأشكال","ic":"cyl","color":"#cfe2b0","uq":[],"lessons":[{"t":"متوازي الأضلاع","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"القطاع الدائري والقطعة الدائرية","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"الأسطوانة","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}},{"t":"المخروط","e":["# قريباً","سيُضاف شرح هذا الدرس وأنشطته بإذن الله."],"q":[],"quiz":[],"hints":{}}]}],"pack":"https://drive.google.com/file/d/1ITo4JBBTIQ-JnGdtUuH1Wmt17YVq_WTr/view?usp=drivesdk"};
+</script>
+<script>
+(function(){
+"use strict";
+var D = window.SCI, CFG = D.cfg, $ = function (s, r) { return (r || document).querySelector(s); };
+if(CFG.theme=="math")document.documentElement.classList.add("t-math");
+var PASS = 0.75, LVN = [{n:"مستكشف",i:"🧭",c:"#0d9488"},{n:"متقدّم",i:"🚀",c:"#ea7a0b"},{n:"المتميّز",i:"🏆",c:"#7c3aed"}];
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function ar(n){return String(n).replace(/\d/g,function(d){return "٠١٢٣٤٥٦٧٨٩"[d]})}
+function profile(){try{return JSON.parse(localStorage.getItem("sahaba-portal-profile")||"null")||{}}catch(e){return {}}}
+/* ---------- الحالة ---------- */
+var KEY=CFG.key, S;
+function load(){var d={xp:0,p:{},uq:{},daily:{},last:null,days:[],cert:0,chk:{}},o={};try{o=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}for(var k in d)if(o[k]==null)o[k]=d[k];return o}
+S=load();
+function today(){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate()}
+if(S.days.indexOf(today())<0){S.days.push(today());S.days=S.days.slice(-60)}
+function P(u,l){var k=u+"-"+l;return S.p[k]||(S.p[k]={lv:[0,0,0],b:0})}
+function lessonDone(u,l){return !!P(u,l).b}
+function totals(){var t=0,d=0,un=0;D.units.forEach(function(x,u){var c=0;x.lessons.forEach(function(_,l){t++;if(lessonDone(u,l)){d++;c++}});if(c==x.lessons.length)un++});return {t:t,d:d,u:un}}
+function level(){return Math.floor(S.xp/100)+1}
+function streak(){var n=0,d=new Date();for(;;){var k=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();if(S.days.indexOf(k)<0)break;n++;d.setDate(d.getDate()-1)}return n}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}publish()}
+function publish(){try{var t=totals(),b=[],c=[];D.units.forEach(function(x,u){x.lessons.forEach(function(l,i){if(lessonDone(u,i))b.push({i:"🏅",t:l.t})})});
+ if(t.d==t.t&&t.t){if(!S.cert)S.cert=Date.now();c.push({t:"إتمام مادة "+CFG.name+" — الصف الثامن",d:new Date(S.cert).toLocaleDateString("ar")})}
+ localStorage.setItem("sahaba-ach:"+CFG.dir,JSON.stringify({pct:t.t?Math.round(t.d*100/t.t):0,units:{done:t.u,total:D.units.length},certs:c,badges:b,extra:["⭐ "+ar(S.xp)+" نقطة • المستوى "+ar(level()),"🔥 أيام متتالية: "+ar(streak())],updated:new Date().toISOString()}))}catch(e){}}
+/* ---------- أيقونات ---------- */
+var K='stroke="#1c3d52" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"';
+var IC={
+ cell:'<circle cx="32" cy="32" r="23" fill="#cdeccf" '+K+'/><circle cx="27" cy="27" r="9" fill="#b9a4ef" '+K+'/><circle cx="43" cy="39" r="4" fill="#f7a8a8" '+K+'/><circle cx="24" cy="43" r="3.5" fill="#f7e18a" '+K+'/>',
+ split:'<circle cx="21" cy="32" r="15" fill="#cdeccf" '+K+'/><circle cx="43" cy="32" r="15" fill="#cdeccf" '+K+'/><circle cx="21" cy="32" r="5.5" fill="#b9a4ef" '+K+'/><circle cx="43" cy="32" r="5.5" fill="#b9a4ef" '+K+'/>',
+ bolt:'<path d="M37 5 L15 37 H28 L24 59 L49 25 H35 Z" fill="#ffd54a" '+K+'/>',
+ atom:'<ellipse cx="32" cy="32" rx="27" ry="10" fill="none" stroke="#5b4bd6" stroke-width="3"/><ellipse cx="32" cy="32" rx="27" ry="10" fill="none" stroke="#5b4bd6" stroke-width="3" transform="rotate(60 32 32)"/><ellipse cx="32" cy="32" rx="27" ry="10" fill="none" stroke="#5b4bd6" stroke-width="3" transform="rotate(120 32 32)"/><circle cx="32" cy="32" r="6" fill="#ff9f43" '+K+'/>',
+ mol:'<path d="M32 22 L16 44 M32 22 L48 44" '+K+'/><circle cx="32" cy="20" r="11" fill="#ff8a80" '+K+'/><circle cx="15" cy="46" r="8" fill="#fff" '+K+'/><circle cx="49" cy="46" r="8" fill="#fff" '+K+'/>',
+ flask:'<path d="M25 6 H39 V22 L55 50 Q59 59 50 59 H14 Q5 59 9 50 L25 22 Z" fill="#fff" '+K+'/><path d="M19 40 H45 L53 52 Q55 57 50 57 H14 Q9 57 11 52 Z" fill="#f5a623" stroke="none"/><circle cx="29" cy="46" r="3" fill="#fff"/><circle cx="38" cy="50" r="2.5" fill="#fff"/><circle cx="46" cy="9" r="2.5" fill="#f5a623"/><circle cx="51" cy="4" r="2" fill="#f5a623"/>',
+ wave:'<path d="M4 34 Q11 8 18 34 T32 34 T46 34 T60 34" fill="none" stroke="#1f6fd1" stroke-width="4.5" stroke-linecap="round"/><path d="M4 46 Q11 28 18 46 T32 46 T46 46 T60 46" fill="none" stroke="#6aa7f0" stroke-width="3" stroke-linecap="round"/>',
+ frac:'<path d="M14 32h36" fill="none" stroke="#17402b" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="16" r="4" fill="#17402b"/><circle cx="32" cy="48" r="4" fill="#17402b"/>',
+ root:'<path d="M8 34 l8 14 l12 -34 h26" fill="none" stroke="#17402b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><text x="34" y="46" font-size="22" font-weight="700" fill="#17402b" font-family="Georgia,serif">x</text>',
+ alg:'<path d="M8 22 L28 50 M28 22 L8 50" stroke="#17402b" stroke-width="5.5" stroke-linecap="round"/><path d="M40 22h16M48 14v16" stroke="#17402b" stroke-width="5" stroke-linecap="round"/><path d="M40 48h16" stroke="#17402b" stroke-width="5" stroke-linecap="round"/>',
+ tri:'<path d="M10 52 L32 10 L56 52 Z" fill="none" stroke="#17402b" stroke-width="4.5" stroke-linejoin="round"/><path d="M10 52 L22 40" stroke="#17402b" stroke-width="3.5"/><circle cx="18" cy="49" r="2.5" fill="#17402b"/>',
+ stat:'<rect x="8" y="34" width="12" height="20" rx="2" fill="#17402b"/><rect x="26" y="20" width="12" height="34" rx="2" fill="#17402b"/><rect x="44" y="8" width="12" height="46" rx="2" fill="none" stroke="#17402b" stroke-width="4"/>',
+ eq:'<path d="M12 24h40M12 42h40" stroke="#17402b" stroke-width="7" stroke-linecap="round"/>',
+ cyl:'<ellipse cx="32" cy="14" rx="18" ry="7" fill="none" stroke="#17402b" stroke-width="4"/><path d="M14 14v34c0 4 8 7 18 7s18-3 18-7V14" fill="none" stroke="#17402b" stroke-width="4"/>',
+ quick:'<circle cx="32" cy="32" r="22" fill="none" stroke="#17402b" stroke-width="4"/><path d="M21 33l8 8 15-17" fill="none" stroke="#17402b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>',
+ calc:'<rect x="12" y="6" width="40" height="52" rx="7" fill="none" stroke="#17402b" stroke-width="4"/><rect x="18" y="12" width="28" height="10" rx="2" fill="#17402b"/><g fill="#17402b"><circle cx="21" cy="32" r="3"/><circle cx="32" cy="32" r="3"/><circle cx="43" cy="32" r="3"/><circle cx="21" cy="42" r="3"/><circle cx="32" cy="42" r="3"/><circle cx="43" cy="42" r="3"/><circle cx="21" cy="51" r="3"/><circle cx="32" cy="51" r="3"/><circle cx="43" cy="51" r="3"/></g>',
+ plant:'<path d="M19 40 H45 L42 59 H22 Z" fill="#c97b4a" '+K+'/><path d="M32 40 V26" '+K+'/><path d="M32 30 C19 30 13 22 13 12 C27 12 32 19 32 30Z" fill="#6cc04a" '+K+'/><path d="M32 26 C45 26 51 18 51 8 C37 8 32 15 32 26Z" fill="#8fd16a" '+K+'/>'
+};
+function svg(k,cls){return '<svg viewBox="0 0 64 64" '+(cls?'class="'+cls+'" ':'')+'aria-hidden="true">'+IC[k]+'</svg>'}
+var NAV=[["home","الرئيسية",'<path d="M3 11 12 3l9 8v10h-6v-6H9v6H3z"/>'],["lessons","دروسي",'<path d="M3 5c3-1 6-1 9 1 3-2 6-2 9-1v14c-3-1-6-1-9 1-3-2-6-2-9-1z M12 6v14"/>'],["quizzes","الاختبارات",'<path d="M9 3h6M10 3v6L4 20a1.5 1.5 0 0 0 1.4 2h13.2A1.5 1.5 0 0 0 20 20L14 9V3"/><path d="M7.5 15h9"/>'],["points","نقاطي",'<path d="m12 3 2.8 5.8 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.3l1-6.2L3 9.7l6.2-.9z"/>'],["me","حسابي",'<circle cx="12" cy="8" r="4.5"/><path d="M3.5 21c.8-4.6 4.3-6.5 8.5-6.5s7.7 1.9 8.5 6.5z"/>']];
+if(CFG.theme=="math")NAV=[NAV[0],["lessons","الدروس",NAV[1][2]],["points","الإنجازات",'<path d="M7 4h10v5a5 5 0 0 1-10 0z M7 6H4v2a3 3 0 0 0 3 3 M17 6h3v2a3 3 0 0 1-3 3 M12 14v4 M8 21h8"/>'],["me","الملف",NAV[4][2]]];
+function nav(on){return '<nav class="nav" style="--n:'+NAV.length+'">'+NAV.map(function(n){return '<a href="#'+n[0]+'"'+(on===n[0]?' class="on"':'')+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round">'+n[2]+'</svg>'+n[1]+'</a>'}).join("")+'</nav>'}
+function topbar(t,back){return '<div class="top"><a class="ib" href="'+(back||"#home")+'" aria-label="رجوع">›</a><h1>'+esc(t)+'</h1><a class="ib" href="../../index.html" aria-label="بوابة الصحابة التعليمية">🏠</a></div>'}
+function shuf(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+/* ---------- الرئيسية ---------- */
+var query="";
+function lessonRow(u,l){var x=D.units[u],ls=x.lessons[l],p=P(u,l);return '<a class="row" href="#lesson/'+u+'/'+l+'"><span class="ic" style="background:'+x.color+'">'+svg(x.ic)+'</span><span class="tx"><b>'+esc(ls.t)+'</b><small>'+esc(x.title)+'</small><div class="dots">'+p.lv.map(function(v){return '<i class="'+(v>=need(ls,0)?"on":"")+'"></i>'}).join("")+'</div></span><span class="go">'+(p.b?"🏅":"‹")+'</span></a>'}
+function need(){return Math.ceil(8*PASS)}
+function nextLesson(){var l=S.last;if(l&&D.units[l[0]]&&D.units[l[0]].lessons[l[1]]&&!lessonDone(l[0],l[1]))return l;for(var u=0;u<D.units.length;u++)for(var i=0;i<D.units[u].lessons.length;i++)if(!lessonDone(u,i))return [u,i];return l||[0,0]}
+function head(){var p=profile(),first=p.first||"",av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc((first||"؟").charAt(0));
+ return '<div class="hdr"><div class="row1"><div class="av">'+av+'</div><div class="hi"><b>'+esc(CFG.hello)+'</b><div class="pts"><span>⭐ '+ar(S.xp)+' نقطة • المستوى '+ar(level())+'</span><span id="chip"></span></div></div><a class="portal" href="../../index.html"><svg viewBox="0 0 32 32" fill="none" stroke="#E3B94D" stroke-width="1.8"><circle cx="16" cy="16" r="13"/><path d="m16 5 3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#E3B94D" fill-opacity=".35"/></svg>بوابة الصحابة</a></div></div>'}
+function home(){if(CFG.theme=="math")return homeMath();var t=totals(),nl=nextLesson(),nu=D.units[nl[0]],pr=nu.lessons.filter(function(_,i){return lessonDone(nl[0],i)}).length,pc=Math.round(pr*100/nu.lessons.length);
+ var h=head()+'<div class="sheet"><label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="ابحث عن درس..." value="'+esc(query)+'" autocomplete="off"></label><div id="res"></div></div>';
+ $("#app").innerHTML=h+'<div style="padding:0 16px" id="rest"></div>'+nav("home");
+ var rest="";
+ rest+='<div class="sec"><i>✦</i>'+esc(CFG.unitsTitle)+'</div><div class="grid">'+D.units.map(function(x,u){var c=x.lessons.filter(function(_,i){return lessonDone(u,i)}).length;return '<a class="uc" href="#unit/'+u+'" style="background:'+x.color+';text-decoration:none">'+(c==x.lessons.length?'<span class="dn">✓ مكتملة</span>':'')+svg(x.ic)+'<b>'+esc(x.title)+'</b><small>'+ar(c)+' / '+ar(x.lessons.length)+' دروس</small></a>'}).join("")+'</div>';
+ rest+='<a class="card cont" href="#lesson/'+nl[0]+'/'+nl[1]+'" style="text-decoration:none;color:inherit"><span class="t"><b>'+(S.last?"تابع: ":"ابدأ: ")+esc(nu.lessons[nl[1]].t)+'</b><small>الدرس '+ar(nl[1]+1)+' من '+ar(nu.lessons.length)+' • '+esc(nu.title)+'</small><div class="bar"><i style="width:'+pc+'%"></i></div></span><span class="ring" style="--p:'+pc+'"><span>'+ar(pc)+'٪</span></span></a>';
+ rest+='<div class="sec"><i>✦</i>تحدّي اليوم</div><div class="daily"><span class="tr">🏆</span><div><b>تحدّي اليوم!</b><small>اختبر معلوماتك عن «'+esc(dailyUnit().title)+'»</small><button class="cta" id="dl">ابدأ التحدّي الآن ←</button></div></div>';
+ var w=window.SahabaWisdom&&window.SahabaWisdom.today(CFG.wid);if(w)rest+='<div class="card wis"><small>💡 حكمة اليوم</small><p dir="auto" style="margin:6px 0">'+esc(w[0])+'</p><small>— '+esc(w[1])+'</small></div>';
+ $("#rest").innerHTML=rest;$("#dl").onclick=startDaily;
+ $("#q").oninput=function(){query=this.value;results()};results();
+ mountChip()}
+
+function weekCount(){var w=Date.now()-6048e5,c=0;Object.keys(S.p).forEach(function(k){if(S.p[k].b&&S.p[k].b>w)c++});return c}
+function homeMath(){var p=profile(),first=p.first||"طالب",t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,nl=nextLesson(),nu=D.units[nl[0]],av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc(first.charAt(0));
+ var h='<div class="mh"><div class="mhi"><b>مرحباً، '+esc(first)+'</b><small>جاهز لمواصلة التعلّم اليوم؟</small></div><div class="av mav">'+av+'</div></div>'
+ +'<div class="pc"><div class="pct"><b>بطاقة التقدّم</b><span class="chp">هذا الأسبوع: '+ar(weekCount())+'</span></div><div class="pcr"><span>'+ar(t.d)+' من '+ar(t.t)+' درس مكتمل</span><span>تقدّمك الكلّي: '+ar(pc)+'٪</span></div><div class="bar big"><i style="width:'+pc+'%"></i></div><div class="pcs"><span class="chp2">🏆 النقاط: '+ar(S.xp)+'</span><span class="chp2 g">🔥 أيام متتالية: '+ar(streak())+'</span><span id="chip"></span></div></div>'
+ +'<div class="sec2"><b>'+esc(CFG.unitsTitle)+'</b><a href="#lessons">عرض الكل</a></div><div class="mg">'
+ +D.units.map(function(x,u){var c=x.lessons.filter(function(_,i){return lessonDone(u,i)}).length,odd=D.units.length%2&&u==D.units.length-1;return '<a class="mu '+((Math.floor(u/2)+u)%2?"b":"a")+(odd?" w":"")+'" href="#unit/'+u+'">'+(c==x.lessons.length?'<span class="dn">✓</span>':'')+svg(x.ic)+'<b>'+esc(x.title)+'</b><small>'+ar(x.lessons.length)+' دروس'+(c?" • أنجزتَ "+ar(c):"")+'</small></a>'}).join("")
+ +'<button class="mu a" id="qk" type="button">'+svg("quick")+'<b>اختبار سريع</b><small>اختبر نفسك</small></button><button class="mu b" id="cc" type="button">'+svg("calc")+'<b>آلة حاسبة</b><small>أداة مساعدة</small></button></div>'
+ +'<div style="padding:4px 16px"><a class="card cont" href="#lesson/'+nl[0]+'/'+nl[1]+'" style="text-decoration:none;color:inherit"><span class="t"><b>'+(S.last?"تابع: ":"ابدأ: ")+esc(nu.lessons[nl[1]].t)+'</b><small>'+esc(nu.title)+'</small></span><span class="go" style="font-size:1.4rem">‹</span></a>'
+ +'<div class="sec" style="margin-top:6px"><i>✦</i>تحدّي اليوم</div><div class="daily"><span class="tr">🏆</span><div><b>تحدّي اليوم!</b><small>اختبر معلوماتك عن «'+esc(dailyUnit().title)+'»</small><button class="cta" id="dl">ابدأ التحدّي الآن ←</button></div></div>';
+ var w=window.SahabaWisdom&&window.SahabaWisdom.today(CFG.wid);if(w)h+='<div class="card wis"><small>💡 حكمة اليوم</small><p dir="auto" style="margin:6px 0">'+esc(w[0])+'</p><small>— '+esc(w[1])+'</small></div>';
+ h+='</div>';$("#app").innerHTML=h+nav("home");$("#dl").onclick=startDaily;$("#qk").onclick=startQuick;$("#cc").onclick=openCalc;mountChip()}
+function results(){var q=query.trim(),r=$("#res"),rest=$("#rest");if(!r)return;if(!q){r.innerHTML="";rest.style.display="";return}rest.style.display="none";var m=[];D.units.forEach(function(x,u){x.lessons.forEach(function(l,i){if((l.t+" "+x.title).indexOf(q)>=0)m.push(lessonRow(u,i))})});r.innerHTML=m.join("")||'<div class="empty">لا نتائج لـ «'+esc(q)+'»</div>'}
+function mountChip(){var c=$("#chip");if(c&&window.Durra){c.innerHTML="";c.appendChild(Durra.chip())}}
+/* ---------- وحدة ---------- */
+function unit(u){var x=D.units[u];if(!x)return home();var h=topbar(x.title)+'<div class="body">'+x.lessons.map(function(_,i){return lessonRow(u,i)}).join("");
+ var b=(S.uq[u]||0);if(x.uq.length)h+='<button class="lv" style="border-color:#c2185b" id="uqb"><i>📝</i><span><b>اختبار الوحدة</b><small>'+ar(x.uq.length)+' سؤالاً شاملاً</small></span><span class="st">'+(b?ar(b)+" / "+ar(x.uq.length):"—")+'</span></button></div>'+nav("lessons");$("#app").innerHTML=h;if(x.uq.length)$("#uqb").onclick=function(){startUnitQuiz(u)}}
+/* ---------- درس ---------- */
+function parse(e){var sec=[{h:"المقدّمة",b:[]}],cur=sec[0],last=null;e.forEach(function(l){if(l.indexOf("# ")==0){cur={h:l.slice(2),b:[]};sec.push(cur);last=null;return}if(l.indexOf("@img:")==0)return;var t="p",v=l;if(l.indexOf("- ")==0){t="li";v=l.slice(2)}else if(l.indexOf("! ")==0){t="note";v=l.slice(2)}else if(l.indexOf("? ")==0){t="ex";v=l.slice(2)}else if(l[0]=="|"){t="tr";v=l.slice(1).split("|")}
+ if(t=="li"&&last&&last.t=="ul"){last.v.push(v);return}if(t=="tr"&&last&&last.t=="tb"){last.v.push(v);return}
+ var o=t=="li"?{t:"ul",v:[v]}:t=="tr"?{t:"tb",v:[v]}:{t:t,v:v};cur.b.push(o);last=o});return sec.filter(function(s){return s.b.length})}
+function blk(b){if(b.t=="ul")return '<ul>'+b.v.map(function(x){return '<li>'+esc(x)+'</li>'}).join("")+'</ul>';if(b.t=="note")return '<div class="note">💡 '+esc(b.v)+'</div>';if(b.t=="ex")return '<div class="exm">'+esc(b.v)+'</div>';
+ if(b.t=="tb")return '<div style="overflow-x:auto"><table class="tbl">'+b.v.map(function(r,i){return '<tr>'+r.map(function(c){return (i?'<td>':'<th>')+esc(c)+(i?'</td>':'</th>')}).join("")+'</tr>'}).join("")+'</table></div>';return '<p>'+esc(b.v)+'</p>'}
+var deckI=0;
+function toks(t){return (t||"").split(/[^؀-ۿA-Za-z0-9]+/).filter(function(x){return x.length>=4})}
+function pickChecks(ls,secs){var pool=ls.quiz.filter(function(q){return q.l<=1}),used={},out=[];
+ secs.forEach(function(sc){var txt=sc.h+" "+sc.b.map(function(b){return JSON.stringify(b.v)}).join(" "),T=toks(txt),best=-1,bi=-1;
+  pool.forEach(function(q,i){if(used[i])return;var qt=q.q+" "+q.o[q.a],sc2=0;toks(qt).forEach(function(w){if(T.some(function(t){return t.indexOf(w)>=0||w.indexOf(t)>=0}))sc2++});if(sc2>best){best=sc2;bi=i}});
+  if(bi>=0&&best>0){used[bi]=1;out.push(pool[bi])}else out.push(null)});return out}
+function li(x){return '<li>'+esc(x)+'</li>'}
+function cloze(t){var ws=t.split(/(\s+)/),bi=-1,bl=0;ws.forEach(function(w,i){var c=w.replace(/[^؀-ۿA-Za-z]/g,"");if(c.length>bl&&c.length>=5){bl=c.length;bi=i}});if(bi<0)return esc(t);return ws.map(function(w,i){return i==bi?'<button type="button" class="cl" data-ia data-w="'+esc(w)+'">'+(new Array(Math.min(7,Math.max(3,w.length-1))+1).join("•"))+'</button>':esc(w)}).join("")}
+function blkI(b){
+ if(b.t=="ul"){var fl=[],pl=[];b.v.forEach(function(x){var m=/^([^:：]{2,34})[:：]\s*([\s\S]{6,})$/.exec(x);if(m)fl.push(m);else pl.push(x)});
+  var h="";if(fl.length>=2)h+='<div class="fcs">'+fl.map(function(m){return '<button class="fc'+(m[2].length>110?" wide":"")+'" type="button" data-ia><span class="ff"><b>'+esc(m[1])+'</b><small>اضغط لترى المعنى</small></span><span class="fb">'+esc(m[2])+'</span></button>'}).join("")+'</div>';else pl=b.v;
+  return h+pl.map(function(x){return '<button class="pt" type="button" data-ia>'+esc(x)+'</button>'}).join("")}
+ if(b.t=="note")return '<button class="nt" type="button" data-ia><span class="hd2">💡 اضغط لتعرف فائدة مهمّة</span><span class="bd2">💡 '+esc(b.v)+'</span></button>';
+ if(b.t=="ex"){var sp=b.v.split("||");return '<button class="ex2" type="button" data-ia><span class="hd2">✍️ '+esc(sp[0].trim())+(sp.length>1?'<small style="display:block;color:var(--mut)">فكّر في الحلّ ثم اضغط لترى الخطوات</small>':'<small style="display:block;color:var(--mut)">اضغط لترى</small>')+'</span><span class="bd2">'+(sp.length>1?'<b style="display:block;color:var(--mut);font-weight:400">'+esc(sp[0].trim())+'</b>'+esc(sp.slice(1).join("||").trim()):esc(b.v))+'</span></button>'}
+ if(b.t=="tb")return '<div class="tbw" data-ia><table class="tbl">'+b.v.map(function(r,i){return '<tr>'+r.map(function(c,j){return i&&j?'<td class="mk">'+esc(c)+'</td>':(i?'<td>':'<th>')+esc(c)+(i?'</td>':'</th>')}).join("")+'</tr>'}).join("")+'</table><button class="tbs" type="button">أظهر الكل</button></div>';
+ return '<p class="ip">'+cloze(b.v)+'</p>'}
+function iaProg(c){if(!c)return;var all=c.querySelectorAll("[data-ia]"),d=c.querySelectorAll("[data-ia].done"),n=all.length,bar=c.querySelector(".ipb i"),t=c.querySelector(".ipt");if(!n)return;bar.style.width=Math.round(d.length*100/n)+"%";t.textContent=d.length==n?"✨ أحسنت! أكملتَ هذه البطاقة":"تفاعلتَ مع "+ar(d.length)+" من "+ar(n)+" — اضغط على العناصر";
+ var k="s|"+c.dataset.k;if(d.length==n&&c.dataset.k&&!S.chk[k]){S.chk[k]=1;S.xp+=3;save()}}
+function iaDone(el){if(!el.classList.contains("done")){el.classList.add("done");iaProg(el.closest(".dc"))}}
+function iaWire(){
+ [].forEach.call(document.querySelectorAll("#deck .fc"),function(b){b.onclick=function(){b.classList.toggle("on");iaDone(b)}});
+ [].forEach.call(document.querySelectorAll("#deck .pt"),function(b){b.onclick=function(){iaDone(b)}});
+ [].forEach.call(document.querySelectorAll("#deck .nt,#deck .ex2"),function(b){b.onclick=function(){iaDone(b)}});
+ [].forEach.call(document.querySelectorAll("#deck .cl"),function(b){b.onclick=function(){b.textContent=b.dataset.w;b.classList.add("rv");iaDone(b)}});
+ [].forEach.call(document.querySelectorAll("#deck .tbw"),function(w){var cs=w.querySelectorAll("td.mk");function chk(){if(!w.querySelector("td.mk:not(.rv)"))iaDone(w)}
+  [].forEach.call(cs,function(c){c.onclick=function(){c.classList.add("rv");chk()}});w.querySelector(".tbs").onclick=function(){[].forEach.call(cs,function(c){c.classList.add("rv")});chk()};if(!cs.length)iaDone(w)});
+ iaProg(document.querySelector("#deck .dc"))}
+function lesson(u,l,t){var x=D.units[u],ls=x&&x.lessons[l];if(!ls)return home();S.last=[u,l];if(t!=null)deckI=t;else deckI=0;save();
+ var secs=parse(ls.e),chk=pickChecks(ls,secs),n=secs.length+1,p=P(u,l);
+ var h=topbar(ls.t,"#unit/"+u)+'<div class="body"><div class="dots2" id="dots"></div><div class="deck" id="deck"></div><div class="dnav"><button id="pv">→ السابق</button><button class="pri" id="nx2">التالي ←</button></div></div>'+nav("lessons");
+ $("#app").innerHTML=h;var rev=false,seen={};
+ function card(i){
+  if(i<secs.length){var sc=secs[i];return '<div class="dc'+(rev?" rev":"")+'" data-k="'+u+'-'+l+'-'+i+'"><h3>'+svg(x.ic,"")+esc(i?sc.h:ls.t)+'<em>'+ar(i+1)+'/'+ar(n)+'</em></h3><div class="ipb"><i></i></div><small class="ipt"></small>'+sc.b.map(blkI).join("")+(chk[i]?'<div class="chk" data-ia data-i="'+i+'"><div class="ck-h">🧠 تحقّق سريع</div><div class="ck-q">'+esc(chk[i].q)+'</div>'+chk[i].o.map(function(o,j){return '<button class="ck-o" data-j="'+j+'">'+esc(o)+'</button>'}).join("")+'<div class="ck-f"></div></div>':"")+'</div>'}
+  return '<div class="dc'+(rev?" rev":"")+'"><h3>✅ راجع نفسك<em>'+ar(n)+'/'+ar(n)+'</em></h3><p style="color:var(--mut)">أجب عن كل سؤال في ذهنك أو على ورقة، وعلّم ما أجبت عنه:</p>'+ls.q.map(function(q){return '<button class="rq" type="button"><i>✓</i><span>'+esc(q.replace(/^- /,""))+'</span></button>'}).join("")+'<div class="sec" style="margin:14px 0 8px;font-size:1.05rem"><i>✦</i>اختبر نفسك</div>'+(ls.quiz.length<24?'<div class="empty">أسئلة هذا الدرس قريباً بإذن الله.</div>':'')+(ls.quiz.length<24?[]:LVN).map(function(v,k){var s2=p.lv[k];return '<button class="lv" data-l="'+k+'" style="border-color:'+v.c+'"><i>'+v.i+'</i><span><b>'+v.n+'</b><small>٨ أسئلة • النجاح بـ '+ar(need())+'</small></span><span class="st" style="color:'+(s2>=need()?"var(--ok)":"var(--mut)")+'">'+(s2?ar(s2)+" / ٨":"—")+(s2>=need()?" ✓":"")+'</span></button>'}).join("")+(p.b?'<div class="card" style="text-align:center;margin-top:6px">🏅 نلتَ وسام هذا الدرس!</div>':'')+'</div>'}
+ function paint(){seen[deckI]=1;$("#deck").innerHTML=card(deckI);
+  $("#dots").innerHTML=Array.apply(null,Array(n)).map(function(_,i){return '<button aria-label="بطاقة '+(i+1)+'" class="'+(i==deckI?"on":seen[i]?"dn":"")+'" data-i="'+i+'"></button>'}).join("");
+  $("#pv").disabled=deckI==0;$("#nx2").style.display=deckI==n-1?"none":"";
+  [].forEach.call(document.querySelectorAll("#dots button"),function(b){b.onclick=function(){go(+b.dataset.i)}});
+  [].forEach.call(document.querySelectorAll(".fc"),function(b){b.onclick=function(){b.classList.toggle("on")}});
+  [].forEach.call(document.querySelectorAll(".rq"),function(b){b.onclick=function(){b.classList.toggle("on")}});
+  [].forEach.call(document.querySelectorAll("#deck .lv"),function(b){b.onclick=function(){startLevel(u,l,+b.dataset.l)}});
+  [].forEach.call(document.querySelectorAll(".chk"),function(c){var q=chk[+c.dataset.i],key=u+"-"+l+"|"+q.q;[].forEach.call(c.querySelectorAll(".ck-o"),function(b){b.onclick=function(){if(c.dataset.done)return;c.dataset.done=1;iaDone(c);var j=+b.dataset.j,ok=j==q.a;
+   [].forEach.call(c.querySelectorAll(".ck-o"),function(o,k){if(k==q.a)o.classList.add("ok");else if(k==j)o.classList.add("bad")});
+   var f=c.querySelector(".ck-f");if(ok){var add=!S.chk[key];f.innerHTML="✅ أحسنت!"+(add?" +٢ نقطة":"");if(add){S.chk[key]=1;S.xp+=2;save()}}else f.innerHTML="💡 "+esc((ls.hints||{})[q.q]||("الجواب الصحيح: «"+q.o[q.a]+"»"))}})});
+  iaWire();window.scrollTo(0,0)}
+ function go(i){rev=i<deckI;deckI=Math.max(0,Math.min(n-1,i));paint()}
+ $("#pv").onclick=function(){go(deckI-1)};$("#nx2").onclick=function(){go(deckI+1)};
+ var sx=null,dk=$("#deck");dk.addEventListener("touchstart",function(e){sx=e.touches[0].clientX},{passive:true});dk.addEventListener("touchend",function(e){if(sx==null)return;var dx=e.changedTouches[0].clientX-sx;sx=null;if(Math.abs(dx)>60)go(deckI+(dx<0?1:-1))},{passive:true});
+ paint()}
+/* ---------- محرّك الاختبار ---------- */
+var cur=null;
+function openQuiz(spec){cur={spec:spec,i:0,sc:0,qs:spec.qs.map(function(q){var idx=shuf([0,1,2,3]);return {q:q.q,k:q.k,h:q.h,o:idx.map(function(i){return q.o[i]}),a:idx.indexOf(q.a)}}),ans:null};location.hash="#quiz";if(location.hash=="#quiz")quiz()}
+function startLevel(u,l,lv){var ls=D.units[u].lessons[l],qs=shuf(ls.quiz.filter(function(q){return q.l==lv})).map(function(q){return {q:q.q,k:q.k,o:q.o,a:q.a,h:(ls.hints||{})[q.q]}});
+ openQuiz({title:ls.t+" — "+LVN[lv].n,back:"#lesson/"+u+"/"+l,qs:qs,need:need(),done:function(sc){var pr=P(u,l),best=pr.lv[lv],gain=Math.max(0,sc-best)*3,badge=false;if(sc>=need()&&best<need())gain+=10;pr.lv[lv]=Math.max(best,sc);if(pr.lv.every(function(v){return v>=need()})&&!pr.b){pr.b=Date.now();gain+=20;badge=true}S.xp+=gain;save();return {gain:gain,badge:badge}}})}
+function startUnitQuiz(u){var x=D.units[u],qs=shuf(x.uq).map(function(r){return {q:r[1],o:r[2],a:r[3]}}),nd=Math.ceil(qs.length*PASS);
+ openQuiz({title:"اختبار: "+x.title,back:"#unit/"+u,qs:qs,need:nd,done:function(sc){var best=S.uq[u]||0,gain=Math.max(0,sc-best)*3;if(sc>=nd&&best<nd)gain+=15;S.uq[u]=Math.max(best,sc);S.xp+=gain;save();return {gain:gain}}})}
+function dayNum(){return Math.floor(Date.now()/864e5)}
+function pool(){return D.units.filter(function(x){return x.uq.length})}
+function dailyUnit(){var P2=pool();return (P2.length?P2:D.units)[dayNum()%(P2.length||D.units.length)]}
+function startQuick(){var all=[];D.units.forEach(function(x){all=all.concat(x.uq)});if(all.length<4){alert("الأسئلة قريباً بإذن الله");return}var qs=shuf(all).slice(0,6).map(function(r){return {q:r[1],o:r[2],a:r[3]}});
+ openQuiz({title:"اختبار سريع",back:"#home",qs:qs,need:5,done:function(sc){var g=sc*2;S.xp+=g;save();return {gain:g}}})}
+function startDaily(){var x=dailyUnit(),all=x.uq.slice(),r=dayNum(),qs=[];for(var i=0;i<5&&all.length;i++){var k=(r*7+i*3)%all.length;qs.push(all.splice(k,1)[0])}qs=qs.map(function(r){return {q:r[1],o:r[2],a:r[3]}});
+ openQuiz({title:"تحدّي اليوم: "+x.title,back:"#home",qs:qs,need:4,done:function(sc){var first=S.daily.d!=today()||!S.daily.ok,gain=sc*2;if(sc>=4&&first){gain+=15;S.daily={d:today(),ok:true}}S.xp+=gain;save();return {gain:gain}}})}
+function quiz(){if(!cur)return home();var c=cur,q=c.qs[c.i];if(!q)return finish();
+ var h='<div class="top" style="flex-direction:column;align-items:stretch;gap:8px"><div style="display:flex;align-items:center;gap:12px"><a class="ib" href="'+c.spec.back+'" aria-label="خروج">✕</a><h1>'+esc(c.spec.title)+'</h1><span>'+ar(c.i+1)+' / '+ar(c.qs.length)+'</span></div><div class="prog"><i style="width:'+Math.round(c.i*100/c.qs.length)+'%"></i></div></div><div class="body">'+(q.k?'<span class="kk">'+(q.k=="p"?"🧪 تطبيقي":"📖 نظري")+'</span>':"")+'<div class="q">'+esc(q.q)+'</div><div id="ops">'+q.o.map(function(o,i){return '<button class="op" data-i="'+i+'">'+esc(o)+'</button>'}).join("")+'</div><div id="fb"></div></div>';
+ $("#app").innerHTML=h;
+ [].forEach.call(document.querySelectorAll("#ops .op"),function(b){b.onclick=function(){if(c.ans!=null)return;var i=+b.dataset.i;c.ans=i;var ok=i==q.a;if(ok)c.sc++;
+  [].forEach.call(document.querySelectorAll("#ops .op"),function(x,j){if(j==q.a)x.classList.add("ok");else if(j==i)x.classList.add("bad")});
+  var fb=(ok?'<div class="hint" style="background:#e5f6ec;border-color:var(--ok)">✅ أحسنت!</div>':'<div class="hint">💡 '+esc(q.h||"راجع شرح الدرس ثم أعد المحاولة. الجواب الصحيح: «"+q.o[q.a]+"»")+'</div>');
+  $("#fb").innerHTML=fb+'<button class="btn" id="nx">'+(c.i+1<c.qs.length?"التالي ←":"النتيجة")+'</button>';$("#nx").onclick=function(){c.i++;c.ans=null;quiz()}}})}
+function finish(){var c=cur,r=c.res||(c.res=c.spec.done(c.sc)||{}),n=c.qs.length,ok=c.sc>=c.spec.need,st=c.sc==n?3:ok?2:c.sc>=Math.ceil(n/2)?1:0;
+ $("#app").innerHTML=topbar("النتيجة",c.spec.back)+'<div class="body"><div class="res"><div class="big">'+(ok?"🎉":"💪")+'</div><h2>'+(ok?"أحسنت!":"قاربت، حاول مرة أخرى")+'</h2><div class="stars">'+"★".repeat(st)+'<span style="color:#d9d2bd">'+"★".repeat(3-st)+'</span></div><div class="stat"><div><b>'+ar(c.sc)+' / '+ar(n)+'</b>الدرجة</div><div><b>+'+ar(r.gain||0)+'</b>نقطة</div></div>'+(r.badge?'<div class="card">🏅 مبروك! نلتَ وسام الدرس +٢٠ نقطة</div>':'')+'<button class="btn" id="again">إعادة المحاولة</button><a class="btn out" href="'+c.spec.back+'">رجوع</a></div></div>'+nav("");
+ $("#again").onclick=function(){openQuiz(c.spec)}}
+/* ---------- دروسي / الاختبارات / نقاطي / حسابي ---------- */
+function lessonsPage(){var h=topbar("دروسي","#home")+'<div class="body">'+D.units.map(function(x,u){return '<div class="sec" style="font-size:1.05rem">'+svg(x.ic,"")+esc(x.title)+'</div>'+x.lessons.map(function(_,i){return lessonRow(u,i)}).join("")}).join("")+'</div>'+nav("lessons");$("#app").innerHTML=h;[].forEach.call(document.querySelectorAll(".sec svg"),function(s){s.style.width="30px";s.style.height="30px"})}
+function quizzesPage(){var h=topbar("الاختبارات","#home")+'<div class="body"><button class="lv" style="border-color:#cfa23a" id="dl2"><i>🏆</i><span><b>تحدّي اليوم</b><small>'+esc(dailyUnit().title)+'</small></span><span class="st">'+(S.daily.d==today()&&S.daily.ok?"✓ أُنجز":"+١٥")+'</span></button>'+D.units.map(function(x,u){var b=S.uq[u]||0;return '<button class="lv" style="border-color:'+x.color+'" data-u="'+u+'"><i>📝</i><span><b>'+esc(x.title)+'</b><small>اختبار الوحدة — '+ar(x.uq.length)+' سؤالاً</small></span><span class="st">'+(b?ar(b)+" / "+ar(x.uq.length):"—")+'</span></button>'}).join("")+'</div>'+nav("quizzes");$("#app").innerHTML=h;$("#dl2").onclick=startDaily;[].forEach.call(document.querySelectorAll(".lv[data-u]"),function(b){b.onclick=function(){startUnitQuiz(+b.dataset.u)}})}
+function pointsPage(){var t=totals(),pc=S.xp%100,badges=[];D.units.forEach(function(x,u){x.lessons.forEach(function(l,i){if(lessonDone(u,i))badges.push('<div><i>🏅</i>'+esc(l.t)+'</div>')})});
+ var h=topbar("نقاطي","#home")+'<div class="body"><div class="stat"><div><b>'+ar(S.xp)+'</b>نقطة</div><div><b>'+ar(level())+'</b>المستوى</div><div><b>'+ar(t.d)+' / '+ar(t.t)+'</b>دروس منجزة</div><div><b>'+ar(streak())+'</b>أيام متتالية 🔥</div></div><div class="card"><small>'+ar(100-pc)+' نقطة للمستوى '+ar(level()+1)+'</small><div class="bar"><i style="width:'+pc+'%"></i></div></div><button class="btn" id="st">🪙 متجر دُرّة</button><div class="sec" style="margin-top:16px;font-size:1.1rem"><i>✦</i>أوسمتي</div>'+(badges.length?'<div class="bd">'+badges.join("")+'</div>':'<div class="empty">أنجز اختبارات الدرس الثلاثة لتنال وسامه.</div>')+(t.d==t.t&&t.t?'<div class="card" style="margin-top:12px;text-align:center">🎓 شهادة إتمام '+esc(CFG.name)+' — الصف الثامن</div>':'')+'</div>'+nav("points");
+ $("#app").innerHTML=h;$("#st").onclick=function(){window.Durra&&Durra.store()}}
+function mePage(){var p=profile(),name=[p.first,p.father,p.family].filter(Boolean).join(" ")||CFG.student,t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc((p.first||"؟").charAt(0));
+ var h=topbar("حسابي","#home")+'<div class="body"><div class="card" style="text-align:center"><div class="av" style="margin:0 auto 8px;width:84px;height:84px;font-size:2rem">'+av+'</div><b style="font-size:1.2rem">'+esc(name)+'</b><div style="color:var(--mut)">الصف الثامن — '+esc(CFG.name)+'</div><div class="bar"><i style="width:'+pc+'%"></i></div><small>إنجازك '+ar(pc)+'٪</small></div>'+(D.pack?'<a class="btn out" target="_blank" rel="noopener" href="'+esc(D.pack)+'">📦 '+esc(CFG.packT)+' (تحتاج إنترنت)</a>':'')+'<button class="btn out" id="tr">🎓 إعادة جولة كينيكس</button><a class="btn out" href="../../index.html">🏠 بوابة الصحابة التعليمية</a><button class="btn out" id="rs" style="color:var(--bad);border-color:var(--bad)">إعادة ضبط تقدّمي</button></div>'+nav("me");
+ $("#app").innerHTML=h;$("#tr").onclick=function(){window.SahabaIntro&&SahabaIntro.tour(KX)};$("#rs").onclick=function(){if(confirm("سيُمحى تقدّمك ونقاطك في هذه المادة. متأكد؟")){S=load();S={xp:0,p:{},uq:{},daily:{},last:null,days:[today()],cert:0,chk:{}};save();route()}}}
+
+function calcEval(ex){var t=ex.replace(/×/g,"*").replace(/÷/g,"/").replace(/−/g,"-").replace(/\^/g,"**").replace(/√\(/g,"Math.sqrt(").replace(/√([0-9.]+)/g,"Math.sqrt($1)");if(!/^[0-9+\-*\/().\sMathsqrt]+$/.test(t))return NaN;try{return Function('"use strict";return ('+t+')')()}catch(e){return NaN}}
+function openCalc(){var d=document.createElement("div");d.id="calc";var keys=[["C","cx"],["⌫","o"],["(","o"],[")","o"],["7"],["8"],["9"],["÷","o"],["4"],["5"],["6"],["×","o"],["1"],["2"],["3"],["−","o"],["0"],["."],["√","o"],["+","o"],["x²","o"],["^","o"],["=","eq"]];
+ d.innerHTML='<div class="cbox"><div class="cd"><small id="ce"></small><b id="cv">0</b></div><div class="ck">'+keys.map(function(k){return '<button type="button" class="'+(k[1]||"")+'" data-k="'+k[0]+'">'+k[0]+'</button>'}).join("")+'</div><button class="cclose" type="button">إغلاق</button></div>';document.body.appendChild(d);
+ var ex="",ce=$("#ce",d),cv=$("#cv",d);function show(){ce.textContent=ex;cv.textContent=ex||"0"}
+ d.onclick=function(e){if(e.target===d)d.remove()};$(".cclose",d).onclick=function(){d.remove()};
+ [].forEach.call(d.querySelectorAll(".ck button"),function(b){b.onclick=function(){var k=b.dataset.k;if(k=="C")ex="";else if(k=="⌫")ex=ex.slice(0,-1);else if(k=="x²")ex+="^2";else if(k=="="){var r=calcEval(ex);ce.textContent=ex+" =";if(isNaN(r)||!isFinite(r)){cv.textContent="خطأ";ex=""}else{var v=String(+r.toPrecision(12));cv.textContent=v;ex=v}return}else ex+=k;show()}})}
+/* ---------- المسارات ---------- */
+function route(){var h=(location.hash||"#home").slice(1).split("/"),a=h[0];window.scrollTo(0,0);
+ try{ if(a=="unit")unit(+h[1]);else if(a=="lesson")lesson(+h[1],+h[2]);else if(a=="quiz")quiz();else if(a=="lessons")lessonsPage();else if(a=="quizzes")quizzesPage();else if(a=="points")pointsPage();else if(a=="me")mePage();else home() }catch(e){try{console.error(e)}catch(x){}home()}
+ if(window.Durra)Durra.apply()}
+window.addEventListener("hashchange",route);
+var KX={id:CFG.kxid,kinex:"../../shared/kinex.jpg",steps:[
+ {t:"أهلاً بك، أنا كينيكس",x:"أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق "+CFG.name+" للصف الثامن. سأعرّفك عليه في دقيقة.",s:null,i:1},
+ {t:"🔎 ابحث عن درس",x:"اكتب اسم الدرس لتصل إليه فوراً.",s:".search"},
+ {t:"🧪 "+CFG.unitsTitle,x:CFG.unitsHint,s:CFG.theme=="math"?".mg":".grid"},
+ {t:"📖 تابع من حيث توقّفت",x:"هذه البطاقة تعيدك إلى درسك الأخير مع نسبة تقدّمك في وحدته.",s:".cont"},
+ {t:"🏆 تحدّي اليوم",x:"أسئلة جديدة كل يوم عن وحدةٍ مختلفة، وتكسب منها نقاطاً.",s:".daily"},
+ {t:"🧭 التنقّل",x:"من هنا تصل إلى دروسك واختباراتك ونقاطك وحسابك.",s:".nav"},
+ {t:"جاهز للانطلاق؟ 🚀",x:"الدرس يُحسب منجزاً بعد أن تنال وسامه بحلّ مستوياته الثلاثة. بالتوفيق دائماً! ✨",s:null}
+],ready:function(){return !!$(".grid")&&!document.getElementById("shc")}};
+if(window.Durra)Durra.init({dir:CFG.dir,frames:".av",vars:function(t){var v=t.v;return {"--hd":v.pri,"--hd2":v.pri2,"--bg":v.bg,"--ink":v.ink,"--mut":v.mut,"--card":v.card,"--bd":v.bd||"#e9dfc8"}}});
+save();route();
+if(window.SahabaWisdom)window.SahabaWisdom.gate(CFG.wid,function(){window.SahabaIntro&&SahabaIntro.run(KX)});else window.SahabaIntro&&SahabaIntro.run(KX);
+})();
+</script>
+<script src="../../shared/update-notify.js" data-app="الرياضيات" data-icon="../../shared/icons/portal-192.png" defer></script>
+<script>if("serviceWorker" in navigator)navigator.serviceWorker.register("./sw.js").catch(function(){});</script>
+</body>
+</html>

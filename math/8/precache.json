@@ -1,0 +1,15 @@
+{
+"files": [
+"./index.html",
+"./manifest.webmanifest",
+"../../shared/durra.js",
+"../../shared/wisdom.js",
+"../../shared/intro.js",
+"../../shared/kinex.jpg",
+"../../shared/update-notify.js",
+"../../shared/fonts/IBMPlexSansArabic-Regular.ttf",
+"../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
+"../../shared/icons/portal-192.png",
+"../../shared/icons/portal-512.png"
+]
+}

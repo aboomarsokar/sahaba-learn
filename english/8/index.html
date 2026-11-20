@@ -21,7 +21,7 @@ if(/[?&]debug=1/.test(location.search))addEventListener('error',function(e){try{
 
 /* الألوان: --bg1/2/3 يضبطها السكربت من لون الخلفية المختار؛ هذه القيم الافتراضية (بنفسجي غامق) */
 :root{
-  --bg1:#1b0b3a; --bg2:#3b1a78; --bg3:#6a2fb8;
+  --bg1:#0f2f23; --bg2:#3b1a78; --bg3:#6a2fb8;
   --gold:#f3c969; --gold2:#ffe7a8; --g3:#c9902f;
   --btn1:#ffe7a8; --btn2:#f3c969; --btnText:#2a1250;
   --text:#fff; --muted:#e4d8ff;
@@ -59,7 +59,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .words{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
 .words span{
   position:absolute;white-space:nowrap;
-  font-family:"Cinzel",serif;font-weight:700;letter-spacing:.12em;
+  font-family:"Plex Arabic",sans-serif;font-weight:700;letter-spacing:.12em;
   color:var(--word);opacity:var(--o,.14);
   font-size:var(--s,1.2rem);
   transform:rotate(var(--r,0deg));
@@ -88,7 +88,7 @@ main{
 .logo img{width:100%;height:100%;border-radius:50%;display:block;object-fit:cover}
 
 .brand{
-  font-family:"Cinzel",serif;font-weight:700;direction:ltr;
+  font-family:"Plex Arabic",sans-serif;font-weight:700;direction:ltr;
   font-size:clamp(2.6rem,11vw,4.2rem);letter-spacing:.18em;margin-inline-start:.18em;
   background:linear-gradient(180deg,var(--gold2) 0%,var(--gold) 55%,var(--g3) 100%);
   -webkit-background-clip:text;background-clip:text;color:transparent;
@@ -145,7 +145,7 @@ main{
 .field{width:100%;text-align:start}
 .name::placeholder,.field::placeholder{color:var(--muted);opacity:.7}
 .name:focus,.field:focus{border-color:var(--gold)}
-select.field option{color:#1d1433}
+select.field option{color:#113D2E}
 .grid{
   width:min(100%,560px);display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:10px;
   padding:12px;border-radius:20px;background:var(--panel);border:1px solid var(--cardBd);
@@ -672,7 +672,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 .confetti{position:fixed;top:-30px;z-index:32;pointer-events:none;animation:fall 2.4s ease-in forwards}
 @keyframes fall{to{transform:translate(var(--dx,0),110vh) rotate(540deg);opacity:.9}}
 .xpline{display:flex;align-items:center;gap:.8rem;padding:.7rem 1rem;text-align:start}
-.xpline .lvn{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);font:700 1.15rem "Cinzel",serif;box-shadow:0 0 16px rgba(243,201,105,.4)}
+.xpline .lvn{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);font:700 1.15rem "Plex Arabic",sans-serif;box-shadow:0 0 16px rgba(243,201,105,.4)}
 .xpline .t{flex:1;min-width:0}
 .xpline b{display:block;font:700 .95rem var(--fb)}
 
@@ -798,7 +798,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 :root[dir="ltr"] .drawer:not(.on){transform:translateX(-105%)}
 .drawer.on{transform:none;visibility:visible}
 .drawer .head{display:flex;align-items:center;justify-content:space-between;margin-bottom:.4rem}
-.drawer .head b{font-family:"Cinzel",serif;font-size:1.3rem;letter-spacing:.15em;color:var(--gold)}
+.drawer .head b{font-family:"Plex Arabic",sans-serif;font-size:1.3rem;letter-spacing:.15em;color:var(--gold)}
 .menu-item{display:flex;align-items:center;gap:.7rem;width:100%;padding:.85rem 1rem;border-radius:14px;cursor:pointer;
   background:var(--card);border:1px solid var(--cardBd);color:var(--text);font:700 1rem var(--fb);text-align:start}
 .menu-item svg{width:22px;height:22px;color:var(--gold);flex:none}
@@ -808,7 +808,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 
 /* ---- رسالة قصيرة ---- */
 .toast{position:fixed;z-index:30;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);
-  width:max-content;max-width:calc(100% - 32px);padding:.75rem 1.2rem;border-radius:14px;background:#1d1433;color:#fff;
+  width:max-content;max-width:calc(100% - 32px);padding:.75rem 1.2rem;border-radius:14px;background:#113D2E;color:#fff;
   font:400 .95rem/1.6 var(--fb);box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.25s;text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
@@ -866,7 +866,7 @@ body.sm-notr .sm-ans .aa,body.sm-notr .sm-q .qa,body.sm-notr .sm-ex .ar{display:
 <body>
 <script src="../../shared/intro.js"></script>
 <script src="../../shared/wisdom.js"></script>
-<script>(function(){var o={id:"english8",kinex:"../../shared/kinex.jpg",steps:[{"t": "أهلاً بك، أنا كينيكس", "x": "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا LEXORA تطبيق اللغة الإنجليزية للصف الثامن. سأعرّفك عليه في دقيقة، وبعدها أبقى معك في كل درس حتى تتفوّق بإذن الله.", "s": null, "i": 1}, {"t": "📚 الفصلان الدراسيان", "x": "المنهج في فصلين: الأول الوحدات 1–6، والثاني 7–12. اضغط على الفصل لترى وحداته، وفي كل وحدة دروسٌ مرتّبة: مفردات وقواعد وقراءة وورقة عمل.", "s": ["#home .term"]}, {"t": "📕 الكتب والرزمة التعليمية", "x": "من هنا تفتح كتاب الطالب وكتاب النشاط والرزمة التعليمية للمادة لتراجع منها متى شئت.", "s": ["#home .pentas"]}, {"t": "📝 الاختبارات والتلخيص والتحديات", "x": "اختبر نفسك بعد كل وحدة، وراجع تلخيص الوحدات، ثم تحدَّ نفسك في «تحدياتي». الخطأ ليس فشلاً، هو درسٌ يقرّبك من النجاح.", "s": ["#home .squares"]}, {"t": "☰ القائمة", "x": "من القائمة تصل إلى قاموسك الخاص وخطة الدراسة والدروس المحفوظة وإنجازاتك والسلسلة اليومية، وتغيّر الإعدادات.", "s": ["#home [data-open-menu]"]}, {"t": "🧭 شريط التنقّل", "x": "في الأسفل تنتقل بسرعة بين الرئيسية والإعدادات وملفك الشخصي والاختبارات والإشعارات.", "s": ["#tabbar"]}, {"t": "جاهز للانطلاق؟ 🚀", "x": "المذاكرة اليومية القليلة أفضل من الكثيرة المتقطّعة. ابدأ بدرسٍ واحد اليوم، وأنا معك في كل خطوة. وإذا أردت إعادة الجولة فستجد زرّها في الإعدادات. بالتوفيق دائماً! ✨", "s": null}],
+<script>(function(){var o={id:"english8",kinex:"../../shared/kinex.jpg",steps:[{"t": "أهلاً بك، أنا كينيكس", "x": "أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق اللغة الإنجليزية للصف الثامن. سأعرّفك عليه في دقيقة، وبعدها أبقى معك في كل درس حتى تتفوّق بإذن الله.", "s": null, "i": 1}, {"t": "📚 الفصلان الدراسيان", "x": "المنهج في فصلين: الأول الوحدات 1–6، والثاني 7–12. اضغط على الفصل لترى وحداته، وفي كل وحدة دروسٌ مرتّبة: مفردات وقواعد وقراءة وورقة عمل.", "s": ["#home .term"]}, {"t": "📕 الكتب والرزمة التعليمية", "x": "من هنا تفتح كتاب الطالب وكتاب النشاط والرزمة التعليمية للمادة لتراجع منها متى شئت.", "s": ["#home .pentas"]}, {"t": "📝 الاختبارات والتلخيص والتحديات", "x": "اختبر نفسك بعد كل وحدة، وراجع تلخيص الوحدات، ثم تحدَّ نفسك في «تحدياتي». الخطأ ليس فشلاً، هو درسٌ يقرّبك من النجاح.", "s": ["#home .squares"]}, {"t": "☰ القائمة", "x": "من القائمة تصل إلى قاموسك الخاص وخطة الدراسة والدروس المحفوظة وإنجازاتك والسلسلة اليومية، وتغيّر الإعدادات.", "s": ["#home [data-open-menu]"]}, {"t": "🧭 شريط التنقّل", "x": "في الأسفل تنتقل بسرعة بين الرئيسية والإعدادات وملفك الشخصي والاختبارات والإشعارات.", "s": ["#tabbar"]}, {"t": "جاهز للانطلاق؟ 🚀", "x": "المذاكرة اليومية القليلة أفضل من الكثيرة المتقطّعة. ابدأ بدرسٍ واحد اليوم، وأنا معك في كل خطوة. وإذا أردت إعادة الجولة فستجد زرّها في الإعدادات. بالتوفيق دائماً! ✨", "s": null}],
 ready:function(){var h=document.getElementById("home");return h&&!h.hidden},
 userName:function(){var n=document.getElementById("meName");return n?(n.textContent||"").trim().split(/\s+/)[0]:""},
 onStart:function(){var i=document.getElementById("intro");if(i&&!i.hidden){var b=document.getElementById("start");if(b)b.click()}}};
@@ -1349,7 +1349,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 <!-- ===== القائمة الجانبية ===== -->
 <div class="scrim" id="scrim"></div>
 <aside class="drawer" id="drawer" aria-label="القائمة" aria-hidden="true">
-  <div class="head"><b>LEXORA</b><button class="icon-btn" type="button" id="closeMenu" aria-label="إغلاق"><svg><use href="#i-close"/></svg></button></div>
+  <div class="head"><b>English</b><button class="icon-btn" type="button" id="closeMenu" aria-label="إغلاق"><svg><use href="#i-close"/></svg></button></div>
   <button class="menu-item" type="button" onclick="location.href='../../index.html'"><svg><use href="#i-home"/></svg><span>بوابة الصحابة التعليمية</span></button>
   <p class="mgrp" data-t="menuAcc">التطبيق</p>
   <button class="menu-item" type="button" data-go="settings"><svg><use href="#i-gear"/></svg><span data-t="settings">الإعدادات</span></button>
@@ -1416,7 +1416,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     'Union Jack','Global Language','ABC','Success','Better Tomorrow','Listen & Learn','Knowledge','Be Excellent','Phone Box','Speak English',
     'Study Hard','Set Goals','Tower Bridge','Think in English','English Book','Achieve More','Expand Your Mind','Keep Learning','Improve Yourself','English Forever'];
   /* كلّ لون: [الاسم، الطرف، الوسط، التوهّج] */
-  var DARK=[['أخضر الصحابة','#0b2c21','#113D2E','#2c5044'],['بنفسجي','#1b0b3a','#3b1a78','#6a2fb8'],['كحلي','#0a1430','#16306b','#2f5fbf'],['زمرّدي','#062a20','#0f5040','#1f8a68'],
+  var DARK=[['أخضر الصحابة','#0b2c21','#113D2E','#2c5044'],['بنفسجي','#0f2f23','#3b1a78','#6a2fb8'],['كحلي','#0a1430','#113D2E','#2f5fbf'],['زمرّدي','#062a20','#0f5040','#1f8a68'],
     ['فيروزي','#052a30','#0c4c56','#178a96'],['عنّابي','#2a0812','#5a1428','#9c2a48'],['برقوقي','#260826','#521852','#8e2f8e'],
     ['فحمي','#121216','#26262e','#4a4a58'],['بنّي','#22140a','#4a2c16','#8a5a2e'],['نيلي','#0f0e33','#25217a','#4a43c4'],['زيتي','#141f0a','#2e4416','#5a7f2a']];
   var LIGHT=[['كريمي الصحابة','#F4EDE5','#FAF6EB','#ffffff'],['لافندر','#e6dcf8','#f4effd','#ffffff'],['سماوي','#d8e8f8','#eef5fd','#ffffff'],['نعناعي','#d6f0e3','#eefaf3','#ffffff'],
@@ -1424,7 +1424,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     ['ليلكي','#ecd8f2','#f8eefb','#ffffff'],['رملي','#ebe0cc','#f7f1e6','#ffffff'],['مائي','#d3eeee','#ecf8f8','#ffffff'],['لؤلؤي','#e3e5ea','#f3f4f7','#ffffff']];
   /* سجلّ التحديثات: أضف الأحدث في الأعلى */
   var UPDATES=[
-    {date:'2026-11-20',title:'إطلاق LEXORA للصف الثامن',items:['12 وحدة من كتاب English for Palestine 8 (الفصل الأول: الوحدات 1–6، والثاني: 7–12)','كلّ وحدة: مفردات، وقراءة، وقواعد، وأسئلة إتقان، وشهادة','تلخيص لكلّ وحدة، وأوراق مراجعة، وأربعة اختبارات شاملة واختبار نهائي','قاموسي الخاص وخطة الدراسة وسلسلة الأيام والإنجازات ومتجر دُرّة']}
+    {date:'2026-11-20',title:'إطلاق تطبيق اللغة الإنجليزية للصف الثامن',items:['12 وحدة من كتاب English for Palestine 8 (الفصل الأول: الوحدات 1–6، والثاني: 7–12)','كلّ وحدة: مفردات، وقراءة، وقواعد، وأسئلة إتقان، وشهادة','تلخيص لكلّ وحدة، وأوراق مراجعة، وأربعة اختبارات شاملة واختبار نهائي','قاموسي الخاص وخطة الدراسة وسلسلة الأيام والإنجازات ومتجر دُرّة']}
   ];
 
   /* عبارات تحفيزية: تتغيّر كلّ يوم */
@@ -1481,7 +1481,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   function saveProg(){save(K.prog,prog);pubAch()}
   /* ملخّص الإنجازات للبوابة (إنجازاتي وشهاداتي) */
   function pubAch(){try{var done=0,tot=LESSONS_PER_UNIT.length;for(var n=1;n<=tot;n++)if(unitDone(n))done++;
-    var certs=[];Object.keys(prog.lessons).forEach(function(k){var r=prog.lessons[k];if(r&&r.done){var L=findLesson(k);certs.push({t:'LEXORA — '+(L?(L.titleAr||L.title):k),d:''})}});
+    var certs=[];Object.keys(prog.lessons).forEach(function(k){var r=prog.lessons[k];if(r&&r.done){var L=findLesson(k);certs.push({t:'اللغة الإنجليزية — '+(L?(L.titleAr||L.title):k),d:''})}});
     localStorage.setItem('sahaba-ach:english/8',JSON.stringify({pct:pct(),units:{done:done,total:tot},certs:certs,badges:[],updated:new Date().toISOString()}))}catch(e){}}
   /* ترتيب الأقسام الجديد: 0 مفردات، 1 قواعد، 2 قراءة، 3 (مخفي)، 4 ورقة عمل. التقدّم القديم يُرحَّل مرّة واحدة */
   if(!prog.v3){Object.keys(prog.lessons).forEach(function(k){var r=prog.lessons[k],o=(r.st||[]).slice();
@@ -1575,7 +1575,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   applyTheme();applyLang();
   document.querySelectorAll('[data-drchip]').forEach(function(x){x.replaceWith(Durra.chip())});
 
-  $('voiceTest').addEventListener('click',function(){speak([['Hello! Welcome to LEXORA.','en'],['أهلاً بك في ليكسورا','ar']])});
+  $('voiceTest').addEventListener('click',function(){speak([['Hello! Welcome to English.','en'],['أهلاً بك في تطبيق اللغة الإنجليزية','ar']])});
   /* ===== الصوت ===== */
   /* الصوت من الجهاز نفسه: نختار صوت رجل إن وُجد (الافتراضي)، أو صوت امرأة من الإعدادات */
   var MALE=/\b(male|man|daniel|david|fred|alex|aaron|arthur|george|guy|james|mark|oliver|ryan|rishi|thomas|tom|lee|gordon|maged|majed|tarik|tariq|hamed|naayf|shakir|bassel|omar|hamza|fahed|ahmed|iol|iom|tpd|rjs|gbb|gbd)\b/i;
@@ -2847,7 +2847,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
       '<button class="btn gold" type="button" id="cDown"><svg><use href="#i-down"/></svg>'+T('تنزيل الشهادة','Download')+'</button>'+
       '<button class="btn" type="button" id="cBack">'+T('العودة إلى الدروس','Back to lessons')+'</button></div></div>';
     drawCert($('cv'),r);
-    $('cDown').addEventListener('click',function(){var a=document.createElement('a');a.download='LEXORA-'+L.id+'.png';a.href=$('cv').toDataURL('image/png');a.click()});
+    $('cDown').addEventListener('click',function(){var a=document.createElement('a');a.download='English-'+L.id+'.png';a.href=$('cv').toDataURL('image/png');a.click()});
     $('cBack').addEventListener('click',function(){go(lessonHome())});
   }
   /* الشهادة: قالب مدرسة التابعين (images/certificate.jpg) تُكتب عليه بيانات الطالب */
@@ -2929,7 +2929,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
   /* مشاركة التطبيق */
   $('share').addEventListener('click',function(){
-    var url=location.href.split('#')[0],data={title:'LEXORA',text:T('تعلّم الإنجليزية للصف الثامن مع LEXORA','Learn Grade 8 English with LEXORA'),url:url};
+    var url=location.href.split('#')[0],data={title:'اللغة الإنجليزية',text:T('تعلّم الإنجليزية للصف الثامن','Learn Grade 8 English'),url:url};
     function shared(){prog.shareDay=dayOff(0);saveProg();checkDaily();if(location.hash==='#streak')renders.streak()}
     if(navigator.share){navigator.share(data).then(shared,function(){});return}
     if(navigator.clipboard){navigator.clipboard.writeText(url).then(function(){toast(T('نُسخ رابط التطبيق','App link copied'));shared()},function(){toast(url)})}else toast(url);

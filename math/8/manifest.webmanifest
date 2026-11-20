@@ -1,0 +1,25 @@
+{
+  "name": "الرياضيات — الصف الثامن",
+  "short_name": "الرياضيات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#FAF6EB",
+  "theme_color": "#113D2E",
+  "icons": [
+    {
+      "src": "../../shared/icons/portal-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../../shared/icons/portal-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

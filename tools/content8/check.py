@@ -1,11 +1,12 @@
 """يتحقّق من ملف محتوى الثامن: python3 tools/content8/check.py <ملف.json>"""
 import json, sys
 f = sys.argv[1]
+PART = "--part" in sys.argv
 d = json.load(open(f, encoding="utf-8"))
 err = []
 def need(c, m):
     if not c: err.append(m)
-need(d.get("subject") in ("physics", "chemistry", "biology"), "subject")
+need(d.get("subject") in ("physics", "chemistry", "biology", "math"), "subject")
 nl = 0
 for ui, u in enumerate(d["units"]):
     need(u.get("title") and u.get("icon") and u.get("sym"), f"وحدة {ui}: title/icon/sym")
@@ -24,8 +25,9 @@ for ui, u in enumerate(d["units"]):
         need(all(h in qs for h in l.get("hints", {})) and len(l.get("hints", {})) >= 3, p + ": hints")
     uq = u.get("unit_quiz", [])
     need(9 <= len(uq) <= 12 and all(len(r) == 4 and len(r[2]) == 4 and 0 <= r[3] <= 3 for r in uq), f"وحدة {ui}: unit_quiz")
-need(sorted(i for g in d["sems"] for i in g) == list(range(len(d["units"]))), "sems لا تغطّي الوحدات")
-need(15 <= len(d["bank"]) <= 20 and all(len(b["o"]) == 4 and 0 <= b["a"] <= 3 for b in d["bank"]), "bank")
+if not PART:
+    need(sorted(i for g in d["sems"] for i in g) == list(range(len(d["units"]))), "sems لا تغطّي الوحدات")
+    need(15 <= len(d["bank"]) <= 20 and all(len(b["o"]) == 4 and 0 <= b["a"] <= 3 for b in d["bank"]), "bank")
 print("دروس:", nl, "| أخطاء:", len(err))
 for e in err: print(" ✗", e)
 sys.exit(1 if err else 0)
