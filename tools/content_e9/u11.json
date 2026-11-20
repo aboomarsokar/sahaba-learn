@@ -1,0 +1,1171 @@
+{
+ "n": 11,
+ "title": "كن سعيداً",
+ "titleEn": "Be happy!",
+ "lesson": {
+  "id": "11-1",
+  "title": "Be happy!",
+  "titleAr": "كن سعيداً",
+  "vocab": [
+   {
+    "en": "be down",
+    "ar": "يكون حزيناً / محبَطاً",
+    "em": "😞",
+    "ex": "I'm feeling down because it has rained all week.",
+    "exAr": "أشعر بالإحباط لأنّ المطر هطل طوال الأسبوع."
+   },
+   {
+    "en": "cheer up",
+    "ar": "يُسرّي عن نفسه / يبتهج",
+    "em": "😊",
+    "ex": "Come on! Cheer up!",
+    "exAr": "هيّا! ابتهج!"
+   },
+   {
+    "en": "cheerful",
+    "ar": "مرح / مبتهج",
+    "em": "😄",
+    "ex": "How come you're so cheerful?",
+    "exAr": "كيف تكونين مبتهجةً هكذا؟"
+   },
+   {
+    "en": "depressed",
+    "ar": "مكتئب / محبَط",
+    "em": "😔",
+    "ex": "I don't feel very happy. I'm depressed!",
+    "exAr": "لا أشعر بالسعادة. أنا محبَطة!"
+   },
+   {
+    "en": "how come",
+    "ar": "كيف ذلك؟ / لماذا؟",
+    "em": "❓",
+    "ex": "How come you're home already?",
+    "exAr": "كيف عدتَ إلى البيت بهذه السرعة؟"
+   },
+   {
+    "en": "mood",
+    "ar": "مزاج",
+    "em": "🎭",
+    "ex": "I'm suddenly in a much better mood.",
+    "exAr": "صار مزاجي فجأةً أفضل بكثير."
+   },
+   {
+    "en": "no one",
+    "ar": "لا أحد",
+    "em": "🚫",
+    "ex": "No one got good results in the test.",
+    "exAr": "لم يحصل أحدٌ على نتائج جيّدة في الاختبار."
+   },
+   {
+    "en": "result",
+    "ar": "نتيجة",
+    "em": "📊",
+    "ex": "The results of the medical tests are very good.",
+    "exAr": "نتائج الفحوص الطبّية جيّدة جدّاً."
+   },
+   {
+    "en": "do well / badly",
+    "ar": "يؤدّي جيّداً / سيّئاً",
+    "em": "📝",
+    "ex": "I didn't do very well in our French test.",
+    "exAr": "لم أؤدِّ جيّداً في اختبار الفرنسية."
+   },
+   {
+    "en": "suddenly",
+    "ar": "فجأة",
+    "em": "⚡",
+    "ex": "And do you know what? I'm suddenly in a much better mood.",
+    "exAr": "وهل تعرفين؟ مزاجي فجأةً أفضل بكثير."
+   },
+   {
+    "en": "attention",
+    "ar": "انتباه / اهتمام",
+    "em": "👀",
+    "ex": "Fuad likes to be the centre of attention.",
+    "exAr": "فؤاد يحبّ أن يكون محطّ الأنظار."
+   },
+   {
+    "en": "dramatic",
+    "ar": "مثير / مبالغ فيه",
+    "em": "🎬",
+    "ex": "That was a dramatic end to the film.",
+    "exAr": "كانت نهاية الفيلم مثيرة جدّاً."
+   },
+   {
+    "en": "explode",
+    "ar": "ينفجر",
+    "em": "💥",
+    "ex": "If I don't do something soon, I'll explode!",
+    "exAr": "إن لم أفعل شيئاً قريباً فسأنفجر!"
+   },
+   {
+    "en": "ignore",
+    "ar": "يتجاهل",
+    "em": "🙈",
+    "ex": "They just ignore me.",
+    "exAr": "إنّهم يتجاهلونني فحسب."
+   },
+   {
+    "en": "selfish",
+    "ar": "أناني",
+    "em": "😒",
+    "ex": "He only thinks about himself. He's very selfish.",
+    "exAr": "إنّه لا يفكّر إلّا في نفسه. إنّه أنانيّ جدّاً."
+   },
+   {
+    "en": "positive / negative",
+    "ar": "إيجابي / سلبي",
+    "em": "➕",
+    "ex": "It is very negative to hide in your room.",
+    "exAr": "الاختباء في غرفتك أمرٌ سلبيّ جدّاً."
+   }
+  ],
+  "reading": {
+   "title": "Be happy!",
+   "paras": [
+    {
+     "en": "One cold, wet, grey day, Lana and Lisa were talking on their way home from school. Lana: Are you all right, Lisa? You don't look very happy. Lisa: I don't feel very happy, either. I'm depressed! Lana: What's the matter? Lisa: Well, I didn't do very well in our French test this afternoon. Lana: I didn't, either. But listen, no one got good results, and we all did badly. Everyone says the test was too hard. So come on! Cheer up!",
+     "ar": "في يومٍ باردٍ ماطرٍ رماديّ كانت لانا وليزا تتحدّثان في طريق العودة من المدرسة إلى البيت. لانا: هل أنتِ بخير يا ليزا؟ لا تبدين سعيدةً جدّاً. ليزا: ولا أشعر بالسعادة أنا أيضاً، أنا محبَطة! لانا: ما الأمر؟ ليزا: حسناً، لم أؤدِّ جيّداً في اختبار الفرنسية بعد ظهر اليوم. لانا: ولا أنا. لكن اسمعي، لم يحصل أحدٌ على نتائج جيّدة وكلّنا أخفقنا. الجميع يقولون إنّ الاختبار كان صعباً جدّاً. فهيّا! ابتهجي!"
+    },
+    {
+     "en": "Lisa: But there's another thing. It's this weather. I don't like it. Lana: Neither do I. But you have to try to keep smiling. Lisa: How come you're so cheerful? Lana: Well, the weather forecast says that spring is almost here, and I love spring. Lisa: Oh, so do I! I can't wait for sunny days and blue skies again. Lana: Neither can I. And listen, if the weather's better on Saturday, I'd like to go and help at the community garden again. What about you?",
+     "ar": "ليزا: لكن هناك أمرٌ آخر، إنّه هذا الطقس. لا أحبّه. لانا: ولا أنا. لكن عليكِ أن تحاولي الاستمرار في الابتسام. ليزا: كيف تكونين مبتهجةً هكذا؟ لانا: حسناً، نشرة الطقس تقول إنّ الربيع على وشك القدوم، وأنا أحبّ الربيع. ليزا: آه، وأنا كذلك! لا أطيق الانتظار حتى تعود الأيّام المشمسة والسماء الزرقاء. لانا: ولا أنا. واسمعي، إن كان الطقس أفضل يوم السبت أودّ أن أذهب لأساعد في حديقة المجتمع مرّةً أخرى. وأنتِ؟"
+    },
+    {
+     "en": "Lisa: Good idea! I enjoyed working with everyone last weekend. Lana: I did, too. I'm really happy about our new garden. Lisa: So am I. It'll look lovely in three months from now. And do you know what? I'm suddenly in a much better mood. Lana: Good! Now you sound more like the normal Lisa! Lisa: And I'll tell you the thing that really makes me happy. Lana: Oh? What's that? Lisa: It's having a friend like you – someone who can cheer me up when I'm down.",
+     "ar": "ليزا: فكرةٌ رائعة! لقد استمتعتُ بالعمل مع الجميع في نهاية الأسبوع الماضي. لانا: وأنا كذلك. أنا سعيدةٌ جدّاً بحديقتنا الجديدة. ليزا: وأنا أيضاً. ستبدو جميلةً بعد ثلاثة أشهر من الآن. وهل تعرفين؟ صار مزاجي فجأةً أفضل بكثير. لانا: رائع! الآن تبدين أشبه بليزا المعتادة! ليزا: وسأخبركِ بما يسعدني حقّاً. لانا: حقّاً؟ وما هو؟ ليزا: أن يكون لي صديقةٌ مثلك، شخصٌ يستطيع أن يرفع معنويّاتي حين أكون حزينة."
+    },
+    {
+     "en": "Tom writes to the magazine page Help, World! Dear All, I'm the oldest of four, and my parents give all their attention to the younger ones. They just ignore me. I'm feeling very down because of that. I love them, so I don't say anything. I just go to my room alone. But I sometimes want to scream! Would it help if I did something dramatic? If I don't do something soon, I'll explode! Upset",
+     "ar": "يكتب توم إلى صفحة «Help, World!» في المجلّة. إلى الجميع: أنا الأكبر بين أربعة إخوة، ووالداي يعطيان كلّ اهتمامهما للأصغر سنّاً، وهما يتجاهلانني تماماً. أشعر بحزنٍ شديد بسبب ذلك. أنا أحبّهما فلا أقول شيئاً، بل أذهب إلى غرفتي وحدي. لكنّني أرغب أحياناً في الصراخ! هل يفيد أن أفعل شيئاً مثيراً؟ إن لم أفعل شيئاً قريباً فسأنفجر! (الموقّع: منزعج)"
+    },
+    {
+     "en": "Carrie (Melbourne, Australia): Dear Upset, As you're the oldest, your parents probably think you can look after yourself. They're just very busy. I don't think they think they're ignoring you. I don't think you should do anything selfish or dramatic since that would just make things worse.",
+     "ar": "كاري (ملبورن، أستراليا): عزيزي «منزعج»، بما أنّك الأكبر فربّما يظنّ والداك أنّك تستطيع الاعتناء بنفسك. إنّهما مشغولان جدّاً فحسب، ولا أظنّهما يعتقدان أنّهما يتجاهلانك. ولا أرى أن تفعل شيئاً أنانيّاً أو مثيراً لأنّ ذلك سيزيد الأمور سوءاً."
+    },
+    {
+     "en": "Fuad (Manama, Bahrain): Dear Upset, I really understand your feelings since I've got six small brothers and sisters! But please don't 'explode' as that would just upset everyone. Try my way: talk to your parents. Say, 'I know you love me, but I feel you give me less attention than the other children.' It worked for me, so I'm sure it will for you, too. My parents understood immediately, and they changed completely.",
+     "ar": "فؤاد (المنامة، البحرين): عزيزي «منزعج»، أنا أفهم مشاعرك جيّداً لأنّ لديّ ستّة إخوةٍ وأخواتٍ صغار! لكن أرجو ألّا «تنفجر» لأنّ ذلك سيُزعج الجميع. جرّب طريقتي: تحدّث إلى والديك وقل: «أعلم أنّكما تحبّانني، لكنّني أشعر أنّكما تعطيانني اهتماماً أقلّ من الأطفال الآخرين». لقد نجحت معي، فأنا واثق أنّها ستنجح معك أيضاً. فهم والداي فوراً وتغيّرا تماماً."
+    },
+    {
+     "en": "Rosa (Madrid, Spain): Dear Upset, Your parents aren't the whole cause of the problem. You're part of it, too, because it's very negative to hide in your room. Try to be positive instead and help look after the children together. Because of that, they'll love that and you'll do a lot together. Your parents will definitely stop ignoring you!",
+     "ar": "روزا (مدريد، إسبانيا): عزيزي «منزعج»، والداك ليسا السبب الوحيد للمشكلة، فأنت جزءٌ منها أيضاً لأنّ الاختباء في غرفتك أمرٌ سلبيّ جدّاً. حاول بدلاً من ذلك أن تكون إيجابيّاً وأن تساعدهما في رعاية الأطفال معاً. وبسبب ذلك سيُسعدهما الأمر وستفعلان أشياء كثيرة معاً. وسيتوقّف والداك بالتأكيد عن تجاهلك!"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What went wrong for Lisa at school?",
+     "o": [
+      "She lost her French book",
+      "She did badly in a French test",
+      "She missed the school bus"
+     ],
+     "a": 1
+    },
+    {
+     "q": "Why is Lana cheerful?",
+     "o": [
+      "The weather forecast says spring is almost here",
+      "She got a good result in the test",
+      "It is the weekend"
+     ],
+     "a": 0
+    },
+    {
+     "tf": true,
+     "q": "Lana also did badly in the French test."
+    },
+    {
+     "q": "What would Lana like to do on Saturday if the weather is better?",
+     "o": [
+      "Go to the zoo",
+      "Play football",
+      "Help at the community garden"
+     ],
+     "a": 2
+    },
+    {
+     "q": "Why does Tom feel down?",
+     "o": [
+      "He failed an exam",
+      "His parents give all their attention to the younger children",
+      "He has no friends"
+     ],
+     "a": 1
+    },
+    {
+     "q": "What does Fuad advise Tom to do?",
+     "o": [
+      "Scream and explode",
+      "Hide in his room",
+      "Talk to his parents"
+     ],
+     "a": 2
+    }
+   ]
+  },
+  "rules": [
+   {
+    "title": "too / either · So / Neither",
+    "titleAr": "الموافقة: too وeither وSo وNeither",
+    "explain": "نوافق على كلام الآخرين بطريقتين. مع الكلام <b>المثبت</b> نقول <b>…, too</b> أو <b>So + فعل مساعد + فاعل</b> (I love spring. — I do, too. / So do I). ومع الكلام <b>المنفيّ</b> نقول <b>…not, either</b> أو <b>Neither + فعل مساعد + فاعل</b> (I don't like it. — I don't, either. / Neither do I). نستعمل <b>الفعل المساعد نفسه</b>: do / does / did مع المضارع والماضي البسيطين، وam / is / are مع be، وcan مع can، وhave مع المضارع التامّ.",
+    "form": "مثبت: S + aux, too   ·   So + aux + S        منفيّ: S + aux + not, either   ·   Neither + aux + S",
+    "examples": [
+     {
+      "en": "A: I enjoyed working. B: I **did**, **too**.",
+      "ar": "موافقة مثبتة"
+     },
+     {
+      "en": "A: I love spring. B: **So do** I.",
+      "ar": "موافقة مثبتة"
+     },
+     {
+      "en": "A: I didn't do very well. B: I **didn't**, **either**.",
+      "ar": "موافقة منفيّة"
+     },
+     {
+      "en": "A: I cannot wait for sunny days. B: **Neither can** I.",
+      "ar": "موافقة منفيّة"
+     },
+     {
+      "en": "A: I am really happy. B: **So am** I.",
+      "ar": "موافقة مع be"
+     }
+    ],
+    "questions": [
+     {
+      "q": "A: I love spring.  B: ___",
+      "o": [
+       "So do I.",
+       "So am I.",
+       "Neither do I."
+      ],
+      "a": 0,
+      "why": "love: مثبت + do"
+     },
+     {
+      "q": "A: I don't like cold, wet weather.  B: ___",
+      "o": [
+       "So do I.",
+       "Neither do I.",
+       "I do, too."
+      ],
+      "a": 1,
+      "why": "منفيّ: Neither"
+     },
+     {
+      "q": "A: I'm really happy about our new garden.  B: So ___ I.",
+      "o": [
+       "do",
+       "have",
+       "am"
+      ],
+      "a": 2,
+      "why": "am مع be"
+     },
+     {
+      "type": "type",
+      "q": "A: I can't wait for sunny days.  B: Neither ___ I.",
+      "a": [
+       "can"
+      ],
+      "why": "الفعل المساعد نفسه: can"
+     },
+     {
+      "type": "type",
+      "q": "A: I didn't do very well in the test.  B: I ___, either.",
+      "a": [
+       "didn't",
+       "did not"
+      ],
+      "why": "منفيّ في الماضي: didn't"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «ولا أنا أستطيع»",
+      "words": [
+       "Neither",
+       "can",
+       "I."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "because / since / as · so · Because of that",
+    "titleAr": "السبب والنتيجة: because وsince وas وso",
+    "explain": "نذكر <b>السبب</b> بـ <b>because</b> أو <b>since</b> أو <b>as</b> (I don't say anything because I love them). ونذكر <b>النتيجة</b> بـ <b>so</b> وهي عكس because (I love them, so I don't say anything). وإذا كان السبب في جملةٍ سابقة نشير إليه بعبارة <b>Because of that</b> أو <b>As a result</b> (I'm feeling very down. Because of that, I stay in my room). يأتي السبب بعد النتيجة مع because، ويجوز أن يأتي أوّلاً مع as وsince.",
+    "form": "النتيجة + because / since / as + السبب   ·   السبب, so + النتيجة   ·   السبب. Because of that, + النتيجة",
+    "examples": [
+     {
+      "en": "I don't say anything **because** I love them.",
+      "ar": "السبب بعد النتيجة"
+     },
+     {
+      "en": "**As** you're the oldest, your parents think you can look after yourself.",
+      "ar": "السبب أوّلاً"
+     },
+     {
+      "en": "I really understand your feelings **since** I've got six!",
+      "ar": "سبب"
+     },
+     {
+      "en": "I love them, **so** I don't say anything.",
+      "ar": "نتيجة"
+     },
+     {
+      "en": "They just ignore me. I'm feeling very down **because of that**.",
+      "ar": "إشارة إلى الجملة السابقة"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Everyone went indoors ___ it was getting too cold.",
+      "o": [
+       "because",
+       "so",
+       "because of that"
+      ],
+      "a": 0,
+      "why": "because يُدخل السبب"
+     },
+     {
+      "q": "It was raining, ___ I took my umbrella.",
+      "o": [
+       "since",
+       "so",
+       "as"
+      ],
+      "a": 1,
+      "why": "so يُدخل النتيجة"
+     },
+     {
+      "q": "___ you're the oldest, your parents think you can look after yourself.",
+      "o": [
+       "So",
+       "As",
+       "But"
+      ],
+      "a": 1,
+      "why": "As في أوّل الجملة تدلّ على السبب"
+     },
+     {
+      "type": "type",
+      "q": "I didn't understand the sentence, ___ I read it again. (because / so)",
+      "a": [
+       "so"
+      ],
+      "why": "قراءة الجملة نتيجة وليست سبباً"
+     },
+     {
+      "tf": false,
+      "q": "The correct sentence is: I was tired, because I went to bed early.",
+      "why": "الصحيح: I was tired, so I went to bed early."
+     },
+     {
+      "q": "I could see dark clouds. ___, I took my umbrella.",
+      "o": [
+       "Because of that",
+       "Because",
+       "Since"
+      ],
+      "a": 0,
+      "why": "نشير إلى الجملة السابقة"
+     }
+    ]
+   },
+   {
+    "title": "Prepositions: at, for, with, about, on, in",
+    "titleAr": "حروف الجرّ مع الأفعال والصفات والوقت",
+    "explain": "بعض الأفعال والصفات تأتي مع حرف جرٍّ ثابت: <b>do well at</b> (ينجح في)، <b>wait for</b> (ينتظر)، <b>be with</b> (يكون مع)، <b>happy about</b> (سعيد بشأن). ونستعمل <b>on</b> مع الأيّام (on Friday)، و<b>in</b> مع الفترات والأشهر (in six months)، و<b>at</b> مع الساعة.",
+    "form": "do well AT · wait FOR · be WITH · happy ABOUT · ON Friday · IN six months",
+    "examples": [
+     {
+      "en": "How well did you do **at** the science test?",
+      "ar": "do well at"
+     },
+     {
+      "en": "We have to wait here **for** the bus.",
+      "ar": "wait for"
+     },
+     {
+      "en": "I like being **with** other people.",
+      "ar": "with"
+     },
+     {
+      "en": "I'm not very happy **about** the plans.",
+      "ar": "happy about"
+     },
+     {
+      "en": "What are you going to do **on** Friday?",
+      "ar": "on + يوم"
+     },
+     {
+      "en": "Where will we be **in** six months from now?",
+      "ar": "in + فترة"
+     }
+    ],
+    "questions": [
+     {
+      "q": "How well did you do ___ the science test?",
+      "o": [
+       "at",
+       "by",
+       "from"
+      ],
+      "a": 0,
+      "why": "do well at"
+     },
+     {
+      "q": "We have to wait here ___ the bus.",
+      "o": [
+       "by",
+       "for",
+       "from"
+      ],
+      "a": 1,
+      "why": "wait for"
+     },
+     {
+      "q": "I'm not very happy ___ the plans for the new building.",
+      "o": [
+       "about",
+       "by",
+       "in"
+      ],
+      "a": 0,
+      "why": "happy about"
+     },
+     {
+      "q": "What are you going to do ___ Friday?",
+      "o": [
+       "at",
+       "in",
+       "on"
+      ],
+      "a": 2,
+      "why": "on + اليوم"
+     },
+     {
+      "type": "type",
+      "q": "Where will we be ___ six months from now? (on / in / at)",
+      "a": [
+       "in"
+      ],
+      "why": "in + فترة زمنية"
+     },
+     {
+      "tf": true,
+      "q": "'I like being with other people.' is correct."
+     }
+    ]
+   }
+  ],
+  "mastery": [
+   {
+    "q": "\"cheerful\" means:",
+    "o": [
+     "مبتهج",
+     "أناني",
+     "فجأة"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"ignore\" means:",
+    "o": [
+     "ينفجر",
+     "يتجاهل",
+     "نتيجة"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "Lisa didn't do very well in the French test.",
+    "lv": "easy"
+   },
+   {
+    "q": "The opposite of 'positive' is ___.",
+    "o": [
+     "selfish",
+     "negative",
+     "cheerful"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "q": "\"mood\" means:",
+    "o": [
+     "نتيجة",
+     "اهتمام",
+     "مزاج"
+    ],
+    "a": 2,
+    "lv": "easy"
+   },
+   {
+    "type": "match",
+    "q": "صِل كلّ كلمة بمعناها",
+    "pairs": [
+     [
+      "attention",
+      "انتباه"
+     ],
+     [
+      "selfish",
+      "أناني"
+     ],
+     [
+      "explode",
+      "ينفجر"
+     ],
+     [
+      "depressed",
+      "محبَط"
+     ]
+    ],
+    "lv": "medium"
+   },
+   {
+    "q": "A: I love spring.  B: ___",
+    "o": [
+     "So do I.",
+     "So am I.",
+     "Neither do I."
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "A: I'm not good at singing.  B: ___",
+    "o": [
+     "So am I.",
+     "Neither am I.",
+     "I am, too."
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "q": "I was really tired, ___ I went to bed early.",
+    "o": [
+     "because",
+     "as",
+     "so"
+    ],
+    "a": 2,
+    "lv": "medium"
+   },
+   {
+    "q": "Why was Lisa down at the beginning of the dialogue?",
+    "o": [
+     "Because of the test and the weather",
+     "Because of her friend",
+     "Because of her homework"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "tf": false,
+    "q": "Lana and Lisa will go to the community garden on Monday.",
+    "why": "السبت (Saturday) إن كان الطقس أفضل.",
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "A: I enjoyed working there.  B: I ___, too.",
+    "a": [
+     "did"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "type",
+    "q": "A: I can't swim.  B: Neither ___ I.",
+    "a": [
+     "can"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات: «شعرتُ بالحزن بسبب ذلك»",
+    "words": [
+     "I",
+     "was",
+     "feeling",
+     "down",
+     "because",
+     "of",
+     "that."
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "I love them, because I don't say anything.",
+     "I love them, so I don't say anything.",
+     "I love them, since so I don't say anything."
+    ],
+    "a": 1,
+    "lv": "hard"
+   },
+   {
+    "q": "What does Fuad advise Tom to do?",
+    "o": [
+     "Hide in his room",
+     "Do something dramatic",
+     "Talk to his parents about his feelings"
+    ],
+    "a": 2,
+    "lv": "hard"
+   },
+   {
+    "q": "What does Rosa think about hiding in the room?",
+    "o": [
+     "It is very positive",
+     "It is very negative",
+     "It is dramatic and fun"
+    ],
+    "a": 1,
+    "lv": "hard"
+   }
+  ]
+ },
+ "rulecards": {
+  "11-1#0": [
+   {
+    "k": "intro",
+    "useEn": "We agree with a positive statement using {t|too} or {t|So + auxiliary + subject}, and with a negative statement using {t|not … either} or {t|Neither + auxiliary + subject}.",
+    "useAr": "نوافق على الكلام المثبت بـ {t|too} أو {t|So + فعل مساعد + فاعل}، وعلى المنفيّ بـ {t|not … either} أو {t|Neither + فعل مساعد + فاعل}.",
+    "signals": [
+     "too",
+     "either",
+     "So do I",
+     "Neither do I"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Positive · too",
+    "labelAr": "مثبت (too)",
+    "formula": "{s|Subject} + {t|auxiliary}, {v|too}",
+    "examples": [
+     {
+      "en": "A: I enjoyed working. B: I {t|did}, {v|too}.",
+      "ar": "وأنا كذلك استمتعتُ."
+     },
+     {
+      "en": "A: I love spring. B: I {t|do}, {v|too}.",
+      "ar": "وأنا أحبّ الربيع."
+     }
+    ],
+    "tip": "too تأتي في آخر الجملة."
+   },
+   {
+    "k": "pos",
+    "label": "Positive · So",
+    "labelAr": "مثبت (So)",
+    "formula": "{v|So} + {t|auxiliary} + {s|subject}",
+    "examples": [
+     {
+      "en": "A: I love spring. B: {v|So} {t|do} {s|I}.",
+      "ar": "وأنا كذلك."
+     },
+     {
+      "en": "A: I am really happy. B: {v|So} {t|am} {s|I}.",
+      "ar": "وأنا أيضاً."
+     }
+    ],
+    "tip": "نقلب الترتيب: الفعل المساعد قبل الفاعل."
+   },
+   {
+    "k": "neg",
+    "label": "Negative · not … either",
+    "labelAr": "منفيّ (either)",
+    "formula": "{s|Subject} + {t|auxiliary} + {n|not}, {v|either}",
+    "examples": [
+     {
+      "en": "A: I didn't do very well. B: I {t|did}{n|n't}, {v|either}.",
+      "ar": "وأنا لم أؤدِّ جيّداً أيضاً."
+     }
+    ],
+    "tip": "either تأتي في آخر الجملة."
+   },
+   {
+    "k": "neg",
+    "label": "Negative · Neither",
+    "labelAr": "منفيّ (Neither)",
+    "formula": "{v|Neither} + {t|auxiliary} + {s|subject}",
+    "examples": [
+     {
+      "en": "A: I don't like it. B: {v|Neither} {t|do} {s|I}.",
+      "ar": "ولا أنا."
+     },
+     {
+      "en": "A: I cannot wait. B: {v|Neither} {t|can} {s|I}.",
+      "ar": "ولا أنا."
+     }
+    ],
+    "tip": "Neither نفسها تحمل النفي، فلا نضيف not."
+   },
+   {
+    "k": "note",
+    "label": "Remember",
+    "labelAr": "تذكّر",
+    "body": "استعمل {t|الفعل المساعد نفسه}:\nlove / like → {t|do / does}   ·   enjoyed → {t|did}\nam / is / are → {t|be}   ·   can → {t|can}   ·   have been → {t|have}",
+    "examples": [
+     {
+      "en": "A: I've been to Amman. B: So {t|have} I.",
+      "ar": "وأنا أيضاً."
+     }
+    ]
+   }
+  ],
+  "11-1#1": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|because / since / as} to give the cause, and {t|so} to give the result. When the cause is in the sentence before, we can use {t|Because of that}.",
+    "useAr": "نستعمل {t|because / since / as} للسبب، و{t|so} للنتيجة، وعبارة {t|Because of that} حين يكون السبب في الجملة السابقة.",
+    "signals": [
+     "because",
+     "since",
+     "as",
+     "so",
+     "Because of that",
+     "As a result"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Cause · because / since / as",
+    "labelAr": "السبب",
+    "formula": "{s|Result} + {t|because / since / as} + {v|cause}",
+    "examples": [
+     {
+      "en": "I don't say anything {t|because} I love them.",
+      "ar": "لا أقول شيئاً لأنّني أحبّهما."
+     },
+     {
+      "en": "I understand your feelings {t|since} I've got six!",
+      "ar": "أفهم مشاعرك لأنّ لديّ ستّة."
+     }
+    ],
+    "tip": "يجوز أن يأتي السبب أوّلاً مع as وsince: {t|As} you're the oldest, …"
+   },
+   {
+    "k": "pos",
+    "label": "Result · so",
+    "labelAr": "النتيجة (so)",
+    "formula": "{v|Cause}, {t|so} + {s|result}",
+    "examples": [
+     {
+      "en": "I love them, {t|so} I don't say anything.",
+      "ar": "أحبّهما، لذلك لا أقول شيئاً."
+     },
+     {
+      "en": "Mum was using the phone, {t|so} I used my mobile.",
+      "ar": "كانت أمّي تستعمل الهاتف، فاستعملتُ هاتفي المحمول."
+     }
+    ],
+    "tip": "so عكس because: تُدخل النتيجة لا السبب."
+   },
+   {
+    "k": "pos",
+    "label": "Referring back · Because of that",
+    "labelAr": "الإشارة إلى جملة سابقة",
+    "formula": "{v|Sentence 1}. {t|Because of that / As a result}, {s|sentence 2}.",
+    "examples": [
+     {
+      "en": "They just ignore me. {t|Because of that}, I'm feeling very down.",
+      "ar": "إنّهم يتجاهلونني. وبسبب ذلك أشعر بالحزن."
+     },
+     {
+      "en": "I could see dark clouds. {t|Because of that}, I took my umbrella.",
+      "ar": "رأيتُ غيوماً داكنة. وبسبب ذلك أخذتُ مظلّتي."
+     }
+    ],
+    "tip": "نضعها في أوّل الجملة الثانية، وبعدها فاصلة."
+   },
+   {
+    "k": "note",
+    "label": "Remember",
+    "labelAr": "تذكّر",
+    "body": "{t|because} + سبب   ·   {t|so} + نتيجة\n{n|✗} I was tired, because I went to bed.\n{t|✓} I was tired, so I went to bed.",
+    "examples": [
+     {
+      "en": "I was tired, {t|so} I went to bed.",
+      "ar": "كنتُ متعباً فذهبتُ إلى النوم."
+     }
+    ]
+   }
+  ],
+  "11-1#2": [
+   {
+    "k": "intro",
+    "useEn": "Many verbs and adjectives go with a fixed preposition. We also use {t|on} with days, {t|in} with periods of time and {t|at} with clock times.",
+    "useAr": "كثيرٌ من الأفعال والصفات يأتي مع حرف جرٍّ ثابت. ونستعمل {t|on} مع الأيّام، و{t|in} مع الفترات الزمنية، و{t|at} مع الساعة.",
+    "signals": [
+     "at",
+     "for",
+     "with",
+     "about",
+     "on",
+     "in"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Verb / adjective + preposition",
+    "labelAr": "فعل أو صفة + حرف جرّ",
+    "formula": "{v|do well} {t|at} · {v|wait} {t|for} · {v|being} {t|with} · {v|happy} {t|about}",
+    "examples": [
+     {
+      "en": "How well did you do {t|at} the science test?",
+      "ar": "كيف كان أداؤك في اختبار العلوم؟"
+     },
+     {
+      "en": "We have to wait {t|for} the bus.",
+      "ar": "علينا أن ننتظر الحافلة."
+     },
+     {
+      "en": "I'm not very happy {t|about} the plans.",
+      "ar": "لستُ سعيداً كثيراً بالخطط."
+     }
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Time · on / in",
+    "labelAr": "الزمن",
+    "formula": "{t|on} + {v|day}   ·   {t|in} + {v|period of time}",
+    "examples": [
+     {
+      "en": "What are you going to do {t|on} Friday?",
+      "ar": "ماذا ستفعل يوم الجمعة؟"
+     },
+     {
+      "en": "Where will we be {t|in} six months from now?",
+      "ar": "أين سنكون بعد ستّة أشهر؟"
+     }
+    ],
+    "tip": "on Friday · in March · at 6:00."
+   }
+  ]
+ },
+ "worksheet": {
+  "readingFrom": 11,
+  "sections": [
+   {
+    "k": "vocab",
+    "questions": [
+     {
+      "q": "You left twenty minutes ago, so ___ are you home already?",
+      "o": [
+       "how come",
+       "no one",
+       "suddenly"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Fuad likes to be the centre of ___.",
+      "o": [
+       "result",
+       "mood",
+       "attention"
+      ],
+      "a": 2
+     },
+     {
+      "q": "Something ___! What was that loud noise?",
+      "o": [
+       "cheered up",
+       "exploded",
+       "ignored"
+      ],
+      "a": 1
+     },
+     {
+      "q": "He only thinks about himself. He's very ___.",
+      "o": [
+       "selfish",
+       "cheerful",
+       "positive"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "The opposite of 'negative' is ___.",
+      "a": [
+       "positive"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "grammar",
+    "questions": [
+     {
+      "q": "A: I love spring.  B: So ___ I.",
+      "o": [
+       "do",
+       "am",
+       "can"
+      ],
+      "a": 0
+     },
+     {
+      "q": "A: I'm not very good at singing.  B: Neither ___ I.",
+      "o": [
+       "do",
+       "am",
+       "have"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "A: I can't cook big dishes.  B: Neither ___ I.",
+      "a": [
+       "can"
+      ]
+     },
+     {
+      "q": "Everyone went indoors ___ it was getting too cold outside.",
+      "o": [
+       "because",
+       "so",
+       "but"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "The weather was bad, ___ I took my umbrella.",
+      "a": [
+       "so"
+      ]
+     },
+     {
+      "q": "She was ill. ___, she stayed at home.",
+      "o": [
+       "Because of that",
+       "Because",
+       "Since"
+      ],
+      "a": 0
+     }
+    ]
+   },
+   {
+    "k": "reading",
+    "questions": [
+     {
+      "q": "Why does Tom write to Help, World!?",
+      "o": [
+       "His parents give all their attention to the younger children",
+       "He lost his job",
+       "He wants to travel"
+      ],
+      "a": 0
+     },
+     {
+      "tf": false,
+      "q": "Carrie thinks Tom should do something dramatic.",
+      "why": "تنصحه Carrie ألّا يفعل شيئاً أنانيّاً أو مثيراً."
+     },
+     {
+      "q": "What does Rosa advise Tom to do?",
+      "o": [
+       "Hide in his room",
+       "Be positive and help look after the children",
+       "Scream"
+      ],
+      "a": 1
+     },
+     {
+      "tf": true,
+      "q": "Fuad's parents changed after he talked to them."
+     }
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "title": "كن سعيداً",
+  "titleEn": "Be happy!",
+  "intro": "يتعلّم الطالب الموافقة بـ too وeither وSo وNeither، والتعبير عن السبب والنتيجة بـ because وsince وas وso وBecause of that، وحروف الجرّ الشائعة، ومفردات المزاج والمشاعر.",
+  "qa": [
+   {
+    "t": "vocab",
+    "q": "What do these words mean: cheer up, cheerful, depressed, mood?",
+    "qAr": "ما معنى الكلمات: cheer up وcheerful وdepressed وmood؟",
+    "a": "**cheer up** means to become happier, **cheerful** means happy and bright, **depressed** means very sad, and **mood** is the way you feel.",
+    "aAr": "**cheer up** = **يبتهج / يُسرّي عن نفسه**، **cheerful** = **مرح**، **depressed** = **محبَط**، **mood** = **مزاج**.",
+    "ex": [
+     [
+      "Come on! Cheer up!",
+      "هيّا! ابتهج!"
+     ],
+     [
+      "I'm suddenly in a much better mood.",
+      "صار مزاجي فجأةً أفضل بكثير."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What do ignore, attention, selfish and explode mean?",
+    "qAr": "ما معنى ignore وattention وselfish وexplode؟",
+    "a": "To **ignore** someone is not to pay them attention. **Attention** is interest and care. A **selfish** person thinks only about himself. To **explode** is to blow up, or to lose control of your feelings.",
+    "aAr": "**ignore** = **يتجاهل**، **attention** = **انتباه واهتمام**، **selfish** = **أناني**، **explode** = **ينفجر**.",
+    "ex": [
+     [
+      "They just ignore me.",
+      "إنّهم يتجاهلونني فحسب."
+     ],
+     [
+      "If I don't do something soon, I'll explode!",
+      "إن لم أفعل شيئاً قريباً فسأنفجر!"
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What are the opposites of positive, together, children and ignore?",
+    "qAr": "ما أضداد: positive وtogether وchildren وignore؟",
+    "a": "The opposite of **positive** is **negative**, of **together** is **alone**, of **children** is **parents**, and of **ignore** is **pay attention**.",
+    "aAr": "ضدّ **positive** هو **negative**، وضدّ **together** هو **alone**، وضدّ **children** هو **parents**، وضدّ **ignore** هو **pay attention**.",
+    "ex": [
+     [
+      "Don't go home alone. Let's go together.",
+      "لا تذهب إلى البيت وحدك، لنذهب معاً."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we agree with a positive statement?",
+    "qAr": "كيف نوافق على كلامٍ مثبت؟",
+    "a": "We say ==…, too== or ==So + auxiliary + subject==. We use the same auxiliary verb as the first speaker.",
+    "aAr": "نقول ==…, too== أو ==So + فعل مساعد + فاعل==، ونستعمل الفعل المساعد نفسه الذي استعمله المتكلّم الأوّل.",
+    "ex": [
+     [
+      "I love spring. — I do, too. / So do I.",
+      "أحبّ الربيع. — وأنا كذلك."
+     ],
+     [
+      "I am really happy. — So am I.",
+      "أنا سعيد جدّاً. — وأنا أيضاً."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we agree with a negative statement?",
+    "qAr": "كيف نوافق على كلامٍ منفيّ؟",
+    "a": "We say ==…not, either== or ==Neither + auxiliary + subject==. Neither already makes the sentence negative, so we don't add not.",
+    "aAr": "نقول ==…not, either== أو ==Neither + فعل مساعد + فاعل==. وNeither تحمل النفي فلا نضيف not.",
+    "ex": [
+     [
+      "I didn't do very well. — I didn't, either.",
+      "لم أؤدِّ جيّداً. — وأنا أيضاً."
+     ],
+     [
+      "I can't wait. — Neither can I.",
+      "لا أطيق الانتظار. — ولا أنا."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we give a cause and a result?",
+    "qAr": "كيف نذكر السبب والنتيجة؟",
+    "a": "We use **because, since** or **as** for the cause, and **so** for the result. So is the opposite of because.",
+    "aAr": "نستعمل **because** أو **since** أو **as** للسبب، و**so** للنتيجة، وهي عكس because.",
+    "ex": [
+     [
+      "I don't say anything because I love them.",
+      "لا أقول شيئاً لأنّني أحبّهما."
+     ],
+     [
+      "I love them, so I don't say anything.",
+      "أحبّهما لذلك لا أقول شيئاً."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "What does 'Because of that' do?",
+    "qAr": "ما وظيفة «Because of that»؟",
+    "a": "It refers back to a reason in the sentence before. We usually use it to connect longer sentences, and a comma follows it.",
+    "aAr": "تشير إلى سببٍ ورد في الجملة السابقة، ونستعملها عادةً للربط بين جملٍ أطول، وتليها فاصلة.",
+    "ex": [
+     [
+      "They just ignore me. Because of that, I'm feeling very down.",
+      "إنّهم يتجاهلونني. وبسبب ذلك أشعر بالحزن."
+     ]
+    ]
+   },
+   {
+    "t": "reading",
+    "q": "Why are Lana and Lisa unhappy at the start, and how do they feel at the end?",
+    "qAr": "لماذا تكون لانا وليزا حزينتين في البداية، وكيف تشعران في النهاية؟",
+    "a": "They did badly in a French test, and the grey, wet weather gets them down. At the end Lisa is in a much better mood because of Lana, a friend who can cheer her up.",
+    "aAr": "لقد أخفقتا في اختبار الفرنسية، والطقس الرمادي الماطر يُحزنهما. وفي النهاية يتحسّن مزاج ليزا كثيراً بفضل لانا، الصديقة التي ترفع معنويّاتها."
+   },
+   {
+    "t": "reading",
+    "q": "What problem does Tom have?",
+    "qAr": "ما مشكلة توم؟",
+    "a": "Tom is the oldest of four, and his parents give all their attention to the younger children. He feels ignored and sometimes wants to scream.",
+    "aAr": "توم هو الأكبر بين أربعة إخوة، ووالداه يعطيان اهتمامهما للأطفال الأصغر، فيشعر بأنّه مُتجاهَل وأحياناً يريد أن يصرخ."
+   },
+   {
+    "t": "reading",
+    "q": "What advice do Carrie, Fuad and Rosa give?",
+    "qAr": "ما نصائح كاري وفؤاد وروزا؟",
+    "a": "Carrie says his parents are just busy and he should not do anything selfish or dramatic. Fuad says he should talk to his parents. Rosa says he should be positive and help look after the children.",
+    "aAr": "تقول كاري إنّ والديه مشغولان فحسب وعليه ألّا يفعل شيئاً أنانيّاً أو مثيراً. ويقول فؤاد إنّ عليه أن يتحدّث إلى والديه. وتقول روزا إنّ عليه أن يكون إيجابيّاً ويساعد في رعاية الأطفال."
+   },
+   {
+    "t": "writing",
+    "q": "How do we write an email asking for advice?",
+    "qAr": "كيف نكتب بريداً نطلب فيه النصيحة؟",
+    "a": "Start with Dear All, explain the problem and your feelings with connectors such as because, so and Because of that, end with a request for advice, and sign with a word that describes your feelings, such as Upset.",
+    "aAr": "نبدأ بـ Dear All ونشرح المشكلة والمشاعر مستعملين الروابط مثل because وso وBecause of that، ثم ننهي بطلب النصيحة، ونوقّع بكلمةٍ تصف شعورنا مثل Upset.",
+    "ex": [
+     [
+      "I'm feeling down because my older brother has a new job in Istanbul.",
+      "أشعر بالحزن لأنّ أخي الأكبر حصل على وظيفةٍ جديدة في إسطنبول."
+     ]
+    ]
+   },
+   {
+    "t": "speaking",
+    "q": "What do 'Come on! Cheer up!' and 'How come …?' mean in everyday English?",
+    "qAr": "ماذا تعني «Come on! Cheer up!» و«How come …?» في الحديث اليومي؟",
+    "a": "We say **Come on! Cheer up!** to encourage a sad friend to be happier. We say **How come …?** to ask why something is so.",
+    "aAr": "نقول **Come on! Cheer up!** لنشجّع صديقاً حزيناً على أن يبتهج، ونقول **How come …?** لنسأل عن سبب أمرٍ ما.",
+    "ex": [
+     [
+      "Come on! Cheer up!",
+      "هيّا! ابتهج!"
+     ],
+     [
+      "How come you're so cheerful?",
+      "كيف تكونين مبتهجةً هكذا؟"
+     ]
+    ]
+   }
+  ]
+ }
+}
