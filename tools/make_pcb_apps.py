@@ -272,6 +272,8 @@ def build(src: Path) -> None:
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'pcb_identity.py'), d], check=True)
     # الشاشة الرئيسية الجديدة (عنوان وبحث ولافتة وشبكة المواضيع وتنقّل سفلي)
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'pcb_home.py'), d], check=True)
+    # الوحدة ← بطاقات الدروس والدرس ← شرحه التفاعلي بداخله
+    subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'pcb_lessons.py'), d], check=True)
     # ضغط صور التطبيق بأمان (يتجاوز ما لا يوفّر ≥12% مع حفظ الجودة)
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'optimize_assets.py'), '--apply', f'{d}/10'], check=True)
 
