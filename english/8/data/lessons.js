@@ -21,7 +21,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "at the moment",
       "ar": "في هذه اللحظة",
-      "em": "⏱️",
+      "em": "⏳",
       "ex": "Nadia's family are living in London at the moment.",
       "exAr": "تعيش عائلة نادية في لندن في هذه اللحظة."
      },
@@ -35,7 +35,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "landline",
       "ar": "هاتف أرضي",
-      "em": "☎️",
+      "em": "📞",
       "ex": "I tried your landline, but it was busy.",
       "exAr": "جرّبتُ هاتفك الأرضي لكنّه كان مشغولاً."
      },
@@ -49,14 +49,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "project",
       "ar": "مشروع",
-      "em": "📁",
+      "em": "📝",
       "ex": "We need to plan our school project.",
       "exAr": "نحتاج إلى التخطيط لمشروعنا المدرسي."
      },
      {
       "en": "so",
       "ar": "لذلك / إذن",
-      "em": "➡️",
+      "em": "➡",
       "ex": "So let's carry on with your mobile.",
       "exAr": "إذن لنواصل على هاتفك المحمول."
      },
@@ -77,7 +77,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "carry on",
       "ar": "يواصل",
-      "em": "▶️",
+      "em": "➡",
       "ex": "So let's carry on with your mobile.",
       "exAr": "إذن لنواصل على هاتفك المحمول."
      },
@@ -91,14 +91,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "cheap",
       "ar": "رخيص",
-      "em": "🏷️",
+      "em": "✅",
       "ex": "Cheap watches are usually not very good.",
       "exAr": "الساعات الرخيصة ليست جيّدة عادةً."
      },
      {
       "en": "ancient",
       "ar": "قديم جدّاً",
-      "em": "🏺",
+      "em": "🏛",
       "ex": "We visited an ancient city last summer.",
       "exAr": "زرنا مدينة قديمة جدّاً في الصيف الماضي."
      },
@@ -112,21 +112,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "funny",
       "ar": "مضحك",
-      "em": "😄",
+      "em": "😊",
       "ex": "Let's watch some cartoons. They'll be funny.",
       "exAr": "لنشاهد بعض الرسوم المتحرّكة، ستكون مضحكة."
      },
      {
       "en": "documentary",
       "ar": "فيلم وثائقي",
-      "em": "🎬",
+      "em": "📰",
       "ex": "This documentary is good, but it's very boring.",
       "exAr": "هذا الفيلم الوثائقي جيّد لكنّه مملّ جدّاً."
      },
      {
       "en": "cartoon",
       "ar": "رسوم متحرّكة",
-      "em": "📺",
+      "em": "🎨",
       "ex": "Tom and Jerry is a cartoon.",
       "exAr": "«توم وجيري» رسوم متحرّكة."
      }
@@ -487,84 +487,84 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "age",
       "ar": "عمر",
-      "em": "🎂",
+      "em": "📅",
       "ex": "I could play it quite well at the age of 18.",
       "exAr": "كنتُ أعزفه جيّداً في سنّ الثامنة عشرة."
      },
      {
       "en": "culture",
       "ar": "ثقافة",
-      "em": "🏛️",
+      "em": "🌍",
       "ex": "Mike and Tina are enjoying their first taste of Arab culture.",
       "exAr": "يستمتع مايك وتينا بأوّل تذوّق لهما للثقافة العربية."
      },
      {
       "en": "develop",
       "ar": "يتطوّر / ينشأ",
-      "em": "🌱",
+      "em": "📈",
       "ex": "Modern guitars developed from the 'oud long ago.",
       "exAr": "تطوّرت الغيتارات الحديثة من العود منذ زمن بعيد."
      },
      {
       "en": "feel like",
       "ar": "يشعر برغبة في",
-      "em": "💃",
+      "em": "💭",
       "ex": "I feel like dancing!",
       "exAr": "أشعر برغبة في الرقص!"
      },
      {
       "en": "guitar",
       "ar": "غيتار",
-      "em": "🎸",
+      "em": "🎨",
       "ex": "That 'oud sounds like a guitar.",
       "exAr": "هذا العود يبدو كالغيتار."
      },
      {
       "en": "quite",
       "ar": "إلى حدٍّ ما",
-      "em": "👌",
+      "em": "👍",
       "ex": "I could play it quite well.",
       "exAr": "كنتُ أعزفه جيّداً إلى حدٍّ ما."
      },
      {
       "en": "seem",
       "ar": "يبدو",
-      "em": "🤔",
+      "em": "💭",
       "ex": "You seem to know a lot about the 'oud.",
       "exAr": "يبدو أنّك تعرف الكثير عن العود."
      },
      {
       "en": "sound",
       "ar": "يبدو (صوتاً) / يُسمع",
-      "em": "🔊",
+      "em": "📡",
       "ex": "That drum music sounds great.",
       "exAr": "موسيقى الطبل هذه تبدو رائعة."
      },
      {
       "en": "taste",
       "ar": "يتذوّق / طعمه",
-      "em": "👅",
+      "em": "🍽",
       "ex": "They taste delicious, too.",
       "exAr": "طعمها لذيذ أيضاً."
      },
      {
       "en": "tasty",
       "ar": "لذيذ الطعم",
-      "em": "😋",
+      "em": "😊",
       "ex": "The kebabs are very tasty.",
       "exAr": "الكباب لذيذ جدّاً."
      },
      {
       "en": "instrument",
       "ar": "آلة موسيقية",
-      "em": "🎻",
+      "em": "🎨",
       "ex": "How many instruments does he play?",
       "exAr": "كم آلة موسيقية يعزف؟"
      },
      {
       "en": "folk song",
       "ar": "أغنية شعبية",
-      "em": "🎶",
+      "em": "📜",
       "ex": "People used to sing folk songs about their simple lives.",
       "exAr": "كان الناس يغنّون أغاني شعبية عن حياتهم البسيطة."
      },
@@ -578,21 +578,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "rock music",
       "ar": "موسيقى الروك",
-      "em": "🤘",
+      "em": "🔥",
       "ex": "Rock music only developed in the 1950s.",
       "exAr": "لم تتطوّر موسيقى الروك إلا في خمسينيات القرن العشرين."
      },
      {
       "en": "musician",
       "ar": "موسيقي",
-      "em": "🧑‍🎤",
+      "em": "🧑",
       "ex": "He plays the 'oud and tablah, and he's a good musician, too.",
       "exAr": "يعزف العود والطبلة وهو موسيقيّ جيّد أيضاً."
      },
      {
       "en": "used to",
       "ar": "اعتاد أن (في الماضي)",
-      "em": "⏪",
+      "em": "🔄",
       "ex": "People used to sing folk songs.",
       "exAr": "كان الناس يغنّون الأغاني الشعبية."
      }
@@ -1033,42 +1033,42 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "entrance",
       "ar": "مدخل",
-      "em": "🚪",
+      "em": "🏁",
       "ex": "They have just arrived at the entrance.",
       "exAr": "لقد وصلوا للتوّ إلى المدخل."
      },
      {
       "en": "far",
       "ar": "بعيد",
-      "em": "🛣️",
+      "em": "📍",
       "ex": "Is it still very far?",
       "exAr": "هل ما زال بعيداً جدّاً؟"
      },
      {
       "en": "go camping",
       "ar": "يذهب للتخييم",
-      "em": "⛺",
+      "em": "🏕",
       "ex": "We could go camping in the mountains.",
       "exAr": "يمكننا أن نذهب للتخييم في الجبال."
      },
      {
       "en": "go hiking",
       "ar": "يذهب في نزهة جبلية",
-      "em": "🥾",
+      "em": "🏃",
       "ex": "And let's go hiking.",
       "exAr": "ولنذهب في نزهة جبلية."
      },
      {
       "en": "hear of",
       "ar": "يسمع بـ",
-      "em": "👂",
+      "em": "💭",
       "ex": "I've never heard of Yosemite.",
       "exAr": "لم أسمع بيوسمايت من قبل."
      },
      {
       "en": "national",
       "ar": "وطني",
-      "em": "🏞️",
+      "em": "🏘",
       "ex": "Yosemite is a beautiful national park.",
       "exAr": "يوسمايت متنزّه وطني جميل."
      },
@@ -1082,28 +1082,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "so",
       "ar": "جدّاً",
-      "em": "😮",
+      "em": "➡",
       "ex": "You're so slow, Adnan!",
       "exAr": "أنت بطيء جدّاً يا عدنان!"
      },
      {
       "en": "trip",
       "ar": "رحلة",
-      "em": "🧳",
+      "em": "🗺",
       "ex": "We went on a school trip last year.",
       "exAr": "ذهبنا في رحلة مدرسية العام الماضي."
      },
      {
       "en": "waterfall",
       "ar": "شلّال",
-      "em": "💦",
+      "em": "🌊",
       "ex": "There's a beautiful, high waterfall to see.",
       "exAr": "هناك شلّال عالٍ جميل يستحقّ المشاهدة."
      },
      {
       "en": "wildlife",
       "ar": "الحياة البرّية",
-      "em": "🦌",
+      "em": "🌍",
       "ex": "There is lots of wildlife in the woods.",
       "exAr": "هناك الكثير من الحياة البرّية في الغابات."
      },
@@ -1117,28 +1117,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "damage",
       "ar": "يُتلف / يضرّ",
-      "em": "⚠️",
+      "em": "💥",
       "ex": "Millions of cars and heavy feet badly damage the Park.",
       "exAr": "ملايين السيارات والأقدام الثقيلة تضرّ المتنزّه ضرراً بالغاً."
      },
      {
       "en": "dangerous",
       "ar": "خطِر",
-      "em": "☠️",
+      "em": "🚫",
       "ex": "The opposite of 'dangerous' is 'safe'. This path is dangerous.",
       "exAr": "ضدّ «خطِر» هو «آمن». هذا الطريق خطِر."
      },
      {
       "en": "everyone",
       "ar": "الجميع",
-      "em": "👥",
+      "em": "👯",
       "ex": "Everyone loves the Park.",
       "exAr": "الجميع يحبّون المتنزّه."
      },
      {
       "en": "indoors",
       "ar": "داخل المبنى",
-      "em": "🏠",
+      "em": "🏡",
       "ex": "It was very cold outdoors, so we stayed indoors.",
       "exAr": "كان الجوّ بارداً جدّاً في الخارج فبقينا في الداخل."
      }
@@ -1597,28 +1597,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "had better",
       "ar": "من الأفضل أن",
-      "em": "☝️",
+      "em": "👉",
       "ex": "You'd better read this book.",
       "exAr": "من الأفضل أن تقرأ هذا الكتاب."
      },
      {
       "en": "junk food",
       "ar": "وجبات سريعة غير صحّية",
-      "em": "🍟",
+      "em": "🥫",
       "ex": "Fries are junk food!",
       "exAr": "البطاطا المقلية طعام غير صحّي!"
      },
      {
       "en": "just",
       "ar": "فقط",
-      "em": "☝️",
+      "em": "🎯",
       "ex": "Just fries.",
       "exAr": "بطاطا مقلية فقط."
      },
      {
       "en": "miss",
       "ar": "يفوّته / يشتاق إلى",
-      "em": "⏭️",
+      "em": "❌",
       "ex": "I mustn't lose my place in the team! I've been missing breakfast.",
       "exAr": "يجب ألّا أفقد مكاني في الفريق! لقد كنتُ أفوّت وجبة الفطور."
      },
@@ -1639,21 +1639,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "wake up",
       "ar": "يستيقظ",
-      "em": "⏰",
+      "em": "🔄",
       "ex": "I've been waking up late.",
       "exAr": "كنتُ أستيقظ متأخّراً."
      },
      {
       "en": "feel sick",
       "ar": "يشعر بالمرض",
-      "em": "🤒",
+      "em": "😟",
       "ex": "I've been feeling quite sick for several weeks.",
       "exAr": "أشعر بالمرض منذ عدّة أسابيع."
      },
      {
       "en": "tired",
       "ar": "متعب",
-      "em": "😴",
+      "em": "😰",
       "ex": "I've been getting tired quickly.",
       "exAr": "أصبحتُ أتعب بسرعة."
      },
@@ -1667,28 +1667,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "medicine",
       "ar": "دواء",
-      "em": "💊",
+      "em": "🩺",
       "ex": "You'd better take this medicine.",
       "exAr": "من الأفضل أن تتناول هذا الدواء."
      },
      {
       "en": "doctor",
       "ar": "طبيب",
-      "em": "👨‍⚕️",
+      "em": "🩺",
       "ex": "Sami is at the doctor's.",
       "exAr": "سامي عند الطبيب."
      },
      {
       "en": "walk",
       "ar": "مشي / يمشي",
-      "em": "🚶",
+      "em": "🏃",
       "ex": "That was a beautiful walk, wasn't it?",
       "exAr": "كانت نزهة مشي جميلة، أليس كذلك؟"
      },
      {
       "en": "sleep",
       "ar": "نوم / ينام",
-      "em": "🛌",
+      "em": "🏚",
       "ex": "He always has a sleep in the afternoon.",
       "exAr": "هو يأخذ قيلولة دائماً بعد الظهر."
      }
@@ -2139,28 +2139,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "club",
       "ar": "نادٍ",
-      "em": "🏟️",
+      "em": "🏘",
       "ex": "Yes, I've got training at the club today.",
       "exAr": "نعم، لديّ تدريب في النادي اليوم."
      },
      {
       "en": "coach",
       "ar": "مدرّب",
-      "em": "🧑‍🏫",
+      "em": "🧑",
       "ex": "Our coach says we really mustn't miss it.",
       "exAr": "يقول مدرّبنا إنّ علينا ألّا نفوّته أبداً."
      },
      {
       "en": "either",
       "ar": "أيضاً (في النفي)",
-      "em": "🙅",
+      "em": "🚫",
       "ex": "I mustn't miss my training, either.",
       "exAr": "يجب ألّا أفوّت تدريبي أنا أيضاً."
      },
      {
       "en": "miss",
       "ar": "يفوّت / يشتاق إلى",
-      "em": "💔",
+      "em": "❌",
       "ex": "I really miss football!",
       "exAr": "أشتاق إلى كرة القدم حقّاً!"
      },
@@ -2174,14 +2174,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "soccer",
       "ar": "كرة القدم (بالأمريكية)",
-      "em": "⚽",
+      "em": "🌍",
       "ex": "It's soccer here in America, but everyone else calls it football.",
       "exAr": "هي «سوكر» هنا في أمريكا لكنّ بقيّة العالم يسمّونها «فوتبول»."
      },
      {
       "en": "sports bag",
       "ar": "حقيبة رياضية",
-      "em": "🎒",
+      "em": "📦",
       "ex": "Whose is that sports bag, Adnan?",
       "exAr": "لمن هذه الحقيبة الرياضية يا عدنان؟"
      },
@@ -2223,7 +2223,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "compete",
       "ar": "يتنافس",
-      "em": "🥇",
+      "em": "🏆",
       "ex": "People have always loved to compete their hardest.",
       "exAr": "أحبّ الناس دائماً أن يتنافسوا بأقصى جهدهم."
      },
@@ -2237,14 +2237,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "someone",
       "ar": "شخص ما",
-      "em": "🕵️",
+      "em": "🧍",
       "ex": "Listen! There's someone knocking at the door.",
       "exAr": "اسمع! هناك شخص يطرق الباب."
      },
      {
       "en": "birthday",
       "ar": "عيد ميلاد",
-      "em": "🎂",
+      "em": "🎉",
       "ex": "birth + day = birthday.",
       "exAr": "birth + day = birthday (عيد ميلاد)."
      }
@@ -2691,14 +2691,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "embarrassed",
       "ar": "محرَج",
-      "em": "😳",
+      "em": "😟",
       "ex": "I always feel bad – and embarrassed, too.",
       "exAr": "أشعر دائماً بالسوء، وبالإحراج أيضاً."
      },
      {
       "en": "horrible",
       "ar": "فظيع / سيّئ",
-      "em": "😖",
+      "em": "😠",
       "ex": "And I was horrible back to you!",
       "exAr": "وكنتُ فظّة معك!"
      },
@@ -2712,21 +2712,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "natural",
       "ar": "طبيعي",
-      "em": "🌿",
+      "em": "🌈",
       "ex": "It was only natural, so don't worry.",
       "exAr": "كان ذلك طبيعياً فلا تقلقي."
      },
      {
       "en": "scared",
       "ar": "خائف",
-      "em": "😨",
+      "em": "😰",
       "ex": "Yes, I was really scared.",
       "exAr": "نعم، كنتُ خائفة حقّاً."
      },
      {
       "en": "support",
       "ar": "يدعم",
-      "em": "🤗",
+      "em": "🤲",
       "ex": "You were just trying to support me like a good friend.",
       "exAr": "كنتِ تحاولين دعمي كصديقة جيّدة."
      },
@@ -2747,49 +2747,49 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "at first",
       "ar": "في البداية",
-      "em": "1️⃣",
+      "em": "⬆",
       "ex": "At first, I was scared.",
       "exAr": "في البداية كنتُ خائفاً."
      },
      {
       "en": "completely",
       "ar": "تماماً",
-      "em": "💯",
+      "em": "✔",
       "ex": "I understood completely.",
       "exAr": "فهمتُ تماماً."
      },
      {
       "en": "danger",
       "ar": "خطر",
-      "em": "⚠️",
+      "em": "🛡",
       "ex": "There is danger on this road.",
       "exAr": "هناك خطر على هذا الطريق."
      },
      {
       "en": "immediately",
       "ar": "فوراً",
-      "em": "⚡",
+      "em": "💥",
       "ex": "This letter asks for an immediate answer, so write back immediately.",
       "exAr": "تطلب هذه الرسالة جواباً فورياً، فاكتب الردّ فوراً."
      },
      {
       "en": "secret",
       "ar": "سرّ",
-      "em": "🤫",
+      "em": "🔗",
       "ex": "Sorry, I can't tell you what Fatima told me. It is a secret.",
       "exAr": "آسف، لا أستطيع إخبارك بما قالته فاطمة فهو سرّ."
      },
      {
       "en": "situation",
       "ar": "موقف / وضع",
-      "em": "🧩",
+      "em": "🧠",
       "ex": "A good friend helps in every situation.",
       "exAr": "الصديق الجيّد يساعد في كلّ موقف."
      },
      {
       "en": "trust",
       "ar": "يثق بـ",
-      "em": "🔐",
+      "em": "🤝",
       "ex": "You can trust a real friend.",
       "exAr": "يمكنك أن تثق بالصديق الحقيقي."
      }
@@ -3240,7 +3240,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "assistant",
       "ar": "مساعد / بائع",
-      "em": "🧑‍💼",
+      "em": "💼",
       "ex": "Let's ask the assistant. Excuse me.",
       "exAr": "لنسأل البائع. لو سمحت."
      },
@@ -3254,21 +3254,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "crazy about",
       "ar": "مولع بـ",
-      "em": "🤩",
+      "em": "💓",
       "ex": "Ahmad is crazy about basketball, isn't he?",
       "exAr": "أحمد مولع بكرة السلّة، أليس كذلك؟"
      },
      {
       "en": "dollar",
       "ar": "دولار",
-      "em": "💵",
+      "em": "💰",
       "ex": "They're ninety-nine dollars ninety-nine.",
       "exAr": "سعرها 99.99 دولاراً."
      },
      {
       "en": "grade",
       "ar": "صفّ دراسي",
-      "em": "🏫",
+      "em": "🎓",
       "ex": "Everyone says he's the best player in Grade 6.",
       "exAr": "يقول الجميع إنّه أفضل لاعب في الصفّ السادس."
      },
@@ -3282,14 +3282,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "smart",
       "ar": "أنيق",
-      "em": "👔",
+      "em": "🧥",
       "ex": "These red ones look smart.",
       "exAr": "هذه الحمراء تبدو أنيقة."
      },
      {
       "en": "size",
       "ar": "مقاس",
-      "em": "📐",
+      "em": "📏",
       "ex": "They're only size 32 and Ahmad is almost a 36.",
       "exAr": "مقاسها 32 فقط وأحمد تقريباً 36."
      },
@@ -3303,7 +3303,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "comfortably",
       "ar": "براحة",
-      "em": "🛋️",
+      "em": "😊",
       "ex": "I can't work comfortably in these heavy boots.",
       "exAr": "لا أستطيع العمل براحة بهذه الأحذية الثقيلة."
      },
@@ -3317,35 +3317,35 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "gloves",
       "ar": "قفّازات",
-      "em": "🧤",
+      "em": "🤚",
       "ex": "Workers wear gloves to keep their hands safe.",
       "exAr": "يرتدي العمّال القفّازات لحماية أيديهم."
      },
      {
       "en": "hard hat",
       "ar": "خوذة صلبة",
-      "em": "⛑️",
+      "em": "🛡",
       "ex": "A hard hat keeps the head safe.",
       "exAr": "الخوذة الصلبة تحمي الرأس."
      },
      {
       "en": "safety",
       "ar": "أمان / سلامة",
-      "em": "🦺",
+      "em": "🛡",
       "ex": "It's more important to be safe than comfortable.",
       "exAr": "السلامة أهمّ من الراحة."
      },
      {
       "en": "thick",
       "ar": "سميك",
-      "em": "🧣",
+      "em": "🧥",
       "ex": "Ahmed is dressing in his nice thick green jacket.",
       "exAr": "أحمد يرتدي سترته الخضراء السميكة الجميلة."
      },
      {
       "en": "uniform",
       "ar": "زيّ موحّد",
-      "em": "👮",
+      "em": "🎓",
       "ex": "Policemen should always look smart in their uniforms.",
       "exAr": "على رجال الشرطة أن يبدوا دائماً أنيقين في زيّهم الموحّد."
      }
@@ -3792,28 +3792,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "carton",
       "ar": "علبة كرتون",
-      "em": "🧃",
+      "em": "📦",
       "ex": "So get a large carton.",
       "exAr": "إذن أحضر علبة كرتون كبيرة."
      },
      {
       "en": "each",
       "ar": "لكلّ واحد",
-      "em": "☝️",
+      "em": "👉",
       "ex": "Buy yourselves an ice cream each.",
       "exAr": "اشتروا لأنفسكم بوظة لكلّ واحد."
      },
      {
       "en": "ground meat",
       "ar": "لحم مفروم",
-      "em": "🥩",
+      "em": "🍽",
       "ex": "We don't have any ground meat.",
       "exAr": "ليس لدينا لحم مفروم."
      },
      {
       "en": "jar",
       "ar": "برطمان",
-      "em": "🫙",
+      "em": "🥫",
       "ex": "Get a small jar of olives.",
       "exAr": "أحضر برطماناً صغيراً من الزيتون."
      },
@@ -3827,70 +3827,70 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "litre",
       "ar": "لتر",
-      "em": "🧴",
+      "em": "📏",
       "ex": "Please get a large can – two litres.",
       "exAr": "أحضر علبة كبيرة، لتران."
      },
      {
       "en": "regular",
       "ar": "عاديّ",
-      "em": "📦",
+      "em": "✔",
       "ex": "No, just the regular size, please.",
       "exAr": "لا، الحجم العادي فقط من فضلك."
      },
      {
       "en": "tomato paste",
       "ar": "معجون الطماطم",
-      "em": "🍅",
+      "em": "🥫",
       "ex": "Is there any tomato paste?",
       "exAr": "هل يوجد معجون طماطم؟"
      },
      {
       "en": "tub",
       "ar": "علبة بلاستيكية كبيرة",
-      "em": "🍨",
+      "em": "📦",
       "ex": "Ice cream … one regular tub.",
       "exAr": "بوظة... علبة واحدة عادية."
      },
      {
       "en": "olive oil",
       "ar": "زيت الزيتون",
-      "em": "🫒",
+      "em": "🥫",
       "ex": "There isn't much olive oil.",
       "exAr": "لا يوجد الكثير من زيت الزيتون."
      },
      {
       "en": "ice cream",
       "ar": "بوظة / آيس كريم",
-      "em": "🍦",
+      "em": "🥧",
       "ex": "Let's get some ice cream for everyone.",
       "exAr": "لنشترِ بعض البوظة للجميع."
      },
      {
       "en": "wheat",
       "ar": "قمح",
-      "em": "🌾",
+      "em": "🍞",
       "ex": "People use wheat to make bread.",
       "exAr": "يستعمل الناس القمح لصنع الخبز."
      },
      {
       "en": "spaghetti",
       "ar": "سباغيتي",
-      "em": "🍝",
+      "em": "🍽",
       "ex": "We use wheat to make spaghetti.",
       "exAr": "نستعمل القمح لصنع السباغيتي."
      },
      {
       "en": "climate",
       "ar": "مناخ",
-      "em": "🌤️",
+      "em": "🌫",
       "ex": "The climate there is hot and dry.",
       "exAr": "المناخ هناك حارّ وجافّ."
      },
      {
       "en": "olive tree",
       "ar": "شجرة زيتون",
-      "em": "🌳",
+      "em": "🌍",
       "ex": "On our farm we grow thousands of olive trees.",
       "exAr": "نزرع في مزرعتنا آلاف أشجار الزيتون."
      }
@@ -4329,14 +4329,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "backpack",
       "ar": "حقيبة ظهر",
-      "em": "🎒",
+      "em": "📦",
       "ex": "And who's the boy with a backpack?",
       "exAr": "ومن هو الولد صاحب حقيبة الظهر؟"
      },
      {
       "en": "beard",
       "ar": "لحية",
-      "em": "🧔",
+      "em": "🧑",
       "ex": "And the brother with glasses and a beard?",
       "exAr": "وماذا عن الأخ صاحب النظّارات واللحية؟"
      },
@@ -4357,63 +4357,63 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "glasses",
       "ar": "نظّارات",
-      "em": "👓",
+      "em": "🔍",
       "ex": "The brother with glasses and a beard looks quite young.",
       "exAr": "الأخ صاحب النظّارات واللحية يبدو شابّاً."
      },
      {
       "en": "moustache",
       "ar": "شارب",
-      "em": "👨",
+      "em": "🧑",
       "ex": "You mean the one with a moustache.",
       "exAr": "تقصد صاحب الشارب."
      },
      {
       "en": "side",
       "ar": "جانب",
-      "em": "↔️",
+      "em": "👉",
       "ex": "It's a picnic with my mum's side of the family.",
       "exAr": "إنّها رحلة مع عائلة أمّي."
      },
      {
       "en": "straight",
       "ar": "مستقيم / أملس",
-      "em": "〰️",
+      "em": "➡",
       "ex": "Ali has long, straight hair.",
       "exAr": "عليّ ذو شعر طويل أملس."
      },
      {
       "en": "wife",
       "ar": "زوجة",
-      "em": "👰",
+      "em": "🧑",
       "ex": "His wife, Aunt Rania, is next to him.",
       "exAr": "زوجته العمّة رانيا بجانبه."
      },
      {
       "en": "picnic",
       "ar": "نزهة (طعام في الخلاء)",
-      "em": "🧺",
+      "em": "🍽",
       "ex": "It's a picnic near Jericho.",
       "exAr": "إنّها نزهة قرب أريحا."
      },
      {
       "en": "tourist",
       "ar": "سائح",
-      "em": "🧳",
+      "em": "🗺",
       "ex": "Thousands of tourists visit Bethlehem every year.",
       "exAr": "يزور آلاف السيّاح بيت لحم كلّ عام."
      },
      {
       "en": "farmer",
       "ar": "مزارع",
-      "em": "👨‍🌾",
+      "em": "🧑",
       "ex": "Palestinian farmers face many difficulties.",
       "exAr": "يواجه المزارعون الفلسطينيون صعوبات كثيرة."
      },
      {
       "en": "traveller",
       "ar": "مسافر",
-      "em": "🚶",
+      "em": "🧭",
       "ex": "Travellers were often away from home for months.",
       "exAr": "كان المسافرون يغيبون عن بيوتهم شهوراً."
      },
@@ -4427,14 +4427,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "valley",
       "ar": "وادٍ",
-      "em": "🏞️",
+      "em": "🌍",
       "ex": "Jericho is a small city which stands in a deep valley.",
       "exAr": "أريحا مدينة صغيرة تقع في وادٍ عميق."
      },
      {
       "en": "pronoun",
       "ar": "ضمير",
-      "em": "🔤",
+      "em": "💬",
       "ex": "We often use pronouns instead of nouns.",
       "exAr": "نستعمل الضمائر غالباً بدل الأسماء."
      }
@@ -4881,49 +4881,49 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "bride",
       "ar": "عروس",
-      "em": "👰",
+      "em": "👯",
       "ex": "The bride's following in a car.",
       "exAr": "العروس تتبعه في سيّارة."
      },
      {
       "en": "congratulations",
       "ar": "تهانينا",
-      "em": "🎊",
+      "em": "🎉",
       "ex": "He's riding round town to receive everyone's congratulations.",
       "exAr": "وهو يتجوّل في البلدة ليتلقّى تهاني الجميع."
      },
      {
       "en": "DVD",
       "ar": "قرص فيديو",
-      "em": "📀",
+      "em": "📦",
       "ex": "Who'd like to watch our cousin's wedding DVD?",
       "exAr": "من يودّ مشاهدة قرص عرس ابن عمّنا؟"
      },
      {
       "en": "follow",
       "ar": "يتبع",
-      "em": "🚗",
+      "em": "➡",
       "ex": "The bride's following in a car.",
       "exAr": "العروس تتبعه في سيّارة."
      },
      {
       "en": "full",
       "ar": "شبعان / ممتلئ",
-      "em": "😌",
+      "em": "✅",
       "ex": "No, thanks, Mrs Kamal. I'm full!",
       "exAr": "لا، شكراً يا سيدة كمال، أنا شبعان!"
      },
      {
       "en": "groom",
       "ar": "عريس",
-      "em": "🤵",
+      "em": "🧑",
       "ex": "He's the groom, and he's riding round town.",
       "exAr": "هو العريس وهو يتجوّل في البلدة."
      },
      {
       "en": "guest",
       "ar": "ضيف",
-      "em": "🧑‍🤝‍🧑",
+      "em": "👯",
       "ex": "There are hundreds of guests!",
       "exAr": "هناك مئات الضيوف!"
      },
@@ -4937,21 +4937,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "custom",
       "ar": "عادة / تقليد",
-      "em": "📿",
+      "em": "📜",
       "ex": "A wedding custom is a traditional way of doing things.",
       "exAr": "عادة العرس طريقة تقليدية لفعل الأشياء."
      },
      {
       "en": "dough",
       "ar": "عجين",
-      "em": "🥖",
+      "em": "🍞",
       "ex": "A baker starts with a piece of soft, heavy dough.",
       "exAr": "يبدأ الخبّاز بقطعة عجين ناعمة ثقيلة."
      },
      {
       "en": "hold",
       "ar": "يرفع / يمسك",
-      "em": "✋",
+      "em": "🤚",
       "ex": "If I hold it up to the light, you can see it more clearly.",
       "exAr": "إذا رفعتُه نحو الضوء ترونه بوضوح أكبر."
      },
@@ -4965,21 +4965,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "ring",
       "ar": "خاتم",
-      "em": "💍",
+      "em": "🔗",
       "ex": "Please show us your beautiful wedding ring.",
       "exAr": "أرِنا من فضلك خاتم زواجك الجميل."
      },
      {
       "en": "Zaffa",
       "ar": "الزفّة",
-      "em": "🐎",
+      "em": "🎉",
       "ex": "We call this Zaffa.",
       "exAr": "نسمّي هذه الزفّة."
      },
      {
       "en": "Sahra",
       "ar": "سهرة قبل يوم العرس",
-      "em": "🎶",
+      "em": "🎉",
       "ex": "It's Sahra. It's a party before the wedding day.",
       "exAr": "هذه السهرة، حفلة قبل يوم العرس."
      }
@@ -5423,7 +5423,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "counsellor",
       "ar": "مرشد / مستشار",
-      "em": "🧑‍🏫",
+      "em": "🧑",
       "ex": "I'm Rose Hill, your daughter's new counsellor.",
       "exAr": "أنا روز هيل، المرشدة الجديدة لابنتك."
      },
@@ -5437,7 +5437,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "given name",
       "ar": "الاسم الأول",
-      "em": "🏷️",
+      "em": "🪪",
       "ex": "Could you spell your given name for me, please?",
       "exAr": "هل يمكنك تهجئة اسمك الأول من فضلك؟"
      },
@@ -5465,28 +5465,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "zero",
       "ar": "صفر",
-      "em": "0️⃣",
+      "em": "❓",
       "ex": "My phone number starts with zero.",
       "exAr": "رقم هاتفي يبدأ بصفر."
      },
      {
       "en": "family name",
       "ar": "اسم العائلة",
-      "em": "👪",
+      "em": "🪪",
       "ex": "May I check your family name?",
       "exAr": "هل يمكنني التحقّق من اسم عائلتك؟"
      },
      {
       "en": "spell",
       "ar": "يهجّئ",
-      "em": "🔡",
+      "em": "✒",
       "ex": "Could you spell your given name for me, please?",
       "exAr": "هل يمكنك تهجئة اسمك الأول من فضلك؟"
      },
      {
       "en": "ancestor",
       "ar": "جدّ أعلى / سلف",
-      "em": "🌳",
+      "em": "📜",
       "ex": "How did our ancestors get their family names?",
       "exAr": "كيف حصل أجدادنا على أسماء عائلاتهم؟"
      },
@@ -5500,21 +5500,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "report",
       "ar": "ينقل كلام الآخرين",
-      "em": "📣",
+      "em": "💬",
       "ex": "When we report, we often use a reporting verb like 'she says'.",
       "exAr": "حين ننقل الكلام غالباً نستعمل فعلاً ناقلاً مثل «she says»."
      },
      {
       "en": "formal letter",
       "ar": "رسالة رسمية",
-      "em": "✉️",
+      "em": "✉",
       "ex": "Dr Cook's note is the start of a formal letter.",
       "exAr": "ملاحظة الدكتور كوك هي بداية رسالة رسمية."
      },
      {
       "en": "hold",
       "ar": "ينتظر على الخطّ",
-      "em": "📞",
+      "em": "🤚",
       "ex": "Could you hold, please?",
       "exAr": "هل يمكنك الانتظار على الخطّ من فضلك؟"
      },
@@ -5969,7 +5969,7 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "housework",
       "ar": "أعمال المنزل",
-      "em": "🧹",
+      "em": "🏡",
       "ex": "I have to get up early and help do the housework.",
       "exAr": "عليّ أن أستيقظ مبكّراً وأساعد في أعمال المنزل."
      },
@@ -5990,21 +5990,21 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "Muslim",
       "ar": "مسلم",
-      "em": "🕌",
+      "em": "🕊",
       "ex": "Muslims from North Africa took Spain.",
       "exAr": "فتح مسلمون من شمال أفريقيا إسبانيا."
      },
      {
       "en": "pick up",
       "ar": "يلتقط / يرفع",
-      "em": "📲",
+      "em": "⬆",
       "ex": "He puts down his pen and picks up his phone.",
       "exAr": "يضع قلمه ويلتقط هاتفه."
      },
      {
       "en": "put down",
       "ar": "يضع (من يده)",
-      "em": "✏️",
+      "em": "⬇",
       "ex": "He puts down his pen.",
       "exAr": "يضع قلمه."
      },
@@ -6025,28 +6025,28 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "work on",
       "ar": "يعمل على",
-      "em": "💻",
+      "em": "🛠",
       "ex": "What are you working on now?",
       "exAr": "على ماذا تعمل الآن؟"
      },
      {
       "en": "architecture",
       "ar": "هندسة معمارية",
-      "em": "🏛️",
+      "em": "🏛",
       "ex": "Omar likes to design houses, so he plans to study architecture.",
       "exAr": "يحبّ عمر تصميم البيوت فيخطّط لدراسة الهندسة المعمارية."
      },
      {
       "en": "disease",
       "ar": "مرض",
-      "em": "🦠",
+      "em": "😟",
       "ex": "In the past, diseases killed many people.",
       "exAr": "في الماضي كانت الأمراض تقتل كثيرين."
      },
      {
       "en": "medical",
       "ar": "طبّي",
-      "em": "⚕️",
+      "em": "🩺",
       "ex": "Al-Zahrawi worked out many new medical operations.",
       "exAr": "ابتكر الزهراوي عمليات طبّية جديدة كثيرة."
      },
@@ -6060,14 +6060,14 @@ window.LEXORA_DATA = {"units": {
      {
       "en": "capital",
       "ar": "عاصمة",
-      "em": "🏙️",
+      "em": "🏛",
       "ex": "The Muslims needed a capital, and they set it up in Cordoba.",
       "exAr": "احتاج المسلمون إلى عاصمة فأسّسوها في قرطبة."
      },
      {
       "en": "set up",
       "ar": "يؤسّس",
-      "em": "🏗️",
+      "em": "🧱",
       "ex": "They set it up in Cordoba.",
       "exAr": "أسّسوها في قرطبة."
      },
