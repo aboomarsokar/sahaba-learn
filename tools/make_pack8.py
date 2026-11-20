@@ -29,7 +29,7 @@ MATH_TOC = [("الأعداد النسبية", ["العدد النسبي", "ال�
 
 SUBJ = {
     "science": {"dir": "science/8", "name": "العلوم العامة", "short": "العلوم", "hello": "أهلاً يا بطل العلوم!", "unitsTitle": "وحدات العلوم", "theme": "sci", "key": "sci8:st", "wid": "science",
-                "kxid": "science8", "student": "طالب العلوم", "packT": "رزمة العلوم والحياة", "pack": LINKS["science"], "pre": "sci8-",
+                "kxid": "science8", "student": "طالب العلوم", "packT": "رزمة العلوم والحياة", "widgets": True, "pack": LINKS["science"], "pre": "sci8-",
                 "unitsHint": "ثماني وحدات تغطّي الخلية والطاقة والذرّة والكيمياء والأمواج وتصنيف الكائنات. اضغط وحدة لترى دروسها."},
     "math": {"dir": "math/8", "name": "الرياضيات", "short": "الرياضيات", "hello": "مرحباً", "unitsTitle": "الوحدات الدراسية", "theme": "math", "key": "math8:st", "wid": "math",
              "kxid": "math8", "student": "طالب الرياضيات", "packT": "رزمة الرياضيات", "pack": LINKS["math"], "pre": "math8-",
@@ -90,7 +90,7 @@ self.addEventListener("message", e => { if (e.data && e.data.type === "precache"
 def build(sid: str) -> None:
     c = SUBJ[sid]
     units = science_units() if sid == "science" else math_units()
-    cfg = {k: c[k] for k in ("name", "hello", "unitsTitle", "unitsHint", "theme", "key", "wid", "kxid", "student", "packT", "dir")}
+    cfg = {k: c.get(k, False) for k in ("widgets", "name", "hello", "unitsTitle", "unitsHint", "theme", "key", "wid", "kxid", "student", "packT", "dir")}
     data = {"cfg": cfg, "units": units, "pack": c["pack"]}
     out = ROOT / c["dir"]
     shutil.rmtree(out, ignore_errors=True)
