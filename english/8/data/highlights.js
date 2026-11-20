@@ -221,5 +221,116 @@ window.LEXORA_HL = {
  },
  "9-1|picnic": {
   "e": "picnic"
+ },
+ "10-1|all right": {
+  "e": "all right"
+ },
+ "10-1|DVD": {
+  "e": "DVD"
+ },
+ "10-1|celebrate": {
+  "e": "celebrate"
+ },
+ "10-1|custom": {
+  "e": "custom"
+ },
+ "10-1|hold": {
+  "e": "hold"
+ },
+ "10-1|purpose": {
+  "e": "purpose"
+ },
+ "10-1|Zaffa": {
+  "e": "Zaffa"
+ },
+ "10-1|Sahra": {
+  "e": "Sahra"
+ },
+ "10-1|follow": {
+  "e": "following"
+ },
+ "10-1|guest": {
+  "e": "guests"
+ },
+ "11-1|date of birth": {
+  "e": "date of birth"
+ },
+ "11-1|given name": {
+  "e": "given name"
+ },
+ "11-1|personal details": {
+  "e": "personal details"
+ },
+ "11-1|family name": {
+  "e": "family name"
+ },
+ "11-1|spell": {
+  "e": "spell"
+ },
+ "11-1|ancestor": {
+  "e": "ancestors"
+ },
+ "11-1|ask": {
+  "e": "asks"
+ },
+ "11-1|report": {
+  "e": "report"
+ },
+ "11-1|formal letter": {
+  "e": "formal letter"
+ },
+ "11-1|hold": {
+  "e": "hold"
+ },
+ "11-1|check": {
+  "e": "check"
+ },
+ "11-1|mean": {
+  "e": "mean"
+ },
+ "11-1|student": {
+  "e": "student"
+ },
+ "12-1|housework": {
+  "e": "housework"
+ },
+ "12-1|hurry up": {
+  "e": "hurry up"
+ },
+ "12-1|look up": {
+  "e": "look up"
+ },
+ "12-1|pick up": {
+  "e": "picks up"
+ },
+ "12-1|put down": {
+  "e": "puts down"
+ },
+ "12-1|take over": {
+  "e": "took over"
+ },
+ "12-1|turn off": {
+  "e": "turn off"
+ },
+ "12-1|work on": {
+  "e": "working on"
+ },
+ "12-1|set up": {
+  "e": "set it up"
+ },
+ "12-1|work out": {
+  "e": "worked out"
+ },
+ "12-1|medical": {
+  "e": "medical"
+ },
+ "12-1|disease": {
+  "e": "diseases"
+ },
+ "12-1|operation": {
+  "e": "operations"
+ },
+ "12-1|Muslim": {
+  "e": "Muslims"
  }
 };

@@ -1195,7 +1195,7 @@ window.LEXORA_RULECARDS = {
    "examples": [
     {
      "en": "This is a famous salt lake {t|that} {v|is} 400 metres below sea level.",
-     "ar": "هذه بحيرة مالحة مشهورة ترتفع -400 متر تحت سطح البحر."
+     "ar": "هذه بحيرة مالحة مشهورة تنخفض 400 متر تحت سطح البحر."
     },
     {
      "en": "These were the people {t|that} {v|built} the first city.",
@@ -1278,6 +1278,308 @@ window.LEXORA_RULECARDS = {
     {
      "en": "In Arab culture, singing is very important.",
      "ar": "الغناء مهمّ جدّاً في الثقافة العربية."
+    }
+   ]
+  }
+ ],
+ "10-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|would like} to make offers, {t|would love} to accept with enthusiasm, and {t|would prefer} to choose something else.",
+   "useAr": "نستعمل {t|would like} لتقديم العروض، و{t|would love} للقبول بحماس، و{t|would prefer} لاختيار شيء آخر.",
+   "signals": [
+    "would like",
+    "would love",
+    "would prefer"
+   ]
+  },
+  {
+   "k": "q",
+   "label": "Offer",
+   "labelAr": "العرض",
+   "formula": "{t|Would} + {s|you} + {t|like} + {v|noun / to + V1}?",
+   "examples": [
+    {
+     "en": "{t|Would} {s|you} {t|like} {v|another cake}?",
+     "ar": "هل تودّ قطعة كعك أخرى؟"
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Accept",
+   "labelAr": "القبول",
+   "formula": "{s|I} + {t|would (’d) love} + {v|noun / to + V1}",
+   "examples": [
+    {
+     "en": "Yes, please. I{t|’d love} {v|another one}!",
+     "ar": "نعم من فضلك، أحبّ واحدة أخرى!"
+    },
+    {
+     "en": "I{t|’d love} {t|to} {v|watch} the DVD.",
+     "ar": "أحبّ أن أشاهد القرص."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Prefer",
+   "labelAr": "التفضيل",
+   "formula": "{s|I} + {t|would (’d) prefer} + {v|noun / to + V1}",
+   "examples": [
+    {
+     "en": "Thank you, but I{t|’d prefer} {t|to} {v|play} computer games.",
+     "ar": "شكراً لكنّني أفضّل لعب ألعاب الحاسوب."
+    }
+   ]
+  }
+ ],
+ "10-1#1": [
+  {
+   "k": "intro",
+   "useEn": "Most plural nouns add {t|-s}. Some add {t|-es} or change to {t|-ies}, and some are irregular.",
+   "useAr": "أغلب الأسماء تضيف {t|-s} في الجمع، وبعضها {t|-es} أو يتحوّل إلى {t|-ies}، وبعضها شاذّ.",
+   "signals": [
+    "-s",
+    "-es",
+    "-ies",
+    "-ves"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Regular",
+   "labelAr": "المنتظم",
+   "body": "way → way{t|s}   ·   box → box{t|es}\nglass → glass{t|es}   ·   sandwich → sandwich{t|es}\ncountry → countr{t|ies}   ·   party → part{t|ies}\nboy → boy{t|s}   ·   monkey → monkey{t|s}",
+   "examples": [
+    {
+     "en": "There are hundreds of guests!",
+     "ar": "هناك مئات الضيوف!"
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Irregular",
+   "labelAr": "الشاذّ",
+   "body": "life → {t|lives}   ·   wife → {t|wives}\nknife → {t|knives}   ·   half → {t|halves}\nshelf → {t|shelves}   ·   wolf → {t|wolves}\nman → {t|men}   ·   woman → {t|women}   ·   child → {t|children}",
+   "examples": [
+    {
+     "en": "All the men, women and children climbed into the boats.",
+     "ar": "صعد كلّ الرجال والنساء والأطفال إلى القوارب."
+    }
+   ]
+  }
+ ],
+ "10-1#2": [
+  {
+   "k": "intro",
+   "useEn": "We use a {t|comma} in lists and between adjectives, a {t|full stop} at the end of a statement, and an {t|apostrophe} for short forms and possession.",
+   "useAr": "نستعمل {t|الفاصلة} في القوائم وبين الصفات، و{t|النقطة} في نهاية الجملة الخبرية، و{t|الفاصلة العليا} في الاختصار والملكية.",
+   "signals": [
+    ",",
+    ".",
+    "'"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Comma ( , )",
+   "labelAr": "الفاصلة",
+   "formula": "A{t|,} B {v|and} C{t|.}",
+   "examples": [
+    {
+     "en": "I can see Ahmad{t|,} Ali {v|and} Fuad{t|.}",
+     "ar": "أرى أحمد وعليّاً وفؤاداً."
+    }
+   ],
+   "tip": "لا فاصلة قبل and الأخيرة غالباً."
+  },
+  {
+   "k": "pos",
+   "label": "Apostrophe ( ' )",
+   "labelAr": "الفاصلة العليا",
+   "formula": "{s|isn't, it's, I've, let's}  ·  {s|Ahmed's family}",
+   "examples": [
+    {
+     "en": "There {t|isn't} any oil in the jar.",
+     "ar": "لا يوجد زيت في البرطمان."
+    }
+   ],
+   "tip": "في الاختصار تحلّ محلّ حرف محذوف."
+  }
+ ],
+ "11-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use a {t|reporting verb} such as says to tell someone what another person said. We usually change the pronouns.",
+   "useAr": "نستعمل {t|فعلاً ناقلاً} مثل says لنخبر شخصاً بما قاله آخر، وغالباً نغيّر الضمائر.",
+   "signals": [
+    "says",
+    "tells",
+    "wants to know"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Pattern",
+   "labelAr": "الصيغة",
+   "formula": "{s|Person} + {t|says} + {v|reported statement}",
+   "examples": [
+    {
+     "en": "She {t|says} {v|she needs to check yours}.",
+     "ar": "هي تقول إنّها تحتاج إلى التحقّق من بياناتك."
+    }
+   ],
+   "tip": "المضارع البسيط في الفعل الناقل."
+  },
+  {
+   "k": "note",
+   "label": "Pronoun changes",
+   "labelAr": "تغيّر الضمائر",
+   "body": "{s|I / we}  →  {t|he / she / they}\n{s|my / our}  →  {t|his / her / their}\n{s|you}  →  {t|I / he / she}",
+   "examples": [
+    {
+     "en": "Dad says you need to check my details.",
+     "ar": "أبي يقول إنّكِ تحتاجين إلى التحقّق من بياناتي."
+    }
+   ]
+  }
+ ],
+ "11-1#1": [
+  {
+   "k": "intro",
+   "useEn": "In {t|reported questions} we use a normal statement word order: no do / does / did and no question mark.",
+   "useAr": "في {t|الأسئلة المنقولة} نستعمل ترتيب الجملة الخبرية: بلا do / does / did وبلا علامة استفهام.",
+   "signals": [
+    "asks",
+    "wants to know",
+    "needs to check"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Pattern",
+   "labelAr": "الصيغة",
+   "formula": "{s|Person} + {t|asks / wants to know} + {t|wh-word} + {s|subject} + {v|verb}",
+   "examples": [
+    {
+     "en": "Tina {t|wants to know} {t|when} {s|people} {v|started} using family names.",
+     "ar": "تينا تريد أن تعرف متى بدأ الناس باستعمال أسماء العائلات."
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Compare",
+   "labelAr": "قارن",
+   "body": "{n|Direct:}  When did people start using family names?\n{t|Reported:}  She wants to know when people started using family names.\n\n{n|Direct:}  What does my name mean?\n{t|Reported:}  He asks what his name means.",
+   "examples": [
+    {
+     "en": "Emma asks how our ancestors got their family names.",
+     "ar": "إيما تسأل كيف حصل أجدادنا على أسماء عائلاتهم."
+    }
+   ]
+  }
+ ],
+ "11-1#2": [
+  {
+   "k": "intro",
+   "useEn": "A {t|formal letter} has a clear order: addresses, date, greeting, subject, text and a formal ending.",
+   "useAr": "{t|الرسالة الرسمية} لها ترتيب واضح: العناوين والتاريخ والتحيّة والموضوع والنصّ ونهاية رسمية.",
+   "signals": [
+    "Dear …",
+    "Yours truly"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Layout",
+   "labelAr": "الترتيب",
+   "body": "{s|Your address}\n{s|Date}\n{s|Receiver's address}\n{t|Dear Mr and Mrs Jarrett}\n{v|Subject line}\ntext …\n{t|Yours truly}\nname · job",
+   "examples": [
+    {
+     "en": "We hope to hear from you soon.",
+     "ar": "نأمل أن نسمع منكم قريباً."
+    }
+   ]
+  }
+ ],
+ "12-1#0": [
+  {
+   "k": "intro",
+   "useEn": "A {t|phrasal verb} is a verb + a small word (up, down, off, on, over, out) that gives a new meaning.",
+   "useAr": "{t|الفعل المركّب} فعل مع كلمة صغيرة (up, down, off, on, over, out) تعطي معنى جديداً.",
+   "signals": [
+    "up",
+    "down",
+    "off",
+    "over",
+    "on",
+    "out"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Examples",
+   "labelAr": "أمثلة",
+   "body": "{v|put down} ≠ {v|pick up}\n{v|hurry up} · {v|get up} · {v|tidy up} · {v|sweep up}\n{v|look up} · {v|turn off} · {v|work on}\n{v|take over} · {v|set up} · {v|work out}",
+   "examples": [
+    {
+     "en": "I have to tidy up my room and sweep up round the house.",
+     "ar": "عليّ أن أرتّب غرفتي وأكنس حول البيت."
+    }
+   ]
+  }
+ ],
+ "12-1#1": [
+  {
+   "k": "intro",
+   "useEn": "{t|Linking words} connect ideas in a paragraph and make the order and reason clear.",
+   "useAr": "{t|أدوات الربط} تصل الأفكار في الفقرة وتوضّح الترتيب والسبب.",
+   "signals": [
+    "and",
+    "but",
+    "so",
+    "because",
+    "however",
+    "therefore"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Uses",
+   "labelAr": "الاستعمالات",
+   "body": "{t|and} = إضافة   ·   {t|or} = اختيار\n{t|but / however / although} = تضادّ\n{t|so / therefore / and so} = نتيجة\n{t|because} = سبب\n{t|in order to} + V1 = غرض\n{t|for example} = مثال",
+   "examples": [
+    {
+     "en": "Because Muslim farmers came from dry climates, they knew how to use water well.",
+     "ar": "لأنّ المزارعين المسلمين جاؤوا من مناخات جافّة عرفوا كيف يستعملون الماء جيّداً."
+    }
+   ]
+  }
+ ],
+ "12-1#2": [
+  {
+   "k": "intro",
+   "useEn": "A {t|topic sentence} gives the main idea of a paragraph. {t|Time expressions} show the order of events.",
+   "useAr": "{t|الجملة الرئيسية} تعطي فكرة الفقرة، و{t|عبارات الزمن} تبيّن ترتيب الأحداث.",
+   "signals": [
+    "First",
+    "Then",
+    "Soon",
+    "Finally"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Time expressions",
+   "labelAr": "عبارات الزمن",
+   "body": "{t|First,} …\n{t|Just two years after that,} …\n{t|In only three years,} …\n{t|Soon,} …\n{t|Then} …\n{t|After five more years,} …\n{t|Next morning,} …",
+   "examples": [
+    {
+     "en": "In only three years, the Muslims were quickly pushing north into the heart of Spain.",
+     "ar": "في ثلاث سنوات فقط كان المسلمون يتقدّمون بسرعة شمالاً نحو قلب إسبانيا."
     }
    ]
   }
@@ -1372,5 +1674,38 @@ window.LEXORA_SIGNALS_AR = {
  "the ones": "الذين (جمع)",
  "-ist": "ـيّ (شخص)",
  "-er": "ـيّ (شخص)",
- "-ing": "ـ (نشاط)"
+ "-ing": "ـ (نشاط)",
+ "would like": "أودّ / تودّ",
+ "would love": "أحبّ جدّاً",
+ "would prefer": "أفضّل",
+ "-s": "جمع عادي",
+ "-es": "جمع بـ es",
+ "-ies": "y ← ies",
+ "-ves": "f ← ves",
+ ",": "فاصلة",
+ ".": "نقطة",
+ "'": "فاصلة عليا",
+ "says": "يقول",
+ "tells": "يخبر",
+ "wants to know": "يريد أن يعرف",
+ "asks": "يسأل",
+ "needs to check": "يحتاج إلى التحقّق",
+ "Dear …": "عزيزي ...",
+ "Yours truly": "المخلص",
+ "up": "أعلى / إنهاء",
+ "down": "أسفل",
+ "off": "إطفاء",
+ "over": "فوق / سيطرة",
+ "on": "على",
+ "out": "خارج / اكتشاف",
+ "and": "و",
+ "but": "لكن",
+ "so": "لذلك",
+ "because": "لأنّ",
+ "however": "مع ذلك",
+ "therefore": "لذلك",
+ "First": "أوّلاً",
+ "Then": "ثمّ",
+ "Soon": "قريباً",
+ "Finally": "أخيراً"
 };

@@ -4861,5 +4861,1651 @@ window.LEXORA_DATA = {"units": {
     ]
    }
   ]
+ },
+ "10": {
+  "title": "عرس فلسطيني",
+  "titleEn": "A Palestinian wedding",
+  "lessons": [
+   {
+    "id": "10-1",
+    "title": "A Palestinian wedding",
+    "titleAr": "عرس فلسطيني",
+    "vocab": [
+     {
+      "en": "all right",
+      "ar": "حسناً / موافق",
+      "em": "👍",
+      "ex": "Well, all right.",
+      "exAr": "حسناً، موافق."
+     },
+     {
+      "en": "bride",
+      "ar": "عروس",
+      "em": "👰",
+      "ex": "The bride's following in a car.",
+      "exAr": "العروس تتبعه في سيّارة."
+     },
+     {
+      "en": "congratulations",
+      "ar": "تهانينا",
+      "em": "🎊",
+      "ex": "He's riding round town to receive everyone's congratulations.",
+      "exAr": "وهو يتجوّل في البلدة ليتلقّى تهاني الجميع."
+     },
+     {
+      "en": "DVD",
+      "ar": "قرص فيديو",
+      "em": "📀",
+      "ex": "Who'd like to watch our cousin's wedding DVD?",
+      "exAr": "من يودّ مشاهدة قرص عرس ابن عمّنا؟"
+     },
+     {
+      "en": "follow",
+      "ar": "يتبع",
+      "em": "🚗",
+      "ex": "The bride's following in a car.",
+      "exAr": "العروس تتبعه في سيّارة."
+     },
+     {
+      "en": "full",
+      "ar": "شبعان / ممتلئ",
+      "em": "😌",
+      "ex": "No, thanks, Mrs Kamal. I'm full!",
+      "exAr": "لا، شكراً يا سيدة كمال، أنا شبعان!"
+     },
+     {
+      "en": "groom",
+      "ar": "عريس",
+      "em": "🤵",
+      "ex": "He's the groom, and he's riding round town.",
+      "exAr": "هو العريس وهو يتجوّل في البلدة."
+     },
+     {
+      "en": "guest",
+      "ar": "ضيف",
+      "em": "🧑‍🤝‍🧑",
+      "ex": "There are hundreds of guests!",
+      "exAr": "هناك مئات الضيوف!"
+     },
+     {
+      "en": "celebrate",
+      "ar": "يحتفل",
+      "em": "🎉",
+      "ex": "When do Muslims celebrate Eid al-Fitr?",
+      "exAr": "متى يحتفل المسلمون بعيد الفطر؟"
+     },
+     {
+      "en": "custom",
+      "ar": "عادة / تقليد",
+      "em": "📿",
+      "ex": "A wedding custom is a traditional way of doing things.",
+      "exAr": "عادة العرس طريقة تقليدية لفعل الأشياء."
+     },
+     {
+      "en": "dough",
+      "ar": "عجين",
+      "em": "🥖",
+      "ex": "A baker starts with a piece of soft, heavy dough.",
+      "exAr": "يبدأ الخبّاز بقطعة عجين ناعمة ثقيلة."
+     },
+     {
+      "en": "hold",
+      "ar": "يرفع / يمسك",
+      "em": "✋",
+      "ex": "If I hold it up to the light, you can see it more clearly.",
+      "exAr": "إذا رفعتُه نحو الضوء ترونه بوضوح أكبر."
+     },
+     {
+      "en": "purpose",
+      "ar": "هدف / غرض",
+      "em": "🎯",
+      "ex": "What is the purpose of the zaffa?",
+      "exAr": "ما الغرض من الزفّة؟"
+     },
+     {
+      "en": "ring",
+      "ar": "خاتم",
+      "em": "💍",
+      "ex": "Please show us your beautiful wedding ring.",
+      "exAr": "أرِنا من فضلك خاتم زواجك الجميل."
+     },
+     {
+      "en": "Zaffa",
+      "ar": "الزفّة",
+      "em": "🐎",
+      "ex": "We call this Zaffa.",
+      "exAr": "نسمّي هذه الزفّة."
+     },
+     {
+      "en": "Sahra",
+      "ar": "سهرة قبل يوم العرس",
+      "em": "🎶",
+      "ex": "It's Sahra. It's a party before the wedding day.",
+      "exAr": "هذه السهرة، حفلة قبل يوم العرس."
+     }
+    ],
+    "reading": {
+     "title": "A Palestinian wedding",
+     "paras": [
+      {
+       "en": "Mike and Tina are visiting the Kamals. Mrs Kamal: Would you like another cake? Mike: Yes, please. I'd love another one! Tina: No, thanks, Mrs Kamal. I'm full! Nadia: Who'd like to watch our cousin's wedding DVD? It's just arrived. Tina: I'd love to. Mike: Hm. I'd prefer to play computer games. Sami: Come on, Mike! Say yes! Mike: Well, all right.",
+       "ar": "يزور مايك وتينا عائلة كمال. السيدة كمال: هل تودّان قطعة كعك أخرى؟ مايك: نعم من فضلك، أحبّ واحدة أخرى! تينا: لا شكراً يا سيدة كمال، أنا شبعانة! نادية: من يودّ مشاهدة قرص عرس ابن عمّنا؟ لقد وصل للتوّ. تينا: أحبّ ذلك. مايك: همم، أفضّل لعب ألعاب الحاسوب. سامي: هيّا يا مايك، قل نعم! مايك: حسناً، موافق."
+      },
+      {
+       "en": "Tina: Is this the wedding party? Mrs Kamal: No, it's Sahra. It's a party before the wedding day. The women are singing, and the men are dancing the traditional dabka. Tina: Everyone looks very happy!",
+       "ar": "تينا: هل هذه حفلة العرس؟ السيدة كمال: لا، هذه السهرة وهي حفلة قبل يوم العرس، النساء يغنّين والرجال يرقصون الدبكة التقليدية. تينا: يبدو الجميع سعداء جدّاً!"
+      },
+      {
+       "en": "Mike: What's happening now? Sami: We call this Zaffa. That's our cousin on the horse. He's the groom, and he's riding round town to receive everyone's congratulations. Nadia: The bride's following in a car. People are giving her their best wishes. Tina: She looks beautiful!",
+       "ar": "مايك: ماذا يحدث الآن؟ سامي: نسمّي هذه الزفّة. هذا ابن عمّنا على الحصان وهو العريس، يتجوّل في البلدة ليتلقّى تهاني الجميع. نادية: والعروس تتبعه في سيّارة والناس يقدّمون لها أطيب أمنياتهم. تينا: تبدو جميلة!"
+      },
+      {
+       "en": "Mrs Kamal: This is the wedding party. Look, the bride and groom are sitting in the centre. Tina: There are hundreds of guests! Sami: Yes, everyone goes to a Palestinian wedding! We love them! Nadia: It's so sad we couldn't go to this one. Sami: And that's the end. So would you like to play computer games now, Mike? Mike: Thanks, but I'd prefer to watch the DVD again. It was fantastic!",
+       "ar": "السيدة كمال: وهذه حفلة العرس، انظروا العروسان جالسان في الوسط. تينا: هناك مئات الضيوف! سامي: نعم، الجميع يحضر العرس الفلسطيني! نحبّها كثيراً! نادية: يؤسفني أنّنا لم نستطع حضور هذا العرس. سامي: وهذه النهاية، هل تودّ لعب ألعاب الحاسوب الآن يا مايك؟ مايك: شكراً لكنّني أفضّل مشاهدة القرص مرّة أخرى، كان رائعاً!"
+      }
+     ],
+     "questions": [
+      {
+       "q": "What are Mike and Tina going to watch?",
+       "o": [
+        "A wedding DVD",
+        "A football match",
+        "A cartoon"
+       ],
+       "a": 0
+      },
+      {
+       "q": "What is Sahra?",
+       "o": [
+        "The wedding cake",
+        "A kind of dress",
+        "A party before the wedding day"
+       ],
+       "a": 2
+      },
+      {
+       "q": "What do we call the groom's ride round the town?",
+       "o": [
+        "Sahra",
+        "Dabka",
+        "Zaffa"
+       ],
+       "a": 2
+      },
+      {
+       "tf": false,
+       "q": "Mike wants to play computer games at the end.",
+       "why": "He prefers to watch the DVD again."
+      },
+      {
+       "q": "How many guests are at the wedding party?",
+       "o": [
+        "Hundreds",
+        "Ten",
+        "Twenty"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    "rules": [
+     {
+      "title": "would like, would love, would prefer",
+      "titleAr": "العروض والردّ عليها",
+      "explain": "نقدّم عرضاً بـ <b>Would you like …?</b> (Would you like a cake?) ونقبل بـ <b>Yes, please. I'd love …</b> أو <b>I'd love to + V1</b>، ونفضّل شيئاً آخر بـ <b>I'd prefer …</b> / <b>I'd prefer to + V1</b> (I'd prefer to play computer games). وبعدها فعل بصيغته المجرّدة مع to.",
+      "form": "Would you like + اسم / to + V1?    ·    I'd love + اسم / to + V1    ·    I'd prefer + اسم / to + V1",
+      "examples": [
+       {
+        "en": "**Would you like** another cake?",
+        "ar": "عرض"
+       },
+       {
+        "en": "I**'d love** another one!",
+        "ar": "قبول"
+       },
+       {
+        "en": "I**'d love to** watch the DVD.",
+        "ar": "قبول"
+       },
+       {
+        "en": "Thank you, but I**'d prefer to** play computer games.",
+        "ar": "تفضيل"
+       },
+       {
+        "en": "What about you, Mike? **Would** you **like** a sandwich or **prefer** a cake?",
+        "ar": "سؤال بديل"
+       }
+      ],
+      "questions": [
+       {
+        "q": "___ you like another cake?",
+        "o": [
+         "Do",
+         "Are",
+         "Would"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Yes, please. I ___ love another one!",
+        "o": [
+         "am",
+         "do",
+         "would"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Thank you, but I'd ___ to watch the DVD again.",
+        "o": [
+         "prefer",
+         "would",
+         "like prefer"
+        ],
+        "a": 0
+       },
+       {
+        "q": "I'd love ___ the DVD.",
+        "o": [
+         "to watch",
+         "watching",
+         "watch"
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "Would you ___ a cup of coffee, Fatema? (like)",
+        "a": [
+         "like"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "No, thanks. I'd ___ a glass of tea. (prefer)",
+        "a": [
+         "prefer"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Plural nouns: -s, -es, -ies and irregular",
+      "titleAr": "جمع الأسماء",
+      "explain": "القاعدة: نضيف <b>-s</b> (way → ways, toy → toys, boy → boys)، و<b>-es</b> بعد s / x / ch / sh (box → boxes, dress → dresses, glass → glasses, sandwich → sandwiches)، وتصبح <b>y ← ies</b> بعد حرف ساكن (country → countries, baby → babies, family → families, party → parties). والشاذّ: life → lives, wife → wives, knife → knives, half → halves, shelf → shelves, wolf → wolves, man → men, woman → women, child → children.",
+      "form": "+ s  ·  + es  ·  consonant + y → ies  ·  f / fe → ves  ·  man → men",
+      "examples": [
+       {
+        "en": "way → **ways** · day → **days** · boy → **boys**",
+        "ar": "+ s"
+       },
+       {
+        "en": "box → **boxes** · glass → **glasses** · sandwich → **sandwiches**",
+        "ar": "+ es"
+       },
+       {
+        "en": "country → **countries** · family → **families** · party → **parties**",
+        "ar": "y → ies"
+       },
+       {
+        "en": "life → **lives** · wife → **wives** · half → **halves** · knife → **knives**",
+        "ar": "f / fe → ves"
+       },
+       {
+        "en": "man → **men** · woman → **women** · child → **children**",
+        "ar": "شاذّ"
+       }
+      ],
+      "questions": [
+       {
+        "q": "Different types of ___ live in the jungle. (monkey)",
+        "o": [
+         "monkies",
+         "monkeyes",
+         "monkeys"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Mum cut the big melon into two ___. (half)",
+        "o": [
+         "halfs",
+         "halfes",
+         "halves"
+        ],
+        "a": 2
+       },
+       {
+        "q": "I keep my old ___ in three big ___. (dress, box)",
+        "o": [
+         "dresss / boxs",
+         "dresses / boxes",
+         "dresses / boxs"
+        ],
+        "a": 1
+       },
+       {
+        "q": "Several ___ and ___ work in this office. (man, woman)",
+        "o": [
+         "men / women",
+         "mans / womans",
+         "men / womens"
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "family → ___",
+        "a": [
+         "families"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "wife → ___",
+        "a": [
+         "wives"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Punctuation: comma, full stop and apostrophe",
+      "titleAr": "علامات الترقيم: الفاصلة والنقطة والفاصلة العليا",
+      "explain": "نستعمل <b>الفاصلة (,)</b> في القوائم وبين صفتين وبعد أسماء المنادى والكلمات مثل Yes / Oh (I can see Ahmad, Ali and Fuad). ونستعمل <b>النقطة (.)</b> في نهاية الجملة الخبرية. ونستعمل <b>الفاصلة العليا (')</b> في الاختصارات (isn't, I've, it's, let's) وللملكية (Ahmed's family).",
+      "form": "list: A, B and C    ·    full stop at the end    ·    apostrophe: isn't / I've / Ahmed's",
+      "examples": [
+       {
+        "en": "I can see Ahmad**,** Ali and Fuad**.**",
+        "ar": "فاصلة ونقطة"
+       },
+       {
+        "en": "Fuad is the one with long**,** straight hair.",
+        "ar": "فاصلة بين صفتين"
+       },
+       {
+        "en": "There **isn't** any oil in the jar.",
+        "ar": "اختصار"
+       },
+       {
+        "en": "**Ahmed's** family is lovely**,** **isn't** it?",
+        "ar": "ملكية واختصار"
+       },
+       {
+        "en": "**Let's** go shopping, Dana.",
+        "ar": "اختصار"
+       }
+      ],
+      "questions": [
+       {
+        "q": "Choose the correct sentence.",
+        "o": [
+         "I can see Ahmad, Ali and Fuad.",
+         "I can see Ahmad Ali, and Fuad",
+         "I can see, Ahmad Ali and Fuad."
+        ],
+        "a": 0
+       },
+       {
+        "q": "Choose the correct sentence.",
+        "o": [
+         "There isn't any oil in the jar.",
+         "There isnt any oil in the jar.",
+         "There is'nt any oil in the jar."
+        ],
+        "a": 0
+       },
+       {
+        "q": "Choose the correct sentence.",
+        "o": [
+         "Ahmed's family is lovely, isn't it?",
+         "Ahmeds family is lovely isnt it",
+         "Ahmed's family is lovely isn't, it?"
+        ],
+        "a": 0
+       },
+       {
+        "q": "Choose the correct sentence.",
+        "o": [
+         "Let's go shopping, Dana. I've got enough money.",
+         "Lets go shopping Dana. Ive got enough money.",
+         "Let's go shopping Dana, I've got, enough money."
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "Add the apostrophe: This book was great but its very expensive → This book was great but ___ very expensive.",
+        "a": [
+         "it's"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "Add the apostrophe: Ive got enough money → ___ got enough money.",
+        "a": [
+         "I've"
+        ]
+       }
+      ]
+     }
+    ],
+    "mastery": [
+     {
+      "q": "\"bride\" means:",
+      "o": [
+       "عروس",
+       "عريس",
+       "ضيف"
+      ],
+      "a": 0,
+      "lv": "easy"
+     },
+     {
+      "q": "\"groom\" means:",
+      "o": [
+       "عروس",
+       "ضيفة",
+       "عريس"
+      ],
+      "a": 2,
+      "lv": "easy"
+     },
+     {
+      "tf": true,
+      "q": "Sahra is a party before the wedding day.",
+      "lv": "easy"
+     },
+     {
+      "type": "match",
+      "q": "صِل كلّ كلمة بمعناها",
+      "pairs": [
+       [
+        "guest",
+        "ضيف"
+       ],
+       [
+        "ring",
+        "خاتم"
+       ],
+       [
+        "celebrate",
+        "يحتفل"
+       ],
+       [
+        "custom",
+        "عادة"
+       ]
+      ],
+      "lv": "medium"
+     },
+     {
+      "q": "Would you ___ a cup of coffee?",
+      "o": [
+       "to like",
+       "like",
+       "liking"
+      ],
+      "a": 1,
+      "lv": "medium"
+     },
+     {
+      "q": "one wife → two ___",
+      "o": [
+       "wifes",
+       "wiveses",
+       "wives"
+      ],
+      "a": 2,
+      "lv": "medium"
+     },
+     {
+      "type": "type",
+      "q": "one child → two ___",
+      "a": [
+       "children"
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "I'd prefer to watch the DVD.",
+       "I'd prefer watch the DVD.",
+       "I'd prefering to watch the DVD."
+      ],
+      "a": 0,
+      "lv": "hard"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+      "words": [
+       "The",
+       "bride's",
+       "following",
+       "in",
+       "a",
+       "car."
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Why does Mike say 'Well, all right'?",
+      "o": [
+       "He agrees to watch the DVD",
+       "He refuses",
+       "He is angry"
+      ],
+      "a": 0,
+      "lv": "hard"
+     }
+    ]
+   }
+  ]
+ },
+ "11": {
+  "title": "نكتشف الأسماء",
+  "titleEn": "Finding out about names",
+  "lessons": [
+   {
+    "id": "11-1",
+    "title": "Finding out about names",
+    "titleAr": "نكتشف الأسماء",
+    "vocab": [
+     {
+      "en": "check",
+      "ar": "يتحقّق من",
+      "em": "✅",
+      "ex": "I need to check Yasmeen's details.",
+      "exAr": "أحتاج إلى التحقّق من بيانات ياسمين."
+     },
+     {
+      "en": "counsellor",
+      "ar": "مرشد / مستشار",
+      "em": "🧑‍🏫",
+      "ex": "I'm Rose Hill, your daughter's new counsellor.",
+      "exAr": "أنا روز هيل، المرشدة الجديدة لابنتك."
+     },
+     {
+      "en": "date of birth",
+      "ar": "تاريخ الميلاد",
+      "em": "📅",
+      "ex": "What is your date of birth?",
+      "exAr": "ما تاريخ ميلادك؟"
+     },
+     {
+      "en": "given name",
+      "ar": "الاسم الأول",
+      "em": "🏷️",
+      "ex": "Could you spell your given name for me, please?",
+      "exAr": "هل يمكنك تهجئة اسمك الأول من فضلك؟"
+     },
+     {
+      "en": "personal details",
+      "ar": "بيانات شخصية",
+      "em": "🪪",
+      "ex": "Some of our students' personal details are wrong.",
+      "exAr": "بعض البيانات الشخصية لطلّابنا خاطئة."
+     },
+     {
+      "en": "student",
+      "ar": "طالب",
+      "em": "🎓",
+      "ex": "study → student.",
+      "exAr": "study ← student (طالب)."
+     },
+     {
+      "en": "wrong",
+      "ar": "خاطئ",
+      "em": "❌",
+      "ex": "Some of our students' personal details are wrong.",
+      "exAr": "بعض البيانات الشخصية لطلّابنا خاطئة."
+     },
+     {
+      "en": "zero",
+      "ar": "صفر",
+      "em": "0️⃣",
+      "ex": "My phone number starts with zero.",
+      "exAr": "رقم هاتفي يبدأ بصفر."
+     },
+     {
+      "en": "family name",
+      "ar": "اسم العائلة",
+      "em": "👪",
+      "ex": "May I check your family name?",
+      "exAr": "هل يمكنني التحقّق من اسم عائلتك؟"
+     },
+     {
+      "en": "spell",
+      "ar": "يهجّئ",
+      "em": "🔡",
+      "ex": "Could you spell your given name for me, please?",
+      "exAr": "هل يمكنك تهجئة اسمك الأول من فضلك؟"
+     },
+     {
+      "en": "ancestor",
+      "ar": "جدّ أعلى / سلف",
+      "em": "🌳",
+      "ex": "How did our ancestors get their family names?",
+      "exAr": "كيف حصل أجدادنا على أسماء عائلاتهم؟"
+     },
+     {
+      "en": "ask",
+      "ar": "يسأل",
+      "em": "🙋",
+      "ex": "He asks what his name means.",
+      "exAr": "هو يسأل عمّا يعنيه اسمه."
+     },
+     {
+      "en": "report",
+      "ar": "ينقل كلام الآخرين",
+      "em": "📣",
+      "ex": "When we report, we often use a reporting verb like 'she says'.",
+      "exAr": "حين ننقل الكلام غالباً نستعمل فعلاً ناقلاً مثل «she says»."
+     },
+     {
+      "en": "formal letter",
+      "ar": "رسالة رسمية",
+      "em": "✉️",
+      "ex": "Dr Cook's note is the start of a formal letter.",
+      "exAr": "ملاحظة الدكتور كوك هي بداية رسالة رسمية."
+     },
+     {
+      "en": "hold",
+      "ar": "ينتظر على الخطّ",
+      "em": "📞",
+      "ex": "Could you hold, please?",
+      "exAr": "هل يمكنك الانتظار على الخطّ من فضلك؟"
+     },
+     {
+      "en": "mean",
+      "ar": "يعني",
+      "em": "💭",
+      "ex": "What does it mean?",
+      "exAr": "ماذا يعني؟"
+     }
+    ],
+    "reading": {
+     "title": "Did you know?",
+     "paras": [
+      {
+       "en": "Alan Robson: Hello. I'm Alan Robson, and you're listening to Did you know? Today, we're discussing people's names. And to answer your questions we have Dr Julia Romano. Romano: Hello, everyone. Robson: Let's begin with a call from Emma Baker. Emma: How did our ancestors get their family names? Romano: Well, they were often place names. For example, mine shows that my ancestors were once from Rome.",
+       "ar": "آلان روبسون: مرحباً، أنا آلان روبسون وأنتم تستمعون إلى برنامج «هل تعلم؟». نناقش اليوم أسماء الناس، وللإجابة عن أسئلتكم معنا الدكتورة جوليا رومانو. رومانو: مرحباً بالجميع. روبسون: لنبدأ بمكالمة من إيما بيكر. إيما: كيف حصل أجدادنا على أسماء عائلاتهم؟ رومانو: غالباً كانت أسماء أماكن، فمثلاً اسمي يدلّ على أنّ أجدادي كانوا من روما."
+      },
+      {
+       "en": "Robson: Here's an email from Adnan Haifawi. He asks what his name means. Romano: It's like mine. It means his family were from Haifa long ago. Robson: Now we have a text message from Dan Schumacher. He asks where his family were from. Romano: From Germany. Dan's name is German for shoe and maker, so they made people's shoes. There are other 'work' names too, like Farmer and Fisher.",
+       "ar": "روبسون: هذه رسالة إلكترونية من عدنان هيفاوي يسأل عمّا يعنيه اسمه. رومانو: مثل اسمي، يعني أنّ عائلته كانت من حيفا منذ زمن بعيد. روبسون: والآن رسالة نصّية من دان شوماخر يسأل من أين كانت عائلته. رومانو: من ألمانيا، فاسم دان بالألمانية يعني «حذاء» و«صانع» فكانوا يصنعون أحذية الناس. وهناك أسماء «مهن» أخرى مثل Farmer وFisher."
+      },
+      {
+       "en": "Robson: This email is from Tina Johnson. She wants to know when people started using family names. Romano: Long ago. Perhaps 700 years ago, people started calling an ancestor of hers John's son – and that became Johnson.",
+       "ar": "روبسون: هذه رسالة من تينا جونسون تريد أن تعرف متى بدأ الناس باستعمال أسماء العائلات. رومانو: منذ زمن بعيد، ربّما قبل 700 عام بدأ الناس يسمّون أحد أجدادها «ابن جون»، فصار الاسم Johnson."
+      },
+      {
+       "en": "Robson: And finally, we have Lucy Paris on the line. Lucy: How do parents choose given names? Romano: In different ways. For example, parents often hope their children will be like their names. Yours means 'light', Lucy, so perhaps your parents hope you'll bring light into people's lives and make them happy.",
+       "ar": "روبسون: وأخيراً معنا لوسي باريس على الخطّ. لوسي: كيف يختار الأهل الأسماء الأولى؟ رومانو: بطرق مختلفة، فمثلاً غالباً يأمل الأهل أن يشبه أبناؤهم أسماءهم. اسمك يعني «نور» يا لوسي، فربّما يأمل والداك أن تدخلي النور إلى حياة الناس وتُسعديهم."
+      }
+     ],
+     "questions": [
+      {
+       "tf": false,
+       "q": "Dr Romano comes from Rome.",
+       "why": "Her name shows that her ancestors were once from Rome."
+      },
+      {
+       "q": "What does Adnan Haifawi's name show?",
+       "o": [
+        "His family made shoes",
+        "His family were farmers",
+        "His family were from Haifa long ago"
+       ],
+       "a": 2
+      },
+      {
+       "q": "What does Dan Schumacher's name mean in German?",
+       "o": [
+        "Farmer",
+        "Fisher",
+        "Shoe maker"
+       ],
+       "a": 2
+      },
+      {
+       "q": "When did people perhaps start using family names?",
+       "o": [
+        "Last year",
+        "100 years ago",
+        "About 700 years ago"
+       ],
+       "a": 2
+      },
+      {
+       "q": "What does the name Lucy mean?",
+       "o": [
+        "Light",
+        "Flower",
+        "Rose"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    "rules": [
+     {
+      "title": "Reported statements",
+      "titleAr": "نقل الجمل الخبرية",
+      "explain": "عند نقل كلام شخص لآخر نستعمل <b>فعلاً ناقلاً</b> مثل <b>says</b> (She says …) غالباً بالمضارع البسيط، ونغيّر الضمائر: <b>I / we ← he / she / they</b> و<b>my ← his / her</b> و<b>you ← I / he / she</b>. وفي الجملة ذات الجزأين لا نكرّر الفعل الناقل دائماً.",
+      "form": "S + says (that) + reported clause (غيّر الضمائر)",
+      "examples": [
+       {
+        "en": "Rose: 'Some of our students' details are wrong.' → She says some of **their** students' details are wrong.",
+        "ar": "نقل"
+       },
+       {
+        "en": "Rose: 'I need to check Yasmeen's.' → She says she needs to check Yasmeen's.",
+        "ar": "I ← she"
+       },
+       {
+        "en": "Rose: 'I need to check yours.' → She says she needs to check **yours**.",
+        "ar": "نقل"
+       },
+       {
+        "en": "Omar: 'I'm trying to finish my work tonight.' → Omar says **he's** trying to finish his work tonight.",
+        "ar": "I ← he"
+       }
+      ],
+      "questions": [
+       {
+        "q": "Rose: 'I need to check your details.' → Rose says she ___ to check my details.",
+        "o": [
+         "needs",
+         "need",
+         "needing"
+        ],
+        "a": 0
+       },
+       {
+        "q": "Sami: 'I'm tired.' → Sami says ___ tired.",
+        "o": [
+         "he is",
+         "I am",
+         "you are"
+        ],
+        "a": 0
+       },
+       {
+        "q": "Mum: 'I'm sorry to call you late.' → Mum says ___ sorry to call me late.",
+        "o": [
+         "I am",
+         "she is",
+         "you are"
+        ],
+        "a": 1
+       },
+       {
+        "q": "'Your phone number is incorrect, Ali.' → The teacher says ___ phone number is incorrect.",
+        "o": [
+         "his",
+         "your",
+         "my"
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "'I'm Rose Hill and I want to ask you some questions, Amal.' → She says she ___ Rose Hill. (be)",
+        "a": [
+         "is",
+         "'s"
+        ]
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «هي تقول إنّ بعض البيانات خاطئة»",
+        "words": [
+         "She",
+         "says",
+         "some",
+         "of",
+         "the",
+         "details",
+         "are",
+         "wrong."
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Reported questions",
+      "titleAr": "نقل الأسئلة",
+      "explain": "ننقل السؤال بعد فعل مثل <b>asks / wants to know / needs to check</b> ثمّ <b>أداة السؤال</b> (what / where / when / how) ثمّ <b>ترتيب الجملة الخبرية</b> (فاعل ثمّ فعل) بلا do / does / did ولا علامة استفهام: <b>What does my name mean?</b> ← He asks <b>what his name means</b>. ويتحوّل الزمن: did + V1 ← V2.",
+      "form": "asks / wants to know + wh-word + S + V (ترتيب الجملة الخبرية)",
+      "examples": [
+       {
+        "en": "'What does my name mean?' → He asks **what his name means**.",
+        "ar": "نقل سؤال"
+       },
+       {
+        "en": "'Where were my family from?' → He asks **where his family were from**.",
+        "ar": "نقل سؤال"
+       },
+       {
+        "en": "'When did people start using family names?' → Tina wants to know **when people started using family names**.",
+        "ar": "did ← V2"
+       },
+       {
+        "en": "'When will you have time to meet me?' → Rose wants to know **when she will have time to meet her**.",
+        "ar": "will"
+       }
+      ],
+      "questions": [
+       {
+        "q": "'Where does she live?' → He needs to check ___.",
+        "o": [
+         "where does she live",
+         "where she lives",
+         "where she live"
+        ],
+        "a": 1
+       },
+       {
+        "q": "'What's her home telephone number?' → He also wants to know ___.",
+        "o": [
+         "what is her home telephone number",
+         "what her home telephone number",
+         "what her home telephone number is"
+        ],
+        "a": 2
+       },
+       {
+        "q": "'How does Helen spell her family name?' → Dr Cook asks ___.",
+        "o": [
+         "how does Helen spell her family name",
+         "how Helen spell her family name",
+         "how Helen spells her family name"
+        ],
+        "a": 2
+       },
+       {
+        "q": "'When did people start using money?' → The teacher asks ___.",
+        "o": [
+         "when did people start using money",
+         "when people start using money",
+         "when people started using money"
+        ],
+        "a": 2
+       },
+       {
+        "type": "type",
+        "q": "'What does your name mean, Yasmeen?' → Rose asks what her name ___.",
+        "a": [
+         "means"
+        ]
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «هو يسأل عمّا يعنيه اسمه»",
+        "words": [
+         "He",
+         "asks",
+         "what",
+         "his",
+         "name",
+         "means."
+        ]
+       }
+      ]
+     },
+     {
+      "title": "A formal letter",
+      "titleAr": "الرسالة الرسمية",
+      "explain": "الرسالة الرسمية فيها: <b>عنوان المرسِل</b> وتاريخ اليوم وعنوان المرسَل إليه، ثمّ التحيّة <b>Dear Mr and Mrs Jarrett</b>، وسطر الموضوع، ثمّ النصّ، وتنتهي بـ <b>Yours truly</b> والاسم والوظيفة. وتختلف عن رسالة صديق القلم في أنّ البداية والنهاية أكثر رسميّة. ونستعمل في النصّ الأسئلة المنقولة (He wants to know what time they will arrive).",
+      "form": "Address · Date · Address · Dear … · Subject · text · Yours truly · name · job",
+      "examples": [
+       {
+        "en": "**Dear** Mr and Mrs Jarrett",
+        "ar": "التحيّة"
+       },
+       {
+        "en": "**Allen's start at Fairfax High**",
+        "ar": "سطر الموضوع"
+       },
+       {
+        "en": "Dr Cook says he is **pleased that** they can visit the school.",
+        "ar": "نقل"
+       },
+       {
+        "en": "He wants to know **what time they will arrive**.",
+        "ar": "سؤال منقول"
+       },
+       {
+        "en": "**Yours truly**",
+        "ar": "نهاية رسمية"
+       }
+      ],
+      "questions": [
+       {
+        "q": "Which is the correct start of a formal letter to Mr and Mrs Jarrett?",
+        "o": [
+         "Hi Jarretts",
+         "Hello friends",
+         "Dear Mr and Mrs Jarrett"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Which is a formal ending?",
+        "o": [
+         "See you!",
+         "Bye bye",
+         "Yours truly"
+        ],
+        "a": 2
+       },
+       {
+        "q": "'What time will you arrive?' → He wants to know ___.",
+        "o": [
+         "what time will they arrive",
+         "what time they arrive will",
+         "what time they will arrive"
+        ],
+        "a": 2
+       },
+       {
+        "q": "'How long are you going to stay?' → He wants to know ___.",
+        "o": [
+         "how long are they going to stay",
+         "how long they going to stay",
+         "how long they are going to stay"
+        ],
+        "a": 2
+       },
+       {
+        "type": "type",
+        "q": "'Who would you like to meet?' → He wants to know who ___ like to meet. (they)",
+        "a": [
+         "they would"
+        ]
+       },
+       {
+        "q": "The subject line tells the reader ___.",
+        "o": [
+         "what the letter is about",
+         "who the writer is",
+         "the date"
+        ],
+        "a": 0
+       }
+      ]
+     }
+    ],
+    "mastery": [
+     {
+      "q": "\"counsellor\" means:",
+      "o": [
+       "مرشد",
+       "مدرّس",
+       "مدير"
+      ],
+      "a": 0,
+      "lv": "easy"
+     },
+     {
+      "q": "\"given name\" means:",
+      "o": [
+       "الاسم الأول",
+       "اسم العائلة",
+       "اسم الشارع"
+      ],
+      "a": 0,
+      "lv": "easy"
+     },
+     {
+      "tf": true,
+      "q": "Yasmeen's name is the name of a flower.",
+      "lv": "easy"
+     },
+     {
+      "type": "match",
+      "q": "صِل كلّ كلمة بمعناها",
+      "pairs": [
+       [
+        "wrong",
+        "خاطئ"
+       ],
+       [
+        "check",
+        "يتحقّق"
+       ],
+       [
+        "zero",
+        "صفر"
+       ],
+       [
+        "ancestor",
+        "جدّ أعلى"
+       ]
+      ],
+      "lv": "medium"
+     },
+     {
+      "q": "'I'm working late.' → She says she ___ working late.",
+      "o": [
+       "am",
+       "are",
+       "is"
+      ],
+      "a": 2,
+      "lv": "medium"
+     },
+     {
+      "q": "'Where were my family from?' → He asks ___.",
+      "o": [
+       "where his family were from",
+       "where were his family from",
+       "where his family was were"
+      ],
+      "a": 0,
+      "lv": "medium"
+     },
+     {
+      "type": "type",
+      "q": "'What does my name mean?' → He asks what his name ___.",
+      "a": [
+       "means"
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "Rose wants to know when she will have time to meet her.",
+       "Rose wants to know when will she have time to meet her.",
+       "Rose wants to know when does she have time?"
+      ],
+      "a": 0,
+      "lv": "hard"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+      "words": [
+       "She",
+       "wants",
+       "to",
+       "know",
+       "when",
+       "people",
+       "started",
+       "using",
+       "family",
+       "names."
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Why does Rose Hill call Mr Haifawi?",
+      "o": [
+       "To check Yasmeen's personal details",
+       "To talk about football",
+       "To sell something"
+      ],
+      "a": 0,
+      "lv": "hard"
+     }
+    ]
+   }
+  ]
+ },
+ "12": {
+  "title": "حين جاء الإسلام إلى إسبانيا",
+  "titleEn": "When Islam came to Spain",
+  "lessons": [
+   {
+    "id": "12-1",
+    "title": "When Islam came to Spain",
+    "titleAr": "حين جاء الإسلام إلى إسبانيا",
+    "vocab": [
+     {
+      "en": "housework",
+      "ar": "أعمال المنزل",
+      "em": "🧹",
+      "ex": "I have to get up early and help do the housework.",
+      "exAr": "عليّ أن أستيقظ مبكّراً وأساعد في أعمال المنزل."
+     },
+     {
+      "en": "hurry up",
+      "ar": "يسرع",
+      "em": "🏃",
+      "ex": "I want to hurry up and finish today.",
+      "exAr": "أريد أن أسرع وأنهي اليوم."
+     },
+     {
+      "en": "look up",
+      "ar": "يبحث عن (في كتاب)",
+      "em": "🔍",
+      "ex": "I'll look up my History of Islam here.",
+      "exAr": "سأبحث في كتابي «تاريخ الإسلام» هنا."
+     },
+     {
+      "en": "Muslim",
+      "ar": "مسلم",
+      "em": "🕌",
+      "ex": "Muslims from North Africa took Spain.",
+      "exAr": "فتح مسلمون من شمال أفريقيا إسبانيا."
+     },
+     {
+      "en": "pick up",
+      "ar": "يلتقط / يرفع",
+      "em": "📲",
+      "ex": "He puts down his pen and picks up his phone.",
+      "exAr": "يضع قلمه ويلتقط هاتفه."
+     },
+     {
+      "en": "put down",
+      "ar": "يضع (من يده)",
+      "em": "✏️",
+      "ex": "He puts down his pen.",
+      "exAr": "يضع قلمه."
+     },
+     {
+      "en": "take over",
+      "ar": "يستولي على / يتولّى",
+      "em": "🏰",
+      "ex": "They took over the country.",
+      "exAr": "سيطروا على البلاد."
+     },
+     {
+      "en": "turn off",
+      "ar": "يُطفئ",
+      "em": "🔌",
+      "ex": "You should turn off your computer and stop.",
+      "exAr": "عليك أن تُطفئ حاسوبك وتتوقّف."
+     },
+     {
+      "en": "work on",
+      "ar": "يعمل على",
+      "em": "💻",
+      "ex": "What are you working on now?",
+      "exAr": "على ماذا تعمل الآن؟"
+     },
+     {
+      "en": "architecture",
+      "ar": "هندسة معمارية",
+      "em": "🏛️",
+      "ex": "Omar likes to design houses, so he plans to study architecture.",
+      "exAr": "يحبّ عمر تصميم البيوت فيخطّط لدراسة الهندسة المعمارية."
+     },
+     {
+      "en": "disease",
+      "ar": "مرض",
+      "em": "🦠",
+      "ex": "In the past, diseases killed many people.",
+      "exAr": "في الماضي كانت الأمراض تقتل كثيرين."
+     },
+     {
+      "en": "medical",
+      "ar": "طبّي",
+      "em": "⚕️",
+      "ex": "Al-Zahrawi worked out many new medical operations.",
+      "exAr": "ابتكر الزهراوي عمليات طبّية جديدة كثيرة."
+     },
+     {
+      "en": "operation",
+      "ar": "عملية جراحية",
+      "em": "🩺",
+      "ex": "Al-Zahrawi worked out many new medical operations.",
+      "exAr": "ابتكر الزهراوي عمليات طبّية جديدة كثيرة."
+     },
+     {
+      "en": "capital",
+      "ar": "عاصمة",
+      "em": "🏙️",
+      "ex": "The Muslims needed a capital, and they set it up in Cordoba.",
+      "exAr": "احتاج المسلمون إلى عاصمة فأسّسوها في قرطبة."
+     },
+     {
+      "en": "set up",
+      "ar": "يؤسّس",
+      "em": "🏗️",
+      "ex": "They set it up in Cordoba.",
+      "exAr": "أسّسوها في قرطبة."
+     },
+     {
+      "en": "work out",
+      "ar": "يكتشف / يبتكر",
+      "em": "💡",
+      "ex": "Al-Zahrawi worked out many new medical operations.",
+      "exAr": "ابتكر الزهراوي عمليات طبّية جديدة كثيرة."
+     }
+    ],
+    "reading": {
+     "title": "The Muslims in Al-Andalus",
+     "paras": [
+      {
+       "en": "People often say East is East and West is West, and the two can never meet. However, the history of Spain tells us something different. Here, East and West met for almost 800 years. They sometimes fought, but there was real contact between cultures.",
+       "ar": "يقول الناس غالباً إنّ الشرق شرق والغرب غرب ولا يلتقيان أبداً، لكنّ تاريخ إسبانيا يخبرنا بغير ذلك. فهنا التقى الشرق والغرب قرابة 800 عام، وقد تقاتلوا أحياناً لكنّ تواصلاً حقيقياً قام بين الثقافات."
+      },
+      {
+       "en": "When the Muslims arrived in 711, they took the country over very quickly. They came with new ideas, and they completely changed the land that they called Al-Andalus. With new crops and better ways of farming, Al-Andalus soon grew rich.",
+       "ar": "حين وصل المسلمون عام 711 سيطروا على البلاد بسرعة كبيرة، وجاؤوا بأفكار جديدة وغيّروا الأرض التي سمّوها الأندلس تغييراً كاملاً. وبفضل المحاصيل الجديدة وطرق الزراعة الأفضل أصبحت الأندلس غنيّة سريعاً."
+      },
+      {
+       "en": "The Muslims needed a capital, and they set it up in Cordoba. Here, they built beautiful mosques and palaces, and the city became as important as Baghdad. Al-Andalus became a centre of the Islamic World and the centre of civilisation in Europe.",
+       "ar": "احتاج المسلمون إلى عاصمة فأسّسوها في قرطبة، وبنوا فيها مساجد وقصوراً جميلة وصارت المدينة بأهمّية بغداد. وأصبحت الأندلس مركزاً للعالم الإسلامي ومركز الحضارة في أوروبا."
+      },
+      {
+       "en": "Its science, medicine, architecture, arts and crafts became famous. Here, Al-Khatib found out how people pass diseases on. Here, Al-Zahrawi worked out many new medical operations. Students in both East and West studied the work of people like these for centuries, and we still remember them today.",
+       "ar": "اشتهر علمها وطبّها وهندستها وفنونها وحرفها. وهنا اكتشف ابن الخطيب كيف ينقل الناس الأمراض لبعضهم، وهنا ابتكر الزهراوي عمليات طبّية جديدة كثيرة. ودرس الطلّاب في الشرق والغرب أعمال أمثالهما قروناً ونحن لا نزال نذكرهم اليوم."
+      },
+      {
+       "en": "Spain is now a busy, modern country. But walk the narrow streets of old Cordoba and visit Granada's amazing Alhambra Palace and gardens, and you will find a different Spain. Here, ancient Al-Andalus still lives.",
+       "ar": "إسبانيا اليوم بلد حديث مزدحم، لكن امشِ في شوارع قرطبة القديمة الضيّقة وزر قصر الحمراء المدهش وحدائقه في غرناطة فتجد إسبانيا مختلفة، فهنا لا تزال الأندلس القديمة حيّة."
+      }
+     ],
+     "questions": [
+      {
+       "tf": true,
+       "q": "East and West met in Spain for almost 800 years."
+      },
+      {
+       "q": "When did the Muslims arrive in Spain?",
+       "o": [
+        "In 711",
+        "In 1492",
+        "In 622"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Where did the Muslims set up their capital?",
+       "o": [
+        "Granada",
+        "Cordoba",
+        "Baghdad"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Who found out how people pass diseases on?",
+       "o": [
+        "Al-Zahrawi",
+        "Tariq",
+        "Al-Khatib"
+       ],
+       "a": 2
+      },
+      {
+       "tf": false,
+       "q": "The feeling of ancient Al-Andalus has completely gone from modern Spain.",
+       "why": "In old Cordoba and Granada's Alhambra, ancient Al-Andalus still lives."
+      }
+     ]
+    },
+    "rules": [
+     {
+      "title": "Phrasal verbs",
+      "titleAr": "الأفعال المركّبة",
+      "explain": "<b>الفعل المركّب</b> فعل + حرف جرّ أو ظرف يعطيان معنى جديداً: <b>put down</b> (يضع)، <b>pick up</b> (يلتقط)، <b>hurry up</b> (يسرع)، <b>look up</b> (يبحث عن)، <b>take over</b> (يستولي)، <b>turn off</b> (يُطفئ)، <b>work on</b> (يعمل على)، <b>set up</b> (يؤسّس)، <b>work out</b> (يبتكر)، <b>get up</b> (ينهض)، <b>tidy up</b> (يرتّب)، <b>sweep up</b> (يكنس). ويجوز وضع المفعول بين الفعل والحرف (turn it off).",
+      "form": "verb + particle (up / down / off / on / over / out)",
+      "examples": [
+       {
+        "en": "He **puts down** his pen and **picks up** his phone.",
+        "ar": "وضع والتقط"
+       },
+       {
+        "en": "I want to **hurry up** and finish today.",
+        "ar": "يسرع"
+       },
+       {
+        "en": "I'll **look up** my History of Islam here.",
+        "ar": "يبحث"
+       },
+       {
+        "en": "You should **turn off** your computer.",
+        "ar": "يُطفئ"
+       },
+       {
+        "en": "They **took over** the country.",
+        "ar": "استولوا"
+       }
+      ],
+      "questions": [
+       {
+        "q": "He puts ___ his pen and picks up his phone.",
+        "o": [
+         "off",
+         "down",
+         "over"
+        ],
+        "a": 1
+       },
+       {
+        "q": "You should turn ___ your computer and stop. It's late!",
+        "o": [
+         "up",
+         "over",
+         "off"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Could you help me ___ the year Muslims took over Spain?",
+        "o": [
+         "look after",
+         "look on",
+         "look up"
+        ],
+        "a": 2
+       },
+       {
+        "q": "What are you ___ for your school project?",
+        "o": [
+         "working on",
+         "working off",
+         "working in"
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "They set ___ the capital in Cordoba. (up / down)",
+        "a": [
+         "up"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "The Muslims took ___ the country very quickly. (over / off)",
+        "a": [
+         "over"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Linking words",
+      "titleAr": "أدوات الربط",
+      "explain": "نربط الأفكار بأدوات ربط: <b>and</b> للإضافة، <b>but / however / although</b> للتضادّ، <b>so / therefore / and so</b> للنتيجة، <b>because</b> للسبب، <b>or</b> للاختيار، <b>in order to</b> للغرض (+V1)، <b>for example</b> للمثال. وبعد <b>Although</b> و<b>Because</b> نضع جملة كاملة.",
+      "form": "because + سبب · so + نتيجة · but / however + تضادّ · in order to + V1 · for example",
+      "examples": [
+       {
+        "en": "They knew a lot about farming, **so** they introduced their ideas.",
+        "ar": "نتيجة"
+       },
+       {
+        "en": "**Because** Muslim farmers came from dry climates, they knew how to use water well.",
+        "ar": "سبب"
+       },
+       {
+        "en": "**For example**, they built channels **in order to** carry river water.",
+        "ar": "مثال وغرض"
+       },
+       {
+        "en": "**However**, they were soon growing crops in large quantities.",
+        "ar": "تضادّ"
+       },
+       {
+        "en": "They introduced lemons, oranges, dates **and** rice.",
+        "ar": "إضافة"
+       }
+      ],
+      "questions": [
+       {
+        "q": "The team trained very hard, ___ they won the match.",
+        "o": [
+         "so",
+         "or",
+         "because"
+        ],
+        "a": 0
+       },
+       {
+        "q": "___ the team trained very hard, they won the match.",
+        "o": [
+         "So",
+         "Because",
+         "Or"
+        ],
+        "a": 1
+       },
+       {
+        "q": "Would you like the red ___ the green T-shirt?",
+        "o": [
+         "and",
+         "or",
+         "so"
+        ],
+        "a": 1
+       },
+       {
+        "q": "They built channels ___ carry river water to dry land.",
+        "o": [
+         "because",
+         "in order to",
+         "however"
+        ],
+        "a": 1
+       },
+       {
+        "type": "type",
+        "q": "The Muslims knew a lot about farming, ___ they introduced their ideas. (so / but)",
+        "a": [
+         "so"
+        ]
+       },
+       {
+        "q": "The Muslims took over Spain in ___ six years.",
+        "o": [
+         "just",
+         "soon",
+         "so"
+        ],
+        "a": 0
+       }
+      ]
+     },
+     {
+      "title": "Time expressions and topic sentences",
+      "titleAr": "عبارات الزمن والجملة الرئيسية",
+      "explain": "نرتّب أحداث الفقرة بعبارات زمن: <b>First, Then, Soon, In only three years, Just two years after that, After five more years, Next morning, Finally</b>. وتبدأ الفقرة بـ <b>جملة رئيسية</b> (topic sentence) تلخّص فكرتها (The Muslims took over most of Spain in just six years)، وبقية الجمل تدعمها.",
+      "form": "topic sentence + First / Then / Soon / Finally …",
+      "examples": [
+       {
+        "en": "**First**, Tariq Ibn Ziyad sailed over from North Africa with just 7,000 men in 711.",
+        "ar": "ترتيب"
+       },
+       {
+        "en": "**Just two years after that**, Musa Ibn Nusayr brought another 18,000.",
+        "ar": "بعد زمن"
+       },
+       {
+        "en": "**In only three years**, the Muslims were pushing north.",
+        "ar": "مدّة"
+       },
+       {
+        "en": "**Soon**, by 715, most of the south was in Muslim hands.",
+        "ar": "بسرعة"
+       },
+       {
+        "en": "**Then** the Muslims set up a capital in 717.",
+        "ar": "ثمّ"
+       }
+      ],
+      "questions": [
+       {
+        "q": "Which is the best topic sentence for the paragraph about Tariq Ibn Ziyad and Musa Ibn Nusayr?",
+        "o": [
+         "The Muslims remained for 800 years.",
+         "The Muslims took over most of Spain in just six years.",
+         "How the Muslims chose a capital."
+        ],
+        "a": 1
+       },
+       {
+        "q": "Tariq Ibn Ziyad sailed over with just 7,000 men in 711. ___, Musa Ibn Nusayr brought 18,000 more.",
+        "o": [
+         "Just two years after that",
+         "Finally",
+         "However"
+        ],
+        "a": 0
+       },
+       {
+        "q": "___ the Muslims were ready to set up a capital city, and in 717 they chose Cordoba.",
+        "o": [
+         "Because",
+         "Or",
+         "Then"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Which topic sentence fits the farming paragraph?",
+        "o": [
+         "Farmers made some of the most important changes in Al-Andalus.",
+         "The capital was Cordoba.",
+         "Al-Zahrawi was a doctor."
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "In only three ___ the Muslims were pushing north. (years / days)",
+        "a": [
+         "years"
+        ]
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+        "words": [
+         "The",
+         "Muslims",
+         "arrived",
+         "in",
+         "Spain",
+         "in",
+         "711."
+        ]
+       }
+      ]
+     }
+    ],
+    "mastery": [
+     {
+      "q": "\"capital\" means:",
+      "o": [
+       "قصر",
+       "مسجد",
+       "عاصمة"
+      ],
+      "a": 2,
+      "lv": "easy"
+     },
+     {
+      "q": "\"disease\" means:",
+      "o": [
+       "دواء",
+       "طبيب",
+       "مرض"
+      ],
+      "a": 2,
+      "lv": "easy"
+     },
+     {
+      "tf": true,
+      "q": "The Muslims arrived in Spain in the year 711.",
+      "lv": "easy"
+     },
+     {
+      "type": "match",
+      "q": "صِل كلّ كلمة بمعناها",
+      "pairs": [
+       [
+        "turn off",
+        "يُطفئ"
+       ],
+       [
+        "look up",
+        "يبحث عن"
+       ],
+       [
+        "set up",
+        "يؤسّس"
+       ],
+       [
+        "take over",
+        "يستولي"
+       ]
+      ],
+      "lv": "medium"
+     },
+     {
+      "q": "He puts ___ his pen and picks up his phone.",
+      "o": [
+       "off",
+       "down",
+       "out"
+      ],
+      "a": 1,
+      "lv": "medium"
+     },
+     {
+      "q": "The team trained hard, ___ they won.",
+      "o": [
+       "or",
+       "so",
+       "but"
+      ],
+      "a": 1,
+      "lv": "medium"
+     },
+     {
+      "type": "type",
+      "q": "Sami: I'll ___ up my History of Islam here. (look)",
+      "a": [
+       "look"
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "They set up a capital in Cordoba.",
+       "They set a capital up in Cordoba on.",
+       "They set capital out Cordoba."
+      ],
+      "a": 0,
+      "lv": "hard"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+      "words": [
+       "The",
+       "Muslims",
+       "set",
+       "up",
+       "their",
+       "capital",
+       "in",
+       "Cordoba."
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Why was Al-Andalus a centre of civilisation?",
+      "o": [
+       "It had no cities",
+       "Its science, medicine, architecture and arts became famous",
+       "It was very small"
+      ],
+      "a": 1,
+      "lv": "hard"
+     }
+    ]
+   }
+  ]
  }
 }};

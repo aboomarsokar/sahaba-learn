@@ -1335,7 +1335,1164 @@ window.LEXORA_PRACTICE = {
      ]
     }
    ]
+  },
+  "10": {
+   "readingFrom": 10,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "The ___ rides a horse in the Zaffa.",
+       "o": [
+        "guest",
+        "ring",
+        "groom"
+       ],
+       "a": 2
+      },
+      {
+       "q": "The bride and the ___ are sitting in the centre.",
+       "o": [
+        "dough",
+        "groom",
+        "custom"
+       ],
+       "a": 1
+      },
+      {
+       "q": "When do Muslims ___ Eid al-Fitr?",
+       "o": [
+        "celebrate",
+        "follow",
+        "hold"
+       ],
+       "a": 0
+      },
+      {
+       "q": "There are hundreds of ___ at a Palestinian wedding.",
+       "o": [
+        "rings",
+        "DVDs",
+        "guests"
+       ],
+       "a": 2
+      },
+      {
+       "type": "type",
+       "q": "Please show us your beautiful wedding ___.",
+       "a": [
+        "ring"
+       ]
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "Would you ___ a cup of coffee, Fatema?",
+       "o": [
+        "like",
+        "love prefer",
+        "to like"
+       ],
+       "a": 0
+      },
+      {
+       "q": "No, thanks. I ___ a glass of tea.",
+       "o": [
+        "would prefer",
+        "like to",
+        "am prefer"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Different types of ___ live in the jungle. (monkey)",
+       "o": [
+        "monkies",
+        "monkeyes",
+        "monkeys"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Mum cut the big melon into two ___. (half)",
+       "o": [
+        "halfs",
+        "halfes",
+        "halves"
+       ],
+       "a": 2
+      },
+      {
+       "q": "I keep my old ___ in three big ___. (dress, box)",
+       "o": [
+        "dresss / boxs",
+        "dresses / boxes",
+        "dresses / boxs"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Which sentence is correct?",
+       "o": [
+        "Let's go shopping, Dana.",
+        "Let's go, shopping Dana.",
+        "Lets go shopping, Dana."
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "What is Sahra?",
+       "o": [
+        "A wedding cake",
+        "A dress",
+        "A party before the wedding day"
+       ],
+       "a": 2
+      },
+      {
+       "tf": false,
+       "q": "The bride rides the horse in the Zaffa.",
+       "why": "The groom rides the horse; the bride follows in a car."
+      },
+      {
+       "q": "What does Tina think of the bride?",
+       "o": [
+        "She looks beautiful",
+        "She looks sad",
+        "She looks tired"
+       ],
+       "a": 0
+      },
+      {
+       "q": "What does Mike prefer at the end?",
+       "o": [
+        "To play computer games",
+        "To watch the DVD again",
+        "To sleep"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  "11": {
+   "readingFrom": 11,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Some students' personal ___ are wrong.",
+       "o": [
+        "zeros",
+        "counsellors",
+        "details"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Could you ___ your given name for me, please?",
+       "o": [
+        "hold",
+        "check",
+        "spell"
+       ],
+       "a": 2
+      },
+      {
+       "q": "I need to ___ Yasmeen's family name.",
+       "o": [
+        "wake",
+        "check",
+        "miss"
+       ],
+       "a": 1
+      },
+      {
+       "q": "A school ___ gives students advice.",
+       "o": [
+        "guest",
+        "bride",
+        "counsellor"
+       ],
+       "a": 2
+      },
+      {
+       "type": "type",
+       "q": "Yasmeen is a ___ at an American school. (study → noun)",
+       "a": [
+        "student"
+       ]
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "'I'm trying to finish my work tonight.' → Omar says ___ trying to finish his work tonight.",
+       "o": [
+        "I am",
+        "you are",
+        "he is"
+       ],
+       "a": 2
+      },
+      {
+       "q": "'I am Rose Hill and I want to ask you some questions, Amal.' → She says she ___ Rose Hill.",
+       "o": [
+        "am",
+        "is",
+        "are"
+       ],
+       "a": 1
+      },
+      {
+       "q": "'What's your home telephone number, Ali?' → The counsellor wants to know ___.",
+       "o": [
+        "what his home telephone number is",
+        "what is his home telephone number",
+        "what your number is"
+       ],
+       "a": 0
+      },
+      {
+       "q": "'When did people start using money?' → The teacher asks ___.",
+       "o": [
+        "when did people start using money",
+        "when people start using money",
+        "when people started using money"
+       ],
+       "a": 2
+      },
+      {
+       "q": "'What does your name mean, Yasmeen?' → Rose asks ___.",
+       "o": [
+        "what does her name mean",
+        "what her name means",
+        "what her name mean"
+       ],
+       "a": 1
+      },
+      {
+       "q": "A formal letter ends with:",
+       "o": [
+        "See you",
+        "Love",
+        "Yours truly"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "Where did Dr Romano's ancestors come from?",
+       "o": [
+        "Haifa",
+        "Germany",
+        "Rome"
+       ],
+       "a": 2
+      },
+      {
+       "tf": false,
+       "q": "Dan Schumacher's family made bread.",
+       "why": "Schumacher means shoe-maker in German."
+      },
+      {
+       "q": "Who wants to know when people started using family names?",
+       "o": [
+        "Emma Baker",
+        "Lucy Paris",
+        "Tina Johnson"
+       ],
+       "a": 2
+      },
+      {
+       "q": "What does Lucy mean?",
+       "o": [
+        "Flower",
+        "Light",
+        "Shoe"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  "12": {
+   "readingFrom": 12,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "What are you ___ for your school project?",
+       "o": [
+        "working on",
+        "turning off",
+        "setting up"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Jerusalem is the eternal ___ of Palestine.",
+       "o": [
+        "architecture",
+        "capital",
+        "disease"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Omar likes to design houses, so he plans to study ___.",
+       "o": [
+        "architecture",
+        "operations",
+        "housework"
+       ],
+       "a": 0
+      },
+      {
+       "q": "In the past, ___ killed many people all around the world.",
+       "o": [
+        "capitals",
+        "diseases",
+        "guests"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Please, could you help me ___ the year Muslims took over Spain?",
+       "o": [
+        "look up",
+        "turn off",
+        "put down"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "The Muslims took over Spain in ___ six years.",
+       "o": [
+        "just",
+        "soon",
+        "so"
+       ],
+       "a": 0
+      },
+      {
+       "q": "The Muslims knew a lot about farming ___ they introduced their ideas.",
+       "o": [
+        "in order to",
+        "so",
+        "because"
+       ],
+       "a": 1
+      },
+      {
+       "q": "___ the team trained very hard, they won the match.",
+       "o": [
+        "And so",
+        "Because",
+        "Or"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Would you like the red ___ the green T-shirt?",
+       "o": [
+        "and",
+        "or",
+        "so"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Sami puts ___ his pen and picks up his phone.",
+       "o": [
+        "over",
+        "down",
+        "on"
+       ],
+       "a": 1
+      },
+      {
+       "q": "First, Tariq sailed over. ___ after that, Musa brought 18,000 more.",
+       "o": [
+        "Because",
+        "Or",
+        "Just two years"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "What is the Islamic name of Spain?",
+       "o": [
+        "Al-Andalus",
+        "Cordoba",
+        "Baghdad"
+       ],
+       "a": 0
+      },
+      {
+       "tf": false,
+       "q": "Al-Khatib and Al-Zahrawi were famous for architecture.",
+       "why": "They were famous for medicine."
+      },
+      {
+       "q": "What did Al-Zahrawi work out?",
+       "o": [
+        "New medical operations",
+        "New crops",
+        "New palaces"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Where did the Muslims set up their capital?",
+       "o": [
+        "Granada",
+        "Cordoba",
+        "Madrid"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
   }
  },
- "tests": []
+ "tests": [
+  {
+   "id": "t1",
+   "title": "اختبار شامل: الوحدات 1–3",
+   "titleEn": "Comprehensive Test: Units 1–3",
+   "units": [
+    1,
+    3
+   ],
+   "readingFrom": 3,
+   "sections": [
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "When did the United States make Yosemite a National Park?",
+       "o": [
+        "In 1890",
+        "In 1950",
+        "In 1790"
+       ],
+       "a": 0
+      },
+      {
+       "tf": false,
+       "q": "The animals are the most amazing living things in Yosemite.",
+       "why": "The huge trees are the most amazing."
+      },
+      {
+       "tf": true,
+       "q": "People are damaging Yosemite again because of millions of cars and heavy feet."
+      },
+      {
+       "q": "What is Tony Ross doing in Yosemite?",
+       "o": [
+        "Hiking alone",
+        "Taking photos",
+        "Volunteer work for Young Friends of Yosemite"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "The opposite of 'cheap' is ___.",
+       "o": [
+        "funny",
+        "busy",
+        "expensive"
+       ],
+       "a": 2
+      },
+      {
+       "q": "The opposite of 'old' is ___.",
+       "o": [
+        "ancient",
+        "busy",
+        "young"
+       ],
+       "a": 2
+      },
+      {
+       "q": "This documentary is boring. Let's watch something ___.",
+       "o": [
+        "far",
+        "funny",
+        "busy"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The music is exciting, I ___ dancing.",
+       "o": [
+        "look like",
+        "smell like",
+        "feel like"
+       ],
+       "a": 2
+      },
+      {
+       "q": "It was very cold ___ last night, so we stayed ___.",
+       "o": [
+        "outdoors / indoors",
+        "indoors / outdoors",
+        "football / homework"
+       ],
+       "a": 0
+      },
+      {
+       "q": "You can contact her on the ___; she is at home.",
+       "o": [
+        "trip",
+        "entrance",
+        "landline"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "Nadia's mum ___ to Grandma on the landline at the moment.",
+       "o": [
+        "speaks",
+        "is speaking",
+        "speak"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Sami always ___ online in the evening.",
+       "o": [
+        "is going",
+        "goes",
+        "go"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The kebabs ___ delicious.",
+       "o": [
+        "are smelling",
+        "smelling",
+        "smell"
+       ],
+       "a": 2
+      },
+      {
+       "q": "When I was four, I ___ run, but my little sister couldn't.",
+       "o": [
+        "can",
+        "could",
+        "can't"
+       ],
+       "a": 1
+      },
+      {
+       "q": "People ___ sing folk songs about their simple lives.",
+       "o": [
+        "use to",
+        "used to",
+        "are used to"
+       ],
+       "a": 1
+      },
+      {
+       "q": "I haven't found my trainers ___.",
+       "o": [
+        "yet",
+        "already",
+        "just"
+       ],
+       "a": 0
+      },
+      {
+       "type": "type",
+       "q": "Thank God, Mum has ___ prepared lunch. (already)",
+       "a": [
+        "already"
+       ]
+      },
+      {
+       "type": "order",
+       "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+       "words": [
+        "Have",
+        "you",
+        "ever",
+        "been",
+        "there?"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "t2",
+   "title": "اختبار شامل: الوحدات 4–6",
+   "titleEn": "Comprehensive Test: Units 4–6",
+   "units": [
+    4,
+    6
+   ],
+   "readingFrom": 4,
+   "sections": [
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "What has Sami been eating for lunch?",
+       "o": [
+        "Just fries",
+        "Fruit and vegetables",
+        "Sandwiches"
+       ],
+       "a": 0
+      },
+      {
+       "q": "What does the doctor say fries are?",
+       "o": [
+        "Real food",
+        "Healthy",
+        "Junk food"
+       ],
+       "a": 2
+      },
+      {
+       "tf": true,
+       "q": "Sami has been sleeping badly for a long time."
+      },
+      {
+       "tf": false,
+       "q": "The doctor says Sami should stop playing football.",
+       "why": "He tells Sami to eat real food and read a book."
+      }
+     ]
+    },
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "I was ___ my breakfast because I didn't get up early.",
+       "o": [
+        "recently",
+        "missing",
+        "fit"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Could you please write more ___? I couldn't read well.",
+       "o": [
+        "clearly",
+        "clear",
+        "clearness"
+       ],
+       "a": 0
+      },
+      {
+       "q": "When I feel ___, my face usually turns red.",
+       "o": [
+        "scared",
+        "secret",
+        "embarrassed"
+       ],
+       "a": 2
+      },
+      {
+       "q": "When the bus started racing down, everyone was really ___.",
+       "o": [
+        "pleased",
+        "scared",
+        "natural"
+       ],
+       "a": 1
+      },
+      {
+       "q": "If you want to keep healthy, don't eat ___.",
+       "o": [
+        "real food",
+        "junk food",
+        "fruit"
+       ],
+       "a": 1
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "The team has been training ___ three days.",
+       "o": [
+        "since",
+        "from",
+        "for"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Samia has been watching TV ___ the afternoon began.",
+       "o": [
+        "for",
+        "at",
+        "since"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Sorry, you're mistaken, this is my bag, not ___.",
+       "o": [
+        "yours",
+        "your",
+        "you"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Our team is much stronger than ___ team.",
+       "o": [
+        "their",
+        "theirs",
+        "they"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Omar is good at English; he is good at Maths ___.",
+       "o": [
+        "either",
+        "neither",
+        "too"
+       ],
+       "a": 2
+      },
+      {
+       "q": "I will feel terrible ___ something bad happens.",
+       "o": [
+        "when are",
+        "if",
+        "so"
+       ],
+       "a": 1
+      },
+      {
+       "q": "He drives very ___. I feel safe with him. (good)",
+       "o": [
+        "good",
+        "goodly",
+        "well"
+       ],
+       "a": 2
+      },
+      {
+       "q": "If you feel sick, ___ seeing a doctor?",
+       "o": [
+        "what",
+        "what about",
+        "about"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "t3",
+   "title": "اختبار شامل: الوحدات 7–9",
+   "titleEn": "Comprehensive Test: Units 7–9",
+   "units": [
+    7,
+    9
+   ],
+   "readingFrom": 9,
+   "sections": [
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "Where is the family picnic?",
+       "o": [
+        "In America",
+        "Near Jericho",
+        "In London"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Who is the oldest of Uncle Nazmi's children?",
+       "o": [
+        "Hazem",
+        "Ali",
+        "Sameer"
+       ],
+       "a": 1
+      },
+      {
+       "tf": true,
+       "q": "Sameer has short, curly hair."
+      },
+      {
+       "q": "Who took the photo?",
+       "o": [
+        "Ahmad",
+        "Omar",
+        "Adnan"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Omar is really ___ football, but Nick likes chess more.",
+       "o": [
+        "safe in",
+        "crazy about",
+        "size of"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Policemen should always look ___ in their uniforms.",
+       "o": [
+        "far",
+        "thick",
+        "smart"
+       ],
+       "a": 2
+      },
+      {
+       "q": "ground + ___ = ground meat",
+       "o": [
+        "paste",
+        "tree",
+        "meat"
+       ],
+       "a": 2
+      },
+      {
+       "q": "My uncle lives in a small town ___ Nablus.",
+       "o": [
+        "with",
+        "near",
+        "under"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Fareeda wants to train to be a ___. (science)",
+       "o": [
+        "sciencer",
+        "scientist",
+        "scienting"
+       ],
+       "a": 1
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "I believe Mercedes is ___ car in the world. (beautiful)",
+       "o": [
+        "more beautiful",
+        "beautifullest",
+        "the most beautiful"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Omar is taller than Sami, but Ahmed is ___ of all.",
+       "o": [
+        "taller",
+        "the tallest",
+        "more tall"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Ahmad is taller than Omar. → Omar is ___ Ahmad.",
+       "o": [
+        "as tall as",
+        "taller than",
+        "not as tall as"
+       ],
+       "a": 2
+      },
+      {
+       "q": "How ___ cups of wheat do we need? / How ___ sugar do we still have?",
+       "o": [
+        "much / many",
+        "many / many",
+        "many / much"
+       ],
+       "a": 2
+      },
+      {
+       "q": "There are ___ biscuits, but there isn't ___ chocolate.",
+       "o": [
+        "some / any",
+        "any / some",
+        "some / some"
+       ],
+       "a": 0
+      },
+      {
+       "q": "___ Kuwait is a dry country.",
+       "o": [
+        "The",
+        "An",
+        "×"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Mr Jamal is the teacher ___ taught me English.",
+       "o": [
+        "which",
+        "whose",
+        "who"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Omar and Ali are friends, ___ are always together.",
+       "o": [
+        "them",
+        "their",
+        "they"
+       ],
+       "a": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "t4",
+   "title": "اختبار شامل: الوحدات 10–12",
+   "titleEn": "Comprehensive Test: Units 10–12",
+   "units": [
+    10,
+    12
+   ],
+   "readingFrom": 11,
+   "sections": [
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "tf": false,
+       "q": "Dr Romano comes from Rome.",
+       "why": "Her name shows her ancestors were once from Rome."
+      },
+      {
+       "q": "What does Adnan Haifawi's name tell us?",
+       "o": [
+        "His family made shoes",
+        "His family were from Haifa long ago",
+        "His family were farmers"
+       ],
+       "a": 1
+      },
+      {
+       "tf": true,
+       "q": "The name Lucy means 'light'."
+      },
+      {
+       "q": "How long ago did people perhaps start using family names?",
+       "o": [
+        "About 700 years",
+        "About 7 years",
+        "About 70 years"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "The groom is riding round town to receive everyone's ___.",
+       "o": [
+        "dough",
+        "ring",
+        "congratulations"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Could you ___ your given name for me, please?",
+       "o": [
+        "hold up",
+        "turn off",
+        "spell"
+       ],
+       "a": 2
+      },
+      {
+       "q": "A school ___ gives students advice and helps with their problems.",
+       "o": [
+        "guest",
+        "counsellor",
+        "groom"
+       ],
+       "a": 1
+      },
+      {
+       "q": "What are you ___ for your school project?",
+       "o": [
+        "working on",
+        "turning off",
+        "picking down"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Jerusalem is the eternal ___ of Palestine.",
+       "o": [
+        "architecture",
+        "capital",
+        "disease"
+       ],
+       "a": 1
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "He said he ___ to come to your party; he likes parties very much. (would)",
+       "o": [
+        "loves would",
+        "is love",
+        "would love"
+       ],
+       "a": 2
+      },
+      {
+       "q": "I ___ to visit my grandma with my mum and dad.",
+       "o": [
+        "would prefer",
+        "prefer would",
+        "am prefer"
+       ],
+       "a": 0
+      },
+      {
+       "q": "I ate two ___ and drank two ___ of cola. (sandwich, glass)",
+       "o": [
+        "sandwichs / glasss",
+        "sandwiches / glasses",
+        "sandwiches / glasss"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Please put these ___ on the two ___. (box, shelf)",
+       "o": [
+        "boxes / shelves",
+        "boxs / shelfs",
+        "boxes / shelfs"
+       ],
+       "a": 0
+      },
+      {
+       "q": "'Your phone number is incorrect, Ali.' → The teacher says ___.",
+       "o": [
+        "your phone number is incorrect",
+        "his phone number is incorrect",
+        "my phone number is incorrect"
+       ],
+       "a": 1
+      },
+      {
+       "q": "'Where's your book?' → Mum wants to know ___.",
+       "o": [
+        "where my book is",
+        "where is my book",
+        "where your book is"
+       ],
+       "a": 0
+      },
+      {
+       "q": "The Muslims knew a lot about farming, ___ they introduced their ideas.",
+       "o": [
+        "or",
+        "so",
+        "because"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Choose the correct sentence.",
+       "o": [
+        "I can't find my keys. Have you seen them, Ahmed?",
+        "I cant find my keys have you seen them Ahmed.",
+        "I can't find my keys, have you seen them Ahmed"
+       ],
+       "a": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "final",
+   "title": "الاختبار النهائي: المنهج كاملاً",
+   "titleEn": "Final Test: All Units",
+   "units": [
+    1,
+    12
+   ],
+   "auto": 20
+  }
+ ]
 };
