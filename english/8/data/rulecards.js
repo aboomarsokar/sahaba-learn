@@ -459,6 +459,164 @@ window.LEXORA_RULECARDS = {
     }
    ]
   }
+ ],
+ "4-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use the {t|present perfect continuous} for actions that started in the past and are still happening, or have just stopped and we can see the result.",
+   "useAr": "نستعمل {t|المضارع التام المستمر} للأفعال التي بدأت في الماضي وما زالت مستمرّة أو توقّفت للتوّ وأثرها ظاهر.",
+   "signals": [
+    "for",
+    "since",
+    "recently",
+    "for several weeks",
+    "how long"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Positive",
+   "labelAr": "الإثبات",
+   "formula": "{s|Subject} + {t|have / has} + {t|been} + {v|V-ing}",
+   "examples": [
+    {
+     "en": "I {t|have} {t|been} {v|feeling} quite sick for several weeks.",
+     "ar": "أشعر بالمرض منذ عدّة أسابيع."
+    },
+    {
+     "en": "He {t|has} {t|been} {v|working} on a project with Mike.",
+     "ar": "هو يعمل على مشروع مع مايك."
+    }
+   ]
+  },
+  {
+   "k": "neg",
+   "label": "Negative",
+   "labelAr": "النفي",
+   "formula": "{s|Subject} + {t|haven't / hasn't} + {t|been} + {v|V-ing}",
+   "examples": [
+    {
+     "en": "I {t|haven't} {t|been} {v|playing} well recently.",
+     "ar": "لم ألعب جيّداً مؤخّراً."
+    }
+   ]
+  },
+  {
+   "k": "q",
+   "label": "Question",
+   "labelAr": "السؤال",
+   "formula": "{t|Have / Has} + {s|Subject} + {t|been} + {v|V-ing}?",
+   "examples": [
+    {
+     "en": "{t|Have} {s|you} {t|been} {v|eating} normally?",
+     "ar": "هل كنتَ تأكل بشكل طبيعي؟"
+    }
+   ],
+   "tip": "الإجابة: Yes, I have. / No, I haven't."
+  }
+ ],
+ "4-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|for} with a length of time and {t|since} with a starting point in time.",
+   "useAr": "نستعمل {t|for} مع طول المدّة و{t|since} مع نقطة البداية في الزمن.",
+   "signals": [
+    "for",
+    "since",
+    "how long"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "for + duration",
+   "labelAr": "for + مدّة",
+   "formula": "{s|Subject} + {t|have / has been} + {v|V-ing} + {t|for} + a period of time",
+   "examples": [
+    {
+     "en": "The players {t|have been} {v|training} {t|for} a week.",
+     "ar": "اللاعبون يتدرّبون منذ أسبوع."
+    }
+   ],
+   "tip": "for the past month · for four weeks."
+  },
+  {
+   "k": "pos",
+   "label": "since + starting point",
+   "labelAr": "since + نقطة بداية",
+   "formula": "{s|Subject} + {t|have / has been} + {v|V-ing} + {t|since} + a point in time",
+   "examples": [
+    {
+     "en": "I {t|have been} {v|doing} what it says {t|since} then.",
+     "ar": "أنفّذ ما فيه منذ ذلك الحين."
+    }
+   ],
+   "tip": "since yesterday · since my last time here."
+  },
+  {
+   "k": "note",
+   "label": "Careful!",
+   "labelAr": "انتبه!",
+   "body": "{n|✗} The team have been training since three days.\n{t|✓} The team have been training for three days.\n{n|✗} Mum has cooked for two hours now.\n{t|✓} Mum has been cooking for two hours now.",
+   "examples": [
+    {
+     "en": "How long have you been waiting?",
+     "ar": "منذ متى وأنت تنتظر؟"
+    }
+   ]
+  }
+ ],
+ "4-1#2": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|had better} for strong advice, and {t|could} or {t|What about …?} for suggestions.",
+   "useAr": "نستعمل {t|had better} للنصيحة القوية، و{t|could} أو {t|What about …?} للاقتراح.",
+   "signals": [
+    "had better",
+    "could",
+    "What about"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Advice",
+   "labelAr": "النصيحة",
+   "formula": "{s|Subject} + {t|had (’d) better} + {v|V1}",
+   "examples": [
+    {
+     "en": "You {t|’d better} {v|read} this book.",
+     "ar": "من الأفضل أن تقرأ هذا الكتاب."
+    }
+   ]
+  },
+  {
+   "k": "neg",
+   "label": "Negative advice",
+   "labelAr": "النصيحة المنفيّة",
+   "formula": "{s|Subject} + {t|had (’d) better} + {n|not} + {v|V1}",
+   "examples": [
+    {
+     "en": "You {t|had better} {n|not} {v|do} this.",
+     "ar": "من الأفضل ألّا تفعل هذا."
+    }
+   ],
+   "tip": "not تأتي بعد better."
+  },
+  {
+   "k": "pos",
+   "label": "Suggestions",
+   "labelAr": "الاقتراح",
+   "formula": "{t|could} + {v|V1}  ·  {t|What about} + {v|V-ing}?",
+   "examples": [
+    {
+     "en": "You {t|could} {v|start} a new sport.",
+     "ar": "يمكنك أن تبدأ رياضة جديدة."
+    },
+    {
+     "en": "{t|What about} {v|walking} for an hour?",
+     "ar": "ما رأيك أن تمشي ساعة؟"
+    }
+   ]
+  }
  ]
 };
 
@@ -497,5 +655,12 @@ window.LEXORA_SIGNALS_AR = {
  "in … / out …": "in / out + ...",
  "some …": "some + ...",
  "water …": "water + ...",
- "wild …": "wild + ..."
+ "wild …": "wild + ...",
+ "for": "لمدّة",
+ "since": "منذ",
+ "for several weeks": "منذ عدّة أسابيع",
+ "how long": "منذ متى / كم من الوقت",
+ "had better": "من الأفضل أن",
+ "could": "يمكن أن",
+ "What about": "ما رأيك في"
 };

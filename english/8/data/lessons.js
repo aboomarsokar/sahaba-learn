@@ -1570,5 +1570,561 @@ window.LEXORA_DATA = {"units": {
     ]
    }
   ]
+ },
+ "4": {
+  "title": "كيف تصبح صحّياً",
+  "titleEn": "How to get healthy",
+  "lessons": [
+   {
+    "id": "4-1",
+    "title": "How to get healthy",
+    "titleAr": "كيف تصبح صحّياً",
+    "vocab": [
+     {
+      "en": "fit",
+      "ar": "لائق بدنياً",
+      "em": "💪",
+      "ex": "If you want to be fit, keep training and sleep well.",
+      "exAr": "إن أردتَ أن تكون لائقاً فواصل التدريب ونم جيّداً."
+     },
+     {
+      "en": "get on",
+      "ar": "يتدبّر أمره / يتقدّم",
+      "em": "📈",
+      "ex": "How have you been getting on since our talk last month?",
+      "exAr": "كيف كانت أحوالك منذ حديثنا الشهر الماضي؟"
+     },
+     {
+      "en": "had better",
+      "ar": "من الأفضل أن",
+      "em": "☝️",
+      "ex": "You'd better read this book.",
+      "exAr": "من الأفضل أن تقرأ هذا الكتاب."
+     },
+     {
+      "en": "junk food",
+      "ar": "وجبات سريعة غير صحّية",
+      "em": "🍟",
+      "ex": "Fries are junk food!",
+      "exAr": "البطاطا المقلية طعام غير صحّي!"
+     },
+     {
+      "en": "just",
+      "ar": "فقط",
+      "em": "☝️",
+      "ex": "Just fries.",
+      "exAr": "بطاطا مقلية فقط."
+     },
+     {
+      "en": "miss",
+      "ar": "يفوّته / يشتاق إلى",
+      "em": "⏭️",
+      "ex": "I mustn't lose my place in the team! I've been missing breakfast.",
+      "exAr": "يجب ألّا أفقد مكاني في الفريق! لقد كنتُ أفوّت وجبة الفطور."
+     },
+     {
+      "en": "real",
+      "ar": "حقيقي",
+      "em": "✅",
+      "ex": "You need to start eating real food!",
+      "exAr": "عليك أن تبدأ بأكل طعام حقيقي!"
+     },
+     {
+      "en": "recently",
+      "ar": "مؤخّراً",
+      "em": "📅",
+      "ex": "I haven't been playing well for my football team recently.",
+      "exAr": "لم ألعب جيّداً مع فريقي مؤخّراً."
+     },
+     {
+      "en": "wake up",
+      "ar": "يستيقظ",
+      "em": "⏰",
+      "ex": "I've been waking up late.",
+      "exAr": "كنتُ أستيقظ متأخّراً."
+     },
+     {
+      "en": "feel sick",
+      "ar": "يشعر بالمرض",
+      "em": "🤒",
+      "ex": "I've been feeling quite sick for several weeks.",
+      "exAr": "أشعر بالمرض منذ عدّة أسابيع."
+     },
+     {
+      "en": "tired",
+      "ar": "متعب",
+      "em": "😴",
+      "ex": "I've been getting tired quickly.",
+      "exAr": "أصبحتُ أتعب بسرعة."
+     },
+     {
+      "en": "healthy",
+      "ar": "صحّي",
+      "em": "🥗",
+      "ex": "I feel much healthier now.",
+      "exAr": "أشعر أنّني أصحّ كثيراً الآن."
+     },
+     {
+      "en": "medicine",
+      "ar": "دواء",
+      "em": "💊",
+      "ex": "You'd better take this medicine.",
+      "exAr": "من الأفضل أن تتناول هذا الدواء."
+     },
+     {
+      "en": "doctor",
+      "ar": "طبيب",
+      "em": "👨‍⚕️",
+      "ex": "Sami is at the doctor's.",
+      "exAr": "سامي عند الطبيب."
+     },
+     {
+      "en": "walk",
+      "ar": "مشي / يمشي",
+      "em": "🚶",
+      "ex": "That was a beautiful walk, wasn't it?",
+      "exAr": "كانت نزهة مشي جميلة، أليس كذلك؟"
+     },
+     {
+      "en": "sleep",
+      "ar": "نوم / ينام",
+      "em": "🛌",
+      "ex": "He always has a sleep in the afternoon.",
+      "exAr": "هو يأخذ قيلولة دائماً بعد الظهر."
+     }
+    ],
+    "reading": {
+     "title": "At the doctor's",
+     "paras": [
+      {
+       "en": "Sami is at the doctor's. Doctor: What's wrong, Sami? You don't look very well. Sami: You're right. I've been feeling quite sick for several weeks. And I've been getting tired quickly. Doctor: Have you been sleeping badly for a long time, too? Sami: Yes, I have. And I haven't been playing well for my football team recently.",
+       "ar": "سامي عند الطبيب. الطبيب: ما بك يا سامي؟ لا تبدو بخير. سامي: معك حقّ، أشعر بالمرض منذ عدّة أسابيع وأتعب بسرعة. الطبيب: وهل تنام نوماً سيّئاً منذ فترة طويلة أيضاً؟ سامي: نعم، ولم ألعب جيّداً مع فريق كرة القدم مؤخّراً."
+      },
+      {
+       "en": "Doctor: Have you been eating normally? Sami: Well, no. I've been waking up late, and missing breakfast. Doctor: So you've been going to school tired and hungry. And what have you been eating for lunch? Sami: Just fries. Doctor: Sami, fries are junk food! You need to start eating real food!",
+       "ar": "الطبيب: هل كنتَ تأكل بشكل طبيعي؟ سامي: لا، كنتُ أستيقظ متأخّراً وأفوّت وجبة الفطور. الطبيب: إذن كنتَ تذهب إلى المدرسة متعباً وجائعاً. وماذا كنتَ تأكل في الغداء؟ سامي: بطاطا مقلية فقط. الطبيب: يا سامي، البطاطا المقلية طعام غير صحّي! عليك أن تبدأ بأكل طعام حقيقي!"
+      },
+      {
+       "en": "Doctor: And that includes fruit and vegetables. Sami: Really? Doctor: Yes. And you'd better read this book – Get fit and healthy. Do what it says, and then come back next month. Sami: Thanks. I'll do that. I mustn't lose my place in the team!",
+       "ar": "الطبيب: وهذا يشمل الفواكه والخضار. سامي: حقّاً؟ الطبيب: نعم. ومن الأفضل أن تقرأ هذا الكتاب «كن لائقاً وصحّياً»، نفّذ ما فيه ثمّ عُد إليّ الشهر القادم. سامي: شكراً، سأفعل ذلك، يجب ألّا أفقد مكاني في الفريق!"
+      },
+      {
+       "en": "A month later … Doctor: How have you been getting on since our talk last month? Sami: Really well. I read the book, and I've been doing what it says since then. I've been sleeping much better. Doctor: I can see that. You don't look tired today. Have you been eating better, too? Sami: Yes, and I feel much healthier now. Thanks for all your help.",
+       "ar": "بعد شهر… الطبيب: كيف كانت أحوالك منذ حديثنا الشهر الماضي؟ سامي: جيّدة جدّاً، قرأتُ الكتاب وأنفّذ ما فيه منذ ذلك الحين وأنام أفضل كثيراً. الطبيب: أرى ذلك، لا تبدو متعباً اليوم. وهل كنتَ تأكل أفضل أيضاً؟ سامي: نعم، وأشعر أنّني أصحّ كثيراً الآن. شكراً على كلّ مساعدتك."
+      }
+     ],
+     "questions": [
+      {
+       "q": "How long has Sami been feeling sick?",
+       "o": [
+        "For one day",
+        "Since yesterday",
+        "For several weeks"
+       ],
+       "a": 2
+      },
+      {
+       "q": "What has Sami been eating for lunch?",
+       "o": [
+        "Just fries",
+        "Fruit and vegetables",
+        "Sandwiches"
+       ],
+       "a": 0
+      },
+      {
+       "tf": true,
+       "q": "The doctor tells Sami to eat fruit and vegetables."
+      },
+      {
+       "q": "What does the doctor ask Sami to read?",
+       "o": [
+        "A story book",
+        "A sports magazine",
+        "Get fit and healthy"
+       ],
+       "a": 2
+      },
+      {
+       "q": "How does Sami feel a month later?",
+       "o": [
+        "Still sick",
+        "Very hungry",
+        "Much healthier"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    "rules": [
+     {
+      "title": "Present perfect continuous",
+      "titleAr": "المضارع التام المستمر",
+      "explain": "نستعمل <b>have / has been + V-ing</b> للحديث عن فعل <b>بدأ في الماضي ولا يزال مستمرّاً</b> أو توقّف حديثاً وأثره ظاهر (I've been feeling sick for several weeks). والنفي <b>haven't / hasn't been + V-ing</b>، والسؤال <b>Have / Has + S + been + V-ing?</b>",
+      "form": "have / has + been + V-ing    ·    haven't / hasn't + been + V-ing    ·    Have / Has + S + been + V-ing?",
+      "examples": [
+       {
+        "en": "I **'ve been feeling** quite sick for several weeks.",
+        "ar": "بدأ ولا يزال"
+       },
+       {
+        "en": "I **haven't been playing** well recently.",
+        "ar": "نفي"
+       },
+       {
+        "en": "**Have** you **been sleeping** badly for a long time?",
+        "ar": "سؤال"
+       },
+       {
+        "en": "What **have** you **been eating** for lunch?",
+        "ar": "سؤال بأداة"
+       },
+       {
+        "en": "I **'ve been doing** what it says since then.",
+        "ar": "منذ ذلك الحين"
+       }
+      ],
+      "questions": [
+       {
+        "q": "I ___ feeling quite sick for several weeks.",
+        "o": [
+         "am",
+         "have been",
+         "was being"
+        ],
+        "a": 1
+       },
+       {
+        "q": "Sami ___ playing well for his team recently.",
+        "o": [
+         "haven't been",
+         "hasn't been",
+         "isn't been"
+        ],
+        "a": 1
+       },
+       {
+        "q": "___ you been eating normally?",
+        "o": [
+         "Did",
+         "Are",
+         "Have"
+        ],
+        "a": 2
+       },
+       {
+        "q": "They ___ going to school not far from their new home. (since they moved)",
+        "o": [
+         "has been",
+         "are been",
+         "have been"
+        ],
+        "a": 2
+       },
+       {
+        "type": "type",
+        "q": "I ___ waking up late. (have)",
+        "a": [
+         "have been",
+         "'ve been"
+        ]
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «كنتُ أنام جيّداً»",
+        "words": [
+         "I've",
+         "been",
+         "sleeping",
+         "much",
+         "better."
+        ]
+       }
+      ]
+     },
+     {
+      "title": "since and for",
+      "titleAr": "الفرق بين since وfor",
+      "explain": "نستعمل <b>for</b> مع <b>مدّة الزمن</b> (for three weeks, for the past month)، ونستعمل <b>since</b> مع <b>نقطة بداية</b> في الزمن (since last Monday, since our last conversation, since I was young). ونسأل عن المدّة بـ <b>How long?</b>",
+      "form": "for + مدّة (a week, ten years)    ·    since + نقطة بداية (yesterday, 2020, I was young)",
+      "examples": [
+       {
+        "en": "I've been waking up early **for the past month**.",
+        "ar": "مدّة"
+       },
+       {
+        "en": "The team has been training **for a week**.",
+        "ar": "مدّة"
+       },
+       {
+        "en": "I've been doing what it says **since then**.",
+        "ar": "نقطة بداية"
+       },
+       {
+        "en": "I have been learning English **since I was young**.",
+        "ar": "نقطة بداية"
+       },
+       {
+        "en": "Samia has been sleeping **since yesterday**.",
+        "ar": "نقطة بداية"
+       }
+      ],
+      "questions": [
+       {
+        "q": "The team players have been training ___ a week now.",
+        "o": [
+         "since",
+         "for",
+         "from"
+        ],
+        "a": 1,
+        "why": "a week: مدّة"
+       },
+       {
+        "q": "I have been learning English ___ I was young.",
+        "o": [
+         "for",
+         "since",
+         "at"
+        ],
+        "a": 1
+       },
+       {
+        "q": "Sally's family has been living here ___ ten years.",
+        "o": [
+         "since",
+         "in",
+         "for"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Samia has been sleeping ___ yesterday.",
+        "o": [
+         "since",
+         "for",
+         "during"
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "The team have been training ___ three days. (since / for)",
+        "a": [
+         "for"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "Mum has been cooking ___ two o'clock. (since / for)",
+        "a": [
+         "since"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "had better, could, What about …?",
+      "titleAr": "النصح والاقتراح",
+      "explain": "نقدّم <b>نصيحة قويّة</b> بـ <b>had better + V1</b> (You'd better read this book)، وللنهي <b>had better not + V1</b>. ونقدّم <b>اقتراحاً</b> بـ <b>could + V1</b> (You could start a new sport) أو <b>What about + V-ing?</b> (What about walking for an hour?).",
+      "form": "had better (not) + V1    ·    could + V1    ·    What about + V-ing?",
+      "examples": [
+       {
+        "en": "You **had better do** our quiz.",
+        "ar": "نصيحة"
+       },
+       {
+        "en": "You **had better not do** this.",
+        "ar": "نهي"
+       },
+       {
+        "en": "You **could start** a new sport.",
+        "ar": "اقتراح"
+       },
+       {
+        "en": "**What about walking** for an hour?",
+        "ar": "اقتراح"
+       }
+      ],
+      "questions": [
+       {
+        "q": "I feel really ill. — You ___ stay in bed.",
+        "o": [
+         "had better not",
+         "used to",
+         "had better"
+        ],
+        "a": 2
+       },
+       {
+        "q": "You ___ go to school today. You are sick.",
+        "o": [
+         "had better",
+         "had better not",
+         "could better"
+        ],
+        "a": 1
+       },
+       {
+        "q": "What about ___ for an hour?",
+        "o": [
+         "walk",
+         "walking",
+         "to walk"
+        ],
+        "a": 1
+       },
+       {
+        "q": "You ___ start a new sport.",
+        "o": [
+         "had better to",
+         "could",
+         "what about"
+        ],
+        "a": 1
+       },
+       {
+        "type": "type",
+        "q": "You'd ___ take this medicine. (better)",
+        "a": [
+         "better"
+        ]
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «من الأفضل ألّا تحاول فعل شيء اليوم»",
+        "words": [
+         "You",
+         "had",
+         "better",
+         "not",
+         "try",
+         "to",
+         "do",
+         "anything",
+         "today."
+        ]
+       }
+      ]
+     }
+    ],
+    "mastery": [
+     {
+      "q": "\"junk food\" means:",
+      "o": [
+       "طعام حقيقي",
+       "طعام غير صحّي",
+       "فاكهة"
+      ],
+      "a": 1,
+      "lv": "easy"
+     },
+     {
+      "q": "\"recently\" means:",
+      "o": [
+       "دائماً",
+       "مؤخّراً",
+       "غداً"
+      ],
+      "a": 1,
+      "lv": "easy"
+     },
+     {
+      "tf": true,
+      "q": "Sami has been missing breakfast and waking up late.",
+      "lv": "easy"
+     },
+     {
+      "type": "match",
+      "q": "صِل كلّ كلمة بمعناها",
+      "pairs": [
+       [
+        "fit",
+        "لائق بدنياً"
+       ],
+       [
+        "wake up",
+        "يستيقظ"
+       ],
+       [
+        "real",
+        "حقيقي"
+       ],
+       [
+        "healthy",
+        "صحّي"
+       ]
+      ],
+      "lv": "medium"
+     },
+     {
+      "q": "The team has been training ___ a week.",
+      "o": [
+       "for",
+       "since",
+       "at"
+      ],
+      "a": 0,
+      "lv": "medium"
+     },
+     {
+      "q": "I feel really ill. You ___ stay in bed.",
+      "o": [
+       "used to",
+       "had better",
+       "are going"
+      ],
+      "a": 1,
+      "lv": "medium"
+     },
+     {
+      "type": "type",
+      "q": "I have been learning English ___ I was young. (for / since)",
+      "a": [
+       "since"
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "He has been sleeping badly for a long time.",
+       "He has been sleep badly for a long time.",
+       "He is been sleeping badly for a long time."
+      ],
+      "a": 0,
+      "lv": "hard"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+      "words": [
+       "How",
+       "have",
+       "you",
+       "been",
+       "getting",
+       "on",
+       "since",
+       "our",
+       "talk",
+       "last",
+       "month?"
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Why did the doctor tell Sami to eat real food?",
+      "o": [
+       "Sami is too heavy",
+       "Sami likes fruit",
+       "Fries are junk food"
+      ],
+      "a": 2,
+      "lv": "hard"
+     }
+    ]
+   }
+  ]
  }
 }};

@@ -317,7 +317,7 @@ window.LEXORA_PRACTICE = {
        "o": [
         "start",
         "stop",
-        "finish begin"
+        "carry on"
        ],
        "a": 1
       },
@@ -353,7 +353,7 @@ window.LEXORA_PRACTICE = {
      "questions": [
       {
        "type": "type",
-       "q": "___ you ever ___ to Jenin? (be) — write the first word",
+       "q": "___ you ever been to Jenin? (have)",
        "a": [
         "Have"
        ]
@@ -437,6 +437,155 @@ window.LEXORA_PRACTICE = {
         "They went shopping"
        ],
        "a": 0
+      }
+     ]
+    }
+   ]
+  },
+  "4": {
+   "readingFrom": 4,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Hello Saleh, where have you been? I really ___ you.",
+       "o": [
+        "woke up",
+        "missed",
+        "fit"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The doctor advised me not to eat ___ because it is bad for my health.",
+       "o": [
+        "real food",
+        "junk food",
+        "fruit"
+       ],
+       "a": 1
+      },
+      {
+       "q": "If you want to be ___, keep training and sleep well.",
+       "o": [
+        "fit",
+        "busy",
+        "ill"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Hana hasn't played today; ___, she seems sick.",
+       "o": [
+        "yet",
+        "always",
+        "recently"
+       ],
+       "a": 2
+      },
+      {
+       "type": "type",
+       "q": "Alarm! I must ___ up at six o'clock tomorrow.",
+       "a": [
+        "wake"
+       ]
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "The team players have been training ___ a week now.",
+       "o": [
+        "since",
+        "for",
+        "from"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Sally's family has been living here ___ ten years.",
+       "o": [
+        "since",
+        "at",
+        "for"
+       ],
+       "a": 2
+      },
+      {
+       "q": "I have been learning English ___ I was young.",
+       "o": [
+        "for",
+        "since",
+        "by"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Samia has been sleeping ___ yesterday.",
+       "o": [
+        "since",
+        "for",
+        "in"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Excellent Maha, your answer is correct. 'answer' is a ___.",
+       "o": [
+        "verb",
+        "adjective",
+        "noun"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Children always need help from their parents. 'help' is a ___.",
+       "o": [
+        "noun",
+        "verb",
+        "adjective"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "What is wrong with Sami?",
+       "o": [
+        "He lost his book",
+        "He is late for school",
+        "He feels sick and tired"
+       ],
+       "a": 2
+      },
+      {
+       "tf": false,
+       "q": "Sami eats a lot of fruit and vegetables at the beginning.",
+       "why": "He only eats fries for lunch."
+      },
+      {
+       "q": "What mustn't Sami lose?",
+       "o": [
+        "His book",
+        "His place in the team",
+        "His phone"
+       ],
+       "a": 1
+      },
+      {
+       "q": "How does Sami look a month later?",
+       "o": [
+        "Very ill",
+        "Not tired",
+        "Hungry"
+       ],
+       "a": 1
       }
      ]
     }

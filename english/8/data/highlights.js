@@ -64,5 +64,33 @@ window.LEXORA_HL = {
  },
  "3-1|dangerous": {
   "e": "dangerous"
+ },
+ "4-1|get on": {
+  "e": "getting on",
+  "a": "أحوالك"
+ },
+ "4-1|had better": {
+  "e": "better"
+ },
+ "4-1|junk food": {
+  "e": "junk food"
+ },
+ "4-1|miss": {
+  "e": "missing"
+ },
+ "4-1|wake up": {
+  "e": "waking up"
+ },
+ "4-1|feel sick": {
+  "e": "feeling quite sick"
+ },
+ "4-1|healthy": {
+  "e": "healthier"
+ },
+ "4-1|just": {
+  "e": "Just"
+ },
+ "4-1|sleep": {
+  "e": "sleep"
  }
 };
