@@ -115,6 +115,7 @@ button{font:inherit;color:inherit;cursor:pointer}
 .t-math{--bg:#f6f0dd;--ink:#17402b;--mut:#5f7a63;--g:#1d5a3b;--bd:#e8e0c4}
 .mh{display:flex;align-items:center;gap:14px;padding:calc(18px + env(safe-area-inset-top)) 18px 4px}
 .mhi{flex:1}.mhi b{font-size:1.8rem;line-height:1.25;display:block}.mhi small{color:#6a8a5c;font-size:1rem}
+.mportal{display:inline-block;margin-top:6px;background:#fffaf0;border:1.5px solid #cfe3b0;border-radius:99px;padding:2px 12px;font-size:.82rem;font-weight:700;color:#1d5a3b;text-decoration:none}
 .mav{width:76px;height:76px;background:#1d4d35;color:#fff;border:6px solid #cfe3b0;font-size:2rem}
 .pc{margin:14px 16px;background:#e9f0d5;border-radius:22px;padding:16px;box-shadow:0 8px 20px rgba(23,64,43,.08)}
 .pct{display:flex;justify-content:space-between;align-items:center}.pct b{font-size:1.35rem}
@@ -241,7 +242,7 @@ function home(){if(CFG.theme=="math")return homeMath();var t=totals(),nl=nextLes
 
 function weekCount(){var w=Date.now()-6048e5,c=0;Object.keys(S.p).forEach(function(k){if(S.p[k].b&&S.p[k].b>w)c++});return c}
 function homeMath(){var p=profile(),first=p.first||"طالب",t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,nl=nextLesson(),nu=D.units[nl[0]],av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc(first.charAt(0));
- var h='<div class="mh"><div class="mhi"><b>مرحباً، '+esc(first)+'</b><small>جاهز لمواصلة التعلّم اليوم؟</small></div><div class="av mav">'+av+'</div></div>'
+ var h='<div class="mh"><div class="mhi"><b>مرحباً، '+esc(first)+'</b><small>جاهز لمواصلة التعلّم اليوم؟</small><a class="mportal" href="../../index.html">🏠 بوابة الصحابة التعليمية</a></div><div class="av mav">'+av+'</div></div>'
  +'<div class="pc"><div class="pct"><b>بطاقة التقدّم</b><span class="chp">هذا الأسبوع: '+ar(weekCount())+'</span></div><div class="pcr"><span>'+ar(t.d)+' من '+ar(t.t)+' درس مكتمل</span><span>تقدّمك الكلّي: '+ar(pc)+'٪</span></div><div class="bar big"><i style="width:'+pc+'%"></i></div><div class="pcs"><span class="chp2">🏆 النقاط: '+ar(S.xp)+'</span><span class="chp2 g">🔥 أيام متتالية: '+ar(streak())+'</span><span id="chip"></span></div></div>'
  +'<div class="sec2"><b>'+esc(CFG.unitsTitle)+'</b><a href="#lessons">عرض الكل</a></div><div class="mg">'
  +D.units.map(function(x,u){var c=x.lessons.filter(function(_,i){return lessonDone(u,i)}).length,odd=D.units.length%2&&u==D.units.length-1;return '<a class="mu '+((Math.floor(u/2)+u)%2?"b":"a")+(odd?" w":"")+'" href="#unit/'+u+'">'+(c==x.lessons.length?'<span class="dn">✓</span>':'')+svg(x.ic)+'<b>'+esc(x.title)+'</b><small>'+ar(x.lessons.length)+' دروس'+(c?" • أنجزتَ "+ar(c):"")+'</small></a>'}).join("")
