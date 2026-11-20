@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>__NAME__ — الصف الثامن</title>
+<title>__NAME__ — __GRADE__</title>
 <meta name="theme-color" content="#0a5230">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="../../shared/icons/portal-192.png">
@@ -220,7 +220,7 @@ function level(){return Math.floor(S.xp/100)+1}
 function streak(){var n=0,d=new Date();for(;;){var k=d.getFullYear()+"-"+(d.getMonth()+1)+"-"+d.getDate();if(S.days.indexOf(k)<0)break;n++;d.setDate(d.getDate()-1)}return n}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}publish()}
 function publish(){try{var t=totals(),b=[],c=[];D.units.forEach(function(x,u){x.lessons.forEach(function(l,i){if(lessonDone(u,i))b.push({i:"🏅",t:l.t})})});
- if(t.d==t.t&&t.t){if(!S.cert)S.cert=Date.now();c.push({t:"إتمام مادة "+CFG.name+" — الصف الثامن",d:new Date(S.cert).toLocaleDateString("ar")})}
+ if(t.d==t.t&&t.t){if(!S.cert)S.cert=Date.now();c.push({t:"إتمام مادة "+CFG.name+" — "+(CFG.gradeName||"الصف الثامن"),d:new Date(S.cert).toLocaleDateString("ar")})}
  localStorage.setItem("sahaba-ach:"+CFG.dir,JSON.stringify({pct:t.t?Math.round(t.d*100/t.t):0,units:{done:t.u,total:D.units.length},certs:c,badges:b,extra:["⭐ "+ar(S.xp)+" نقطة • المستوى "+ar(level()),"🔥 أيام متتالية: "+ar(streak())],updated:new Date().toISOString()}))}catch(e){}}
 /* ---------- أيقونات ---------- */
 var K='stroke="#1c3d52" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"';
@@ -371,7 +371,7 @@ function pointsPage(){var t=totals(),pc=S.xp%100,badges=[];D.units.forEach(funct
  var h=topbar("نقاطي","#home")+'<div class="body"><div class="stat"><div><b>'+ar(S.xp)+'</b>نقطة</div><div><b>'+ar(level())+'</b>المستوى</div><div><b>'+ar(t.d)+' / '+ar(t.t)+'</b>دروس منجزة</div><div><b>'+ar(streak())+'</b>أيام متتالية 🔥</div></div><div class="card"><small>'+ar(100-pc)+' نقطة للمستوى '+ar(level()+1)+'</small><div class="bar"><i style="width:'+pc+'%"></i></div></div><button class="btn" id="st">🪙 متجر دُرّة</button><div class="sec" style="margin-top:16px;font-size:1.1rem"><i>✦</i>أوسمتي</div>'+(badges.length?'<div class="bd">'+badges.join("")+'</div>':'<div class="empty">أنجز اختبارات الدرس الثلاثة لتنال وسامه.</div>')+(t.d==t.t&&t.t?'<div class="card" style="margin-top:12px;text-align:center">🎓 شهادة إتمام '+esc(CFG.name)+' — الصف الثامن</div>':'')+'</div>'+nav("points");
  $("#app").innerHTML=h;$("#st").onclick=function(){window.Durra&&Durra.store()}}
 function mePage(){var p=profile(),name=[p.first,p.father,p.family].filter(Boolean).join(" ")||CFG.student,t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc((p.first||"؟").charAt(0));
- var h=topbar("حسابي","#home")+'<div class="body"><div class="card" style="text-align:center"><div class="av" style="margin:0 auto 8px;width:84px;height:84px;font-size:2rem">'+av+'</div><b style="font-size:1.2rem">'+esc(name)+'</b><div style="color:var(--mut)">الصف الثامن — '+esc(CFG.name)+'</div><div class="bar"><i style="width:'+pc+'%"></i></div><small>إنجازك '+ar(pc)+'٪</small></div>'+(D.pack?'<a class="btn out" target="_blank" rel="noopener" href="'+esc(D.pack)+'">📦 '+esc(CFG.packT)+' (تحتاج إنترنت)</a>':'')+'<button class="btn out" id="tr">🎓 إعادة جولة كينيكس</button><a class="btn out" href="../../index.html">🏠 بوابة الصحابة التعليمية</a><button class="btn out" id="rs" style="color:var(--bad);border-color:var(--bad)">إعادة ضبط تقدّمي</button></div>'+nav("me");
+ var h=topbar("حسابي","#home")+'<div class="body"><div class="card" style="text-align:center"><div class="av" style="margin:0 auto 8px;width:84px;height:84px;font-size:2rem">'+av+'</div><b style="font-size:1.2rem">'+esc(name)+'</b><div style="color:var(--mut)">'+esc(CFG.gradeName||'الصف الثامن')+' — '+esc(CFG.name)+'</div><div class="bar"><i style="width:'+pc+'%"></i></div><small>إنجازك '+ar(pc)+'٪</small></div>'+(D.pack?'<a class="btn out" target="_blank" rel="noopener" href="'+esc(D.pack)+'">📦 '+esc(CFG.packT)+' (تحتاج إنترنت)</a>':'')+(D.books||[]).map(function(b){return '<a class="btn out" target="_blank" rel="noopener" href="'+esc(b[1])+'">📘 '+esc(b[0])+' (تحتاج إنترنت)</a>'}).join('')+'<button class="btn out" id="tr">🎓 إعادة جولة كينيكس</button><a class="btn out" href="../../index.html">🏠 بوابة الصحابة التعليمية</a><button class="btn out" id="rs" style="color:var(--bad);border-color:var(--bad)">إعادة ضبط تقدّمي</button></div>'+nav("me");
  $("#app").innerHTML=h;$("#tr").onclick=function(){window.SahabaIntro&&SahabaIntro.tour(KX)};$("#rs").onclick=function(){if(confirm("سيُمحى تقدّمك ونقاطك في هذه المادة. متأكد؟")){S=load();S={xp:0,p:{},uq:{},daily:{},last:null,days:[today()],cert:0,chk:{}};save();route()}}}
 
 function calcEval(ex){var t=ex.replace(/×/g,"*").replace(/÷/g,"/").replace(/−/g,"-").replace(/\^/g,"**").replace(/√\(/g,"Math.sqrt(").replace(/√([0-9.]+)/g,"Math.sqrt($1)");if(!/^[0-9+\-*\/().\sMathsqrt]+$/.test(t))return NaN;try{return Function('"use strict";return ('+t+')')()}catch(e){return NaN}}
@@ -465,7 +465,7 @@ function route(){var h=(location.hash||"#home").slice(1).split("/"),a=h[0];windo
  if(window.Durra)Durra.apply()}
 window.addEventListener("hashchange",route);
 var KX={id:CFG.kxid,kinex:"../../shared/kinex.jpg",steps:[
- {t:"أهلاً بك، أنا كينيكس",x:"أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق "+CFG.name+" للصف الثامن. سأعرّفك عليه في دقيقة.",s:null,i:1},
+ {t:"أهلاً بك، أنا كينيكس",x:"أهلاً بك يا {name}! أنا مرشدك في بوابة الصحابة التعليمية، وهذا تطبيق "+CFG.name+" "+(CFG.gradeFor||"للصف الثامن")+". سأعرّفك عليه في دقيقة.",s:null,i:1},
  {t:"🔎 ابحث عن درس",x:"اكتب اسم الدرس لتصل إليه فوراً.",s:".search"},
  {t:"🧪 "+CFG.unitsTitle,x:CFG.unitsHint,s:CFG.theme=="math"?".mg":".grid"},
  {t:"📖 تابع من حيث توقّفت",x:"هذه البطاقة تعيدك إلى درسك الأخير مع نسبة تقدّمك في وحدته.",s:".cont"},

@@ -31,6 +31,10 @@ SUBJ = {
     "science": {"dir": "science/8", "name": "العلوم العامة", "short": "العلوم", "hello": "أهلاً يا بطل العلوم!", "unitsTitle": "وحدات العلوم", "theme": "sci", "key": "sci8:st", "wid": "science",
                 "kxid": "science8", "student": "طالب العلوم", "packT": "رزمة العلوم والحياة", "widgets": True, "pack": LINKS["science"], "pre": "sci8-",
                 "unitsHint": "ثماني وحدات تغطّي الخلية والطاقة والذرّة والكيمياء والأمواج وتصنيف الكائنات. اضغط وحدة لترى دروسها."},
+    "science9": {"dir": "science/9", "grade": "9", "gradeName": "الصف التاسع", "gradeFor": "للصف التاسع", "name": "العلوم العامة", "short": "العلوم", "hello": "أهلاً يا بطل العلوم!", "unitsTitle": "وحدات العلوم",
+                 "theme": "sci", "key": "sci9:st", "wid": "science", "kxid": "science9", "student": "طالب العلوم", "packT": "رزمة العلوم والحياة", "widgets": False, "pack": LINKS.get("science9"), "pre": "sci9-",
+                 "books": [["كتاب العلوم والحياة — الفصل الأول", LINKS.get("science9_b1")], ["كتاب العلوم والحياة — الفصل الثاني", LINKS.get("science9_b2")]],
+                 "unitsHint": "خمس وحدات من رزمة العلوم والحياة: أجهزة الجسم، والكهرباء، والعناصر والتفاعلات، والضوء، والنبات الزهري. اضغط وحدة لترى دروسها."},
     "math": {"dir": "math/8", "name": "الرياضيات", "short": "الرياضيات", "hello": "مرحباً", "unitsTitle": "الوحدات الدراسية", "theme": "math", "key": "math8:st", "wid": "math",
              "kxid": "math8", "student": "طالب الرياضيات", "packT": "رزمة الرياضيات", "pack": LINKS["math"], "pre": "math8-",
              "unitsHint": "سبع وحدات: الأعداد، والجبر، والهندسة، والإحصاء، والمعادلات، والقياس. اضغط وحدة لترى دروسها."},
@@ -45,6 +49,37 @@ def science_units() -> list:
         out.append({"title": u["title"], "ic": ic, "color": col, "uq": u["unit_quiz"],
                     "lessons": [{"t": l["t"], "e": l["e"], "q": l["q"], "quiz": l["quiz"], "hints": l.get("hints", {})} for l in u["lessons"]]})
     return out
+
+SCI9_TOC = [("العناصر والتفاعلات الكيميائية في حياتنا", "🧪", "mol", ["الجدول الدوري الحديث", "الروابط الكيميائية وتمثيل لويس", "أنواع التفاعلات الكيميائية", "مفهوم التأكسد والاختزال"]),
+            ("الضوء والحياة", "💡", "wave", ["خصائص الضوء", "انكسار الضوء", "المرايا", "انعكاس الضوء وتطبيقاته"]),
+            ("النبات الزهري", "🌿", "plant", ["أنسجة النبات الزهري", "أجزاء النبات الزهري", "الهرمونات النباتية"])]
+
+
+def science9_units() -> tuple:
+    """الوحدتان 1 و2 من ملفات tools/content9 (الفصل الأول)، والباقي «قريباً» إلى أن يصل كتاب الفصل الثاني. يعيد (الوحدات، بنك الأسئلة)."""
+    C9 = ROOT / "tools" / "content9"
+    parts = {}
+    for f in ("u1a", "u1b", "u2"):
+        fp = C9 / f"{f}.json"
+        if fp.exists():
+            parts[f] = json.load(open(fp, encoding="utf-8"))
+    units, bank = [], []
+    for key, grp, ic, col in (("u1", ["u1a", "u1b"], "split", "#f9b8d0"), ("u2", ["u2"], "bolt", "#f7e18a")):
+        ps = [parts[g] for g in grp if g in parts]
+        if not ps:
+            continue
+        u0 = ps[0]["units"][0]
+        lessons = [l for p in ps for l in p["units"][0]["lessons"]]
+        uq = []
+        for p in ps:
+            uq += p["units"][0]["unit_quiz"][:12 // len(ps) if len(ps) > 1 else 12]
+        units.append({"title": u0["title"], "ic": ic, "color": col, "uq": uq, "lessons": [{"t": l["t"], "e": l["e"], "q": l["q"], "quiz": l["quiz"], "hints": l.get("hints", {})} for l in lessons]})
+        for p in ps:
+            bank += p.get("bank", [])
+    for t, _e, ic, ls in SCI9_TOC:
+        units.append({"title": t, "ic": ic, "color": "#cfe2b0", "uq": [],
+                      "lessons": [{"t": l, "e": ["# قريباً", "سيُضاف شرح هذا الدرس وأنشطته بإذن الله."], "q": [], "quiz": [], "hints": {}} for l in ls]})
+    return units, bank
 
 
 def math_units() -> list:
@@ -63,7 +98,7 @@ def math_units() -> list:
 
 SW = '''/* عامل خدمة العلوم العامة (الثامن): يعمل بعد أول زيارة بلا إنترنت. يحذف ذاكرته وحدها (sci8-). */
 const P = "sci8-";
-const V = P + "v3";
+const V = P + "v4";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -89,18 +124,18 @@ self.addEventListener("message", e => { if (e.data && e.data.type === "precache"
 
 def build(sid: str) -> None:
     c = SUBJ[sid]
-    units = science_units() if sid == "science" else math_units()
-    cfg = {k: c.get(k, False) for k in ("widgets", "name", "hello", "unitsTitle", "unitsHint", "theme", "key", "wid", "kxid", "student", "packT", "dir")}
-    data = {"cfg": cfg, "units": units, "pack": c["pack"]}
+    units = science_units() if sid == "science" else science9_units()[0] if sid == "science9" else math_units()
+    cfg = {k: c.get(k, False) for k in ("widgets", "name", "hello", "unitsTitle", "unitsHint", "theme", "key", "wid", "kxid", "student", "packT", "dir", "gradeName", "gradeFor")}
+    data = {"cfg": cfg, "units": units, "pack": c["pack"], "books": [b for b in c.get("books", []) if b[1]]}
     out = ROOT / c["dir"]
     shutil.rmtree(out, ignore_errors=True)
     out.mkdir(parents=True)
     html = (ROOT / "tools" / "pack8_app.html").read_text(encoding="utf-8")
     assert html.count("/*DATA*/") == 1
-    html = html.replace("/*DATA*/", "window.SCI=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";").replace("__NAME__", c["name"])
+    html = html.replace("/*DATA*/", "window.SCI=" + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";").replace("__NAME__", c["name"]).replace("__GRADE__", c.get("gradeName", "الصف الثامن"))
     (out / "index.html").write_text(html, encoding="utf-8")
     (out / "manifest.webmanifest").write_text(json.dumps({
-        "name": f"{c['name']} — الصف الثامن", "short_name": c["short"], "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone",
+        "name": f"{c['name']} — {c.get('gradeName', 'الصف الثامن')}", "short_name": c["short"], "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone",
         "background_color": "#FAF6EB", "theme_color": "#0a5230",
         "icons": [{"src": "../../shared/icons/portal-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
                   {"src": "../../shared/icons/portal-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}]}, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -110,7 +145,7 @@ def build(sid: str) -> None:
              "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"]
     (out / "precache.json").write_text(json.dumps({"files": files}, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     n = sum(len(u["lessons"]) for u in units)
-    print(f"▶ {c['name']} (8): {len(units)} وحدات، {n} دروس، {(out / 'index.html').stat().st_size // 1024} ك.ب")
+    print(f"▶ {c['name']} ({c.get('grade', 8)}): {len(units)} وحدات، {n} دروس، {(out / 'index.html').stat().st_size // 1024} ك.ب")
 
 
 if __name__ == "__main__":
