@@ -1,13 +1,13 @@
 {
   "name": "العلوم العامة — الصف الثامن",
-  "short_name": "الفيزياء",
+  "short_name": "العلوم",
   "lang": "ar",
   "dir": "rtl",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#FAF6EB",
-  "theme_color": "#FAF6EB",
+  "theme_color": "#113D2E",
   "icons": [
     {
       "src": "../../shared/icons/portal-192.png",

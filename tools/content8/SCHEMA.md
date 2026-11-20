@@ -1,7 +1,7 @@
 # محتوى العلوم للصف الثامن (فيزياء/كيمياء/أحياء)
 
 كلّ مادةٍ ملفّ JSON واحد: `tools/content8/<physics|chemistry|biology>.json`. المصدر الوحيد: رزمة «العلوم والحياة» للثامن (PDF).
-يتحقّق منه `python3 tools/content8/check.py <الملف>`، ويركّبه `tools/make_pcb8.py` في `<المادة>/8/`.
+يتحقّق منه `python3 tools/content8/check.py <الملف>`، ويركّبه `tools/make_science8.py` في `<المادة>/8/`.
 
 ```json
 {
