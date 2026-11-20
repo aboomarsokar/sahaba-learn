@@ -144,8 +144,9 @@ def build(d: str) -> None:
     s = set_arr(s, "AFKQ", "[]")
     s = set_arr(s, "GAL", J([{"n": x, "e": e, "c": "c1", "g": []} for x, e in (("الفيزياء", "⚡"), ("الكيمياء", "🧪"), ("الأحياء", "🧬"))])) if re.search(r"var GAL=\[", s) else s
     s = set_arr(s, "EXP", "[]") if re.search(r"var EXP=\[", s) else s
-    # الكتب والرزم: تُضاف روابطها حين تتوفّر (لا روابط للثامن بعد)
-    s = set_obj(s, "LIBM", '{"books":[],"packs":[]}')
+    # الكتب والرزم: رزمة العلوم والحياة للثامن (الرابط في tools/content8/links.json)
+    link = json.load(open(ROOT / "tools" / "content8" / "links.json", encoding="utf-8"))["science"]
+    s = set_obj(s, "LIBM", J({"books": [], "packs": [{"id": f"{d}8-pack", "s": k, "t": f"رزمة العلوم والحياة – الصف الثامن", "u": link}]}))
     (out / "index.html").write_text(s, encoding="utf-8")
     # الصور والمكتبات التي لم تعد مشار إليها
     txt = s + "".join(f.read_text(encoding="utf-8", errors="ignore") for f in (out / "lib").glob("*.js"))
