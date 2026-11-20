@@ -1,0 +1,1244 @@
+{
+ "n": 1,
+ "title": "الوصول إلى فلسطين",
+ "titleEn": "Getting to Palestine",
+ "lesson": {
+  "id": "1-1",
+  "title": "Getting to Palestine",
+  "titleAr": "الوصول إلى فلسطين",
+  "vocab": [
+   {
+    "en": "airport",
+    "ar": "مطار",
+    "em": "✈️",
+    "ex": "Rami's family are waiting at Gaza Airport.",
+    "exAr": "تنتظر عائلة رامي في مطار غزة."
+   },
+   {
+    "en": "attendant",
+    "ar": "مضيف / مضيفة طيران",
+    "em": "🧑‍✈️",
+    "ex": "Call the attendant, and she'll bring you something to drink.",
+    "exAr": "نادِ المضيفة وستحضر لك شيئاً تشربه."
+   },
+   {
+    "en": "captain",
+    "ar": "قائد الطائرة",
+    "em": "👨‍✈️",
+    "ex": "Soon after that, they hear the captain.",
+    "exAr": "وبعد ذلك بقليل سمعوا صوت القبطان."
+   },
+   {
+    "en": "landing card",
+    "ar": "بطاقة هبوط (وصول)",
+    "em": "🪪",
+    "ex": "You need to complete a visitor landing card.",
+    "exAr": "عليك أن تملأ بطاقة وصول للزائر."
+   },
+   {
+    "en": "passport",
+    "ar": "جواز سفر",
+    "em": "🛂",
+    "ex": "They'll take it when you show them your passport.",
+    "exAr": "سيأخذونها حين تُريهم جواز سفرك."
+   },
+   {
+    "en": "complete",
+    "ar": "يملأ / يُكمل",
+    "em": "✍️",
+    "ex": "So you each need to complete a landing card.",
+    "exAr": "لذلك على كلٍّ منكما أن يملأ بطاقة الوصول."
+   },
+   {
+    "en": "land",
+    "ar": "تهبط (الطائرة)",
+    "em": "🛬",
+    "ex": "They're landing right now. That's their plane!",
+    "exAr": "إنها تهبط الآن. تلك طائرتهم!"
+   },
+   {
+    "en": "take off",
+    "ar": "تُقلع (الطائرة)",
+    "em": "🛫",
+    "ex": "They are taking off on a long flight.",
+    "exAr": "إنهما يقلعان في رحلة طويلة."
+   },
+   {
+    "en": "right now",
+    "ar": "في هذه اللحظة بالضبط",
+    "em": "⏱️",
+    "ex": "No, they're landing right now.",
+    "exAr": "لا، إنهم يهبطون الآن."
+   },
+   {
+    "en": "flight",
+    "ar": "رحلة جوّية",
+    "em": "🌍",
+    "ex": "Flight PF124 is flying to Gaza.",
+    "exAr": "الرحلة PF124 متّجهة إلى غزة."
+   },
+   {
+    "en": "guide",
+    "ar": "مرشد سياحي",
+    "em": "🧭",
+    "ex": "There will be a guide to show us round.",
+    "exAr": "سيكون هناك مرشد ليريَنا المكان."
+   },
+   {
+    "en": "schedule",
+    "ar": "جدول زمني",
+    "em": "📅",
+    "ex": "We've got a busy schedule, but we can go for an hour.",
+    "exAr": "جدولنا مزدحم لكن يمكننا الذهاب لساعة."
+   },
+   {
+    "en": "mini-bus",
+    "ar": "حافلة صغيرة",
+    "em": "🚐",
+    "ex": "We travel by mini-bus to the Damascus Gate.",
+    "exAr": "نسافر بحافلة صغيرة إلى باب العامود."
+   },
+   {
+    "en": "museum",
+    "ar": "متحف",
+    "em": "🏛️",
+    "ex": "Let's visit the museum and see the things they found.",
+    "exAr": "لنزر المتحف ونرى ما وجدوه."
+   },
+   {
+    "en": "religious",
+    "ar": "ديني / متديّن",
+    "em": "🕌",
+    "ex": "I'm looking for a religious site. Is there one near here?",
+    "exAr": "أبحث عن موقع ديني. هل يوجد واحد قريب؟"
+   }
+  ],
+  "reading": {
+   "title": "Getting to Palestine",
+   "paras": [
+    {
+     "en": "The Yafawi family usually have their summer holidays in America, but this year Hadeel and Nidal are having a summer holiday with a very big difference. It is 10:30 in the morning on Saturday, July 10th, and they are taking off on a long flight – Flight PF124 to Gaza. Soon after that, they hear the captain. Captain: We're now flying at 11,500 metres, and the weather ahead is excellent. Nidal: This is exciting! Hadeel: Palestine, here we come!",
+     "ar": "تقضي عائلة يافاوي عطلتها الصيفية عادةً في أمريكا، لكنّ هديل ونضال يقضيان هذا العام عطلة صيفية مختلفة جدّاً. الساعة العاشرة والنصف صباح السبت العاشر من تموز، وهما يُقلعان في رحلة طويلة: الرحلة PF124 إلى غزة. وبعد قليل سمعا القبطان. القبطان: نحن نطير الآن على ارتفاع ١١٥٠٠ متر، والطقس أمامنا ممتاز. نضال: هذا مثير! هديل: فلسطين، ها نحن قادمون!"
+    },
+    {
+     "en": "Later, during the long flight: Attendant: Are you from Palestine? Hadeel: Well, we're Palestinian-American. We're staying with our cousin's family when we get there. We're staying with them for four weeks. Nidal: We're going home in early August.",
+     "ar": "وفي وقتٍ لاحق خلال الرحلة الطويلة: المضيفة: هل أنتما من فلسطين؟ هديل: نحن فلسطينيان أمريكيان. سنقيم عند عائلة ابن عمّنا حين نصل، وسنبقى معهم أربعة أسابيع. نضال: وسنعود إلى البيت في أوائل آب."
+    },
+    {
+     "en": "Attendant: So you each need to complete a visitor landing card. They'll take it after you arrive, when you show them your passport. Here you are.",
+     "ar": "المضيفة: إذن على كلٍّ منكما أن يملأ بطاقة وصول للزائر. سيأخذونها بعد وصولكما حين تُريانهم جواز السفر. تفضّلا."
+    },
+    {
+     "en": "At Gaza Airport next morning: Rami: I can't wait to see them again. Uncle Basim: Well, they're arriving at 9:30. Aunt Nada: And it's almost 9:30 now, so they're coming very soon. Rami: No, they're landing right now. That's their plane!",
+     "ar": "في مطار غزة صباح اليوم التالي: رامي: لا أطيق الانتظار لأراهما من جديد. العمّ باسم: حسناً، سيصلان في التاسعة والنصف. العمّة ندى: والساعة تقارب التاسعة والنصف الآن، لذلك سيصلان قريباً جدّاً. رامي: لا، إنهما يهبطان في هذه اللحظة. تلك طائرتهما!"
+    },
+    {
+     "en": "Finally, 45 minutes later: Rami: Nidal! Hadeel! Hi! Nidal: Hi, Rami! Hadeel: It's great to see you again! Uncle Basim: Hello, Hadeel. Hello, Nidal. Welcome home to Palestine. Aunt Nada: It's lovely to have you here. Hadeel: Thank you, Uncle Basim, Aunt Nada. It's lovely to be here.",
+     "ar": "وأخيراً، بعد خمس وأربعين دقيقة: رامي: نضال! هديل! أهلاً! نضال: أهلاً يا رامي! هديل: من الرائع أن أراك من جديد! العمّ باسم: أهلاً يا هديل، أهلاً يا نضال، مرحباً بكما في وطنكما فلسطين. العمّة ندى: من اللطيف أن تكونا عندنا. هديل: شكراً يا عمّ باسم ويا عمّة ندى، من اللطيف أن أكون هنا."
+    }
+   ],
+   "questions": [
+    {
+     "q": "Where are Hadeel and Nidal flying to?",
+     "o": [
+      "Gaza",
+      "London",
+      "Los Angeles"
+     ],
+     "a": 0
+    },
+    {
+     "q": "How long are they staying with their cousin's family?",
+     "o": [
+      "Two weeks",
+      "Four weeks",
+      "Four days"
+     ],
+     "a": 1
+    },
+    {
+     "tf": true,
+     "q": "The captain says the weather ahead is excellent."
+    },
+    {
+     "q": "What do Hadeel and Nidal need to complete on the plane?",
+     "o": [
+      "A school project",
+      "A flight schedule",
+      "A visitor landing card"
+     ],
+     "a": 2
+    },
+    {
+     "q": "What does Rami say when he sees the plane?",
+     "o": [
+      "They're landing right now.",
+      "They're taking off right now.",
+      "They're leaving soon."
+     ],
+     "a": 0
+    },
+    {
+     "tf": false,
+     "q": "Hadeel and Nidal are going home in early September.",
+     "why": "They are going home in early August."
+    }
+   ]
+  },
+  "rules": [
+   {
+    "title": "Present continuous: now and future plans",
+    "titleAr": "المضارع المستمر: الآن والخطط المستقبلية",
+    "explain": "نستعمل <b>المضارع المستمر</b> (am / is / are + V-ing) لأمرين: ١) ما يحدث <b>الآن أو في هذه الفترة</b> (We are now flying at 11,500 metres)، ٢) <b>خطّة قريبة مرتَّب لها</b> مع وقتٍ في المستقبل (They are arriving very soon / We are staying with them next week).",
+    "form": "am / is / are + V-ing    ·    الآن أو خطّة قريبة",
+    "examples": [
+     {
+      "en": "We are now **flying** at 11,500 metres.",
+      "ar": "يحدث الآن"
+     },
+     {
+      "en": "This year Hadeel and Nidal **are doing** something different.",
+      "ar": "في هذه الفترة"
+     },
+     {
+      "en": "They **are arriving** very soon.",
+      "ar": "خطّة قريبة"
+     },
+     {
+      "en": "We **are staying** with our cousin's family when we get there.",
+      "ar": "خطّة مرتَّبة"
+     }
+    ],
+    "questions": [
+     {
+      "q": "It's now 10:30 and Nidal and Hadeel ___ off.",
+      "o": [
+       "are taking",
+       "take",
+       "takes"
+      ],
+      "a": 0,
+      "why": "الآن: المضارع المستمر"
+     },
+     {
+      "q": "Their plane ___ at 11,500 metres at the moment.",
+      "o": [
+       "flies",
+       "is flying",
+       "fly"
+      ],
+      "a": 1,
+      "why": "at the moment: المضارع المستمر"
+     },
+     {
+      "q": "Hadeel and Nidal ___ in Gaza tomorrow morning.",
+      "o": [
+       "arrives",
+       "arrive",
+       "are arriving"
+      ],
+      "a": 2,
+      "why": "خطّة مستقبلية مع tomorrow"
+     },
+     {
+      "type": "type",
+      "q": "Their uncle ___ everyone home after that. (drive)",
+      "a": [
+       "is driving",
+       "'s driving"
+      ],
+      "why": "خطّة قريبة"
+     },
+     {
+      "type": "type",
+      "q": "They ___ a tour of Palestine next week. (do)",
+      "a": [
+       "are doing",
+       "'re doing"
+      ],
+      "why": "خطّة مرتَّبة"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «ماذا تفعل هذا المساء؟»",
+      "words": [
+       "What",
+       "are",
+       "you",
+       "doing",
+       "this",
+       "evening?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Present simple: regular actions and schedules",
+    "titleAr": "المضارع البسيط: العادات والجداول الثابتة",
+    "explain": "نستعمل <b>المضارع البسيط</b> (V1 / V(s)) للأفعال التي <b>تتكرّر</b> (These tours start from Jerusalem every week)، وللأمور التي <b>تبقى ثابتة</b> وأفعال الشعور والحالة مثل <b>love, like, prefer, need</b>، وكذلك <b>للجداول المستقبلية الثابتة</b> كمواعيد الرحلات (The flight leaves at 8:10 tomorrow).",
+    "form": "V1 / V(s) / doesn't + V1    ·    عادة · حالة ثابتة · جدول مستقبلي ثابت",
+    "examples": [
+     {
+      "en": "These tours **start** from Jerusalem every week.",
+      "ar": "يتكرّر"
+     },
+     {
+      "en": "He **loves** flying, and he **spends** many hours in the air every week.",
+      "ar": "حالة وتكرار"
+     },
+     {
+      "en": "He **doesn't like** staying away from his family at night.",
+      "ar": "فعل شعور منفيّ"
+     },
+     {
+      "en": "We **begin** our walking tour at 10:00 tomorrow.",
+      "ar": "جدول مستقبلي ثابت"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Captain Hassan ___ in Palestine, but he usually travels a lot.",
+      "o": [
+       "lives",
+       "is living",
+       "live"
+      ],
+      "a": 0,
+      "why": "حالة ثابتة"
+     },
+     {
+      "q": "He ___ the shorter flights to Europe.",
+      "o": [
+       "is preferring",
+       "prefers",
+       "prefer"
+      ],
+      "a": 1,
+      "why": "prefer فعل تفضيل"
+     },
+     {
+      "q": "At 8:10 tomorrow morning, the plane ___ for London.",
+      "o": [
+       "is taking off now",
+       "taking off",
+       "takes off"
+      ],
+      "a": 2,
+      "why": "جدول رحلات ثابت"
+     },
+     {
+      "type": "type",
+      "q": "The flight ___ at 7:05 in the evening. (arrive)",
+      "a": [
+       "arrives"
+      ],
+      "why": "جدول مستقبلي: المضارع البسيط"
+     },
+     {
+      "type": "type",
+      "q": "He ___ staying away from his family at night. (not like)",
+      "a": [
+       "doesn't like",
+       "does not like"
+      ],
+      "why": "نفي المضارع البسيط"
+     },
+     {
+      "tf": false,
+      "q": "The correct sentence is: He is loving flying.",
+      "why": "الصحيح: He loves flying."
+     }
+    ]
+   },
+   {
+    "title": "Prepositions of time and place",
+    "titleAr": "حروف الجرّ للزمان والمكان",
+    "explain": "للزمان: <b>in</b> مع الشهور والسنوات (in July)، <b>on</b> مع الأيام والتواريخ (on Saturday)، <b>at</b> مع الساعات (at 9:30)، <b>during</b> أثناء مدّة، <b>for</b> لمدّة (for four weeks)، <b>from … to</b> من … إلى. وللمكان: <b>at</b> (at the airport)، <b>in</b> (in the picture)، <b>on</b> (on the grass)، <b>near</b> قرب، <b>next to</b> بجانب، <b>outside</b> خارج.",
+    "form": "in July · on Saturday · at 9:30 · during the flight · for four weeks · from … to …",
+    "examples": [
+     {
+      "en": "Rami's family invited them to visit **in** July.",
+      "ar": "in مع الشهر"
+     },
+     {
+      "en": "They are staying **for** four weeks, **from** July 10th **to** August 7th.",
+      "ar": "مدّة وبداية ونهاية"
+     },
+     {
+      "en": "They watched some films **during** the long flight.",
+      "ar": "أثناء"
+     },
+     {
+      "en": "They are sitting **next to** each other **at** the back of the plane.",
+      "ar": "مكان"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Rami's family invited them to visit ___ July.",
+      "o": [
+       "in",
+       "on",
+       "at"
+      ],
+      "a": 0,
+      "why": "in مع الشهور"
+     },
+     {
+      "q": "They finally arrived ___ 9:30 on the 11th.",
+      "o": [
+       "in",
+       "at",
+       "during"
+      ],
+      "a": 1,
+      "why": "at مع الساعة"
+     },
+     {
+      "q": "They watched some films ___ the very long flight.",
+      "o": [
+       "for",
+       "at",
+       "during"
+      ],
+      "a": 2,
+      "why": "during + حدث"
+     },
+     {
+      "q": "They are staying ___ four weeks.",
+      "o": [
+       "for",
+       "during",
+       "on"
+      ],
+      "a": 0,
+      "why": "for + مدّة"
+     },
+     {
+      "type": "type",
+      "q": "Rami and his family are waiting ___ Gaza Airport. (at / on)",
+      "a": [
+       "at"
+      ],
+      "why": "at مع المطار"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «يجلسان بجانب بعضهما في مؤخّرة الطائرة»",
+      "words": [
+       "They",
+       "are",
+       "sitting",
+       "next",
+       "to",
+       "each",
+       "other",
+       "at",
+       "the",
+       "back",
+       "of",
+       "the",
+       "plane."
+      ]
+     }
+    ]
+   }
+  ],
+  "mastery": [
+   {
+    "q": "\"passport\" means:",
+    "o": [
+     "جواز سفر",
+     "بطاقة هبوط",
+     "مطار"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"captain\" means:",
+    "o": [
+     "مضيف الطيران",
+     "قائد الطائرة",
+     "مرشد سياحي"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "Hadeel and Nidal usually have their summer holidays in America.",
+    "lv": "easy"
+   },
+   {
+    "q": "\"take off\" means:",
+    "o": [
+     "تهبط",
+     "تملأ",
+     "تُقلع"
+    ],
+    "a": 2,
+    "lv": "easy"
+   },
+   {
+    "tf": false,
+    "q": "Flight PF124 is going to Los Angeles.",
+    "why": "It is going to Gaza.",
+    "lv": "easy"
+   },
+   {
+    "q": "\"schedule\" means:",
+    "o": [
+     "جدول زمني",
+     "متحف",
+     "قرية"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"museum\" means:",
+    "o": [
+     "بوابة",
+     "متحف",
+     "حافلة صغيرة"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "type": "match",
+    "q": "صِل كلّ كلمة بمعناها",
+    "pairs": [
+     [
+      "airport",
+      "مطار"
+     ],
+     [
+      "attendant",
+      "مضيف طيران"
+     ],
+     [
+      "guide",
+      "مرشد سياحي"
+     ],
+     [
+      "religious",
+      "ديني"
+     ]
+    ],
+    "lv": "medium"
+   },
+   {
+    "q": "Nidal and Hadeel ___ in their places on the plane now.",
+    "o": [
+     "sit",
+     "sits",
+     "are sitting"
+    ],
+    "a": 2,
+    "lv": "medium"
+   },
+   {
+    "q": "The plane ___ at 11,500 metres at the moment.",
+    "o": [
+     "is flying",
+     "flies",
+     "fly"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "They ___ in Gaza tomorrow morning.",
+    "o": [
+     "arrived",
+     "are arriving",
+     "arrive now"
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "q": "Complete: We stay ___ four weeks.",
+    "o": [
+     "during",
+     "in",
+     "for"
+    ],
+    "a": 2,
+    "lv": "medium"
+   },
+   {
+    "q": "Complete: The flight leaves ___ 10:30 in the morning.",
+    "o": [
+     "at",
+     "on",
+     "in"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "The captain ___ many hours in the air every week. (spend)",
+    "a": [
+     "spends"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "type",
+    "q": "Their uncle ___ everyone home after they land. (drive)",
+    "a": [
+     "is driving",
+     "'s driving"
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "He isn't liking staying away from his family.",
+     "He doesn't like staying away from his family.",
+     "He doesn't likes staying away from his family."
+    ],
+    "a": 1,
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "They",
+     "are",
+     "arriving",
+     "very",
+     "soon."
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "The",
+     "flight",
+     "leaves",
+     "Gaza",
+     "at",
+     "8:10",
+     "tomorrow",
+     "morning."
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "What does Hadeel need to show with her landing card?",
+    "o": [
+     "Her museum ticket",
+     "Her schedule",
+     "Her passport"
+    ],
+    "a": 2,
+    "lv": "hard"
+   },
+   {
+    "q": "Why does Nidal say 'This is exciting!'?",
+    "o": [
+     "They are flying to Palestine.",
+     "The plane is late.",
+     "The weather is bad."
+    ],
+    "a": 0,
+    "lv": "hard"
+   }
+  ]
+ },
+ "rulecards": {
+  "1-1#0": [
+   {
+    "k": "intro",
+    "useEn": "We use the {t|present continuous} for actions happening now or around now, and for {t|near future plans} that are already arranged.",
+    "useAr": "نستعمل {t|المضارع المستمر} للأفعال الجارية الآن أو في هذه الفترة، و{t|للخطط القريبة} المرتَّب لها.",
+    "signals": [
+     "now",
+     "at the moment",
+     "right now",
+     "this year",
+     "tomorrow",
+     "next week"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Now · around now",
+    "labelAr": "الآن أو في هذه الفترة",
+    "formula": "{s|Subject} + {t|am / is / are} + {v|V-ing}",
+    "examples": [
+     {
+      "en": "We {t|are} now {v|flying} at 11,500 metres.",
+      "ar": "نحن نطير الآن على ارتفاع ١١٥٠٠ متر."
+     },
+     {
+      "en": "This year Hadeel and Nidal {t|are} {v|doing} something different.",
+      "ar": "هذا العام تفعل هديل ونضال شيئاً مختلفاً."
+     }
+    ],
+    "tip": "نستعمله لما يحدث الآن أو لفترة مؤقّتة."
+   },
+   {
+    "k": "pos",
+    "label": "Future plans",
+    "labelAr": "خطط مستقبلية",
+    "formula": "{s|Subject} + {t|am / is / are} + {v|V-ing} + {t|future time}",
+    "examples": [
+     {
+      "en": "They {t|are} {v|arriving} very soon.",
+      "ar": "سيصلان قريباً جدّاً."
+     },
+     {
+      "en": "We {t|are} {v|staying} with them for four weeks.",
+      "ar": "سنبقى معهم أربعة أسابيع."
+     }
+    ],
+    "tip": "لا بدّ من ذكر وقتٍ مستقبلي (tomorrow, next week)."
+   },
+   {
+    "k": "neg",
+    "label": "Negative",
+    "labelAr": "النفي",
+    "formula": "{s|Subject} + {t|am / is / are} + {n|not} + {v|V-ing}",
+    "examples": [
+     {
+      "en": "I {t|'m} {n|not} {v|doing} anything much tomorrow.",
+      "ar": "لن أفعل شيئاً يُذكر غداً."
+     }
+    ]
+   },
+   {
+    "k": "q",
+    "label": "Question",
+    "labelAr": "السؤال",
+    "formula": "{t|Am / Is / Are} + {s|Subject} + {v|V-ing}?",
+    "examples": [
+     {
+      "en": "{t|What} {t|are} {s|you} {v|doing} this evening?",
+      "ar": "ماذا ستفعل هذا المساء؟"
+     },
+     {
+      "en": "{t|Are} {s|you} {v|doing} anything tomorrow evening?",
+      "ar": "هل ستفعل شيئاً مساء الغد؟"
+     }
+    ]
+   }
+  ],
+  "1-1#1": [
+   {
+    "k": "intro",
+    "useEn": "We use the {t|present simple} for regular actions, things that stay the same, and {t|fixed future schedules} such as flights and tours.",
+    "useAr": "نستعمل {t|المضارع البسيط} للأفعال المتكرّرة والأمور الثابتة و{t|الجداول المستقبلية الثابتة} كالرحلات والجولات.",
+    "signals": [
+     "every week",
+     "usually",
+     "always",
+     "at 8:10 tomorrow",
+     "on Wednesday"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Regular actions",
+    "labelAr": "أفعال متكرّرة",
+    "formula": "{s|Subject} + {v|V1 / V(s)} + every week …",
+    "examples": [
+     {
+      "en": "These tours {v|start} from Jerusalem every week.",
+      "ar": "تنطلق هذه الجولات من القدس كلّ أسبوع."
+     },
+     {
+      "en": "He {v|spends} many hours in the air every week.",
+      "ar": "يقضي ساعات كثيرة في الجوّ كلّ أسبوع."
+     }
+    ],
+    "tip": "مع he / she / it نضيف s أو es."
+   },
+   {
+    "k": "pos",
+    "label": "Future schedules",
+    "labelAr": "جداول مستقبلية",
+    "formula": "{s|Subject} + {v|V1 / V(s)} + {t|time}",
+    "examples": [
+     {
+      "en": "We {v|begin} our walking tour at 10:00.",
+      "ar": "نبدأ جولتنا سيراً على الأقدام في العاشرة."
+     },
+     {
+      "en": "The flight {v|leaves} at 8:10 tomorrow morning.",
+      "ar": "تقلع الرحلة في الثامنة وعشر دقائق صباح الغد."
+     }
+    ],
+    "tip": "نستعمله لمواعيد ثابتة لا لخطط شخصية."
+   },
+   {
+    "k": "neg",
+    "label": "Negative",
+    "labelAr": "النفي",
+    "formula": "{s|Subject} + {t|don't / doesn't} + {v|V1}",
+    "examples": [
+     {
+      "en": "He {t|doesn't} {v|like} staying away from his family.",
+      "ar": "لا يحبّ الابتعاد عن عائلته."
+     }
+    ]
+   },
+   {
+    "k": "q",
+    "label": "Question",
+    "labelAr": "السؤال",
+    "formula": "{t|Do / Does} + {s|Subject} + {v|V1}?",
+    "examples": [
+     {
+      "en": "What time {t|does} your flight {v|leave} tomorrow?",
+      "ar": "في أيّ ساعة تقلع رحلتك غداً؟"
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Stative verbs",
+    "labelAr": "أفعال الحالة",
+    "body": "{t|like · love · prefer · want}   مشاعر\n{t|look · seem · sound}   حواس\n{t|know · believe · forget}   فكر\n{t|need · include}   حالات\n{n|✗} He is loving flying.   {t|✓} He loves flying.",
+    "examples": [
+     {
+      "en": "He {t|prefers} the shorter flights.",
+      "ar": "يفضّل الرحلات الأقصر."
+     }
+    ]
+   }
+  ],
+  "1-1#2": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|prepositions of time} to say when, and {t|prepositions of place} to say where.",
+    "useAr": "نستعمل {t|حروف الجرّ للزمان} لنقول متى، و{t|حروف الجرّ للمكان} لنقول أين.",
+    "signals": [
+     "in",
+     "on",
+     "at",
+     "during",
+     "for",
+     "from … to"
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Time",
+    "labelAr": "الزمان",
+    "body": "{t|in} July · in 2015 · in the morning\n{t|on} Saturday · on July 10th\n{t|at} 9:30 · at night\n{t|during} the flight\n{t|for} four weeks\n{t|from … to} July 10th to August 7th",
+    "examples": [
+     {
+      "en": "They arrived {t|at} 9:30 {t|on} the 11th.",
+      "ar": "وصلا في التاسعة والنصف يوم الحادي عشر."
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Place",
+    "labelAr": "المكان",
+    "body": "{t|at} the airport · at the back\n{t|in} the picture · in her hand\n{t|on} the grass · on page 5\n{t|near} · {t|next to} · {t|outside}",
+    "examples": [
+     {
+      "en": "The flight attendant is standing {t|next to} them.",
+      "ar": "المضيفة تقف بجانبهما."
+     },
+     {
+      "en": "Their plane is landing {t|at} the airport.",
+      "ar": "طائرتهما تهبط في المطار."
+     }
+    ]
+   }
+  ]
+ },
+ "worksheet": {
+  "readingFrom": 1,
+  "sections": [
+   {
+    "k": "vocab",
+    "questions": [
+     {
+      "q": "You show your ___ to the officer when you arrive.",
+      "o": [
+       "passport",
+       "museum",
+       "schedule"
+      ],
+      "a": 0
+     },
+     {
+      "q": "The ___ speaks to the passengers from the plane.",
+      "o": [
+       "guide",
+       "captain",
+       "attendant"
+      ],
+      "a": 1
+     },
+     {
+      "q": "The plane ___ at 10:30 and lands at 9:30 next morning.",
+      "o": [
+       "lands",
+       "completes",
+       "takes off"
+      ],
+      "a": 2
+     },
+     {
+      "q": "Our tour has a busy ___ with something to see each day.",
+      "o": [
+       "schedule",
+       "passport",
+       "flight"
+      ],
+      "a": 0
+     },
+     {
+      "q": "A ___ shows tourists around a place and explains things.",
+      "o": [
+       "captain",
+       "guide",
+       "gate"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "The opposite of 'take off' (for a plane) is ___.",
+      "a": [
+       "land"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "grammar",
+    "questions": [
+     {
+      "q": "Look! The plane ___ right now.",
+      "o": [
+       "is landing",
+       "lands",
+       "land"
+      ],
+      "a": 0
+     },
+     {
+      "q": "These tours ___ from Jerusalem every week.",
+      "o": [
+       "are starting",
+       "start",
+       "starts"
+      ],
+      "a": 1
+     },
+     {
+      "q": "We ___ with our cousins next week.",
+      "o": [
+       "stays",
+       "stayed",
+       "are staying"
+      ],
+      "a": 2
+     },
+     {
+      "q": "He ___ staying away from his family at night.",
+      "o": [
+       "doesn't like",
+       "isn't liking",
+       "don't like"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "At 8:10 tomorrow, the plane ___ for London. (take off)",
+      "a": [
+       "takes off"
+      ]
+     },
+     {
+      "type": "type",
+      "q": "Hadeel and Nidal ___ to Gaza now. (travel)",
+      "a": [
+       "are travelling",
+       "are traveling"
+      ]
+     },
+     {
+      "q": "We are staying ___ four weeks.",
+      "o": [
+       "at",
+       "for",
+       "in"
+      ],
+      "a": 1
+     }
+    ]
+   },
+   {
+    "k": "reading",
+    "questions": [
+     {
+      "q": "What are Hadeel and Nidal doing this summer?",
+      "o": [
+       "Visiting Palestine",
+       "Staying in America",
+       "Taking a school trip"
+      ],
+      "a": 0
+     },
+     {
+      "tf": true,
+      "q": "Hadeel and Nidal are Palestinian-American."
+     },
+     {
+      "q": "When are they going home?",
+      "o": [
+       "In early July",
+       "In early August",
+       "In late September"
+      ],
+      "a": 1
+     },
+     {
+      "q": "What time is the plane arriving?",
+      "o": [
+       "At 10:30",
+       "At 11:30",
+       "At 9:30"
+      ],
+      "a": 2
+     },
+     {
+      "q": "How does Hadeel feel when she meets her family?",
+      "o": [
+       "Happy to be in Palestine",
+       "Angry about the flight",
+       "Scared of the plane"
+      ],
+      "a": 0
+     }
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "title": "الوصول إلى فلسطين",
+  "titleEn": "Getting to Palestine",
+  "intro": "يتعلّم الطالب المضارع المستمر (الآن والخطط المستقبلية) والمضارع البسيط (العادات والجداول الثابتة) وحروف الجرّ للزمان والمكان، ومفردات السفر والمطارات والجولات السياحية.",
+  "qa": [
+   {
+    "t": "vocab",
+    "q": "What words do we use at the airport and on a plane?",
+    "qAr": "ما الكلمات التي نستعملها في المطار وعلى الطائرة؟",
+    "a": "At the **airport** we show our **passport** and complete a **landing card**. On the plane, the **captain** speaks to everyone and the **attendant** helps the passengers. The plane **takes off** and later **lands**.",
+    "aAr": "في **المطار** نُري **جواز السفر** ونملأ **بطاقة الوصول**. وعلى الطائرة يتحدّث **القبطان** إلى الجميع وتساعد **المضيفة** الركّاب. تُقلع الطائرة (**take off**) ثم تهبط (**land**).",
+    "ex": [
+     [
+      "We're now flying at 11,500 metres.",
+      "نحن نطير الآن على ارتفاع ١١٥٠٠ متر."
+     ],
+     [
+      "They're landing right now.",
+      "إنهم يهبطون في هذه اللحظة."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What do 'flight' and 'fly' mean, and how are they related?",
+    "qAr": "ما معنى flight وfly وما العلاقة بينهما؟",
+    "a": "**fly** is a verb and **flight** is the noun: a **flight** is a journey in a plane.",
+    "aAr": "**fly** فعل بمعنى يطير، و**flight** اسم بمعنى رحلة جوّية.",
+    "ex": [
+     [
+      "Flight PF124 flies to Gaza.",
+      "الرحلة PF124 تطير إلى غزة."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What words describe a tour?",
+    "qAr": "ما الكلمات التي تصف الجولة السياحية؟",
+    "a": "A tour has a **schedule**, a **guide** and often a **mini-bus**. Tourists visit a **museum**, a **village** or a **religious** site.",
+    "aAr": "للجولة **جدول** و**مرشد** وغالباً **حافلة صغيرة**، ويزور السيّاح **متحفاً** أو **قرية** أو موقعاً **دينياً**.",
+    "ex": [
+     [
+      "There'll be a guide to show us round.",
+      "سيكون هناك مرشد ليريَنا المكان."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "Which cities does the tour talk about?",
+    "qAr": "ما المدن التي تذكرها الجولة؟",
+    "a": "The tour visits **Jerusalem** (the Old City, Damascus Gate, Al-Aqsa Mosque, the Dome of the Rock and the Mount of Olives) and **Nablus** (the busy city centre, a traditional soap factory and many good restaurants).",
+    "aAr": "تزور الجولة **القدس** (البلدة القديمة وباب العامود والمسجد الأقصى وقبّة الصخرة وجبل الزيتون) و**نابلس** (وسط المدينة المزدحم ومصنع صابون تقليدي ومطاعم كثيرة جيّدة).",
+    "ex": [
+     [
+      "We travel by mini-bus to the great Damascus Gate.",
+      "نسافر بحافلة صغيرة إلى باب العامود العظيم."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "When do we use the present continuous?",
+    "qAr": "متى نستعمل المضارع المستمر؟",
+    "a": "We use ==am / is / are + V-ing== for actions happening **now** or around now, and for **future plans** with a future time word.",
+    "aAr": "نستعمل ==am / is / are + V-ing== للأفعال الجارية **الآن** أو في هذه الفترة، وللخطط **المستقبلية** مع كلمة تدلّ على المستقبل.",
+    "ex": [
+     [
+      "We are now flying at 11,500 metres.",
+      "نحن نطير الآن على ارتفاع ١١٥٠٠ متر."
+     ],
+     [
+      "They are arriving very soon.",
+      "سيصلان قريباً جدّاً."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we ask and answer about future plans?",
+    "qAr": "كيف نسأل ونجيب عن الخطط المستقبلية؟",
+    "a": "We ask **What are you doing …?** and answer with the present continuous: **I'm helping my mum**.",
+    "aAr": "نسأل **What are you doing …?** ونجيب بالمضارع المستمر: **I'm helping my mum**.",
+    "ex": [
+     [
+      "What are you doing this evening?",
+      "ماذا ستفعل هذا المساء؟"
+     ],
+     [
+      "I'm helping my mum with the housework.",
+      "سأساعد أمّي في أعمال المنزل."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "When do we use the present simple?",
+    "qAr": "متى نستعمل المضارع البسيط؟",
+    "a": "We use ==V1 / V(s)== for things that happen **regularly**, things that always stay **the same**, and **fixed schedules** in the future.",
+    "aAr": "نستعمل ==V1 / V(s)== للأمور **المتكرّرة** والأمور **الثابتة** و**الجداول** المستقبلية الثابتة.",
+    "ex": [
+     [
+      "These tours start from Jerusalem every week.",
+      "تنطلق هذه الجولات من القدس كلّ أسبوع."
+     ],
+     [
+      "We begin our walking tour at 10:00.",
+      "نبدأ جولتنا في العاشرة."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we ask about travel times?",
+    "qAr": "كيف نسأل عن مواعيد السفر؟",
+    "a": "We use the present simple: **What time does your flight leave?** and answer **It goes at 9:35.**",
+    "aAr": "نستعمل المضارع البسيط: **What time does your flight leave?** ونجيب **It goes at 9:35.**",
+    "ex": [
+     [
+      "When do you arrive in New York?",
+      "متى تصل إلى نيويورك؟"
+     ],
+     [
+      "I get there at 6:15 in the evening.",
+      "أصل هناك في السادسة والربع مساءً."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "Which verbs do we not usually use in the continuous?",
+    "qAr": "ما الأفعال التي لا نستعملها عادةً في المستمر؟",
+    "a": "**Stative verbs** such as **like, love, prefer, want, know, need** usually take the present simple: **He loves flying.**",
+    "aAr": "**أفعال الحالة** مثل **like وlove وprefer وwant وknow وneed** تأخذ المضارع البسيط غالباً: **He loves flying.**",
+    "ex": [
+     [
+      "He prefers the shorter flights to Europe.",
+      "يفضّل الرحلات الأقصر إلى أوروبا."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "Which prepositions do we use with time?",
+    "qAr": "ما حروف الجرّ التي نستعملها مع الزمان؟",
+    "a": "**in** July, **on** Saturday, **at** 9:30, **during** the flight, **for** four weeks and **from … to** …",
+    "aAr": "**in** مع الشهر، **on** مع اليوم، **at** مع الساعة، **during** أثناء الرحلة، **for** لمدّة، و**from … to** من … إلى.",
+    "ex": [
+     [
+      "They are staying for four weeks, from July 10th to August 7th.",
+      "سيبقيان أربعة أسابيع من العاشر من تموز إلى السابع من آب."
+     ]
+    ]
+   },
+   {
+    "t": "reading",
+    "q": "Why are Hadeel and Nidal going to Palestine?",
+    "qAr": "لماذا يذهب هديل ونضال إلى فلسطين؟",
+    "a": "They usually spend the summer in America, but this year they are visiting their cousin's family in Gaza for four weeks.",
+    "aAr": "يقضيان الصيف عادةً في أمريكا لكنّهما هذا العام يزوران عائلة ابن عمّهما في غزة أربعة أسابيع."
+   },
+   {
+    "t": "reading",
+    "q": "What does the flight attendant ask them to do?",
+    "qAr": "ماذا تطلب منهما المضيفة؟",
+    "a": "She asks them to complete a visitor landing card. The officers take it when they show their passports.",
+    "aAr": "تطلب منهما ملء بطاقة وصول للزائر، ويأخذها الموظّفون حين يُريان جوازَي السفر."
+   },
+   {
+    "t": "reading",
+    "q": "What happens at Gaza Airport?",
+    "qAr": "ماذا يحدث في مطار غزة؟",
+    "a": "Rami and his family wait for them. Rami sees the plane landing, and 45 minutes later they meet and say hello.",
+    "aAr": "ينتظرهما رامي وعائلته، ويرى رامي الطائرة تهبط، وبعد ٤٥ دقيقة يلتقون ويرحّبون ببعضهم."
+   },
+   {
+    "t": "writing",
+    "q": "How do we write a notice about a school trip?",
+    "qAr": "كيف نكتب إعلاناً عن رحلة مدرسية؟",
+    "a": "Write the heading **SCHOOL TRIP**, say where and when we are going with the present continuous, and give travel times with the present simple.",
+    "aAr": "نكتب العنوان **SCHOOL TRIP** ونذكر المكان والموعد بالمضارع المستمر، ثم أوقات التنقّل بالمضارع البسيط.",
+    "ex": [
+     [
+      "We are going to Hebron on Saturday.",
+      "سنذهب إلى الخليل يوم السبت."
+     ],
+     [
+      "The bus leaves at 8:00 from school.",
+      "تغادر الحافلة في الثامنة من المدرسة."
+     ]
+    ]
+   },
+   {
+    "t": "speaking",
+    "q": "What do we say when we meet someone again?",
+    "qAr": "ماذا نقول حين نلتقي أحداً من جديد؟",
+    "a": "We say **It's great to see you again!** and answer **It's lovely to be here.**",
+    "aAr": "نقول **It's great to see you again!** ونردّ **It's lovely to be here.**",
+    "ex": [
+     [
+      "Welcome home to Palestine.",
+      "مرحباً بكما في وطنكما فلسطين."
+     ]
+    ]
+   }
+  ]
+ }
+}

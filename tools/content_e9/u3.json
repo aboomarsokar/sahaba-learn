@@ -1,0 +1,1047 @@
+{
+ "n": 3,
+ "title": "كن لائقاً ولكن كن آمناً",
+ "titleEn": "Be fit, but be safe",
+ "lesson": {
+  "id": "3-1",
+  "title": "Be fit, but be safe",
+  "titleAr": "كن لائقاً ولكن كن آمناً",
+  "vocab": [
+   {
+    "en": "calm down",
+    "ar": "يهدأ",
+    "em": "😌",
+    "ex": "OK, Waleed, calm down.",
+    "exAr": "حسناً يا وليد، اهدأ."
+   },
+   {
+    "en": "collapse",
+    "ar": "ينهار / يسقط مغشياً عليه",
+    "em": "🤕",
+    "ex": "Coach! Jamie has collapsed!",
+    "exAr": "يا مدرّب! جيمي انهار!"
+   },
+   {
+    "en": "cover",
+    "ar": "يغطّي",
+    "em": "🧣",
+    "ex": "Let's cover him to keep him warm.",
+    "exAr": "لنغطِّه ليبقى دافئاً."
+   },
+   {
+    "en": "first aid kit",
+    "ar": "حقيبة الإسعافات الأولية",
+    "em": "🧰",
+    "ex": "Run and get the thermal blanket and the first aid kit.",
+    "exAr": "اركض وأحضر البطانية الحرارية وحقيبة الإسعافات الأولية."
+   },
+   {
+    "en": "ground",
+    "ar": "الأرض",
+    "em": "🌱",
+    "ex": "He falls to the ground and lies there, not moving.",
+    "exAr": "يسقط على الأرض ويبقى مستلقياً دون حراك."
+   },
+   {
+    "en": "lie",
+    "ar": "يستلقي",
+    "em": "🛌",
+    "ex": "Let her lie here quietly at the moment.",
+    "exAr": "دعها تستلقي هنا بهدوء الآن."
+   },
+   {
+    "en": "pulse",
+    "ar": "النبض",
+    "em": "💓",
+    "ex": "Now let's check his pulse.",
+    "exAr": "الآن لنفحص نبضه."
+   },
+   {
+    "en": "sweat",
+    "ar": "يتعرّق",
+    "em": "💦",
+    "ex": "He's cold, too, and he's sweating.",
+    "exAr": "إنه بارد أيضاً ويتعرّق."
+   },
+   {
+    "en": "heart",
+    "ar": "القلب",
+    "em": "❤",
+    "ex": "A healthy heart is a very important thing.",
+    "exAr": "القلب السليم شيء مهمّ جدّاً."
+   },
+   {
+    "en": "injury",
+    "ar": "إصابة",
+    "em": "🩹",
+    "ex": "Warming up helps to stop sports injuries.",
+    "exAr": "الإحماء يساعد على منع الإصابات الرياضية."
+   },
+   {
+    "en": "out of breath",
+    "ar": "منقطع النَّفَس",
+    "em": "😤",
+    "ex": "I started well, but then I got out of breath.",
+    "exAr": "بدأتُ جيّداً لكنّ نَفَسي انقطع بعد ذلك."
+   },
+   {
+    "en": "rate",
+    "ar": "معدّل",
+    "em": "📊",
+    "ex": "They say my heart rate was 190 beats a minute!",
+    "exAr": "يقولون إنّ معدّل نبض قلبي كان 190 نبضة في الدقيقة!"
+   },
+   {
+    "en": "sensible",
+    "ar": "عاقل / حكيم",
+    "em": "🧠",
+    "ex": "The rule is this: be sensible, and don't push yourself too hard.",
+    "exAr": "القاعدة هي: كن حكيماً ولا ترهق نفسك أكثر من اللازم."
+   },
+   {
+    "en": "warm up",
+    "ar": "يسخّن الجسم (يحمّي)",
+    "em": "🔥",
+    "ex": "With all sports, always remember to warm up first.",
+    "exAr": "مع كلّ الرياضات تذكّر دائماً أن تسخّن جسمك أوّلاً."
+   },
+   {
+    "en": "gentle",
+    "ar": "لطيف / خفيف",
+    "em": "🍃",
+    "ex": "Do gentle exercises for the various parts of your body.",
+    "exAr": "قم بتمارين خفيفة لمختلف أجزاء جسمك."
+   },
+   {
+    "en": "fever",
+    "ar": "حمّى",
+    "em": "🌡",
+    "ex": "Majed has a fever of 40°C.",
+    "exAr": "ماجد مصاب بحمّى درجتها 40 مئوية."
+   }
+  ],
+  "reading": {
+   "title": "Ask Dr Blake",
+   "paras": [
+    {
+     "en": "Dr Blake is at Waleed's school, and he has been using charts to talk about health, sport and getting fit. Now he is answering questions.",
+     "ar": "الدكتور بليك في مدرسة وليد، وقد استعمل مخطّطات ليتحدّث عن الصحّة والرياضة واللياقة. والآن يجيب عن الأسئلة."
+    },
+    {
+     "en": "Hello. I'm Julie Nixon. I started rock climbing last year, but I fell and broke my leg. Since then, I haven't been active enough, but I want to try something safer! What's your advice?",
+     "ar": "مرحباً. أنا جولي نيكسون. بدأتُ تسلّق الصخور العام الماضي لكنّني سقطتُ وكسرتُ ساقي. ومنذ ذلك الحين لم أكن نشيطة بما يكفي، لكنّني أريد أن أجرّب شيئاً أكثر أماناً! ما نصيحتك؟"
+    },
+    {
+     "en": "You feel that rock climbing is too dangerous for you, and yes, it is more dangerous than most sports. The safest activity is swimming, and that's also good for old injuries like yours. But with all sports, always remember to warm up first. Do gentle exercises for the various parts of your body. This helps stop injuries.",
+     "ar": "تشعرين أنّ تسلّق الصخور خطِر جدّاً عليك، وهو فعلاً أخطر من معظم الرياضات. أكثر الأنشطة أماناً هو السباحة، وهي مفيدة أيضاً للإصابات القديمة مثل إصابتك. لكن مع كلّ الرياضات تذكّري دائماً أن تسخّني جسمك أوّلاً. قومي بتمارين خفيفة لمختلف أجزاء جسمك، فهذا يساعد على منع الإصابات."
+    },
+    {
+     "en": "I'm Jamie Smith, and I recently went football training after a week in bed with flu. I started well enough, but then I got out of breath. I began sweating badly, and my heart started beating very fast. Then I collapsed. They say my heart rate was 190 beats a minute! But I was all right after ten minutes, and I wanted to start again. The problem was that our coach sent me home! He said I wasn't fit enough to train. Was he wrong?",
+     "ar": "أنا جيمي سميث، وقد ذهبتُ مؤخّراً إلى تدريب كرة القدم بعد أسبوع في الفراش بسبب الإنفلونزا. بدأتُ جيّداً بما يكفي لكنّ نَفَسي انقطع بعد ذلك. وبدأتُ أتعرّق بشدّة وصار قلبي ينبض بسرعة كبيرة، ثمّ انهرتُ. يقولون إنّ معدّل نبض قلبي كان 190 نبضة في الدقيقة! لكنّني تحسّنتُ بعد عشر دقائق وأردتُ أن أبدأ من جديد. المشكلة أنّ مدرّبنا أرسلني إلى البيت! قال إنّني لستُ لائقاً بما يكفي للتدريب. هل أخطأ؟"
+    },
+    {
+     "en": "No, he was right – and you were wrong. Hard training after you've been sick is dangerous, Jamie. Your body was still too weak to do sports, and you didn't wait long enough to get well again. The rule is this: be sensible, and don't push yourself too hard or too soon. Take things slowly, and remember the old saying: 'Better safe than sorry'.",
+     "ar": "لا، لقد كان محقّاً وأنتَ المخطئ. التدريب الشاقّ بعد المرض خطِر يا جيمي. كان جسمك ما زال أضعف من أن يمارس الرياضة، ولم تنتظر وقتاً كافياً لتتعافى. القاعدة هي: كن حكيماً ولا ترهق نفسك أكثر من اللازم ولا مبكّراً جدّاً. خذ الأمور ببطء وتذكّر المثل القديم: «السلامة خير من الندم»."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Julie do last year?",
+     "o": [
+      "She started rock climbing",
+      "She started swimming",
+      "She started football training"
+     ],
+     "a": 0
+    },
+    {
+     "tf": true,
+     "q": "Dr Blake says swimming is the safest activity."
+    },
+    {
+     "q": "What happened to Jamie when he trained after the flu?",
+     "o": [
+      "He collapsed",
+      "He won the match",
+      "He fell asleep"
+     ],
+     "a": 0
+    },
+    {
+     "tf": false,
+     "q": "Dr Blake thinks the coach was wrong to send Jamie home.",
+     "why": "He says the coach was right and Jamie was wrong."
+    },
+    {
+     "q": "What does 'Better safe than sorry' mean?",
+     "o": [
+      "It is better to be careful than to regret later",
+      "It is better to be fast than slow",
+      "It is better to be sorry than safe"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  "rules": [
+   {
+    "title": "Comparatives, superlatives and (not) as … as",
+    "titleAr": "المقارنة والتفضيل و(not) as … as",
+    "explain": "نقارن <b>الصفات القصيرة</b> بـ <b>-er / -est</b> (fit → fitter → the fittest) و<b>الصفات الطويلة</b> بـ <b>more / most</b> (important → more important → the most important). ونقارن <b>الأفعال</b> بأحوال الحال: <b>more quickly / the most quickly</b>، أمّا الأحوال التي بلا -ly (fast, hard, early, late, well) فتتصرّف كالصفات: faster, the fastest. وأشكال <b>better / best</b> للصفة good وللحال well. ونقول <b>(not) as … as</b> للمساواة أو عدمها (She didn't run as fast as Sameera).",
+    "form": "short adj + er / est  ·  more / most + long adj or adverb  ·  (not) as + adj / adv + as",
+    "examples": [
+     {
+      "en": "He's usually **the fittest** boy in the team.",
+      "ar": "التفضيل مع صفة قصيرة"
+     },
+     {
+      "en": "The **most important** match of the year is on Saturday.",
+      "ar": "التفضيل مع صفة طويلة"
+     },
+     {
+      "en": "You should take things **more slowly**.",
+      "ar": "مقارنة مع حال"
+     },
+     {
+      "en": "I am **much better** than I was.",
+      "ar": "الصيغة الشاذّة better"
+     },
+     {
+      "en": "You are **not as strong as** you think you are.",
+      "ar": "عدم المساواة"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Jamie is ___ boy in the team.",
+      "o": [
+       "the fit",
+       "the fittest",
+       "more fit"
+      ],
+      "a": 1
+     },
+     {
+      "q": "You should take things ___.",
+      "o": [
+       "more slowly",
+       "slowlier",
+       "most slowly"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Fuad doesn't feel ___ sick as Yasser.",
+      "o": [
+       "more",
+       "as",
+       "than"
+      ],
+      "a": 1,
+      "why": "(not) as … as"
+     },
+     {
+      "q": "Lana ran even ___ than Sameera.",
+      "o": [
+       "fast",
+       "faster",
+       "fastest"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "I'm ___ than I was last week. (good)",
+      "a": [
+       "better"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «لستَ قويّاً كما تظنّ»",
+      "words": [
+       "You",
+       "are",
+       "not",
+       "as",
+       "strong",
+       "as",
+       "you",
+       "think."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "too and (not) enough",
+    "titleAr": "too و(not) enough",
+    "explain": "نستعمل <b>too + صفة / حال</b> حين يكون الشيء <b>أكثر</b> من المطلوب (too dangerous = خطِر أكثر من اللازم)، و<b>not + صفة / حال + enough</b> حين يكون <b>أقلّ</b> من المطلوب (not fit enough = غير لائق بما يكفي). ويمكن أن نضيف <b>for + اسم / ضمير</b> أو <b>to + فعل</b>: too weak <b>to do</b> sports.",
+    "form": "too + adj / adv  ·  not + adj / adv + enough  ·  … (for someone) (to + V1)",
+    "examples": [
+     {
+      "en": "Climbing is **too dangerous** for you.",
+      "ar": "أكثر من اللازم"
+     },
+     {
+      "en": "Your body was **too weak to do** sports.",
+      "ar": "أضعف من أن يمارس"
+     },
+     {
+      "en": "I have **not been active enough**.",
+      "ar": "أقلّ من المطلوب"
+     },
+     {
+      "en": "I was **not fit enough to train**.",
+      "ar": "غير لائق بما يكفي"
+     },
+     {
+      "en": "Her shoes are **too large**. They aren't **small enough**.",
+      "ar": "too مقابل not enough"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Don't push yourself ___ hard.",
+      "o": [
+       "too",
+       "enough",
+       "very much"
+      ],
+      "a": 0
+     },
+     {
+      "q": "I was not fit ___ to train.",
+      "o": [
+       "too",
+       "enough",
+       "so"
+      ],
+      "a": 1
+     },
+     {
+      "q": "The ball is ___ fast for her to stop.",
+      "o": [
+       "enough",
+       "too",
+       "as"
+      ],
+      "a": 1
+     },
+     {
+      "q": "He isn't good ___ to jump that high.",
+      "o": [
+       "too",
+       "enough",
+       "as"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "My bag is ___ heavy to carry. (too)",
+      "a": [
+       "too"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «لم تنتظر وقتاً كافياً»",
+      "words": [
+       "You",
+       "did",
+       "not",
+       "wait",
+       "long",
+       "enough."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Word formation: nouns and adjectives",
+    "titleAr": "تكوين الكلمات: الأسماء والصفات",
+    "explain": "من كلمةٍ واحدة نكوّن كلماتٍ من أنواعٍ أخرى: <b>safe</b> (صفة) ← <b>safety</b> (اسم)، و<b>danger</b> (اسم) ← <b>dangerous</b> (صفة)، و<b>health</b> (اسم) ← <b>healthy</b> (صفة)، و<b>act</b> (فعل / اسم) ← <b>active</b> (صفة) ← <b>activity</b> (اسم). نضع <b>الصفة</b> قبل الاسم أو بعد الفعل to be، و<b>الاسم</b> بعد the / a أو بعد for.",
+    "form": "safe → safety  ·  danger → dangerous  ·  health → healthy  ·  act → active → activity",
+    "examples": [
+     {
+      "en": "Swimming is the **safest** activity.",
+      "ar": "صفة"
+     },
+     {
+      "en": "For good **health** you need to eat real food.",
+      "ar": "اسم"
+     },
+     {
+      "en": "Rock climbing is more **dangerous** than a lot of other sports.",
+      "ar": "صفة"
+     },
+     {
+      "en": "There is always some **danger**.",
+      "ar": "اسم"
+     },
+     {
+      "en": "Choose from various **activities**.",
+      "ar": "اسم جمع"
+     }
+    ],
+    "questions": [
+     {
+      "q": "It isn't ___ to eat just junk food.",
+      "o": [
+       "health",
+       "healthy",
+       "heal"
+      ],
+      "a": 1
+     },
+     {
+      "q": "There is always some ___ in rock climbing.",
+      "o": [
+       "danger",
+       "dangerous",
+       "dangerously"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Dr Blake gave some important ___ rules.",
+      "o": [
+       "safe",
+       "safety",
+       "safely"
+      ],
+      "a": 1
+     },
+     {
+      "q": "It is important to be ___ every day.",
+      "o": [
+       "activity",
+       "act",
+       "active"
+      ],
+      "a": 2
+     },
+     {
+      "type": "type",
+      "q": "health → (adjective) ___",
+      "a": [
+       "healthy"
+      ]
+     },
+     {
+      "type": "type",
+      "q": "danger → (adjective) ___",
+      "a": [
+       "dangerous"
+      ]
+     }
+    ]
+   }
+  ],
+  "mastery": [
+   {
+    "q": "\"pulse\" means:",
+    "o": [
+     "النبض",
+     "الأرض",
+     "القلب"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"injury\" means:",
+    "o": [
+     "حمّى",
+     "إصابة",
+     "حكيم"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "Swimming is the safest activity, according to Dr Blake.",
+    "lv": "easy"
+   },
+   {
+    "q": "\"sensible\" means:",
+    "o": [
+     "عاقل / حكيم",
+     "خفيف",
+     "منقطع النَّفَس"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "tf": false,
+    "q": "Jamie's coach was wrong to send him home.",
+    "why": "The coach was right.",
+    "lv": "easy"
+   },
+   {
+    "type": "match",
+    "q": "صِل كلّ كلمة بمعناها",
+    "pairs": [
+     [
+      "sweat",
+      "يتعرّق"
+     ],
+     [
+      "cover",
+      "يغطّي"
+     ],
+     [
+      "gentle",
+      "لطيف / خفيف"
+     ],
+     [
+      "fever",
+      "حمّى"
+     ]
+    ],
+    "lv": "medium"
+   },
+   {
+    "q": "Jamie is the ___ boy in the team.",
+    "o": [
+     "fit",
+     "fitter",
+     "fittest"
+    ],
+    "a": 2,
+    "lv": "medium"
+   },
+   {
+    "q": "Climbing is ___ dangerous for you.",
+    "o": [
+     "enough",
+     "too",
+     "as"
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "q": "The opposite of 'dangerous' is ___.",
+    "o": [
+     "safe",
+     "heavy",
+     "weak"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "She didn't run as fast ___ Sameera.",
+    "a": [
+     "as"
+    ],
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "I'm not fit ___ to play. (not enough)",
+    "a": [
+     "enough"
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "He ran the fastest of all.",
+     "He ran the most fast of all.",
+     "He ran fastest than all."
+    ],
+    "a": 0,
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "Your",
+     "body",
+     "was",
+     "too",
+     "weak",
+     "to",
+     "do",
+     "sports."
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Why did Jamie collapse?",
+    "o": [
+     "He trained too hard after the flu",
+     "He ate too much",
+     "He was too cold"
+    ],
+    "a": 0,
+    "lv": "hard"
+   },
+   {
+    "type": "type",
+    "q": "For good ___ you need real food. (health / healthy)",
+    "a": [
+     "health"
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Which is the best advice?",
+    "o": [
+     "Be sensible and don't push yourself too hard",
+     "Always push yourself harder",
+     "Never warm up"
+    ],
+    "a": 0,
+    "lv": "hard"
+   }
+  ]
+ },
+ "rulecards": {
+  "3-1#0": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|-er / -est} or {t|more / most} to compare people and things, and {t|(not) as … as} to say things are equal or not.",
+    "useAr": "نستعمل {t|-er / -est} أو {t|more / most} لمقارنة الأشخاص والأشياء، و{t|(not) as … as} للمساواة أو عدمها.",
+    "signals": [
+     "than",
+     "the … -est",
+     "as … as",
+     "more / most"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Short adjectives",
+    "labelAr": "الصفات القصيرة",
+    "formula": "{s|Subject} + {v|adj + er} + {t|than}  ·  {t|the} + {v|adj + est}",
+    "examples": [
+     {
+      "en": "Yasser feels {v|sicker} {t|than} Fuad.",
+      "ar": "ياسر أشدّ مرضاً من فؤاد."
+     },
+     {
+      "en": "Majed feels {t|the} {v|sickest} of them all.",
+      "ar": "ماجد هو الأشدّ مرضاً بينهم جميعاً."
+     }
+    ],
+    "tip": "fit ← fitter ← the fittest (نضاعف الحرف الأخير)."
+   },
+   {
+    "k": "pos",
+    "label": "Long adjectives and adverbs",
+    "labelAr": "الصفات الطويلة والأحوال",
+    "formula": "{t|more / the most} + {v|adj / adv}",
+    "examples": [
+     {
+      "en": "The {t|most} {v|important} match is on Saturday.",
+      "ar": "أهمّ مباراة في العام يوم السبت."
+     },
+     {
+      "en": "You should take things {t|more} {v|slowly}.",
+      "ar": "عليك أن تأخذ الأمور ببطء أكبر."
+     }
+    ],
+    "tip": "الأحوال التي بلا -ly (fast, hard, well) كالصفات: faster, harder, better."
+   },
+   {
+    "k": "neg",
+    "label": "(not) as … as",
+    "labelAr": "(not) as … as",
+    "formula": "{s|Subject} + {t|(not) as} + {v|adj / adv} + {t|as}",
+    "examples": [
+     {
+      "en": "You're {n|not} {t|as} {v|strong} {t|as} you think.",
+      "ar": "لستَ قويّاً كما تظنّ."
+     },
+     {
+      "en": "Reema didn't run {t|as} {v|fast} {t|as} Sameera.",
+      "ar": "ريما لم تركض بسرعة سميرة."
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Irregular",
+    "labelAr": "الشاذّ",
+    "body": "{v|good / well} → {t|better} → {t|the best}\n{v|bad / badly} → {t|worse} → {t|the worst}",
+    "examples": [
+     {
+      "en": "I am much better than I was.",
+      "ar": "أنا أفضل بكثير ممّا كنت."
+     }
+    ]
+   }
+  ],
+  "3-1#1": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|too} when something is {t|more} than we need, and {t|not … enough} when it is {t|less} than we need.",
+    "useAr": "نستعمل {t|too} حين يكون الشيء {t|أكثر} من اللازم، و{t|not … enough} حين يكون {t|أقلّ} من اللازم.",
+    "signals": [
+     "too",
+     "enough",
+     "for you",
+     "to do"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "too",
+    "labelAr": "too",
+    "formula": "{s|Subject} + {t|be} + {t|too} + {v|adj} (+ for … / to …)",
+    "examples": [
+     {
+      "en": "Climbing is {t|too} {v|dangerous} {t|for you}.",
+      "ar": "التسلّق خطِر أكثر من اللازم عليك."
+     },
+     {
+      "en": "Your body was {t|too} {v|weak} {t|to do} sports.",
+      "ar": "جسمك أضعف من أن يمارس الرياضة."
+     }
+    ],
+    "tip": "too تأتي قبل الصفة."
+   },
+   {
+    "k": "neg",
+    "label": "not … enough",
+    "labelAr": "not … enough",
+    "formula": "{s|Subject} + {n|not} + {v|adj} + {t|enough} (+ to …)",
+    "examples": [
+     {
+      "en": "I was {n|not} {v|fit} {t|enough} {t|to train}.",
+      "ar": "لم أكن لائقاً بما يكفي للتدريب."
+     },
+     {
+      "en": "I have {n|not} been {v|active} {t|enough}.",
+      "ar": "لم أكن نشيطاً بما يكفي."
+     }
+    ],
+    "tip": "enough تأتي بعد الصفة."
+   }
+  ],
+  "3-1#2": [
+   {
+    "k": "intro",
+    "useEn": "We change the {t|form} of a word to make a noun, an adjective or a verb.",
+    "useAr": "نغيّر {t|صيغة} الكلمة لنكوّن اسماً أو صفة أو فعلاً.",
+    "signals": [
+     "safe → safety",
+     "danger → dangerous",
+     "health → healthy",
+     "act → active"
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Examples",
+    "labelAr": "أمثلة",
+    "body": "{v|safe} → {t|safety}\n{v|danger} → {t|dangerous}\n{v|health} → {t|healthy}\n{v|act} → {t|active} → {t|activity}",
+    "examples": [
+     {
+      "en": "For good health you need to eat real food.",
+      "ar": "لصحّة جيّدة تحتاج إلى طعام حقيقي."
+     },
+     {
+      "en": "It isn't healthy to eat just fries and sweets.",
+      "ar": "ليس صحّياً أن تأكل البطاطا المقلية والحلويات فقط."
+     }
+    ]
+   }
+  ]
+ },
+ "worksheet": {
+  "readingFrom": 3,
+  "sections": [
+   {
+    "k": "vocab",
+    "questions": [
+     {
+      "q": "Please ___ down and tell me what happened.",
+      "o": [
+       "calm",
+       "cover",
+       "lie"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Dr Blake says: always ___ up before you do a sport.",
+      "o": [
+       "warm",
+       "sweat",
+       "lie"
+      ],
+      "a": 0
+     },
+     {
+      "q": "When you run fast, your heart ___ goes up.",
+      "o": [
+       "rate",
+       "injury",
+       "ground"
+      ],
+      "a": 0
+     },
+     {
+      "q": "You must be ___ and not push yourself too hard.",
+      "o": [
+       "sensible",
+       "gentle",
+       "calm"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "A ___ aid kit has things for helping hurt people. (first)",
+      "a": [
+       "first"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "grammar",
+    "questions": [
+     {
+      "q": "Jamie is ___ boy in the team.",
+      "o": [
+       "the fittest",
+       "more fit",
+       "fitter"
+      ],
+      "a": 0
+     },
+     {
+      "q": "It's ___ for her to stop the ball. (fast)",
+      "o": [
+       "too fast",
+       "fast enough",
+       "as fast"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "He isn't good ___ to jump that high. (enough)",
+      "a": [
+       "enough"
+      ]
+     },
+     {
+      "q": "Lana ran ___ than Reema.",
+      "o": [
+       "faster",
+       "fastest",
+       "more fast"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "There is always some ___ in rock climbing. (danger)",
+      "a": [
+       "danger"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «جسمك أضعف من أن يمارس الرياضة»",
+      "words": [
+       "Your",
+       "body",
+       "is",
+       "too",
+       "weak",
+       "for",
+       "sports."
+      ]
+     }
+    ]
+   },
+   {
+    "k": "reading",
+    "questions": [
+     {
+      "q": "What did Julie break when she fell?",
+      "o": [
+       "Her leg",
+       "Her arm",
+       "Her head"
+      ],
+      "a": 0
+     },
+     {
+      "tf": false,
+      "q": "Rock climbing is safer than most sports.",
+      "why": "It is more dangerous than most sports."
+     },
+     {
+      "q": "What was Jamie's heart rate?",
+      "o": [
+       "190 beats a minute",
+       "90 beats a minute",
+       "19 beats a minute"
+      ],
+      "a": 0
+     },
+     {
+      "q": "What is the rule Dr Blake gives?",
+      "o": [
+       "Be sensible and don't push yourself too hard or too soon",
+       "Run as fast as you can",
+       "Always train in bed"
+      ],
+      "a": 0
+     }
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "title": "كن لائقاً ولكن كن آمناً",
+  "titleEn": "Be fit, but be safe",
+  "intro": "يتعلّم الطالب مفردات الصحّة والإسعاف والرياضة، والمقارنة والتفضيل مع as … as، وtoo وenough، وتكوين الكلمات، ويقرأ نصيحة الدكتور بليك عن اللياقة والسلامة.",
+  "qa": [
+   {
+    "t": "vocab",
+    "q": "What do these words mean: pulse, sweat, collapse, calm down?",
+    "qAr": "ما معنى: pulse وsweat وcollapse وcalm down؟",
+    "a": "The **pulse** is the beat of your heart, to **sweat** is to lose water through your skin, to **collapse** is to fall down suddenly, and to **calm down** is to become quiet and relaxed.",
+    "aAr": "**pulse** = **النبض**، **sweat** = **يتعرّق**، **collapse** = **ينهار**، **calm down** = **يهدأ**.",
+    "ex": [
+     [
+      "Let's check his pulse.",
+      "لنفحص نبضه."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What do we need in first aid?",
+    "qAr": "ماذا نحتاج في الإسعاف الأولي؟",
+    "a": "We need a **first aid kit** and a **thermal blanket** to **cover** the person and keep them warm.",
+    "aAr": "نحتاج إلى **حقيبة الإسعافات الأولية** و**بطانية حرارية** **لتغطية** المصاب وإبقائه دافئاً.",
+    "ex": [
+     [
+      "Run and get the thermal blanket and the first aid kit.",
+      "اركض وأحضر البطانية الحرارية وحقيبة الإسعافات."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What words talk about sickness?",
+    "qAr": "ما الكلمات التي تتحدّث عن المرض؟",
+    "a": "**flu**, **cold**, **fever**, **sore throat**, **earache**, **coughing** and **sneezing**.",
+    "aAr": "**flu** (إنفلونزا) و**cold** (زكام) و**fever** (حمّى) و**sore throat** (التهاب الحلق) و**earache** (ألم الأذن) و**coughing** (سعال) و**sneezing** (عطاس).",
+    "ex": [
+     [
+      "He has a fever of 40°C.",
+      "لديه حمّى درجتها 40 مئوية."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we compare adjectives?",
+    "qAr": "كيف نقارن الصفات؟",
+    "a": "Short adjectives: ==fit → fitter → the fittest==. Long adjectives: ==more important → the most important==. Irregular: ==good → better → the best==.",
+    "aAr": "الصفات القصيرة: ==fit → fitter → the fittest==. الطويلة: ==more important → the most important==. الشاذّة: ==good → better → the best==.",
+    "ex": [
+     [
+      "He's usually the fittest boy in the team.",
+      "هو عادةً أكثر الأولاد لياقة في الفريق."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we compare actions and use (not) as … as?",
+    "qAr": "كيف نقارن الأفعال ونستعمل (not) as … as؟",
+    "a": "We use ==more quickly / the most quickly== with adverbs, and ==(not) as + adj / adv + as== to say things are equal or not.",
+    "aAr": "نستعمل ==more quickly / the most quickly== مع الأحوال، و==(not) as + صفة / حال + as== للمساواة أو عدمها.",
+    "ex": [
+     [
+      "You are not as strong as you think you are.",
+      "لستَ قويّاً كما تظنّ."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "What is the difference between too and not enough?",
+    "qAr": "ما الفرق بين too وnot enough؟",
+    "a": "**too** + adjective means more than we need (too dangerous). **not + adjective + enough** means less than we need (not fit enough). We can add ==for + someone== or ==to + verb==.",
+    "aAr": "**too** + صفة تعني أكثر من اللازم (too dangerous)، و**not + صفة + enough** تعني أقلّ من اللازم (not fit enough). ويمكن إضافة ==for + شخص== أو ==to + فعل==.",
+    "ex": [
+     [
+      "Your body was too weak to do sports.",
+      "كان جسمك أضعف من أن يمارس الرياضة."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we form nouns and adjectives from one word?",
+    "qAr": "كيف نكوّن الأسماء والصفات من كلمة واحدة؟",
+    "a": "==safe → safety==, ==danger → dangerous==, ==health → healthy==, ==act → active → activity==.",
+    "aAr": "==safe → safety== و==danger → dangerous== و==health → healthy== و==act → active → activity==.",
+    "ex": [
+     [
+      "It isn't healthy to eat just junk food.",
+      "ليس صحّياً أن تأكل الوجبات السريعة فقط."
+     ]
+    ]
+   },
+   {
+    "t": "reading",
+    "q": "What happened to Jamie at football training?",
+    "qAr": "ماذا حدث لجيمي في تدريب كرة القدم؟",
+    "a": "Jamie went to training after a week in bed with flu. He ran too fast, got out of breath, sweated and collapsed. The coach checked his pulse, covered him and sent for the first aid kit.",
+    "aAr": "ذهب جيمي إلى التدريب بعد أسبوع في الفراش بسبب الإنفلونزا، فركض بسرعة وانقطع نَفَسه وتعرّق وانهار. فحص المدرّب نبضه وغطّاه وطلب حقيبة الإسعافات."
+   },
+   {
+    "t": "reading",
+    "q": "What advice does Dr Blake give?",
+    "qAr": "ما نصائح الدكتور بليك؟",
+    "a": "Swimming is the safest activity. Always warm up first with gentle exercises. After being sick, do not push yourself too hard or too soon: 'Better safe than sorry'.",
+    "aAr": "السباحة أكثر الأنشطة أماناً. سخّن جسمك دائماً بتمارين خفيفة. وبعد المرض لا ترهق نفسك أكثر من اللازم ولا مبكّراً جدّاً: «السلامة خير من الندم»."
+   },
+   {
+    "t": "writing",
+    "q": "How do we write a report about heart rates?",
+    "qAr": "كيف نكتب تقريراً عن معدّل النبض؟",
+    "a": "Write three parts: ==Before exercise, …==, ==Then, during exercise, …==, ==After exercise, …== and compare two people with but or However.",
+    "aAr": "نكتب ثلاثة أجزاء: ==Before exercise, …== و==Then, during exercise, …== و==After exercise, …== ونقارن بين شخصين بـ but أو However.",
+    "ex": [
+     [
+      "Before exercise, Steve's resting heart rate was higher, but Kate's was lower.",
+      "قبل التمرين كان معدّل نبض ستيف أعلى لكنّ معدّل نبض كيت كان أقلّ."
+     ]
+    ]
+   },
+   {
+    "t": "speaking",
+    "q": "What do 'You should take things more slowly' and 'I'll be as quick as I can' mean?",
+    "qAr": "ماذا تعني «You should take things more slowly» و«I'll be as quick as I can»؟",
+    "a": "The first gives advice to go slower. The second says that I will hurry as much as possible.",
+    "aAr": "الأولى نصيحة بأن تتمهّل، والثانية تعني أنّني سأسرع قدر استطاعتي.",
+    "ex": [
+     [
+      "OK, calm down. I'll be as quick as I can.",
+      "حسناً اهدأ، سأكون سريعاً قدر ما أستطيع."
+     ]
+    ]
+   }
+  ]
+ }
+}
