@@ -2528,7 +2528,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     function para(quiet){
       var p=R.paras[shown],sent=p.en.match(/[^.!?]+[.!?"]*\s*/g)||[p.en];
       var d=document.createElement('div');d.className='card para';
-      d.innerHTML='<img class="pimg" src="images/reading/'+L.unit+'-'+(shown+1)+'.webp" alt="" loading="lazy" onerror="this.remove()">'+'<div class="en">'+sent.map(function(x){return '<span data-s="'+esc(x.trim())+'">'+markVocab(esc(x))+'</span>'}).join('')+'</div>'+
+      d.innerHTML='<div class="en">'+sent.map(function(x){return '<span data-s="'+esc(x.trim())+'">'+markVocab(esc(x))+'</span>'}).join('')+'</div>'+
         '<div class="ar" hidden>'+esc(p.ar||'')+'</div>'+
         '<div class="tools"><button class="btn" type="button" data-tr>'+T('الترجمة','Translation')+'</button>'+
         '</div>';
