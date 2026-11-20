@@ -590,6 +590,751 @@ window.LEXORA_PRACTICE = {
      ]
     }
    ]
+  },
+  "5": {
+   "readingFrom": 5,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Hi Liza, is that my bag with you? — No, it is not ___.",
+       "o": [
+        "my",
+        "me",
+        "mine"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Whose trainers are these? — They are ___. I saw him wearing them yesterday.",
+       "o": [
+        "his",
+        "hers",
+        "mine"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Our ___ says we mustn't miss the training.",
+       "o": [
+        "club",
+        "coach",
+        "bag"
+       ],
+       "a": 1
+      },
+      {
+       "q": "birth + day = ___",
+       "o": [
+        "birthline",
+        "birthday",
+        "birthground"
+       ],
+       "a": 1
+      },
+      {
+       "q": "land + line = ___",
+       "o": [
+        "landline",
+        "earache",
+        "playday"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "I don't like junk food. Mum doesn't, ___.",
+       "o": [
+        "either",
+        "too",
+        "also"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Sami always gets high grades. His sister does, ___.",
+       "o": [
+        "too",
+        "either",
+        "neither"
+       ],
+       "a": 0
+      },
+      {
+       "q": "I am very hungry; I need ___ to eat.",
+       "o": [
+        "everyone",
+        "something",
+        "someone"
+       ],
+       "a": 1
+      },
+      {
+       "q": "___ should keep silent, Grandpa is sleeping.",
+       "o": [
+        "Something",
+        "Someone",
+        "Everyone"
+       ],
+       "a": 2
+      },
+      {
+       "type": "type",
+       "q": "2020 is read: ___ twenty. (twenty)",
+       "a": [
+        "twenty"
+       ]
+      },
+      {
+       "type": "type",
+       "q": "1967 is read: nineteen ___-seven. (sixty)",
+       "a": [
+        "sixty"
+       ]
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "Whose is the sports bag?",
+       "o": [
+        "Yasmeen's",
+        "Omar's",
+        "Adnan's"
+       ],
+       "a": 0
+      },
+      {
+       "tf": true,
+       "q": "Adnan's team and Yasmeen's team both have matches tomorrow."
+      },
+      {
+       "q": "What do the others call soccer?",
+       "o": [
+        "Basketball",
+        "Football",
+        "Tennis"
+       ],
+       "a": 1
+      },
+      {
+       "q": "What does Adnan ask Omar to do this evening?",
+       "o": [
+        "Watch TV",
+        "Train with him",
+        "Buy a bag"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  "6": {
+   "readingFrom": 6,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Sorry, I can't tell you what Fatima told me, it is a ___.",
+       "o": [
+        "secret",
+        "trust",
+        "danger"
+       ],
+       "a": 0
+      },
+      {
+       "q": "The match starts at 5 pm, we have to go ___. We are late.",
+       "o": [
+        "alone",
+        "immediately",
+        "secretly"
+       ],
+       "a": 1
+      },
+      {
+       "q": "When I feel ___, I often can't speak.",
+       "o": [
+        "embarrassed",
+        "trust",
+        "natural"
+       ],
+       "a": 0
+      },
+      {
+       "q": "My sister can't hide her feelings when she is ___.",
+       "o": [
+        "scared",
+        "secret",
+        "adult"
+       ],
+       "a": 0
+      },
+      {
+       "type": "type",
+       "q": "You can ___ a real friend. (trust)",
+       "a": [
+        "trust"
+       ]
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "I will feel terrible ___ something bad happens.",
+       "o": [
+        "when are",
+        "if",
+        "so"
+       ],
+       "a": 1
+      },
+      {
+       "q": "___ people are excited, they may shout and jump.",
+       "o": [
+        "If will",
+        "Why",
+        "When"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Would you please explain again more ___?",
+       "o": [
+        "clearly",
+        "clear",
+        "clearness"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Be careful! You're driving too ___.",
+       "o": [
+        "fast",
+        "fastly",
+        "fastness"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Fairuz always sings ___.",
+       "o": [
+        "beautiful",
+        "beauty",
+        "beautifully"
+       ],
+       "a": 2
+      },
+      {
+       "q": "If it snows tomorrow, ___ building a snowman?",
+       "o": [
+        "what",
+        "what about",
+        "will"
+       ],
+       "a": 1
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "Why was Tina scared?",
+       "o": [
+        "Her brother was hurt",
+        "She had a test",
+        "She lost a friend"
+       ],
+       "a": 0
+      },
+      {
+       "tf": false,
+       "q": "Nadia was angry with Tina.",
+       "why": "Nadia understood completely and wasn't angry."
+      },
+      {
+       "q": "How does Tina feel when she thinks about it later?",
+       "o": [
+        "Happy",
+        "Bad and embarrassed",
+        "Hungry"
+       ],
+       "a": 1
+      },
+      {
+       "q": "What does Nadia say about feelings?",
+       "o": [
+        "Friends should hide them",
+        "Friends shouldn't hide them",
+        "Feelings are secret"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  "7": {
+   "readingFrom": 7,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Omar is really ___ football, but Nick likes chess more.",
+       "o": [
+        "safe in",
+        "crazy about",
+        "size of"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Policemen should always look ___ in their uniforms.",
+       "o": [
+        "thick",
+        "far",
+        "smart"
+       ],
+       "a": 2
+      },
+      {
+       "q": "These trainers are 85 ___; they look very good.",
+       "o": [
+        "dollars",
+        "centimetres",
+        "sizes"
+       ],
+       "a": 0
+      },
+      {
+       "q": "The shop ___ asks: How can I help you?",
+       "o": [
+        "coat",
+        "assistant",
+        "uniform"
+       ],
+       "a": 1
+      },
+      {
+       "type": "type",
+       "q": "sports + shop = sports ___",
+       "a": [
+        "shop"
+       ]
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "I'd like to buy the blue jacket; it's ___ the grey one. (beautiful)",
+       "o": [
+        "beautifuller than",
+        "the most beautiful",
+        "more beautiful than"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Ahmed is ___ student in the class; he always gets full marks. (good)",
+       "o": [
+        "the better",
+        "gooder",
+        "the best"
+       ],
+       "a": 2
+      },
+      {
+       "q": "My school building is ___ than yours. (old)",
+       "o": [
+        "older",
+        "more old",
+        "oldest"
+       ],
+       "a": 0
+      },
+      {
+       "q": "The red car and the white one are amazing. → The red car is ___ the white one.",
+       "o": [
+        "more amazing as",
+        "as amazing as",
+        "amazing than"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Sami is smarter than Omar. → Omar is ___ Sami.",
+       "o": [
+        "not as smart as",
+        "as smart as",
+        "smarter as"
+       ],
+       "a": 0
+      },
+      {
+       "q": "I've got a ___ headache; my stomach hurts badly too.",
+       "o": [
+        "badly",
+        "bad",
+        "worse"
+       ],
+       "a": 1
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "What size are the green trainers at first?",
+       "o": [
+        "32",
+        "36",
+        "44"
+       ],
+       "a": 0
+      },
+      {
+       "tf": true,
+       "q": "Ahmad is almost as tall as Omar."
+      },
+      {
+       "q": "Who is the best player in Grade 6?",
+       "o": [
+        "Ahmad",
+        "Omar",
+        "Adnan"
+       ],
+       "a": 0
+      },
+      {
+       "q": "How much are the new trainers?",
+       "o": [
+        "$9.99",
+        "$99.99",
+        "$199"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  "8": {
+   "readingFrom": 8,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Join: tomato ___",
+       "o": [
+        "knives",
+        "paste",
+        "juice"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Join: olive ___",
+       "o": [
+        "paste",
+        "oil",
+        "and forks"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Join: ground ___",
+       "o": [
+        "spaghetti",
+        "juice",
+        "meat"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Join: Italian ___",
+       "o": [
+        "spaghetti",
+        "tea",
+        "paste"
+       ],
+       "a": 0
+      },
+      {
+       "q": "A large ___ of olive oil, two litres.",
+       "o": [
+        "list",
+        "tub",
+        "can"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "___ money have you spent on your party?",
+       "o": [
+        "How much",
+        "How many",
+        "How long"
+       ],
+       "a": 0
+      },
+      {
+       "q": "___ cans of cola do we still need?",
+       "o": [
+        "How many",
+        "How much",
+        "How about"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Are there ___ cakes left? No, there aren't ___.",
+       "o": [
+        "some / any",
+        "any / any",
+        "any / some"
+       ],
+       "a": 1
+      },
+      {
+       "q": "There are ___ kebabs on the table, but there aren't ___ pizza.",
+       "o": [
+        "some / any",
+        "any / some",
+        "some / some"
+       ],
+       "a": 0
+      },
+      {
+       "q": "___ climate of Saudi Arabia is hot and dry.",
+       "o": [
+        "A",
+        "The",
+        "×"
+       ],
+       "a": 1
+      },
+      {
+       "q": "We make ___ bread at home.",
+       "o": [
+        "the",
+        "×",
+        "a"
+       ],
+       "a": 1
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "Why do they go shopping?",
+       "o": [
+        "To buy clothes",
+        "To buy books",
+        "To buy things for kebabs"
+       ],
+       "a": 2
+      },
+      {
+       "tf": false,
+       "q": "There are many olives at home.",
+       "why": "There are some, but not many."
+      },
+      {
+       "q": "How many kilos of tomatoes do they need?",
+       "o": [
+        "One",
+        "About two",
+        "Ten"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Which ice cream size do they buy?",
+       "o": [
+        "Large",
+        "Regular",
+        "Small"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  "9": {
+   "readingFrom": 9,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "My uncle lives in a small town ___ Nablus.",
+       "o": [
+        "under",
+        "near",
+        "behind"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The girl standing ___ is my friend Nada.",
+       "o": [
+        "with",
+        "on the left",
+        "under"
+       ],
+       "a": 1
+      },
+      {
+       "q": "We usually sit in the shade ___ a tree when it is sunny.",
+       "o": [
+        "with",
+        "under",
+        "near"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Who's that boy ___ long hair? He's Sameer.",
+       "o": [
+        "up in",
+        "with",
+        "under"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Look there ___ the hill, I can see a big eagle.",
+       "o": [
+        "with",
+        "up in",
+        "on the left"
+       ],
+       "a": 1
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "Tina was the girl ___ dressed the smartest in the school.",
+       "o": [
+        "which",
+        "who",
+        "what"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The Dead Sea is the lowest point ___ has the saltiest water.",
+       "o": [
+        "which",
+        "who",
+        "whom"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Ten thousands of ___ visit Bethlehem every year. (tour)",
+       "o": [
+        "tourists",
+        "tours",
+        "touring"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Palestinian ___ face many difficulties. (farm)",
+       "o": [
+        "farms",
+        "farmers",
+        "farmist"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Look at Ahmed. ___'s playing football beautifully.",
+       "o": [
+        "Him",
+        "His",
+        "He"
+       ],
+       "a": 2
+      },
+      {
+       "q": "The books on the shelf are mine. ___ are very expensive.",
+       "o": [
+        "Them",
+        "It",
+        "They"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "What is the photo of?",
+       "o": [
+        "A family picnic",
+        "A football match",
+        "A wedding"
+       ],
+       "a": 0
+      },
+      {
+       "tf": false,
+       "q": "Uncle Nazmi is the youngest of the three.",
+       "why": "Uncle Ameer is the youngest."
+      },
+      {
+       "q": "Who has long, straight hair?",
+       "o": [
+        "Ali",
+        "Hazem",
+        "Sameer"
+       ],
+       "a": 0
+      },
+      {
+       "q": "Who has short, curly hair?",
+       "o": [
+        "Sameer",
+        "Ali",
+        "Hazem"
+       ],
+       "a": 0
+      }
+     ]
+    }
+   ]
   }
  },
  "tests": []

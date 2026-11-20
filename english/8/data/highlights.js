@@ -92,5 +92,134 @@ window.LEXORA_HL = {
  },
  "4-1|sleep": {
   "e": "sleep"
+ },
+ "5-1|either": {
+  "e": "either"
+ },
+ "5-1|practise": {
+  "e": "practise"
+ },
+ "5-1|coach": {
+  "e": "coach"
+ },
+ "5-1|compete": {
+  "e": "compete"
+ },
+ "5-1|everything": {
+  "e": "Everything"
+ },
+ "5-1|birthday": {
+  "e": "birthday"
+ },
+ "5-1|favourite": {
+  "e": "favourite"
+ },
+ "6-1|alone": {
+  "e": "alone"
+ },
+ "6-1|in fact": {
+  "e": "In fact"
+ },
+ "6-1|natural": {
+  "e": "natural"
+ },
+ "6-1|danger": {
+  "e": "danger"
+ },
+ "6-1|immediately": {
+  "e": "immediately"
+ },
+ "6-1|completely": {
+  "e": "completely"
+ },
+ "6-1|embarrassed": {
+  "e": "embarrassed"
+ },
+ "6-1|worried": {
+  "e": "worried"
+ },
+ "6-1|adult": {
+  "e": "adult"
+ },
+ "6-1|at first": {
+  "e": "At first"
+ },
+ "6-1|trust": {
+  "e": "trust"
+ },
+ "7-1|centimetre": {
+  "e": "centimetres"
+ },
+ "7-1|crazy about": {
+  "e": "crazy about"
+ },
+ "7-1|dollar": {
+  "e": "dollars"
+ },
+ "7-1|just": {
+  "e": "just"
+ },
+ "7-1|hard hat": {
+  "e": "hard hat"
+ },
+ "7-1|uniform": {
+  "e": "uniforms"
+ },
+ "7-1|gloves": {
+  "e": "gloves"
+ },
+ "7-1|safety": {
+  "e": "safe"
+ },
+ "8-1|ground meat": {
+  "e": "ground meat"
+ },
+ "8-1|tomato paste": {
+  "e": "tomato paste"
+ },
+ "8-1|olive oil": {
+  "e": "olive oil"
+ },
+ "8-1|ice cream": {
+  "e": "ice cream"
+ },
+ "8-1|olive tree": {
+  "e": "olive trees"
+ },
+ "8-1|litre": {
+  "e": "litres"
+ },
+ "8-1|tub": {
+  "e": "tub"
+ },
+ "8-1|each": {
+  "e": "each"
+ },
+ "8-1|regular": {
+  "e": "regular"
+ },
+ "9-1|side": {
+  "e": "side"
+ },
+ "9-1|wife": {
+  "e": "wife"
+ },
+ "9-1|tourist": {
+  "e": "tourists"
+ },
+ "9-1|farmer": {
+  "e": "farmers"
+ },
+ "9-1|traveller": {
+  "e": "Travellers"
+ },
+ "9-1|glasses": {
+  "e": "glasses"
+ },
+ "9-1|pronoun": {
+  "e": "pronouns"
+ },
+ "9-1|picnic": {
+  "e": "picnic"
  }
 };

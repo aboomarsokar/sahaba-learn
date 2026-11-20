@@ -617,6 +617,670 @@ window.LEXORA_RULECARDS = {
     }
    ]
   }
+ ],
+ "5-1#0": [
+  {
+   "k": "intro",
+   "useEn": "{t|Possessive adjectives} (my, your…) come before a noun. {t|Possessive pronouns} (mine, yours…) replace a noun.",
+   "useAr": "{t|صفات الملكية} (my, your…) تأتي قبل الاسم، و{t|ضمائر الملكية} (mine, yours…) تقوم مقام الاسم.",
+   "signals": [
+    "whose",
+    "my / mine",
+    "her / hers",
+    "our / ours"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Table",
+   "labelAr": "الجدول",
+   "body": "{s|I}: {t|my}  →  {v|mine}\n{s|you}: {t|your}  →  {v|yours}\n{s|he}: {t|his}  →  {v|his}\n{s|she}: {t|her}  →  {v|hers}\n{s|we}: {t|our}  →  {v|ours}\n{s|they}: {t|their}  →  {v|theirs}",
+   "examples": [
+    {
+     "en": "Mine is over there by the stairs.",
+     "ar": "حقيبتي هناك بجانب الدرج."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Possessive adjective",
+   "labelAr": "صفة الملكية",
+   "formula": "{t|my / your / his / her / our / their} + {v|noun}",
+   "examples": [
+    {
+     "en": "It's {t|my} favourite game.",
+     "ar": "إنّها لعبتي المفضّلة."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Possessive pronoun",
+   "labelAr": "ضمير الملكية",
+   "formula": "{t|mine / yours / his / hers / ours / theirs} (no noun)",
+   "examples": [
+    {
+     "en": "{t|Ours} will be much better than {t|theirs}.",
+     "ar": "فريقنا سيكون أفضل بكثير من فريقهم."
+    }
+   ],
+   "tip": "لا يأتي بعده اسم."
+  }
+ ],
+ "5-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|too} to agree with a positive statement and {t|either} to agree with a negative statement.",
+   "useAr": "نستعمل {t|too} للموافقة على جملة مثبتة و{t|either} للموافقة على جملة منفيّة.",
+   "signals": [
+    "too",
+    "either"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Positive → too",
+   "labelAr": "مثبت ← too",
+   "formula": "{s|Subject} + {t|auxiliary} + , {t|too}",
+   "examples": [
+    {
+     "en": "Adnan {t|has}, {t|too}.",
+     "ar": "وعدنان كذلك."
+    },
+    {
+     "en": "I {t|do}, {t|too}.",
+     "ar": "وأنا أيضاً."
+    }
+   ]
+  },
+  {
+   "k": "neg",
+   "label": "Negative → either",
+   "labelAr": "منفيّ ← either",
+   "formula": "{s|Subject} + {n|auxiliary + n't} + , {t|either}",
+   "examples": [
+    {
+     "en": "Yasmeen {n|can't}, {t|either}.",
+     "ar": "وياسمين لا تستطيع أيضاً."
+    },
+    {
+     "en": "I {n|don't}, {t|either}.",
+     "ar": "ولا أنا."
+    }
+   ],
+   "tip": "لا نستعمل too بعد جملة منفيّة."
+  }
+ ],
+ "5-1#2": [
+  {
+   "k": "intro",
+   "useEn": "{t|some-} words talk about an unknown thing or person; {t|every-} words talk about all of them. Years are said in two parts.",
+   "useAr": "كلمات {t|some-} لشيء أو شخص غير معيّن، وكلمات {t|every-} للجميع، وتُقرأ الأعوام على جزأين.",
+   "signals": [
+    "something",
+    "someone",
+    "everything",
+    "everyone"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Words",
+   "labelAr": "الكلمات",
+   "body": "{t|some} + thing = something\n{t|some} + one = someone\n{v|every} + thing = everything\n{v|every} + one = everyone\n\nbirth + day = birthday · play + ground = playground\nland + line = landline · ear + ache = earache",
+   "examples": [
+    {
+     "en": "Everyone should keep silent.",
+     "ar": "على الجميع أن يلتزموا الصمت."
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Number dates",
+   "labelAr": "التواريخ بالأعداد",
+   "body": "2020 = {t|twenty twenty}\n1967 = {t|nineteen sixty-seven}\n1711 = {t|seventeen eleven}\n2019 = {t|twenty nineteen}",
+   "examples": [
+    {
+     "en": "1921 is nineteen twenty-one.",
+     "ar": "1921 تُقرأ nineteen twenty-one."
+    }
+   ]
+  }
+ ],
+ "6-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|when} + present simple in both parts for things that are always true or happen at any time.",
+   "useAr": "نستعمل {t|when} مع المضارع البسيط في الجزأين لأمور صحيحة دائماً أو تحدث في أيّ وقت.",
+   "signals": [
+    "when",
+    "always",
+    "often",
+    "usually"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Pattern",
+   "labelAr": "الصيغة",
+   "formula": "{t|When} + {s|S} + {v|present simple}, {s|S} + {v|present simple}",
+   "examples": [
+    {
+     "en": "{t|When} people {v|are} friends, they {v|don't have to} hide their feelings.",
+     "ar": "حين يكون الناس أصدقاء لا يجب أن يخفوا مشاعرهم."
+    }
+   ],
+   "tip": "المضارع البسيط في الجزأين."
+  },
+  {
+   "k": "pos",
+   "label": "Order of parts",
+   "labelAr": "ترتيب الجزأين",
+   "formula": "{s|S} + {v|V1} + {t|when} + {s|S} + {v|V1}",
+   "examples": [
+    {
+     "en": "I always want to help {t|when} a friend {v|is} upset.",
+     "ar": "أريد دائماً أن أساعد حين يكون الصديق منزعجاً."
+    }
+   ],
+   "tip": "يمكن أن يأتي when أوّلاً أو ثانياً."
+  },
+  {
+   "k": "note",
+   "label": "Feelings",
+   "labelAr": "المشاعر",
+   "body": "embarrassed → they go {t|red}\nscared / worried → they go {t|white}\nsurprised → they say {t|'Really?'}\npleased → they look {t|happy}\nexcited → they {t|shout and jump}",
+   "examples": []
+  }
+ ],
+ "6-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|if} + present simple and {t|will} + base verb for possible future situations and their results.",
+   "useAr": "نستعمل {t|if} مع المضارع البسيط و{t|will} مع الفعل المجرّد لموقف مستقبلي ممكن ونتيجته.",
+   "signals": [
+    "if",
+    "tomorrow",
+    "next week"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Positive",
+   "labelAr": "الإثبات",
+   "formula": "{t|If} + {s|S} + {v|V1}, {s|S} + {t|will} + {v|V1}",
+   "examples": [
+    {
+     "en": "{t|If} he {v|is} a real friend, he {t|will} {v|understand}.",
+     "ar": "إن كان صديقاً حقيقياً فسيفهم."
+    }
+   ],
+   "tip": "لا نضع will بعد if."
+  },
+  {
+   "k": "neg",
+   "label": "Negative",
+   "labelAr": "النفي",
+   "formula": "{t|If} + {s|S} + {v|V1}, {s|S} + {n|won't} + {v|V1}",
+   "examples": [
+    {
+     "en": "{t|If} I {v|do} that, I {n|won't} {v|have} a friend.",
+     "ar": "إذا فعلتُ ذلك فلن يكون لي صديق."
+    }
+   ]
+  },
+  {
+   "k": "q",
+   "label": "Question",
+   "labelAr": "السؤال",
+   "formula": "{t|What will} + {s|S} + {v|V1} + {t|if} + {s|S} + {v|V1}?",
+   "examples": [
+    {
+     "en": "{t|What will} {s|you} {v|do} {t|if} {s|it} {v|rains}?",
+     "ar": "ماذا ستفعل إن أمطرت؟"
+    }
+   ]
+  }
+ ],
+ "6-1#2": [
+  {
+   "k": "intro",
+   "useEn": "{t|Adjectives} tell us more about nouns. {t|Adverbs} ending in -ly usually tell us more about verbs.",
+   "useAr": "{t|الصفات} تصف الأسماء، و{t|الظروف} التي تنتهي بـ -ly تصف الأفعال غالباً.",
+   "signals": [
+    "-ly",
+    "What about"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Adjective → adverb",
+   "labelAr": "من الصفة إلى الظرف",
+   "body": "dangerous → {t|dangerously}\nrecent → {t|recently}\nimmediate → {t|immediately}\nclear → {t|clearly}\ncomplete → {t|completely}",
+   "examples": [
+    {
+     "en": "Othman sings beautifully.",
+     "ar": "عثمان يغنّي بجمال."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Suggestion",
+   "labelAr": "الاقتراح",
+   "formula": "{t|What about} + {v|V-ing}?",
+   "examples": [
+    {
+     "en": "{t|What about} {v|building} a snowman?",
+     "ar": "ما رأيك أن نبني رجل ثلج؟"
+    }
+   ]
+  }
+ ],
+ "7-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use the {t|comparative} to compare two things and the {t|superlative} for the highest degree among three or more.",
+   "useAr": "نستعمل {t|المقارنة} لشيئين و{t|التفضيل} لأعلى درجة بين ثلاثة أو أكثر.",
+   "signals": [
+    "than",
+    "of all",
+    "of them all"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Comparative",
+   "labelAr": "المقارنة",
+   "formula": "{s|short adj} + {t|er} + {t|than}   ·   {t|more} + {s|long adj} + {t|than}",
+   "examples": [
+    {
+     "en": "The red ones are {t|more} {s|expensive} {t|than} the white ones.",
+     "ar": "الحمراء أغلى من البيضاء."
+    },
+    {
+     "en": "They are {s|cheap}{t|er} {t|than} the green ones.",
+     "ar": "هي أرخص من الخضراء."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Superlative",
+   "labelAr": "التفضيل",
+   "formula": "{t|the} + {s|short adj} + {t|est}   ·   {t|the most} + {s|long adj}",
+   "examples": [
+    {
+     "en": "The white trainers are {t|the} {s|cheap}{t|est} of all.",
+     "ar": "البيضاء هي الأرخص بينها."
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Irregular",
+   "labelAr": "الشاذّ",
+   "body": "{s|good}  →  {t|better}  →  {v|best}\n{s|bad}  →  {t|worse}  →  {v|worst}",
+   "examples": [
+    {
+     "en": "These green ones seem better than them.",
+     "ar": "هذه الخضراء تبدو أفضل منها."
+    }
+   ]
+  }
+ ],
+ "7-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|as … as} when two things are equal and {t|not as … as} when the first is less.",
+   "useAr": "نستعمل {t|as … as} حين يتساوى شيئان و{t|not as … as} حين يكون الأوّل أقلّ.",
+   "signals": [
+    "as … as",
+    "not as … as",
+    "almost"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Equal",
+   "labelAr": "متساويان",
+   "formula": "{s|S} + {t|be} + {t|as} + {v|adjective} + {t|as} + {s|object}",
+   "examples": [
+    {
+     "en": "I'm 165 cm and he is almost {t|as} {v|tall} {t|as} me.",
+     "ar": "طولي 165 سم وهو شبه بطولي."
+    }
+   ]
+  },
+  {
+   "k": "neg",
+   "label": "Less than",
+   "labelAr": "أقلّ من",
+   "formula": "{s|S} + {t|be} + {n|not as} + {v|adjective} + {t|as} + {s|object}",
+   "examples": [
+    {
+     "en": "The red ones {t|do} {n|not seem as} {v|strong} {t|as} the green ones.",
+     "ar": "الحمراء لا تبدو قويّة مثل الخضراء."
+    }
+   ]
+  }
+ ],
+ "7-1#2": [
+  {
+   "k": "intro",
+   "useEn": "We make {t|adverbs} from adjectives to describe how an action is done. When we use several adjectives, we put them in order.",
+   "useAr": "نصنع {t|الظروف} من الصفات لنصف كيفية حدوث الفعل، وعند وجود عدّة صفات نرتّبها.",
+   "signals": [
+    "-ly",
+    "-ily",
+    "-bly"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Spelling",
+   "labelAr": "الإملاء",
+   "body": "regular: proud → {t|proudly}\ny + ily: tidy → {t|tidily}\nble + y: comfortable → {t|comfortably}\nirregular: good → {t|well} · hard → {t|hard} · fast → {t|fast} · bad → {t|badly}",
+   "examples": [
+    {
+     "en": "I can't work comfortably in these heavy boots.",
+     "ar": "لا أستطيع العمل براحة بهذه الأحذية الثقيلة."
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Order of adjectives",
+   "labelAr": "ترتيب الصفات",
+   "body": "{v|opinion} → {s|size / thickness} → {t|colour} → noun\na {v|nice} {s|thick} {t|green} jacket\na {v|beautiful} {s|long} {t|black} dress",
+   "examples": [
+    {
+     "en": "Ahmed is dressing in his nice thick green jacket.",
+     "ar": "أحمد يرتدي سترته الخضراء السميكة الجميلة."
+    }
+   ]
+  }
+ ],
+ "8-1#0": [
+  {
+   "k": "intro",
+   "useEn": "{t|Countable} nouns can be counted (apples). {t|Uncountable} nouns cannot (olive oil). We use {t|some} and {t|any} with both.",
+   "useAr": "{t|المعدودة} يمكن عدّها (apples) و{t|غير المعدودة} لا يمكن (olive oil)، ونستعمل {t|some} و{t|any} مع النوعين.",
+   "signals": [
+    "some",
+    "any",
+    "a carton of",
+    "a jar of"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Positive",
+   "labelAr": "الإثبات",
+   "formula": "{t|There is / are} + {t|some} + {v|noun}",
+   "examples": [
+    {
+     "en": "There {t|are} {t|some} {v|olives}.",
+     "ar": "يوجد بعض الزيتون."
+    },
+    {
+     "en": "There {t|is} {t|some} {v|tomato paste}.",
+     "ar": "يوجد بعض معجون الطماطم."
+    }
+   ]
+  },
+  {
+   "k": "neg",
+   "label": "Negative",
+   "labelAr": "النفي",
+   "formula": "{t|There isn't / aren't} + {n|any} + {v|noun}",
+   "examples": [
+    {
+     "en": "There {t|aren't} {n|any} {v|tomatoes}.",
+     "ar": "لا توجد طماطم."
+    },
+    {
+     "en": "There {t|isn't} {n|any} {v|tomato paste}.",
+     "ar": "لا يوجد معجون طماطم."
+    }
+   ]
+  },
+  {
+   "k": "q",
+   "label": "Question",
+   "labelAr": "السؤال",
+   "formula": "{t|Is / Are there} + {t|any} + {v|noun}?",
+   "examples": [
+    {
+     "en": "{t|Are there} {t|any} {v|olives}?",
+     "ar": "هل يوجد زيتون؟"
+    }
+   ]
+  }
+ ],
+ "8-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We ask {t|How many} about countable nouns and {t|How much} about uncountable nouns.",
+   "useAr": "نسأل بـ {t|How many} عن المعدود وبـ {t|How much} عن غير المعدود.",
+   "signals": [
+    "How many",
+    "How much",
+    "many",
+    "much"
+   ]
+  },
+  {
+   "k": "q",
+   "label": "How many",
+   "labelAr": "How many",
+   "formula": "{t|How many} + {v|plural noun} + {t|are there}?",
+   "examples": [
+    {
+     "en": "{t|How many} {v|olives} {t|are there}?",
+     "ar": "كم زيتونة يوجد؟"
+    }
+   ],
+   "tip": "الإجابة: There aren't many."
+  },
+  {
+   "k": "q",
+   "label": "How much",
+   "labelAr": "How much",
+   "formula": "{t|How much} + {v|uncountable noun} + {t|is there}?",
+   "examples": [
+    {
+     "en": "{t|How much} {v|olive oil} {t|is there}?",
+     "ar": "كم من زيت الزيتون يوجد؟"
+    }
+   ],
+   "tip": "الإجابة: There isn't much."
+  }
+ ],
+ "8-1#2": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|a / an} for one unknown thing, {t|the} for a known thing, and no article for most countries and general uncountable nouns.",
+   "useAr": "نستعمل {t|a / an} لشيء واحد غير معروف، و{t|the} لشيء معروف، وبلا أداة لأغلب الدول وغير المعدود العامّ.",
+   "signals": [
+    "a / an",
+    "the",
+    "×"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "a / an",
+   "labelAr": "a / an",
+   "formula": "{t|a / an} + {v|singular countable noun}",
+   "examples": [
+    {
+     "en": "Kuwait is {t|a} desert country.",
+     "ar": "الكويت بلد صحراوي."
+    }
+   ],
+   "tip": "an قبل الأصوات المتحرّكة."
+  },
+  {
+   "k": "pos",
+   "label": "the",
+   "labelAr": "the",
+   "formula": "{t|the} + {v|known / unique thing}",
+   "examples": [
+    {
+     "en": "{t|The} climate there is hot and dry.",
+     "ar": "المناخ هناك حارّ وجافّ."
+    },
+    {
+     "en": "{t|The} Dead Sea is very salty.",
+     "ar": "البحر الميّت مالح جدّاً."
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "No article (×)",
+   "labelAr": "بلا أداة",
+   "body": "{t|×} Kuwait · {t|×} Palestine · {t|×} bread · {t|×} Italian food",
+   "examples": [
+    {
+     "en": "People use wheat to make bread.",
+     "ar": "يستعمل الناس القمح لصنع الخبز."
+    }
+   ]
+  }
+ ],
+ "9-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|who}, {t|which} and {t|that} to join two clauses and give important information about a noun.",
+   "useAr": "نستعمل {t|who} و{t|which} و{t|that} لربط جملتين وإعطاء معلومة مهمّة عن الاسم.",
+   "signals": [
+    "who",
+    "which",
+    "that"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "who → people",
+   "labelAr": "who للأشخاص",
+   "formula": "{s|person} + {t|who} + {v|verb}",
+   "examples": [
+    {
+     "en": "There are a lot of people {t|who} {v|work} in tourism.",
+     "ar": "هناك كثيرون يعملون في السياحة."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "which → things",
+   "labelAr": "which للأشياء",
+   "formula": "{s|thing} + {t|which} + {v|verb}",
+   "examples": [
+    {
+     "en": "Jericho is a small city {t|which} {v|stands} in a deep valley.",
+     "ar": "أريحا مدينة صغيرة تقع في وادٍ عميق."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "that → both",
+   "labelAr": "that للاثنين",
+   "formula": "{s|person / thing} + {t|that} + {v|verb}",
+   "examples": [
+    {
+     "en": "This is a famous salt lake {t|that} {v|is} 400 metres below sea level.",
+     "ar": "هذه بحيرة مالحة مشهورة ترتفع -400 متر تحت سطح البحر."
+    },
+    {
+     "en": "These were the people {t|that} {v|built} the first city.",
+     "ar": "هؤلاء هم الذين بنوا المدينة الأولى."
+    }
+   ]
+  }
+ ],
+ "9-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|pronouns} instead of nouns when everyone knows who or what we are talking about. {t|one / ones} replace a noun from a group.",
+   "useAr": "نستعمل {t|الضمائر} بدل الأسماء حين يعرف الجميع المقصود، و{t|one / ones} تحلّ محلّ اسم من مجموعة.",
+   "signals": [
+    "she / he",
+    "her / him",
+    "hers / his",
+    "the one",
+    "the ones"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Kinds of pronoun",
+   "labelAr": "أنواع الضمائر",
+   "body": "{s|Subject}: she, he, it, they\n{v|Object}: her, him, it, them\n{t|Possessive}: hers, his, theirs, mine",
+   "examples": [
+    {
+     "en": "Look. There's Fareeda. You met her at the party yesterday.",
+     "ar": "انظر، هذه فريدة. لقد قابلتَها في الحفلة أمس."
+    }
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "one / ones",
+   "labelAr": "one / ones",
+   "formula": "{t|the one} + {v|prep. phrase}   ·   {t|the ones} + {v|prep. phrase}",
+   "examples": [
+    {
+     "en": "{t|The one} on the left is Mona.",
+     "ar": "التي على اليسار هي منى."
+    },
+    {
+     "en": "{t|The ones} on the right are Fatima and Rania.",
+     "ar": "اللتان على اليمين هما فاطمة ورانيا."
+    }
+   ]
+  }
+ ],
+ "9-1#2": [
+  {
+   "k": "intro",
+   "useEn": "We make nouns for people and activities from other words by adding endings.",
+   "useAr": "نصنع أسماء الأشخاص والأنشطة من كلمات أخرى بإضافة لواحق.",
+   "signals": [
+    "-ist",
+    "-er",
+    "-ing"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Noun (person)",
+   "labelAr": "اسم الشخص",
+   "body": "science → {t|scientist}\ntour → {t|tourist}\nart → {t|artist}\nguitar → {t|guitarist}\ntravel → {t|traveller}\nfarm → {t|farmer}\ncamp → {t|camper}\nwork → {t|worker}",
+   "examples": [
+    {
+     "en": "Fareeda wants to train to be a scientist.",
+     "ar": "تريد فريدة أن تتدرّب لتصبح عالِمة."
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Noun (activity)",
+   "labelAr": "اسم النشاط",
+   "body": "camp → {t|camping}\ndance → {t|dancing}\nsing → {t|singing}\nswim → {t|swimming}\nteach → {t|teaching}\ntrain → {t|training}",
+   "examples": [
+    {
+     "en": "In Arab culture, singing is very important.",
+     "ar": "الغناء مهمّ جدّاً في الثقافة العربية."
+    }
+   ]
+  }
  ]
 };
 
@@ -662,5 +1326,51 @@ window.LEXORA_SIGNALS_AR = {
  "how long": "منذ متى / كم من الوقت",
  "had better": "من الأفضل أن",
  "could": "يمكن أن",
- "What about": "ما رأيك في"
+ "What about": "ما رأيك في",
+ "whose": "لمن",
+ "my / mine": "ملكي",
+ "her / hers": "ملكها",
+ "our / ours": "ملكنا",
+ "too": "أيضاً (إثبات)",
+ "either": "أيضاً (نفي)",
+ "something": "شيء ما",
+ "someone": "شخص ما",
+ "everything": "كلّ شيء",
+ "everyone": "الجميع",
+ "when": "حين / عندما",
+ "often": "غالباً",
+ "if": "إذا",
+ "tomorrow": "غداً",
+ "next week": "الأسبوع القادم",
+ "-ly": "ـاً (ظرف)",
+ "than": "من",
+ "of all": "من بينها كلّها",
+ "of them all": "من بينها كلّها",
+ "as … as": "مثل",
+ "not as … as": "ليس مثل",
+ "almost": "تقريباً",
+ "-ily": "ـاً (ظرف)",
+ "-bly": "ـاً (ظرف)",
+ "some": "بعض",
+ "any": "أيّ",
+ "a carton of": "علبة كرتون من",
+ "a jar of": "برطمان من",
+ "How many": "كم (معدود)",
+ "How much": "كم (غير معدود)",
+ "many": "كثير (معدود)",
+ "much": "كثير (غير معدود)",
+ "a / an": "أداة تنكير",
+ "the": "أداة تعريف",
+ "×": "بلا أداة",
+ "who": "الذي / التي (لعاقل)",
+ "which": "الذي / التي (لغير عاقل)",
+ "that": "الذي / التي (للاثنين)",
+ "she / he": "هي / هو",
+ "her / him": "ها / ه (مفعول)",
+ "hers / his": "ملكها / ملكه",
+ "the one": "الذي (مفرد)",
+ "the ones": "الذين (جمع)",
+ "-ist": "ـيّ (شخص)",
+ "-er": "ـيّ (شخص)",
+ "-ing": "ـ (نشاط)"
 };
