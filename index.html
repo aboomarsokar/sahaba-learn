@@ -520,9 +520,30 @@ applyFs(lsGet(K.fs) || "m");
 
 /* ---------- البدء ---------- */
 if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function(){});
+/* تحميل المواد تلقائياً في الخلفية (بلا موافقة): تُسجَّل عوامل خدمة التطبيقات وتُخزَّن ملفّاتها واحداً بعد واحد ليعمل كلّ شيء بلا إنترنت */
+function bgLoadApps(d){
+  var sw = navigator.serviceWorker, c = navigator.connection;
+  if (!sw || !/^https?:/.test(location.protocol) || (c && c.saveData)) return;
+  var dirs = [], seen = {};
+  (d.subjects || []).forEach(function(s){ Object.keys(s.grades || {}).forEach(function(g){ var e = s.grades[g]; if (e && e.dir && !seen[e.dir]) { seen[e.dir] = 1; dirs.push({ dir: e.dir, g: g }); } }); });
+  var cur = lsGet(K.grade); dirs.sort(function(a, b){ return (b.g === cur) - (a.g === cur); });
+  var i = 0;
+  function next(){
+    if (i >= dirs.length) return;
+    var dir = dirs[i++].dir;
+    sw.register(dir + "/sw.js", { scope: dir + "/" }).then(function(r){
+      var w = r.active || r.waiting || r.installing;
+      if (!w) return;
+      function go(){ try { (r.active || w).postMessage({ type: "precache" }); } catch(e){} setTimeout(next, 4000); }
+      if (w.state === "activated") go(); else { w.addEventListener("statechange", function(){ if (w.state === "activated") go(); }); setTimeout(next, 15000); }
+    }).catch(function(){ next(); });
+  }
+  next();
+}
 try{ profile = JSON.parse(lsGet(K.profile)); }catch(e){ profile = null; }
 fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(d){
   data = d; steps.json = true; progress();
+  var bg = function(){ bgLoadApps(d); }; var run = function(){ setTimeout(function(){ if (window.requestIdleCallback) requestIdleCallback(bg, { timeout: 6000 }); else bg(); }, 2500); }; if (document.readyState === 'complete') run(); else addEventListener('load', run);
   var ids = d.grades.map(function(g){ return g.id; }), saved = lsGet(K.grade);
   current = ids.indexOf(saved) >= 0 ? saved : null;
   var sid = d.stages.map(function(s){ return s.id; }), st = lsGet(K.stage);
