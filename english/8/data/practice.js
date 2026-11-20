@@ -149,6 +149,298 @@ window.LEXORA_PRACTICE = {
      ]
     }
    ]
+  },
+  "2": {
+   "readingFrom": 2,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Wow! These paintings ___ wonderful.",
+       "o": [
+        "feel like",
+        "look",
+        "taste"
+       ],
+       "a": 1
+      },
+      {
+       "q": "I can't wait, the kebabs ___ very delicious.",
+       "o": [
+        "smell",
+        "look like",
+        "sound"
+       ],
+       "a": 0
+      },
+      {
+       "q": "The music is exciting, I ___ dancing.",
+       "o": [
+        "seem",
+        "smell",
+        "feel like"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Her eyes are full of tears, she ___ sad.",
+       "o": [
+        "seems",
+        "tastes",
+        "smells"
+       ],
+       "a": 0
+      },
+      {
+       "q": "The tablah ___ great in the folkloric songs.",
+       "o": [
+        "tastes",
+        "smells",
+        "sounds"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "q": "When I was four, I ___ run, but my little sister couldn't.",
+       "o": [
+        "can",
+        "could",
+        "can't"
+       ],
+       "a": 1
+      },
+      {
+       "q": "Mum ___ make a delicious Mansaf, but my big sister can't.",
+       "o": [
+        "can",
+        "could",
+        "used to"
+       ],
+       "a": 0
+      },
+      {
+       "type": "type",
+       "q": "Rami often plays the 'oud now, but he didn't ___ to do that before. (use)",
+       "a": [
+        "use"
+       ]
+      },
+      {
+       "type": "type",
+       "q": "Dad always invites his friends for dinner at home, but he didn't ___ to do that at a restaurant. (use)",
+       "a": [
+        "use"
+       ]
+      },
+      {
+       "q": "I usually brush my teeth ___ I go to bed.",
+       "o": [
+        "finally",
+        "at an early age",
+        "before"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Om Kalthoum started to sing ___.",
+       "o": [
+        "at an early age",
+        "before",
+        "after that"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "What does Tina think the sfeeha looks like?",
+       "o": [
+        "A pizza",
+        "A cake",
+        "A kebab"
+       ],
+       "a": 0
+      },
+      {
+       "tf": false,
+       "q": "The 'oud is a drum.",
+       "why": "The drum is a tablah; the 'oud is like a guitar."
+      },
+      {
+       "q": "Why does Tina feel like dancing?",
+       "o": [
+        "The music is exciting",
+        "She is hungry",
+        "She is tired"
+       ],
+       "a": 0
+      },
+      {
+       "q": "What can Nadia make?",
+       "o": [
+        "A big meal",
+        "Things like kebabs",
+        "Pizza"
+       ],
+       "a": 1
+      }
+     ]
+    }
+   ]
+  },
+  "3": {
+   "readingFrom": 3,
+   "sections": [
+    {
+     "k": "vocab",
+     "questions": [
+      {
+       "q": "Your bag is light, but mine is so ___. There are many books in it.",
+       "o": [
+        "short",
+        "dangerous",
+        "heavy"
+       ],
+       "a": 2
+      },
+      {
+       "q": "Everyone should ___ writing when I start counting.",
+       "o": [
+        "start",
+        "stop",
+        "finish begin"
+       ],
+       "a": 1
+      },
+      {
+       "q": "The highest point is Mt. Everest, but the ___ is the Dead Sea.",
+       "o": [
+        "tallest",
+        "longest",
+        "lowest"
+       ],
+       "a": 2
+      },
+      {
+       "q": "football, homework, everyone: these are ___ words.",
+       "o": [
+        "opposite",
+        "compound",
+        "short"
+       ],
+       "a": 1
+      },
+      {
+       "type": "type",
+       "q": "water + fall = ___",
+       "a": [
+        "waterfall"
+       ]
+      }
+     ]
+    },
+    {
+     "k": "grammar",
+     "questions": [
+      {
+       "type": "type",
+       "q": "___ you ever ___ to Jenin? (be) — write the first word",
+       "a": [
+        "Have"
+       ]
+      },
+      {
+       "type": "type",
+       "q": "They haven't finished their work ___; they still need two hours.",
+       "a": [
+        "yet"
+       ]
+      },
+      {
+       "q": "Thank God, Mum has ___ prepared lunch.",
+       "o": [
+        "already",
+        "yet",
+        "never"
+       ],
+       "a": 0
+      },
+      {
+       "q": "___ Mona done her homework yet?",
+       "o": [
+        "Has",
+        "Have",
+        "Did"
+       ],
+       "a": 0
+      },
+      {
+       "q": "I've ___ been to Yosemite.",
+       "o": [
+        "never",
+        "yet",
+        "just"
+       ],
+       "a": 0
+      },
+      {
+       "q": "They have ___ arrived at the entrance.",
+       "o": [
+        "just",
+        "yet",
+        "ever"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    {
+     "k": "reading",
+     "questions": [
+      {
+       "q": "Who protects Yosemite every summer?",
+       "o": [
+        "Young volunteers",
+        "Only the police",
+        "Nobody"
+       ],
+       "a": 0
+      },
+      {
+       "tf": false,
+       "q": "Tony's group are working down in the valley.",
+       "why": "They are staying at a campsite in the mountains."
+      },
+      {
+       "q": "How long has Tony's group been in Yosemite?",
+       "o": [
+        "Three weeks",
+        "Three days",
+        "Three years"
+       ],
+       "a": 0
+      },
+      {
+       "q": "What happened last Saturday?",
+       "o": [
+        "They went white water rafting",
+        "They went hiking",
+        "They went shopping"
+       ],
+       "a": 0
+      }
+     ]
+    }
+   ]
   }
  },
  "tests": []

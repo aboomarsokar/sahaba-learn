@@ -152,6 +152,313 @@ window.LEXORA_RULECARDS = {
     }
    ]
   }
+ ],
+ "2-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use look, smell, taste, sound, feel and seem with an {t|adjective} to say how something is. We use {t|like} before a noun to compare.",
+   "useAr": "نستعمل look وsmell وtaste وsound وfeel وseem مع {t|صفة} لنصف الشيء، ونستعمل {t|like} قبل الاسم للتشبيه.",
+   "signals": [
+    "look",
+    "smell",
+    "taste",
+    "sound",
+    "feel",
+    "seem"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Sense verb + adjective",
+   "labelAr": "فعل حاسّة + صفة",
+   "formula": "{s|Subject} + {t|look / smell / taste / sound / feel / seem} + {v|adjective}",
+   "examples": [
+    {
+     "en": "The kebabs {t|smell} {v|delicious}.",
+     "ar": "رائحة الكباب لذيذة."
+    },
+    {
+     "en": "That drum music {t|sounds} {v|great}.",
+     "ar": "موسيقى الطبل تبدو رائعة."
+    }
+   ],
+   "tip": "بعد الفعل صفة وليست ظرفاً."
+  },
+  {
+   "k": "pos",
+   "label": "Sense verb + like + noun",
+   "labelAr": "فعل حاسّة + like + اسم",
+   "formula": "{s|Subject} + {t|looks / sounds / feels} + {t|like} + {v|noun}",
+   "examples": [
+    {
+     "en": "It {t|looks} {t|like} a {v|pizza}.",
+     "ar": "يبدو كالبيتزا."
+    },
+    {
+     "en": "That 'oud {t|sounds} {t|like} a {v|guitar}.",
+     "ar": "هذا العود يبدو كالغيتار."
+    }
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Remember",
+   "labelAr": "تذكّر",
+   "body": "{t|✓} The kebabs smell delicious.\n{n|✗} The kebabs are smelling delicious.\nمع he / she / it نضيف s: {t|looks, smells, tastes}.",
+   "examples": [
+    {
+     "en": "You {t|seem} to know a lot about the 'oud.",
+     "ar": "يبدو أنّك تعرف الكثير عن العود."
+    }
+   ]
+  }
+ ],
+ "2-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|can / can't} for ability now and {t|could / couldn't} for ability in the past.",
+   "useAr": "نستعمل {t|can / can't} للقدرة الآن، و{t|could / couldn't} للقدرة في الماضي.",
+   "signals": [
+    "now",
+    "at the age of 18",
+    "when I was young",
+    "last week"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Positive",
+   "labelAr": "الإثبات",
+   "formula": "{s|Subject} + {t|can / could} + {v|V1}",
+   "examples": [
+    {
+     "en": "I {t|can} {v|make} kebabs.",
+     "ar": "أستطيع تحضير الكباب."
+    },
+    {
+     "en": "I {t|could} {v|play} it quite well when I was young.",
+     "ar": "كنتُ أعزفه جيّداً حين كنتُ صغيراً."
+    }
+   ],
+   "tip": "لا نضع to بعد can وcould."
+  },
+  {
+   "k": "neg",
+   "label": "Negative",
+   "labelAr": "النفي",
+   "formula": "{s|Subject} + {n|can't / couldn't} + {v|V1}",
+   "examples": [
+    {
+     "en": "I {n|can't} {v|cook} a big meal.",
+     "ar": "لا أستطيع طبخ وجبة كبيرة."
+    },
+    {
+     "en": "I {n|couldn't} {v|find} time to play.",
+     "ar": "لم أستطع إيجاد وقت للعزف."
+    }
+   ],
+   "tip": "can't = cannot، وcouldn't = could not."
+  },
+  {
+   "k": "q",
+   "label": "Question",
+   "labelAr": "السؤال",
+   "formula": "{t|Can / Could} + {s|Subject} + {v|V1}?",
+   "examples": [
+    {
+     "en": "{t|Can} {s|you} {v|cook} Arab food, Nadia?",
+     "ar": "هل تستطيعين طبخ الطعام العربي يا نادية؟"
+    }
+   ]
+  }
+ ],
+ "2-1#2": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|used to} for past habits and situations that are not true now.",
+   "useAr": "نستعمل {t|used to} للعادات والحالات الماضية التي لم تعد صحيحة الآن.",
+   "signals": [
+    "in the past",
+    "long ago",
+    "before",
+    "when I was young"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Positive",
+   "labelAr": "الإثبات",
+   "formula": "{s|Subject} + {t|used to} + {v|V1}",
+   "examples": [
+    {
+     "en": "People {t|used to} {v|sing} folk songs.",
+     "ar": "كان الناس يغنّون الأغاني الشعبية."
+    },
+    {
+     "en": "He {t|used to} {v|text} them.",
+     "ar": "كان يرسل لهم رسائل نصية."
+    }
+   ]
+  },
+  {
+   "k": "neg",
+   "label": "Negative",
+   "labelAr": "النفي",
+   "formula": "{s|Subject} + {n|didn't} + {t|use to} + {v|V1}",
+   "examples": [
+    {
+     "en": "They {n|did not} {t|use to} {v|play} rock music.",
+     "ar": "لم يكونوا يعزفون موسيقى الروك."
+    }
+   ],
+   "tip": "بعد didn't نكتب use to (بلا d)."
+  },
+  {
+   "k": "q",
+   "label": "Question",
+   "labelAr": "السؤال",
+   "formula": "{t|Did} + {s|Subject} + {t|use to} + {v|V1}?",
+   "examples": [
+    {
+     "en": "{t|Did} {s|people} {t|use to} {v|sing} rock songs a thousand years ago?",
+     "ar": "هل كان الناس يغنّون أغاني الروك قبل ألف عام؟"
+    }
+   ]
+  }
+ ],
+ "3-1#0": [
+  {
+   "k": "intro",
+   "useEn": "We use the {t|present perfect} for things that have happened recently. We use {t|just}, {t|already} and {t|yet} with it.",
+   "useAr": "نستعمل {t|المضارع التام} لما حدث حديثاً، ومعه الكلمات {t|just} و{t|already} و{t|yet}.",
+   "signals": [
+    "just",
+    "already",
+    "yet",
+    "recently"
+   ]
+  },
+  {
+   "k": "pos",
+   "label": "Positive",
+   "labelAr": "الإثبات",
+   "formula": "{s|Subject} + {t|have / has} + {t|just / already} + {v|V3}",
+   "examples": [
+    {
+     "en": "I {t|have} {t|just} {v|put} my things in the car.",
+     "ar": "وضعتُ أغراضي في السيارة للتوّ."
+    },
+    {
+     "en": "We {t|have} {t|already} {v|eaten} them!",
+     "ar": "لقد أكلناها بالفعل!"
+    }
+   ],
+   "tip": "just وalready تأتيان بين have وV3."
+  },
+  {
+   "k": "neg",
+   "label": "Negative",
+   "labelAr": "النفي",
+   "formula": "{s|Subject} + {t|haven't / hasn't} + {v|V3} + {n|yet}",
+   "examples": [
+    {
+     "en": "I {t|haven't} {v|found} my trainers {n|yet}.",
+     "ar": "لم أجد حذائي الرياضي بعد."
+    }
+   ],
+   "tip": "yet في آخر الجملة."
+  },
+  {
+   "k": "q",
+   "label": "Question",
+   "labelAr": "السؤال",
+   "formula": "{t|Have / Has} + {s|Subject} + {v|V3} + {n|yet}?",
+   "examples": [
+    {
+     "en": "{t|Has} {s|everyone} {v|put} their things in the car {n|yet}?",
+     "ar": "هل وضع الجميع أغراضهم في السيارة بعد؟"
+    }
+   ]
+  }
+ ],
+ "3-1#1": [
+  {
+   "k": "intro",
+   "useEn": "We use {t|ever} in questions and {t|never} in statements to talk about life experience with the present perfect.",
+   "useAr": "نستعمل {t|ever} في الأسئلة و{t|never} في الجمل المثبتة للحديث عن الخبرات الحياتية بالمضارع التام.",
+   "signals": [
+    "ever",
+    "never",
+    "so far",
+    "in my life"
+   ]
+  },
+  {
+   "k": "q",
+   "label": "Question",
+   "labelAr": "السؤال",
+   "formula": "{t|Have / Has} + {s|Subject} + {t|ever} + {v|V3}?",
+   "examples": [
+    {
+     "en": "{t|Have} {s|you} {t|ever} {v|seen} pictures of it?",
+     "ar": "هل رأيتَ صوراً له قطّ؟"
+    }
+   ],
+   "tip": "الإجابة: Yes, I have. / No, I haven't."
+  },
+  {
+   "k": "pos",
+   "label": "With never",
+   "labelAr": "مع never",
+   "formula": "{s|Subject} + {t|have / has} + {n|never} + {v|V3}",
+   "examples": [
+    {
+     "en": "I've {n|never} {v|heard} of Yosemite.",
+     "ar": "لم أسمع بيوسمايت قطّ."
+    }
+   ],
+   "tip": "never تعني not ever، فلا نضيف not."
+  },
+  {
+   "k": "note",
+   "label": "been to",
+   "labelAr": "been to",
+   "body": "{t|have been to} = ذهبتُ إلى مكانٍ وعدتُ منه\nHave you ever been there?",
+   "examples": [
+    {
+     "en": "Yes, we have. We went on a school trip last year.",
+     "ar": "نعم، ذهبنا في رحلة مدرسية العام الماضي."
+    }
+   ]
+  }
+ ],
+ "3-1#2": [
+  {
+   "k": "intro",
+   "useEn": "A {t|compound word} is made by joining two words. Its meaning comes from both parts.",
+   "useAr": "{t|الكلمة المركّبة} تتكوّن بضمّ كلمتين، ويأتي معناها من الجزأين.",
+   "signals": [
+    "every …",
+    "foot …",
+    "home …",
+    "in … / out …",
+    "some …",
+    "water …",
+    "wild …"
+   ]
+  },
+  {
+   "k": "note",
+   "label": "Examples",
+   "labelAr": "أمثلة",
+   "body": "{v|every} + {t|one} = everyone\n{v|foot} + {t|ball} = football\n{v|home} + {t|work} = homework\n{v|in} + {t|doors} = indoors\n{v|out} + {t|doors} = outdoors\n{v|some} + {t|times} = sometimes\n{v|water} + {t|fall} = waterfall\n{v|wild} + {t|life} = wildlife",
+   "examples": [
+    {
+     "en": "I think football is the most popular game in the world now.",
+     "ar": "أظنّ أنّ كرة القدم أشهر لعبة في العالم الآن."
+    }
+   ]
+  }
  ]
 };
 
@@ -163,5 +470,32 @@ window.LEXORA_SIGNALS_AR = {
  "every week": "كلّ أسبوع",
  "usually": "عادةً",
  "in the evening": "في المساء",
- "love / like / hate": "أحبّ / يعجبني / أكره"
+ "love / like / hate": "أحبّ / يعجبني / أكره",
+ "look": "يبدو (نظراً)",
+ "smell": "رائحته",
+ "taste": "طعمه",
+ "sound": "يبدو (صوتاً)",
+ "feel": "يشعر",
+ "seem": "يبدو",
+ "at the age of 18": "في سنّ الثامنة عشرة",
+ "when I was young": "حين كنتُ صغيراً",
+ "last week": "الأسبوع الماضي",
+ "in the past": "في الماضي",
+ "long ago": "منذ زمن بعيد",
+ "before": "من قبل",
+ "just": "للتوّ",
+ "already": "بالفعل",
+ "yet": "بعدُ",
+ "recently": "مؤخّراً",
+ "ever": "يوماً ما",
+ "never": "أبداً",
+ "so far": "حتى الآن",
+ "in my life": "في حياتي",
+ "every …": "every + ...",
+ "foot …": "foot + ...",
+ "home …": "home + ...",
+ "in … / out …": "in / out + ...",
+ "some …": "some + ...",
+ "water …": "water + ...",
+ "wild …": "wild + ..."
 };

@@ -474,5 +474,1101 @@ window.LEXORA_DATA = {"units": {
     ]
    }
   ]
+ },
+ "2": {
+  "title": "نكهة من الثقافة الفلسطينية",
+  "titleEn": "A taste of Palestinian culture",
+  "lessons": [
+   {
+    "id": "2-1",
+    "title": "A taste of Palestinian culture",
+    "titleAr": "نكهة من الثقافة الفلسطينية",
+    "vocab": [
+     {
+      "en": "age",
+      "ar": "عمر",
+      "em": "🎂",
+      "ex": "I could play it quite well at the age of 18.",
+      "exAr": "كنتُ أعزفه جيّداً في سنّ الثامنة عشرة."
+     },
+     {
+      "en": "culture",
+      "ar": "ثقافة",
+      "em": "🏛️",
+      "ex": "Mike and Tina are enjoying their first taste of Arab culture.",
+      "exAr": "يستمتع مايك وتينا بأوّل تذوّق لهما للثقافة العربية."
+     },
+     {
+      "en": "develop",
+      "ar": "يتطوّر / ينشأ",
+      "em": "🌱",
+      "ex": "Modern guitars developed from the 'oud long ago.",
+      "exAr": "تطوّرت الغيتارات الحديثة من العود منذ زمن بعيد."
+     },
+     {
+      "en": "feel like",
+      "ar": "يشعر برغبة في",
+      "em": "💃",
+      "ex": "I feel like dancing!",
+      "exAr": "أشعر برغبة في الرقص!"
+     },
+     {
+      "en": "guitar",
+      "ar": "غيتار",
+      "em": "🎸",
+      "ex": "That 'oud sounds like a guitar.",
+      "exAr": "هذا العود يبدو كالغيتار."
+     },
+     {
+      "en": "quite",
+      "ar": "إلى حدٍّ ما",
+      "em": "👌",
+      "ex": "I could play it quite well.",
+      "exAr": "كنتُ أعزفه جيّداً إلى حدٍّ ما."
+     },
+     {
+      "en": "seem",
+      "ar": "يبدو",
+      "em": "🤔",
+      "ex": "You seem to know a lot about the 'oud.",
+      "exAr": "يبدو أنّك تعرف الكثير عن العود."
+     },
+     {
+      "en": "sound",
+      "ar": "يبدو (صوتاً) / يُسمع",
+      "em": "🔊",
+      "ex": "That drum music sounds great.",
+      "exAr": "موسيقى الطبل هذه تبدو رائعة."
+     },
+     {
+      "en": "taste",
+      "ar": "يتذوّق / طعمه",
+      "em": "👅",
+      "ex": "They taste delicious, too.",
+      "exAr": "طعمها لذيذ أيضاً."
+     },
+     {
+      "en": "tasty",
+      "ar": "لذيذ الطعم",
+      "em": "😋",
+      "ex": "The kebabs are very tasty.",
+      "exAr": "الكباب لذيذ جدّاً."
+     },
+     {
+      "en": "instrument",
+      "ar": "آلة موسيقية",
+      "em": "🎻",
+      "ex": "How many instruments does he play?",
+      "exAr": "كم آلة موسيقية يعزف؟"
+     },
+     {
+      "en": "folk song",
+      "ar": "أغنية شعبية",
+      "em": "🎶",
+      "ex": "People used to sing folk songs about their simple lives.",
+      "exAr": "كان الناس يغنّون أغاني شعبية عن حياتهم البسيطة."
+     },
+     {
+      "en": "poem",
+      "ar": "قصيدة",
+      "em": "📜",
+      "ex": "They also used to put their poems to music.",
+      "exAr": "وكانوا يلحّنون قصائدهم أيضاً."
+     },
+     {
+      "en": "rock music",
+      "ar": "موسيقى الروك",
+      "em": "🤘",
+      "ex": "Rock music only developed in the 1950s.",
+      "exAr": "لم تتطوّر موسيقى الروك إلا في خمسينيات القرن العشرين."
+     },
+     {
+      "en": "musician",
+      "ar": "موسيقي",
+      "em": "🧑‍🎤",
+      "ex": "He plays the 'oud and tablah, and he's a good musician, too.",
+      "exAr": "يعزف العود والطبلة وهو موسيقيّ جيّد أيضاً."
+     },
+     {
+      "en": "used to",
+      "ar": "اعتاد أن (في الماضي)",
+      "em": "⏪",
+      "ex": "People used to sing folk songs.",
+      "exAr": "كان الناس يغنّون الأغاني الشعبية."
+     }
+    ],
+    "reading": {
+     "title": "At an Arab restaurant",
+     "paras": [
+      {
+       "en": "Tina and Mike are having dinner with the Kamal family at an Arab restaurant. Tina: This looks good. It looks like a pizza. Nadia: But it isn't. It's sfeeha. Sami: And here's the next thing – kebabs. Mike: They smell delicious. Mrs Kamal: They taste delicious, too. Everyone, please start.",
+       "ar": "تتناول تينا ومايك العشاء مع عائلة كمال في مطعم عربي. تينا: يبدو هذا جيّداً، يشبه البيتزا. نادية: لكنّه ليس كذلك، إنّه صفيحة. سامي: وهذا الطبق التالي، الكباب. مايك: رائحته لذيذة. السيدة كمال: وطعمه لذيذ أيضاً. تفضّلوا بالبدء جميعاً."
+      },
+      {
+       "en": "Tina: Can you cook Arab food, Nadia? Nadia: I can make things like kebabs, but I can't cook a big meal. Mike: Listen! That drum music sounds great. Is it Arab? Mr Kamal: Yes, that drum is a tablah. … And now you can hear an 'oud.",
+       "ar": "تينا: هل تستطيعين طبخ الطعام العربي يا نادية؟ نادية: أستطيع تحضير أشياء مثل الكباب لكنّني لا أستطيع طبخ وجبة كبيرة. مايك: اسمعوا! موسيقى الطبل هذه رائعة، هل هي عربية؟ السيد كمال: نعم، هذا الطبل طبلة، والآن تسمعون عوداً."
+      },
+      {
+       "en": "Mike: That 'oud sounds like a guitar, Mr Kamal. Is it? Mr Kamal: Well, modern guitars developed from the 'oud long ago. Tina: It's exciting music. I feel like dancing! Mrs Kamal: I'm not surprised. You see, it's a wedding dance.",
+       "ar": "مايك: هذا العود يشبه الغيتار يا سيد كمال، أهو كذلك؟ السيد كمال: تطوّرت الغيتارات الحديثة من العود منذ زمن بعيد. تينا: إنّها موسيقى مثيرة، أشعر برغبة في الرقص! السيدة كمال: لا عجب، فهذه رقصة عرس."
+      },
+      {
+       "en": "Mike: You seem to know a lot about the 'oud, Mr Kamal. Do you play it, too? Mr Kamal: I could play it quite well at the age of 18, but not now. Work got busy, so I couldn't find time to play. Sami: But Dad, you still play at parties, and you're the best! It is a happy evening, and Mike and Tina are enjoying their first taste of Arab culture.",
+       "ar": "مايك: يبدو أنّك تعرف الكثير عن العود يا سيد كمال، هل تعزفه أنت أيضاً؟ السيد كمال: كنتُ أعزفه جيّداً في الثامنة عشرة لكن ليس الآن، فقد انشغلتُ بالعمل ولم أجد وقتاً للعزف. سامي: لكن يا أبي، ما زلتَ تعزف في الحفلات وأنت الأفضل! إنّها أمسية سعيدة، ويستمتع مايك وتينا بأوّل تذوّق للثقافة العربية."
+      }
+     ],
+     "questions": [
+      {
+       "q": "Where are Tina and Mike having dinner?",
+       "o": [
+        "At an Arab restaurant",
+        "At school",
+        "At Tina's home"
+       ],
+       "a": 0
+      },
+      {
+       "q": "What is sfeeha like at first sight for Tina?",
+       "o": [
+        "A kebab",
+        "A pizza",
+        "A cake"
+       ],
+       "a": 1
+      },
+      {
+       "tf": true,
+       "q": "Modern guitars developed from the 'oud."
+      },
+      {
+       "q": "Why can't Mr Kamal play the 'oud now as well as before?",
+       "o": [
+        "He lost his 'oud",
+        "He doesn't like music",
+        "Work got busy and he couldn't find time"
+       ],
+       "a": 2
+      },
+      {
+       "q": "What does Tina feel like doing when she hears the music?",
+       "o": [
+        "Sleeping",
+        "Singing",
+        "Dancing"
+       ],
+       "a": 2
+      }
+     ]
+    },
+    "rules": [
+     {
+      "title": "Verbs of the senses",
+      "titleAr": "أفعال الحواس: look, smell, taste, sound, feel, seem",
+      "explain": "بعد أفعال الحواس <b>look, smell, taste, sound, feel, seem</b> نضع <b>صفةً</b> وليس ظرفاً (The kebabs smell <b>delicious</b>). ونضيف <b>like</b> قبل الاسم للتشبيه (It looks <b>like</b> a pizza, That 'oud sounds <b>like</b> a guitar). وهي أفعال حالة لا نستعملها عادةً في المستمر.",
+      "form": "look / smell / taste / sound / feel / seem + صفة    ·    + like + اسم",
+      "examples": [
+       {
+        "en": "This sfeeha **looks** good.",
+        "ar": "نظر"
+       },
+       {
+        "en": "The kebabs **smell** delicious.",
+        "ar": "شمّ"
+       },
+       {
+        "en": "The kebabs **taste** delicious, too.",
+        "ar": "طعم"
+       },
+       {
+        "en": "That drum music **sounds** great.",
+        "ar": "سمع"
+       },
+       {
+        "en": "You **seem** to know about the 'oud.",
+        "ar": "يبدو"
+       }
+      ],
+      "questions": [
+       {
+        "q": "The kebabs ___ delicious.",
+        "o": [
+         "are smelling",
+         "smelling",
+         "smell"
+        ],
+        "a": 2,
+        "why": "فعل حاسّة: المضارع البسيط + صفة"
+       },
+       {
+        "q": "That drum music ___ great.",
+        "o": [
+         "sound",
+         "is sounding",
+         "sounds"
+        ],
+        "a": 2
+       },
+       {
+        "q": "It ___ like a pizza.",
+        "o": [
+         "look",
+         "looks",
+         "looking"
+        ],
+        "a": 1
+       },
+       {
+        "q": "Coffee ___ delicious.",
+        "o": [
+         "smells",
+         "smell",
+         "is smelling"
+        ],
+        "a": 0,
+        "why": "حرف s مع المفرد"
+       },
+       {
+        "type": "type",
+        "q": "The sfeeha ___ good. (look)",
+        "a": [
+         "looks"
+        ]
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «هذه الكباب لذيذ الطعم»",
+        "words": [
+         "These",
+         "kebabs",
+         "taste",
+         "delicious."
+        ]
+       }
+      ]
+     },
+     {
+      "title": "can, can't, could, couldn't",
+      "titleAr": "القدرة: can وcould",
+      "explain": "نستعمل <b>can / can't</b> للقدرة في <b>الحاضر</b> (I can make kebabs, but I can't cook a big meal)، و<b>could / couldn't</b> للقدرة في <b>الماضي</b> (I could play it quite well when I was young). بعدها نضع الفعل بصيغته الأولى بلا to.",
+      "form": "can / can't + V1  (الحاضر)    ·    could / couldn't + V1  (الماضي)",
+      "examples": [
+       {
+        "en": "I **can** make kebabs.",
+        "ar": "قدرة حاضرة"
+       },
+       {
+        "en": "I **can't** cook a big meal.",
+        "ar": "عدم قدرة حاضرة"
+       },
+       {
+        "en": "I **could** play it quite well when I was young.",
+        "ar": "قدرة ماضية"
+       },
+       {
+        "en": "I **couldn't** find time to play.",
+        "ar": "عدم قدرة ماضية"
+       }
+      ],
+      "questions": [
+       {
+        "q": "Nadia ___ make kebabs, but she can't cook a big meal.",
+        "o": [
+         "could",
+         "cans",
+         "can"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Mr Kamal ___ play the 'oud quite well at the age of 18.",
+        "o": [
+         "can",
+         "is can",
+         "could"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Work got busy last week, so I ___ find time to play.",
+        "o": [
+         "couldn't",
+         "can't",
+         "didn't can"
+        ],
+        "a": 0
+       },
+       {
+        "q": "When I was four, I ___ run, but my little sister couldn't.",
+        "o": [
+         "can",
+         "could",
+         "can't"
+        ],
+        "a": 1
+       },
+       {
+        "type": "type",
+        "q": "I ___ speak French two years ago. (negative past)",
+        "a": [
+         "couldn't",
+         "could not"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "Mum ___ make a delicious Mansaf now. (present ability)",
+        "a": [
+         "can"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "used to",
+      "titleAr": "اعتاد أن (عادة في الماضي)",
+      "explain": "نستعمل <b>used to + V1</b> للحديث عن <b>عادات أو حالات كانت في الماضي ولم تعد الآن</b> (People used to sing folk songs). وفي النفي والسؤال نستعمل <b>did / didn't + use to</b> بلا d (Did people use to sing rock songs? No, they did not use to do that).",
+      "form": "used to + V1    ·    didn't use to + V1    ·    Did + S + use to + V1?",
+      "examples": [
+       {
+        "en": "People **used to** sing folk songs about their simple lives.",
+        "ar": "عادة ماضية"
+       },
+       {
+        "en": "They also **used to** put their poems to music.",
+        "ar": "عادة ماضية"
+       },
+       {
+        "en": "They **did not use to** play rock music.",
+        "ar": "نفي"
+       },
+       {
+        "en": "**Did** people **use to** play the guitar thousands of years ago?",
+        "ar": "سؤال"
+       }
+      ],
+      "questions": [
+       {
+        "q": "In the past, people ___ sing folk songs about their simple lives.",
+        "o": [
+         "used to",
+         "use to",
+         "are used to"
+        ],
+        "a": 0
+       },
+       {
+        "q": "Did people ___ play the guitar thousands of years ago?",
+        "o": [
+         "used to",
+         "using to",
+         "use to"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Rock music didn't ___ exist before the 1950s.",
+        "o": [
+         "use to",
+         "used to",
+         "used"
+        ],
+        "a": 0
+       },
+       {
+        "q": "Ali often emails friends now, but he didn't ___ do that before.",
+        "o": [
+         "use to",
+         "used to",
+         "uses to"
+        ],
+        "a": 0
+       },
+       {
+        "type": "type",
+        "q": "Mona didn't ___ eat fish before. (use to)",
+        "a": [
+         "use to"
+        ],
+        "why": "بعد didn't نكتب use to بلا d"
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «كان علي يرسل لهم رسائل نصية»",
+        "words": [
+         "He",
+         "used",
+         "to",
+         "text",
+         "them."
+        ]
+       }
+      ]
+     }
+    ],
+    "mastery": [
+     {
+      "q": "\"instrument\" means:",
+      "o": [
+       "آلة موسيقية",
+       "قصيدة",
+       "ثقافة"
+      ],
+      "a": 0,
+      "lv": "easy"
+     },
+     {
+      "q": "\"folk song\" means:",
+      "o": [
+       "موسيقى الروك",
+       "طبلة",
+       "أغنية شعبية"
+      ],
+      "a": 2,
+      "lv": "easy"
+     },
+     {
+      "tf": true,
+      "q": "Rock music only developed in the 1950s.",
+      "lv": "easy"
+     },
+     {
+      "type": "match",
+      "q": "صِل كلّ كلمة بمعناها",
+      "pairs": [
+       [
+        "poem",
+        "قصيدة"
+       ],
+       [
+        "musician",
+        "موسيقي"
+       ],
+       [
+        "culture",
+        "ثقافة"
+       ],
+       [
+        "tasty",
+        "لذيذ الطعم"
+       ]
+      ],
+      "lv": "medium"
+     },
+     {
+      "q": "The music is exciting. I ___ dancing.",
+      "o": [
+       "seem like",
+       "taste like",
+       "feel like"
+      ],
+      "a": 2,
+      "lv": "medium"
+     },
+     {
+      "q": "Mum ___ make a delicious Mansaf, but my big sister can't.",
+      "o": [
+       "can",
+       "could",
+       "used to"
+      ],
+      "a": 0,
+      "lv": "medium"
+     },
+     {
+      "type": "type",
+      "q": "Dad ___ to invite his friends to a restaurant before. (use to, negative: didn't)",
+      "a": [
+       "didn't use",
+       "did not use"
+      ],
+      "why": "didn't use to",
+      "lv": "hard"
+     },
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "The kebabs smell delicious.",
+       "The kebabs are smelling delicious.",
+       "The kebabs smells delicious."
+      ],
+      "a": 0,
+      "lv": "hard"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+      "words": [
+       "Modern",
+       "guitars",
+       "developed",
+       "from",
+       "the",
+       "'oud."
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Why couldn't Mr Kamal find time to play the 'oud?",
+      "o": [
+       "Work got busy",
+       "He was ill",
+       "He lost his 'oud"
+      ],
+      "a": 0,
+      "lv": "hard"
+     }
+    ]
+   }
+  ]
+ },
+ "3": {
+  "title": "رحلة إلى متنزّه وطني",
+  "titleEn": "Going to a National Park",
+  "lessons": [
+   {
+    "id": "3-1",
+    "title": "Going to a National Park",
+    "titleAr": "رحلة إلى متنزّه وطني",
+    "vocab": [
+     {
+      "en": "entrance",
+      "ar": "مدخل",
+      "em": "🚪",
+      "ex": "They have just arrived at the entrance.",
+      "exAr": "لقد وصلوا للتوّ إلى المدخل."
+     },
+     {
+      "en": "far",
+      "ar": "بعيد",
+      "em": "🛣️",
+      "ex": "Is it still very far?",
+      "exAr": "هل ما زال بعيداً جدّاً؟"
+     },
+     {
+      "en": "go camping",
+      "ar": "يذهب للتخييم",
+      "em": "⛺",
+      "ex": "We could go camping in the mountains.",
+      "exAr": "يمكننا أن نذهب للتخييم في الجبال."
+     },
+     {
+      "en": "go hiking",
+      "ar": "يذهب في نزهة جبلية",
+      "em": "🥾",
+      "ex": "And let's go hiking.",
+      "exAr": "ولنذهب في نزهة جبلية."
+     },
+     {
+      "en": "hear of",
+      "ar": "يسمع بـ",
+      "em": "👂",
+      "ex": "I've never heard of Yosemite.",
+      "exAr": "لم أسمع بيوسمايت من قبل."
+     },
+     {
+      "en": "national",
+      "ar": "وطني",
+      "em": "🏞️",
+      "ex": "Yosemite is a beautiful national park.",
+      "exAr": "يوسمايت متنزّه وطني جميل."
+     },
+     {
+      "en": "pass",
+      "ar": "يمرّ بـ / يتجاوز",
+      "em": "🚗",
+      "ex": "We've already passed the sign for Yosemite.",
+      "exAr": "لقد تجاوزنا بالفعل لافتة يوسمايت."
+     },
+     {
+      "en": "so",
+      "ar": "جدّاً",
+      "em": "😮",
+      "ex": "You're so slow, Adnan!",
+      "exAr": "أنت بطيء جدّاً يا عدنان!"
+     },
+     {
+      "en": "trip",
+      "ar": "رحلة",
+      "em": "🧳",
+      "ex": "We went on a school trip last year.",
+      "exAr": "ذهبنا في رحلة مدرسية العام الماضي."
+     },
+     {
+      "en": "waterfall",
+      "ar": "شلّال",
+      "em": "💦",
+      "ex": "There's a beautiful, high waterfall to see.",
+      "exAr": "هناك شلّال عالٍ جميل يستحقّ المشاهدة."
+     },
+     {
+      "en": "wildlife",
+      "ar": "الحياة البرّية",
+      "em": "🦌",
+      "ex": "There is lots of wildlife in the woods.",
+      "exAr": "هناك الكثير من الحياة البرّية في الغابات."
+     },
+     {
+      "en": "volunteer",
+      "ar": "متطوّع",
+      "em": "🙋",
+      "ex": "Thousands of young volunteers join together to give it help every summer.",
+      "exAr": "ينضمّ آلاف المتطوّعين الشباب لمساعدته كلّ صيف."
+     },
+     {
+      "en": "damage",
+      "ar": "يُتلف / يضرّ",
+      "em": "⚠️",
+      "ex": "Millions of cars and heavy feet badly damage the Park.",
+      "exAr": "ملايين السيارات والأقدام الثقيلة تضرّ المتنزّه ضرراً بالغاً."
+     },
+     {
+      "en": "dangerous",
+      "ar": "خطِر",
+      "em": "☠️",
+      "ex": "The opposite of 'dangerous' is 'safe'. This path is dangerous.",
+      "exAr": "ضدّ «خطِر» هو «آمن». هذا الطريق خطِر."
+     },
+     {
+      "en": "everyone",
+      "ar": "الجميع",
+      "em": "👥",
+      "ex": "Everyone loves the Park.",
+      "exAr": "الجميع يحبّون المتنزّه."
+     },
+     {
+      "en": "indoors",
+      "ar": "داخل المبنى",
+      "em": "🏠",
+      "ex": "It was very cold outdoors, so we stayed indoors.",
+      "exAr": "كان الجوّ بارداً جدّاً في الخارج فبقينا في الداخل."
+     }
+    ],
+    "reading": {
+     "title": "Yosemite",
+     "paras": [
+      {
+       "en": "Yosemite is an amazing place. It has mountains, valleys, lakes, rivers and the highest waterfalls in America. The wildlife is amazing, too – most of all the huge trees. Some are 90 metres tall.",
+       "ar": "يوسمايت مكان مدهش، فيه جبال ووديان وبحيرات وأنهار وأعلى الشلّالات في أمريكا. والحياة البرّية مدهشة أيضاً، وأهمّها الأشجار الضخمة التي يبلغ ارتفاع بعضها 90 متراً."
+      },
+      {
+       "en": "When people started cutting down the trees and damaging this beautiful place, the United States decided to make Yosemite a National Park back in 1890. This has protected Yosemite since then, but people have become a problem again.",
+       "ar": "حين بدأ الناس يقطعون الأشجار ويُتلفون هذا المكان الجميل، قرّرت الولايات المتحدة جعل يوسمايت متنزّهاً وطنياً عام 1890. وقد حماه ذلك منذ ذلك الحين، لكنّ الناس أصبحوا مشكلة من جديد."
+      },
+      {
+       "en": "For over a century, more and more visitors have arrived each year. They love the Park, but millions of cars and heavy feet badly damage it, too. So Yosemite still needs help, and thousands of young volunteers join together to give it every summer.",
+       "ar": "منذ أكثر من قرن يصل كلّ عام زوّار أكثر فأكثر. إنّهم يحبّون المتنزّه لكنّ ملايين السيارات والأقدام الثقيلة تضرّه كثيراً. لذلك ما زال يوسمايت يحتاج إلى المساعدة، وينضمّ آلاف المتطوّعين الشباب لتقديمها كلّ صيف."
+      },
+      {
+       "en": "Hi! I'm Tony Ross. I'm working for Young Friends of Yosemite, and my group have been here for three weeks now. We're staying at a campsite in the mountains, and we have several jobs. Visitors come and go every day, and we clean and tidy up before the next people arrive. We also work in the woods and keep the paths safe.",
+       "ar": "مرحباً! أنا توني روس. أعمل لدى «أصدقاء يوسمايت الشباب» ومجموعتي هنا منذ ثلاثة أسابيع. نقيم في مخيّم في الجبال ولدينا عدّة أعمال. يأتي الزوّار ويذهبون كلّ يوم ونحن ننظّف ونرتّب قبل وصول الآخرين، ونعمل في الغابة ونُبقي الممرّات آمنة."
+      },
+      {
+       "en": "Since our group started working together, we've become great friends. We work hard together, and we also have fun together. Last Saturday, we went white water rafting, and I've never enjoyed myself so much in all my life!",
+       "ar": "منذ بدأت مجموعتنا العمل معاً أصبحنا أصدقاء مقرّبين. نعمل بجدّ معاً ونستمتع معاً أيضاً. السبت الماضي ذهبنا للتجديف في المياه البيضاء، ولم أستمتع بوقتي في حياتي كلّها كما استمتعت!"
+      }
+     ],
+     "questions": [
+      {
+       "q": "When did the United States make Yosemite a National Park?",
+       "o": [
+        "In 1890",
+        "In 1990",
+        "In 1850"
+       ],
+       "a": 0
+      },
+      {
+       "tf": false,
+       "q": "The animals are the most amazing living things in Yosemite.",
+       "why": "The huge trees are the most amazing."
+      },
+      {
+       "tf": true,
+       "q": "Millions of cars and heavy feet badly damage the Park."
+      },
+      {
+       "q": "Who is Tony Ross?",
+       "o": [
+        "A visitor to Yosemite",
+        "A volunteer for Young Friends of Yosemite",
+        "A park guide"
+       ],
+       "a": 1
+      },
+      {
+       "q": "What did Tony's group do last Saturday?",
+       "o": [
+        "They went white water rafting",
+        "They went hiking",
+        "They cleaned the campsite"
+       ],
+       "a": 0
+      }
+     ]
+    },
+    "rules": [
+     {
+      "title": "Present perfect: just, yet, already",
+      "titleAr": "المضارع التام مع just وyet وalready",
+      "explain": "نستعمل <b>المضارع التام</b> (have / has + V3) للأفعال التي حدثت حديثاً ولها أثر الآن. <b>just</b> = للتوّ، و<b>already</b> = بالفعل (قبل المتوقَّع)، و<b>yet</b> = بعدُ، وتأتي في آخر السؤال والنفي (Has everyone put their things in the car yet? / I haven't found my trainers yet).",
+      "form": "have / has + just / already + V3    ·    haven't / hasn't + V3 + yet    ·    Have / Has + S + V3 + yet?",
+      "examples": [
+       {
+        "en": "Omar **has arrived** in America.",
+        "ar": "حدث حديثاً"
+       },
+       {
+        "en": "I **have just put** my things in the car.",
+        "ar": "للتوّ"
+       },
+       {
+        "en": "We **have already eaten** them!",
+        "ar": "بالفعل"
+       },
+       {
+        "en": "I **haven't found** my trainers **yet**.",
+        "ar": "نفي مع yet"
+       },
+       {
+        "en": "**Has** everyone **put** their things in the car **yet**?",
+        "ar": "سؤال مع yet"
+       }
+      ],
+      "questions": [
+       {
+        "q": "I have ___ put my things in the car.",
+        "o": [
+         "yet",
+         "just",
+         "ever"
+        ],
+        "a": 1,
+        "why": "just = للتوّ"
+       },
+       {
+        "q": "I haven't found my trainers ___.",
+        "o": [
+         "yet",
+         "already",
+         "just"
+        ],
+        "a": 0,
+        "why": "yet في النفي"
+       },
+       {
+        "q": "You can eat the sandwiches. — We have ___ eaten them!",
+        "o": [
+         "already",
+         "yet",
+         "never"
+        ],
+        "a": 0
+       },
+       {
+        "q": "Has everyone put their things in the car ___?",
+        "o": [
+         "already",
+         "just",
+         "yet"
+        ],
+        "a": 2
+       },
+       {
+        "type": "type",
+        "q": "They ___ already passed the sign for Yosemite. (have)",
+        "a": [
+         "have",
+         "'ve"
+        ]
+       },
+       {
+        "type": "order",
+        "q": "رتّب الكلمات: «هل أنهى محمد واجبه بعد؟»",
+        "words": [
+         "Has",
+         "Mona",
+         "done",
+         "her",
+         "homework",
+         "yet?"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Present perfect: ever and never",
+      "titleAr": "المضارع التام مع ever وnever",
+      "explain": "نسأل عن <b>الخبرات في العمر</b> بـ <b>Have you ever + V3?</b> ونجيب Yes, I have / No, I haven't، أو نقول <b>I have never + V3</b> أي لم أفعل ذلك قطّ. ونقول <b>have been to</b> للذهاب إلى مكان والعودة منه (Have you ever been there?).",
+      "form": "Have / Has + S + ever + V3?    ·    S + have / has + never + V3",
+      "examples": [
+       {
+        "en": "**Have** you **ever seen** pictures of it?",
+        "ar": "سؤال عن خبرة"
+       },
+       {
+        "en": "No, I **haven't**.",
+        "ar": "إجابة قصيرة"
+       },
+       {
+        "en": "**Have** you **ever been** there?",
+        "ar": "هل زرتَه؟"
+       },
+       {
+        "en": "I've **never heard** of Yosemite.",
+        "ar": "لم أسمع به قطّ"
+       },
+       {
+        "en": "I've **never enjoyed** myself so much in all my life!",
+        "ar": "لم أستمتع قطّ"
+       }
+      ],
+      "questions": [
+       {
+        "q": "___ you ever seen pictures of it?",
+        "o": [
+         "Did",
+         "Are",
+         "Have"
+        ],
+        "a": 2
+       },
+       {
+        "q": "I've ___ heard of Yosemite.",
+        "o": [
+         "yet",
+         "just",
+         "never"
+        ],
+        "a": 2
+       },
+       {
+        "q": "Have you ever ___ there? — Yes, we have.",
+        "o": [
+         "be",
+         "been",
+         "being"
+        ],
+        "a": 1
+       },
+       {
+        "q": "Omar: Have you ever been there? Yasmeen: ___, we have.",
+        "o": [
+         "No",
+         "Never",
+         "Yes"
+        ],
+        "a": 2
+       },
+       {
+        "type": "type",
+        "q": "___ you ever been to Jenin? (have)",
+        "a": [
+         "Have"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "I have ___ been to Yosemite. (never)",
+        "a": [
+         "never"
+        ]
+       }
+      ]
+     },
+     {
+      "title": "Compound words",
+      "titleAr": "الكلمات المركّبة",
+      "explain": "نكوّن <b>كلمة مركّبة</b> بضمّ كلمتين معاً: <b>every + one = everyone</b>، <b>foot + ball = football</b>، <b>home + work = homework</b>، <b>in + doors = indoors</b>، <b>out + doors = outdoors</b>، <b>some + times = sometimes</b>، <b>water + fall = waterfall</b>، <b>wild + life = wildlife</b>.",
+      "form": "كلمة + كلمة = كلمة مركّبة (every + one = everyone)",
+      "examples": [
+       {
+        "en": "**everyone**",
+        "ar": "every + one"
+       },
+       {
+        "en": "**football**",
+        "ar": "foot + ball"
+       },
+       {
+        "en": "**homework**",
+        "ar": "home + work"
+       },
+       {
+        "en": "**indoors / outdoors**",
+        "ar": "in / out + doors"
+       },
+       {
+        "en": "**waterfall, wildlife**",
+        "ar": "water + fall, wild + life"
+       }
+      ],
+      "questions": [
+       {
+        "q": "every + one =",
+        "o": [
+         "everything",
+         "everywhere",
+         "everyone"
+        ],
+        "a": 2
+       },
+       {
+        "q": "water + fall =",
+        "o": [
+         "waterfall",
+         "waterbag",
+         "fallwater"
+        ],
+        "a": 0
+       },
+       {
+        "q": "It was cold ___ last night, so we stayed ___.",
+        "o": [
+         "indoors / outdoors",
+         "outdoors / indoors",
+         "football / homework"
+        ],
+        "a": 1
+       },
+       {
+        "q": "Do we have to do any ___ this evening?",
+        "o": [
+         "wildlife",
+         "homework",
+         "waterfall"
+        ],
+        "a": 1
+       },
+       {
+        "type": "type",
+        "q": "wild + life = ___",
+        "a": [
+         "wildlife"
+        ]
+       },
+       {
+        "type": "type",
+        "q": "foot + ball = ___",
+        "a": [
+         "football"
+        ]
+       }
+      ]
+     }
+    ],
+    "mastery": [
+     {
+      "q": "\"entrance\" means:",
+      "o": [
+       "مدخل",
+       "شلّال",
+       "رحلة"
+      ],
+      "a": 0,
+      "lv": "easy"
+     },
+     {
+      "q": "\"waterfall\" means:",
+      "o": [
+       "بحيرة",
+       "شلّال",
+       "جبل"
+      ],
+      "a": 1,
+      "lv": "easy"
+     },
+     {
+      "tf": true,
+      "q": "Yosemite became a National Park in 1890.",
+      "lv": "easy"
+     },
+     {
+      "type": "match",
+      "q": "صِل كلّ كلمة بمعناها",
+      "pairs": [
+       [
+        "trip",
+        "رحلة"
+       ],
+       [
+        "volunteer",
+        "متطوّع"
+       ],
+       [
+        "damage",
+        "يُتلف"
+       ],
+       [
+        "wildlife",
+        "الحياة البرّية"
+       ]
+      ],
+      "lv": "medium"
+     },
+     {
+      "q": "The opposite of 'light' (a bag) is ___.",
+      "o": [
+       "short",
+       "ugly",
+       "heavy"
+      ],
+      "a": 2,
+      "lv": "medium"
+     },
+     {
+      "q": "I have ___ finished my homework. (a moment ago)",
+      "o": [
+       "never",
+       "yet",
+       "just"
+      ],
+      "a": 2,
+      "lv": "medium"
+     },
+     {
+      "type": "type",
+      "q": "They haven't arrived ___. (still not)",
+      "a": [
+       "yet"
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "Have you ever been there?",
+       "Did you ever been there?",
+       "Have you ever be there?"
+      ],
+      "a": 0,
+      "lv": "hard"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «رتّب الكلمات لتكوّن جملة صحيحة»",
+      "words": [
+       "We've",
+       "already",
+       "passed",
+       "the",
+       "sign",
+       "for",
+       "Yosemite."
+      ],
+      "lv": "hard"
+     },
+     {
+      "q": "Why does Yosemite still need help?",
+      "o": [
+       "Millions of cars and heavy feet damage it",
+       "Nobody visits it",
+       "There are no trees"
+      ],
+      "a": 0,
+      "lv": "hard"
+     }
+    ]
+   }
+  ]
  }
 }};
