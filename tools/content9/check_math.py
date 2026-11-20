@@ -1,7 +1,7 @@
 """يتحقّق من ملف محتوى العلوم للتاسع: python3 tools/content9/check.py <ملف.json>"""
 import json, sys
 f = sys.argv[1]
-PART = "--part" in sys.argv
+PART = True
 d = json.load(open(f, encoding="utf-8"))
 err = []
 def need(c, m):
