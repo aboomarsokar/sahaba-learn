@@ -183,6 +183,10 @@
         "9": {
           "dir": "english/9",
           "note": "الرزمة؛ والمحتوى قريباً"
+        },
+        "8": {
+          "dir": "english/8",
+          "note": "12 وحدة من كتاب English for Palestine 8"
         }
       },
       "banner": "shared/subjects/english.webp"

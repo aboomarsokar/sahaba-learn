@@ -22,9 +22,10 @@ EXTRAS = {
     "islamic/10": ["../../shared/update-notify.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/islamic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2", "../../shared/wisdom.js"],
 }
 
-for _k in list(EXTRAS):                 # تطبيقات الصف التاسع تشارك ملفات العاشر المشتركة
+for _k in list(EXTRAS):                 # تطبيقات التاسع والثامن تشارك ملفات العاشر المشتركة
     if _k.endswith("/10"):
         EXTRAS[_k[:-3] + "/9"] = EXTRAS[_k]
+        EXTRAS[_k[:-3] + "/8"] = EXTRAS[_k]
 
 
 def gen(app: str) -> None:
