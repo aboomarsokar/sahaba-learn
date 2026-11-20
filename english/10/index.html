@@ -21,7 +21,7 @@ if(/[?&]debug=1/.test(location.search))addEventListener('error',function(e){try{
 
 /* الألوان: --bg1/2/3 يضبطها السكربت من لون الخلفية المختار؛ هذه القيم الافتراضية (بنفسجي غامق) */
 :root{
-  --bg1:#0f2f23; --bg2:#3b1a78; --bg3:#6a2fb8;
+  --bg1:#F4EDE5; --bg2:#FAF6EB; --bg3:#ffffff;
   --gold:#f3c969; --gold2:#ffe7a8; --g3:#c9902f;
   --btn1:#ffe7a8; --btn2:#f3c969; --btnText:#2a1250;
   --text:#fff; --muted:#e4d8ff;
@@ -584,6 +584,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 .gtab{display:flex;align-items:center;gap:.8rem;padding:.9rem 1rem;border-radius:18px;text-align:start;cursor:pointer;width:100%;background:var(--panel);border:2px solid var(--cardBd);color:inherit}
 .gtab .gn{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:800 1.05rem var(--fb);background:linear-gradient(180deg,var(--btn1),var(--btn2));color:var(--btnText);flex:none}
 .gtab.done{border-color:#2fbf71}.gtab.done .gn{background:#2fbf71;color:#fff}
+.gtab svg{width:22px;height:22px;flex:none;color:var(--muted)}
 .gtab .gt{flex:1;display:flex;flex-direction:column;gap:.1rem;min-width:0}
 .gtab .gt b{font:700 1.02rem var(--fb);direction:ltr;text-align:start}
 .gtab .gt small{font:400 .85rem var(--fb);color:var(--muted)}
@@ -682,12 +683,12 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 .toast small{opacity:.8}
 
 /* --- بطاقات القواعد --- */
-:root{--k-s:#6cc3ff;--k-v:#5ee59a;--k-t:#ffe08a;--k-n:#ff8a9a}
-:root[data-mode="light"]{--k-s:#0d5fa8;--k-v:#13753d;--k-t:#8a5a00;--k-n:#c62828}
+:root{--k-s:#4fa97c;--k-v:#0e6b3c;--k-t:#E3B94D;--k-n:#c9a46a}
+:root[data-mode="light"]{--k-s:#2f7a5a;--k-v:#13753d;--k-t:#8a5a00;--k-n:#9a6b13}
 .k-s{color:var(--k-s);font-weight:700}
 .k-v{color:var(--k-v);font-weight:700}
 .k-t{color:var(--k-t);font-weight:700;background:rgba(243,201,105,.2);padding:0 .3em;border-radius:6px;border-bottom:2px solid var(--gold)}
-.k-n{color:var(--k-n);font-weight:700;background:rgba(255,100,120,.16);padding:0 .3em;border-radius:6px;border-bottom:2px solid var(--k-n)}
+.k-n{color:var(--k-n);font-weight:700;background:rgba(227,185,77,.22);padding:0 .3em;border-radius:6px;border-bottom:2px solid var(--k-n)}
 .rcard{padding:1.1rem 1rem;display:flex;flex-direction:column;justify-content:center;gap:.8rem;min-height:min(92vw,430px);animation:rise .35s ease-out both}
 .rdots{display:flex;justify-content:center;gap:6px}
 .rdots i{width:26px;height:6px;border-radius:9px;background:var(--panel)}
@@ -2307,7 +2308,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   var PRAISE=[['ممتاز! 🌟','Excellent! 🌟'],['أحسنت! 👏','Great job! 👏'],['رائع! 🔥','Awesome! 🔥'],['إجابة صحيحة! ✅','Correct! ✅'],['يا بطل! 💪','Champion! 💪'],['مذهل! 🚀','Amazing! 🚀']];
   var RETRYOK=[['نجحت أخيراً! المهمّ أنك لم تستسلم 💪','You got it! You never gave up 💪'],['برافو! المحاولة الثانية أقوى 🌱','Bravo! Second try, stronger 🌱']];
   var WRONGS=[['لا بأس، حاول مرة أخرى 💪','No worries, try again 💪'],['قريب! جرّب ثانية 🎯','Close! Try once more 🎯'],['الخطأ يعلّمنا، أنت تتقدّم 🌱','Mistakes help us learn 🌱']];
-  var PCOL=['#ff7a8a','#f3c969','#4fd69b','#5db8ff','#b98cff','#ff9f5a','#2fd1c0','#f472b6'];
+  var PCOL=['#0e6b3c','#c9a43a','#2f9e6b','#1a8350','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
   function runQs(box,qs,opt,done){
     var i=opt.start||0,score=0,streak=0;
     function cheer(c,ok,first){
@@ -2415,7 +2416,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     var v=L.vocab||[],sub0=subFor(0),i=(sub0&&sub0.i>0&&sub0.i<v.length)?sub0.i:0;
     st.innerHTML=head(0)+'<div id="vArea"></div>';
     var area=st.querySelector('#vArea');
-    var WCOL=['#ff7a8a','#f3c969','#4fd69b','#5db8ff','#b98cff','#ff9f5a','#2fd1c0','#f472b6'];
+    var WCOL=['#0e6b3c','#c9a43a','#2f9e6b','#1a8350','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
     function ov(w){return (window.LEXORA_HL||{})[L.id+'|'+w.en]||{}}
     function arNorm(t){return t.replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[إأآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')}
     function markIn(text,phrase){var k=text.indexOf(phrase);return esc(text.slice(0,k))+'<mark>'+esc(phrase)+'</mark>'+esc(text.slice(k+phrase.length))}
@@ -2718,7 +2719,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   }
   /* ----- بطاقات القاعدة: تعريف ← تكوين ← نفي ← سؤال ← ملاحظة، وبعد كلّ بطاقة زرّ «أكمل» ----- */
   var RC_ICON={pos:'✅',neg:'❌',q:'❓',note:'💡',sig:'🎯'};
-  var SWCOL=['#ff7a8a','#f3c969','#4fd69b','#5db8ff','#b98cff','#ff9f5a','#2fd1c0','#f472b6'];
+  var SWCOL=['#0e6b3c','#c9a43a','#2f9e6b','#1a8350','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
   function kfmt(t){return esc(t).replace(/\{(s|t|v|n)\|([^}]*)\}/g,'<span class="k-$1">$2</span>').replace(/\n/g,'<br>')}
   function kplain(t){return t.replace(/\{[stvn]\|([^}]*)\}/g,'$1')}
   function rcExamples(list){
