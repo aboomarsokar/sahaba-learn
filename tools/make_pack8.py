@@ -96,7 +96,11 @@ def math9_units() -> list:
         if not ps:
             continue
         u0 = ps[0]["units"][0]
-        pool = [q for p in ps for q in p["units"][0].get("unit_quiz_pool", [])]
+        pool, seen = [], set()
+        for p in ps:   # أسئلة الوحدة: من داخل الوحدة أو من جذر الملف (دون تكرار)
+            for q in p["units"][0].get("unit_quiz_pool", []) + p.get("unit_quiz_pool", []):
+                if q[1] not in seen:
+                    seen.add(q[1]); pool.append(q)
         units.append({"title": u0["title"], "ic": ICONS[n][0], "color": ICONS[n][1], "uq": pool[:12],
                       "lessons": [{"t": l["t"], "e": l["e"], "q": l["q"], "quiz": l["quiz"], "hints": l.get("hints", {})} for p in ps for l in p["units"][0]["lessons"]]})
     return units
