@@ -1,445 +1,438 @@
 {
  "n": 10,
- "title": "حياة البرية في خطر",
- "titleEn": "Wildlife in danger",
+ "title": "حديقة للجميع",
+ "titleEn": "A garden for all",
  "lesson": {
   "id": "10-1",
-  "title": "Wildlife in danger",
-  "titleAr": "حياة البرية في خطر",
+  "title": "A garden for all",
+  "titleAr": "حديقة للجميع",
   "vocab": [
    {
-    "en": "go up",
-    "ar": "يرتفع",
-    "em": "📈",
-    "ex": "Your prices keep going up and up!",
-    "exAr": "أسعاركم تواصل الارتفاع باستمرار!"
+    "en": "aim",
+    "ar": "يهدف / هدف",
+    "em": "🎯",
+    "ex": "We're aiming to build a garden for everyone.",
+    "exAr": "نهدف إلى بناء حديقة للجميع."
    },
    {
-    "en": "come down",
-    "ar": "ينخفض",
-    "em": "📉",
-    "ex": "Will your prices come down?",
-    "exAr": "هل ستنخفض أسعاركم؟"
+    "en": "middle",
+    "ar": "وسط",
+    "em": "📍",
+    "ex": "The garden will look lovely in the middle of town.",
+    "exAr": "ستبدو الحديقة جميلة في وسط البلدة."
    },
    {
-    "en": "population",
-    "ar": "عدد السكان / تعداد",
+    "en": "comment",
+    "ar": "يعلّق / تعليق",
+    "em": "💬",
+    "ex": "Lana and Lisa commented on the waste ground.",
+    "exAr": "علّقت لانا وليزا على الأرض المهجورة."
+   },
+   {
+    "en": "notice",
+    "ar": "إعلان / يلاحظ",
+    "em": "📌",
+    "ex": "Look at this notice on the fence.",
+    "exAr": "انظري إلى هذا الإعلان على السياج."
+   },
+   {
+    "en": "create",
+    "ar": "يُنشئ / يُبدع",
+    "em": "🛠",
+    "ex": "Would you like to help create a community garden?",
+    "exAr": "هل تودّ المساعدة في إنشاء حديقة للمجتمع؟"
+   },
+   {
+    "en": "fence",
+    "ar": "سياج",
+    "em": "🚧",
+    "ex": "We need to build a fence round the garden.",
+    "exAr": "نحتاج إلى بناء سياج حول الحديقة."
+   },
+   {
+    "en": "rubbish",
+    "ar": "قمامة",
+    "em": "🗑",
+    "ex": "Look at all the rubbish and broken glass.",
+    "exAr": "انظري إلى كلّ هذه القمامة والزجاج المكسور."
+   },
+   {
+    "en": "ashamed (of)",
+    "ar": "يخجل (من)",
+    "em": "😳",
+    "ex": "The people who left the rubbish should be ashamed of themselves.",
+    "exAr": "على الذين تركوا القمامة أن يخجلوا من أنفسهم."
+   },
+   {
+    "en": "carpenter",
+    "ar": "نجّار",
+    "em": "🪚",
+    "ex": "We need a carpenter to help repair the fence.",
+    "exAr": "نحتاج إلى نجّار ليساعد في إصلاح السياج."
+   },
+   {
+    "en": "clean up",
+    "ar": "ينظّف (المكان)",
+    "em": "🧹",
+    "ex": "I'll help you clean up everything.",
+    "exAr": "سأساعدك في تنظيف كلّ شيء."
+   },
+   {
+    "en": "energy",
+    "ar": "طاقة / نشاط",
+    "em": "⚡",
+    "ex": "We have a great team with lots of energy.",
+    "exAr": "لدينا فريق رائع يتمتّع بنشاط كبير."
+   },
+   {
+    "en": "gardener",
+    "ar": "بستاني",
+    "em": "👨‍🌾",
+    "ex": "We need a gardener to choose the trees and plants.",
+    "exAr": "نحتاج إلى بستاني ليختار الأشجار والنباتات."
+   },
+   {
+    "en": "look forward to",
+    "ar": "يتطلّع إلى",
+    "em": "🤩",
+    "ex": "I'm looking forward to Sunday.",
+    "exAr": "أتطلّع إلى يوم الأحد."
+   },
+   {
+    "en": "committee",
+    "ar": "لجنة",
     "em": "👥",
-    "ex": "The population of the town is rising.",
-    "exAr": "يرتفع عدد سكان البلدة."
+    "ex": "I've just joined the Garden Project Committee.",
+    "exAr": "انضممتُ للتوّ إلى لجنة مشروع الحديقة."
    },
    {
-    "en": "price",
-    "ar": "سعر",
-    "em": "💰",
-    "ex": "The price of fish is very high now.",
-    "exAr": "سعر السمك مرتفع جدّاً الآن."
+    "en": "repair",
+    "ar": "يصلح",
+    "em": "🔧",
+    "ex": "We need to repair the old fence.",
+    "exAr": "نحتاج إلى إصلاح السياج القديم."
    },
    {
-    "en": "joke",
-    "ar": "يمزح",
-    "em": "😄",
-    "ex": "Twenty-five pounds? You're joking!",
-    "exAr": "خمسة وعشرون جنيهاً؟ أنت تمزح!"
-   },
-   {
-    "en": "keep",
-    "ar": "يستمرّ / يواصل",
-    "em": "➡",
-    "ex": "Prices keep going up.",
-    "exAr": "الأسعار تواصل الارتفاع."
-   },
-   {
-    "en": "tuna",
-    "ar": "سمك التونة",
-    "em": "🐟",
-    "ex": "How much is the tuna, please?",
-    "exAr": "بكم سمك التونة من فضلك؟"
-   },
-   {
-    "en": "cause",
-    "ar": "يسبّب / سبب",
-    "em": "⚠",
-    "ex": "Pollution causes a lot of damage to sea life.",
-    "exAr": "يسبّب التلوّث أضراراً كثيرة للحياة البحرية."
-   },
-   {
-    "en": "coast",
-    "ar": "ساحل",
-    "em": "🏖",
-    "ex": "We walked along the path above the coast.",
-    "exAr": "مشينا على الطريق المطلّ على الساحل."
-   },
-   {
-    "en": "man-made",
-    "ar": "من صنع الإنسان",
-    "em": "🏭",
-    "ex": "Over-fishing is a man-made disaster.",
-    "exAr": "الصيد الجائر كارثة من صنع الإنسان."
-   },
-   {
-    "en": "net",
-    "ar": "شبكة",
-    "em": "🥅",
-    "ex": "Fishermen use huge nets to catch fish.",
-    "exAr": "يستعمل الصيّادون شباكاً ضخمة لصيد السمك."
-   },
-   {
-    "en": "destroy",
-    "ar": "يدمّر",
-    "em": "💥",
-    "ex": "Pollution is destroying life in the sea.",
-    "exAr": "يدمّر التلوّث الحياة في البحر."
-   },
-   {
-    "en": "disappear",
-    "ar": "يختفي",
-    "em": "💨",
-    "ex": "Many kinds of fish are disappearing from the oceans.",
-    "exAr": "تختفي أنواع كثيرة من الأسماك من المحيطات."
-   },
-   {
-    "en": "discover",
-    "ar": "يكتشف",
-    "em": "🔍",
-    "ex": "Scientists are discovering new kinds of life in the deep sea.",
-    "exAr": "يكتشف العلماء أنواعاً جديدة من الحياة في أعماق البحر."
-   },
-   {
-    "en": "species",
-    "ar": "نوع (حيّ) / فصيلة",
-    "em": "🐋",
-    "ex": "There are millions of different species in the oceans.",
-    "exAr": "هناك ملايين الأنواع المختلفة في المحيطات."
-   },
-   {
-    "en": "require",
-    "ar": "يتطلّب / يُلزم",
-    "em": "📋",
-    "ex": "Some countries require fishing boats to catch fewer fish.",
-    "exAr": "تُلزم بعض الدول سفن الصيد بصيد كمّيات أقلّ."
+    "en": "secretary",
+    "ar": "أمين السرّ / سكرتير",
+    "em": "📝",
+    "ex": "The secretary takes notes at the meeting.",
+    "exAr": "يدوّن أمين السرّ الملاحظات في الاجتماع."
    }
   ],
   "reading": {
-   "title": "Will the oceans live or die?",
+   "title": "A garden for all",
    "paras": [
     {
-     "en": "Fish and many other kinds of life, like coral, are disappearing from the oceans fast. There are sad changes everywhere. Near the coast, they are often caused by pollution. Farther out, the cause is often over-fishing. Fishing boats with huge nets catch and kill everything. We risk a terrible man-made disaster – the death of the oceans.",
-     "ar": "تختفي الأسماك وكثير من أشكال الحياة الأخرى، مثل المرجان، من المحيطات بسرعة. هناك تغيّرات محزنة في كلّ مكان. قرب الساحل يكون سببها غالباً التلوّث، وفي المناطق الأبعد يكون السبب غالباً الصيد الجائر؛ فسفن الصيد ذات الشباك الضخمة تصطاد كلّ شيء وتقتله. ونحن نخاطر بكارثة مروّعة من صنع الإنسان: موت المحيطات."
+     "en": "One day, Lana and Lisa commented on a piece of waste ground that they always went past on their way to school. Lana: Look at all the rubbish and broken glass. It isn't very nice, is it? Lisa: No, it's horrible! They should do something about it, shouldn't they?",
+     "ar": "في أحد الأيام علّقت لانا وليزا على قطعة أرض مهجورة كانتا تمرّان بجانبها دائماً في طريقهما إلى المدرسة. لانا: انظري إلى كلّ هذه القمامة والزجاج المكسور. إنّها ليست جميلة، أليس كذلك؟ ليزا: نعم، إنّها فظيعة! عليهم أن يفعلوا شيئاً حيالها، أليس كذلك؟"
     },
     {
-     "en": "But could our recent action to save the whales give us hope? Two centuries ago, whales were already being caught for their oil and meat. By the 1940s, the job was being made easier by modern technology. From the 1950s to the 1980s, they were being caught everywhere and numbers were collapsing. Whole species of whales were quickly being destroyed, and they were not being protected anywhere.",
-     "ar": "لكن هل يمنحنا ما فعلناه حديثاً لإنقاذ الحيتان أملاً؟ قبل قرنين كانت الحيتان تُصاد أصلاً من أجل زيتها ولحمها. وبحلول الأربعينيات كانت التكنولوجيا الحديثة تجعل هذا العمل أسهل. ومن الخمسينيات إلى الثمانينيات كانت تُصاد في كلّ مكان وكانت أعدادها تنهار. وكانت فصائل كاملة من الحيتان تُدمَّر بسرعة ولم تكن تُحمى في أيّ مكان."
+     "en": "Lana: Maybe someone is doing something. Look at this notice on the fence. 'Would you like to help create a community garden here? Then please come and discuss the plans. All are welcome! Community Hall, 8:30 Tuesday, 4th March.' Lisa: That's happening tonight, isn't it? I'd like to go. What about you? Lana: Yes, but we can't go alone, can we? I'll ask Dad to go, too.",
+     "ar": "لانا: ربّما هناك من يفعل شيئاً. انظري إلى هذا الإعلان على السياج: «هل تودّ المساعدة في إنشاء حديقة للمجتمع هنا؟ تفضّل بالحضور لمناقشة الخطط. الجميع مرحّب بهم! قاعة المجتمع، الساعة 8:30 من مساء الثلاثاء 4 آذار/مارس». ليزا: هذا يحدث الليلة، أليس كذلك؟ أودّ أن أذهب، وأنتِ؟ لانا: نعم، لكن لا نستطيع الذهاب وحدنا، أليس كذلك؟ سأطلب من أبي أن يذهب معنا."
     },
     {
-     "en": "Finally, the world took action. In 1985, almost every country agreed to stop catching whales. This means that whale populations are slowly rising again.",
-     "ar": "وأخيراً تحرّك العالم. ففي عام 1985 اتّفقت جميع الدول تقريباً على التوقّف عن صيد الحيتان. وهذا يعني أنّ أعداد الحيتان ترتفع من جديد ببطء."
+     "en": "Mr Qadiri was free that evening, so he went to the meeting with the girls. Speaker: We're aiming to build a garden for everyone. For example, we want to make part of it a safe play area for children. Lana: You can imagine the trees and flowers, can't you? Lisa: Yes, it'll look lovely right here in the middle of town, won't it? Mr Qadiri: Yes, it will. It's a good project.",
+     "ar": "كان السيد قادري متفرّغاً تلك الأمسية فذهب إلى الاجتماع مع الفتاتين. المتحدّث: نهدف إلى بناء حديقة للجميع. فمثلاً نريد أن نجعل جزءاً منها مكاناً آمناً للعب الأطفال. لانا: تستطيعين أن تتخيّلي الأشجار والأزهار، أليس كذلك؟ ليزا: نعم، ستبدو جميلة هنا في وسط البلدة، أليس كذلك؟ السيد قادري: بلى، ستكون كذلك. إنّه مشروع جيّد."
     },
     {
-     "en": "Could the same thing happen with fish and fishing? Sadly, almost certainly not. In Europe, people are required to catch smaller quantities now, but almost everywhere else they go on fishing freely – though it is getting harder. They cannot stop: too many hungry people need to eat.",
-     "ar": "هل يمكن أن يحدث الشيء نفسه مع الأسماك والصيد؟ للأسف، شبه مؤكّد أنّ لا. ففي أوروبا يُطلب من الناس الآن صيد كمّيات أقلّ، أمّا في كلّ مكان آخر تقريباً فيواصلون الصيد بحرّية، مع أنّه يزداد صعوبة. إنّهم لا يستطيعون التوقّف، فهناك كثيرون جائعون يحتاجون إلى الطعام."
-    },
-    {
-     "en": "Perhaps the only way to save the oceans is the one that our ancestors discovered long ago: farming. There are already many fish farms, and perhaps there will soon be many more along the world's coasts. People say the fish do not taste as good as wild fish. However, that is still much better than losing all the fish in the world.",
-     "ar": "ربّما كانت الطريقة الوحيدة لإنقاذ المحيطات هي التي اكتشفها أجدادنا منذ زمن بعيد: الزراعة. هناك بالفعل مزارع أسماك كثيرة، وربّما يكون هناك قريباً المزيد منها على سواحل العالم. يقول الناس إنّ طعم هذه الأسماك ليس بجودة طعم الأسماك البرّية. ومع ذلك فهذا أفضل بكثير من خسارة كلّ أسماك العالم."
+     "en": "Speaker: Spring is coming, so we're starting this Sunday. Who'd like to join us? Lisa: But we can't start yet, can we? It's still early March, so it's too cold. Mr Qadiri: Oh, but we certainly can start. March is a busy time in the garden. Lana: Come on, Lisa. We can try it, can't we? Let's have a go.",
+     "ar": "المتحدّث: الربيع قادم، لذلك سنبدأ يوم الأحد هذا. من يودّ الانضمام إلينا؟ ليزا: لكن لا نستطيع أن نبدأ بعد، أليس كذلك؟ ما زلنا في بداية آذار/مارس والجوّ بارد جدّاً. السيد قادري: بل نستطيع بالتأكيد أن نبدأ، فآذار/مارس وقت مزدحم في الحديقة. لانا: هيّا يا ليزا، نستطيع أن نجرّب، أليس كذلك؟ لنحاول."
     }
    ],
    "questions": [
     {
-     "q": "What often causes sad changes near the coast?",
+     "q": "What did the girls go past on their way to school?",
      "o": [
-      "Over-fishing",
-      "Pollution",
-      "Whales"
+      "A community hall",
+      "A piece of waste ground",
+      "A fish market"
+     ],
+     "a": 1
+    },
+    {
+     "q": "What did the notice invite people to do?",
+     "o": [
+      "Help create a community garden",
+      "Sell their old things",
+      "Join a football team"
+     ],
+     "a": 0
+    },
+    {
+     "tf": true,
+     "q": "The meeting was on Tuesday at 8:30."
+    },
+    {
+     "q": "Who went to the meeting with the girls?",
+     "o": [
+      "Their teacher",
+      "Mr Qadiri",
+      "Jack Hill"
      ],
      "a": 1
     },
     {
      "tf": false,
-     "q": "Fishing is the only cause of the problem.",
-     "why": "Pollution causes damage near the coast; over-fishing farther out."
-    },
-    {
-     "q": "When did almost every country agree to stop catching whales?",
-     "o": [
-      "In 1940",
-      "In 1985",
-      "In 1950"
-     ],
-     "a": 1
-    },
-    {
-     "q": "What is happening to whale populations now?",
-     "o": [
-      "They are slowly rising",
-      "They are collapsing",
-      "They are disappearing"
-     ],
-     "a": 0
-    },
-    {
-     "q": "What may be the only way to save the oceans?",
-     "o": [
-      "Catching smaller nets",
-      "Fish farms",
-      "Eating more whales"
-     ],
-     "a": 1
+     "q": "Lisa thought they could start work immediately because it was warm.",
+     "why": "She thought it was too cold in early March."
     }
    ]
   },
   "rules": [
    {
-    "title": "Present continuous passive",
-    "titleAr": "المضارع المستمر المبني للمجهول",
-    "explain": "نستعمل <b>المضارع المستمر المبني للمجهول</b> عندما نركّز على <b>الشيء الذي يقع عليه الفعل</b> الآن لا على من يفعله (The adult fish are being caught). نكوّنه من <b>am / is / are + being + اسم المفعول</b>، والنفي بـ <b>am / is / are + not + being + اسم المفعول</b>. وإذا كان الفاعل مهمّاً أضفناه بعد <b>by</b>.",
-    "form": "am / is / are + being + V3    ·    am / is / are + not + being + V3",
+    "title": "Tag questions with be and modal verbs",
+    "titleAr": "الأسئلة الذيلية مع be والأفعال الناقصة",
+    "explain": "نستعمل <b>السؤال الذيلي</b> عندما نظنّ أنّنا نعرف الجواب ونتوقّع أن يوافقنا الآخر. إذا كانت الجملة <b>مثبتة</b> فالذيل <b>منفي</b>، وإذا كانت <b>منفية</b> فالذيل <b>مثبت</b> (It isn't very nice, <b>is it</b>?). ومع <b>is / are / was / were</b> والأفعال الناقصة (can, will, should …) نكرّر <b>الفعل نفسه</b> في الذيل، ثمّ الضمير.",
+    "form": "جملة مثبتة + ذيل منفي: It's happening, isn't it?    ·    جملة منفية + ذيل مثبت: It isn't nice, is it?",
     "examples": [
      {
-      "en": "I **am being taught** all this at school.",
-      "ar": "أنا أُعلَّم كلّ هذا في المدرسة"
+      "en": "That's happening tonight, **isn't it**?",
+      "ar": "جملة مثبتة ← ذيل منفي"
      },
      {
-      "en": "Something **is being done** about it.",
-      "ar": "يجري عمل شيء الآن"
+      "en": "It isn't very nice, **is it**?",
+      "ar": "جملة منفية ← ذيل مثبت"
      },
      {
-      "en": "The adult fish **are being caught**.",
-      "ar": "تُصاد الأسماك البالغة الآن"
+      "en": "It'll look lovely, **won't it**?",
+      "ar": "will ← won't it"
      },
      {
-      "en": "Young ones **are not being produced**.",
-      "ar": "لا تُنتَج الصغار"
+      "en": "We can't go alone, **can we**?",
+      "ar": "can't ← can we"
      },
      {
-      "en": "Several things **are being done** at the same time.",
-      "ar": "أمور كثيرة تُنجَز في الوقت نفسه"
+      "en": "They should do something about it, **shouldn't they**?",
+      "ar": "should ← shouldn't they"
      }
     ],
     "questions": [
      {
-      "q": "The adult fish ___ everywhere.",
+      "q": "That's happening tonight, ___?",
       "o": [
-       "are being caught",
-       "is being caught",
-       "are catching"
+       "isn't it",
+       "is it",
+       "doesn't it"
       ],
-      "a": 0,
-      "why": "الفاعل جمع (fish) والمعنى مبني للمجهول"
+      "a": 0
      },
      {
-      "q": "A new science lab ___ at our school.",
+      "q": "It isn't very nice, ___?",
       "o": [
-       "is building",
-       "is being built",
-       "are being built"
+       "isn't it",
+       "is it",
+       "does it"
       ],
       "a": 1
      },
      {
-      "q": "Young ones ___ produced.",
+      "q": "It'll look lovely, ___?",
       "o": [
-       "aren't being",
-       "don't being",
-       "not being"
+       "will it",
+       "won't it",
+       "doesn't it"
       ],
-      "a": 0,
-      "why": "النفي: are not being + V3"
+      "a": 1
      },
      {
-      "q": "Different kinds of fish ___ in the kitchen now.",
+      "q": "We can't go alone, ___?",
       "o": [
-       "are preparing",
-       "is being prepared",
-       "are being prepared"
+       "can't we",
+       "can we",
+       "do we"
       ],
-      "a": 2
+      "a": 1
      },
      {
       "type": "type",
-      "q": "The boxes ___ to the fish market now. (carry)",
+      "q": "They should do something about it, ___ they?",
       "a": [
-       "are being carried"
+       "shouldn't"
       ]
      },
      {
       "type": "order",
-      "q": "رتّب الكلمات: «أمور كثيرة تُنجَز في الوقت نفسه»",
+      "q": "رتّب الكلمات: «ستبدو جميلة، أليس كذلك؟»",
       "words": [
-       "Several",
-       "things",
-       "are",
-       "being",
-       "done",
-       "at",
-       "the",
-       "same",
-       "time."
+       "It'll",
+       "look",
+       "lovely,",
+       "won't",
+       "it?"
       ]
      }
     ]
    },
    {
-    "title": "Past continuous passive",
-    "titleAr": "الماضي المستمر المبني للمجهول",
-    "explain": "نستعمل <b>الماضي المستمر المبني للمجهول</b> للحديث عن عملٍ كان <b>يجري في الماضي</b> ونركّز على ما وقع عليه الفعل (They were being caught everywhere). نكوّنه من <b>was / were + being + اسم المفعول</b>، والنفي بـ <b>was / were + not + being + اسم المفعول</b>.",
-    "form": "was / were + being + V3    ·    was / were + not + being + V3",
+    "title": "Tag questions with do, does and did",
+    "titleAr": "الأسئلة الذيلية مع do وdoes وdid",
+    "explain": "مع <b>المضارع البسيط</b> نستعمل <b>do / does</b> في الذيل، ومع <b>الماضي البسيط</b> نستعمل <b>did</b>. والقاعدة نفسها: جملة مثبتة ← ذيل منفي (We need a gardener, <b>don't we</b>?)، وجملة منفية ← ذيل مثبت (We didn't talk about this, <b>did we</b>?). ويكون الضمير في الذيل مطابقاً لفاعل الجملة.",
+    "form": "V1 / V(s) ← don't / doesn't    ·    V2 ← didn't    ·    جملة منفية ← do / does / did",
     "examples": [
      {
-      "en": "The job **was being made** easier by modern technology.",
-      "ar": "كان العمل يُجعَل أسهل"
+      "en": "We need a gardener, **don't we**?",
+      "ar": "مضارع مثبت ← ذيل منفي"
      },
      {
-      "en": "They **were being caught** everywhere.",
-      "ar": "كانت تُصاد في كلّ مكان"
+      "en": "We don't have people with the right skills, **do we**?",
+      "ar": "مضارع منفي ← ذيل مثبت"
      },
      {
-      "en": "They **were not being protected** anywhere.",
-      "ar": "لم تكن تُحمى في أيّ مكان"
+      "en": "We had an excellent discussion, **didn't we**?",
+      "ar": "ماضٍ مثبت ← didn't"
      },
      {
-      "en": "A van full of fish **was being driven** out of the market.",
-      "ar": "كانت شاحنة مليئة بالسمك تُقاد خارج السوق"
+      "en": "We didn't talk about this last night, **did we**?",
+      "ar": "ماضٍ منفي ← did"
+     },
+     {
+      "en": "Jack Hill wants to make a request, **doesn't he**?",
+      "ar": "فاعل مفرد ← doesn't he"
      }
     ],
     "questions": [
      {
-      "q": "Two centuries ago, whales ___ for their oil.",
+      "q": "We need a gardener, ___?",
       "o": [
-       "were being caught",
-       "was being caught",
-       "are being caught"
+       "don't we",
+       "do we",
+       "aren't we"
       ],
       "a": 0
      },
      {
-      "q": "The market hall ___ at 10 o'clock yesterday.",
+      "q": "We didn't talk about this last night, ___?",
       "o": [
-       "is being cleaned",
-       "were being cleaned",
-       "was being cleaned"
+       "didn't we",
+       "did we",
+       "do we"
       ],
-      "a": 2
+      "a": 1
      },
      {
-      "q": "Whales ___ protected anywhere.",
+      "q": "Rania visits her grandmother every week, ___?",
       "o": [
-       "were not being",
-       "are not being",
-       "was not being"
+       "doesn't she",
+       "does she",
+       "didn't she"
       ],
       "a": 0
      },
      {
-      "q": "The big boxes ___ when we arrived.",
+      "q": "The twins don't enjoy shopping much, ___?",
       "o": [
-       "were being washed",
-       "are being washed",
-       "was washing"
+       "don't they",
+       "do they",
+       "does they"
       ],
-      "a": 0
+      "a": 1
      },
      {
       "type": "type",
-      "q": "A new road ___ through the town a year ago. (construct)",
+      "q": "Jana enjoyed the family picnic, ___ she?",
       "a": [
-       "was being constructed"
+       "didn't"
       ]
      },
      {
       "type": "order",
-      "q": "رتّب الكلمات: «كانت تُصاد في كلّ مكان»",
+      "q": "رتّب الكلمات: «لقد أجرينا نقاشاً ممتازاً، أليس كذلك؟»",
       "words": [
-       "They",
-       "were",
-       "being",
-       "caught",
-       "everywhere."
+       "We",
+       "had",
+       "an",
+       "excellent",
+       "discussion,",
+       "didn't",
+       "we?"
       ]
      }
     ]
    },
    {
-    "title": "Adverbs in the verb unit",
-    "titleAr": "موضع الظروف داخل الفعل",
-    "explain": "نضع الظروف مثل <b>often / already / quickly / slowly / still / also / now / finally / almost</b> غالباً <b>داخل وحدة الفعل</b>: بعد الفعل المساعد الأول (is / was / are / were) وقبل بقيّة الفعل (Sad changes are <b>often</b> caused by pollution). وفي المبني للمجهول المستمر نضعها قبل <b>being</b> أو بعده (Whales were <b>already</b> being caught).",
-    "form": "is / was + adverb + V3    ·    are / were + adverb + being + V3",
+    "title": "Expressions with do and make",
+    "titleAr": "تعبيرات مع do وmake",
+    "explain": "نستعمل <b>do</b> مع الأعمال والمهامّ (do some shopping, do some homework, do some work, do a project, do a request)، ونستعمل <b>make</b> مع ما نصنعه أو ننتجه (make a cake, make a mess, make a phone call, make a request). وبعض التعبيرات يجب حفظها كما هي.",
+    "form": "do + some shopping / some homework / some work / a project    ·    make + a cake / a mess / a phone call / a request",
     "examples": [
      {
-      "en": "Sad changes are **often** caused by pollution.",
-      "ar": "ظرف تكرار"
+      "en": "I went to the supermarket and **did some shopping**.",
+      "ar": "do ← عمل"
      },
      {
-      "en": "Whales were **already** being caught for their oil.",
-      "ar": "ظرف زمن"
+      "en": "In geography we're going to **do a project** on the weather.",
+      "ar": "do ← مشروع"
      },
      {
-      "en": "Whales were **quickly** being destroyed.",
-      "ar": "ظرف حال"
+      "en": "My baby brother's **making a mess** with his food.",
+      "ar": "make ← فوضى"
      },
      {
-      "en": "Their populations are **slowly** rising again.",
-      "ar": "ظرف حال"
+      "en": "I'm going to **make a cake** for her birthday.",
+      "ar": "make ← صنع"
+     },
+     {
+      "en": "I need to **make a phone call** and get some help.",
+      "ar": "make ← مكالمة"
      }
     ],
     "questions": [
      {
-      "q": "Choose the correct sentence.",
+      "q": "After dinner, I usually ___ some homework.",
       "o": [
-       "Sad changes are often caused by pollution.",
-       "Sad changes often are caused by pollution.",
-       "Sad changes are caused often by pollution."
+       "do",
+       "make",
+       "have made"
       ],
       "a": 0
      },
      {
-      "q": "Whales were ___ being destroyed.",
+      "q": "My little brother is ___ a mess with his food again.",
       "o": [
-       "quickly",
-       "quick",
-       "quicker"
-      ],
-      "a": 0,
-      "why": "الظرف quickly يصف الفعل"
-     },
-     {
-      "q": "The population is ___ rising.",
-      "o": [
-       "slow",
-       "slowly",
-       "slower"
+       "doing",
+       "making",
+       "doing a"
       ],
       "a": 1
      },
      {
-      "q": "Where does 'finally' go? Then catching whales was ___ stopped by most countries.",
+      "q": "I need to ___ a phone call and get some help.",
       "o": [
-       "finally",
-       "stopped finally",
-       "being finally"
+       "do",
+       "make",
+       "take"
       ],
-      "a": 0
+      "a": 1
+     },
+     {
+      "q": "It's Rana's birthday tomorrow, so I'm going to ___ a cake for her.",
+      "o": [
+       "do",
+       "make",
+       "does"
+      ],
+      "a": 1
      },
      {
       "type": "type",
-      "q": "Whales are ___ being caught by two or three countries. (still)",
+      "q": "We went to the supermarket and ___ some shopping. (do, past)",
       "a": [
-       "still"
+       "did"
       ]
      },
      {
       "type": "order",
       "q": "رتّب الكلمات لتكوّن جملة صحيحة",
       "words": [
-       "Great",
-       "damage",
-       "is",
-       "now",
-       "being",
-       "done",
+       "I",
+       "have",
        "to",
-       "other",
-       "species."
+       "make",
+       "a",
+       "phone",
+       "call",
+       "first."
       ]
      }
     ]
@@ -447,53 +440,53 @@
   ],
   "mastery": [
    {
-    "q": "\"species\" means:",
+    "q": "\"fence\" means:",
     "o": [
-     "نوع (حيّ)",
-     "شبكة",
-     "ساحل"
+     "سياج",
+     "قمامة",
+     "لجنة"
     ],
     "a": 0,
     "lv": "easy"
    },
    {
-    "q": "\"destroy\" means:",
+    "q": "\"gardener\" means:",
     "o": [
-     "يكتشف",
-     "يدمّر",
-     "يرتفع"
+     "نجّار",
+     "بستاني",
+     "أمين سرّ"
     ],
     "a": 1,
     "lv": "easy"
    },
    {
-    "q": "\"net\" means:",
+    "q": "\"rubbish\" means:",
     "o": [
-     "شبكة",
-     "سعر",
-     "مشروع"
-    ],
-    "a": 0,
-    "lv": "easy"
-   },
-   {
-    "tf": true,
-    "q": "Mrs Qadiri wanted to buy tuna.",
-    "lv": "easy"
-   },
-   {
-    "q": "The opposite of \"go up\" is ___.",
-    "o": [
-     "keep",
-     "come down",
-     "disappear"
+     "طاقة",
+     "قمامة",
+     "إعلان"
     ],
     "a": 1,
     "lv": "easy"
    },
    {
     "tf": true,
-    "q": "In 1985, almost every country agreed to stop catching whales.",
+    "q": "Lana and Lisa saw a notice on the fence.",
+    "lv": "easy"
+   },
+   {
+    "q": "\"look forward to\" means:",
+    "o": [
+     "يتطلّع إلى",
+     "ينظّف",
+     "يهدف إلى"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "The garden project was going to start on Sunday.",
     "lv": "easy"
    },
    {
@@ -501,149 +494,152 @@
     "q": "صِل كلّ كلمة بمعناها",
     "pairs": [
      [
-      "population",
-      "عدد السكان"
+      "committee",
+      "لجنة"
      ],
      [
-      "coast",
-      "ساحل"
+      "carpenter",
+      "نجّار"
      ],
      [
-      "disappear",
-      "يختفي"
+      "repair",
+      "يصلح"
      ],
      [
-      "discover",
-      "يكتشف"
+      "ashamed (of)",
+      "يخجل (من)"
      ]
     ],
     "lv": "medium"
    },
    {
-    "q": "Near the coast, damage to sea life is often caused by ___.",
+    "q": "It isn't very nice, ___?",
     "o": [
-     "pollution",
-     "whales",
-     "tuna"
-    ],
-    "a": 0,
-    "lv": "medium"
-   },
-   {
-    "q": "Something ___ about it. (is being done)",
-    "o": [
-     "is doing",
-     "is being done",
-     "are being done"
+     "isn't it",
+     "is it",
+     "was it"
     ],
     "a": 1,
     "lv": "medium"
    },
    {
-    "tf": false,
-    "q": "In Europe, people are not allowed to catch fish at all.",
-    "why": "They are required to catch smaller quantities.",
-    "lv": "medium"
-   },
-   {
-    "q": "Why are fish prices going up?",
+    "q": "The garden will be ready by June, ___?",
     "o": [
-     "Too many fish are being caught",
-     "There are too many fish",
-     "Fish are cheaper to catch"
+     "won't it",
+     "will it",
+     "isn't it"
     ],
     "a": 0,
     "lv": "medium"
    },
    {
-    "q": "Complete: Whales ___ everywhere in the 1960s.",
+    "q": "You live in the middle of town, ___?",
     "o": [
-     "were being caught",
-     "are being caught",
-     "was being caught"
+     "don't you",
+     "do you",
+     "aren't you"
     ],
     "a": 0,
     "lv": "medium"
+   },
+   {
+    "q": "They didn't need to buy any fruit, ___?",
+    "o": [
+     "did they",
+     "didn't they",
+     "do they"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "Why didn't Lisa want to start work at first?",
+    "o": [
+     "She thought it was too cold",
+     "She was busy",
+     "She didn't like gardens"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "Choose the correct expression.",
+    "o": [
+     "make some shopping",
+     "do some shopping",
+     "make some homework"
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "We can't wait any longer, ___ we? (can)",
+    "a": [
+     "can"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "type",
+    "q": "Fuad doesn't play basketball, ___ he? (does)",
+    "a": [
+     "does"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "That's",
+     "happening",
+     "tonight,",
+     "isn't",
+     "it?"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "We",
+     "didn't",
+     "talk",
+     "about",
+     "this,",
+     "did",
+     "we?"
+    ],
+    "lv": "hard"
    },
    {
     "q": "Choose the correct sentence.",
     "o": [
-     "Their populations are slowly rising again.",
-     "Their populations slowly are rising again.",
-     "Their populations are rising slowly again."
-    ],
-    "a": 0,
-    "lv": "medium"
-   },
-   {
-    "type": "type",
-    "q": "The adult fish ___ caught now. (are being)",
-    "a": [
-     "are being"
-    ],
-    "lv": "hard"
-   },
-   {
-    "type": "type",
-    "q": "The old boxes ___ washed at ten o'clock. (were being)",
-    "a": [
-     "were being"
-    ],
-    "lv": "hard"
-   },
-   {
-    "type": "order",
-    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
-    "words": [
-     "Sad",
-     "changes",
-     "are",
-     "often",
-     "caused",
-     "by",
-     "pollution."
-    ],
-    "lv": "hard"
-   },
-   {
-    "type": "order",
-    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
-    "words": [
-     "They",
-     "were",
-     "not",
-     "being",
-     "protected",
-     "anywhere."
-    ],
-    "lv": "hard"
-   },
-   {
-    "q": "What does the writer say could save the oceans?",
-    "o": [
-     "Fishing more freely",
-     "Fish farms",
-     "Stopping all pollution at once"
-    ],
-    "a": 1,
-    "lv": "hard"
-   },
-   {
-    "q": "Why can't most people stop fishing?",
-    "o": [
-     "Because too many hungry people need to eat",
-     "Because fish are cheap",
-     "Because it is easy"
+     "We need a gardener, don't we?",
+     "We need a gardener, do we?",
+     "We need a gardener, aren't we?"
     ],
     "a": 0,
     "lv": "hard"
    },
    {
-    "q": "Choose the correct passive sentence.",
+    "q": "Which sentence uses a modal verb correctly in the tag?",
     "o": [
-     "The job was being made easier by modern technology.",
-     "The job was making easier by modern technology.",
-     "The job is being made easy by modern technology yesterday."
+     "It will look lovely, won't it?",
+     "It will look lovely, doesn't it?",
+     "It will look lovely, isn't it?"
+    ],
+    "a": 0,
+    "lv": "hard"
+   },
+   {
+    "q": "What does Mr Qadiri say about March?",
+    "o": [
+     "It is a busy time in the garden",
+     "It is too cold to work",
+     "It is a quiet month"
     ],
     "a": 0,
     "lv": "hard"
@@ -654,173 +650,168 @@
   "10-1#0": [
    {
     "k": "intro",
-    "useEn": "We use the {t|present continuous passive} when something is being done now and the thing that receives the action is more important than the doer.",
-    "useAr": "نستعمل {t|المضارع المستمر المبني للمجهول} حين يُنجَز شيءٌ الآن ويكون ما يقع عليه الفعل أهمّ ممّن يفعله.",
+    "useEn": "We use {t|tag questions} when we think we know the answer and expect the other person to agree.",
+    "useAr": "نستعمل {t|الأسئلة الذيلية} حين نظنّ أنّنا نعرف الجواب ونتوقّع موافقة الآخر.",
     "signals": [
-     "now",
-     "at the moment",
-     "being"
+     "isn't it?",
+     "can we?",
+     "won't it?"
     ]
    },
    {
     "k": "pos",
-    "label": "Positive",
-    "labelAr": "الإثبات",
-    "formula": "{s|Subject} + {t|am / is / are} + {t|being} + {v|V3}",
+    "label": "Positive sentence",
+    "labelAr": "جملة مثبتة",
+    "formula": "{s|Positive sentence}, {t|negative tag}?",
     "examples": [
      {
-      "en": "The adult fish {t|are being} {v|caught}.",
-      "ar": "تُصاد الأسماك البالغة الآن."
+      "en": "That's happening tonight, {t|isn't it}?",
+      "ar": "هذا يحدث الليلة، أليس كذلك؟"
      },
      {
-      "en": "Something {t|is being} {v|done}.",
-      "ar": "يجري عمل شيء ما الآن."
+      "en": "It'll look lovely, {t|won't it}?",
+      "ar": "ستبدو جميلة، أليس كذلك؟"
      }
     ],
-    "tip": "الفاعل الحقيقي يُحذف أو يأتي بعد by."
+    "tip": "مثبت ← ذيل منفي."
    },
    {
     "k": "neg",
-    "label": "Negative",
-    "labelAr": "النفي",
-    "formula": "{s|Subject} + {t|am / is / are} + {n|not} + {t|being} + {v|V3}",
+    "label": "Negative sentence",
+    "labelAr": "جملة منفية",
+    "formula": "{s|Negative sentence}, {t|positive tag}?",
     "examples": [
      {
-      "en": "Young ones {t|are} {n|not} {t|being} {v|produced}.",
-      "ar": "لا تُنتَج الصغار."
+      "en": "It {n|isn't} very nice, {t|is it}?",
+      "ar": "إنّها ليست جميلة، أليس كذلك؟"
+     },
+     {
+      "en": "We {n|can't} go alone, {t|can we}?",
+      "ar": "لا نستطيع الذهاب وحدنا، أليس كذلك؟"
      }
-    ]
+    ],
+    "tip": "منفي ← ذيل مثبت."
    },
    {
     "k": "q",
-    "label": "Question",
-    "labelAr": "السؤال",
-    "formula": "{t|Am / Is / Are} + {s|Subject} + {t|being} + {v|V3}?",
+    "label": "Modal verbs",
+    "labelAr": "الأفعال الناقصة",
+    "formula": "{s|S} + {v|modal} + {v|V1}, {t|modal (opposite)} + {s|pronoun}?",
     "examples": [
      {
-      "en": "{t|Are} the fish {t|being} {v|caught}?",
-      "ar": "هل تُصاد الأسماك؟"
+      "en": "They {v|should} do something, {t|shouldn't} {s|they}?",
+      "ar": "عليهم أن يفعلوا شيئاً، أليس كذلك؟"
      }
-    ]
+    ],
+    "tip": "نكرّر الفعل الناقص نفسه."
    },
    {
     "k": "note",
-    "label": "Active → Passive",
-    "labelAr": "من المعلوم إلى المجهول",
-    "body": "active: People {t|are catching} the fish.\npassive: The fish {t|are being caught}.",
-    "examples": [
-     {
-      "en": "They are teaching me all this. → I am being taught all this.",
-      "ar": "يعلّمونني هذا ← أُعلَّم هذا."
-     }
-    ]
+    "label": "Short answers",
+    "labelAr": "الإجابات القصيرة",
+    "body": "Yes, it is. / No, it isn't.\nYes, it will. / No, it won't.\nYes, we can. / No, we can't.",
+    "examples": []
    }
   ],
   "10-1#1": [
    {
     "k": "intro",
-    "useEn": "We use the {t|past continuous passive} for something that was in progress in the past when we focus on the thing, not the doer.",
-    "useAr": "نستعمل {t|الماضي المستمر المبني للمجهول} لعملٍ كان جارياً في الماضي حين نركّز على الشيء لا على الفاعل.",
+    "useEn": "With the {t|present simple} we use {t|do / does} in the tag, and with the {t|past simple} we use {t|did}.",
+    "useAr": "مع {t|المضارع البسيط} نستعمل {t|do / does} في الذيل، ومع {t|الماضي البسيط} نستعمل {t|did}.",
     "signals": [
-     "yesterday",
-     "at 10:00",
-     "was / were being"
+     "do / does",
+     "did",
+     "every week"
     ]
    },
    {
     "k": "pos",
-    "label": "Positive",
-    "labelAr": "الإثبات",
-    "formula": "{s|Subject} + {t|was / were} + {t|being} + {v|V3}",
+    "label": "Positive sentence",
+    "labelAr": "جملة مثبتة",
+    "formula": "{s|S} + {v|V1 / V(s) / V2}, {t|don't / doesn't / didn't} + {s|pronoun}?",
     "examples": [
      {
-      "en": "They {t|were being} {v|caught} everywhere.",
-      "ar": "كانت تُصاد في كلّ مكان."
+      "en": "We need a gardener, {t|don't} {s|we}?",
+      "ar": "نحتاج إلى بستاني، أليس كذلك؟"
      },
      {
-      "en": "A van {t|was being} {v|driven} out of the market.",
-      "ar": "كانت شاحنة تُقاد خارج السوق."
+      "en": "We had an excellent discussion, {t|didn't} {s|we}?",
+      "ar": "أجرينا نقاشاً ممتازاً، أليس كذلك؟"
      }
     ]
    },
    {
     "k": "neg",
-    "label": "Negative",
-    "labelAr": "النفي",
-    "formula": "{s|Subject} + {t|was / were} + {n|not} + {t|being} + {v|V3}",
+    "label": "Negative sentence",
+    "labelAr": "جملة منفية",
+    "formula": "{s|S} + {n|don't / doesn't / didn't} + {v|V1}, {t|do / does / did} + {s|pronoun}?",
     "examples": [
      {
-      "en": "They {t|were} {n|not} {t|being} {v|protected} anywhere.",
-      "ar": "لم تكن تُحمى في أيّ مكان."
-     }
-    ]
-   },
-   {
-    "k": "q",
-    "label": "Question",
-    "labelAr": "السؤال",
-    "formula": "{t|Was / Were} + {s|Subject} + {t|being} + {v|V3}?",
-    "examples": [
+      "en": "We {n|didn't} talk about this last night, {t|did} {s|we}?",
+      "ar": "لم نتحدّث عن هذا الليلة الماضية، أليس كذلك؟"
+     },
      {
-      "en": "{t|Were} whales {t|being} {v|protected}?",
-      "ar": "هل كانت الحيتان تُحمى؟"
+      "en": "Fuad {n|doesn't} play basketball, {t|does} {s|he}?",
+      "ar": "فؤاد لا يلعب كرة السلّة، أليس كذلك؟"
      }
-    ]
+    ],
+    "tip": "الضمير يطابق الفاعل."
    },
    {
     "k": "note",
-    "label": "Active → Passive",
-    "labelAr": "من المعلوم إلى المجهول",
-    "body": "active: Modern technology {t|was making} the job easier.\npassive: The job {t|was being made} easier.",
+    "label": "Match the subject",
+    "labelAr": "طابق الفاعل",
+    "body": "Jack Hill → {t|he}\nthe twins → {t|they}\nRania → {t|she}\nyou → {t|you}",
     "examples": []
    }
   ],
   "10-1#2": [
    {
     "k": "intro",
-    "useEn": "Adverbs like {t|often, already, quickly, slowly, still, also, finally, almost} usually go inside the verb unit.",
-    "useAr": "الظروف مثل {t|often وalready وquickly وslowly وstill وalso وfinally وalmost} تأتي غالباً داخل وحدة الفعل.",
+    "useEn": "Some expressions go with {t|do} and others with {t|make}. We learn them as whole phrases.",
+    "useAr": "بعض التعبيرات تأتي مع {t|do} وبعضها مع {t|make}، ونتعلّمها عبارات كاملة.",
     "signals": [
-     "often",
-     "already",
-     "quickly",
-     "slowly"
+     "do",
+     "make"
     ]
    },
    {
     "k": "pos",
-    "label": "Position",
-    "labelAr": "الموضع",
-    "formula": "{s|Subject} + {t|is / was} + {t|adverb} + {v|V3}",
+    "label": "do + …",
+    "labelAr": "do + …",
+    "formula": "{t|do} + {v|some shopping / some homework / some work / a project}",
     "examples": [
      {
-      "en": "Sad changes are {t|often} {v|caused} by pollution.",
-      "ar": "تُسبَّب التغيّرات المحزنة غالباً بالتلوّث."
+      "en": "I went to the supermarket and {t|did} {v|some shopping}.",
+      "ar": "ذهبتُ إلى السوق وتسوّقتُ."
+     },
+     {
+      "en": "We're going to {t|do} {v|a project} on the weather.",
+      "ar": "سنُعدّ مشروعاً عن الطقس."
      }
-    ],
-    "tip": "الظرف بعد الفعل المساعد الأول."
+    ]
    },
    {
     "k": "pos",
-    "label": "With being",
-    "labelAr": "مع being",
-    "formula": "{s|Subject} + {t|were} + {t|adverb} + {t|being} + {v|V3}",
+    "label": "make + …",
+    "labelAr": "make + …",
+    "formula": "{t|make} + {v|a cake / a mess / a phone call / a request}",
     "examples": [
      {
-      "en": "Whales were {t|already} being {v|caught}.",
-      "ar": "كانت الحيتان تُصاد أصلاً."
+      "en": "I'm going to {t|make} {v|a cake} for her.",
+      "ar": "سأصنع لها كعكة."
      },
      {
-      "en": "Whales were {t|quickly} being {v|destroyed}.",
-      "ar": "كانت الحيتان تُدمَّر بسرعة."
+      "en": "He wants to {t|make} {v|a request} on local radio.",
+      "ar": "يريد أن يقدّم طلباً عبر الإذاعة المحلية."
      }
     ]
    },
    {
     "k": "note",
-    "label": "Common adverbs",
-    "labelAr": "ظروف شائعة",
-    "body": "often = غالباً\nalready = أصلاً / من قبل\nquickly = بسرعة\nslowly = ببطء\nstill = ما زال\nalso = أيضاً\nnow = الآن",
+    "label": "Opposites in this unit",
+    "labelAr": "متضادات الوحدة",
+    "body": "badly ↔ {t|well}\nbusy ↔ {t|free}\neastern ↔ {t|western}\nfinish ↔ {t|start}\nproud of ↔ {t|ashamed of}",
     "examples": []
    }
   ]
@@ -832,46 +823,46 @@
     "k": "vocab",
     "questions": [
      {
-      "q": "Fish ___ from the oceans because of pollution and over-fishing.",
+      "q": "We need to build a ___ round the garden.",
       "o": [
-       "are disappearing",
-       "are joking",
-       "come down"
+       "fence",
+       "committee",
+       "energy"
       ],
       "a": 0
      },
      {
-      "q": "Scientists are ___ new kinds of life in the deep sea.",
+      "q": "Don't walk there! There's some broken glass and ___.",
       "o": [
-       "discovering",
-       "requiring",
-       "joking"
+       "rubbish",
+       "aim",
+       "notice"
       ],
       "a": 0
      },
      {
-      "q": "The ___ of fish is very high. Prices keep going up.",
+      "q": "Someone who works with wood is a ___.",
       "o": [
-       "species",
-       "price",
-       "net"
+       "gardener",
+       "carpenter",
+       "secretary"
       ],
       "a": 1
      },
      {
-      "q": "Fishermen use huge ___ to catch fish.",
+      "q": "I'm ___ forward to Sunday.",
       "o": [
-       "coasts",
-       "nets",
-       "tunas"
+       "looking",
+       "making",
+       "doing"
       ],
-      "a": 1
+      "a": 0
      },
      {
       "type": "type",
-      "q": "Over-fishing is a ___ disaster. (made by people)",
+      "q": "The people who left the rubbish should be ___ of themselves. (ashamed)",
       "a": [
-       "man-made"
+       "ashamed"
       ]
      }
     ]
@@ -880,58 +871,58 @@
     "k": "grammar",
     "questions": [
      {
-      "q": "The adult fish ___ caught everywhere now.",
+      "q": "The garden project must start soon, ___?",
       "o": [
-       "are being",
-       "is being",
-       "were being"
+       "mustn't it",
+       "must it",
+       "doesn't it"
       ],
       "a": 0
      },
      {
-      "q": "Whales ___ for their oil two centuries ago.",
+      "q": "We shouldn't waste any time, ___?",
       "o": [
-       "are being caught",
-       "were being caught",
-       "was being caught"
+       "should we",
+       "shouldn't we",
+       "do we"
+      ],
+      "a": 0
+     },
+     {
+      "q": "They bought some new shoes last week, ___?",
+      "o": [
+       "didn't they",
+       "did they",
+       "don't they"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Yasmeen doesn't want to come tomorrow, ___?",
+      "o": [
+       "does she",
+       "doesn't she",
+       "did she"
+      ],
+      "a": 0
+     },
+     {
+      "q": "After dinner, I usually ___ my homework.",
+      "o": [
+       "make",
+       "do",
+       "take"
       ],
       "a": 1
      },
      {
-      "q": "Young ones ___ produced.",
+      "q": "My brother is ___ a mess with his food.",
       "o": [
-       "aren't being",
-       "isn't being",
-       "weren't be"
+       "doing",
+       "making",
+       "having do"
       ],
-      "a": 0
-     },
-     {
-      "q": "Sad changes are ___ caused by pollution.",
-      "o": [
-       "often",
-       "oftenly",
-       "ofter"
-      ],
-      "a": 0
-     },
-     {
-      "q": "The job ___ easier by modern technology in the 1940s.",
-      "o": [
-       "was being made",
-       "is being made",
-       "were being made"
-      ],
-      "a": 0
-     },
-     {
-      "q": "Choose the correct sentence.",
-      "o": [
-       "Their populations are slowly rising again.",
-       "Their populations slowly are rising again.",
-       "Their slowly populations are rising again."
-      ],
-      "a": 0
+      "a": 1
      }
     ]
    },
@@ -939,176 +930,181 @@
     "k": "reading",
     "questions": [
      {
-      "q": "What causes sad changes farther out in the oceans?",
+      "q": "What did the notice on the fence invite people to do?",
       "o": [
-       "Pollution",
-       "Over-fishing",
-       "Fish farms"
-      ],
-      "a": 1
-     },
-     {
-      "tf": true,
-      "q": "Whales were being caught everywhere from the 1950s to the 1980s."
-     },
-     {
-      "q": "What does 'Finally, the world took action' refer to?",
-      "o": [
-       "Stopping the catching of whales",
-       "Starting fish farms",
-       "Building new boats"
+       "Help create a community garden",
+       "Buy new houses",
+       "Clean the school"
       ],
       "a": 0
      },
      {
       "tf": false,
-      "q": "The writer says farmed fish taste better than wild fish.",
-      "why": "People say they do not taste as good, but it is still better than losing all the fish."
+      "q": "Lisa and Lana could not go to the meeting without an adult.",
+      "why": "They asked Dad to go with them, so they did go."
+     },
+     {
+      "q": "What did the speaker want to make part of the garden?",
+      "o": [
+       "A safe play area for children",
+       "A big car park",
+       "A fish market"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Why did Lisa think they could not start yet?",
+      "o": [
+       "It was still too cold",
+       "They had no tools",
+       "It was raining"
+      ],
+      "a": 0
      }
     ]
    }
   ]
  },
  "summary": {
-  "title": "حياة البرية في خطر",
-  "titleEn": "Wildlife in danger",
-  "intro": "يتعلّم الطالب مفردات الصيد الجائر وحماية الكائنات البحرية، والمضارع المستمر والماضي المستمر المبنيّين للمجهول، وموضع الظروف داخل الفعل، ويكتب عن مشكلة ويقترح حلّاً.",
+  "title": "حديقة للجميع",
+  "titleEn": "A garden for all",
+  "intro": "يتعلّم الطالب مفردات العمل التطوّعي وتنظيم حديقة للمجتمع، والأسئلة الذيلية مع be والأفعال الناقصة ومع do وdid، وتعبيرات do وmake، ويكتب رسالة شخصية وجدولاً زمنياً للمهامّ.",
   "qa": [
    {
     "t": "vocab",
-    "q": "What do these words mean: species, destroy, disappear, discover?",
-    "qAr": "ما معنى الكلمات: species وdestroy وdisappear وdiscover؟",
-    "a": "**species** means a kind of living thing, **destroy** means to damage completely, **disappear** means to go away and not be seen, and **discover** means to find something new.",
-    "aAr": "**species** = **نوع حيّ**، **destroy** = **يدمّر**، **disappear** = **يختفي**، **discover** = **يكتشف**.",
+    "q": "What do these words mean: committee, secretary, carpenter, gardener?",
+    "qAr": "ما معنى الكلمات: committee وsecretary وcarpenter وgardener؟",
+    "a": "**committee** is a group that organises something, **secretary** takes notes, **carpenter** works with wood, and **gardener** looks after plants.",
+    "aAr": "**committee** = **لجنة**، **secretary** = **أمين السرّ**، **carpenter** = **نجّار**، **gardener** = **بستاني**.",
     "ex": [
      [
-      "Scientists are discovering new species in the deep oceans.",
-      "يكتشف العلماء أنواعاً جديدة في أعماق المحيطات."
+      "I've agreed to become the secretary and take notes.",
+      "وافقتُ على أن أصبح أمين السرّ وأدوّن الملاحظات."
      ]
     ]
    },
    {
     "t": "vocab",
-    "q": "What do go up and come down mean?",
-    "qAr": "ماذا تعني go up وcome down؟",
-    "a": "**go up** means to rise, and **come down** means to fall. We use them for prices and populations.",
-    "aAr": "**go up** = **يرتفع**، و**come down** = **ينخفض**. نستعملهما مع الأسعار وأعداد السكان.",
+    "q": "What are the opposites in this unit?",
+    "qAr": "ما المتضادات في الوحدة؟",
+    "a": "**badly – well**, **busy – free**, **eastern – western**, **finish – start**, **proud of – ashamed of**.",
+    "aAr": "**badly – well** و**busy – free** و**eastern – western** و**finish – start** و**proud of – ashamed of**.",
     "ex": [
      [
-      "Your prices keep going up and up!",
-      "أسعاركم تواصل الارتفاع!"
+      "Rama used to play the piano badly, but now she plays very well.",
+      "كانت راما تعزف البيانو بشكل سيّئ، أمّا الآن فهي تعزف بشكل جيّد جدّاً."
      ]
     ]
    },
    {
     "t": "vocab",
-    "q": "What are the word pairs with similar meanings in this unit?",
-    "qAr": "ما أزواج الكلمات المتقاربة في الوحدة؟",
-    "a": "**enormous – huge**, **discover – find**, **close to – near**, **go up – rise**, **difficult – hard**, **number – quantity**.",
-    "aAr": "**enormous – huge** و**discover – find** و**close to – near** و**go up – rise** و**difficult – hard** و**number – quantity**.",
+    "q": "When do we use do and when do we use make?",
+    "qAr": "متى نستعمل do ومتى نستعمل make؟",
+    "a": "**do** goes with tasks: do some shopping, do some homework, do some work, do a project. **make** goes with things we produce: make a cake, make a mess, make a phone call, make a request.",
+    "aAr": "**do** مع المهامّ: do some shopping وdo some homework وdo some work وdo a project. و**make** مع ما نصنعه: make a cake وmake a mess وmake a phone call وmake a request.",
     "ex": [
      [
-      "Tokyo is an enormous city and its population is rising.",
-      "طوكيو مدينة هائلة وعدد سكانها في ارتفاع."
+      "I have to make a phone call first.",
+      "عليّ أن أجري مكالمة هاتفية أوّلاً."
      ]
     ]
    },
    {
     "t": "grammar",
-    "q": "How do we form the present continuous passive?",
-    "qAr": "كيف نكوّن المضارع المستمر المبني للمجهول؟",
-    "a": "==am / is / are + being + past participle==: ==The adult fish are being caught.== Negative: ==Young ones are not being produced.==",
-    "aAr": "==am / is / are + being + اسم المفعول==: ==The adult fish are being caught.== والنفي: ==Young ones are not being produced.==",
+    "q": "What is a tag question and when do we use it?",
+    "qAr": "ما السؤال الذيلي ومتى نستعمله؟",
+    "a": "A tag question is a short question at the end of a sentence. We use it when we think we know the answer and expect the other person to **agree**.",
+    "aAr": "السؤال الذيلي سؤال قصير في نهاية الجملة، نستعمله حين نظنّ أنّنا نعرف الجواب ونتوقّع أن **يوافقنا** الآخر.",
     "ex": [
      [
-      "A new science lab is being built at our school.",
-      "يُبنى مختبر علوم جديد في مدرستنا."
+      "It'll look lovely, won't it?",
+      "ستبدو جميلة، أليس كذلك؟"
      ]
     ]
    },
    {
     "t": "grammar",
-    "q": "How do we form the past continuous passive?",
-    "qAr": "كيف نكوّن الماضي المستمر المبني للمجهول؟",
-    "a": "==was / were + being + past participle==: ==They were being caught everywhere.== Negative: ==They were not being protected anywhere.==",
-    "aAr": "==was / were + being + اسم المفعول==: ==They were being caught everywhere.== والنفي: ==They were not being protected anywhere.==",
+    "q": "How do we form tag questions with be and modal verbs?",
+    "qAr": "كيف نكوّن الأسئلة الذيلية مع be والأفعال الناقصة؟",
+    "a": "A positive sentence has a **negative tag**, and a negative sentence has a **positive tag**: ==That's happening tonight, isn't it?== ==We can't go alone, can we?== We repeat the same verb.",
+    "aAr": "الجملة المثبتة لها ذيل **منفي**، والمنفية لها ذيل **مثبت**: ==That's happening tonight, isn't it?== و==We can't go alone, can we?== ونكرّر الفعل نفسه.",
     "ex": [
      [
-      "A van full of fish was being driven out of the market.",
-      "كانت شاحنة مليئة بالسمك تُقاد خارج السوق."
+      "They should do something about it, shouldn't they?",
+      "عليهم أن يفعلوا شيئاً حيال ذلك، أليس كذلك؟"
      ]
     ]
    },
    {
     "t": "grammar",
-    "q": "When do we use the passive and when do we add by?",
-    "qAr": "متى نستعمل المبني للمجهول ومتى نضيف by؟",
-    "a": "We use the passive to put the **thing** in focus. If the doer is useful, we add **by + agent**. If it is not useful, we can leave it out.",
-    "aAr": "نستعمل المبني للمجهول لنركّز على **الشيء**. وإذا كان الفاعل مفيداً أضفناه بـ **by + الفاعل**، وإذا لم يكن مفيداً حذفناه.",
+    "q": "How do we form tag questions with do, does and did?",
+    "qAr": "كيف نكوّن الأسئلة الذيلية مع do وdoes وdid؟",
+    "a": "In the present simple we use **do / does**, and in the past simple we use **did**: ==We need a gardener, don't we?== ==We didn't talk about this, did we?==",
+    "aAr": "في المضارع البسيط نستعمل **do / does**، وفي الماضي البسيط **did**: ==We need a gardener, don't we?== و==We didn't talk about this, did we?==",
     "ex": [
      [
-      "The job was being made easier by modern technology.",
-      "كان العمل يُجعَل أسهل بواسطة التكنولوجيا الحديثة."
+      "Jack Hill wants to make a request, doesn't he?",
+      "جاك هيل يريد تقديم طلب، أليس كذلك؟"
      ]
     ]
    },
    {
     "t": "grammar",
-    "q": "Where do we put adverbs like often and already?",
-    "qAr": "أين نضع ظروفاً مثل often وalready؟",
-    "a": "We put them in the **verb unit**, after the first auxiliary verb: ==Sad changes are often caused by pollution.== ==Whales were already being caught.==",
-    "aAr": "نضعها داخل **وحدة الفعل** بعد الفعل المساعد الأول: ==Sad changes are often caused by pollution.== و==Whales were already being caught.==",
+    "q": "How do we answer a tag question?",
+    "qAr": "كيف نجيب عن سؤال ذيلي؟",
+    "a": "We give a short answer with the same verb: **Yes, it will.** **No, we can't.** **Yes, they did.**",
+    "aAr": "نجيب إجابة قصيرة بالفعل نفسه: **Yes, it will.** و**No, we can't.** و**Yes, they did.**",
     "ex": [
      [
-      "Whole species of whales were quickly being destroyed.",
-      "كانت فصائل كاملة من الحيتان تُدمَّر بسرعة."
+      "Yes, we certainly can!",
+      "نعم، نستطيع بالتأكيد!"
      ]
     ]
    },
    {
     "t": "reading",
-    "q": "What are the two big causes of damage to sea life?",
-    "qAr": "ما سببا الضرر الكبيران للحياة البحرية؟",
-    "a": "Near the coast the cause is often **pollution**. Farther out the cause is often **over-fishing** with huge nets.",
-    "aAr": "قرب الساحل يكون السبب غالباً **التلوّث**، وفي المناطق الأبعد **الصيد الجائر** بالشباك الضخمة."
+    "q": "What did Lana and Lisa notice, and what did they decide to do?",
+    "qAr": "ماذا لاحظت لانا وليزا وماذا قرّرتا أن تفعلا؟",
+    "a": "They saw rubbish and broken glass on a piece of waste ground and a notice about a community garden meeting. They decided to go to the meeting with Mr Qadiri.",
+    "aAr": "رأتا قمامة وزجاجاً مكسوراً في أرض مهجورة وإعلاناً عن اجتماع لإنشاء حديقة للمجتمع، فقرّرتا حضور الاجتماع مع السيد قادري."
    },
    {
     "t": "reading",
-    "q": "What happened to whales, and what did the world do?",
-    "qAr": "ماذا حدث للحيتان وماذا فعل العالم؟",
-    "a": "Whales were being caught everywhere from the 1950s to the 1980s and numbers were collapsing. In 1985 almost every country agreed to stop catching them, so populations are slowly rising again.",
-    "aAr": "كانت الحيتان تُصاد في كلّ مكان من الخمسينيات إلى الثمانينيات وانهارت أعدادها. وفي عام 1985 اتّفقت الدول تقريباً على التوقّف عن صيدها، فبدأت أعدادها ترتفع ببطء."
+    "q": "What does the speaker aim to build?",
+    "qAr": "ماذا يهدف المتحدّث إلى أن يبني؟",
+    "a": "He aims to build a garden for everyone, with a safe play area for children.",
+    "aAr": "يهدف إلى بناء حديقة للجميع فيها مكان آمن للعب الأطفال."
    },
    {
     "t": "reading",
-    "q": "Why can fish not be saved in the same way?",
-    "qAr": "لماذا لا يمكن إنقاذ الأسماك بالطريقة نفسها؟",
-    "a": "In most places people go on fishing freely because too many hungry people need to eat. Only in Europe are people required to catch smaller quantities.",
-    "aAr": "لأنّ الناس في معظم الأماكن يواصلون الصيد بحرّية فهناك كثيرون جائعون يحتاجون إلى الطعام، ولا تُلزم بالكمّيات الأقلّ إلا أوروبا."
+    "q": "Why does Mr Qadiri say they can start in March?",
+    "qAr": "لماذا يقول السيد قادري إنّ بإمكانهم البدء في آذار/مارس؟",
+    "a": "Because March is a busy time in the garden, so they can certainly start.",
+    "aAr": "لأنّ آذار/مارس وقت مزدحم في الحديقة، فيمكنهم البدء بالتأكيد."
    },
    {
     "t": "writing",
-    "q": "How do we organise an essay about a problem and a solution?",
-    "qAr": "كيف ننظّم مقالاً عن مشكلة وحلّها؟",
-    "a": "We use sequence markers: ==First of all,== ==Secondly,== ==Thirdly,== ==Finally,== to list the problems, then the advantages of the solution.",
-    "aAr": "نستعمل كلمات الترتيب: ==First of all,== و==Secondly,== و==Thirdly,== و==Finally,== لعرض المشكلات ثمّ مزايا الحلّ.",
+    "q": "How do we write a personal letter?",
+    "qAr": "كيف نكتب رسالة شخصية؟",
+    "a": "We write our address and the date, then **Dear …,**, the paragraphs, and end with **Love and best wishes,** and our name.",
+    "aAr": "نكتب عنواننا والتاريخ، ثمّ **Dear …,** ثمّ الفقرات، ونختم بـ **Love and best wishes,** واسمنا.",
     "ex": [
      [
-      "First of all, over-fishing is happening all round the world.",
-      "أوّلاً، يحدث الصيد الجائر في أنحاء العالم كلّها."
+      "Guess what! My friend and I are going to build a garden.",
+      "خمّن ماذا! سأبني أنا وصديقي حديقة."
      ]
     ]
    },
    {
     "t": "speaking",
-    "q": "How do we ask for and give an explanation?",
-    "qAr": "كيف نطلب شرحاً ونقدّمه؟",
-    "a": "We ask **So why is it happening?** and **Tell me more.** We answer with **It's because …** or **Well, …**",
-    "aAr": "نسأل **So why is it happening?** و**Tell me more.** ونجيب بـ **It's because …** أو **Well, …**",
+    "q": "How do we suggest ideas and agree a plan?",
+    "qAr": "كيف نقترح أفكاراً ونتّفق على خطّة؟",
+    "a": "We say **We could use the ground behind the lab, couldn't we?** and **We should have some flowers here, shouldn't we?** Or we say **Who'd like to …?**, **Let's have a go.**",
+    "aAr": "نقول **We could use the ground behind the lab, couldn't we?** و**We should have some flowers here, shouldn't we?** أو **Who'd like to …?** و**Let's have a go.**",
     "ex": [
      [
-      "It's because too many fish are being caught.",
-      "السبب أنّ أسماكاً كثيرة جدّاً تُصاد."
+      "Let's have a go!",
+      "لنحاول!"
      ]
     ]
    }
