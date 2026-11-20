@@ -566,9 +566,18 @@ applyFs(lsGet(K.fs) || "m");
 
 /* ---------- البدء ---------- */
 if ("serviceWorker" in navigator && /^https?:/.test(location.protocol)) navigator.serviceWorker.register("sw.js").catch(function(){});
+/* تحميل المواد تلقائياً في الخلفية (بلا موافقة): تُسجَّل عوامل خدمة التطبيقات وتُخزَّن ملفّاتها واحداً بعد واحد ليعمل كلّ شيء بلا إنترنت */
+function bgLoadApps(d){
+  var O = window.SahabaOffline, c = navigator.connection;
+  if (!O || !O.supported || (c && c.saveData) || navigator.onLine === false) return;
+  var mine = [], rest = [], seen = {};
+  (d.subjects || []).forEach(function(s){ Object.keys(s.grades || {}).forEach(function(g){ var e = s.grades[g]; if (e && e.dir && !seen[e.dir]) { seen[e.dir] = 1; (g === current ? mine : rest).push(e.dir); } }); });
+  mine.concat(rest).reduce(function(p, dir){ return p.then(function(){ return O.ensure(dir); }).then(function(){ return new Promise(function(r){ setTimeout(r, 3000); }); }); }, Promise.resolve());
+}
 try{ profile = JSON.parse(lsGet(K.profile)); }catch(e){ profile = null; }
 fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); }).then(function(d){
   data = d; steps.json = true; progress();
+  var bg = function(){ bgLoadApps(d); }; var run = function(){ setTimeout(function(){ if (window.requestIdleCallback) requestIdleCallback(bg, { timeout: 6000 }); else bg(); }, 2500); }; if (document.readyState === 'complete') run(); else addEventListener('load', run);
   var ids = d.grades.map(function(g){ return g.id; }), saved = lsGet(K.grade);
   current = ids.indexOf(saved) >= 0 ? saved : null;
   var sid = d.stages.map(function(s){ return s.id; }), st = lsGet(K.stage);
