@@ -7,6 +7,7 @@
 "../../shared/intro.js",
 "../../shared/kinex.jpg",
 "../../shared/update-notify.js",
+"../../shared/offline.js",
 "../../shared/fonts/IBMPlexSansArabic-Regular.ttf",
 "../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
 "../../shared/icons/portal-192.png",

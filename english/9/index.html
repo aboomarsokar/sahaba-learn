@@ -73,5 +73,6 @@ route();
 if (window.SahabaWisdom) window.SahabaWisdom.gate(CFG.id, function () {});
 if ("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(function () {});
 </script>
+<script src="../../shared/offline.js" defer></script>
 </body>
 </html>

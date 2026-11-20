@@ -63,7 +63,7 @@ def math_units() -> list:
 
 SW = '''/* عامل خدمة العلوم العامة (الثامن): يعمل بعد أول زيارة بلا إنترنت. يحذف ذاكرته وحدها (sci8-). */
 const P = "sci8-";
-const V = P + "v1";
+const V = P + "v2";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -106,7 +106,7 @@ def build(sid: str) -> None:
                   {"src": "../../shared/icons/portal-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}]}, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "sw.js").write_text(SW.replace("sci8-", c["pre"]).replace("العلوم العامة", c["name"]), encoding="utf-8")
     files = ["./index.html", "./manifest.webmanifest", "../../shared/durra.js", "../../shared/wisdom.js", "../../shared/intro.js", "../../shared/kinex.jpg",
-             "../../shared/update-notify.js", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
+             "../../shared/update-notify.js", "../../shared/offline.js", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
              "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"]
     (out / "precache.json").write_text(json.dumps({"files": files}, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     n = sum(len(u["lessons"]) for u in units)

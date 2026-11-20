@@ -296,6 +296,7 @@ var MENU = [
   ["notifs","الإشعارات","التنبيهات والتحديثات","bell"],
   ["about","عن المنصة","التعريف بالبوابة وإصدارها","info"],
   ["settings","الإعدادات","اللغة والمظهر وإعدادات التطبيق","gear"],
+  ["offline","العمل بلا إنترنت","حمّل المواد على جهازك لتعمل بلا اتصال","down"],
   ["install","تنزيل التطبيق","ثبّته على شاشتك ليعمل بلا إنترنت","down"]
 ];
 var K = { grade: "sahaba-learn-grade", stage: "sahaba-portal-stage", profile: "sahaba-portal-profile", seen: "sahaba-portal-seen", fs: "sahaba-portal-fs" };
@@ -322,6 +323,50 @@ function show(id){
 }
 document.querySelectorAll("[data-to]").forEach(function(b){ b.addEventListener("click", function(){ show(b.dataset.to); }); });
 
+
+/* ---------- العمل بلا إنترنت: تحميل المواد دفعةً واحدة ---------- */
+function openOffline(){
+  var O = window.SahabaOffline, old = document.getElementById("offSheet"); if (old) old.remove();
+  var ov = document.createElement("div"); ov.id = "offSheet";
+  ov.style.cssText = "position:fixed;inset:0;background:rgba(17,40,28,.55);z-index:80;display:grid;place-items:end center";
+  function apps(all){
+    var out = [];
+    data.subjects.forEach(function(s){ Object.keys(s.grades || {}).forEach(function(k){
+      if (all || k === current) { var g = gradeById(k); out.push({ dir: s.grades[k].dir, name: s.name, grade: g ? g.name : k }); }
+    }); });
+    return out;
+  }
+  var list = apps(false), busy = false, mode = false;
+  ov.innerHTML = '<div style="width:100%;max-width:520px;max-height:88vh;overflow:auto;background:#FAF6EB;border-radius:24px 24px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));color:#113D2E">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between"><b style="font-size:1.2rem">العمل بلا إنترنت</b><button type="button" id="offX" style="border:0;background:none;font-size:1.5rem;color:#113D2E">✕</button></div>'
+    + '<p id="offNote" style="margin:6px 0 10px;color:#5f7a6e;font-size:.92rem">حمّل مواد صفّك الآن مع الإنترنت لتفتحها لاحقاً بلا اتصال، وتتحدّث وحدها كلّما اتصلتَ.</p>'
+    + '<div id="offList"></div>'
+    + '<button type="button" id="offGo" class="btn" style="margin-top:10px;width:100%;border:0;border-radius:14px;padding:12px;font-weight:700;background:#0e6b3c;color:#fff;font:inherit">حمّل مواد صفّي</button>'
+    + '<button type="button" id="offAll" style="margin-top:8px;width:100%;border:1.5px solid #0e6b3c;border-radius:14px;padding:11px;font-weight:700;background:#fff;color:#0e6b3c;font:inherit">حمّل كل المواد الجاهزة (حجمٌ أكبر)</button></div>';
+  document.body.appendChild(ov);
+  function row(a, st, going){
+    var pct = st ? Math.round(st.have * 100 / Math.max(1, st.total)) : 0, done = st && st.have >= st.total;
+    return '<div data-d="'+a.dir+'" style="background:#fff;border:1px solid #e9dfc8;border-radius:14px;padding:9px 12px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;gap:8px"><b style="font-size:.98rem">'+a.name+' — '+a.grade+'</b><span style="font-weight:700;color:'+(done?'#0e6b3c':'#8a6d1f')+'">'+(done?'✓ جاهز':st?pct+'٪':'—')+'</span></div><div style="height:7px;background:#ece6d4;border-radius:99px;margin-top:6px;overflow:hidden"><i style="display:block;height:100%;width:'+(done?100:pct)+'%;background:'+(done?'#0e6b3c':'#E3B94D')+'"></i></div></div>';
+  }
+  var cache = {};
+  function draw(){ document.getElementById("offList").innerHTML = list.map(function(a){ return row(a, cache[a.dir]); }).join("") || '<p style="color:#5f7a6e">لا مواد جاهزة لهذا الصف بعد.</p>'; }
+  function refresh(){ if (!O || !O.supported) { document.getElementById("offNote").textContent = "هذا المتصفح لا يدعم العمل بلا إنترنت. افتح الرابط في متصفح كروم (تبويب عادي)."; return; }
+    Promise.all(list.map(function(a){ return O.status(a.dir).then(function(st){ cache[a.dir] = st; }); })).then(draw); }
+  draw(); refresh();
+  function go(all){
+    if (busy) return; if (!O || !O.supported) return;
+    if (navigator.onLine === false) { document.getElementById("offNote").textContent = "لا يوجد اتصال الآن. اتصل بالإنترنت ثم أعد المحاولة."; return; }
+    busy = true; list = apps(all); draw();
+    O.download(list.map(function(a){ return a.dir; }), function(d, st){ cache[d] = st; draw(); }).then(function(){
+      busy = false; refresh(); toast("اكتمل التحميل ✓");
+    });
+  }
+  document.getElementById("offGo").onclick = function(){ go(false); };
+  document.getElementById("offAll").onclick = function(){ go(true); };
+  document.getElementById("offX").onclick = function(){ ov.remove(); };
+  ov.onclick = function(e){ if (e.target === ov) ov.remove(); };
+}
+
 /* ---------- القائمة ☰ ---------- */
 function drawMenu(){
   var n = unseen();
@@ -345,6 +390,7 @@ function installApp(){
 function menuGo(k){
   closeMenu();
   if (k === "install") return installApp();
+  if (k === "offline") return openOffline();
   if (k === "profile") return editProfile();
   if (k === "store") return Durra.store();
   if (k === "subjects") return show(current && gradeById(current) ? "subjects" : "grades");
@@ -539,6 +585,7 @@ try{if(!localStorage.getItem("sahaba-purge-sci-1")){(function(){try{var pre=["ph
 if(window.caches)caches.keys().then(function(ks){ks.forEach(function(k){if(/^(phy10-|che10-|bio10-|pcb-)/.test(k))caches.delete(k)})});
 if(navigator.serviceWorker)navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){if(/\/(physics|chemistry|biology|science)\/10\//.test(r.scope))r.unregister()})});
 try{indexedDB.deleteDatabase("pcbflags")}catch(e){}}catch(e){}})();localStorage.setItem("sahaba-purge-sci-1","1")}}catch(e){}</script>
+<script src="shared/offline.js" data-no-badge defer></script>
 <script src="shared/durra.js"></script>
 <script src="shared/intro.js"></script>
 <script>
