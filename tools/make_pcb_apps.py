@@ -231,7 +231,7 @@ def patch(out: Path, k: int, d: str, name: str, store: str, pre: str) -> None:
     s = rep(s, 'onclick="tourStart()"><span>🎓', 'onclick="mn(false);SahabaIntro.tour(KX)"><span>🎓')
     # هوية الصحابة البصرية: كريمي وأخضر وبني (يبقى لون المادة المميِّز للتمييز بين الموادّ فقط)
     s = rep(s, ":root{--bg:#EFE3CC;--card:#FBF5E8;--text:#2A2016;--muted:#5C4B38;--bd:#C9B28C;--pri:#5A3E1A;--ink:#2A2016;--c1:#1565C0;--c1b:#E6D3AE;",
-            ":root{--bg:#FAF6EB;--card:#FFFFFF;--text:#113D2E;--muted:#5f7a6e;--bd:#EEE4DB;--pri:#113D2E;--ink:#113D2E;--c1:#1565C0;--c1b:#EEE4DB;")
+            ":root{--bg:#FAF6EB;--card:#FFFFFF;--text:#0a5230;--muted:#4b7a5f;--bd:#EEE4DB;--pri:#0a5230;--ink:#0a5230;--c1:#1565C0;--c1b:#EEE4DB;")
     s = rep(s, "</body>", ACH.replace("__DIR__", d).replace("__NAME__", name) + '<script src="../../shared/update-notify.js" data-app="' + name + '" data-icon="../../shared/icons/portal-192.png" defer></script>\n<script src="../../shared/offline.js" defer></script>\n</body>')
     (out / "index.html").write_text(s, encoding="utf-8")
     (out / "manifest.webmanifest").write_text(json.dumps({

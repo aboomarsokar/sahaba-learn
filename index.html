@@ -18,7 +18,7 @@
 :root{
   color-scheme:light;
   --bg:#FAF6EB;--surface:#fff;--surface2:#EEE4DB;--line:#e9dfc8;
-  --ink:#113D2E;--muted:#5f7a6e;--gold:#0e6b3c;--gold2:#1a8350;--onGold:#fff;--soon:#8a9a92;--deep:#113D2E;
+  --ink:#0a5230;--muted:#4b7a5f;--gold:#00a152;--gold2:#00c853;--onGold:#fff;--soon:#8a9a92;--deep:#0a5230;
   --shadow:0 2px 8px rgba(17,61,46,.06);
 }
 :root[data-fs="s"]{font-size:14px}:root[data-fs="m"]{font-size:16px}:root[data-fs="l"]{font-size:18.5px}
@@ -36,12 +36,12 @@ button{font:inherit;color:inherit}
 .basmala i{flex:1;height:2px;background:linear-gradient(90deg,transparent,var(--gold));border-radius:2px}
 .basmala i:last-child{background:linear-gradient(270deg,transparent,var(--gold))}
 .basmala b{font:700 clamp(1.7rem,7.2vw,2.3rem)/1.5 "Ruqaa","Plex Arabic",serif;color:var(--gold);text-shadow:0 2px 0 rgba(0,0,0,.25),0 0 22px rgba(227,185,77,.45);white-space:nowrap}
-.logo-frame{position:relative;width:min(62vw,250px);aspect-ratio:1;border-radius:50%;padding:9px;background:linear-gradient(145deg,#5db386,#0e6b3c 45%,#5db386);box-shadow:0 0 0 3px #E3B94D,0 10px 28px rgba(17,61,46,.25)}
+.logo-frame{position:relative;width:min(62vw,250px);aspect-ratio:1;border-radius:50%;padding:9px;background:linear-gradient(145deg,#5db386,#00a152 45%,#5db386);box-shadow:0 0 0 3px #ffc107,0 10px 28px rgba(17,61,46,.25)}
 .logo-frame::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:2px dashed rgba(227,185,77,.9)}
 .logo-frame img{width:100%;height:100%;display:block;border-radius:50%;background:#fff;border:5px solid #fff}
 #scr-splash h1{margin:30px 0 6px;font-size:clamp(1.7rem,7.4vw,2.3rem);font-weight:700;color:var(--ink)}
 .tag{margin:0;color:var(--gold);font-size:clamp(1rem,4.2vw,1.15rem)}
-.go-btn{margin-top:40px;width:min(100%,320px);padding:15px 20px;border-radius:18px;border:2px solid rgba(255,255,255,.35);background:linear-gradient(180deg,#1a8350,var(--gold));color:var(--onGold);font-weight:700;font-size:1.35rem;cursor:pointer;box-shadow:0 4px 12px rgba(14,107,60,.3)}
+.go-btn{margin-top:40px;width:min(100%,320px);padding:15px 20px;border-radius:18px;border:2px solid rgba(255,255,255,.35);background:linear-gradient(180deg,#00c853,var(--gold));color:var(--onGold);font-weight:700;font-size:1.35rem;cursor:pointer;box-shadow:0 4px 12px rgba(14,107,60,.3)}
 .go-btn:active{transform:scale(.98)}
 .loading{margin-top:30px;width:min(100%,320px);display:flex;flex-direction:column;align-items:center;gap:8px}
 .loading .bar{width:100%;height:5px;border-radius:9px;background:rgba(17,61,46,.1);overflow:hidden}
@@ -64,7 +64,7 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 /* مراحل الصفوف: ثلاث خانات */
 .tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 16px}
 .tab{padding:12px 6px;border-radius:14px;border:1px solid var(--line);background:var(--surface);cursor:pointer;font-weight:700;font-size:1rem;text-align:center}
-.tab[aria-pressed="true"]{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--onGold);border-color:transparent;box-shadow:0 3px 0 #E3B94D}
+.tab[aria-pressed="true"]{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--onGold);border-color:transparent;box-shadow:0 3px 0 #ffc107}
 .banners{display:flex;flex-direction:column;gap:26px;margin-bottom:34px}
 /* لافتات الصفوف والمواد: إطار ذهبي رفيع بزوايا مشطوبة، ظلّ واحد ناعم، وخلفية متحرّكة خفيفة (تُوقَف مع «تقليل الحركة») */
 .gb{--n:16px;--m:calc(var(--n) - 3px);position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;
@@ -76,7 +76,7 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 .gbr{position:absolute;inset:0;z-index:0;background:linear-gradient(110deg,#fff3b8,#d9a936 22%,#8a5f12 42%,#f6d77a 62%,#fff3b8 80%,#d9a936);background-size:300% 100%}
 .gb img{position:relative;z-index:1;width:100%;height:auto;aspect-ratio:3/1;object-fit:cover;display:block;
  clip-path:polygon(var(--m) 0,calc(100% - var(--m)) 0,100% var(--m),100% calc(100% - var(--m)),calc(100% - var(--m)) 100%,var(--m) 100%,0 calc(100% - var(--m)),0 var(--m))}
-.gb .rd{position:absolute;z-index:4;top:12px;left:14px;background:linear-gradient(180deg,#F3D77A,#E3B94D);color:#113D2E;font-weight:700;font-size:.78rem;padding:2px 11px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
+.gb .rd{position:absolute;z-index:4;top:12px;left:14px;background:linear-gradient(180deg,#F3D77A,#ffc107);color:#0a5230;font-weight:700;font-size:.78rem;padding:2px 11px;border-radius:999px;box-shadow:0 2px 6px rgba(0,0,0,.4)}
 .gb .rd.soon{background:rgba(0,0,0,.55);color:#f6dc8a;border:1px solid rgba(246,220,138,.6)}
 .gb[data-soon] img{filter:saturate(.55) brightness(.85)}
 @media (prefers-reduced-motion:reduce){.gb{animation:none!important;opacity:1}}
@@ -86,7 +86,7 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:40px}
 #subjects:has(.gb){grid-template-columns:1fr;gap:26px}
 a.gb{text-decoration:none}
-.toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#113D2E;border:1px solid var(--gold);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:.2s;z-index:60}
+.toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#0a5230;border:1px solid var(--gold);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:.2s;z-index:60}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 button.card.soon{width:100%;cursor:pointer;color:inherit;font:inherit}
 .card{display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;color:inherit;box-shadow:var(--shadow);position:relative;transition:transform .15s,border-color .15s}
@@ -133,7 +133,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
 .photo .pv{width:76px;height:76px;border-radius:50%;background:rgba(17,61,46,.06);border:2px dashed var(--line);display:grid;place-items:center;overflow:hidden;color:var(--muted);flex:none;font-size:.78rem;text-align:center}
 .photo .pv img{width:100%;height:100%;object-fit:cover}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:14px;border:1px solid var(--line);background:var(--surface2);cursor:pointer;font-weight:700}
-.btn.gold{background:linear-gradient(180deg,#1a8350,var(--gold));color:var(--onGold);border-color:transparent}
+.btn.gold{background:linear-gradient(180deg,#00c853,var(--gold));color:var(--onGold);border-color:transparent}
 .ntf{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:16px;background:var(--surface);border:1px solid var(--line);margin-bottom:10px}
 .ntf .ni{font-size:1.5rem;line-height:1}
 .ntf b{display:block}
@@ -337,19 +337,19 @@ function openOffline(){
     return out;
   }
   var list = apps(false), busy = false, mode = false;
-  ov.innerHTML = '<div style="width:100%;max-width:520px;max-height:88vh;overflow:auto;background:#FAF6EB;border-radius:24px 24px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));color:#113D2E">'
-    + '<div style="display:flex;align-items:center;justify-content:space-between"><b style="font-size:1.2rem">العمل بلا إنترنت</b><button type="button" id="offX" style="border:0;background:none;font-size:1.5rem;color:#113D2E">✕</button></div>'
-    + '<p id="offNote" style="margin:6px 0 10px;color:#5f7a6e;font-size:.92rem">حمّل مواد صفّك الآن مع الإنترنت لتفتحها لاحقاً بلا اتصال، وتتحدّث وحدها كلّما اتصلتَ.</p>'
+  ov.innerHTML = '<div style="width:100%;max-width:520px;max-height:88vh;overflow:auto;background:#FAF6EB;border-radius:24px 24px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom,0px));color:#0a5230">'
+    + '<div style="display:flex;align-items:center;justify-content:space-between"><b style="font-size:1.2rem">العمل بلا إنترنت</b><button type="button" id="offX" style="border:0;background:none;font-size:1.5rem;color:#0a5230">✕</button></div>'
+    + '<p id="offNote" style="margin:6px 0 10px;color:#4b7a5f;font-size:.92rem">حمّل مواد صفّك الآن مع الإنترنت لتفتحها لاحقاً بلا اتصال، وتتحدّث وحدها كلّما اتصلتَ.</p>'
     + '<div id="offList"></div>'
-    + '<button type="button" id="offGo" class="btn" style="margin-top:10px;width:100%;border:0;border-radius:14px;padding:12px;font-weight:700;background:#0e6b3c;color:#fff;font:inherit">حمّل مواد صفّي</button>'
-    + '<button type="button" id="offAll" style="margin-top:8px;width:100%;border:1.5px solid #0e6b3c;border-radius:14px;padding:11px;font-weight:700;background:#fff;color:#0e6b3c;font:inherit">حمّل كل المواد الجاهزة (حجمٌ أكبر)</button></div>';
+    + '<button type="button" id="offGo" class="btn" style="margin-top:10px;width:100%;border:0;border-radius:14px;padding:12px;font-weight:700;background:#00a152;color:#fff;font:inherit">حمّل مواد صفّي</button>'
+    + '<button type="button" id="offAll" style="margin-top:8px;width:100%;border:1.5px solid #00a152;border-radius:14px;padding:11px;font-weight:700;background:#fff;color:#00a152;font:inherit">حمّل كل المواد الجاهزة (حجمٌ أكبر)</button></div>';
   document.body.appendChild(ov);
   function row(a, st, going){
     var pct = st ? Math.round(st.have * 100 / Math.max(1, st.total)) : 0, done = st && st.have >= st.total;
-    return '<div data-d="'+a.dir+'" style="background:#fff;border:1px solid #e9dfc8;border-radius:14px;padding:9px 12px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;gap:8px"><b style="font-size:.98rem">'+a.name+' — '+a.grade+'</b><span style="font-weight:700;color:'+(done?'#0e6b3c':'#8a6d1f')+'">'+(done?'✓ جاهز':st?pct+'٪':'—')+'</span></div><div style="height:7px;background:#ece6d4;border-radius:99px;margin-top:6px;overflow:hidden"><i style="display:block;height:100%;width:'+(done?100:pct)+'%;background:'+(done?'#0e6b3c':'#E3B94D')+'"></i></div></div>';
+    return '<div data-d="'+a.dir+'" style="background:#fff;border:1px solid #e9dfc8;border-radius:14px;padding:9px 12px;margin-bottom:8px"><div style="display:flex;justify-content:space-between;gap:8px"><b style="font-size:.98rem">'+a.name+' — '+a.grade+'</b><span style="font-weight:700;color:'+(done?'#00a152':'#8a6d1f')+'">'+(done?'✓ جاهز':st?pct+'٪':'—')+'</span></div><div style="height:7px;background:#ece6d4;border-radius:99px;margin-top:6px;overflow:hidden"><i style="display:block;height:100%;width:'+(done?100:pct)+'%;background:'+(done?'#00a152':'#ffc107')+'"></i></div></div>';
   }
   var cache = {};
-  function draw(){ document.getElementById("offList").innerHTML = list.map(function(a){ return row(a, cache[a.dir]); }).join("") || '<p style="color:#5f7a6e">لا مواد جاهزة لهذا الصف بعد.</p>'; }
+  function draw(){ document.getElementById("offList").innerHTML = list.map(function(a){ return row(a, cache[a.dir]); }).join("") || '<p style="color:#4b7a5f">لا مواد جاهزة لهذا الصف بعد.</p>'; }
   function refresh(){ if (!O || !O.supported) { document.getElementById("offNote").textContent = "هذا المتصفح لا يدعم العمل بلا إنترنت. افتح الرابط في متصفح كروم (تبويب عادي)."; return; }
     Promise.all(list.map(function(a){ return O.status(a.dir).then(function(st){ cache[a.dir] = st; }); })).then(draw); }
   draw(); refresh();

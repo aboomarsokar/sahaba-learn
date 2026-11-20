@@ -50,7 +50,7 @@ def english(d: Path) -> str:
     i = s.index('data-screen="home"')
     j = s.index("</main>", i)
     k = s.rindex("  </div>\n", i, j)     # إغلاق .wrap
-    card = '    <div class="card" id="wisdomCard" style="text-align:center;margin-top:12px;padding:14px"><small style="color:var(--mut,#5f7a6e)">💡 حكمة اليوم</small><p dir="auto" style="margin:8px 0;line-height:1.8"></p><small class="src" style="color:var(--mut,#5f7a6e)"></small></div>\n'
+    card = '    <div class="card" id="wisdomCard" style="text-align:center;margin-top:12px;padding:14px"><small style="color:var(--mut,#4b7a5f)">💡 حكمة اليوم</small><p dir="auto" style="margin:8px 0;line-height:1.8"></p><small class="src" style="color:var(--mut,#4b7a5f)"></small></div>\n'
     s = s[:k] + card + s[k:]
     z = s.rindex("</body>")
     init = '<script>(function(){var w=window.SahabaWisdom&&window.SahabaWisdom.today("english"),e=document.getElementById("wisdomCard");if(w&&e){e.querySelector("p").textContent=w[0];e.querySelector(".src").textContent="— "+w[1]}})();</script>\n'

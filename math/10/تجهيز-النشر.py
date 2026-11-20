@@ -39,7 +39,7 @@ reg += ('<script>' + durra.replace('</script', '<\\/script') + '</script><script
 wis = (HERE.parent.parent / 'shared' / 'wisdom.js').read_text(encoding='utf-8')
 reg += ('<script>document.addEventListener("DOMContentLoaded",function(){var h=document.querySelector(".hero"),w=SahabaWisdom.today("math");'
         'if(h&&w){var d=document.createElement("div");d.style.cssText="margin:12px 14px;padding:14px;border-radius:18px;background:#fff;border:1px solid #e9dfc8;text-align:center;line-height:1.9";'
-        'd.innerHTML=\'<small style="color:#5f7a6e">💡 حكمة اليوم</small><p style="margin:6px 0;font-size:1.05rem">\'+w[0]+\'</p><small style="color:#5f7a6e">— \'+w[1]+\'</small>\';h.insertAdjacentElement("afterend",d)}})</script>')
+        'd.innerHTML=\'<small style="color:#4b7a5f">💡 حكمة اليوم</small><p style="margin:6px 0;font-size:1.05rem">\'+w[0]+\'</p><small style="color:#4b7a5f">— \'+w[1]+\'</small>\';h.insertAdjacentElement("afterend",d)}})</script>')
 # غلاف المادة + جولة كينيكس (مشتركان في shared/): الصورتان تُنسخان إلى «نشر» لتعملا بلا إنترنت
 intro = (HERE.parent.parent / 'shared' / 'intro.js').read_text(encoding='utf-8')
 STEPS = [

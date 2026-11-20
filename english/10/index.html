@@ -35,10 +35,10 @@ if(/[?&]debug=1/.test(location.search))addEventListener('error',function(e){try{
 :root[data-mode="light"]{
   --gold:#8B4200; --gold2:#a85a14; --g3:#6a3200;
   --btn1:#a85a14; --btn2:#8B4200; --btnText:#fff;
-  --text:#113D2E; --muted:#5f7a6e;
+  --text:#0a5230; --muted:#4b7a5f;
   --card:rgba(255,255,255,.65); --cardBd:rgba(17,61,46,.14); --panel:rgba(255,255,255,.45);
   --field:rgba(255,255,255,.8); --fieldBd:rgba(17,61,46,.22);
-  --word:#113D2E; --shadow:rgba(17,61,46,.15);
+  --word:#0a5230; --shadow:rgba(17,61,46,.15);
   color-scheme:light;
 }
 :root[data-fs="s"]{font-size:14px} :root[data-fs="m"]{font-size:16px} :root[data-fs="l"]{font-size:18.5px}
@@ -145,7 +145,7 @@ main{
 .field{width:100%;text-align:start}
 .name::placeholder,.field::placeholder{color:var(--muted);opacity:.7}
 .name:focus,.field:focus{border-color:var(--gold)}
-select.field option{color:#113D2E}
+select.field option{color:#0a5230}
 .grid{
   width:min(100%,560px);display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:10px;
   padding:12px;border-radius:20px;background:var(--panel);border:1px solid var(--cardBd);
@@ -684,7 +684,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 .toast small{opacity:.8}
 
 /* --- بطاقات القواعد --- */
-:root{--k-s:#4fa97c;--k-v:#0e6b3c;--k-t:#E3B94D;--k-n:#c9a46a}
+:root{--k-s:#4fa97c;--k-v:#00a152;--k-t:#ffc107;--k-n:#c9a46a}
 :root[data-mode="light"]{--k-s:#2f7a5a;--k-v:#13753d;--k-t:#8a5a00;--k-n:#9a6b13}
 .k-s{color:var(--k-s);font-weight:700}
 .k-v{color:var(--k-v);font-weight:700}
@@ -810,7 +810,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 
 /* ---- رسالة قصيرة ---- */
 .toast{position:fixed;z-index:30;left:50%;bottom:calc(1.5rem + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);
-  width:max-content;max-width:calc(100% - 32px);padding:.75rem 1.2rem;border-radius:14px;background:#113D2E;color:#fff;
+  width:max-content;max-width:calc(100% - 32px);padding:.75rem 1.2rem;border-radius:14px;background:#0a5230;color:#fff;
   font:400 .95rem/1.6 var(--fb);box-shadow:0 10px 30px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.25s;text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 
@@ -823,7 +823,7 @@ body.has-tabs .toast{bottom:calc(92px + env(safe-area-inset-bottom,0px))}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 /* ===== شاشة تلخيص الوحدات — هوية بوابة الصحابة (كريمي وأخضر وبنّي) ===== */
-#summaries{--sbg:#faf6eb;--sc:#fff;--sg:#113d2e;--sg2:#2c5044;--sg3:#56806c;--sgl:#e2ece1;--sb:#caa686;--sbd:#472a00;--sw:#f4ede5;--sw2:#eee4db;--st:#283430;--sm:#6b7570;
+#summaries{--sbg:#faf6eb;--sc:#fff;--sg:#0a5230;--sg2:#1d7a45;--sg3:#56806c;--sgl:#d3f5de;--sb:#caa686;--sbd:#472a00;--sw:#f4ede5;--sw2:#eee4db;--st:#283430;--sm:#6b7570;
   background:var(--sbg);color:var(--st);font-family:"Plex Arabic",sans-serif;justify-content:flex-start;text-align:start}
 #summaries .topbar h2{font-family:"Plex Arabic",sans-serif;font-weight:700;color:var(--sg);font-size:1.25rem}
 #summaries .icon-btn{background:var(--sc);border:1px solid var(--sw2);color:var(--sg);box-shadow:none}
@@ -974,7 +974,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
       <button class="card square" type="button" data-go="summaries"><span class="ic"><svg><use href="#i-edit"/></svg></span><b data-t="sumT">تلخيص الوحدات</b><span class="en">Unit Summaries</span></button>
       <button class="card square" type="button" data-go="challenge"><span class="ic"><svg><use href="#i-medal"/></svg></span><b data-t="chalT">تحدياتي</b><span class="en">My Challenges</span></button>
     </div>
-    <div class="card" id="wisdomCard" style="text-align:center;margin-top:12px;padding:14px"><small style="color:var(--mut,#5f7a6e)">💡 حكمة اليوم</small><p dir="auto" style="margin:8px 0;line-height:1.8"></p><small class="src" style="color:var(--mut,#5f7a6e)"></small></div>
+    <div class="card" id="wisdomCard" style="text-align:center;margin-top:12px;padding:14px"><small style="color:var(--mut,#4b7a5f)">💡 حكمة اليوم</small><p dir="auto" style="margin:8px 0;line-height:1.8"></p><small class="src" style="color:var(--mut,#4b7a5f)"></small></div>
   </div>
 </main>
 
@@ -1416,7 +1416,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     'Union Jack','Global Language','ABC','Success','Better Tomorrow','Listen & Learn','Knowledge','Be Excellent','Phone Box','Speak English',
     'Study Hard','Set Goals','Tower Bridge','Think in English','English Book','Achieve More','Expand Your Mind','Keep Learning','Improve Yourself','English Forever'];
   /* كلّ لون: [الاسم، الطرف، الوسط، التوهّج] */
-  var DARK=[['أخضر الصحابة','#0b2c21','#113D2E','#2c5044'],['بنفسجي','#0f2f23','#3b1a78','#6a2fb8'],['كحلي','#0a1430','#113D2E','#2f5fbf'],['زمرّدي','#062a20','#0f5040','#1f8a68'],
+  var DARK=[['أخضر الصحابة','#073d22','#0a5230','#1d7a45'],['بنفسجي','#0f2f23','#3b1a78','#6a2fb8'],['كحلي','#0a1430','#0a5230','#2f5fbf'],['زمرّدي','#062a20','#0f5040','#1f8a68'],
     ['فيروزي','#052a30','#0c4c56','#178a96'],['عنّابي','#2a0812','#5a1428','#9c2a48'],['برقوقي','#260826','#521852','#8e2f8e'],
     ['فحمي','#121216','#26262e','#4a4a58'],['بنّي','#22140a','#4a2c16','#8a5a2e'],['نيلي','#0f0e33','#25217a','#4a43c4'],['زيتي','#141f0a','#2e4416','#5a7f2a']];
   var LIGHT=[['كريمي الصحابة','#F4EDE5','#FAF6EB','#ffffff'],['لافندر','#e6dcf8','#f4effd','#ffffff'],['سماوي','#d8e8f8','#eef5fd','#ffffff'],['نعناعي','#d6f0e3','#eefaf3','#ffffff'],
@@ -2309,7 +2309,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   var PRAISE=[['ممتاز! 🌟','Excellent! 🌟'],['أحسنت! 👏','Great job! 👏'],['رائع! 🔥','Awesome! 🔥'],['إجابة صحيحة! ✅','Correct! ✅'],['يا بطل! 💪','Champion! 💪'],['مذهل! 🚀','Amazing! 🚀']];
   var RETRYOK=[['نجحت أخيراً! المهمّ أنك لم تستسلم 💪','You got it! You never gave up 💪'],['برافو! المحاولة الثانية أقوى 🌱','Bravo! Second try, stronger 🌱']];
   var WRONGS=[['لا بأس، حاول مرة أخرى 💪','No worries, try again 💪'],['قريب! جرّب ثانية 🎯','Close! Try once more 🎯'],['الخطأ يعلّمنا، أنت تتقدّم 🌱','Mistakes help us learn 🌱']];
-  var PCOL=['#0e6b3c','#c9a43a','#2f9e6b','#1a8350','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
+  var PCOL=['#00a152','#c9a43a','#2f9e6b','#00c853','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
   function runQs(box,qs,opt,done){
     var i=opt.start||0,score=0,streak=0;
     function cheer(c,ok,first){
@@ -2417,7 +2417,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     var v=L.vocab||[],sub0=subFor(0),i=(sub0&&sub0.i>0&&sub0.i<v.length)?sub0.i:0;
     st.innerHTML=head(0)+'<div id="vArea"></div>';
     var area=st.querySelector('#vArea');
-    var WCOL=['#0e6b3c','#c9a43a','#2f9e6b','#1a8350','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
+    var WCOL=['#00a152','#c9a43a','#2f9e6b','#00c853','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
     function ov(w){return (window.LEXORA_HL||{})[L.id+'|'+w.en]||{}}
     function arNorm(t){return t.replace(/[\u064B-\u065F\u0670\u0640]/g,'').replace(/[إأآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه')}
     function markIn(text,phrase){var k=text.indexOf(phrase);return esc(text.slice(0,k))+'<mark>'+esc(phrase)+'</mark>'+esc(text.slice(k+phrase.length))}
@@ -2720,7 +2720,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   }
   /* ----- بطاقات القاعدة: تعريف ← تكوين ← نفي ← سؤال ← ملاحظة، وبعد كلّ بطاقة زرّ «أكمل» ----- */
   var RC_ICON={pos:'✅',neg:'❌',q:'❓',note:'💡',sig:'🎯'};
-  var SWCOL=['#0e6b3c','#c9a43a','#2f9e6b','#1a8350','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
+  var SWCOL=['#00a152','#c9a43a','#2f9e6b','#00c853','#b88a2e','#4fa97c','#8a6d1f','#3d8f66'];
   function kfmt(t){return esc(t).replace(/\{(s|t|v|n)\|([^}]*)\}/g,'<span class="k-$1">$2</span>').replace(/\n/g,'<br>')}
   function kplain(t){return t.replace(/\{[stvn]\|([^}]*)\}/g,'$1')}
   function rcExamples(list){

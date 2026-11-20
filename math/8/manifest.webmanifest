@@ -7,7 +7,7 @@
   "scope": "./",
   "display": "standalone",
   "background_color": "#FAF6EB",
-  "theme_color": "#113D2E",
+  "theme_color": "#0a5230",
   "icons": [
     {
       "src": "../../shared/icons/portal-192.png",

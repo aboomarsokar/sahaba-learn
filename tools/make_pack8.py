@@ -63,7 +63,7 @@ def math_units() -> list:
 
 SW = '''/* عامل خدمة العلوم العامة (الثامن): يعمل بعد أول زيارة بلا إنترنت. يحذف ذاكرته وحدها (sci8-). */
 const P = "sci8-";
-const V = P + "v2";
+const V = P + "v3";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "../../shared/icons/portal-192.png", "../../shared/icons/portal-512.png"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(V).then(c => c.addAll(CORE)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.startsWith(P) && k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -101,7 +101,7 @@ def build(sid: str) -> None:
     (out / "index.html").write_text(html, encoding="utf-8")
     (out / "manifest.webmanifest").write_text(json.dumps({
         "name": f"{c['name']} — الصف الثامن", "short_name": c["short"], "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone",
-        "background_color": "#FAF6EB", "theme_color": "#113D2E",
+        "background_color": "#FAF6EB", "theme_color": "#0a5230",
         "icons": [{"src": "../../shared/icons/portal-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
                   {"src": "../../shared/icons/portal-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}]}, ensure_ascii=False, indent=2), encoding="utf-8")
     (out / "sw.js").write_text(SW.replace("sci8-", c["pre"]).replace("العلوم العامة", c["name"]), encoding="utf-8")

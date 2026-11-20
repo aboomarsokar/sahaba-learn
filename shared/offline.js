@@ -69,7 +69,7 @@
   function ui() {
     if (el) return el;
     var st = document.createElement("style");
-    st.textContent = "#sahaba-off{position:fixed;left:6px;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:2147483000;display:flex;align-items:center;gap:5px;min-width:24px;height:24px;padding:0 7px;border-radius:99px;border:1.5px solid #0e6b3c;background:rgba(255,255,255,.9);color:#0e6b3c;font:700 11px/1 system-ui,Tahoma,sans-serif;opacity:.72;cursor:pointer;direction:rtl;box-shadow:0 1px 4px rgba(0,0,0,.15);max-width:70vw}#sahaba-off.w{border-color:#b8902f;color:#8a6d1f}#sahaba-off.x{border-color:#a24b2b;color:#a24b2b}#sahaba-off span{display:none;white-space:nowrap}#sahaba-off.open span{display:inline}";
+    st.textContent = "#sahaba-off{position:fixed;left:6px;bottom:calc(92px + env(safe-area-inset-bottom,0px));z-index:2147483000;display:flex;align-items:center;gap:5px;min-width:24px;height:24px;padding:0 7px;border-radius:99px;border:1.5px solid #00a152;background:rgba(255,255,255,.9);color:#00a152;font:700 11px/1 system-ui,Tahoma,sans-serif;opacity:.72;cursor:pointer;direction:rtl;box-shadow:0 1px 4px rgba(0,0,0,.15);max-width:70vw}#sahaba-off.w{border-color:#b8902f;color:#8a6d1f}#sahaba-off.x{border-color:#a24b2b;color:#a24b2b}#sahaba-off span{display:none;white-space:nowrap}#sahaba-off.open span{display:inline}";
     document.head.appendChild(st);
     el = document.createElement("button"); el.id = "sahaba-off"; el.type = "button"; el.setAttribute("aria-label", "حالة العمل بلا إنترنت");
     el.innerHTML = "<b></b><span></span>"; (document.body || document.documentElement).appendChild(el);

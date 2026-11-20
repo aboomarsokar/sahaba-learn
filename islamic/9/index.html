@@ -12,7 +12,7 @@
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
 @font-face{font-family:"Plex Arabic";src:url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
 @font-face{font-family:"Ruqaa";src:url("../../shared/fonts/aref-ruqaa-arabic-700.woff2") format("woff2");font-weight:700;font-display:swap}
-:root{--pri:#113D2E;--pri2:#0b2c21;--bg:#FAF6EB;--card:#ffffff;--ink:#113D2E;--mut:#5f7a6e;--gold:#8B4200;--bd:#EEE4DB;--onpri:#ffffff;--ok:#1f9d5c;--bad:#c9443b;--soft:#E2ECE1}
+:root{--pri:#0a5230;--pri2:#073d22;--bg:#FAF6EB;--card:#ffffff;--ink:#0a5230;--mut:#4b7a5f;--gold:#8B4200;--bd:#EEE4DB;--onpri:#ffffff;--ok:#1f9d5c;--bad:#c9443b;--soft:#d3f5de}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0}
 body{font-family:"Plex Arabic",system-ui,Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8;min-height:100vh;transition:background .25s,color .25s}
@@ -58,7 +58,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
 .blk h3{font-size:1.25rem;margin-bottom:8px}
 .blk p{margin:0 0 10px;font-size:1.02rem}
 .def{background:var(--soft);border-inline-start:5px solid var(--gold);border-radius:12px;padding:10px 12px;font-weight:700;margin-top:6px}
-.verse{font-family:"Noto Naskh Arabic","Traditional Arabic","Amiri",serif;font-size:1.45rem;line-height:2.4;text-align:justify;background:linear-gradient(180deg,#fffaf0,var(--card));border:1.5px solid var(--gold);border-radius:18px;padding:14px;color:#113D2E}
+.verse{font-family:"Noto Naskh Arabic","Traditional Arabic","Amiri",serif;font-size:1.45rem;line-height:2.4;text-align:justify;background:linear-gradient(180deg,#fffaf0,var(--card));border:1.5px solid var(--gold);border-radius:18px;padding:14px;color:#0a5230}
 .vref{font-size:.82rem;color:var(--mut);margin:6px 2px}
 .meaning{margin-top:8px;background:var(--soft);border-radius:14px;padding:10px 12px;font-size:.98rem}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:14px;border:0;background:var(--pri);color:var(--onpri);font-weight:700}
@@ -122,7 +122,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
 
   /* ---------------- الألوان (المتجر) ---------------- */
   var THEMES = [
-    { id: "emerald", n: "الزمردي (الأساسي)", price: 0, v: { pri: "#113D2E", pri2: "#0b2c21", bg: "#FAF6EB", card: "#ffffff", ink: "#113D2E", mut: "#5f7a6e", gold: "#8B4200", bd: "#EEE4DB", onpri: "#ffffff", soft: "#E2ECE1" } },
+    { id: "emerald", n: "الزمردي (الأساسي)", price: 0, v: { pri: "#0a5230", pri2: "#073d22", bg: "#FAF6EB", card: "#ffffff", ink: "#0a5230", mut: "#4b7a5f", gold: "#8B4200", bd: "#EEE4DB", onpri: "#ffffff", soft: "#d3f5de" } },
     { id: "royalemerald", n: "الزمردي الملكي", price: 60, v: { pri: "#0b8a5e", pri2: "#064e36", bg: "#f2efe0", card: "#fffdf6", ink: "#073b2a", mut: "#5b7568", gold: "#d4af37", bd: "#e0d7b4", onpri: "#ffffff", soft: "#e6f2ea" } },
     { id: "royalblue", n: "الأزرق الملكي", price: 60, v: { pri: "#1d3f8a", pri2: "#122a63", bg: "#eef2f9", card: "#ffffff", ink: "#12234a", mut: "#5d6b8a", gold: "#aab6cc", bd: "#d3dbe9", onpri: "#ffffff", soft: "#e4ebf7" } },
     { id: "purple", n: "البنفسجي الراقي", price: 80, v: { pri: "#6b3fa0", pri2: "#4a2a73", bg: "#faf7ff", card: "#ffffff", ink: "#2c1a47", mut: "#74658c", gold: "#b79be0", bd: "#e4daf2", onpri: "#ffffff", soft: "#f0e9fa" } },
