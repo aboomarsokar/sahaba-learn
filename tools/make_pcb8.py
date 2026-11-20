@@ -21,7 +21,22 @@ SUBJ = {  # k، الاسم، بادئة التخزين، بادئة الذاكر
     "physics": (0, "الفيزياء", "phy8:", "phy8-", "PHYS", "QP"),
     "chemistry": (1, "الكيمياء", "che8:", "che8-", "CHEM", "QC"),
     "biology": (2, "الأحياء", "bio8:", "bio8-", "BIO", "QB"),
+    "science": (0, "العلوم العامة", "sci8:", "sci8-", "PHYS", "QP"),   # مادة واحدة تجمع الثلاث بترتيب الرزمة؛ تُستنسخ من قالب الفيزياء
 }
+BASE = {"science": "physics"}      # مجلّد العاشر الذي يُستنسخ منه
+# العلوم العامة: وحدات الرزمة مرتّبة (المصدر، فهرس الوحدة في ملفّه)
+SCI_ORDER = [("biology", 0), ("biology", 1), ("physics", 0), ("chemistry", 0), ("chemistry", 1), ("chemistry", 2), ("physics", 1), ("biology", 2)]
+SCI_SEMS = [[0, 1, 2, 3], [4, 5, 6, 7]]
+
+
+def load_content(d: str) -> dict:
+    base = Path(os.environ.get("CONTENT8_DIR", ROOT / "tools" / "content8"))
+    if d != "science":
+        return json.load(open(base / f"{d}.json", encoding="utf-8"))
+    src = {x: json.load(open(base / f"{x}.json", encoding="utf-8")) for x in ("physics", "chemistry", "biology")}
+    return {"subject": "science", "units": [src[a]["units"][i] for a, i in SCI_ORDER], "sems": SCI_SEMS,
+            "bank": src["physics"]["bank"] + src["chemistry"]["bank"] + src["biology"]["bank"]}
+
 
 
 def find_arr(s: str, name: str):
@@ -102,9 +117,10 @@ def lesson_js(l: dict) -> dict:
 
 def build(d: str) -> None:
     k, name, store, pre, arr, bank = SUBJ[d]
-    c = json.load(open(Path(os.environ.get("CONTENT8_DIR", ROOT / "tools" / "content8")) / f"{d}.json", encoding="utf-8"))
+    c = load_content(d)
     assert c["subject"] == d
-    src, out = ROOT / d / "10", ROOT / d / "8"
+    base = BASE.get(d, d)
+    src, out = ROOT / base / "10", ROOT / d / "8"
     if out.exists():
         shutil.rmtree(out)
     shutil.copytree(src, out)
@@ -117,8 +133,10 @@ def build(d: str) -> None:
     s = strip_patches(s)
     # --- تحويل الصف: العاشر ← الثامن ---
     s = s.replace("العاشر", "الثامن").replace("عاشر", "ثامن").replace("Grade 10", "Grade 8")
-    s = s.replace(d + "/10", d + "/8").replace(f'"{d}10"', f'"{d}8"')
-    s = s.replace(f'"{SUBJ[d][2].replace("8", "10")}"', f'"{store}"')
+    s = s.replace(base + "/10", d + "/8").replace(f'"{base}10"', f'"{d}8"')
+    s = s.replace(f'"{SUBJ[base][2].replace("8", "10")}"', f'"{store}"')
+    if d != base:     # اسم المادة وبوابة الحكمة
+        s = s.replace(f'("{base}"', f'("{d}"').replace('["physics","chemistry","biology"][PCB_ACTIVE_SUBJECT]', f'"{d}"').replace(SUBJ[base][1], name)
     # --- المحتوى الأساسي: وحدات ودروس ---
     for a in ("PHYS", "CHEM", "BIO"):
         s = set_arr(s, a, J([[lesson_js(l) for l in u["lessons"]] for u in units]) if a == arr else "[]")
@@ -146,7 +164,7 @@ def build(d: str) -> None:
     s = set_arr(s, "EXP", "[]") if re.search(r"var EXP=\[", s) else s
     # الكتب والرزم: رزمة العلوم والحياة للثامن (الرابط في tools/content8/links.json)
     link = json.load(open(ROOT / "tools" / "content8" / "links.json", encoding="utf-8"))["science"]
-    s = set_obj(s, "LIBM", J({"books": [], "packs": [{"id": f"{d}8-pack", "s": k, "t": f"رزمة العلوم والحياة – الصف الثامن", "u": link}]}))
+    s = set_obj(s, "LIBM", J({"books": [], "packs": [{"id": f"{d}8-pack", "s": k, "t": "رزمة العلوم والحياة – الصف الثامن", "u": link}]}))
     (out / "index.html").write_text(s, encoding="utf-8")
     # الصور والمكتبات التي لم تعد مشار إليها
     txt = s + "".join(f.read_text(encoding="utf-8", errors="ignore") for f in (out / "lib").glob("*.js"))
@@ -163,11 +181,12 @@ def build(d: str) -> None:
     mf["name"] = f"{name} — الصف الثامن"
     (out / "manifest.webmanifest").write_text(json.dumps(mf, ensure_ascii=False, indent=2), encoding="utf-8")
     sw = (out / "sw.js").read_text(encoding="utf-8")
-    sw = sw.replace(SUBJ[d][3].replace("8", "10"), pre)
+    sw = sw.replace(SUBJ[base][3].replace("8", "10"), pre)
     sw = re.sub(r'(const V = P \+ ")v\d+"', r'\1v1"', sw)
     (out / "sw.js").write_text(sw, encoding="utf-8")
     pc = json.load(open(out / "precache.json", encoding="utf-8"))["files"]
-    keep = [f for f in pc if f.startswith("../../") or f in ("./index.html", "./manifest.webmanifest")]
+    keep = [f for f in pc if (f.startswith("../../") and (out / f).resolve().exists()) or f in ("./index.html", "./manifest.webmanifest")]
+    keep = [f for f in keep if "/covers/" not in f]
     keep += [f"./{sub}/{p.name}" for sub in ("lib", "images") for p in sorted((out / sub).glob("*")) if p.is_file()]
     (out / "precache.json").write_text(json.dumps({"files": keep}, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     n = sum(len(u["lessons"]) for u in units)
