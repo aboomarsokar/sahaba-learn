@@ -35,6 +35,10 @@ SUBJ = {
                  "theme": "sci", "key": "sci9:st", "wid": "science", "kxid": "science9", "student": "طالب العلوم", "packT": "رزمة العلوم والحياة", "widgets": False, "pack": LINKS.get("science9"), "pre": "sci9-",
                  "books": [["كتاب العلوم والحياة — الفصل الأول", LINKS.get("science9_b1")], ["كتاب العلوم والحياة — الفصل الثاني", LINKS.get("science9_b2")]],
                  "unitsHint": "خمس وحدات من رزمة العلوم والحياة: أجهزة الجسم، والكهرباء، والعناصر والتفاعلات، والضوء، والنبات الزهري. اضغط وحدة لترى دروسها."},
+    "science7": {"dir": "science/7", "grade": "7", "gradeName": "الصف السابع", "gradeFor": "للصف السابع", "name": "العلوم العامة", "short": "العلوم", "hello": "أهلاً يا بطل العلوم!", "unitsTitle": "وحدات العلوم",
+                 "theme": "sci", "key": "sci7:st", "wid": "science", "kxid": "science7", "student": "طالب العلوم", "packT": "رزمة العلوم والحياة", "widgets": True, "pack": LINKS.get("science7"), "pre": "sci7-",
+                 "books": [["كتاب العلوم والحياة — الفصل الأول", LINKS.get("science7_b1")], ["كتاب العلوم والحياة — الفصل الثاني", LINKS.get("science7_b2")]],
+                 "unitsHint": "خمس وحدات من رزمة العلوم والحياة: الكائنات الحية، والذرة والتفاعلات، والحركة وقوانين نيوتن، والكثافة والضغط والمحاليل، وأجهزة الجسم والحرارة. اضغط وحدة لترى دروسها."},
     "math9": {"dir": "math/9", "grade": "9", "gradeName": "الصف التاسع", "gradeFor": "للصف التاسع", "name": "الرياضيات", "short": "الرياضيات", "hello": "مرحباً", "unitsTitle": "الوحدات الدراسية", "theme": "math",
               "key": "math9:st", "wid": "math", "kxid": "math9", "student": "طالب الرياضيات", "packT": "رزمة الرياضيات", "pack": LINKS.get("math9"), "pre": "math9-",
               "books": [["كتاب الرياضيات — الفصل الأول", LINKS.get("math9_b1")], ["كتاب الرياضيات — الفصل الثاني", LINKS.get("math9_b2")]],
@@ -83,6 +87,39 @@ def science9_units() -> tuple:
     for t, _e, ic, ls in SCI9_TOC:
         units.append({"title": t, "ic": ic, "color": "#cfe2b0", "uq": [],
                       "lessons": [{"t": l, "e": ["# قريباً", "سيُضاف شرح هذا الدرس وأنشطته بإذن الله."], "q": [], "quiz": [], "hints": {}} for l in ls]})
+    return units, bank
+
+
+
+SCI7_TOC = [("الكائنات الحية وعملياتها الحيوية", "plant", ["التغذية", "الأيض", "النمو", "الحركة", "الإخراج", "الاستجابة", "التكاثر"]),
+            ("الذرة والتفاعلات الكيميائية", "atom", ["تركيب الذرّة", "هوية العنصر", "مركبات مهمة في حياتنا", "التفاعلات الكيميائية"]),
+            ("الحركة وقوانين نيوتن والغلاف الجوي", "bolt", ["الحركة الانتقالية", "التسارع الثابت", "القانون الأول لنيوتن", "القانون الثاني لنيوتن", "القانون الثالث لنيوتن", "الغلاف الجوي", "الضغط الجوي"]),
+            ("الكثافة والضغط والمحاليل", "flask", ["الكثافة", "الضغط", "الضغط في السوائل", "قاعدة أرخميدس", "المحاليل", "تركيز المحاليل", "الذائبية"]),
+            ("أجهزة الجسم والحرارة", "cell", ["الجهاز العصبي", "جهاز الغدد الصماء", "المستقبلات الحسية", "الحرارة", "المواد الموصلة والمواد العازلة للحرارة"])]
+
+
+def science7_units() -> tuple:
+    """وحدات علوم السابع من tools/content7/sci7-<1|2|3a|3b|4a|4b|5a|5b>.json (الأنصاف تُدمَج بعنوان الوحدة)؛ ما لم يصل يظهر «قريباً»."""
+    C7 = ROOT / "tools" / "content7"
+    groups = [["1"], ["2"], ["3a", "3b"], ["4a", "4b"], ["5a", "5b"]]
+    units, bank = [], []
+    for gi, grp in enumerate(groups):
+        ps = []
+        for g in grp:
+            fp = C7 / f"sci7-{g}.json"
+            if fp.exists():
+                ps.append(json.load(open(fp, encoding="utf-8")))
+        title, ic, toc = SCI7_TOC[gi]
+        if len(ps) != len(grp):
+            units.append({"title": title, "ic": ic, "color": "#cfe2b0", "uq": [],
+                          "lessons": [{"t": l, "e": ["# قريباً", "سيُضاف شرح هذا الدرس وأنشطته بإذن الله."], "q": [], "quiz": [], "hints": {}} for l in toc]})
+            continue
+        lessons = [l for p in ps for l in p["units"][0]["lessons"]]
+        uq = []
+        for p in ps:
+            uq += p["units"][0]["unit_quiz"][:12 // len(ps)]
+        units.append({"title": ps[0]["units"][0]["title"], "ic": ic, "color": "#cfe2b0", "uq": uq,
+                      "lessons": [{"t": l["t"], "e": l["e"], "q": l["q"], "quiz": l["quiz"], "hints": l.get("hints", {})} for l in lessons]})
     return units, bank
 
 
@@ -148,7 +185,7 @@ self.addEventListener("message", e => { if (e.data && e.data.type === "precache"
 
 def build(sid: str) -> None:
     c = SUBJ[sid]
-    units = science_units() if sid == "science" else science9_units()[0] if sid == "science9" else math9_units() if sid == "math9" else math_units()
+    units = science_units() if sid == "science" else science7_units()[0] if sid == "science7" else science9_units()[0] if sid == "science9" else math9_units() if sid == "math9" else math_units()
     cfg = {k: c.get(k, False) for k in ("widgets", "name", "hello", "unitsTitle", "unitsHint", "theme", "key", "wid", "kxid", "student", "packT", "dir", "gradeName", "gradeFor")}
     data = {"cfg": cfg, "units": units, "pack": c["pack"], "books": [b for b in c.get("books", []) if b[1]]}
     out = ROOT / c["dir"]

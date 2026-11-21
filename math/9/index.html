@@ -122,6 +122,11 @@ button{font:inherit;color:inherit;cursor:pointer}
 .wgcard{text-align:center;background:linear-gradient(135deg,#fff3c4,#ffe0b2);border-radius:20px;padding:14px;margin-bottom:10px}.wgem{font-size:4rem;line-height:1.2}.wgcard b{font-size:1.2rem;display:block}.wgcard small{color:#6d4c00}
 .wgks{display:grid;grid-template-columns:1fr 1fr;gap:8px}.wgks button{border:0;border-radius:14px;padding:12px 4px;color:#fff;font:800 1rem inherit;background:var(--c);box-shadow:0 4px 0 rgba(0,0,0,.22);cursor:pointer}.wgks button:last-child{grid-column:1/-1}.wgks button.ok{outline:4px solid #fff;box-shadow:0 0 0 4px #00c853}.wgks button.no{animation:wgshake .4s}.wgks button[disabled]{opacity:.55}
 @keyframes wgshake{25%{transform:translateX(6px)}75%{transform:translateX(-6px)}}
+.wgarrow{position:absolute;left:8px;bottom:60px;height:8px;background:#ff1744;border-radius:4px}.wgarrow::after{content:"▶";position:absolute;right:-12px;top:-7px;color:#ff1744}
+.wgtank{position:relative;height:130px;border-radius:16px;background:linear-gradient(#e1f5fe 0 38%,#4fc3f7 38%,#0288d1);overflow:hidden;margin-bottom:8px}.wgtank.tall{height:190px}
+.wgcube{position:absolute;left:calc(50% - 22px);line-height:1;transition:bottom .4s,font-size .2s}.wgdiver{position:absolute;left:calc(50% - 16px);font-size:2rem;transition:top .3s}
+.wgglass{width:120px;height:130px;margin:6px auto;border:5px solid #90a4ae;border-top:0;border-radius:0 0 22px 22px;position:relative;overflow:hidden;background:#f5fbff}.wgglass i{position:absolute;bottom:0;left:0;right:0;transition:.3s}
+.wgrods{display:flex;flex-direction:column;gap:8px}.wgrod{display:grid;grid-template-columns:78px 1fr 88px;gap:8px;align-items:center;font-weight:700}.wgrod div{height:16px;background:#e3e8ee;border-radius:99px;overflow:hidden}.wgrod i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ffd54f,var(--c));border-radius:99px}.wgrod small{font-weight:500;color:#6a5a2a}
 .wgmsg{text-align:center;font-weight:800;margin-top:10px;min-height:1.6em}.wgfin{text-align:center;padding:10px}.wgfin b{font-size:1.6rem}
 
 /* عناصر تفاعلية */
@@ -383,7 +388,7 @@ function openCalc(){var d=document.createElement("div");d.id="calc";var keys=[["
  d.onclick=function(e){if(e.target===d)d.remove()};$(".cclose",d).onclick=function(){d.remove()};
  [].forEach.call(d.querySelectorAll(".ck button"),function(b){b.onclick=function(){var k=b.dataset.k;if(k=="C")ex="";else if(k=="⌫")ex=ex.slice(0,-1);else if(k=="x²")ex+="^2";else if(k=="="){var r=calcEval(ex);ce.textContent=ex+" =";if(isNaN(r)||!isFinite(r)){cv.textContent="خطأ";ex=""}else{var v=String(+r.toPrecision(12));cv.textContent=v;ex=v}return}else ex+=k;show()}})}
 /* ---------- محاكاة صغيرة «جرّب بنفسك» (العلوم العامة) ---------- */
-var WGK=[[/المجاهر/,"micro"],[/طاقة الحركة/,"ke"],[/طاقة الوضع/,"pe"],[/حفظ الطاقة/,"cons"],[/التوزيع الإلكتروني|العناصر والجدول/,"atom"],[/خصائص الأمواج|أمواج الصوت/,"wave"],[/تصنيف الكائنات|ممالك|المملكة/,"class"]];
+var WGK=[[/التسارع الثابت|القانون الثاني/,"newton"],[/^الكثافة$/,"dens"],[/أرخميدس/,"arch"],[/الضغط في السوائل/,"press"],[/تركيز المحاليل/,"conc"],[/تركيب الذر/,"build"],[/^الحرارة$|الموصلة/,"heat"],[/المجاهر/,"micro"],[/طاقة الحركة/,"ke"],[/طاقة الوضع/,"pe"],[/حفظ الطاقة/,"cons"],[/التوزيع الإلكتروني|العناصر والجدول/,"atom"],[/خصائص الأمواج|أمواج الصوت/,"wave"],[/تصنيف الكائنات|ممالك|المملكة/,"class"]];
 function wgKey(t){if(!CFG.widgets)return null;for(var i=0;i<WGK.length;i++)if(WGK[i][0].test(t))return WGK[i][1];return null}
 function wdone(key,el){var k="w|"+key;if(S.chk[k])return;S.chk[k]=1;S.xp+=5;save();if(el){var b=document.createElement("div");b.className="wgok";b.textContent="🌟 أحسنت! +٥ نقاط";el.appendChild(b);setTimeout(function(){b.remove()},2600)}}
 function wEl(tag,cls,html){var e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;return e}
@@ -460,6 +465,70 @@ WG.class=function(box,done){var K=[["بدائيات النوى","#ff6d00"],["ا�
   var it=q[i];box.innerHTML='<div class="wgcard"><div class="wgem">'+it[0]+'</div><b>'+it[1]+'</b><small>إلى أي مملكة ينتمي؟ ('+ar(i+1)+'/٨)</small></div><div class="wgks"></div><div class="wgmsg" id="cmsg">⭐ '+ar(sc)+'</div>';var ks=box.querySelector(".wgks");
   K.forEach(function(k,ki){var b=wEl("button",null,k[0]);b.style.setProperty("--c",k[1]);b.onclick=function(){var m=box.querySelector("#cmsg");if(ki==it[2]){sc++;m.textContent="✅ صحيح! "+it[1]+" من "+K[ki][0];b.classList.add("ok");[].forEach.call(ks.children,function(x){x.disabled=true});setTimeout(function(){i++;show()},850)}else{m.textContent="🤔 جرّب مملكة أخرى";b.classList.add("no");b.disabled=true;setTimeout(function(){b.classList.remove("no")},500)}};ks.appendChild(b)})}
  init()};
+
+/* ---------- محاكاة السابع ---------- */
+/* قانون نيوتن الثاني: ت = ق ÷ ك */
+WG.newton=function(box,done){var F=20,m=4,tgt=0;
+ box.innerHTML='<div class="wgst" id="nst"><div id="nbx" class="wgball">📦</div><div class="wgarrow" id="nar"></div></div><div class="wgbig" id="nfo"></div>';
+ var bx=box.querySelector("#nbx"),ar2=box.querySelector("#nar"),fo=box.querySelector("#nfo"),mi=wMission(box,"");
+ function A(){return F/m}
+ function up(){var a=A();fo.innerHTML='<small>ت = ق ÷ ك = '+ar(F)+' ÷ '+ar(m)+' =</small><b>'+ar(+a.toFixed(2))+' م/ث²</b>';bx.style.fontSize=(24+m*1.8)+"px";ar2.style.width=(12+F*1.5)+"px";bx.style.animation="wgrun "+Math.max(.6,6/Math.max(.5,a)).toFixed(2)+"s ease-in infinite";
+  if(tgt&&Math.abs(a-tgt)<.05){wBurst(box);mi.lastChild.textContent="✅ رائع! التسارع "+ar(tgt)+" م/ث²";done();tgt=0}}
+ wSlider(box,"القوة (ق)",1,100,1,F,"نيوتن","#ff1744",function(x){F=x;up()});wSlider(box,"الكتلة (ك)",1,20,1,m,"كغم","#2979ff",function(x){m=x;up()});
+ function newT(){var mm=1+Math.floor(Math.random()*10),aa=1+Math.floor(Math.random()*8);tgt=aa;mi.lastChild.textContent="اضبط القوة والكتلة ليصبح التسارع "+ar(aa)+" م/ث²"}
+ var nb=wEl("button","wgn","🔄 تحدٍّ جديد");nb.onclick=newT;box.appendChild(nb);newT();up()};
+/* الكثافة: يطفو أم يغوص؟ */
+WG.dens=function(box,done){var M=300,V=400,got=0;
+ box.innerHTML='<div class="wgtank"><div class="wgcube" id="dcb">🧊</div></div><div class="wgbig" id="dfo"></div>';
+ var cb=box.querySelector("#dcb"),fo=box.querySelector("#dfo"),mi=wMission(box,"اجعل المكعب يطفو ثم اجعله يغوص");var fl=0,sk=0;
+ function up(){var d=M/V,f=d<1;fo.innerHTML='<small>ك ÷ ح = '+ar(M)+' ÷ '+ar(V)+' =</small><b>'+ar(+d.toFixed(2))+' غم/سم³</b><small>'+(f?"أقلّ من كثافة الماء (١) ← يطفو 🟢":d==1?"تساوي كثافة الماء ← يتعلّق في الوسط 🟡":"أكبر من كثافة الماء (١) ← يغوص 🔴")+'</small>';
+  cb.style.bottom=(f?58+(1-Math.min(1,d))*30:d==1?40:6)+"px";cb.style.fontSize=(20+Math.cbrt(V)*3)+"px";
+  if(f)fl=1;else if(d>1)sk=1;if(fl&&sk&&!got){got=1;wBurst(box);mi.lastChild.textContent="✅ ممتاز! عرفتَ الشرط: الكثافة أقل من ١ تطفو";done()}}
+ wSlider(box,"الكتلة (ك)",50,1000,10,M,"غم","#ff6d00",function(x){M=x;up()});wSlider(box,"الحجم (ح)",50,1000,10,V,"سم³","#2979ff",function(x){V=x;up()});up()};
+/* قاعدة أرخميدس */
+WG.arch=function(box,done){var D=600,V=100,ok=0;
+ box.innerHTML='<div class="wgtank"><div class="wgcube" id="acb">🪵</div></div><div class="wgbig" id="afo"></div>';
+ var cb=box.querySelector("#acb"),fo=box.querySelector("#afo"),mi=wMission(box,"اضبط كثافة الجسم لينغمر نصفه تماماً (٥٠٠ كغم/م³)");
+ function up(){var sub=Math.min(1,D/1000),W=D*V/1000*10/1000*1000/1000,Fb=1000*(V/1e6)*sub*10,Wt=D*(V/1e6)*10;fo.innerHTML='<small>الوزن = '+ar(+Wt.toFixed(2))+' ن • قوة الطفو العظمى = '+ar(+(1000*V/1e6*10).toFixed(2))+' ن</small><b>'+(D<1000?'ينغمر '+ar(Math.round(sub*100))+'٪ من حجمه':'يغوص كاملاً')+'</b>';
+  cb.style.bottom=(D<1000?30+(1-sub)*60:6)+"px";cb.style.fontSize=(24+V/12)+"px";
+  if(!ok&&D==500){ok=1;wBurst(box);mi.lastChild.textContent="✅ نعم! وزن الجسم = وزن الماء المُزاح فينغمر نصفه";done()}}
+ wSlider(box,"كثافة الجسم",100,1500,50,D,"كغم/م³","#8d6e63",function(x){D=x;up()});wSlider(box,"حجم الجسم",20,300,10,V,"سم³","#2979ff",function(x){V=x;up()});up()};
+/* الضغط في السوائل: ض = ث × ج × ع */
+WG.press=function(box,done){var h=5,rho=1000,hit={};
+ box.innerHTML='<div class="wgtank tall"><div class="wgdiver" id="pdv">🤿</div></div><div class="wgbig" id="pfo"></div>';
+ var dv=box.querySelector("#pdv"),fo=box.querySelector("#pfo"),mi=wMission(box,"جرّب السوائل الثلاثة على العمق نفسه، ولاحظ أيّها يعطي ضغطاً أكبر");
+ var L=[["الماء",1000,"#2979ff"],["الزيت",800,"#ffab00"],["ماء البحر",1030,"#00bfa5"]];
+ var row=wEl("div","wgc",'<span>السائل</span>');L.forEach(function(x,i){var b=wEl("button",i==0?"on":"",x[0]);b.style.setProperty("--c",x[2]);b.onclick=function(){rho=x[1];hit[i]=1;[].forEach.call(row.querySelectorAll("button"),function(y){y.classList.remove("on")});b.classList.add("on");up();if(Object.keys(hit).length==3){wBurst(box);mi.lastChild.textContent="✅ الضغط يزيد بزيادة كثافة السائل";done()}};row.appendChild(b)});box.appendChild(row);
+ function up(){var P=rho*10*h;fo.innerHTML='<small>ض = ث × ج × ع = '+ar(rho)+' × ١٠ × '+ar(h)+' =</small><b>'+ar(P)+' باسكال</b>';dv.style.top=(8+h*7)+"px"}
+ wSlider(box,"العمق (ع)",0,10,1,h,"م","#e91e63",function(x){h=x;up()});up()};
+/* تركيز المحلول */
+WG.conc=function(box,done){var m=10,V=500,tgt=0;
+ box.innerHTML='<div class="wgglass"><i id="gfl"></i></div><div class="wgbig" id="cfo"></div>';
+ var fl=box.querySelector("#gfl"),fo=box.querySelector("#cfo"),mi=wMission(box,"");
+ function up(){var c=m/V*1000;fo.innerHTML='<small>التركيز = كتلة المذاب ÷ حجم المحلول = '+ar(m)+' ÷ '+ar(V)+' × ١٠٠٠ =</small><b>'+ar(+c.toFixed(1))+' غم/لتر</b>';fl.style.background="rgba(41,121,255,"+Math.min(.95,.12+c/90)+")";fl.style.height=(20+V/12)+"%";
+  if(tgt&&Math.abs(c-tgt)<.5){wBurst(box);mi.lastChild.textContent="✅ أحسنت! تركيز "+ar(tgt)+" غم/لتر";done();tgt=0}}
+ wSlider(box,"كتلة المذاب",1,100,1,m,"غم","#ff6d00",function(x){m=x;up()});wSlider(box,"حجم المحلول",100,1000,50,V,"مل","#2979ff",function(x){V=x;up()});
+ function newT(){tgt=[10,20,25,40,50][Math.floor(Math.random()*5)];mi.lastChild.textContent="حضّر محلولاً تركيزه "+ar(tgt)+" غم/لتر"}
+ var nb=wEl("button","wgn","🔄 تحدٍّ جديد");nb.onclick=newT;box.appendChild(nb);newT();up()};
+/* ابنِ ذرّة */
+WG.build=function(box,done){var p=3,n=4,e=3,seen={};
+ box.innerHTML='<svg viewBox="0 0 200 200" width="180" height="180" id="bsv" style="display:block;margin:auto"></svg><div class="wgbig" id="bfo"></div>';
+ var sv=box.querySelector("#bsv"),fo=box.querySelector("#bfo"),mi=wMission(box,"ابنِ ذرّة متعادلة من عنصر الكربون (٦ بروتونات)");
+ function cfg(z){var c=[],r=z,cap=[2,8,8];for(var i=0;i<3&&r>0;i++){var k=Math.min(cap[i],r);c.push(k);r-=k}return c}
+ function up(){var h='<circle cx="100" cy="100" r="22" fill="#ff1744" stroke="#b71c1c" stroke-width="3"/><text x="100" y="95" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">'+p+'+</text><text x="100" y="112" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">'+n+'⚪</text>';
+  cfg(e).forEach(function(c,i){var R=40+i*22;h+='<circle cx="100" cy="100" r="'+R+'" fill="none" stroke="#90a4ae" stroke-dasharray="3 4"/>';for(var k=0;k<c;k++){var a=k/c*6.2832-1.5708;h+='<circle cx="'+(100+R*Math.cos(a)).toFixed(1)+'" cy="'+(100+R*Math.sin(a)).toFixed(1)+'" r="5.5" fill="#2979ff" stroke="#fff" stroke-width="1.5"/>'}});sv.innerHTML=h;
+  var N=["","الهيدروجين","الهيليوم","الليثيوم","البريليوم","البورون","الكربون","النيتروجين","الأكسجين","الفلور","النيون"][p]||"—",ch=p-e;
+  fo.innerHTML='<small>العدد الذري = '+ar(p)+' • العدد الكتلي = '+ar(p+n)+'</small><b>'+N+' '+(ch==0?"(ذرّة متعادلة)":ch>0?"(أيون موجب +"+ar(ch)+")":"(أيون سالب "+ar(ch)+")")+'</b>';
+  if(p==6&&e==6){wBurst(box);mi.lastChild.textContent="✅ ممتاز! الكربون: ٦ بروتونات و٦ إلكترونات";done()}}
+ function ctl(lab,get,set,min,max,col){var r=wEl("div","wgrow",'<b style="flex:1;align-self:center">'+lab+'</b>'),a=wEl("button","wgn",'−'),b=wEl("button","wgn g",'+');a.style.background=col;a.style.boxShadow="0 4px 0 rgba(0,0,0,.25)";a.onclick=function(){if(get()>min){set(get()-1);up()}};b.onclick=function(){if(get()<max){set(get()+1);up()}};r.appendChild(a);r.appendChild(b);box.appendChild(r)}
+ ctl("بروتونات (+)",function(){return p},function(v){p=v},1,10,"#e53935");ctl("نيوترونات",function(){return n},function(v){n=v},0,12,"#78909c");ctl("إلكترونات (−)",function(){return e},function(v){e=v},0,12,"#1e88e5");up()};
+/* انتقال الحرارة: موصل أم عازل؟ */
+WG.heat=function(box,done){var M=[["النحاس",1,"#ff6d00","موصل ممتاز"],["الحديد",.45,"#78909c","موصل جيّد"],["الخشب",.12,"#8d6e63","عازل"],["البلاستيك",.06,"#7c4dff","عازل"]],seen={},run=0;
+ box.innerHTML='<div class="wgrods" id="hrd"></div><div class="wgmsg" id="hms">اضغط «ابدأ التسخين» وشاهد أيّ قضيب يسخن أسرع</div>';
+ var rd=box.querySelector("#hrd"),ms=box.querySelector("#hms"),mi=wMission(box,"توقّع: أيّ المواد أسرع في نقل الحرارة؟");
+ M.forEach(function(m,i){var r=wEl("div","wgrod",'<span>'+m[0]+'</span><div><i style="--c:'+m[2]+'"></i></div><small>'+m[3]+'</small>');rd.appendChild(r)});
+ var go=wEl("button","wgn","🔥 ابدأ التسخين");go.onclick=function(){if(run)return;run=1;var bars=[].slice.call(rd.querySelectorAll("i")),t0=performance.now();bars.forEach(function(b){b.style.width="0%"});
+  (function f(ts){var t=(ts-t0)/4000,all=1;bars.forEach(function(b,i){var w=Math.min(100,t*100*M[i][1]);b.style.width=w+"%";if(w<100)all=0});if(!all&&t<1.6)requestAnimationFrame(f);else{run=0;ms.textContent="✅ النحاس أسرع نقلاً للحرارة، والخشب والبلاستيك عازلان بطيئان";wBurst(box);mi.lastChild.textContent="الموصلات تنقل الحرارة بسرعة، والعوازل تبطئها";done()}})(t0)};box.appendChild(go)};
 
 /* ---------- المسارات ---------- */
 function route(){var h=(location.hash||"#home").slice(1).split("/"),a=h[0];window.scrollTo(0,0);

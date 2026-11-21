@@ -6,7 +6,7 @@ d = json.load(open(f, encoding="utf-8"))
 err = []
 def need(c, m):
     if not c: err.append(m)
-need(d.get("subject") in ("physics", "chemistry", "biology", "math"), "subject")
+need(d.get("subject") in ("physics", "chemistry", "biology", "math", "science"), "subject")
 nl = 0
 for ui, u in enumerate(d["units"]):
     need(u.get("title") and u.get("icon") and u.get("sym"), f"وحدة {ui}: title/icon/sym")
