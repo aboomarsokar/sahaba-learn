@@ -30,7 +30,10 @@ def main() -> None:
     fonts = {k: base64.b64encode((ROOT / "shared" / "fonts" / f"IBMPlexSansArabic-{k}.ttf").read_bytes()).decode() for k in ("Regular", "Bold")}
     apps = {}
     for g, _n, path in GRADES:
-        apps[g] = render(path, fonts=False) if path else hub10()
+        h = render(path, fonts=False) if path else hub10()
+        # روابط التنقّل «#unit/0» داخل srcdoc تُحَلّ على رابط الملفّ الأمّ فتُحمِّله داخل الإطار؛ القاعدة تُبقيها داخل الصفحة نفسها
+        h = h.replace("<head>", '<head><base href="about:srcdoc">', 1)
+        apps[g] = h
     js = json.dumps(apps, ensure_ascii=False).replace("</", "<\\/")
     page = f"""<!doctype html>
 <html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
