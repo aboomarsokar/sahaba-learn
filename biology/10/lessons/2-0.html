@@ -439,7 +439,7 @@ function buildTypes(){const g=$('cmp');g.innerHTML='';
     c.onclick=e=>{const b=e.target.closest('button[data-img]');if(b){openZoom(b.dataset.img);return}c.classList.toggle('flip')};
     c.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();c.classList.toggle('flip')}};
     g.appendChild(c)})}
-function openZoom(src){const z=mk('div','zoom');z.innerHTML='<button>✕ إغلاق</button><img alt="" src="'+src+'">';z.onclick=e=>{if(e.target.tagName!=='IMG')z.remove()};document.body.appendChild(z)}
+function openZoom(src){const z=mk('div','zoom');z.innerHTML='<button>✕ إغلاق</button><img loading="lazy" decoding="async" alt="" src="'+src+'">';z.onclick=e=>{if(e.target.tagName!=='IMG')z.remove()};document.body.appendChild(z)}
 const CLS=[
  {t:'يدرس التفاصيل الداخلية للخلية وبنيتها',a:'tem'},
  {t:'يدرس التفاصيل السطحية للعينة',a:'sem'},

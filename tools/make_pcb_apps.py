@@ -274,6 +274,7 @@ def build(src: Path) -> None:
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'pcb_home.py'), d], check=True)
     # الوحدة ← بطاقات الدروس والدرس ← شرحه التفاعلي بداخله
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'pcb_lessons.py'), d], check=True)
+    subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'lazy_img.py')], check=True)   # صور كسولة
     # ضغط صور التطبيق بأمان (يتجاوز ما لا يوفّر ≥12% مع حفظ الجودة)
     subprocess.run([sys.executable, '-I', str(ROOT / 'tools' / 'optimize_assets.py'), '--apply', f'{d}/10'], check=True)
 

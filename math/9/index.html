@@ -44,7 +44,7 @@ var tab = "units";
 function hdr(title, back) {
   var p = profile() || {}, first = p.first || "";
   if (back) return '<div class="hd"><a class="ib" href="#home" aria-label="رجوع">›</a><h1>' + esc(title) + '</h1><a class="ib" href="../../index.html" aria-label="بوابة الصحابة التعليمية">🏠</a></div>';
-  var av = p.photo ? '<img alt="" src="' + p.photo + '">' : esc((first || "؟").charAt(0));
+  var av = p.photo ? '<img loading="lazy" decoding="async" alt="" src="' + p.photo + '">' : esc((first || "؟").charAt(0));
   return '<div class="top"><div class="av">' + av + '</div><div class="hi"><b>مرحباً' + (first ? "، " + esc(first) : "") + '</b><small>' + esc(CFG.name) + ' · تاسع</small></div><a class="ib" href="../../index.html" aria-label="بوابة الصحابة التعليمية">🏠</a></div>';
 }
 function lnk(url, label, sub, ic) {

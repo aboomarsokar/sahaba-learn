@@ -204,7 +204,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
   function gain(n, why) {
     if (n <= 0) return;
     S.coins += n; S.earned += n; S.log.push({ d: Date.now(), t: why, a: n }); if (S.log.length > 80) S.log.shift(); save();
-    toast('<img src="images/durra.webp" alt="">+' + toAr(n) + " دُرّة — " + esc(why)); refreshWallet();
+    toast('<img loading="lazy" decoding="async" src="images/durra.webp" alt="">+' + toAr(n) + " دُرّة — " + esc(why)); refreshWallet();
   }
   function refreshWallet() { var w = $(".wallet b"); if (w) w.textContent = toAr(S.coins); }
 
@@ -238,7 +238,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
   }
   function top(title, back) {
     return '<div class="top">' + (back ? '<button class="ib" type="button" data-back aria-label="رجوع">›</button>' : '<a class="ib" href="../../index.html" aria-label="الرجوع إلى بوابة الصحابة التعليمية">🏠</a>') +
-      "<h1>" + esc(title) + '</h1><button class="wallet" type="button" data-g2="store" aria-label="محفظة دُرّة"><img src="images/durra.webp" alt=""><b>' + toAr(S.coins) + "</b></button></div>";
+      "<h1>" + esc(title) + '</h1><button class="wallet" type="button" data-g2="store" aria-label="محفظة دُرّة"><img loading="lazy" decoding="async" src="images/durra.webp" alt=""><b>' + toAr(S.coins) + "</b></button></div>";
   }
   function bindTop(root) {
     var b = $("[data-back]", root); if (b) b.addEventListener("click", function () { history.length > 1 ? history.back() : go("home"); });
@@ -445,7 +445,7 @@ h1,h2,h3{margin:0;font-family:"Ruqaa","Plex Arabic",serif;color:var(--pri2)}
   function vStore(app) {
     var tabs = [["colors", "🎨 الألوان"], ["bg", "🖼️ الخلفيات"], ["profile", "👤 الملف"], ["ach", "🏅 الإنجازات"]];
     var h = top("متجر دُرّة").replace('data-g2="store"', 'data-g2="store"');
-    h += '<div class="card store-h"><img src="images/durra.webp" alt="دُرّة"><div><b style="font-size:1.4rem">' + toAr(S.coins) + ' دُرّة</b><br><small style="color:var(--mut)">ربحتَ ' + toAr(S.earned) + " • أنفقتَ " + toAr(S.spent) + '</small></div></div>';
+    h += '<div class="card store-h"><img loading="lazy" decoding="async" src="images/durra.webp" alt="دُرّة"><div><b style="font-size:1.4rem">' + toAr(S.coins) + ' دُرّة</b><br><small style="color:var(--mut)">ربحتَ ' + toAr(S.earned) + " • أنفقتَ " + toAr(S.spent) + '</small></div></div>';
     h += '<div class="tabs" style="flex-wrap:wrap">' + tabs.map(function (t) { return '<button class="tab" type="button" data-s="' + t[0] + '" aria-pressed="' + (R.tab === t[0]) + '" style="flex:1 1 40%">' + t[1] + "</button>"; }).join("") + "</div>";
     if (R.tab === "colors") {
       h += THEMES.map(function (t) { var own = S.owned.indexOf(t.id) >= 0, act = S.theme === t.id;

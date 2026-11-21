@@ -16,7 +16,7 @@
 html,body{margin:0}
 body{background:var(--bg);color:var(--ink);font-family:"Plex Arabic",system-ui,Tahoma,sans-serif;line-height:1.7;min-height:100vh}
 button{font:inherit;color:inherit;cursor:pointer}
-#app{max-width:520px;margin:0 auto;min-height:100vh;background:var(--bg);position:relative;padding-bottom:calc(86px + env(safe-area-inset-bottom))}
+#app{max-width:min(760px,100%);margin:0 auto;min-height:100vh;background:var(--bg);position:relative;padding-bottom:calc(86px + env(safe-area-inset-bottom))}
 /* الرأس */
 .hdr{background:var(--hd);color:#fff;padding:calc(12px + env(safe-area-inset-top)) 16px 40px;position:relative}
 .hdr .row1{display:flex;align-items:center;gap:12px}
@@ -95,6 +95,8 @@ button{font:inherit;color:inherit;cursor:pointer}
 .btn{display:block;width:100%;text-align:center;border:0;background:linear-gradient(135deg,#00c853,var(--g));color:#fff;border-radius:14px;padding:12px;font-weight:700;margin-top:10px;text-decoration:none}
 .btn.out{background:#fff;color:var(--g);border:1.5px solid var(--g)}
 .empty{color:var(--mut);text-align:center;padding:20px}
+@media (min-width:640px){.grid,.mg{grid-template-columns:repeat(3,1fr)}.nav{max-width:760px}.grid{grid-auto-rows:clamp(110px,18svh,150px)}}
+@media (max-width:340px){.grid,.mg{grid-template-columns:1fr}.hi b{font-size:1rem}}
 /* محاكاة جرّب بنفسك */
 .wgv{display:grid;place-items:center;margin:4px 0}
 .wgbig{text-align:center;font-size:1.45rem;font-weight:800;margin:8px 0;padding:8px;border-radius:16px;background:linear-gradient(135deg,#fff3c4,#ffe082);color:#4e2a00}
@@ -254,7 +256,7 @@ var query="";
 function lessonRow(u,l){var x=D.units[u],ls=x.lessons[l],p=P(u,l);return '<a class="row" href="#lesson/'+u+'/'+l+'"><span class="ic" style="background:'+x.color+'">'+svg(x.ic)+'</span><span class="tx"><b>'+esc(ls.t)+'</b><small>'+esc(x.title)+'</small><div class="dots">'+p.lv.map(function(v){return '<i class="'+(v>=need(ls,0)?"on":"")+'"></i>'}).join("")+'</div></span><span class="go">'+(p.b?"🏅":"‹")+'</span></a>'}
 function need(){return Math.ceil(8*PASS)}
 function nextLesson(){var l=S.last;if(l&&D.units[l[0]]&&D.units[l[0]].lessons[l[1]]&&!lessonDone(l[0],l[1]))return l;for(var u=0;u<D.units.length;u++)for(var i=0;i<D.units[u].lessons.length;i++)if(!lessonDone(u,i))return [u,i];return l||[0,0]}
-function head(){var p=profile(),first=p.first||"",av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc((first||"؟").charAt(0));
+function head(){var p=profile(),first=p.first||"",av=p.photo?'<img loading="lazy" decoding="async" alt="" src="'+esc(p.photo)+'">':esc((first||"؟").charAt(0));
  return '<div class="hdr"><div class="row1"><div class="av">'+av+'</div><div class="hi"><b>'+esc(CFG.hello)+'</b><div class="pts"><span>⭐ '+ar(S.xp)+' نقطة • المستوى '+ar(level())+'</span><span id="chip"></span></div></div><a class="portal" href="../../index.html"><svg viewBox="0 0 32 32" fill="none" stroke="#ffc107" stroke-width="1.8"><circle cx="16" cy="16" r="13"/><path d="m16 5 3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#ffc107" fill-opacity=".35"/></svg>بوابة الصحابة</a></div></div>'}
 function home(){if(CFG.theme=="math")return homeMath();var t=totals(),nl=nextLesson(),nu=D.units[nl[0]],pr=nu.lessons.filter(function(_,i){return lessonDone(nl[0],i)}).length,pc=Math.round(pr*100/nu.lessons.length);
  var h=head()+'<div class="sheet"><label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="ابحث عن درس..." value="'+esc(query)+'" autocomplete="off"></label><div id="res"></div></div>';
@@ -269,7 +271,7 @@ function home(){if(CFG.theme=="math")return homeMath();var t=totals(),nl=nextLes
  mountChip()}
 
 function weekCount(){var w=Date.now()-6048e5,c=0;Object.keys(S.p).forEach(function(k){if(S.p[k].b&&S.p[k].b>w)c++});return c}
-function homeMath(){var p=profile(),first=p.first||"طالب",t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,nl=nextLesson(),nu=D.units[nl[0]],av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc(first.charAt(0));
+function homeMath(){var p=profile(),first=p.first||"طالب",t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,nl=nextLesson(),nu=D.units[nl[0]],av=p.photo?'<img loading="lazy" decoding="async" alt="" src="'+esc(p.photo)+'">':esc(first.charAt(0));
  var h='<div class="mh"><div class="mhi"><b>مرحباً، '+esc(first)+'</b><small>جاهز لمواصلة التعلّم اليوم؟</small><a class="mportal" href="../../index.html">🏠 بوابة الصحابة التعليمية</a></div><div class="av mav">'+av+'</div></div>'
  +'<div class="pc"><div class="pct"><b>بطاقة التقدّم</b><span class="chp">هذا الأسبوع: '+ar(weekCount())+'</span></div><div class="pcr"><span>'+ar(t.d)+' من '+ar(t.t)+' درس مكتمل</span><span>تقدّمك الكلّي: '+ar(pc)+'٪</span></div><div class="bar big"><i style="width:'+pc+'%"></i></div><div class="pcs"><span class="chp2">🏆 النقاط: '+ar(S.xp)+'</span><span class="chp2 g">🔥 أيام متتالية: '+ar(streak())+'</span><span id="chip"></span></div></div>'
  +'<div class="sec2"><b>'+esc(CFG.unitsTitle)+'</b><a href="#lessons">عرض الكل</a></div><div class="mg">'
@@ -370,7 +372,7 @@ function quizzesPage(){var h=topbar("الاختبارات","#home")+'<div class=
 function pointsPage(){var t=totals(),pc=S.xp%100,badges=[];D.units.forEach(function(x,u){x.lessons.forEach(function(l,i){if(lessonDone(u,i))badges.push('<div><i>🏅</i>'+esc(l.t)+'</div>')})});
  var h=topbar("نقاطي","#home")+'<div class="body"><div class="stat"><div><b>'+ar(S.xp)+'</b>نقطة</div><div><b>'+ar(level())+'</b>المستوى</div><div><b>'+ar(t.d)+' / '+ar(t.t)+'</b>دروس منجزة</div><div><b>'+ar(streak())+'</b>أيام متتالية 🔥</div></div><div class="card"><small>'+ar(100-pc)+' نقطة للمستوى '+ar(level()+1)+'</small><div class="bar"><i style="width:'+pc+'%"></i></div></div><button class="btn" id="st">🪙 متجر دُرّة</button><div class="sec" style="margin-top:16px;font-size:1.1rem"><i>✦</i>أوسمتي</div>'+(badges.length?'<div class="bd">'+badges.join("")+'</div>':'<div class="empty">أنجز اختبارات الدرس الثلاثة لتنال وسامه.</div>')+(t.d==t.t&&t.t?'<div class="card" style="margin-top:12px;text-align:center">🎓 شهادة إتمام '+esc(CFG.name)+' — الصف الثامن</div>':'')+'</div>'+nav("points");
  $("#app").innerHTML=h;$("#st").onclick=function(){window.Durra&&Durra.store()}}
-function mePage(){var p=profile(),name=[p.first,p.father,p.family].filter(Boolean).join(" ")||CFG.student,t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,av=p.photo?'<img alt="" src="'+esc(p.photo)+'">':esc((p.first||"؟").charAt(0));
+function mePage(){var p=profile(),name=[p.first,p.father,p.family].filter(Boolean).join(" ")||CFG.student,t=totals(),pc=t.t?Math.round(t.d*100/t.t):0,av=p.photo?'<img loading="lazy" decoding="async" alt="" src="'+esc(p.photo)+'">':esc((p.first||"؟").charAt(0));
  var h=topbar("حسابي","#home")+'<div class="body"><div class="card" style="text-align:center"><div class="av" style="margin:0 auto 8px;width:84px;height:84px;font-size:2rem">'+av+'</div><b style="font-size:1.2rem">'+esc(name)+'</b><div style="color:var(--mut)">الصف الثامن — '+esc(CFG.name)+'</div><div class="bar"><i style="width:'+pc+'%"></i></div><small>إنجازك '+ar(pc)+'٪</small></div>'+(D.pack?'<a class="btn out" target="_blank" rel="noopener" href="'+esc(D.pack)+'">📦 '+esc(CFG.packT)+' (تحتاج إنترنت)</a>':'')+'<button class="btn out" id="tr">🎓 إعادة جولة كينيكس</button><a class="btn out" href="../../index.html">🏠 بوابة الصحابة التعليمية</a><button class="btn out" id="rs" style="color:var(--bad);border-color:var(--bad)">إعادة ضبط تقدّمي</button></div>'+nav("me");
  $("#app").innerHTML=h;$("#tr").onclick=function(){window.SahabaIntro&&SahabaIntro.tour(KX)};$("#rs").onclick=function(){if(confirm("سيُمحى تقدّمك ونقاطك في هذه المادة. متأكد؟")){S=load();S={xp:0,p:{},uq:{},daily:{},last:null,days:[today()],cert:0,chk:{}};save();route()}}}
 

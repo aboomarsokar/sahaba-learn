@@ -263,7 +263,7 @@ img.orgimg{content-visibility:auto}
 </style>
 </head>
 <body>
-<div class="talk" id="talk"><img alt="" src="../images/9156621b3c09.jpg"><div id="bub">مرحباً! أنا كينيكس، سأرافقك في هذا الدرس.</div></div>
+<div class="talk" id="talk"><img loading="lazy" decoding="async" alt="" src="../images/9156621b3c09.jpg"><div id="bub">مرحباً! أنا كينيكس، سأرافقك في هذا الدرس.</div></div>
 <div class="wrap">
 <header>
   <div style="display:flex;align-items:center;gap:10px;justify-content:space-between"><h1 style="font-size:1.15rem;margin:0">🔬 الخلية النباتية والحيوانية</h1><button class="chip" id="bMute" hidden style="display:none" aria-pressed="false">🔊 الصوت مفعّل</button></div>
@@ -738,7 +738,7 @@ function startMed(id,ctx){
   panel.innerHTML=`
    <h2>${p.ar}</h2><div class="en">${p.en}</div>
    <div class="medbox">
-     ${src?`<img class="orgimg" decoding="async" src="${src}" alt="${p.ar}">`:`<div class="noimg">لا توجد صورة لهذه العضية في المرفقات</div>`}
+     ${src?`<img loading="lazy" decoding="async" class="orgimg" decoding="async" src="${src}" alt="${p.ar}">`:`<div class="noimg">لا توجد صورة لهذه العضية في المرفقات</div>`}
      <div class="medmsg">🧘 تأمّل بالعضو: <b>${p.ar}</b></div>
      <div class="ring" id="ring"><span id="cnt">10</span></div>
      <p class="medhint">تأمّل شكلها ومكانها في الخلية، والشرح سيظهر بعد التأمل.</p>

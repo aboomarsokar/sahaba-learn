@@ -86,6 +86,10 @@ h2.sec{font-size:1.05rem;margin:18px 0 12px;font-weight:700}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:40px}
 #subjects:has(.gb){grid-template-columns:1fr;gap:26px}
 a.gb{text-decoration:none}
+/* شاشات أوسع: لافتات الصفوف والمواد في عمودين ثم ثلاثة، والصورة بنسبة ثابتة لئلا تتمدّد */
+@media (min-width:720px){.banners{display:grid;grid-template-columns:1fr 1fr;gap:24px}#subjects:has(.gb){grid-template-columns:1fr 1fr;gap:24px}.tabs{max-width:520px;margin-inline:auto}}
+@media (min-width:1100px){.banners{grid-template-columns:repeat(3,1fr)}#subjects:has(.gb){grid-template-columns:repeat(3,1fr)}}
+@media (max-width:360px){.wrap{padding:0 10px}.tab{font-size:.9rem;padding:10px 4px}}
 .toast{position:fixed;left:50%;bottom:calc(30px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);background:#0a5230;border:1px solid var(--gold);color:#fff;padding:12px 22px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:.2s;z-index:60}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 button.card.soon{width:100%;cursor:pointer;color:inherit;font:inherit}
@@ -212,6 +216,7 @@ footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);f
   <div class="wrap">
     <div class="topbar"><button class="ib" type="button" data-to="grades" aria-label="رجوع"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button><h2 id="subjectsLabel">المواد</h2></div>
     <div class="grid" id="subjects" aria-live="polite"></div>
+    <button type="button" id="shareGrade" class="share-g" style="display:block;margin:0 auto 30px;border:1.5px solid var(--gold);background:#fff;color:var(--gold);border-radius:999px;padding:10px 22px;font:700 .95rem inherit;cursor:pointer">🔗 مشاركة رابط هذا الصف</button>
   </div>
 </section>
 
@@ -310,10 +315,26 @@ function gradeById(id){ return data.grades.filter(function(g){ return g.id === i
 
 /* ---------- الشاشات ---------- */
 var SCREENS = ["splash","name","grades","subjects","progress","certs","notifs","about","settings"];
+/* رابط الصف: ‎#10 يفتح موادّ الصف العاشر، و‎#10/arabic يفتح تطبيق مادته مباشرةً (يُرسَل لزميلٍ في الصف نفسه) */
+function setHash(h){ try{ history.replaceState(null, "", location.pathname + location.search + (h ? "#" + h : "")); }catch(e){} }
+function shareGrade(){
+  var g = gradeById(current); if (!g) return;
+  var url = location.origin + location.pathname.replace(/index\.html$/, "") + "#" + current;
+  if (navigator.share) { navigator.share({ title: g.name + " — بوابة الصحابة التعليمية", url: url }).catch(function(){}); return; }
+  try { navigator.clipboard.writeText(url).then(function(){ toast("نُسخ رابط " + g.name + " ✓"); }, function(){ prompt("انسخ الرابط:", url); }); } catch(e){ prompt("انسخ الرابط:", url); }
+}
+function hashRoute(){
+  var m = /^#(\d+)(?:\/([a-z0-9-]+))?$/i.exec(location.hash || ""); if (!m || !data) return false;
+  var g = gradeById(m[1]); if (!g) return false;
+  current = g.id; stage = g.stage; lsSet(K.grade, current); lsSet(K.stage, stage);
+  if (m[2]) { var s = data.subjects.filter(function(x){ return x.id === m[2].toLowerCase(); })[0], e = s && s.grades && s.grades[g.id]; if (e && profile) { location.replace(e.dir + "/"); return true; } }
+  return true;
+}
 function show(id){
   SCREENS.forEach(function(s){ $("scr-"+s).hidden = s !== id; });
   closeMenu(); window.scrollTo(0,0);
-  if (id === "grades") { badges(); drawTabs(); drawBanners(); }
+  if (id === "grades") { badges(); drawTabs(); drawBanners(); setHash(""); }
+  if (id === "subjects" && current) setHash(current);
   if (id === "subjects") drawSubjects();
   if (id === "progress") drawProgress();
   if (id === "certs") drawCerts();
@@ -321,6 +342,7 @@ function show(id){
   if (id === "about") $("aboutVer").textContent = (data && data.version) || "1.0.0";
   if (id === "settings") drawSettings();
 }
+try{ $("shareGrade").addEventListener("click", shareGrade); }catch(e){}
 document.querySelectorAll("[data-to]").forEach(function(b){ b.addEventListener("click", function(){ show(b.dataset.to); }); });
 
 
@@ -455,7 +477,7 @@ $("nameForm").addEventListener("submit", function(e){
   e.preventDefault();
   var p = { first: $("fFirst").value.trim(), father: $("fFather").value.trim(), family: $("fFamily").value.trim(), photo: photoData };
   if (!p.first || !p.father || !p.family) return;
-  profile = p; lsSet(K.profile, JSON.stringify(p)); drawMe(); show("grades");
+  profile = p; lsSet(K.profile, JSON.stringify(p)); drawMe(); show(current && gradeById(current) && /^#\d+/.test(location.hash) ? "subjects" : "grades");
 });
 function editProfile(){
   $("nameTitle").textContent = "الملف الشخصي";
@@ -473,7 +495,7 @@ function drawTabs(){
 function drawBanners(){
   var gs = data.grades.filter(function(g){ return g.stage === stage; });
   $("banners").innerHTML = gs.map(function(g, idx){
-    var inner = g.img ? '<span class="gbf"><span class="gbr"></span><img src="'+esc(g.img)+'" alt="'+esc(g.name)+'" loading="lazy"></span>' : '<span class="empty" style="display:block;padding:28px;text-align:center">'+esc(g.name)+'</span>';
+    var inner = g.img ? '<span class="gbf"><span class="gbr"></span><img src="'+esc(g.img)+'" alt="'+esc(g.name)+'" loading="lazy" decoding="async" width="1200" height="400"></span>' : '<span class="empty" style="display:block;padding:28px;text-align:center">'+esc(g.name)+'</span>';
     return '<button type="button" class="gb" style="--i:'+idx+'" data-g="'+esc(g.id)+'" aria-label="'+esc(g.name)+'">'+inner+(hasReady(g.id) ? '<span class="rd">مواد جاهزة</span>' : '')+'</button>';
   }).join("");
   $("banners").querySelectorAll(".gb").forEach(function(b){ b.addEventListener("click", function(){ current = b.dataset.g; lsSet(K.grade, current); show("subjects"); }); });
@@ -488,7 +510,7 @@ function drawSubjects(){
     var e = s.grades && s.grades[current];
     var icon = ICONS[s.icon] || ICONS.book;
     if (s.banner) {   /* مادةٌ لها مستطيلها (صورة) */
-      var img = '<span class="gbf"><span class="gbr"></span><img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy"></span>';
+      var img = '<span class="gbf"><span class="gbr"></span><img src="'+esc(s.banner)+'" alt="'+esc(s.name)+'" loading="lazy" decoding="async" width="1200" height="400"></span>';
       return e ? '<a class="gb" style="--i:'+idx+'" href="'+esc(e.dir)+'/" aria-label="'+esc(s.name)+'">'+img+'<span class="rd">جاهز</span></a>'
                : '<button type="button" class="gb" style="--i:'+idx+'" data-soon data-sid="'+esc(s.id)+'" aria-label="'+esc(s.name)+'">'+img+'<span class="rd soon">قريباً</span></button>';
     }
@@ -571,6 +593,7 @@ fetch("subjects.json", {cache:"no-cache"}).then(function(r){ return r.json(); })
   data = d; steps.json = true; progress();
   var ids = d.grades.map(function(g){ return g.id; }), saved = lsGet(K.grade);
   current = ids.indexOf(saved) >= 0 ? saved : null;
+  if (hashRoute() && location.hash && !profile) { /* ضيفٌ جاء برابط صفّ: يسجّل اسمه ثم يرى موادّ ذلك الصف */ }
   var sid = d.stages.map(function(s){ return s.id; }), st = lsGet(K.stage);
   stage = sid.indexOf(st) >= 0 ? st : (current ? gradeById(current).stage : (d.grades.filter(function(g){ return hasReady(g.id); })[0] || d.grades[0]).stage);
   drawMe();

@@ -29,6 +29,9 @@ CSS = r""".h8{max-width:560px;margin:0 auto;padding:calc(14px + env(safe-area-in
 .h8nav{position:fixed;bottom:0;inset-inline:0;max-width:560px;margin:0 auto;background:#fffaf0;border-radius:26px 26px 0 0;box-shadow:0 -6px 20px rgba(17,61,46,.1);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 6px calc(8px + env(safe-area-inset-bottom,0px));z-index:30}
 .h8nav button{border:0;background:none;display:flex;flex-direction:column;align-items:center;gap:2px;color:#8a8f86;font:700 .8rem inherit;padding:4px 0;cursor:pointer}.h8nav button svg{width:26px;height:26px}.h8nav button.on{color:#00a152}.h8nav button.on svg{stroke-width:2.6}
 .h8w{background:#fff;border:1px solid #e9dfc8;border-radius:18px;padding:12px 14px;text-align:center}.h8w p{margin:6px 0;line-height:1.9}.h8w small{color:#4b7a5f}
+.h8{max-width:min(860px,100%)}
+@media (min-width:640px){.h8grid{grid-template-columns:repeat(3,1fr)}.h8nav{max-width:860px}}
+@media (max-width:340px){.h8grid{grid-template-columns:1fr}.h8t h1{font-size:1.1rem}}
 .h8e{text-align:center;color:#4b7a5f;padding:20px}"""
 
 JS = r"""

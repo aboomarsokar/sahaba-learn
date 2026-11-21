@@ -922,7 +922,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
 
 <!-- ===== شاشة البداية ===== -->
 <main id="intro" data-screen="">
-  <div class="logo"><img src="images/logo.jpg" alt="شعار مدرسة التابعين الشرعية لتحفيظ القرآن الكريم"></div>
+  <div class="logo"><img loading="lazy" decoding="async" src="images/logo.jpg" alt="شعار مدرسة التابعين الشرعية لتحفيظ القرآن الكريم"></div>
   <h1 class="brand">LEXORA</h1>
   <div class="divider"></div>
   <p class="quote-en" lang="en">English isn't just a language you learn, but a skill that makes you stand out.</p>
@@ -951,7 +951,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
         <p class="hello-t" lang="en">Hello, <b id="meName" dir="auto"></b></p>
         <p class="ask" data-t="ask">ماذا تحب أن تبدأ؟</p>
       </div>
-      <button class="me" type="button" data-go="me" aria-label="ملفي الشخصي"><img id="meImg" alt=""></button>
+      <button class="me" type="button" data-go="me" aria-label="ملفي الشخصي"><img loading="lazy" decoding="async" id="meImg" alt=""></button>
     </div>
   </div>
   <div class="wrap">
@@ -1067,7 +1067,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   </div>
   <div class="wrap">
     <div class="card pcard">
-      <div class="pic"><img id="pImg" alt=""></div>
+      <div class="pic"><img loading="lazy" decoding="async" id="pImg" alt=""></div>
       <b id="pName" dir="auto"></b>
       <small id="pClass"></small>
       <button class="btn" type="button" data-go="profile"><svg><use href="#i-edit"/></svg><span data-t="editData">تعديل البيانات</span></button>
@@ -1280,7 +1280,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   </div>
   <div class="wrap">
     <div class="card about">
-      <div class="lg"><img src="images/logo.jpg" alt=""></div>
+      <div class="lg"><img loading="lazy" decoding="async" src="images/logo.jpg" alt=""></div>
       <span class="nm">LEXORA</span>
       <p data-t="aboutDesc">تطبيق تعليمي تفاعلي لتعلّم اللغة الإنجليزية: شرح الدروس والقواعد، ونطق الكلمات، وقراءة القطع، وأوراق العمل والاختبارات، وقاموس شخصي وخطة دراسة.</p>
       <dl class="kv">
@@ -1687,7 +1687,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
   function pick(i){
     chosen=i;
     grid.querySelectorAll('.av').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.i==i)});
-    preview.innerHTML='<img src="'+src(i)+'" alt="">';preview.classList.add('on');update();
+    preview.innerHTML='<img loading="lazy" decoding="async" src="'+src(i)+'" alt="">';preview.classList.add('on');update();
   }
   AVATARS.forEach(function(l,k){
     var i=k+1,b=document.createElement('button');
@@ -2265,7 +2265,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     var st=$('stage');st.style.animation='none';void st.offsetWidth;st.style.animation='';
     st.innerHTML='<p class="sw-label" style="text-align:center">'+T('اختر القسم الذي تريده، بالترتيب الذي يناسبك','Pick any section, in the order you like')+'</p>'+
       '<div class="hub">'+tiles.map(function(t){var i=t[0],lock=!unlocked(i),done=!!r.st[i];
-        return '<button type="button" class="ptile pimg'+(done?' done':'')+(lock?' lock':'')+'" data-sec="'+i+'"'+(lock?' aria-disabled="true"':'')+' aria-label="'+t[2]+'"><span class="pim"><img alt="'+t[2]+'" src="images/hub/'+t[1]+'.webp" draggable="false"></span><small>'+t[3]+'</small>'+
+        return '<button type="button" class="ptile pimg'+(done?' done':'')+(lock?' lock':'')+'" data-sec="'+i+'"'+(lock?' aria-disabled="true"':'')+' aria-label="'+t[2]+'"><span class="pim"><img loading="lazy" decoding="async" alt="'+t[2]+'" src="images/hub/'+t[1]+'.webp" draggable="false"></span><small>'+t[3]+'</small>'+
           '<span class="bd">'+(lock?'🔒':done?'✅':'')+'</span></button>'}).join('')+'</div>';
     if(r.st[4])st.appendChild(nextBtn('🏆 '+(r.done?T('شهادتي','My certificate'):T('استلم شهادتك','Get your certificate')),function(){cur=5;renderStation()}));
     st.querySelectorAll('[data-sec]').forEach(function(b){b.addEventListener('click',function(){
@@ -2436,7 +2436,7 @@ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",
     }
     function enHl(w){var ph=enPhrase(w);return ph?markIn(w.ex,ph):esc(w.ex||'')}
     function emImg(e){if(!e)return '';var f=Array.from(e).map(function(c){return c.codePointAt(0).toString(16)}).filter(function(x){return x!=='fe0f'}).join('-');
-      return '<img src="images/emoji/'+f+'.svg" alt="" width="56" height="56" onerror="this.replaceWith(document.createTextNode(\''+e+'\'))">'}
+      return '<img loading="lazy" decoding="async" src="images/emoji/'+f+'.svg" alt="" width="56" height="56" onerror="this.replaceWith(document.createTextNode(\''+e+'\'))">'}
     function inDictW(w){return dict.some(function(d){return d.en.toLowerCase()===w.en.toLowerCase()})}
     function bindStar(w){
       var b=$('vStar');if(!b)return;
