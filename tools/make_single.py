@@ -41,7 +41,8 @@ def render(app: str, fonts: bool = True) -> str:
             raise SystemExit(f"مفقود: {src}")
         return "<script>" + f.read_text(encoding="utf-8").replace("</script", "<\\/script") + "</script>"
 
-    s = re.sub(r'<script src="(\.\./\.\./shared/[^"]+)"[^>]*></script>', script, s)
+    s = re.sub(r'<script src="((?:\.\./\.\./shared|data)/[^"]+)"[^>]*></script>', script, s)
+    s = re.sub(r'url\("(\.\./\.\./shared/fonts/[^"]+\.woff2)"\)', lambda m: f'url("{b64((d / m.group(1)).resolve(), "font/woff2")}")', s)
     if fonts:
         s = re.sub(r'url\("(\.\./\.\./shared/fonts/[^"]+\.ttf)"\)', lambda m: f'url("{b64((d / m.group(1)).resolve(), "font/ttf")}")', s)
     else:
