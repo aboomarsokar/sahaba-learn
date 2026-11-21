@@ -18,7 +18,16 @@ def b64(p: Path, mime: str) -> str:
     return f"data:{mime};base64," + base64.b64encode(p.read_bytes()).decode()
 
 
-def build(app: str, out: Path) -> Path:
+def build(app: str, out: Path, fonts: bool = True) -> Path:
+    s = render(app, fonts)
+    out.mkdir(parents=True, exist_ok=True)
+    f = out / (app.replace("/", "-") + ".html")
+    f.write_text(s, encoding="utf-8")
+    return f
+
+
+def render(app: str, fonts: bool = True) -> str:
+    """نصّ الملف المستقل لتطبيق. fonts=False يترك @@FONT_REG@@ و@@FONT_BOLD@@ ليُستبدلا لاحقاً (للحزمة الجامعة)."""
     d = ROOT / app
     s = (d / "index.html").read_text(encoding="utf-8")
 
@@ -33,7 +42,10 @@ def build(app: str, out: Path) -> Path:
         return "<script>" + f.read_text(encoding="utf-8").replace("</script", "<\\/script") + "</script>"
 
     s = re.sub(r'<script src="(\.\./\.\./shared/[^"]+)"[^>]*></script>', script, s)
-    s = re.sub(r'url\("(\.\./\.\./shared/fonts/[^"]+\.ttf)"\)', lambda m: f'url("{b64((d / m.group(1)).resolve(), "font/ttf")}")', s)
+    if fonts:
+        s = re.sub(r'url\("(\.\./\.\./shared/fonts/[^"]+\.ttf)"\)', lambda m: f'url("{b64((d / m.group(1)).resolve(), "font/ttf")}")', s)
+    else:
+        s = s.replace('url("../../shared/fonts/IBMPlexSansArabic-Regular.ttf")', 'url("@@FONT_REG@@")').replace('url("../../shared/fonts/IBMPlexSansArabic-Bold.ttf")', 'url("@@FONT_BOLD@@")')
     s = re.sub(r'(["\'])\.\./\.\./shared/kinex\.jpg\1', lambda m: m.group(1) + b64(ROOT / "shared" / "kinex.jpg", "image/jpeg") + m.group(1), s)
     s = re.sub(r'<link rel="(?:manifest|icon|apple-touch-icon)"[^>]*>', "", s)
     s = "\n".join(("" if ("serviceWorker" in ln and "register(" in ln and len(ln) < 400) else ln) for ln in s.split("\n"))
@@ -42,10 +54,7 @@ def build(app: str, out: Path) -> Path:
     left = sorted(set(re.findall(r'(?:src|href)=["\'](\.\./[^"\']+)["\']', s)))
     if left:
         print("  تنبيه: مراجع خارجية متبقّية:", left)
-    out.mkdir(parents=True, exist_ok=True)
-    f = out / (app.replace("/", "-") + ".html")
-    f.write_text(s, encoding="utf-8")
-    return f
+    return s
 
 
 if __name__ == "__main__":
