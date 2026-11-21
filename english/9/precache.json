@@ -195,6 +195,7 @@
 "../../shared/fonts/IBMPlexSansArabic-Regular.ttf",
 "../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
 "../../shared/wisdom.js",
-"../../shared/offline.js"
+"../../shared/offline.js",
+"../../shared/motion.js"
 ]
 }

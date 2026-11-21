@@ -232,7 +232,7 @@ def patch(out: Path, k: int, d: str, name: str, store: str, pre: str) -> None:
     # هوية الصحابة البصرية: كريمي وأخضر وبني (يبقى لون المادة المميِّز للتمييز بين الموادّ فقط)
     s = rep(s, ":root{--bg:#EFE3CC;--card:#FBF5E8;--text:#2A2016;--muted:#5C4B38;--bd:#C9B28C;--pri:#5A3E1A;--ink:#2A2016;--c1:#1565C0;--c1b:#E6D3AE;",
             ":root{--bg:#FAF6EB;--card:#FFFFFF;--text:#0a5230;--muted:#4b7a5f;--bd:#EEE4DB;--pri:#0a5230;--ink:#0a5230;--c1:#1565C0;--c1b:#EEE4DB;")
-    s = rep(s, "</body>", ACH.replace("__DIR__", d).replace("__NAME__", name) + '<script src="../../shared/update-notify.js" data-app="' + name + '" data-icon="../../shared/icons/portal-192.png" defer></script>\n<script src="../../shared/offline.js" defer></script>\n</body>')
+    s = rep(s, "</body>", ACH.replace("__DIR__", d).replace("__NAME__", name) + '<script src="../../shared/update-notify.js" data-app="' + name + '" data-icon="../../shared/icons/portal-192.png" defer></script>\n<script src="../../shared/offline.js" defer></script>\n<script src="../../shared/motion.js" defer></script>\n</body>')
     (out / "index.html").write_text(s, encoding="utf-8")
     (out / "manifest.webmanifest").write_text(json.dumps({
         "name": f"{name} — الصف العاشر", "short_name": name, "lang": "ar", "dir": "rtl", "start_url": "./", "scope": "./", "display": "standalone",
@@ -243,7 +243,7 @@ def patch(out: Path, k: int, d: str, name: str, store: str, pre: str) -> None:
     files = ["./index.html", "./manifest.webmanifest"]
     for sub in ("lessons", "lib", "images", "videos"):
         files += [f"./{sub}/{p.name}" for p in sorted((out / sub).glob("*")) if p.is_file()] if (out / sub).exists() else []
-    files += ["../../shared/update-notify.js", "../../shared/offline.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", f"../../shared/covers/{d}.webp"]
+    files += ["../../shared/update-notify.js", "../../shared/offline.js", "../../shared/motion.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", f"../../shared/covers/{d}.webp"]
     (out / "precache.json").write_text(json.dumps({"files": files}, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
     total = sum((out / f).stat().st_size for f in files if (out / f).is_file())
     print(f"   {d}/10: {len(files)} ملفاً في قائمة التخزين، {total / 1048576:.1f} م.ب")

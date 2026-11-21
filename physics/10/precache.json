@@ -125,6 +125,7 @@
 "../../shared/fonts/IBMPlexSansArabic-Bold.ttf",
 "../../shared/durra.js",
 "../../shared/wisdom.js",
-"../../shared/offline.js"
+"../../shared/offline.js",
+"../../shared/motion.js"
 ]
 }

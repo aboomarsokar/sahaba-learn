@@ -618,6 +618,7 @@ if(window.caches)caches.keys().then(function(ks){ks.forEach(function(k){if(/^(ph
 if(navigator.serviceWorker)navigator.serviceWorker.getRegistrations().then(function(rs){rs.forEach(function(r){if(/\/(physics|chemistry|biology|science)\/10\//.test(r.scope))r.unregister()})});
 try{indexedDB.deleteDatabase("pcbflags")}catch(e){}}catch(e){}})();localStorage.setItem("sahaba-purge-sci-1","1")}}catch(e){}</script>
 <script src="shared/offline.js" data-no-badge defer></script>
+<script src="shared/motion.js" defer></script>
 <script src="shared/durra.js"></script>
 <script src="shared/intro.js"></script>
 <script>

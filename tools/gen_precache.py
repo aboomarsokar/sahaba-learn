@@ -17,9 +17,9 @@ SKIP_FILES = {"sw.js", "precache.json", ".gitignore", ".DS_Store", "CLAUDE.md", 
 SKIP_EXT = {".md", ".py", ".txt"}
 # ملفّاتٌ مشتركة خارج مجلّد التطبيق تحتاجها صفحاته
 EXTRAS = {
-    "english/10": ["../../shared/update-notify.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/english.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/wisdom.js", "../../shared/offline.js"],
-    "arabic/10": ["../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/arabic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2", "../../shared/wisdom.js", "../../shared/offline.js"],
-    "islamic/10": ["../../shared/update-notify.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/islamic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2", "../../shared/wisdom.js", "../../shared/offline.js"],
+    "english/10": ["../../shared/update-notify.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/english.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/wisdom.js", "../../shared/offline.js", "../../shared/motion.js"],
+    "arabic/10": ["../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/arabic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2", "../../shared/wisdom.js", "../../shared/offline.js", "../../shared/motion.js"],
+    "islamic/10": ["../../shared/update-notify.js", "../../shared/durra.js", "../../shared/intro.js", "../../shared/kinex.jpg", "../../shared/covers/islamic.webp", "../../shared/fonts/IBMPlexSansArabic-Regular.ttf", "../../shared/fonts/IBMPlexSansArabic-Bold.ttf", "../../shared/fonts/aref-ruqaa-arabic-700.woff2", "../../shared/wisdom.js", "../../shared/offline.js", "../../shared/motion.js"],
 }
 
 for _k in list(EXTRAS):                 # تطبيقات التاسع والثامن تشارك ملفات العاشر المشتركة
