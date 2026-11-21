@@ -33,7 +33,7 @@
   function requestPrecache(r) {
     var w = r.active || navigator.serviceWorker.controller, c = navigator.connection;
     if (!w || (c && c.saveData)) return;
-    setTimeout(function () { var go = function () { w.postMessage({ type: 'precache' }); }; if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 8000 }); else go(); }, 12000);
+    setTimeout(function () { var go = function () { w.postMessage({ type: 'precache' }); }; if (window.requestIdleCallback) requestIdleCallback(go, { timeout: 8000 }); else go(); }, 2500);
   }
   navigator.serviceWorker.ready.then(function (r) {
     requestPrecache(r);

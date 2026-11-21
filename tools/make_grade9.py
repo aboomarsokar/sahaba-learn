@@ -243,7 +243,7 @@ def english() -> None:
 
 
 # arabic/9 صار بمحتوى حقيقي (من الكتاب والرزمة): أُوقف توليده حتى لا يُمحى. للتجديد من الصفر استعمل arabic() يدوياً.
-SUBJECTS = {"islamic": islamic, "math": math, "english": english}
+SUBJECTS = {}   # islamic/9 → tools/islamic9_wire.py ، english/9 → tools/make_english9.py ، math/9 → tools/make_pack8.py math9 ، arabic/9 يدوي
 
 
 def main(names):

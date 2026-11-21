@@ -1,0 +1,1113 @@
+{
+ "n": 10,
+ "title": "حديقة للجميع",
+ "titleEn": "A garden for all",
+ "lesson": {
+  "id": "10-1",
+  "title": "A garden for all",
+  "titleAr": "حديقة للجميع",
+  "vocab": [
+   {
+    "en": "aim",
+    "ar": "يهدف / هدف",
+    "em": "🎯",
+    "ex": "We're aiming to build a garden for everyone.",
+    "exAr": "نهدف إلى بناء حديقة للجميع."
+   },
+   {
+    "en": "middle",
+    "ar": "وسط",
+    "em": "📍",
+    "ex": "The garden will look lovely in the middle of town.",
+    "exAr": "ستبدو الحديقة جميلة في وسط البلدة."
+   },
+   {
+    "en": "comment",
+    "ar": "يعلّق / تعليق",
+    "em": "💬",
+    "ex": "Lana and Lisa commented on the waste ground.",
+    "exAr": "علّقت لانا وليزا على الأرض المهجورة."
+   },
+   {
+    "en": "notice",
+    "ar": "إعلان / يلاحظ",
+    "em": "📌",
+    "ex": "Look at this notice on the fence.",
+    "exAr": "انظري إلى هذا الإعلان على السياج."
+   },
+   {
+    "en": "create",
+    "ar": "يُنشئ / يُبدع",
+    "em": "🛠",
+    "ex": "Would you like to help create a community garden?",
+    "exAr": "هل تودّ المساعدة في إنشاء حديقة للمجتمع؟"
+   },
+   {
+    "en": "fence",
+    "ar": "سياج",
+    "em": "🚧",
+    "ex": "We need to build a fence round the garden.",
+    "exAr": "نحتاج إلى بناء سياج حول الحديقة."
+   },
+   {
+    "en": "rubbish",
+    "ar": "قمامة",
+    "em": "🗑",
+    "ex": "Look at all the rubbish and broken glass.",
+    "exAr": "انظري إلى كلّ هذه القمامة والزجاج المكسور."
+   },
+   {
+    "en": "ashamed (of)",
+    "ar": "يخجل (من)",
+    "em": "😳",
+    "ex": "The people who left the rubbish should be ashamed of themselves.",
+    "exAr": "على الذين تركوا القمامة أن يخجلوا من أنفسهم."
+   },
+   {
+    "en": "carpenter",
+    "ar": "نجّار",
+    "em": "🪚",
+    "ex": "We need a carpenter to help repair the fence.",
+    "exAr": "نحتاج إلى نجّار ليساعد في إصلاح السياج."
+   },
+   {
+    "en": "clean up",
+    "ar": "ينظّف (المكان)",
+    "em": "🧹",
+    "ex": "I'll help you clean up everything.",
+    "exAr": "سأساعدك في تنظيف كلّ شيء."
+   },
+   {
+    "en": "energy",
+    "ar": "طاقة / نشاط",
+    "em": "⚡",
+    "ex": "We have a great team with lots of energy.",
+    "exAr": "لدينا فريق رائع يتمتّع بنشاط كبير."
+   },
+   {
+    "en": "gardener",
+    "ar": "بستاني",
+    "em": "👨‍🌾",
+    "ex": "We need a gardener to choose the trees and plants.",
+    "exAr": "نحتاج إلى بستاني ليختار الأشجار والنباتات."
+   },
+   {
+    "en": "look forward to",
+    "ar": "يتطلّع إلى",
+    "em": "🤩",
+    "ex": "I'm looking forward to Sunday.",
+    "exAr": "أتطلّع إلى يوم الأحد."
+   },
+   {
+    "en": "committee",
+    "ar": "لجنة",
+    "em": "👥",
+    "ex": "I've just joined the Garden Project Committee.",
+    "exAr": "انضممتُ للتوّ إلى لجنة مشروع الحديقة."
+   },
+   {
+    "en": "repair",
+    "ar": "يصلح",
+    "em": "🔧",
+    "ex": "We need to repair the old fence.",
+    "exAr": "نحتاج إلى إصلاح السياج القديم."
+   },
+   {
+    "en": "secretary",
+    "ar": "أمين السرّ / سكرتير",
+    "em": "📝",
+    "ex": "The secretary takes notes at the meeting.",
+    "exAr": "يدوّن أمين السرّ الملاحظات في الاجتماع."
+   }
+  ],
+  "reading": {
+   "title": "A garden for all",
+   "paras": [
+    {
+     "en": "One day, Lana and Lisa commented on a piece of waste ground that they always went past on their way to school. Lana: Look at all the rubbish and broken glass. It isn't very nice, is it? Lisa: No, it's horrible! They should do something about it, shouldn't they?",
+     "ar": "في أحد الأيام علّقت لانا وليزا على قطعة أرض مهجورة كانتا تمرّان بجانبها دائماً في طريقهما إلى المدرسة. لانا: انظري إلى كلّ هذه القمامة والزجاج المكسور. إنّها ليست جميلة، أليس كذلك؟ ليزا: نعم، إنّها فظيعة! عليهم أن يفعلوا شيئاً حيالها، أليس كذلك؟"
+    },
+    {
+     "en": "Lana: Maybe someone is doing something. Look at this notice on the fence. 'Would you like to help create a community garden here? Then please come and discuss the plans. All are welcome! Community Hall, 8:30 Tuesday, 4th March.' Lisa: That's happening tonight, isn't it? I'd like to go. What about you? Lana: Yes, but we can't go alone, can we? I'll ask Dad to go, too.",
+     "ar": "لانا: ربّما هناك من يفعل شيئاً. انظري إلى هذا الإعلان على السياج: «هل تودّ المساعدة في إنشاء حديقة للمجتمع هنا؟ تفضّل بالحضور لمناقشة الخطط. الجميع مرحّب بهم! قاعة المجتمع، الساعة 8:30 من مساء الثلاثاء 4 آذار/مارس». ليزا: هذا يحدث الليلة، أليس كذلك؟ أودّ أن أذهب، وأنتِ؟ لانا: نعم، لكن لا نستطيع الذهاب وحدنا، أليس كذلك؟ سأطلب من أبي أن يذهب معنا."
+    },
+    {
+     "en": "Mr Qadiri was free that evening, so he went to the meeting with the girls. Speaker: We're aiming to build a garden for everyone. For example, we want to make part of it a safe play area for children. Lana: You can imagine the trees and flowers, can't you? Lisa: Yes, it'll look lovely right here in the middle of town, won't it? Mr Qadiri: Yes, it will. It's a good project.",
+     "ar": "كان السيد قادري متفرّغاً تلك الأمسية فذهب إلى الاجتماع مع الفتاتين. المتحدّث: نهدف إلى بناء حديقة للجميع. فمثلاً نريد أن نجعل جزءاً منها مكاناً آمناً للعب الأطفال. لانا: تستطيعين أن تتخيّلي الأشجار والأزهار، أليس كذلك؟ ليزا: نعم، ستبدو جميلة هنا في وسط البلدة، أليس كذلك؟ السيد قادري: بلى، ستكون كذلك. إنّه مشروع جيّد."
+    },
+    {
+     "en": "Speaker: Spring is coming, so we're starting this Sunday. Who'd like to join us? Lisa: But we can't start yet, can we? It's still early March, so it's too cold. Mr Qadiri: Oh, but we certainly can start. March is a busy time in the garden. Lana: Come on, Lisa. We can try it, can't we? Let's have a go.",
+     "ar": "المتحدّث: الربيع قادم، لذلك سنبدأ يوم الأحد هذا. من يودّ الانضمام إلينا؟ ليزا: لكن لا نستطيع أن نبدأ بعد، أليس كذلك؟ ما زلنا في بداية آذار/مارس والجوّ بارد جدّاً. السيد قادري: بل نستطيع بالتأكيد أن نبدأ، فآذار/مارس وقت مزدحم في الحديقة. لانا: هيّا يا ليزا، نستطيع أن نجرّب، أليس كذلك؟ لنحاول."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did the girls go past on their way to school?",
+     "o": [
+      "A community hall",
+      "A piece of waste ground",
+      "A fish market"
+     ],
+     "a": 1
+    },
+    {
+     "q": "What did the notice invite people to do?",
+     "o": [
+      "Help create a community garden",
+      "Sell their old things",
+      "Join a football team"
+     ],
+     "a": 0
+    },
+    {
+     "tf": true,
+     "q": "The meeting was on Tuesday at 8:30."
+    },
+    {
+     "q": "Who went to the meeting with the girls?",
+     "o": [
+      "Their teacher",
+      "Mr Qadiri",
+      "Jack Hill"
+     ],
+     "a": 1
+    },
+    {
+     "tf": false,
+     "q": "Lisa thought they could start work immediately because it was warm.",
+     "why": "She thought it was too cold in early March."
+    }
+   ]
+  },
+  "rules": [
+   {
+    "title": "Tag questions with be and modal verbs",
+    "titleAr": "الأسئلة الذيلية مع be والأفعال الناقصة",
+    "explain": "نستعمل <b>السؤال الذيلي</b> عندما نظنّ أنّنا نعرف الجواب ونتوقّع أن يوافقنا الآخر. إذا كانت الجملة <b>مثبتة</b> فالذيل <b>منفي</b>، وإذا كانت <b>منفية</b> فالذيل <b>مثبت</b> (It isn't very nice, <b>is it</b>?). ومع <b>is / are / was / were</b> والأفعال الناقصة (can, will, should …) نكرّر <b>الفعل نفسه</b> في الذيل، ثمّ الضمير.",
+    "form": "جملة مثبتة + ذيل منفي: It's happening, isn't it?    ·    جملة منفية + ذيل مثبت: It isn't nice, is it?",
+    "examples": [
+     {
+      "en": "That's happening tonight, **isn't it**?",
+      "ar": "جملة مثبتة ← ذيل منفي"
+     },
+     {
+      "en": "It isn't very nice, **is it**?",
+      "ar": "جملة منفية ← ذيل مثبت"
+     },
+     {
+      "en": "It'll look lovely, **won't it**?",
+      "ar": "will ← won't it"
+     },
+     {
+      "en": "We can't go alone, **can we**?",
+      "ar": "can't ← can we"
+     },
+     {
+      "en": "They should do something about it, **shouldn't they**?",
+      "ar": "should ← shouldn't they"
+     }
+    ],
+    "questions": [
+     {
+      "q": "That's happening tonight, ___?",
+      "o": [
+       "isn't it",
+       "is it",
+       "doesn't it"
+      ],
+      "a": 0
+     },
+     {
+      "q": "It isn't very nice, ___?",
+      "o": [
+       "isn't it",
+       "is it",
+       "does it"
+      ],
+      "a": 1
+     },
+     {
+      "q": "It'll look lovely, ___?",
+      "o": [
+       "will it",
+       "won't it",
+       "doesn't it"
+      ],
+      "a": 1
+     },
+     {
+      "q": "We can't go alone, ___?",
+      "o": [
+       "can't we",
+       "can we",
+       "do we"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "They should do something about it, ___ they?",
+      "a": [
+       "shouldn't"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «ستبدو جميلة، أليس كذلك؟»",
+      "words": [
+       "It'll",
+       "look",
+       "lovely,",
+       "won't",
+       "it?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Tag questions with do, does and did",
+    "titleAr": "الأسئلة الذيلية مع do وdoes وdid",
+    "explain": "مع <b>المضارع البسيط</b> نستعمل <b>do / does</b> في الذيل، ومع <b>الماضي البسيط</b> نستعمل <b>did</b>. والقاعدة نفسها: جملة مثبتة ← ذيل منفي (We need a gardener, <b>don't we</b>?)، وجملة منفية ← ذيل مثبت (We didn't talk about this, <b>did we</b>?). ويكون الضمير في الذيل مطابقاً لفاعل الجملة.",
+    "form": "V1 / V(s) ← don't / doesn't    ·    V2 ← didn't    ·    جملة منفية ← do / does / did",
+    "examples": [
+     {
+      "en": "We need a gardener, **don't we**?",
+      "ar": "مضارع مثبت ← ذيل منفي"
+     },
+     {
+      "en": "We don't have people with the right skills, **do we**?",
+      "ar": "مضارع منفي ← ذيل مثبت"
+     },
+     {
+      "en": "We had an excellent discussion, **didn't we**?",
+      "ar": "ماضٍ مثبت ← didn't"
+     },
+     {
+      "en": "We didn't talk about this last night, **did we**?",
+      "ar": "ماضٍ منفي ← did"
+     },
+     {
+      "en": "Jack Hill wants to make a request, **doesn't he**?",
+      "ar": "فاعل مفرد ← doesn't he"
+     }
+    ],
+    "questions": [
+     {
+      "q": "We need a gardener, ___?",
+      "o": [
+       "don't we",
+       "do we",
+       "aren't we"
+      ],
+      "a": 0
+     },
+     {
+      "q": "We didn't talk about this last night, ___?",
+      "o": [
+       "didn't we",
+       "did we",
+       "do we"
+      ],
+      "a": 1
+     },
+     {
+      "q": "Rania visits her grandmother every week, ___?",
+      "o": [
+       "doesn't she",
+       "does she",
+       "didn't she"
+      ],
+      "a": 0
+     },
+     {
+      "q": "The twins don't enjoy shopping much, ___?",
+      "o": [
+       "don't they",
+       "do they",
+       "does they"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "Jana enjoyed the family picnic, ___ she?",
+      "a": [
+       "didn't"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «لقد أجرينا نقاشاً ممتازاً، أليس كذلك؟»",
+      "words": [
+       "We",
+       "had",
+       "an",
+       "excellent",
+       "discussion,",
+       "didn't",
+       "we?"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Expressions with do and make",
+    "titleAr": "تعبيرات مع do وmake",
+    "explain": "نستعمل <b>do</b> مع الأعمال والمهامّ (do some shopping, do some homework, do some work, do a project, do a request)، ونستعمل <b>make</b> مع ما نصنعه أو ننتجه (make a cake, make a mess, make a phone call, make a request). وبعض التعبيرات يجب حفظها كما هي.",
+    "form": "do + some shopping / some homework / some work / a project    ·    make + a cake / a mess / a phone call / a request",
+    "examples": [
+     {
+      "en": "I went to the supermarket and **did some shopping**.",
+      "ar": "do ← عمل"
+     },
+     {
+      "en": "In geography we're going to **do a project** on the weather.",
+      "ar": "do ← مشروع"
+     },
+     {
+      "en": "My baby brother's **making a mess** with his food.",
+      "ar": "make ← فوضى"
+     },
+     {
+      "en": "I'm going to **make a cake** for her birthday.",
+      "ar": "make ← صنع"
+     },
+     {
+      "en": "I need to **make a phone call** and get some help.",
+      "ar": "make ← مكالمة"
+     }
+    ],
+    "questions": [
+     {
+      "q": "After dinner, I usually ___ some homework.",
+      "o": [
+       "do",
+       "make",
+       "have made"
+      ],
+      "a": 0
+     },
+     {
+      "q": "My little brother is ___ a mess with his food again.",
+      "o": [
+       "doing",
+       "making",
+       "doing a"
+      ],
+      "a": 1
+     },
+     {
+      "q": "I need to ___ a phone call and get some help.",
+      "o": [
+       "do",
+       "make",
+       "take"
+      ],
+      "a": 1
+     },
+     {
+      "q": "It's Rana's birthday tomorrow, so I'm going to ___ a cake for her.",
+      "o": [
+       "do",
+       "make",
+       "does"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "We went to the supermarket and ___ some shopping. (do, past)",
+      "a": [
+       "did"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+      "words": [
+       "I",
+       "have",
+       "to",
+       "make",
+       "a",
+       "phone",
+       "call",
+       "first."
+      ]
+     }
+    ]
+   }
+  ],
+  "mastery": [
+   {
+    "q": "\"fence\" means:",
+    "o": [
+     "سياج",
+     "قمامة",
+     "لجنة"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"gardener\" means:",
+    "o": [
+     "نجّار",
+     "بستاني",
+     "أمين سرّ"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "q": "\"rubbish\" means:",
+    "o": [
+     "طاقة",
+     "قمامة",
+     "إعلان"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "Lana and Lisa saw a notice on the fence.",
+    "lv": "easy"
+   },
+   {
+    "q": "\"look forward to\" means:",
+    "o": [
+     "يتطلّع إلى",
+     "ينظّف",
+     "يهدف إلى"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "The garden project was going to start on Sunday.",
+    "lv": "easy"
+   },
+   {
+    "type": "match",
+    "q": "صِل كلّ كلمة بمعناها",
+    "pairs": [
+     [
+      "committee",
+      "لجنة"
+     ],
+     [
+      "carpenter",
+      "نجّار"
+     ],
+     [
+      "repair",
+      "يصلح"
+     ],
+     [
+      "ashamed (of)",
+      "يخجل (من)"
+     ]
+    ],
+    "lv": "medium"
+   },
+   {
+    "q": "It isn't very nice, ___?",
+    "o": [
+     "isn't it",
+     "is it",
+     "was it"
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "q": "The garden will be ready by June, ___?",
+    "o": [
+     "won't it",
+     "will it",
+     "isn't it"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "You live in the middle of town, ___?",
+    "o": [
+     "don't you",
+     "do you",
+     "aren't you"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "They didn't need to buy any fruit, ___?",
+    "o": [
+     "did they",
+     "didn't they",
+     "do they"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "Why didn't Lisa want to start work at first?",
+    "o": [
+     "She thought it was too cold",
+     "She was busy",
+     "She didn't like gardens"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "Choose the correct expression.",
+    "o": [
+     "make some shopping",
+     "do some shopping",
+     "make some homework"
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "We can't wait any longer, ___ we? (can)",
+    "a": [
+     "can"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "type",
+    "q": "Fuad doesn't play basketball, ___ he? (does)",
+    "a": [
+     "does"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "That's",
+     "happening",
+     "tonight,",
+     "isn't",
+     "it?"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "We",
+     "didn't",
+     "talk",
+     "about",
+     "this,",
+     "did",
+     "we?"
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "We need a gardener, don't we?",
+     "We need a gardener, do we?",
+     "We need a gardener, aren't we?"
+    ],
+    "a": 0,
+    "lv": "hard"
+   },
+   {
+    "q": "Which sentence uses a modal verb correctly in the tag?",
+    "o": [
+     "It will look lovely, won't it?",
+     "It will look lovely, doesn't it?",
+     "It will look lovely, isn't it?"
+    ],
+    "a": 0,
+    "lv": "hard"
+   },
+   {
+    "q": "What does Mr Qadiri say about March?",
+    "o": [
+     "It is a busy time in the garden",
+     "It is too cold to work",
+     "It is a quiet month"
+    ],
+    "a": 0,
+    "lv": "hard"
+   }
+  ]
+ },
+ "rulecards": {
+  "10-1#0": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|tag questions} when we think we know the answer and expect the other person to agree.",
+    "useAr": "نستعمل {t|الأسئلة الذيلية} حين نظنّ أنّنا نعرف الجواب ونتوقّع موافقة الآخر.",
+    "signals": [
+     "isn't it?",
+     "can we?",
+     "won't it?"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Positive sentence",
+    "labelAr": "جملة مثبتة",
+    "formula": "{s|Positive sentence}, {t|negative tag}?",
+    "examples": [
+     {
+      "en": "That's happening tonight, {t|isn't it}?",
+      "ar": "هذا يحدث الليلة، أليس كذلك؟"
+     },
+     {
+      "en": "It'll look lovely, {t|won't it}?",
+      "ar": "ستبدو جميلة، أليس كذلك؟"
+     }
+    ],
+    "tip": "مثبت ← ذيل منفي."
+   },
+   {
+    "k": "neg",
+    "label": "Negative sentence",
+    "labelAr": "جملة منفية",
+    "formula": "{s|Negative sentence}, {t|positive tag}?",
+    "examples": [
+     {
+      "en": "It {n|isn't} very nice, {t|is it}?",
+      "ar": "إنّها ليست جميلة، أليس كذلك؟"
+     },
+     {
+      "en": "We {n|can't} go alone, {t|can we}?",
+      "ar": "لا نستطيع الذهاب وحدنا، أليس كذلك؟"
+     }
+    ],
+    "tip": "منفي ← ذيل مثبت."
+   },
+   {
+    "k": "q",
+    "label": "Modal verbs",
+    "labelAr": "الأفعال الناقصة",
+    "formula": "{s|S} + {v|modal} + {v|V1}, {t|modal (opposite)} + {s|pronoun}?",
+    "examples": [
+     {
+      "en": "They {v|should} do something, {t|shouldn't} {s|they}?",
+      "ar": "عليهم أن يفعلوا شيئاً، أليس كذلك؟"
+     }
+    ],
+    "tip": "نكرّر الفعل الناقص نفسه."
+   },
+   {
+    "k": "note",
+    "label": "Short answers",
+    "labelAr": "الإجابات القصيرة",
+    "body": "Yes, it is. / No, it isn't.\nYes, it will. / No, it won't.\nYes, we can. / No, we can't.",
+    "examples": []
+   }
+  ],
+  "10-1#1": [
+   {
+    "k": "intro",
+    "useEn": "With the {t|present simple} we use {t|do / does} in the tag, and with the {t|past simple} we use {t|did}.",
+    "useAr": "مع {t|المضارع البسيط} نستعمل {t|do / does} في الذيل، ومع {t|الماضي البسيط} نستعمل {t|did}.",
+    "signals": [
+     "do / does",
+     "did",
+     "every week"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Positive sentence",
+    "labelAr": "جملة مثبتة",
+    "formula": "{s|S} + {v|V1 / V(s) / V2}, {t|don't / doesn't / didn't} + {s|pronoun}?",
+    "examples": [
+     {
+      "en": "We need a gardener, {t|don't} {s|we}?",
+      "ar": "نحتاج إلى بستاني، أليس كذلك؟"
+     },
+     {
+      "en": "We had an excellent discussion, {t|didn't} {s|we}?",
+      "ar": "أجرينا نقاشاً ممتازاً، أليس كذلك؟"
+     }
+    ]
+   },
+   {
+    "k": "neg",
+    "label": "Negative sentence",
+    "labelAr": "جملة منفية",
+    "formula": "{s|S} + {n|don't / doesn't / didn't} + {v|V1}, {t|do / does / did} + {s|pronoun}?",
+    "examples": [
+     {
+      "en": "We {n|didn't} talk about this last night, {t|did} {s|we}?",
+      "ar": "لم نتحدّث عن هذا الليلة الماضية، أليس كذلك؟"
+     },
+     {
+      "en": "Fuad {n|doesn't} play basketball, {t|does} {s|he}?",
+      "ar": "فؤاد لا يلعب كرة السلّة، أليس كذلك؟"
+     }
+    ],
+    "tip": "الضمير يطابق الفاعل."
+   },
+   {
+    "k": "note",
+    "label": "Match the subject",
+    "labelAr": "طابق الفاعل",
+    "body": "Jack Hill → {t|he}\nthe twins → {t|they}\nRania → {t|she}\nyou → {t|you}",
+    "examples": []
+   }
+  ],
+  "10-1#2": [
+   {
+    "k": "intro",
+    "useEn": "Some expressions go with {t|do} and others with {t|make}. We learn them as whole phrases.",
+    "useAr": "بعض التعبيرات تأتي مع {t|do} وبعضها مع {t|make}، ونتعلّمها عبارات كاملة.",
+    "signals": [
+     "do",
+     "make"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "do + …",
+    "labelAr": "do + …",
+    "formula": "{t|do} + {v|some shopping / some homework / some work / a project}",
+    "examples": [
+     {
+      "en": "I went to the supermarket and {t|did} {v|some shopping}.",
+      "ar": "ذهبتُ إلى السوق وتسوّقتُ."
+     },
+     {
+      "en": "We're going to {t|do} {v|a project} on the weather.",
+      "ar": "سنُعدّ مشروعاً عن الطقس."
+     }
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "make + …",
+    "labelAr": "make + …",
+    "formula": "{t|make} + {v|a cake / a mess / a phone call / a request}",
+    "examples": [
+     {
+      "en": "I'm going to {t|make} {v|a cake} for her.",
+      "ar": "سأصنع لها كعكة."
+     },
+     {
+      "en": "He wants to {t|make} {v|a request} on local radio.",
+      "ar": "يريد أن يقدّم طلباً عبر الإذاعة المحلية."
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Opposites in this unit",
+    "labelAr": "متضادات الوحدة",
+    "body": "badly ↔ {t|well}\nbusy ↔ {t|free}\neastern ↔ {t|western}\nfinish ↔ {t|start}\nproud of ↔ {t|ashamed of}",
+    "examples": []
+   }
+  ]
+ },
+ "worksheet": {
+  "readingFrom": 10,
+  "sections": [
+   {
+    "k": "vocab",
+    "questions": [
+     {
+      "q": "We need to build a ___ round the garden.",
+      "o": [
+       "fence",
+       "committee",
+       "energy"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Don't walk there! There's some broken glass and ___.",
+      "o": [
+       "rubbish",
+       "aim",
+       "notice"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Someone who works with wood is a ___.",
+      "o": [
+       "gardener",
+       "carpenter",
+       "secretary"
+      ],
+      "a": 1
+     },
+     {
+      "q": "I'm ___ forward to Sunday.",
+      "o": [
+       "looking",
+       "making",
+       "doing"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "The people who left the rubbish should be ___ of themselves. (ashamed)",
+      "a": [
+       "ashamed"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "grammar",
+    "questions": [
+     {
+      "q": "The garden project must start soon, ___?",
+      "o": [
+       "mustn't it",
+       "must it",
+       "doesn't it"
+      ],
+      "a": 0
+     },
+     {
+      "q": "We shouldn't waste any time, ___?",
+      "o": [
+       "should we",
+       "shouldn't we",
+       "do we"
+      ],
+      "a": 0
+     },
+     {
+      "q": "They bought some new shoes last week, ___?",
+      "o": [
+       "didn't they",
+       "did they",
+       "don't they"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Yasmeen doesn't want to come tomorrow, ___?",
+      "o": [
+       "does she",
+       "doesn't she",
+       "did she"
+      ],
+      "a": 0
+     },
+     {
+      "q": "After dinner, I usually ___ my homework.",
+      "o": [
+       "make",
+       "do",
+       "take"
+      ],
+      "a": 1
+     },
+     {
+      "q": "My brother is ___ a mess with his food.",
+      "o": [
+       "doing",
+       "making",
+       "having do"
+      ],
+      "a": 1
+     }
+    ]
+   },
+   {
+    "k": "reading",
+    "questions": [
+     {
+      "q": "What did the notice on the fence invite people to do?",
+      "o": [
+       "Help create a community garden",
+       "Buy new houses",
+       "Clean the school"
+      ],
+      "a": 0
+     },
+     {
+      "tf": false,
+      "q": "Lisa and Lana could not go to the meeting without an adult.",
+      "why": "They asked Dad to go with them, so they did go."
+     },
+     {
+      "q": "What did the speaker want to make part of the garden?",
+      "o": [
+       "A safe play area for children",
+       "A big car park",
+       "A fish market"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Why did Lisa think they could not start yet?",
+      "o": [
+       "It was still too cold",
+       "They had no tools",
+       "It was raining"
+      ],
+      "a": 0
+     }
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "title": "حديقة للجميع",
+  "titleEn": "A garden for all",
+  "intro": "يتعلّم الطالب مفردات العمل التطوّعي وتنظيم حديقة للمجتمع، والأسئلة الذيلية مع be والأفعال الناقصة ومع do وdid، وتعبيرات do وmake، ويكتب رسالة شخصية وجدولاً زمنياً للمهامّ.",
+  "qa": [
+   {
+    "t": "vocab",
+    "q": "What do these words mean: committee, secretary, carpenter, gardener?",
+    "qAr": "ما معنى الكلمات: committee وsecretary وcarpenter وgardener؟",
+    "a": "**committee** is a group that organises something, **secretary** takes notes, **carpenter** works with wood, and **gardener** looks after plants.",
+    "aAr": "**committee** = **لجنة**، **secretary** = **أمين السرّ**، **carpenter** = **نجّار**، **gardener** = **بستاني**.",
+    "ex": [
+     [
+      "I've agreed to become the secretary and take notes.",
+      "وافقتُ على أن أصبح أمين السرّ وأدوّن الملاحظات."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What are the opposites in this unit?",
+    "qAr": "ما المتضادات في الوحدة؟",
+    "a": "**badly – well**, **busy – free**, **eastern – western**, **finish – start**, **proud of – ashamed of**.",
+    "aAr": "**badly – well** و**busy – free** و**eastern – western** و**finish – start** و**proud of – ashamed of**.",
+    "ex": [
+     [
+      "Rama used to play the piano badly, but now she plays very well.",
+      "كانت راما تعزف البيانو بشكل سيّئ، أمّا الآن فهي تعزف بشكل جيّد جدّاً."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "When do we use do and when do we use make?",
+    "qAr": "متى نستعمل do ومتى نستعمل make؟",
+    "a": "**do** goes with tasks: do some shopping, do some homework, do some work, do a project. **make** goes with things we produce: make a cake, make a mess, make a phone call, make a request.",
+    "aAr": "**do** مع المهامّ: do some shopping وdo some homework وdo some work وdo a project. و**make** مع ما نصنعه: make a cake وmake a mess وmake a phone call وmake a request.",
+    "ex": [
+     [
+      "I have to make a phone call first.",
+      "عليّ أن أجري مكالمة هاتفية أوّلاً."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "What is a tag question and when do we use it?",
+    "qAr": "ما السؤال الذيلي ومتى نستعمله؟",
+    "a": "A tag question is a short question at the end of a sentence. We use it when we think we know the answer and expect the other person to **agree**.",
+    "aAr": "السؤال الذيلي سؤال قصير في نهاية الجملة، نستعمله حين نظنّ أنّنا نعرف الجواب ونتوقّع أن **يوافقنا** الآخر.",
+    "ex": [
+     [
+      "It'll look lovely, won't it?",
+      "ستبدو جميلة، أليس كذلك؟"
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we form tag questions with be and modal verbs?",
+    "qAr": "كيف نكوّن الأسئلة الذيلية مع be والأفعال الناقصة؟",
+    "a": "A positive sentence has a **negative tag**, and a negative sentence has a **positive tag**: ==That's happening tonight, isn't it?== ==We can't go alone, can we?== We repeat the same verb.",
+    "aAr": "الجملة المثبتة لها ذيل **منفي**، والمنفية لها ذيل **مثبت**: ==That's happening tonight, isn't it?== و==We can't go alone, can we?== ونكرّر الفعل نفسه.",
+    "ex": [
+     [
+      "They should do something about it, shouldn't they?",
+      "عليهم أن يفعلوا شيئاً حيال ذلك، أليس كذلك؟"
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we form tag questions with do, does and did?",
+    "qAr": "كيف نكوّن الأسئلة الذيلية مع do وdoes وdid؟",
+    "a": "In the present simple we use **do / does**, and in the past simple we use **did**: ==We need a gardener, don't we?== ==We didn't talk about this, did we?==",
+    "aAr": "في المضارع البسيط نستعمل **do / does**، وفي الماضي البسيط **did**: ==We need a gardener, don't we?== و==We didn't talk about this, did we?==",
+    "ex": [
+     [
+      "Jack Hill wants to make a request, doesn't he?",
+      "جاك هيل يريد تقديم طلب، أليس كذلك؟"
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we answer a tag question?",
+    "qAr": "كيف نجيب عن سؤال ذيلي؟",
+    "a": "We give a short answer with the same verb: **Yes, it will.** **No, we can't.** **Yes, they did.**",
+    "aAr": "نجيب إجابة قصيرة بالفعل نفسه: **Yes, it will.** و**No, we can't.** و**Yes, they did.**",
+    "ex": [
+     [
+      "Yes, we certainly can!",
+      "نعم، نستطيع بالتأكيد!"
+     ]
+    ]
+   },
+   {
+    "t": "reading",
+    "q": "What did Lana and Lisa notice, and what did they decide to do?",
+    "qAr": "ماذا لاحظت لانا وليزا وماذا قرّرتا أن تفعلا؟",
+    "a": "They saw rubbish and broken glass on a piece of waste ground and a notice about a community garden meeting. They decided to go to the meeting with Mr Qadiri.",
+    "aAr": "رأتا قمامة وزجاجاً مكسوراً في أرض مهجورة وإعلاناً عن اجتماع لإنشاء حديقة للمجتمع، فقرّرتا حضور الاجتماع مع السيد قادري."
+   },
+   {
+    "t": "reading",
+    "q": "What does the speaker aim to build?",
+    "qAr": "ماذا يهدف المتحدّث إلى أن يبني؟",
+    "a": "He aims to build a garden for everyone, with a safe play area for children.",
+    "aAr": "يهدف إلى بناء حديقة للجميع فيها مكان آمن للعب الأطفال."
+   },
+   {
+    "t": "reading",
+    "q": "Why does Mr Qadiri say they can start in March?",
+    "qAr": "لماذا يقول السيد قادري إنّ بإمكانهم البدء في آذار/مارس؟",
+    "a": "Because March is a busy time in the garden, so they can certainly start.",
+    "aAr": "لأنّ آذار/مارس وقت مزدحم في الحديقة، فيمكنهم البدء بالتأكيد."
+   },
+   {
+    "t": "writing",
+    "q": "How do we write a personal letter?",
+    "qAr": "كيف نكتب رسالة شخصية؟",
+    "a": "We write our address and the date, then **Dear …,**, the paragraphs, and end with **Love and best wishes,** and our name.",
+    "aAr": "نكتب عنواننا والتاريخ، ثمّ **Dear …,** ثمّ الفقرات، ونختم بـ **Love and best wishes,** واسمنا.",
+    "ex": [
+     [
+      "Guess what! My friend and I are going to build a garden.",
+      "خمّن ماذا! سأبني أنا وصديقي حديقة."
+     ]
+    ]
+   },
+   {
+    "t": "speaking",
+    "q": "How do we suggest ideas and agree a plan?",
+    "qAr": "كيف نقترح أفكاراً ونتّفق على خطّة؟",
+    "a": "We say **We could use the ground behind the lab, couldn't we?** and **We should have some flowers here, shouldn't we?** Or we say **Who'd like to …?**, **Let's have a go.**",
+    "aAr": "نقول **We could use the ground behind the lab, couldn't we?** و**We should have some flowers here, shouldn't we?** أو **Who'd like to …?** و**Let's have a go.**",
+    "ex": [
+     [
+      "Let's have a go!",
+      "لنحاول!"
+     ]
+    ]
+   }
+  ]
+ }
+}

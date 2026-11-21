@@ -1,0 +1,1064 @@
+{
+ "n": 7,
+ "title": "ماذا لو؟",
+ "titleEn": "What if?",
+ "lesson": {
+  "id": "7-1",
+  "title": "What if?",
+  "titleAr": "ماذا لو؟",
+  "vocab": [
+   {
+    "en": "grow up",
+    "ar": "يكبر / ينشأ",
+    "em": "🌱",
+    "ex": "We did everything together while we were growing up.",
+    "exAr": "فعلنا كلّ شيء معاً ونحن نكبر."
+   },
+   {
+    "en": "in trouble",
+    "ar": "في مأزق / في ورطة",
+    "em": "🆘",
+    "ex": "Those people on the mountain are in trouble.",
+    "exAr": "أولئك الناس على الجبل في مأزق."
+   },
+   {
+    "en": "look after",
+    "ar": "يعتني بـ",
+    "em": "🤲",
+    "ex": "I sometimes look after Grandma when Mum has to go shopping.",
+    "exAr": "أعتني أحياناً بجدّتي حين تضطرّ أمّي إلى التسوّق."
+   },
+   {
+    "en": "duty",
+    "ar": "واجب",
+    "em": "🎖",
+    "ex": "It's my duty to go and find them.",
+    "exAr": "من واجبي أن أذهب وأجدهم."
+   },
+   {
+    "en": "fridge",
+    "ar": "ثلّاجة",
+    "em": "🧊",
+    "ex": "There are some chicken pieces in the fridge.",
+    "exAr": "هناك بعض قطع الدجاج في الثلّاجة."
+   },
+   {
+    "en": "piece",
+    "ar": "قطعة",
+    "em": "🧩",
+    "ex": "I'd like a piece of cheese to put on my bread.",
+    "exAr": "أريد قطعة جبن لأضعها على خبزي."
+   },
+   {
+    "en": "simple",
+    "ar": "بسيط / سهل",
+    "em": "✅",
+    "ex": "I'll teach you some simple dishes.",
+    "exAr": "سأعلّمك بعض الأطباق البسيطة."
+   },
+   {
+    "en": "though",
+    "ar": "مع ذلك / رغم ذلك",
+    "em": "↔",
+    "ex": "I don't know much about cooking. I should though.",
+    "exAr": "لا أعرف الكثير عن الطبخ، وينبغي أن أعرف مع ذلك."
+   },
+   {
+    "en": "a bit",
+    "ar": "قليلاً",
+    "em": "🤏",
+    "ex": "When I'm at home, I sometimes help a bit.",
+    "exAr": "حين أكون في البيت أساعد قليلاً أحياناً."
+   },
+   {
+    "en": "imagine",
+    "ar": "يتخيّل",
+    "em": "💭",
+    "ex": "Imagine that your parents have gone out.",
+    "exAr": "تخيّل أنّ والديك خرجا."
+   },
+   {
+    "en": "pour",
+    "ar": "يسكب",
+    "em": "🫗",
+    "ex": "Should I pour the soup into the bowls now?",
+    "exAr": "هل أسكب الحساء في الأوعية الآن؟"
+   },
+   {
+    "en": "stain",
+    "ar": "بقعة / يلطّخ",
+    "em": "🍅",
+    "ex": "You've stained your new sweater.",
+    "exAr": "لقد لطّخت سترتك الجديدة."
+   },
+   {
+    "en": "get rid of",
+    "ar": "يتخلّص من",
+    "em": "🧽",
+    "ex": "Try to get rid of the stain with soap and water.",
+    "exAr": "حاول أن تتخلّص من البقعة بالماء والصابون."
+   },
+   {
+    "en": "chemical",
+    "ar": "مادّة كيميائية",
+    "em": "🧪",
+    "ex": "A gentle chemical cleaner may help.",
+    "exAr": "قد تفيد مادّة تنظيف كيميائية لطيفة."
+   },
+   {
+    "en": "burn",
+    "ar": "يحرق / يحترق",
+    "em": "🔥",
+    "ex": "Don't burn yourself!",
+    "exAr": "لا تحرق نفسك!"
+   },
+   {
+    "en": "necessary",
+    "ar": "ضروري",
+    "em": "❗",
+    "ex": "It isn't usually necessary to use powerful chemicals.",
+    "exAr": "ليس من الضروري عادةً استعمال مواد قويّة."
+   }
+  ],
+  "reading": {
+   "title": "What if?",
+   "paras": [
+    {
+     "en": "Hadeel and Aunt Nada were talking in the kitchen. Aunt Nada: Tell me, do you ever cook back home? Hadeel: When I'm at home, I sometimes help a bit. But I'm often out because I do various sports and other activities after school. So I don't know very much about cooking. I should though.",
+     "ar": "كانت هديل وعمّتها نادية تتحدّثان في المطبخ. العمّة نادية: أخبريني، هل تطبخين في بيتكم؟ هديل: حين أكون في البيت أساعد قليلاً أحياناً، لكنّني كثيراً ما أكون خارجه لأنّني أمارس رياضات وأنشطة متنوّعة بعد المدرسة، فلا أعرف الكثير عن الطبخ، وينبغي أن أتعلّم مع ذلك."
+    },
+    {
+     "en": "Aunt Nada: Yes, if you learn to cook, it'll be very useful later, when you grow up. Hadeel: You're right. I need to learn. Nidal knows much more than me! And if I don't learn, it won't be easy to live away from home in future. Aunt Nada: I'll teach you some simple dishes if you like. Hadeel: Great! Aunt Nada: Let's make lunch for our neighbours, the Masri family. Mrs Masri is sick.",
+     "ar": "العمّة نادية: نعم، إن تعلّمتِ الطبخ فسيكون مفيداً جدّاً لاحقاً حين تكبرين. هديل: معك حقّ، أحتاج إلى أن أتعلّم. نضال يعرف أكثر منّي بكثير! وإن لم أتعلّم فلن يكون سهلاً أن أعيش بعيدة عن البيت مستقبلاً. العمّة نادية: سأعلّمك بعض الأطباق البسيطة إن أحببتِ. هديل: رائع! العمّة نادية: لنُعدّ غداءً لجيراننا عائلة المصري، فالسيدة المصري مريضة."
+    },
+    {
+     "en": "Hadeel: Are they the family opposite? Aunt Nada: Yes. How did you guess? Hadeel: The daughter always looks busy. She goes shopping every day, and I often think maybe her mum isn't well. Aunt Nada: You're right. Her father is in hospital, too, so poor young Sameera is looking after them and the four little ones, too. She's only fourteen, like you. Hadeel: That's very hard. How does she do everything? Aunt Nada: Well, the friends and neighbours are helping, and today it's my turn.",
+     "ar": "هديل: هل هم العائلة المقابلة لنا؟ العمّة نادية: نعم، كيف خمّنتِ؟ هديل: الابنة تبدو مشغولة دائماً، وتذهب إلى التسوّق كلّ يوم، وكثيراً ما أظنّ أنّ أمّها ربّما ليست بخير. العمّة نادية: معك حقّ. أبوها في المستشفى أيضاً، فالمسكينة الصغيرة سميرة تعتني بهما وبالصغار الأربعة أيضاً، وهي في الرابعة عشرة فقط مثلك. هديل: هذا صعب جدّاً، كيف تفعل كلّ شيء؟ العمّة نادية: الأصدقاء والجيران يساعدون، واليوم جاء دوري."
+    },
+    {
+     "en": "Hadeel: If something like that happens back home, neighbours don't usually help as much. You seem to have a closer community here. Aunt Nada: Perhaps you're right. If someone is in trouble here, we always feel it's our duty to help. Now, … there are some chicken pieces in the fridge. Let's cook them and make some salad.",
+     "ar": "هديل: إن حدث شيء كهذا في بلدنا فالجيران لا يساعدون عادةً بهذا القدر. يبدو أنّ لديكم مجتمعاً أكثر تقارباً هنا. العمّة نادية: ربّما معك حقّ. إن وقع أحدهم في مأزق هنا فإنّنا نشعر دائماً أنّ من واجبنا أن نساعد. والآن… هناك بعض قطع الدجاج في الثلّاجة، لنطبخها ونُعدّ بعض السلطة."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What does Hadeel do when she is at home?",
+     "o": [
+      "She cooks every meal",
+      "She sometimes helps a bit",
+      "She never helps"
+     ],
+     "a": 1
+    },
+    {
+     "q": "Why is Hadeel often out?",
+     "o": [
+      "She does sports and other activities after school",
+      "She works in a shop",
+      "She visits her aunt"
+     ],
+     "a": 0
+    },
+    {
+     "tf": false,
+     "q": "Mr Masri is at home with his family.",
+     "why": "He is in hospital."
+    },
+    {
+     "q": "How old is Sameera?",
+     "o": [
+      "Twelve",
+      "Fourteen",
+      "Sixteen"
+     ],
+     "a": 1
+    },
+    {
+     "q": "What does Hadeel think about the community here?",
+     "o": [
+      "It is closer than back home",
+      "It is the same as back home",
+      "It is not friendly"
+     ],
+     "a": 0
+    }
+   ]
+  },
+  "rules": [
+   {
+    "title": "Type 0 and Type 1 conditionals",
+    "titleAr": "الشرط من النوع الصفري والنوع الأول",
+    "explain": "نستعمل <b>النوع الصفري (Type 0)</b> لأمور صحيحة دائماً أو قد تحدث في أيّ وقت: <b>If + مضارع بسيط، مضارع بسيط</b> (If someone is in trouble here, we always feel it's our duty to help). ونستعمل <b>النوع الأول (Type 1)</b> لأمور قد تحدث أو لا تحدث في المستقبل: <b>If + مضارع بسيط، will + فعل</b> (If you learn to cook, it will be very useful later). فجملة if لا تأخذ will أبداً.",
+    "form": "Type 0: If + present simple, present simple    ·    Type 1: If + present simple, will + V1",
+    "examples": [
+     {
+      "en": "If someone is in trouble here, we always **feel** it's our duty to help.",
+      "ar": "النوع الصفري"
+     },
+     {
+      "en": "If something like that happens back home, neighbours **don't** usually help as much.",
+      "ar": "النوع الصفري"
+     },
+     {
+      "en": "If you learn to cook, it **will be** very useful later.",
+      "ar": "النوع الأول"
+     },
+     {
+      "en": "If I don't learn, it **won't be** easy to live away from home.",
+      "ar": "النوع الأول (نفي)"
+     }
+    ],
+    "questions": [
+     {
+      "q": "If it is a summer camp day, she always ___ them all there.",
+      "o": [
+       "will take",
+       "takes",
+       "is taking"
+      ],
+      "a": 1,
+      "why": "Type 0: مضارع بسيط في الجزأين"
+     },
+     {
+      "q": "If she needs more medicine today, I ___ to go to the doctor's.",
+      "o": [
+       "have",
+       "will have",
+       "had"
+      ],
+      "a": 1,
+      "why": "Type 1: will + V1"
+     },
+     {
+      "q": "If the children's rooms are untidy, she ___ everything away tidily.",
+      "o": [
+       "puts",
+       "would put",
+       "will putting"
+      ],
+      "a": 0,
+      "why": "Type 0"
+     },
+     {
+      "type": "type",
+      "q": "If we ___ more fruit, I'll go to the market. (need)",
+      "a": [
+       "need"
+      ],
+      "why": "جملة if بالمضارع البسيط"
+     },
+     {
+      "type": "type",
+      "q": "If she doesn't need more medicine, I ___ to the doctor's. (not / go)",
+      "a": [
+       "won't go",
+       "will not go"
+      ],
+      "why": "Type 1 منفي"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «إن تعلّمتِ الطبخ فسيكون ذلك مفيداً»",
+      "words": [
+       "If",
+       "you",
+       "learn",
+       "to",
+       "cook,",
+       "it",
+       "will",
+       "be",
+       "useful."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Type 2 conditionals",
+    "titleAr": "الشرط من النوع الثاني",
+    "explain": "نستعمل <b>النوع الثاني (Type 2)</b> للمواقف <b>غير الواقعية</b> التي نتخيّلها الآن أو في المستقبل: <b>If + ماضٍ بسيط، would / could / might + فعل</b> (If the oil started burning, I would turn off the cooker). الفعل في جملة if يكون ماضياً بسيطاً لكنّه لا يدلّ على الماضي هنا، ويمكن أن تأتي جملة if في أوّل الجملة أو في آخرها، وقد يكون الجزءان مثبتين أو منفيّين.",
+    "form": "If + past simple, would / could / might + V1",
+    "examples": [
+     {
+      "en": "If the oil **started** burning, I **would turn off** the cooker.",
+      "ar": "موقف متخيَّل"
+     },
+     {
+      "en": "If you **used** a powerful chemical cleaner, this **would remove** the stain.",
+      "ar": "موقف متخيَّل"
+     },
+     {
+      "en": "If that **did not work**, you **could use** a gentle cleaner.",
+      "ar": "جملة if منفيّة"
+     },
+     {
+      "en": "You **might not remove** the stain completely if you did that.",
+      "ar": "جملة if في آخر الجملة"
+     }
+    ],
+    "questions": [
+     {
+      "q": "If I burned my hand, I ___ it under cold running water.",
+      "o": [
+       "will hold",
+       "would hold",
+       "hold"
+      ],
+      "a": 1,
+      "why": "Type 2: would + V1"
+     },
+     {
+      "q": "If you lost your purse in town, you ___ go back and look for it.",
+      "o": [
+       "could",
+       "can",
+       "are"
+      ],
+      "a": 0,
+      "why": "could + V1 في Type 2"
+     },
+     {
+      "q": "If those were my children, I ___ let them play with knives.",
+      "o": [
+       "won't",
+       "wouldn't",
+       "don't"
+      ],
+      "a": 1,
+      "why": "Type 2 منفي: wouldn't"
+     },
+     {
+      "type": "type",
+      "q": "If a neighbour ___ sick, I would call a doctor. (become)",
+      "a": [
+       "became"
+      ],
+      "why": "ماضٍ بسيط في جملة if"
+     },
+     {
+      "type": "type",
+      "q": "If I saw a small child on a busy road, I ___ him. (help)",
+      "a": [
+       "would help",
+       "'d help"
+      ],
+      "why": "would + V1"
+     },
+     {
+      "tf": false,
+      "q": "The sentence «If I will see a fire, I would call the fire brigade» is correct.",
+      "why": "الصحيح: If I saw a fire, I would call the fire brigade."
+     }
+    ]
+   },
+   {
+    "title": "Forms of look",
+    "titleAr": "استعمالات الفعل look",
+    "explain": "يتغيّر معنى الفعل <b>look</b> بتغيّر الكلمة التي بعده: <b>look</b> (يبدو)، <b>look at</b> (ينظر إلى)، <b>look for</b> (يبحث عن)، <b>look after</b> (يعتني بـ)، <b>look up</b> (يبحث عن معلومة في كتاب أو قائمة أو الإنترنت)، <b>look like</b> (يشبه). وتأتي <b>Look!</b> وحدها لنلفت انتباه أحدهم.",
+    "form": "look + (at / for / after / up / like)",
+    "examples": [
+     {
+      "en": "You **look** smart in that shirt.",
+      "ar": "يبدو"
+     },
+     {
+      "en": "Why are you **looking at** that person?",
+      "ar": "ينظر إلى"
+     },
+     {
+      "en": "I've been **looking for** my phone all day.",
+      "ar": "يبحث عن"
+     },
+     {
+      "en": "You should **look after** your things more carefully.",
+      "ar": "يعتني بـ"
+     },
+     {
+      "en": "I'll **look up** the name on the guest list.",
+      "ar": "يبحث عن معلومة"
+     },
+     {
+      "en": "He **looks like** an old friend.",
+      "ar": "يشبه"
+     }
+    ],
+    "questions": [
+     {
+      "q": "I can't find my keys. I'm ___ them.",
+      "o": [
+       "looking for",
+       "looking after",
+       "looking like"
+      ],
+      "a": 0,
+      "why": "look for = يبحث عن"
+     },
+     {
+      "q": "Sameera ___ her little brothers and sisters.",
+      "o": [
+       "looks up",
+       "looks after",
+       "looks at"
+      ],
+      "a": 1,
+      "why": "look after = يعتني بـ"
+     },
+     {
+      "q": "He ___ an old friend of mine.",
+      "o": [
+       "looks like",
+       "looks for",
+       "looks up"
+      ],
+      "a": 0,
+      "why": "look like = يشبه"
+     },
+     {
+      "type": "type",
+      "q": "I don't know the word. I'll ___ it ___ on the internet. (look)",
+      "a": [
+       "look up"
+      ],
+      "why": "look up = يبحث عن معلومة"
+     },
+     {
+      "q": "___! It's over there by the TV.",
+      "o": [
+       "Look",
+       "Looks",
+       "Looking"
+      ],
+      "a": 0,
+      "why": "Look! لفت الانتباه"
+     },
+     {
+      "tf": false,
+      "q": "«Look after» means «try to find».",
+      "why": "look after = يعتني بـ، أمّا try to find فهي look for."
+     }
+    ]
+   }
+  ],
+  "mastery": [
+   {
+    "q": "\"duty\" means:",
+    "o": [
+     "واجب",
+     "ثلّاجة",
+     "قطعة"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"fridge\" means:",
+    "o": [
+     "ثلّاجة",
+     "موقد",
+     "بقعة"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "Sameera is fourteen years old.",
+    "lv": "easy"
+   },
+   {
+    "type": "match",
+    "q": "صِل كلّ كلمة بمعناها",
+    "pairs": [
+     [
+      "pour",
+      "يسكب"
+     ],
+     [
+      "stain",
+      "بقعة"
+     ],
+     [
+      "necessary",
+      "ضروري"
+     ],
+     [
+      "burn",
+      "يحرق"
+     ]
+    ],
+    "lv": "medium"
+   },
+   {
+    "q": "If it ___ cold tomorrow, we will eat something hot.",
+    "o": [
+     "is",
+     "will be",
+     "was"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "If I burned my hand, I ___ it under cold water.",
+    "o": [
+     "would hold",
+     "will hold",
+     "hold"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "If she needs more bread, she ___ to the baker's. (go)",
+    "a": [
+     "will go",
+     "'ll go"
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "If I had a million dollars, I would travel the world.",
+     "If I would have a million dollars, I will travel the world.",
+     "If I have a million dollars, I would travelled the world."
+    ],
+    "a": 0,
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "I",
+     "would",
+     "turn",
+     "off",
+     "the",
+     "cooker",
+     "if",
+     "the",
+     "oil",
+     "started",
+     "burning."
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Why does Hadeel need to learn to cook?",
+    "o": [
+     "It won't be easy to live away from home if she doesn't learn",
+     "Nidal asked her to cook",
+     "Her mum is sick"
+    ],
+    "a": 0,
+    "lv": "hard"
+   }
+  ]
+ },
+ "rulecards": {
+  "7-1#0": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|Type 0} for things that are always true or may happen at any time, and {t|Type 1} for things that may or may not happen in the future.",
+    "useAr": "نستعمل {t|النوع الصفري} للأمور الصحيحة دائماً أو التي تحدث في أيّ وقت، و{t|النوع الأول} لأمور قد تحدث في المستقبل أو لا تحدث.",
+    "signals": [
+     "if",
+     "always",
+     "usually",
+     "will",
+     "tomorrow",
+     "in future"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Type 0 · any time",
+    "labelAr": "النوع الصفري (في أيّ وقت)",
+    "formula": "{t|If} + {s|S} + {v|present simple}, {s|S} + {v|present simple}",
+    "examples": [
+     {
+      "en": "{t|If} someone {v|is} in trouble, we always {v|feel} it's our duty to help.",
+      "ar": "إن وقع أحدهم في مأزق فنحن نشعر دائماً أنّ من واجبنا أن نساعد."
+     },
+     {
+      "en": "{t|If} the children {v|wake up} late, she {v|calls} them.",
+      "ar": "إن استيقظ الأطفال متأخّرين فإنّها توقظهم."
+     }
+    ],
+    "tip": "المضارع البسيط في الجزأين."
+   },
+   {
+    "k": "pos",
+    "label": "Type 1 · future",
+    "labelAr": "النوع الأول (المستقبل)",
+    "formula": "{t|If} + {s|S} + {v|present simple}, {s|S} + {t|will} + {v|V1}",
+    "examples": [
+     {
+      "en": "{t|If} you {v|learn} to cook, it {t|will} {v|be} very useful later.",
+      "ar": "إن تعلّمتِ الطبخ فسيكون مفيداً جدّاً لاحقاً."
+     },
+     {
+      "en": "{t|If} she needs more medicine, I {t|will} {v|have} to go to the doctor's.",
+      "ar": "إن احتاجت إلى دواء أكثر فسيكون عليّ الذهاب إلى الطبيب."
+     }
+    ],
+    "tip": "جملة if لا تأخذ will، بل مضارعاً بسيطاً."
+   },
+   {
+    "k": "neg",
+    "label": "Negative",
+    "labelAr": "النفي",
+    "formula": "{t|If} + {s|S} + {n|don't / doesn't} + {v|V1}, {s|S} + {t|won't} + {v|V1}",
+    "examples": [
+     {
+      "en": "{t|If} I {n|don't} learn, it {t|won't} {v|be} easy to live away from home.",
+      "ar": "إن لم أتعلّم فلن يكون سهلاً أن أعيش بعيدة عن البيت."
+     }
+    ]
+   },
+   {
+    "k": "q",
+    "label": "Question",
+    "labelAr": "السؤال",
+    "formula": "{t|What will} + {s|S} + {v|V1} + {t|if} + {s|S} + {v|present simple}?",
+    "examples": [
+     {
+      "en": "{t|What will} you {v|do} {t|if} you {v|need} more bread?",
+      "ar": "ماذا ستفعل إن احتجتَ إلى خبز أكثر؟"
+     }
+    ]
+   }
+  ],
+  "7-1#1": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|Type 2} for unreal situations that we only imagine, now or in the future.",
+    "useAr": "نستعمل {t|النوع الثاني} للمواقف غير الواقعية التي نتخيّلها الآن أو في المستقبل.",
+    "signals": [
+     "if",
+     "would",
+     "could",
+     "might",
+     "imagine"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Pattern",
+    "labelAr": "الصيغة",
+    "formula": "{t|If} + {s|S} + {v|past simple}, {s|S} + {t|would / could / might} + {v|V1}",
+    "examples": [
+     {
+      "en": "{t|If} the oil {v|started} burning, I {t|would} {v|turn off} the cooker.",
+      "ar": "لو بدأ الزيت يحترق لأطفأتُ الموقد."
+     },
+     {
+      "en": "{t|If} you {v|used} a powerful cleaner, this {t|would} {v|remove} the stain.",
+      "ar": "لو استعملتَ منظّفاً قويّاً لأزال هذا البقعة."
+     }
+    ],
+    "tip": "الماضي هنا يدلّ على موقف غير حقيقي لا على الماضي."
+   },
+   {
+    "k": "neg",
+    "label": "Negative",
+    "labelAr": "النفي",
+    "formula": "{t|If} + {s|S} + {n|didn't} + {v|V1}, {s|S} + {t|wouldn't} + {v|V1}",
+    "examples": [
+     {
+      "en": "{t|If} those were my children, I {t|wouldn't} {v|let} them play with knives.",
+      "ar": "لو كان هؤلاء أولادي لما تركتُهم يلعبون بالسكاكين."
+     },
+     {
+      "en": "{t|If} that {n|did not} {v|work}, you {t|could} {v|use} a gentle chemical cleaner.",
+      "ar": "لو لم ينفع ذلك لاستطعتَ استعمال مادّة تنظيف لطيفة."
+     }
+    ]
+   },
+   {
+    "k": "q",
+    "label": "Question",
+    "labelAr": "السؤال",
+    "formula": "{t|What would} + {s|S} + {v|V1} + {t|if} + {s|S} + {v|past simple}?",
+    "examples": [
+     {
+      "en": "{t|What would} you {v|do} {t|if} a pan of hot oil {v|started} burning?",
+      "ar": "ماذا كنتَ ستفعل لو بدأ وعاء الزيت الساخن يحترق؟"
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Order of parts",
+    "labelAr": "ترتيب الجزأين",
+    "body": "يمكن أن تأتي جملة {t|if} أوّلاً أو ثانياً:\nIf you did that, you {t|might not} remove the stain.\nYou {t|might not} remove the stain if you did that.",
+    "examples": []
+   }
+  ],
+  "7-1#2": [
+   {
+    "k": "intro",
+    "useEn": "The verb {t|look} changes its meaning when we add a different word after it.",
+    "useAr": "يتغيّر معنى الفعل {t|look} بحسب الكلمة التي تأتي بعده.",
+    "signals": [
+     "look",
+     "look at",
+     "look for",
+     "look after",
+     "look up",
+     "look like"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "look · look at",
+    "labelAr": "يبدو · ينظر إلى",
+    "formula": "{s|S} + {v|look} + adjective    ·    {s|S} + {v|look at} + {s|noun}",
+    "examples": [
+     {
+      "en": "You {v|look} smart in that shirt.",
+      "ar": "تبدو أنيقاً بهذا القميص."
+     },
+     {
+      "en": "Why are you {v|looking at} that person over there?",
+      "ar": "لماذا تنظر إلى ذلك الشخص هناك؟"
+     }
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "look for · look up",
+    "labelAr": "يبحث عن · يبحث عن معلومة",
+    "formula": "{s|S} + {v|look for} + {s|thing / person}    ·    {s|S} + {v|look up} + {s|information}",
+    "examples": [
+     {
+      "en": "I've been {v|looking for} my phone all day.",
+      "ar": "أبحث عن هاتفي طوال اليوم."
+     },
+     {
+      "en": "I'll {v|look up} the name on the guest list.",
+      "ar": "سأبحث عن الاسم في قائمة المدعوّين."
+     }
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "look after · look like",
+    "labelAr": "يعتني بـ · يشبه",
+    "formula": "{s|S} + {v|look after} + {s|noun}    ·    {s|S} + {v|look like} + {s|noun}",
+    "examples": [
+     {
+      "en": "Sameera {v|looks after} her mother and the four little ones.",
+      "ar": "سميرة تعتني بأمّها وبالصغار الأربعة."
+     },
+     {
+      "en": "He {v|looks like} an old friend.",
+      "ar": "إنّه يشبه صديقاً قديماً."
+     }
+    ],
+    "tip": "look after = يعتني، look like = يشبه."
+   }
+  ]
+ },
+ "worksheet": {
+  "readingFrom": 7,
+  "sections": [
+   {
+    "k": "vocab",
+    "questions": [
+     {
+      "q": "Could you get the milk from the ___?",
+      "o": [
+       "fridge",
+       "duty",
+       "stain"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Don't ___ yourself when you take the hot pan from the cooker.",
+      "o": [
+       "burn",
+       "pour",
+       "imagine"
+      ],
+      "a": 0
+     },
+     {
+      "q": "It's my ___ to help people who are in trouble.",
+      "o": [
+       "duty",
+       "fridge",
+       "material"
+      ],
+      "a": 0
+     },
+     {
+      "q": "I'd like a ___ of cheese, please.",
+      "o": [
+       "stain",
+       "piece",
+       "chemical"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "The opposite of 'safe' is ___.",
+      "a": [
+       "dangerous"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "grammar",
+    "questions": [
+     {
+      "q": "If it rains tomorrow, we ___ at home.",
+      "o": [
+       "will stay",
+       "stayed",
+       "would stayed"
+      ],
+      "a": 0
+     },
+     {
+      "q": "If I ___ rich, I would buy a big house.",
+      "o": [
+       "am",
+       "were",
+       "will be"
+      ],
+      "a": 1
+     },
+     {
+      "q": "If you don't learn, it ___ easy to live alone.",
+      "o": [
+       "won't be",
+       "wouldn't being",
+       "isn't"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "If the oil started burning, I ___ the cooker. (turn off)",
+      "a": [
+       "would turn off",
+       "'d turn off"
+      ]
+     },
+     {
+      "type": "type",
+      "q": "If people are in trouble, we always ___ to help. (try)",
+      "a": [
+       "try"
+      ]
+     },
+     {
+      "q": "I'm ___ my phone. Have you seen it?",
+      "o": [
+       "looking for",
+       "looking after",
+       "looking like"
+      ],
+      "a": 0
+     }
+    ]
+   },
+   {
+    "k": "reading",
+    "questions": [
+     {
+      "q": "What will Aunt Nada teach Hadeel?",
+      "o": [
+       "Some simple dishes",
+       "Some English words",
+       "How to sew"
+      ],
+      "a": 0
+     },
+     {
+      "tf": false,
+      "q": "Mrs Masri is well, but her husband is sick.",
+      "why": "Mrs Masri is sick and her husband is in hospital."
+     },
+     {
+      "q": "Who is looking after the four little ones?",
+      "o": [
+       "Sameera",
+       "Hadeel",
+       "Aunt Nada"
+      ],
+      "a": 0
+     },
+     {
+      "q": "What are in the fridge?",
+      "o": [
+       "Some chicken pieces",
+       "Some fish",
+       "Some salad"
+      ],
+      "a": 0
+     }
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "title": "ماذا لو؟",
+  "titleEn": "What if?",
+  "intro": "يتعلّم الطالب جمل الشرط من النوع الصفري والأول والثاني، واستعمالات الفعل look، ومفردات المطبخ والسلامة المنزلية، ويكتب تقريراً يقترح فيه مشروعاً لمجتمعه.",
+  "qa": [
+   {
+    "t": "vocab",
+    "q": "What do these words mean: duty, fridge, grow up, in trouble?",
+    "qAr": "ما معنى الكلمات: duty وfridge وgrow up وin trouble؟",
+    "a": "**duty** is something you must do, a **fridge** keeps food cold, to **grow up** is to become an adult, and to be **in trouble** is to have a problem.",
+    "aAr": "**duty** = **واجب**، **fridge** = **ثلّاجة**، **grow up** = **يكبر**، **in trouble** = **في مأزق**.",
+    "ex": [
+     [
+      "It's our duty to help.",
+      "من واجبنا أن نساعد."
+     ],
+     [
+      "There are some chicken pieces in the fridge.",
+      "هناك قطع دجاج في الثلّاجة."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What do pour, stain, burn and get rid of mean?",
+    "qAr": "ما معنى pour وstain وburn وget rid of؟",
+    "a": "To **pour** is to make a liquid flow out, a **stain** is a dirty mark, to **burn** is to hurt or damage with fire or heat, and to **get rid of** something is to remove it.",
+    "aAr": "**pour** = **يسكب**، **stain** = **بقعة**، **burn** = **يحرق**، **get rid of** = **يتخلّص من**.",
+    "ex": [
+     [
+      "Try to get rid of the stain with cold water and soap.",
+      "حاول أن تتخلّص من البقعة بالماء البارد والصابون."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What are the opposites of enemy, safe, turn on and wrong?",
+    "qAr": "ما أضداد: enemy وsafe وturn on وwrong؟",
+    "a": "The opposite of **enemy** is **friend**, of **safe** is **dangerous**, of **turn on** is **turn off**, and of **wrong** is **right**.",
+    "aAr": "ضدّ **enemy** هو **friend**، وضدّ **safe** هو **dangerous**، وضدّ **turn on** هو **turn off**، وضدّ **wrong** هو **right**.",
+    "ex": [
+     [
+      "It is too dangerous for children to go out on the road.",
+      "من الخطر جدّاً أن يخرج الأطفال إلى الطريق."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "What are Type 0 and Type 1 conditionals?",
+    "qAr": "ما الشرط من النوع الصفري والأول؟",
+    "a": "**Type 0** is for things that may happen at any time: ==If + present simple, present simple==. **Type 1** is for things that may happen in the future: ==If + present simple, will + V1==.",
+    "aAr": "**النوع الصفري** لأمور تحدث في أيّ وقت: ==If + مضارع بسيط، مضارع بسيط==. **النوع الأول** لأمور قد تحدث مستقبلاً: ==If + مضارع بسيط، will + فعل==.",
+    "ex": [
+     [
+      "If someone is in trouble, we always help.",
+      "إن وقع أحدهم في مأزق فنحن نساعده دائماً."
+     ],
+     [
+      "If you learn to cook, it will be useful.",
+      "إن تعلّمتِ الطبخ فسيكون مفيداً."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "What is a Type 2 conditional?",
+    "qAr": "ما الشرط من النوع الثاني؟",
+    "a": "We use ==If + past simple, would + V1== for unreal situations that we imagine. The **if** part can come first or second.",
+    "aAr": "نستعمل ==If + ماضٍ بسيط، would + فعل== للمواقف غير الواقعية التي نتخيّلها، ويمكن أن تأتي جملة **if** أوّلاً أو ثانياً.",
+    "ex": [
+     [
+      "If the oil started burning, I would turn off the cooker.",
+      "لو بدأ الزيت يحترق لأطفأتُ الموقد."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "Can we say 'If I will see him, I will tell him'?",
+    "qAr": "هل نقول «If I will see him, I will tell him»؟",
+    "a": "No. After **if** we use the present simple in Type 1: ==If I see him, I will tell him==.",
+    "aAr": "لا. بعد **if** نستعمل المضارع البسيط في النوع الأول: ==If I see him, I will tell him==.",
+    "ex": [
+     [
+      "If I see him, I will tell him.",
+      "إن رأيتُه فسأخبره."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "What are the different meanings of look?",
+    "qAr": "ما معاني look المختلفة؟",
+    "a": "**look** = seem, **look at** = turn your eyes to, **look for** = try to find, **look after** = take care of, **look up** = find information, **look like** = be similar to.",
+    "aAr": "**look** = يبدو، **look at** = ينظر إلى، **look for** = يبحث عن، **look after** = يعتني بـ، **look up** = يبحث عن معلومة، **look like** = يشبه.",
+    "ex": [
+     [
+      "I'll look up the name on the guest list.",
+      "سأبحث عن الاسم في قائمة المدعوّين."
+     ]
+    ]
+   },
+   {
+    "t": "reading",
+    "q": "Why does Hadeel want to learn to cook?",
+    "qAr": "لماذا تريد هديل أن تتعلّم الطبخ؟",
+    "a": "Because it will be useful later when she grows up, and it won't be easy to live away from home if she can't cook.",
+    "aAr": "لأنّ ذلك سيفيدها لاحقاً حين تكبر، ولن يكون سهلاً أن تعيش بعيدة عن البيت إن لم تُجِد الطبخ."
+   },
+   {
+    "t": "reading",
+    "q": "Who is Sameera and what problem does her family have?",
+    "qAr": "من هي سميرة وما مشكلة عائلتها؟",
+    "a": "Sameera is a fourteen-year-old neighbour. Her mother is sick and her father is in hospital, so she looks after them and four little children.",
+    "aAr": "سميرة جارة في الرابعة عشرة، أمّها مريضة وأبوها في المستشفى، فهي تعتني بهما وبأربعة أطفال صغار."
+   },
+   {
+    "t": "reading",
+    "q": "What would you do if a pan of hot oil started burning?",
+    "qAr": "ماذا تفعل لو بدأ وعاء من الزيت الساخن يحترق؟",
+    "a": "I would turn off the cooker and cover the pan. This stops air from reaching the oil, so the fire stops. Water on hot oil makes a huge dangerous fire.",
+    "aAr": "أُطفئ الموقد وأغطّي الوعاء، فهذا يمنع الهواء من الوصول إلى الزيت فتنطفئ النار، أمّا الماء على الزيت الساخن فيسبّب حريقاً كبيراً خطيراً."
+   },
+   {
+    "t": "writing",
+    "q": "How do we write a report to City Hall?",
+    "qAr": "كيف نكتب تقريراً إلى البلدية؟",
+    "a": "We write an introduction with the date and the meeting, then a topic sentence (We think that … would do a lot for our area), then points with First of all, Secondly and Finally.",
+    "aAr": "نكتب مقدّمة فيها التاريخ والاجتماع، ثم جملة موضوع، ثم نقاطاً نبدؤها بـ First of all وSecondly وFinally.",
+    "ex": [
+     [
+      "If we spent the money on a new sports centre, we could play more football.",
+      "لو أنفقنا المال على مركز رياضي جديد لاستطعنا لعب كرة قدم أكثر."
+     ]
+    ]
+   },
+   {
+    "t": "speaking",
+    "q": "What does 'If you like, …' mean?",
+    "qAr": "ماذا تعني العبارة «If you like, …»؟",
+    "a": "We say **If you like, …** to offer something politely, for example: I'll teach you some simple dishes if you like.",
+    "aAr": "نقول **If you like, …** لنعرض شيئاً بلطف، مثل: سأعلّمك بعض الأطباق البسيطة إن أحببتِ.",
+    "ex": [
+     [
+      "I'll teach you some simple dishes if you like.",
+      "سأعلّمك بعض الأطباق البسيطة إن أحببتِ."
+     ]
+    ]
+   }
+  ]
+ }
+}

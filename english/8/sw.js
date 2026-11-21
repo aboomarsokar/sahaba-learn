@@ -1,6 +1,6 @@
 /* عامل خدمة اللغة الإنجليزية (الثامن): يعمل التطبيق بعد أول زيارة حتى بلا إنترنت. يحذف ذاكرته وحدها (lex8-). */
 const P = "lex8-";
-const V = P + "v5";
+const V = P + "v6";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png",
   "./images/logo.jpg", "./images/certificate.jpg", "./data/lessons.js", "./data/practice.js", "./data/rulecards.js", "./data/highlights.js", "./data/summaries-u1.js", "./data/summaries-u2.js", "./data/summaries-u3.js", "./data/summaries-u4.js", "./data/summaries-u5.js", "./data/summaries-u6.js", "./data/summaries-u7.js", "./data/summaries-u8.js", "./data/summaries-u9.js", "./data/summaries-u10.js", "./data/summaries-u11.js", "./data/summaries-u12.js",
   "./fonts/aref-ruqaa-arabic-700.woff2", "./fonts/cinzel-latin-700.woff2"];

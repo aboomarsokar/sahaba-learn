@@ -1,6 +1,18 @@
 {
 "files": [
 "./data/curriculum.js",
+"./data/u10.js",
+"./data/u10.meta.json",
+"./data/u11.js",
+"./data/u11.meta.json",
+"./data/u12.js",
+"./data/u12.meta.json",
+"./data/u7.js",
+"./data/u7.meta.json",
+"./data/u8.js",
+"./data/u8.meta.json",
+"./data/u9.js",
+"./data/u9.meta.json",
 "./icon-192.png",
 "./icon-512.png",
 "./images/durra.webp",

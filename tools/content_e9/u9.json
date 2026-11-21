@@ -1,0 +1,1117 @@
+{
+ "n": 9,
+ "title": "حياة البرية في خطر",
+ "titleEn": "Wildlife in danger",
+ "lesson": {
+  "id": "9-1",
+  "title": "Wildlife in danger",
+  "titleAr": "حياة البرية في خطر",
+  "vocab": [
+   {
+    "en": "go up",
+    "ar": "يرتفع",
+    "em": "📈",
+    "ex": "Your prices keep going up and up!",
+    "exAr": "أسعاركم تواصل الارتفاع باستمرار!"
+   },
+   {
+    "en": "come down",
+    "ar": "ينخفض",
+    "em": "📉",
+    "ex": "Will your prices come down?",
+    "exAr": "هل ستنخفض أسعاركم؟"
+   },
+   {
+    "en": "population",
+    "ar": "عدد السكان / تعداد",
+    "em": "👥",
+    "ex": "The population of the town is rising.",
+    "exAr": "يرتفع عدد سكان البلدة."
+   },
+   {
+    "en": "price",
+    "ar": "سعر",
+    "em": "💰",
+    "ex": "The price of fish is very high now.",
+    "exAr": "سعر السمك مرتفع جدّاً الآن."
+   },
+   {
+    "en": "joke",
+    "ar": "يمزح",
+    "em": "😄",
+    "ex": "Twenty-five pounds? You're joking!",
+    "exAr": "خمسة وعشرون جنيهاً؟ أنت تمزح!"
+   },
+   {
+    "en": "keep",
+    "ar": "يستمرّ / يواصل",
+    "em": "➡",
+    "ex": "Prices keep going up.",
+    "exAr": "الأسعار تواصل الارتفاع."
+   },
+   {
+    "en": "tuna",
+    "ar": "سمك التونة",
+    "em": "🐟",
+    "ex": "How much is the tuna, please?",
+    "exAr": "بكم سمك التونة من فضلك؟"
+   },
+   {
+    "en": "cause",
+    "ar": "يسبّب / سبب",
+    "em": "⚠",
+    "ex": "Pollution causes a lot of damage to sea life.",
+    "exAr": "يسبّب التلوّث أضراراً كثيرة للحياة البحرية."
+   },
+   {
+    "en": "coast",
+    "ar": "ساحل",
+    "em": "🏖",
+    "ex": "We walked along the path above the coast.",
+    "exAr": "مشينا على الطريق المطلّ على الساحل."
+   },
+   {
+    "en": "man-made",
+    "ar": "من صنع الإنسان",
+    "em": "🏭",
+    "ex": "Over-fishing is a man-made disaster.",
+    "exAr": "الصيد الجائر كارثة من صنع الإنسان."
+   },
+   {
+    "en": "net",
+    "ar": "شبكة",
+    "em": "🥅",
+    "ex": "Fishermen use huge nets to catch fish.",
+    "exAr": "يستعمل الصيّادون شباكاً ضخمة لصيد السمك."
+   },
+   {
+    "en": "destroy",
+    "ar": "يدمّر",
+    "em": "💥",
+    "ex": "Pollution is destroying life in the sea.",
+    "exAr": "يدمّر التلوّث الحياة في البحر."
+   },
+   {
+    "en": "disappear",
+    "ar": "يختفي",
+    "em": "💨",
+    "ex": "Many kinds of fish are disappearing from the oceans.",
+    "exAr": "تختفي أنواع كثيرة من الأسماك من المحيطات."
+   },
+   {
+    "en": "discover",
+    "ar": "يكتشف",
+    "em": "🔍",
+    "ex": "Scientists are discovering new kinds of life in the deep sea.",
+    "exAr": "يكتشف العلماء أنواعاً جديدة من الحياة في أعماق البحر."
+   },
+   {
+    "en": "species",
+    "ar": "نوع (حيّ) / فصيلة",
+    "em": "🐋",
+    "ex": "There are millions of different species in the oceans.",
+    "exAr": "هناك ملايين الأنواع المختلفة في المحيطات."
+   },
+   {
+    "en": "require",
+    "ar": "يتطلّب / يُلزم",
+    "em": "📋",
+    "ex": "Some countries require fishing boats to catch fewer fish.",
+    "exAr": "تُلزم بعض الدول سفن الصيد بصيد كمّيات أقلّ."
+   }
+  ],
+  "reading": {
+   "title": "Will the oceans live or die?",
+   "paras": [
+    {
+     "en": "Fish and many other kinds of life, like coral, are disappearing from the oceans fast. There are sad changes everywhere. Near the coast, they are often caused by pollution. Farther out, the cause is often over-fishing. Fishing boats with huge nets catch and kill everything. We risk a terrible man-made disaster – the death of the oceans.",
+     "ar": "تختفي الأسماك وكثير من أشكال الحياة الأخرى، مثل المرجان، من المحيطات بسرعة. هناك تغيّرات محزنة في كلّ مكان. قرب الساحل يكون سببها غالباً التلوّث، وفي المناطق الأبعد يكون السبب غالباً الصيد الجائر؛ فسفن الصيد ذات الشباك الضخمة تصطاد كلّ شيء وتقتله. ونحن نخاطر بكارثة مروّعة من صنع الإنسان: موت المحيطات."
+    },
+    {
+     "en": "But could our recent action to save the whales give us hope? Two centuries ago, whales were already being caught for their oil and meat. By the 1940s, the job was being made easier by modern technology. From the 1950s to the 1980s, they were being caught everywhere and numbers were collapsing. Whole species of whales were quickly being destroyed, and they were not being protected anywhere.",
+     "ar": "لكن هل يمنحنا ما فعلناه حديثاً لإنقاذ الحيتان أملاً؟ قبل قرنين كانت الحيتان تُصاد أصلاً من أجل زيتها ولحمها. وبحلول الأربعينيات كانت التكنولوجيا الحديثة تجعل هذا العمل أسهل. ومن الخمسينيات إلى الثمانينيات كانت تُصاد في كلّ مكان وكانت أعدادها تنهار. وكانت فصائل كاملة من الحيتان تُدمَّر بسرعة ولم تكن تُحمى في أيّ مكان."
+    },
+    {
+     "en": "Finally, the world took action. In 1985, almost every country agreed to stop catching whales. This means that whale populations are slowly rising again.",
+     "ar": "وأخيراً تحرّك العالم. ففي عام 1985 اتّفقت جميع الدول تقريباً على التوقّف عن صيد الحيتان. وهذا يعني أنّ أعداد الحيتان ترتفع من جديد ببطء."
+    },
+    {
+     "en": "Could the same thing happen with fish and fishing? Sadly, almost certainly not. In Europe, people are required to catch smaller quantities now, but almost everywhere else they go on fishing freely – though it is getting harder. They cannot stop: too many hungry people need to eat.",
+     "ar": "هل يمكن أن يحدث الشيء نفسه مع الأسماك والصيد؟ للأسف، شبه مؤكّد أنّ لا. ففي أوروبا يُطلب من الناس الآن صيد كمّيات أقلّ، أمّا في كلّ مكان آخر تقريباً فيواصلون الصيد بحرّية، مع أنّه يزداد صعوبة. إنّهم لا يستطيعون التوقّف، فهناك كثيرون جائعون يحتاجون إلى الطعام."
+    },
+    {
+     "en": "Perhaps the only way to save the oceans is the one that our ancestors discovered long ago: farming. There are already many fish farms, and perhaps there will soon be many more along the world's coasts. People say the fish do not taste as good as wild fish. However, that is still much better than losing all the fish in the world.",
+     "ar": "ربّما كانت الطريقة الوحيدة لإنقاذ المحيطات هي التي اكتشفها أجدادنا منذ زمن بعيد: الزراعة. هناك بالفعل مزارع أسماك كثيرة، وربّما يكون هناك قريباً المزيد منها على سواحل العالم. يقول الناس إنّ طعم هذه الأسماك ليس بجودة طعم الأسماك البرّية. ومع ذلك فهذا أفضل بكثير من خسارة كلّ أسماك العالم."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What often causes sad changes near the coast?",
+     "o": [
+      "Over-fishing",
+      "Pollution",
+      "Whales"
+     ],
+     "a": 1
+    },
+    {
+     "tf": false,
+     "q": "Fishing is the only cause of the problem.",
+     "why": "Pollution causes damage near the coast; over-fishing farther out."
+    },
+    {
+     "q": "When did almost every country agree to stop catching whales?",
+     "o": [
+      "In 1940",
+      "In 1985",
+      "In 1950"
+     ],
+     "a": 1
+    },
+    {
+     "q": "What is happening to whale populations now?",
+     "o": [
+      "They are slowly rising",
+      "They are collapsing",
+      "They are disappearing"
+     ],
+     "a": 0
+    },
+    {
+     "q": "What may be the only way to save the oceans?",
+     "o": [
+      "Catching more fish",
+      "Fish farms",
+      "Eating more whales"
+     ],
+     "a": 1
+    }
+   ]
+  },
+  "rules": [
+   {
+    "title": "Present continuous passive",
+    "titleAr": "المضارع المستمر المبني للمجهول",
+    "explain": "نستعمل <b>المضارع المستمر المبني للمجهول</b> عندما نركّز على <b>الشيء الذي يقع عليه الفعل</b> الآن لا على من يفعله (The adult fish are being caught). نكوّنه من <b>am / is / are + being + اسم المفعول</b>، والنفي بـ <b>am / is / are + not + being + اسم المفعول</b>. وإذا كان الفاعل مهمّاً أضفناه بعد <b>by</b>.",
+    "form": "am / is / are + being + V3    ·    am / is / are + not + being + V3",
+    "examples": [
+     {
+      "en": "I **am being taught** all this at school.",
+      "ar": "أنا أُعلَّم كلّ هذا في المدرسة"
+     },
+     {
+      "en": "Something **is being done** about it.",
+      "ar": "يجري عمل شيء الآن"
+     },
+     {
+      "en": "The adult fish **are being caught**.",
+      "ar": "تُصاد الأسماك البالغة الآن"
+     },
+     {
+      "en": "Young ones **are not being produced**.",
+      "ar": "لا تُنتَج الصغار"
+     },
+     {
+      "en": "Several things **are being done** at the same time.",
+      "ar": "أمور كثيرة تُنجَز في الوقت نفسه"
+     }
+    ],
+    "questions": [
+     {
+      "q": "The adult fish ___ everywhere.",
+      "o": [
+       "are being caught",
+       "is being caught",
+       "are catching"
+      ],
+      "a": 0,
+      "why": "الفاعل جمع (fish) والمعنى مبني للمجهول"
+     },
+     {
+      "q": "A new science lab ___ at our school.",
+      "o": [
+       "is building",
+       "is being built",
+       "are being built"
+      ],
+      "a": 1
+     },
+     {
+      "q": "Young ones ___ produced.",
+      "o": [
+       "aren't being",
+       "don't being",
+       "not being"
+      ],
+      "a": 0,
+      "why": "النفي: are not being + V3"
+     },
+     {
+      "q": "Different kinds of fish ___ in the kitchen now.",
+      "o": [
+       "are preparing",
+       "is being prepared",
+       "are being prepared"
+      ],
+      "a": 2
+     },
+     {
+      "type": "type",
+      "q": "The boxes ___ to the fish market now. (carry)",
+      "a": [
+       "are being carried"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «أمور كثيرة تُنجَز في الوقت نفسه»",
+      "words": [
+       "Several",
+       "things",
+       "are",
+       "being",
+       "done",
+       "at",
+       "the",
+       "same",
+       "time."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Past continuous passive",
+    "titleAr": "الماضي المستمر المبني للمجهول",
+    "explain": "نستعمل <b>الماضي المستمر المبني للمجهول</b> للحديث عن عملٍ كان <b>يجري في الماضي</b> ونركّز على ما وقع عليه الفعل (They were being caught everywhere). نكوّنه من <b>was / were + being + اسم المفعول</b>، والنفي بـ <b>was / were + not + being + اسم المفعول</b>.",
+    "form": "was / were + being + V3    ·    was / were + not + being + V3",
+    "examples": [
+     {
+      "en": "The job **was being made** easier by modern technology.",
+      "ar": "كان العمل يُجعَل أسهل"
+     },
+     {
+      "en": "They **were being caught** everywhere.",
+      "ar": "كانت تُصاد في كلّ مكان"
+     },
+     {
+      "en": "They **were not being protected** anywhere.",
+      "ar": "لم تكن تُحمى في أيّ مكان"
+     },
+     {
+      "en": "A van full of fish **was being driven** out of the market.",
+      "ar": "كانت شاحنة مليئة بالسمك تُقاد خارج السوق"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Two centuries ago, whales ___ for their oil.",
+      "o": [
+       "were being caught",
+       "was being caught",
+       "are being caught"
+      ],
+      "a": 0
+     },
+     {
+      "q": "The market hall ___ at 10 o'clock yesterday.",
+      "o": [
+       "is being cleaned",
+       "were being cleaned",
+       "was being cleaned"
+      ],
+      "a": 2
+     },
+     {
+      "q": "Whales ___ protected anywhere.",
+      "o": [
+       "were not being",
+       "are not being",
+       "was not being"
+      ],
+      "a": 0
+     },
+     {
+      "q": "The big boxes ___ when we arrived.",
+      "o": [
+       "were being washed",
+       "are being washed",
+       "was washing"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "A new road ___ through the town a year ago. (construct)",
+      "a": [
+       "was being constructed"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «كانت تُصاد في كلّ مكان»",
+      "words": [
+       "They",
+       "were",
+       "being",
+       "caught",
+       "everywhere."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Adverbs in the verb unit",
+    "titleAr": "موضع الظروف داخل الفعل",
+    "explain": "نضع الظروف مثل <b>often / already / quickly / slowly / still / also / now / finally / almost</b> غالباً <b>داخل وحدة الفعل</b>: بعد الفعل المساعد الأول (is / was / are / were) وقبل بقيّة الفعل (Sad changes are <b>often</b> caused by pollution). وفي المبني للمجهول المستمر نضعها قبل <b>being</b> أو بعده (Whales were <b>already</b> being caught).",
+    "form": "is / was + adverb + V3    ·    are / were + adverb + being + V3",
+    "examples": [
+     {
+      "en": "Sad changes are **often** caused by pollution.",
+      "ar": "ظرف تكرار"
+     },
+     {
+      "en": "Whales were **already** being caught for their oil.",
+      "ar": "ظرف زمن"
+     },
+     {
+      "en": "Whales were **quickly** being destroyed.",
+      "ar": "ظرف حال"
+     },
+     {
+      "en": "Their populations are **slowly** rising again.",
+      "ar": "ظرف حال"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "Sad changes are often caused by pollution.",
+       "Sad changes often are caused by pollution.",
+       "Sad changes are caused often by pollution."
+      ],
+      "a": 0
+     },
+     {
+      "q": "Whales were ___ being destroyed.",
+      "o": [
+       "quickly",
+       "quick",
+       "quicker"
+      ],
+      "a": 0,
+      "why": "الظرف quickly يصف الفعل"
+     },
+     {
+      "q": "The population is ___ rising.",
+      "o": [
+       "slow",
+       "slowly",
+       "slower"
+      ],
+      "a": 1
+     },
+     {
+      "q": "Where does 'finally' go? Then catching whales was ___ stopped by most countries.",
+      "o": [
+       "finally",
+       "stopped finally",
+       "being finally"
+      ],
+      "a": 0
+     },
+     {
+      "type": "type",
+      "q": "Whales are ___ being caught by two or three countries. (still)",
+      "a": [
+       "still"
+      ]
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+      "words": [
+       "Great",
+       "damage",
+       "is",
+       "now",
+       "being",
+       "done",
+       "to",
+       "other",
+       "species."
+      ]
+     }
+    ]
+   }
+  ],
+  "mastery": [
+   {
+    "q": "\"species\" means:",
+    "o": [
+     "نوع (حيّ)",
+     "شبكة",
+     "ساحل"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"destroy\" means:",
+    "o": [
+     "يكتشف",
+     "يدمّر",
+     "يرتفع"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "q": "\"net\" means:",
+    "o": [
+     "شبكة",
+     "سعر",
+     "مشروع"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "Mrs Qadiri wanted to buy tuna.",
+    "lv": "easy"
+   },
+   {
+    "q": "The opposite of \"go up\" is ___.",
+    "o": [
+     "keep",
+     "come down",
+     "disappear"
+    ],
+    "a": 1,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "In 1985, almost every country agreed to stop catching whales.",
+    "lv": "easy"
+   },
+   {
+    "type": "match",
+    "q": "صِل كلّ كلمة بمعناها",
+    "pairs": [
+     [
+      "population",
+      "عدد السكان"
+     ],
+     [
+      "coast",
+      "ساحل"
+     ],
+     [
+      "disappear",
+      "يختفي"
+     ],
+     [
+      "discover",
+      "يكتشف"
+     ]
+    ],
+    "lv": "medium"
+   },
+   {
+    "q": "Near the coast, damage to sea life is often caused by ___.",
+    "o": [
+     "pollution",
+     "whales",
+     "tuna"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "Something ___ about it. (is being done)",
+    "o": [
+     "is doing",
+     "is being done",
+     "are being done"
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "tf": false,
+    "q": "In Europe, people are not allowed to catch fish at all.",
+    "why": "They are required to catch smaller quantities.",
+    "lv": "medium"
+   },
+   {
+    "q": "Why are fish prices going up?",
+    "o": [
+     "Too many fish are being caught",
+     "There are too many fish",
+     "Fish are cheaper to catch"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "Complete: Whales ___ everywhere in the 1960s.",
+    "o": [
+     "were being caught",
+     "are being caught",
+     "was being caught"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "q": "Choose the correct sentence.",
+    "o": [
+     "Their populations are slowly rising again.",
+     "Their populations slowly are rising again.",
+     "Their populations are rising slowly again."
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "The adult fish ___ caught now. (are being)",
+    "a": [
+     "are being"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "type",
+    "q": "The old boxes ___ washed at ten o'clock. (were being)",
+    "a": [
+     "were being"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "Sad",
+     "changes",
+     "are",
+     "often",
+     "caused",
+     "by",
+     "pollution."
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "They",
+     "were",
+     "not",
+     "being",
+     "protected",
+     "anywhere."
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "What does the writer say could save the oceans?",
+    "o": [
+     "Fishing more freely",
+     "Fish farms",
+     "Stopping all pollution at once"
+    ],
+    "a": 1,
+    "lv": "hard"
+   },
+   {
+    "q": "Why can't most people stop fishing?",
+    "o": [
+     "Because too many hungry people need to eat",
+     "Because fish are cheap",
+     "Because it is easy"
+    ],
+    "a": 0,
+    "lv": "hard"
+   },
+   {
+    "q": "Choose the correct passive sentence.",
+    "o": [
+     "The job was being made easier by modern technology.",
+     "The job was making easier by modern technology.",
+     "The job is being made easy by modern technology yesterday."
+    ],
+    "a": 0,
+    "lv": "hard"
+   }
+  ]
+ },
+ "rulecards": {
+  "9-1#0": [
+   {
+    "k": "intro",
+    "useEn": "We use the {t|present continuous passive} when something is being done now and the thing that receives the action is more important than the doer.",
+    "useAr": "نستعمل {t|المضارع المستمر المبني للمجهول} حين يُنجَز شيءٌ الآن ويكون ما يقع عليه الفعل أهمّ ممّن يفعله.",
+    "signals": [
+     "now",
+     "at the moment",
+     "being"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Positive",
+    "labelAr": "الإثبات",
+    "formula": "{s|Subject} + {t|am / is / are} + {t|being} + {v|V3}",
+    "examples": [
+     {
+      "en": "The adult fish {t|are being} {v|caught}.",
+      "ar": "تُصاد الأسماك البالغة الآن."
+     },
+     {
+      "en": "Something {t|is being} {v|done}.",
+      "ar": "يجري عمل شيء ما الآن."
+     }
+    ],
+    "tip": "الفاعل الحقيقي يُحذف أو يأتي بعد by."
+   },
+   {
+    "k": "neg",
+    "label": "Negative",
+    "labelAr": "النفي",
+    "formula": "{s|Subject} + {t|am / is / are} + {n|not} + {t|being} + {v|V3}",
+    "examples": [
+     {
+      "en": "Young ones {t|are} {n|not} {t|being} {v|produced}.",
+      "ar": "لا تُنتَج الصغار."
+     }
+    ]
+   },
+   {
+    "k": "q",
+    "label": "Question",
+    "labelAr": "السؤال",
+    "formula": "{t|Am / Is / Are} + {s|Subject} + {t|being} + {v|V3}?",
+    "examples": [
+     {
+      "en": "{t|Are} the fish {t|being} {v|caught}?",
+      "ar": "هل تُصاد الأسماك؟"
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Active → Passive",
+    "labelAr": "من المعلوم إلى المجهول",
+    "body": "active: People {t|are catching} the fish.\npassive: The fish {t|are being caught}.",
+    "examples": [
+     {
+      "en": "They are teaching me all this. → I am being taught all this.",
+      "ar": "يعلّمونني هذا ← أُعلَّم هذا."
+     }
+    ]
+   }
+  ],
+  "9-1#1": [
+   {
+    "k": "intro",
+    "useEn": "We use the {t|past continuous passive} for something that was in progress in the past when we focus on the thing, not the doer.",
+    "useAr": "نستعمل {t|الماضي المستمر المبني للمجهول} لعملٍ كان جارياً في الماضي حين نركّز على الشيء لا على الفاعل.",
+    "signals": [
+     "yesterday",
+     "at 10:00",
+     "was / were being"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Positive",
+    "labelAr": "الإثبات",
+    "formula": "{s|Subject} + {t|was / were} + {t|being} + {v|V3}",
+    "examples": [
+     {
+      "en": "They {t|were being} {v|caught} everywhere.",
+      "ar": "كانت تُصاد في كلّ مكان."
+     },
+     {
+      "en": "A van {t|was being} {v|driven} out of the market.",
+      "ar": "كانت شاحنة تُقاد خارج السوق."
+     }
+    ]
+   },
+   {
+    "k": "neg",
+    "label": "Negative",
+    "labelAr": "النفي",
+    "formula": "{s|Subject} + {t|was / were} + {n|not} + {t|being} + {v|V3}",
+    "examples": [
+     {
+      "en": "They {t|were} {n|not} {t|being} {v|protected} anywhere.",
+      "ar": "لم تكن تُحمى في أيّ مكان."
+     }
+    ]
+   },
+   {
+    "k": "q",
+    "label": "Question",
+    "labelAr": "السؤال",
+    "formula": "{t|Was / Were} + {s|Subject} + {t|being} + {v|V3}?",
+    "examples": [
+     {
+      "en": "{t|Were} whales {t|being} {v|protected}?",
+      "ar": "هل كانت الحيتان تُحمى؟"
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Active → Passive",
+    "labelAr": "من المعلوم إلى المجهول",
+    "body": "active: Modern technology {t|was making} the job easier.\npassive: The job {t|was being made} easier.",
+    "examples": []
+   }
+  ],
+  "9-1#2": [
+   {
+    "k": "intro",
+    "useEn": "Adverbs like {t|often, already, quickly, slowly, still, also, finally, almost} usually go inside the verb unit.",
+    "useAr": "الظروف مثل {t|often وalready وquickly وslowly وstill وalso وfinally وalmost} تأتي غالباً داخل وحدة الفعل.",
+    "signals": [
+     "often",
+     "already",
+     "quickly",
+     "slowly"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Position",
+    "labelAr": "الموضع",
+    "formula": "{s|Subject} + {t|is / was} + {t|adverb} + {v|V3}",
+    "examples": [
+     {
+      "en": "Sad changes are {t|often} {v|caused} by pollution.",
+      "ar": "تُسبَّب التغيّرات المحزنة غالباً بالتلوّث."
+     }
+    ],
+    "tip": "الظرف بعد الفعل المساعد الأول."
+   },
+   {
+    "k": "pos",
+    "label": "With being",
+    "labelAr": "مع being",
+    "formula": "{s|Subject} + {t|were} + {t|adverb} + {t|being} + {v|V3}",
+    "examples": [
+     {
+      "en": "Whales were {t|already} being {v|caught}.",
+      "ar": "كانت الحيتان تُصاد أصلاً."
+     },
+     {
+      "en": "Whales were {t|quickly} being {v|destroyed}.",
+      "ar": "كانت الحيتان تُدمَّر بسرعة."
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Common adverbs",
+    "labelAr": "ظروف شائعة",
+    "body": "often = غالباً\nalready = أصلاً / من قبل\nquickly = بسرعة\nslowly = ببطء\nstill = ما زال\nalso = أيضاً\nnow = الآن",
+    "examples": []
+   }
+  ]
+ },
+ "worksheet": {
+  "readingFrom": 9,
+  "sections": [
+   {
+    "k": "vocab",
+    "questions": [
+     {
+      "q": "Fish ___ from the oceans because of pollution and over-fishing.",
+      "o": [
+       "are disappearing",
+       "are joking",
+       "come down"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Scientists are ___ new kinds of life in the deep sea.",
+      "o": [
+       "discovering",
+       "requiring",
+       "joking"
+      ],
+      "a": 0
+     },
+     {
+      "q": "The ___ of fish is very high. Prices keep going up.",
+      "o": [
+       "species",
+       "price",
+       "net"
+      ],
+      "a": 1
+     },
+     {
+      "q": "Fishermen use huge ___ to catch fish.",
+      "o": [
+       "coasts",
+       "nets",
+       "tunas"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "Over-fishing is a ___ disaster. (made by people)",
+      "a": [
+       "man-made"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "grammar",
+    "questions": [
+     {
+      "q": "The adult fish ___ caught everywhere now.",
+      "o": [
+       "are being",
+       "is being",
+       "were being"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Whales ___ for their oil two centuries ago.",
+      "o": [
+       "are being caught",
+       "were being caught",
+       "was being caught"
+      ],
+      "a": 1
+     },
+     {
+      "q": "Young ones ___ produced.",
+      "o": [
+       "aren't being",
+       "isn't being",
+       "weren't be"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Sad changes are ___ caused by pollution.",
+      "o": [
+       "often",
+       "oftenly",
+       "ofter"
+      ],
+      "a": 0
+     },
+     {
+      "q": "The job ___ easier by modern technology in the 1940s.",
+      "o": [
+       "was being made",
+       "is being made",
+       "were being made"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Choose the correct sentence.",
+      "o": [
+       "Their populations are slowly rising again.",
+       "Their populations slowly are rising again.",
+       "Their slowly populations are rising again."
+      ],
+      "a": 0
+     }
+    ]
+   },
+   {
+    "k": "reading",
+    "questions": [
+     {
+      "q": "What causes sad changes farther out in the oceans?",
+      "o": [
+       "Pollution",
+       "Over-fishing",
+       "Fish farms"
+      ],
+      "a": 1
+     },
+     {
+      "tf": true,
+      "q": "Whales were being caught everywhere from the 1950s to the 1980s."
+     },
+     {
+      "q": "What does 'Finally, the world took action' refer to?",
+      "o": [
+       "Stopping the catching of whales",
+       "Starting fish farms",
+       "Building new boats"
+      ],
+      "a": 0
+     },
+     {
+      "tf": false,
+      "q": "The writer says farmed fish taste better than wild fish.",
+      "why": "People say they do not taste as good, but it is still better than losing all the fish."
+     }
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "title": "حياة البرية في خطر",
+  "titleEn": "Wildlife in danger",
+  "intro": "يتعلّم الطالب مفردات الصيد الجائر وحماية الكائنات البحرية، والمضارع المستمر والماضي المستمر المبنيّين للمجهول، وموضع الظروف داخل الفعل، ويكتب عن مشكلة ويقترح حلّاً.",
+  "qa": [
+   {
+    "t": "vocab",
+    "q": "What do these words mean: species, destroy, disappear, discover?",
+    "qAr": "ما معنى الكلمات: species وdestroy وdisappear وdiscover؟",
+    "a": "**species** means a kind of living thing, **destroy** means to damage completely, **disappear** means to go away and not be seen, and **discover** means to find something new.",
+    "aAr": "**species** = **نوع حيّ**، **destroy** = **يدمّر**، **disappear** = **يختفي**، **discover** = **يكتشف**.",
+    "ex": [
+     [
+      "Scientists are discovering new species in the deep oceans.",
+      "يكتشف العلماء أنواعاً جديدة في أعماق المحيطات."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What do go up and come down mean?",
+    "qAr": "ماذا تعني go up وcome down؟",
+    "a": "**go up** means to rise, and **come down** means to fall. We use them for prices and populations.",
+    "aAr": "**go up** = **يرتفع**، و**come down** = **ينخفض**. نستعملهما مع الأسعار وأعداد السكان.",
+    "ex": [
+     [
+      "Your prices keep going up and up!",
+      "أسعاركم تواصل الارتفاع!"
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What are the word pairs with similar meanings in this unit?",
+    "qAr": "ما أزواج الكلمات المتقاربة في الوحدة؟",
+    "a": "**enormous – huge**, **discover – find**, **close to – near**, **go up – rise**, **difficult – hard**, **number – quantity**.",
+    "aAr": "**enormous – huge** و**discover – find** و**close to – near** و**go up – rise** و**difficult – hard** و**number – quantity**.",
+    "ex": [
+     [
+      "Tokyo is an enormous city and its population is rising.",
+      "طوكيو مدينة هائلة وعدد سكانها في ارتفاع."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we form the present continuous passive?",
+    "qAr": "كيف نكوّن المضارع المستمر المبني للمجهول؟",
+    "a": "==am / is / are + being + past participle==: ==The adult fish are being caught.== Negative: ==Young ones are not being produced.==",
+    "aAr": "==am / is / are + being + اسم المفعول==: ==The adult fish are being caught.== والنفي: ==Young ones are not being produced.==",
+    "ex": [
+     [
+      "A new science lab is being built at our school.",
+      "يُبنى مختبر علوم جديد في مدرستنا."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we form the past continuous passive?",
+    "qAr": "كيف نكوّن الماضي المستمر المبني للمجهول؟",
+    "a": "==was / were + being + past participle==: ==They were being caught everywhere.== Negative: ==They were not being protected anywhere.==",
+    "aAr": "==was / were + being + اسم المفعول==: ==They were being caught everywhere.== والنفي: ==They were not being protected anywhere.==",
+    "ex": [
+     [
+      "A van full of fish was being driven out of the market.",
+      "كانت شاحنة مليئة بالسمك تُقاد خارج السوق."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "When do we use the passive and when do we add by?",
+    "qAr": "متى نستعمل المبني للمجهول ومتى نضيف by؟",
+    "a": "We use the passive to put the **thing** in focus. If the doer is useful, we add **by + agent**. If it is not useful, we can leave it out.",
+    "aAr": "نستعمل المبني للمجهول لنركّز على **الشيء**. وإذا كان الفاعل مفيداً أضفناه بـ **by + الفاعل**، وإذا لم يكن مفيداً حذفناه.",
+    "ex": [
+     [
+      "The job was being made easier by modern technology.",
+      "كان العمل يُجعَل أسهل بواسطة التكنولوجيا الحديثة."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "Where do we put adverbs like often and already?",
+    "qAr": "أين نضع ظروفاً مثل often وalready؟",
+    "a": "We put them in the **verb unit**, after the first auxiliary verb: ==Sad changes are often caused by pollution.== ==Whales were already being caught.==",
+    "aAr": "نضعها داخل **وحدة الفعل** بعد الفعل المساعد الأول: ==Sad changes are often caused by pollution.== و==Whales were already being caught.==",
+    "ex": [
+     [
+      "Whole species of whales were quickly being destroyed.",
+      "كانت فصائل كاملة من الحيتان تُدمَّر بسرعة."
+     ]
+    ]
+   },
+   {
+    "t": "reading",
+    "q": "What are the two big causes of damage to sea life?",
+    "qAr": "ما سببا الضرر الكبيران للحياة البحرية؟",
+    "a": "Near the coast the cause is often **pollution**. Farther out the cause is often **over-fishing** with huge nets.",
+    "aAr": "قرب الساحل يكون السبب غالباً **التلوّث**، وفي المناطق الأبعد **الصيد الجائر** بالشباك الضخمة."
+   },
+   {
+    "t": "reading",
+    "q": "What happened to whales, and what did the world do?",
+    "qAr": "ماذا حدث للحيتان وماذا فعل العالم؟",
+    "a": "Whales were being caught everywhere from the 1950s to the 1980s and numbers were collapsing. In 1985 almost every country agreed to stop catching them, so populations are slowly rising again.",
+    "aAr": "كانت الحيتان تُصاد في كلّ مكان من الخمسينيات إلى الثمانينيات وانهارت أعدادها. وفي عام 1985 اتّفقت الدول تقريباً على التوقّف عن صيدها، فبدأت أعدادها ترتفع ببطء."
+   },
+   {
+    "t": "reading",
+    "q": "Why can fish not be saved in the same way?",
+    "qAr": "لماذا لا يمكن إنقاذ الأسماك بالطريقة نفسها؟",
+    "a": "In most places people go on fishing freely because too many hungry people need to eat. Only in Europe are people required to catch smaller quantities.",
+    "aAr": "لأنّ الناس في معظم الأماكن يواصلون الصيد بحرّية فهناك كثيرون جائعون يحتاجون إلى الطعام، ولا تُلزم بالكمّيات الأقلّ إلا أوروبا."
+   },
+   {
+    "t": "writing",
+    "q": "How do we organise an essay about a problem and a solution?",
+    "qAr": "كيف ننظّم مقالاً عن مشكلة وحلّها؟",
+    "a": "We use sequence markers: ==First of all,== ==Secondly,== ==Thirdly,== ==Finally,== to list the problems, then the advantages of the solution.",
+    "aAr": "نستعمل كلمات الترتيب: ==First of all,== و==Secondly,== و==Thirdly,== و==Finally,== لعرض المشكلات ثمّ مزايا الحلّ.",
+    "ex": [
+     [
+      "First of all, over-fishing is happening all round the world.",
+      "أوّلاً، يحدث الصيد الجائر في أنحاء العالم كلّها."
+     ]
+    ]
+   },
+   {
+    "t": "speaking",
+    "q": "How do we ask for and give an explanation?",
+    "qAr": "كيف نطلب شرحاً ونقدّمه؟",
+    "a": "We ask **So why is it happening?** and **Tell me more.** We answer with **It's because …** or **Well, …**",
+    "aAr": "نسأل **So why is it happening?** و**Tell me more.** ونجيب بـ **It's because …** أو **Well, …**",
+    "ex": [
+     [
+      "It's because too many fish are being caught.",
+      "السبب أنّ أسماكاً كثيرة جدّاً تُصاد."
+     ]
+    ]
+   }
+  ]
+ }
+}

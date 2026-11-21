@@ -1,0 +1,1070 @@
+{
+ "n": 5,
+ "title": "يوم في إسطنبول",
+ "titleEn": "A day in Istanbul",
+ "lesson": {
+  "id": "5-1",
+  "title": "A day in Istanbul",
+  "titleAr": "يوم في إسطنبول",
+  "vocab": [
+   {
+    "en": "a few",
+    "ar": "بضعة / قليل من",
+    "em": "🔢",
+    "ex": "We only have time for a few cakes.",
+    "exAr": "لدينا وقت لبضع قطع من الكعك فقط."
+   },
+   {
+    "en": "across",
+    "ar": "عبر / إلى الجهة الأخرى من",
+    "em": "↔️",
+    "ex": "Go across the road and turn right.",
+    "exAr": "اعبر الطريق ثم انعطف يميناً."
+   },
+   {
+    "en": "coin",
+    "ar": "قطعة نقدية معدنية",
+    "em": "🪙",
+    "ex": "I only have a few coins.",
+    "exAr": "ليس معي إلا بضع قطع نقدية."
+   },
+   {
+    "en": "crossroads",
+    "ar": "مفترق طرق",
+    "em": "🚦",
+    "ex": "Then turn left at the crossroads.",
+    "exAr": "ثم انعطف يساراً عند مفترق الطرق."
+   },
+   {
+    "en": "customer",
+    "ar": "زبون",
+    "em": "🧑‍💼",
+    "ex": "There aren't many customers, so it'll be quick.",
+    "exAr": "لا يوجد زبائن كثيرون، لذلك سيكون الأمر سريعاً."
+   },
+   {
+    "en": "purse",
+    "ar": "محفظة نقود",
+    "em": "👛",
+    "ex": "Hadeel took out her purse to pay the bill.",
+    "exAr": "أخرجت هديل محفظتها لتدفع الحساب."
+   },
+   {
+    "en": "take out",
+    "ar": "يُخرج",
+    "em": "📤",
+    "ex": "Hadeel has taken out some money.",
+    "exAr": "أخرجت هديل بعض النقود."
+   },
+   {
+    "en": "change",
+    "ar": "الباقي / الفكّة",
+    "em": "💱",
+    "ex": "And here's your change. Fifteen lira.",
+    "exAr": "وهذا هو الباقي: خمس عشرة ليرة."
+   },
+   {
+    "en": "continent",
+    "ar": "قارّة",
+    "em": "🌍",
+    "ex": "Istanbul is a city on two continents.",
+    "exAr": "إسطنبول مدينة تقع على قارّتين."
+   },
+   {
+    "en": "empire",
+    "ar": "إمبراطورية",
+    "em": "🏰",
+    "ex": "The Ottoman Empire reached across three continents.",
+    "exAr": "امتدّت الإمبراطورية العثمانية عبر ثلاث قارّات."
+   },
+   {
+    "en": "government",
+    "ar": "حكومة",
+    "em": "🏛",
+    "ex": "The Topkapi Palace was the centre of its government.",
+    "exAr": "كان قصر توبكابي مركز حكومتها."
+   },
+   {
+    "en": "jewellery",
+    "ar": "مجوهرات",
+    "em": "💍",
+    "ex": "The museum has beautiful jewellery.",
+    "exAr": "في المتحف مجوهرات جميلة."
+   },
+   {
+    "en": "powerful",
+    "ar": "قويّ / ذو نفوذ",
+    "em": "💪",
+    "ex": "Byzantium grew rich and powerful.",
+    "exAr": "أصبحت بيزنطة غنيّة وقويّة."
+   },
+   {
+    "en": "reach",
+    "ar": "يصل إلى / يمتدّ إلى",
+    "em": "🎯",
+    "ex": "The empire reached across large parts of Europe, Asia and North Africa.",
+    "exAr": "امتدّت الإمبراطورية عبر أجزاء كبيرة من أوروبا وآسيا وشمال أفريقيا."
+   },
+   {
+    "en": "sultan",
+    "ar": "سلطان",
+    "em": "👑",
+    "ex": "The sultans lived in the Topkapi Palace.",
+    "exAr": "كان السلاطين يعيشون في قصر توبكابي."
+   },
+   {
+    "en": "trade",
+    "ar": "تجارة",
+    "em": "🛒",
+    "ex": "East-West trade routes passed through the city.",
+    "exAr": "مرّت طرق التجارة بين الشرق والغرب عبر المدينة."
+   }
+  ],
+  "reading": {
+   "title": "Istanbul",
+   "paras": [
+    {
+     "en": "Istanbul is a city on two continents, with one foot in Asia and the other in Europe. It is not a capital city now: the capital of modern Turkey is Ankara. However, it used to be the capital of empires and is still a great world city today.",
+     "ar": "إسطنبول مدينة على قارّتين، قدمٌ في آسيا وأخرى في أوروبا. وهي ليست عاصمة الآن، فعاصمة تركيا الحديثة هي أنقرة. غير أنّها كانت عاصمة لإمبراطوريات، وما زالت مدينة عالمية عظيمة اليوم."
+    },
+    {
+     "en": "Its name was Byzantium for 1,000 years, and it grew rich and powerful because East-West trade routes passed through the city – along and across the Bosphorus. Then the Romans made it the capital of their eastern empire, and for the next 1,000 years people called it Constantinople. Then Constantinople fell to the Muslim Ottomans. This time, the city's name changed to Istanbul, and it became the heart of a huge empire that reached across large parts of Europe, Asia and North Africa.",
+     "ar": "كان اسمها بيزنطة ألف سنة، وأصبحت غنيّة وقويّة لأنّ طرق التجارة بين الشرق والغرب كانت تمرّ بالمدينة، على طول البوسفور وعبره. ثم جعلها الرومان عاصمة إمبراطوريتهم الشرقية، وسمّاها الناس القسطنطينية ألف سنة أخرى. ثم سقطت القسطنطينية بيد العثمانيين المسلمين، وتغيّر اسم المدينة هذه المرّة إلى إسطنبول، وصارت قلب إمبراطورية ضخمة امتدّت عبر أجزاء كبيرة من أوروبا وآسيا وشمال أفريقيا."
+    },
+    {
+     "en": "The Topkapi Palace was the centre of its government. Here, the sultans lived and thousands more worked to rule the Ottoman Empire. Today, it is a huge museum with beautiful gardens and hundreds of rooms. These are full of fantastic collections of pictures, maps, jewellery and many other fascinating things.",
+     "ar": "كان قصر توبكابي مركز حكومتها. هنا عاش السلاطين، وعمل آلاف آخرون لحكم الإمبراطورية العثمانية. واليوم هو متحف ضخم فيه حدائق جميلة ومئات الغرف، وهي مليئة بمجموعات رائعة من الصور والخرائط والمجوهرات وأشياء أخرى كثيرة مدهشة."
+    },
+    {
+     "en": "When you visit Topkapi, you must also see its famous ancient neighbours – the Blue Mosque and Aya Sofya. But there is much, much more to do: this is an exciting modern city of 14 million people. East and West meet in its busy streets, markets and shops. And its 12 million visitors a year never forget their time here. Istanbul is a very special place.",
+     "ar": "عندما تزور توبكابي يجب أن ترى أيضاً جيرانه القدماء المشهورين: الجامع الأزرق وآيا صوفيا. لكنّ هناك أشياء أكثر بكثير يمكن فعلها، فهذه مدينة حديثة مثيرة يسكنها ١٤ مليون شخص. يلتقي الشرق والغرب في شوارعها وأسواقها ومحلّاتها المزدحمة. ويبلغ عدد زوّارها ١٢ مليون زائر في السنة، لا ينسون وقتهم فيها أبداً. إسطنبول مكان مميّز جدّاً."
+    }
+   ],
+   "questions": [
+    {
+     "q": "What is the capital of modern Turkey?",
+     "o": [
+      "Istanbul",
+      "Ankara",
+      "Constantinople"
+     ],
+     "a": 1
+    },
+    {
+     "q": "Why did Byzantium grow rich and powerful?",
+     "o": [
+      "Because East-West trade routes passed through it",
+      "Because the Ottomans lived there",
+      "Because it was the capital of Turkey"
+     ],
+     "a": 0
+    },
+    {
+     "tf": true,
+     "q": "The Ottoman Empire reached across three continents."
+    },
+    {
+     "tf": false,
+     "q": "The Topkapi Palace was just the home of the sultans.",
+     "why": "It was the centre of the government, and thousands of people worked there."
+    },
+    {
+     "q": "What is the Topkapi Palace today?",
+     "o": [
+      "A coffee shop",
+      "A huge museum",
+      "A government office"
+     ],
+     "a": 1
+    }
+   ]
+  },
+  "rules": [
+   {
+    "title": "a lot of, much, many, a little, a few",
+    "titleAr": "التعبير عن الكمّيّة: a lot of وmuch وmany وa little وa few",
+    "explain": "نستخدم <b>a lot of</b> و<b>lots of</b> في الجمل المثبتة مع الأسماء <b>المعدودة</b> و<b>غير المعدودة</b> معاً. وفي النفي والسؤال نستخدم <b>many</b> مع المعدود (cakes, customers) و<b>much</b> مع غير المعدود (money, juice). وبدل not many نقول <b>(only) a few</b> مع المعدود، وبدل not much نقول <b>(only) a little</b> مع غير المعدود.",
+    "form": "معدود: many / a few / a lot of    ·    غير معدود: much / a little / a lot of",
+    "examples": [
+     {
+      "en": "Let's order **a lot of** cakes!",
+      "ar": "معدود: كثير"
+     },
+     {
+      "en": "There are only **a few** customers.",
+      "ar": "معدود: قليل"
+     },
+     {
+      "en": "I do not have **much** money.",
+      "ar": "غير معدود: نفي"
+     },
+     {
+      "en": "I only have **a little** money.",
+      "ar": "غير معدود: قليل"
+     }
+    ],
+    "questions": [
+     {
+      "q": "There aren't ___ customers in the coffee shop.",
+      "o": [
+       "much",
+       "many",
+       "a little"
+      ],
+      "a": 1,
+      "why": "customers اسم معدود: many"
+     },
+     {
+      "q": "How ___ money do you have?",
+      "o": [
+       "many",
+       "a few",
+       "much"
+      ],
+      "a": 2,
+      "why": "money غير معدود: much"
+     },
+     {
+      "q": "I only have ___ coins.",
+      "o": [
+       "a few",
+       "a little",
+       "much"
+      ],
+      "a": 0,
+      "why": "coins معدود: a few"
+     },
+     {
+      "type": "type",
+      "q": "I only have ___ apple juice. (a few / a little)",
+      "a": [
+       "a little"
+      ],
+      "why": "juice غير معدود: a little"
+     },
+     {
+      "type": "type",
+      "q": "How ___ cakes do they want? (much / many)",
+      "a": [
+       "many"
+      ],
+      "why": "cakes معدود: many"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «هديل لديها نقود كثيرة»",
+      "words": [
+       "Hadeel",
+       "has",
+       "a",
+       "lot",
+       "of",
+       "money."
+      ]
+     }
+    ]
+   },
+   {
+    "title": "a / an and the",
+    "titleAr": "أداتا النكرة والمعرفة: a / an وthe",
+    "explain": "نستخدم <b>a / an</b> (أو <b>some</b> مع الجمع) عندما نبدأ الحديث عن شيء <b>جديد</b>. وعندما نشير إلى الشيء نفسه مرّة أخرى نستخدم <b>the</b>. ونستخدم <b>the</b> أيضاً عندما يوجد <b>شيء واحد فقط</b> من النوع (the sun, the moon) وفي كثير من أسماء الأماكن (the Blue Mosque, the Topkapi Palace).",
+    "form": "شيء جديد: a / an / some    ·    شيء معروف أو وحيد: the",
+    "examples": [
+     {
+      "en": "Istanbul is **a** city on two continents.",
+      "ar": "شيء جديد"
+     },
+     {
+      "en": "**The** Topkapi Palace was the centre of **the** government.",
+      "ar": "شيء معروف / وحيد"
+     },
+     {
+      "en": "I'd like **a** hat. I'd like **the** large one, please.",
+      "ar": "جديد ثم معروف"
+     },
+     {
+      "en": "We saw **the** Blue Mosque.",
+      "ar": "اسم مكان"
+     }
+    ],
+    "questions": [
+     {
+      "q": "We stopped at ___ coffee shop. ___ coffee shop was cool and nice.",
+      "o": [
+       "a / The",
+       "the / A",
+       "a / A"
+      ],
+      "a": 0,
+      "why": "أول مرّة a، ثم the"
+     },
+     {
+      "q": "___ sun rises in the east.",
+      "o": [
+       "A",
+       "The",
+       "An"
+      ],
+      "a": 1,
+      "why": "شيء واحد فقط: the"
+     },
+     {
+      "q": "I'd like ___ apple juice, please.",
+      "o": [
+       "a",
+       "the",
+       "an"
+      ],
+      "a": 2,
+      "why": "apple تبدأ بحرف علّة: an"
+     },
+     {
+      "type": "type",
+      "q": "We visited ___ Blue Mosque. (a / the)",
+      "a": [
+       "the"
+      ],
+      "why": "اسم مكان وحيد: the"
+     },
+     {
+      "type": "type",
+      "q": "Istanbul is ___ exciting city. (a / an)",
+      "a": [
+       "an"
+      ],
+      "why": "exciting تبدأ بحرف علّة: an"
+     },
+     {
+      "tf": false,
+      "q": "We say: I visited a Topkapi Palace.",
+      "why": "الصحيح: the Topkapi Palace (اسم مكان وحيد)"
+     }
+    ]
+   },
+   {
+    "title": "Prepositions of direction",
+    "titleAr": "حروف الجرّ لوصف الاتجاهات",
+    "explain": "نستخدم حروف الجرّ لوصف الطريق: <b>across</b> (إلى الجهة الأخرى)، <b>along</b> (على امتداد)، <b>past</b> (متجاوزاً)، <b>through</b> (من خلال)، <b>over</b> (فوق/عبر)، <b>round</b> (حول)، <b>into</b> (إلى داخل)، <b>out of</b> (إلى خارج)، <b>to</b> (إلى). ونقول <b>go straight ahead</b> أي: امشِ إلى الأمام، و<b>turn left / right</b> أي: انعطف يساراً أو يميناً.",
+    "form": "Go / Walk + across / along / past / through / over / round + المكان",
+    "examples": [
+     {
+      "en": "**Go across** the road and **turn right**.",
+      "ar": "اعبر الطريق"
+     },
+     {
+      "en": "**Go past** the information centre.",
+      "ar": "مرّ بجانب"
+     },
+     {
+      "en": "**Walk through** the market.",
+      "ar": "من خلال"
+     },
+     {
+      "en": "**Go along** East Road.",
+      "ar": "على امتداد"
+     }
+    ],
+    "questions": [
+     {
+      "q": "Go ___ the road and turn right.",
+      "o": [
+       "through",
+       "across",
+       "into"
+      ],
+      "a": 1,
+      "why": "across: إلى الجهة الأخرى"
+     },
+     {
+      "q": "Go ___ the museum on your right.",
+      "o": [
+       "past",
+       "into",
+       "over"
+      ],
+      "a": 0,
+      "why": "past: متجاوزاً"
+     },
+     {
+      "q": "Walk ___ the market and you'll come out at the other end.",
+      "o": [
+       "along",
+       "through",
+       "across"
+      ],
+      "a": 1,
+      "why": "through: من خلال"
+     },
+     {
+      "type": "type",
+      "q": "Go ___ East Road until you come to a roundabout. (along / past)",
+      "a": [
+       "along"
+      ],
+      "why": "along: على امتداد الشارع"
+     },
+     {
+      "type": "type",
+      "q": "Turn ___ at the crossroads. (left / ahead)",
+      "a": [
+       "left"
+      ],
+      "why": "نقول turn left / right"
+     },
+     {
+      "type": "order",
+      "q": "رتّب الكلمات: «مرّ بجانب مركز المعلومات»",
+      "words": [
+       "Go",
+       "past",
+       "the",
+       "information",
+       "centre."
+      ]
+     }
+    ]
+   }
+  ],
+  "mastery": [
+   {
+    "q": "\"crossroads\" means:",
+    "o": [
+     "مفترق طرق",
+     "محفظة نقود",
+     "قارّة"
+    ],
+    "a": 0,
+    "lv": "easy"
+   },
+   {
+    "q": "\"sultan\" means:",
+    "o": [
+     "زبون",
+     "تجارة",
+     "سلطان"
+    ],
+    "a": 2,
+    "lv": "easy"
+   },
+   {
+    "tf": true,
+    "q": "Hadeel paid for the drinks and cakes.",
+    "lv": "easy"
+   },
+   {
+    "tf": false,
+    "q": "Istanbul is the capital of modern Turkey.",
+    "why": "عاصمة تركيا الحديثة هي أنقرة.",
+    "lv": "easy"
+   },
+   {
+    "type": "match",
+    "q": "صِل كلّ كلمة بمعناها",
+    "pairs": [
+     [
+      "coin",
+      "قطعة نقدية"
+     ],
+     [
+      "customer",
+      "زبون"
+     ],
+     [
+      "empire",
+      "إمبراطورية"
+     ],
+     [
+      "jewellery",
+      "مجوهرات"
+     ]
+    ],
+    "lv": "medium"
+   },
+   {
+    "q": "I only have ___ coins in my purse.",
+    "o": [
+     "a little",
+     "a few",
+     "much"
+    ],
+    "a": 1,
+    "lv": "medium"
+   },
+   {
+    "q": "How ___ juice do you want?",
+    "o": [
+     "many",
+     "few",
+     "much"
+    ],
+    "a": 2,
+    "lv": "medium"
+   },
+   {
+    "q": "Byzantium grew ___ because trade routes passed through it.",
+    "o": [
+     "powerful",
+     "cheap",
+     "empty"
+    ],
+    "a": 0,
+    "lv": "medium"
+   },
+   {
+    "type": "type",
+    "q": "There are not ___ customers in the shop. (much / many)",
+    "a": [
+     "many"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "type",
+    "q": "Istanbul is ___ city on two continents. (a / the)",
+    "a": [
+     "a"
+    ],
+    "lv": "hard"
+   },
+   {
+    "type": "order",
+    "q": "رتّب الكلمات لتكوّن جملة صحيحة",
+    "words": [
+     "Go",
+     "across",
+     "the",
+     "road",
+     "and",
+     "turn",
+     "right."
+    ],
+    "lv": "hard"
+   },
+   {
+    "q": "Why did the city's name change to Istanbul?",
+    "o": [
+     "The Romans made it their capital",
+     "The Muslim Ottomans took Constantinople",
+     "The city moved to Asia"
+    ],
+    "a": 1,
+    "lv": "hard"
+   }
+  ]
+ },
+ "rulecards": {
+  "5-1#0": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|a lot of} in positive statements. In questions and negative statements we use {t|many} with countable nouns and {t|much} with uncountable nouns. Instead of not many / not much we can say {t|(only) a few} and {t|(only) a little}.",
+    "useAr": "نستخدم {t|a lot of} في الجمل المثبتة، و{t|many} مع المعدود و{t|much} مع غير المعدود في النفي والسؤال. وبدل not many / not much نقول {t|(only) a few} و{t|(only) a little}.",
+    "signals": [
+     "a lot of",
+     "many",
+     "much",
+     "a few",
+     "a little",
+     "How many / How much"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Countable nouns",
+    "labelAr": "الأسماء المعدودة",
+    "formula": "{s|Subject} + have + {v|a lot of / (only) a few} + {s|plural noun}",
+    "examples": [
+     {
+      "en": "Let's order {v|a lot of} cakes.",
+      "ar": "لنطلب كثيراً من الكعك."
+     },
+     {
+      "en": "There are only {v|a few} customers.",
+      "ar": "لا يوجد إلا بضعة زبائن."
+     }
+    ],
+    "tip": "a few تعني «قليل» مع المعدود."
+   },
+   {
+    "k": "pos",
+    "label": "Uncountable nouns",
+    "labelAr": "الأسماء غير المعدودة",
+    "formula": "{s|Subject} + have + {v|a lot of / (only) a little} + {s|uncountable noun}",
+    "examples": [
+     {
+      "en": "Hadeel has {v|a lot of} money.",
+      "ar": "لدى هديل نقود كثيرة."
+     },
+     {
+      "en": "I only have {v|a little} money.",
+      "ar": "ليس معي إلا قليل من النقود."
+     }
+    ],
+    "tip": "a little تعني «قليل» مع غير المعدود."
+   },
+   {
+    "k": "neg",
+    "label": "Negative",
+    "labelAr": "النفي",
+    "formula": "{s|Subject} + {t|don't / doesn't} + have + {n|many / much} + {s|noun}",
+    "examples": [
+     {
+      "en": "There are {n|not} {v|many} customers.",
+      "ar": "لا يوجد زبائن كثيرون."
+     },
+     {
+      "en": "I do {n|not} have {v|much} money.",
+      "ar": "ليس معي نقود كثيرة."
+     }
+    ]
+   },
+   {
+    "k": "q",
+    "label": "Question",
+    "labelAr": "السؤال",
+    "formula": "{t|How many} + {s|plural noun} + …?  /  {t|How much} + {s|uncountable noun} + …?",
+    "examples": [
+     {
+      "en": "{t|How many} {s|customers} are there?",
+      "ar": "كم زبوناً يوجد؟"
+     },
+     {
+      "en": "{t|How much} {s|money} do you have?",
+      "ar": "كم من النقود معك؟"
+     }
+    ]
+   }
+  ],
+  "5-1#1": [
+   {
+    "k": "intro",
+    "useEn": "We use {t|a / an} (or some) when we start talking about something new. We use {t|the} when we refer to the same thing again, when there is only one of that thing, and in many place names.",
+    "useAr": "نستخدم {t|a / an} (أو some) عند الحديث عن شيء جديد، و{t|the} عند الإشارة إلى الشيء نفسه مرّة أخرى، أو عندما يوجد منه واحد فقط، وفي كثير من أسماء الأماكن.",
+    "signals": [
+     "a / an",
+     "some",
+     "the",
+     "only one",
+     "place names"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "New thing · a / an",
+    "labelAr": "شيء جديد",
+    "formula": "{t|a / an / some} + {s|noun}",
+    "examples": [
+     {
+      "en": "Istanbul is {t|a} city on two continents.",
+      "ar": "إسطنبول مدينة على قارّتين."
+     },
+     {
+      "en": "I'd like {t|a} hat, please.",
+      "ar": "أودّ قبّعة من فضلك."
+     }
+    ],
+    "tip": "an قبل الكلمات التي تبدأ بحرف علّة: an exciting city."
+   },
+   {
+    "k": "pos",
+    "label": "Same or only one · the",
+    "labelAr": "شيء معروف أو وحيد",
+    "formula": "{t|the} + {s|noun}",
+    "examples": [
+     {
+      "en": "{t|The} Topkapi Palace was the centre of {t|the} government.",
+      "ar": "كان قصر توبكابي مركز الحكومة."
+     },
+     {
+      "en": "I'd like {t|the} large one, please.",
+      "ar": "أودّ القبّعة الكبيرة من فضلك."
+     }
+    ],
+    "tip": "نقول: a mosque / the Blue Mosque."
+   },
+   {
+    "k": "note",
+    "label": "Remember",
+    "labelAr": "تذكّر",
+    "body": "{t|a mosque} → {t|the Blue Mosque}\n{t|a palace} → {t|the Topkapi Palace}\n{t|the sun} · {t|the moon} · {t|the Ottoman Empire}",
+    "examples": [
+     {
+      "en": "We saw {t|the} sun rise over {t|the} Bosphorus.",
+      "ar": "رأينا الشمس تشرق فوق البوسفور."
+     }
+    ]
+   }
+  ],
+  "5-1#2": [
+   {
+    "k": "intro",
+    "useEn": "We use prepositions of direction to tell someone the way: {t|across, along, past, through, over, round, into, out of, to}.",
+    "useAr": "نستخدم حروف الجرّ لوصف الطريق لشخص ما: {t|across وalong وpast وthrough وover وround وinto وout of وto}.",
+    "signals": [
+     "Go",
+     "Turn left / right",
+     "Walk",
+     "straight ahead"
+    ]
+   },
+   {
+    "k": "pos",
+    "label": "Giving directions",
+    "labelAr": "إعطاء الاتجاهات",
+    "formula": "{v|Go / Walk} + {t|across / along / past / through} + {s|the place}",
+    "examples": [
+     {
+      "en": "{v|Go} {t|across} the road and turn right.",
+      "ar": "اعبر الطريق وانعطف يميناً."
+     },
+     {
+      "en": "{v|Go} {t|past} the information centre.",
+      "ar": "مرّ بجانب مركز المعلومات."
+     },
+     {
+      "en": "{v|Walk} {t|through} the market.",
+      "ar": "امشِ عبر السوق."
+     }
+    ],
+    "tip": "نبدأ الجملة بالفعل لأنّها أمر."
+   },
+   {
+    "k": "q",
+    "label": "Asking the way",
+    "labelAr": "السؤال عن الطريق",
+    "formula": "Could you tell me the way to {s|the place}, please?",
+    "examples": [
+     {
+      "en": "Could you tell me the way to the {s|Blue Mosque}, please?",
+      "ar": "هل يمكنك أن تدلّني على الطريق إلى الجامع الأزرق من فضلك؟"
+     }
+    ]
+   },
+   {
+    "k": "note",
+    "label": "Remember",
+    "labelAr": "تذكّر",
+    "body": "{t|across} = من جهة إلى الجهة الأخرى\n{t|along} = على امتداد\n{t|past} = مجاوزاً\n{t|through} = من خلال",
+    "examples": [
+     {
+      "en": "Turn left at the {t|crossroads}.",
+      "ar": "انعطف يساراً عند مفترق الطرق."
+     }
+    ]
+   }
+  ]
+ },
+ "worksheet": {
+  "readingFrom": 5,
+  "sections": [
+   {
+    "k": "vocab",
+    "questions": [
+     {
+      "q": "Hadeel took out her ___ to pay the bill.",
+      "o": [
+       "purse",
+       "empire",
+       "sultan"
+      ],
+      "a": 0
+     },
+     {
+      "q": "Turn left at the ___ and go past the information centre.",
+      "o": [
+       "continent",
+       "crossroads",
+       "jewellery"
+      ],
+      "a": 1
+     },
+     {
+      "q": "Here's your ___ — fifteen lira.",
+      "o": [
+       "trade",
+       "change",
+       "customer"
+      ],
+      "a": 0
+     },
+     {
+      "q": "The Ottoman ___ reached across three continents.",
+      "o": [
+       "coin",
+       "government",
+       "Empire"
+      ],
+      "a": 2
+     },
+     {
+      "type": "type",
+      "q": "The opposite of 'ancient' is ___.",
+      "a": [
+       "modern"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "grammar",
+    "questions": [
+     {
+      "q": "There are only ___ customers in the shop.",
+      "o": [
+       "a little",
+       "a few",
+       "much"
+      ],
+      "a": 1
+     },
+     {
+      "q": "I don't have ___ money.",
+      "o": [
+       "many",
+       "much",
+       "a few"
+      ],
+      "a": 1
+     },
+     {
+      "q": "Istanbul is ___ city on two continents.",
+      "o": [
+       "the",
+       "an",
+       "a"
+      ],
+      "a": 2
+     },
+     {
+      "q": "We visited ___ Blue Mosque.",
+      "o": [
+       "a",
+       "the",
+       "an"
+      ],
+      "a": 1
+     },
+     {
+      "type": "type",
+      "q": "Go ___ the market and you'll come out at the other end. (through / past)",
+      "a": [
+       "through"
+      ]
+     },
+     {
+      "type": "type",
+      "q": "How ___ cakes do you want? (much / many)",
+      "a": [
+       "many"
+      ]
+     }
+    ]
+   },
+   {
+    "k": "reading",
+    "questions": [
+     {
+      "q": "What was the name of the city for the first 1,000 years?",
+      "o": [
+       "Constantinople",
+       "Istanbul",
+       "Byzantium"
+      ],
+      "a": 2
+     },
+     {
+      "tf": false,
+      "q": "The capital of modern Turkey is Istanbul.",
+      "why": "The capital is Ankara."
+     },
+     {
+      "q": "What is the Topkapi Palace today?",
+      "o": [
+       "A huge museum",
+       "A government office",
+       "A mosque"
+      ],
+      "a": 0
+     },
+     {
+      "q": "How many visitors does Istanbul have a year?",
+      "o": [
+       "12 million",
+       "14 million",
+       "1,000"
+      ],
+      "a": 0
+     }
+    ]
+   }
+  ]
+ },
+ "summary": {
+  "title": "يوم في إسطنبول",
+  "titleEn": "A day in Istanbul",
+  "intro": "يتعلّم الطالب التعبير عن الكمّيّة (a lot of وmuch وmany وa little وa few) وأداتي a / an وthe وحروف الجرّ لوصف الاتجاهات، ومفردات النقود والتسوّق وتاريخ إسطنبول.",
+  "qa": [
+   {
+    "t": "vocab",
+    "q": "What do these words mean: coin, purse, change, customer?",
+    "qAr": "ما معنى الكلمات: coin وpurse وchange وcustomer؟",
+    "a": "A **coin** is a piece of metal money, a **purse** is a small bag for money, **change** is the money you get back, and a **customer** is a person who buys something.",
+    "aAr": "**coin** = **قطعة نقدية**، **purse** = **محفظة نقود**، **change** = **الباقي**، **customer** = **زبون**.",
+    "ex": [
+     [
+      "Hadeel took out her purse to pay the bill.",
+      "أخرجت هديل محفظتها لتدفع الحساب."
+     ],
+     [
+      "And here's your change.",
+      "وهذا هو الباقي."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What do continent, empire, sultan and government mean?",
+    "qAr": "ما معنى continent وempire وsultan وgovernment؟",
+    "a": "A **continent** is a very large area of land like Asia, an **empire** is many countries under one ruler, a **sultan** is a Muslim ruler, and the **government** is the group of people who rule a country.",
+    "aAr": "**continent** = **قارّة**، **empire** = **إمبراطورية**، **sultan** = **سلطان**، **government** = **حكومة**.",
+    "ex": [
+     [
+      "The Ottoman Empire reached across three continents.",
+      "امتدّت الإمبراطورية العثمانية عبر ثلاث قارّات."
+     ]
+    ]
+   },
+   {
+    "t": "vocab",
+    "q": "What are the opposites of modern, remember, outside and boring?",
+    "qAr": "ما أضداد: modern وremember وoutside وboring؟",
+    "a": "The opposite of **modern** is **ancient**, of **remember** is **forget**, of **outside** is **inside**, and of **boring** is **exciting**.",
+    "aAr": "ضدّ **modern** هو **ancient**، وضدّ **remember** هو **forget**، وضدّ **outside** هو **inside**، وضدّ **boring** هو **exciting**.",
+    "ex": [
+     [
+      "Istanbul is an ancient city, but it's also an exciting modern place.",
+      "إسطنبول مدينة قديمة جدّاً لكنّها أيضاً مكان حديث مثير."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "When do we use many, much, a few and a little?",
+    "qAr": "متى نستعمل many وmuch وa few وa little؟",
+    "a": "We use **many** and **a few** with countable nouns, and **much** and **a little** with uncountable nouns. **A lot of** is used in positive statements with both.",
+    "aAr": "نستعمل **many** و**a few** مع الأسماء المعدودة، و**much** و**a little** مع غير المعدودة، أمّا **a lot of** فللجمل المثبتة مع النوعين.",
+    "ex": [
+     [
+      "There are only a few customers.",
+      "لا يوجد إلا بضعة زبائن."
+     ],
+     [
+      "I only have a little money.",
+      "ليس معي إلا قليل من النقود."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we ask about quantity?",
+    "qAr": "كيف نسأل عن الكمّيّة؟",
+    "a": "We say **How many** + a plural noun, and **How much** + an uncountable noun.",
+    "aAr": "نقول **How many** + اسم جمع معدود، و**How much** + اسم غير معدود.",
+    "ex": [
+     [
+      "How many customers are there?",
+      "كم زبوناً يوجد؟"
+     ],
+     [
+      "How much money do you have?",
+      "كم من النقود معك؟"
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "When do we use a / an and when do we use the?",
+    "qAr": "متى نستعمل a / an ومتى نستعمل the؟",
+    "a": "We use **a / an** for something new. We use **the** for the same thing again, for something that is the only one, and in many place names.",
+    "aAr": "نستعمل **a / an** لشيء جديد، و**the** للشيء نفسه مرّة أخرى أو للشيء الوحيد وفي كثير من أسماء الأماكن.",
+    "ex": [
+     [
+      "Istanbul is a city on two continents.",
+      "إسطنبول مدينة على قارّتين."
+     ],
+     [
+      "The Topkapi Palace was the centre of the government.",
+      "كان قصر توبكابي مركز الحكومة."
+     ]
+    ]
+   },
+   {
+    "t": "grammar",
+    "q": "How do we give directions?",
+    "qAr": "كيف نصف الطريق؟",
+    "a": "We start with a verb like **Go** or **Turn** and use prepositions such as **across, along, past** and **through**.",
+    "aAr": "نبدأ بفعل مثل **Go** أو **Turn** ونستعمل حروف جرّ مثل **across** و**along** و**past** و**through**.",
+    "ex": [
+     [
+      "Go across the road and turn right.",
+      "اعبر الطريق وانعطف يميناً."
+     ],
+     [
+      "Go past the information centre and you'll see it on your right.",
+      "مرّ بجانب مركز المعلومات وسترى المبنى على يمينك."
+     ]
+    ]
+   },
+   {
+    "t": "reading",
+    "q": "Why is Istanbul a special city?",
+    "qAr": "لماذا إسطنبول مدينة مميّزة؟",
+    "a": "It is on two continents, it was the capital of empires, and East and West meet in its streets, markets and shops.",
+    "aAr": "لأنّها على قارّتين، وكانت عاصمة لإمبراطوريات، ويلتقي الشرق والغرب في شوارعها وأسواقها."
+   },
+   {
+    "t": "reading",
+    "q": "What names did the city have?",
+    "qAr": "ما الأسماء التي حملتها المدينة؟",
+    "a": "It was called **Byzantium**, then **Constantinople**, and then **Istanbul**.",
+    "aAr": "كانت تُسمّى **بيزنطة** ثم **القسطنطينية** ثم **إسطنبول**."
+   },
+   {
+    "t": "reading",
+    "q": "What is the Topkapi Palace?",
+    "qAr": "ما قصر توبكابي؟",
+    "a": "It was the centre of the Ottoman government and the home of the sultans. Today it is a huge museum with beautiful gardens and hundreds of rooms.",
+    "aAr": "كان مركز الحكومة العثمانية وبيت السلاطين، وهو اليوم متحف ضخم فيه حدائق جميلة ومئات الغرف."
+   },
+   {
+    "t": "writing",
+    "q": "How do we write a visitor tour?",
+    "qAr": "كيف نكتب جولة للزائرين؟",
+    "a": "Write a heading, then two paragraphs. In paragraph 1 name the places and say where they are. In paragraph 2 give the directions.",
+    "aAr": "نكتب عنواناً ثم فقرتين: في الأولى نذكر الأماكن وأين تقع، وفي الثانية نعطي الاتجاهات.",
+    "ex": [
+     [
+      "We think you should visit two important places in town.",
+      "نرى أن تزوروا مكانين مهمّين في المدينة."
+     ]
+    ]
+   },
+   {
+    "t": "speaking",
+    "q": "How do we ask the way politely?",
+    "qAr": "كيف نسأل عن الطريق بأدب؟",
+    "a": "We say **Excuse me, could you tell me the way to … , please?** and then repeat the directions to check.",
+    "aAr": "نقول **Excuse me, could you tell me the way to … , please?** ثم نكرّر الاتجاهات للتأكّد.",
+    "ex": [
+     [
+      "Excuse me, could you tell me the way to the Blue Mosque, please?",
+      "المعذرة، هل تدلّني على الطريق إلى الجامع الأزرق من فضلك؟"
+     ],
+     [
+      "Go across the road and turn right.",
+      "اعبر الطريق وانعطف يميناً."
+     ]
+    ]
+   }
+  ]
+ }
+}
